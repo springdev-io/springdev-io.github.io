@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Books</title>
+    <link>http://localhost:80</link>
+    <atom:link href="http://localhost:80/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Spring Books</description>
+    <language>en-gb</language>
+    <pubDate>星期一, 9 七月 2018 13:24:21 +0800</pubDate>
+    <lastBuildDate>星期一, 9 七月 2018 13:24:21 +0800</lastBuildDate>
+
+    <item>
+      <title>安装 Spring Boot CLI</title>
+      <link>http://localhost:80/blog/2018/springboot.html</link>
+      <pubDate>星期五, 8 六月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/springboot.html</guid>
+      <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
+ &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
+  目录
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;ul class=&amp;quot;sectlevel1&amp;quot;&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#下载离线安装包手动安装&amp;quot;&amp;gt;1. 下载离线安装包手动安装&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#使用sdkman安装&amp;quot;&amp;gt;2. 使用SDKMAN安装&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#使用osx_homebrew安装&amp;quot;&amp;gt;3. 使用OSX Homebrew安装&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#使用scoop安装&amp;quot;&amp;gt;4. 使用Scoop安装&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Spring Boot CLI 是一个快速创建原型项目的命令行工具。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;下载离线安装包手动安装&amp;quot;&amp;gt;1. 下载离线安装包手动安装&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;下载 &amp;lt;a href=&amp;quot;https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/1.5.13.RELEASE/spring-boot-cli-1.5.13.RELEASE-bin.zip&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Boot CLI安装包&amp;lt;/a&amp;gt;，然后解压到本地目录并设置好&amp;lt;code&amp;gt;Path&amp;lt;/code&amp;gt;环境变量即可。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;使用sdkman安装&amp;quot;&amp;gt;2. 使用SDKMAN安装&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://sdkman.io&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;SDKMAN&amp;lt;/a&amp;gt;是一个JVM上各种语言SDK和工具包的安装管理工具，它的前身是GVM。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;$ sdk install springboot
+$ spring --version
+Spring Boot v1.5.13.RELEASE&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;使用osx_homebrew安装&amp;quot;&amp;gt;3. 使用OSX Homebrew安装&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://brew.sh&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Homebrew&amp;lt;/a&amp;gt;是专为macOS系统设计的软件包安装管理工具。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在终端控制台上执行下面的命令来安装Spring Boot：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;$ brew tap pivotal/tap
+$ brew install springboot&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;使用scoop安装&amp;quot;&amp;gt;4. 使用Scoop安装&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://scoop.sh&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Scoop&amp;lt;/a&amp;gt;是使用PowerShell语言为Windows系统开发的一个命令行的安装管理工具，功能与OSX Homebrew类似。 Scoop的详细安装请参考 &amp;lt;a href=&amp;quot;https://github.com/lukesampson/scoop/wiki/Quick-Start&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;官方安装说明&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在命令行窗口执行下面的命令来安装Spring Boot如下：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;&amp;amp;gt; scoop bucket add extras
+&amp;amp;gt; scoop install springboot&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;安装之后，检查下安装是否正确：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;$ spring --version
+Spring Boot v1.5.13.RELEASE&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
+      <title>安装 STS Eclipse</title>
+      <link>http://localhost:80/blog/2018/sts.html</link>
+      <pubDate>星期三, 6 六月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/sts.html</guid>
+      <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
+ &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
+  目录
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;ul class=&amp;quot;sectlevel1&amp;quot;&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#通过下载安装包来安装&amp;quot;&amp;gt;通过下载安装包来安装&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#使用scoop安装sts&amp;quot;&amp;gt;使用Scoop安装STS&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    概要
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;blockquote&amp;gt;
+     这是一篇关于介绍STS工具特性和如何安装的文章。 
+   &amp;lt;/blockquote&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Spring Tool Suite（简称：STS）是Spring Source开发团队在基于Eclipse基础上为Spring应用的开发专门定制的一款集成开发环境，对于Spring应用的编码实现、调试、部署等各个流程，集成了包括Pivotal tc Server、Pivotal Cloud Foundry、Git、Maven、AspectJ等工具，极大提供了开发效率。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    主要特性如下：
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;ul&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;支持Java 8&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;集成Git、Gradle、Maven等工具&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;更好的识别Spring项目，能够识别Spring配置文件，诸如命名空间、控制器、Bean的定义&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring配置文件的校验检查，更早发现错误&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;重构增强，除了对于Java代码的重构功能，还支持Spring配置文件中的重构，比如Bean的重命名&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;代码快速提示，无论是Java代码和配置文件都能根据内容快速提示&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;图形化展示项目中Bean的依赖关系，支持Spring Integration、Spring Batch、Spring Webflow&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;AOP最佳支持&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;集成Cloud Foundry和Pivotal tc Server，云部署开发更加简单&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+   &amp;lt;/ul&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;通过下载安装包来安装&amp;quot;&amp;gt;通过下载安装包来安装&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;浏览器打开STS官方网站&amp;lt;a href=&amp;quot;https://spring.io/tools/sts&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;STS&amp;lt;/a&amp;gt;，当前最新版本是：3.9.4，基于Eclipse 4.7.3a构建。除了使用完整安装包，如果本地已经安装了Eclipse，那么还可以通过插件的方式来安装。STS官方提供了Eclipse 4.6、4.7、4.8等几个主流版本的插件可下载本地安装，也可以通过在线安装插件。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://localhost:80/images/sts_homepage.png&amp;quot; alt=&amp;quot;sts homepage&amp;quot;&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    图表 1. STS官方主页
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://localhost:80/images/sts_download_page.png&amp;quot; alt=&amp;quot;sts download page&amp;quot;&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    图表 2. STS下载页面
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;使用scoop安装sts&amp;quot;&amp;gt;使用Scoop安装STS&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://scoop.sh&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Scoop&amp;lt;/a&amp;gt;是使用PowerShell语言为Windows系统开发的一个命令行的安装管理工具，功能与OSX Homebrew类似。 Scoop的详细安装请参考&amp;lt;a href=&amp;quot;https://github.com/lukesampson/scoop/wiki/Quick-Start&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;官方安装说明&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在命令行窗口执行下面的命令来安装STS如下：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;&amp;amp;gt; scoop bucket add extras
+&amp;amp;gt; scoop install sts&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
+      <title>安装 Java SDK 1.8</title>
+      <link>http://localhost:80/blog/2018/jdk.html</link>
+      <pubDate>星期一, 4 六月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/jdk.html</guid>
+      <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
+ &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
+  目录
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;ul class=&amp;quot;sectlevel1&amp;quot;&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#在oracle官方下载安装程序&amp;quot;&amp;gt;1. 在Oracle官方下载安装程序&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#使用sdkman_安装&amp;quot;&amp;gt;2. 使用SDKMAN 安装&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    概要
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;blockquote&amp;gt;
+     本文主要讲述如何在各种操作系统上安装JDK 8。 
+   &amp;lt;/blockquote&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;在oracle官方下载安装程序&amp;quot;&amp;gt;1. 在Oracle官方下载安装程序&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;打开浏览器，在Oracle网站，通过&amp;lt;a href=&amp;quot;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Java 8 下载页面&amp;lt;/a&amp;gt;来下载使用操作系统对应的安装程序。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+   &amp;lt;ul&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;在Windows系统上安装&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+   &amp;lt;/ul&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;运行安装程序jdk-8u172-windows-x64.exe，根据向导设置并下一步，记得将安装路径修改为 C:\\Java\jdk1.8.0，因为在Windows系统下，Java的安装路径最好不要包括空格。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;admonitionblock note&amp;quot;&amp;gt; 
+   &amp;lt;table&amp;gt; 
+    &amp;lt;tbody&amp;gt;
+     &amp;lt;tr&amp;gt; 
+      &amp;lt;td class=&amp;quot;icon&amp;quot;&amp;gt; &amp;lt;i class=&amp;quot;fa icon-note&amp;quot; title=&amp;quot;Note&amp;quot;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;/td&amp;gt; 
+      &amp;lt;td class=&amp;quot;content&amp;quot;&amp;gt; 
+       &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+        &amp;lt;p&amp;gt;JAVA_HOME 环境变量必须正确配置。 可以通过右键单击我的电脑，选择属性菜单，然后在高级页签中选择环境变量。添加环境变量 JAVA_HOME即可。&amp;lt;/p&amp;gt; 
+       &amp;lt;/div&amp;gt; &amp;lt;/td&amp;gt; 
+     &amp;lt;/tr&amp;gt; 
+    &amp;lt;/tbody&amp;gt;
+   &amp;lt;/table&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;使用sdkman_安装&amp;quot;&amp;gt;2. 使用SDKMAN 安装&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://sdkman.io&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;SDKMAN&amp;lt;/a&amp;gt;是一个JVM上各种语言SDK和工具包的安装管理工具，提供了一些常用SDK的安装和升级功能，类似Ruby的&amp;lt;strong&amp;gt;RVM&amp;lt;/strong&amp;gt;或NodeJS下的nvm，可以同时安装多个版本并支持随时切换使用。支持Java、Scala、Kotlin、Groovy、Grails、Ant、Maven、Gradle等流行SDK和工具。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;$ sdk i java 8.0.172-zulu&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;安装完并配置好环境变量后，可以测试下是否成功，打开一个控制台窗口，输入如下命令：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;$ java version
+openjdk version &amp;quot;1.8.0_172&amp;quot;
+OpenJDK Runtime Environment (Zulu 8.30.0.1-win64) (build 1.8.0_172-b01)
+OpenJDK 64-Bit Server VM (Zulu 8.30.0.1-win64) (build 25.172-b01, mixed mode)&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item>
+
+  </channel> 
+</rss>

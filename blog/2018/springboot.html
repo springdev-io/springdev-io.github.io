@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute"
+      data-search data-mobile-support>
+
+  <head>
+  <meta charset="utf-8"/>
+  <title>安装 Spring Boot CLI - Spring Books</title>
+  <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="description" content="Spring Books Site"/>
+  <meta name="author" content="rainboyan.com"/>
+  <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Books"/>
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <script src="/jspm_packages/system.js"></script>
+  <script>
+    System.config({baseURL: "/"});
+  </script>
+  <script src="/config.js"></script>
+  <script>
+      System.import('/app/main.js')
+  </script>
+</head>
+  <body>
+  <div class="viewport">
+    <header class="navbar header--navbar desktop-only">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <div class="spring-logo--container">
+            <a class="spring-logo" href="/"><span></span></a>
+          </div>
+          <ul class="nav pull-right">
+            <li class="navbar-link">
+              <a href="/projects/" >Projects</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/blog/" >Blog</a>
+            </li>
+            <li class="navbar-link nav-search js-nav-search">
+              <a>
+                <i class="icon-search navbar-search--icon js-search-input-open"></i>
+                <span class="search-input-close js-search-input-close">
+                  <i class="icon-remove"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-dropdown--container js-search-dropdown">
+        <div class="container-fluid">
+          <div class="search-form--container">
+            <form class="form-inline form-search" action="../../search" method="get">
+              <input type="text" class="search-query search-form--form js-search-input" placeholder="Search for documentation, guides, and posts..." name="q" value="" />
+              <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div>
+    <div class="mobile-navigation--wrapper mobile-only">
+      <div class="navigation-drawer--container">
+        <div class="mobile-search--container">
+          <form class="form-inline form-search" action="../../search" method="get">
+            <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            <input type="text" class="search-query search-form--form js-search-input" placeholder="Search..." name="q" value="" />
+          </form>
+        </div>
+        <div class="navigation-item-list">
+          <div class="navbar-link">
+            <a href="/">
+              Home
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/projects/">
+              Projects
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/books/">
+              Books
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/blog/">
+              Blog
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <div class="nav-icon js-open-nav-drawer">
+          <i class="icon-reorder"></i>
+        </div>
+        <div class="header-center-icon">
+          <a href="../../">
+            <div class="icon icon-spring-logo-mobile"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid" layout:fragment="top-content"></div>
+    <div layout:fragment="full-width--layout"></div>
+    <main layout:fragment="content" class="body--container container-fluid">
+      <div class="main-body--wrapper">
+        <div class="row-fluid blog--wrapper">
+          <article class="span8 mobile-left-pane" id="content">
+            <header class="desktop-only">
+              <div class="blog-category content--title">
+                <div>Engineering</div>
+              </div>
+              <div class="blog-category active content--title">
+                <div>Article</div>
+              </div>
+              <div class="blog-category content--title">
+                <div>News and Events</div>
+              </div>
+            </header>
+            <div class="blog--container">
+              <header>
+                <h1 class="blog--title">安装 Spring Boot CLI</h1>
+                <div class="meta-data--container">
+                  <div class="meta-data--item desktop-only">
+                    <div class="meta-data--icon icon blog-icon releases"></div>
+                    <span>
+                      <a class="category" href="../../tags/article.html">article</a>&nbsp;
+                    </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="https://gravatar.com/avatar/05a651471a510a339e1375e6f989ab87?s=20&amp;d=mm">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon calendar"></div>
+                      <time class="date" pubdate="" datetime=''>08 六月 2018</time>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon comments"></div>
+                      <a class="comments" href="../../blog/2018/springboot.html#gitalk-container">评论
+                      </a>
+                    </div>
+                </div>
+              </header>
+              <div class="blog--post"><div id="toc" class="toc"> 
+ <div id="toctitle">
+  目录
+ </div> 
+ <ul class="sectlevel1"> 
+  <li><a href="#下载离线安装包手动安装">1. 下载离线安装包手动安装</a></li> 
+  <li><a href="#使用sdkman安装">2. 使用SDKMAN安装</a></li> 
+  <li><a href="#使用osx_homebrew安装">3. 使用OSX Homebrew安装</a></li> 
+  <li><a href="#使用scoop安装">4. 使用Scoop安装</a></li> 
+ </ul> 
+</div> 
+<div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Spring Boot CLI 是一个快速创建原型项目的命令行工具。</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="下载离线安装包手动安装">1. 下载离线安装包手动安装</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>下载 <a href="https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/1.5.13.RELEASE/spring-boot-cli-1.5.13.RELEASE-bin.zip" class="external" target="_blank" rel="noopener">Spring Boot CLI安装包</a>，然后解压到本地目录并设置好<code>Path</code>环境变量即可。</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="使用sdkman安装">2. 使用SDKMAN安装</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p><a href="http://sdkman.io" class="external" target="_blank" rel="noopener">SDKMAN</a>是一个JVM上各种语言SDK和工具包的安装管理工具，它的前身是GVM。</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre>$ sdk install springboot
+$ spring --version
+Spring Boot v1.5.13.RELEASE</pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="使用osx_homebrew安装">3. 使用OSX Homebrew安装</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p><a href="https://brew.sh" class="external" target="_blank" rel="noopener">Homebrew</a>是专为macOS系统设计的软件包安装管理工具。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>在终端控制台上执行下面的命令来安装Spring Boot：</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre>$ brew tap pivotal/tap
+$ brew install springboot</pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="使用scoop安装">4. 使用Scoop安装</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p><a href="https://scoop.sh" class="external" target="_blank" rel="noopener">Scoop</a>是使用PowerShell语言为Windows系统开发的一个命令行的安装管理工具，功能与OSX Homebrew类似。 Scoop的详细安装请参考 <a href="https://github.com/lukesampson/scoop/wiki/Quick-Start" class="external" target="_blank" rel="noopener">官方安装说明</a>。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>在命令行窗口执行下面的命令来安装Spring Boot如下：</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre>&gt; scoop bucket add extras
+&gt; scoop install springboot</pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>安装之后，检查下安装是否正确：</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre>$ spring --version
+Spring Boot v1.5.13.RELEASE</pre> 
+   </div> 
+  </div> 
+ </div> 
+</div></div>
+              <ul id="direction" class="pagination blog-pagination pager">
+              <li class="previous"><a  href="../../blog/2018/sts.html"> ←安装 STS Eclipse</a></li>
+              
+              </ul>
+            </div>
+            <section id="gitalk-container"></section>
+          </article>
+          <aside class="span4 mobile-right-pane">
+      <div>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category active">
+            <div class="icon blog-icon all-posts"></div>
+            <a href="/blog/">全部内容</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon engineering"></div>
+            <a href="/tags/article.html">书籍文章</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon releases"></div>
+            <a href="/tags/release.html">版本发布</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news-and-events"></div>
+            <a href="/tags/news.html">新闻资讯</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="navbar">
+              <div class="container">
+                <ul class="nav">
+                  <li><a href="../../team.html">Team</a></li>
+                  <li><a href="../../services.html">Services</a></li>
+                  <li><a href="../../tools.html">Tools</a></li>
+                </ul>
+              </div>
+            </div>
+            &copy; <span>2018</span> <a href="http://rainboyan.com/">Rain</a>. All Rights Reserved.
+            <a href="../../terms-of-use.html">Terms of Use</a>,
+            <a href="../../privacy-policy.html">Privacy</a>,
+            <a href="../../trademarks.html">Trademark Guidelines</a> and
+            <span id="teconsent"></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="scrim"></div>
+  </div>
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: '3625d6e8e18bf19cffcf',
+        clientSecret: '942ca25abebf14395b304d49fdea27bf63a5af54',
+        repo: 'spring-books-issues',
+        owner: 'spring-books',
+        admin: ['rainboyan'],
+        id: 'Comments',
+        distractionFreeMode: true
+      });
+      gitalk.render('gitalk-container');
+  </script>
+  </body>
+</html>
