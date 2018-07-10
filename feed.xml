@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spring Books</title>
-    <link>http://localhost:80</link>
-    <atom:link href="http://localhost:80/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://springdev.io</link>
+    <atom:link href="http://springdev.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Spring Books</description>
     <language>en-gb</language>
-    <pubDate>星期三, 11 七月 2018 02:55:45 +0800</pubDate>
-    <lastBuildDate>星期三, 11 七月 2018 02:55:45 +0800</lastBuildDate>
+    <pubDate>星期三, 11 七月 2018 03:19:43 +0800</pubDate>
+    <lastBuildDate>星期三, 11 七月 2018 03:19:43 +0800</lastBuildDate>
 
     <item>
       <title>热身：编写一个Hello World项目</title>
-      <link>http://localhost:80/blog/2018/06/hello_world.html</link>
+      <link>http://springdev.io/blog/2018/06/hello_world.html</link>
       <pubDate>星期二, 5 六月 2018 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/06/hello_world.html</guid>
       <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
@@ -65,7 +65,7 @@ $ spring init --name hello-world --artifactId hello-world --groupId com.rainboya
   &amp;lt;/div&amp;gt; 
   &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
-    &amp;lt;img src=&amp;quot;http://localhost:80/images/import_existing_maven_project_01.png&amp;quot; alt=&amp;quot;import existing maven project 01&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://springdev.io/images/import_existing_maven_project_01.png&amp;quot; alt=&amp;quot;import existing maven project 01&amp;quot;&amp;gt; 
    &amp;lt;/div&amp;gt; 
    &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
     图表 1. 第一步 选择Import Existing Maven Projects
@@ -73,7 +73,7 @@ $ spring init --name hello-world --artifactId hello-world --groupId com.rainboya
   &amp;lt;/div&amp;gt; 
   &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
-    &amp;lt;img src=&amp;quot;http://localhost:80/images/import_existing_maven_project_02.png&amp;quot; alt=&amp;quot;import existing maven project 02&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://springdev.io/images/import_existing_maven_project_02.png&amp;quot; alt=&amp;quot;import existing maven project 02&amp;quot;&amp;gt; 
    &amp;lt;/div&amp;gt; 
    &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
     图表 2. 第二步 打开创建的工程所在目录
@@ -84,7 +84,7 @@ $ spring init --name hello-world --artifactId hello-world --groupId com.rainboya
   &amp;lt;/div&amp;gt; 
   &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
-    &amp;lt;img src=&amp;quot;http://localhost:80/images/sts_workspace.png&amp;quot; alt=&amp;quot;sts workspace&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://springdev.io/images/sts_workspace.png&amp;quot; alt=&amp;quot;sts workspace&amp;quot;&amp;gt; 
    &amp;lt;/div&amp;gt; 
    &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
     图表 3. 导入后的STS界面
@@ -276,7 +276,7 @@ public class HelloWorldApplication {
   &amp;lt;/div&amp;gt; 
   &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
-    &amp;lt;img src=&amp;quot;http://localhost:80/images/whitelabel_error_page.png&amp;quot; alt=&amp;quot;whitelabel error page&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://springdev.io/images/whitelabel_error_page.png&amp;quot; alt=&amp;quot;whitelabel error page&amp;quot;&amp;gt; 
    &amp;lt;/div&amp;gt; 
   &amp;lt;/div&amp;gt; 
   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
@@ -336,7 +336,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
   &amp;lt;/div&amp;gt; 
   &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
-    &amp;lt;img src=&amp;quot;http://localhost:80/images/hello_world_page.png&amp;quot; alt=&amp;quot;hello world page&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://springdev.io/images/hello_world_page.png&amp;quot; alt=&amp;quot;hello world page&amp;quot;&amp;gt; 
    &amp;lt;/div&amp;gt; 
   &amp;lt;/div&amp;gt; 
  &amp;lt;/div&amp;gt; 
@@ -351,7 +351,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 &amp;lt;/div&amp;gt;</description>	  
     </item><item>
       <title>安装 STS</title>
-      <link>http://localhost:80/blog/2018/06/sts.html</link>
+      <link>http://springdev.io/blog/2018/06/sts.html</link>
       <pubDate>星期一, 4 六月 2018 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/06/sts.html</guid>
       <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
@@ -402,7 +402,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
   &amp;lt;/div&amp;gt; 
   &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
-    &amp;lt;img src=&amp;quot;http://localhost:80/images/sts_homepage.png&amp;quot; alt=&amp;quot;sts homepage&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://springdev.io/images/sts_homepage.png&amp;quot; alt=&amp;quot;sts homepage&amp;quot;&amp;gt; 
    &amp;lt;/div&amp;gt; 
    &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
     图表 1. STS官方主页
@@ -410,7 +410,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
   &amp;lt;/div&amp;gt; 
   &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
-    &amp;lt;img src=&amp;quot;http://localhost:80/images/sts_download_page.png&amp;quot; alt=&amp;quot;sts download page&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://springdev.io/images/sts_download_page.png&amp;quot; alt=&amp;quot;sts download page&amp;quot;&amp;gt; 
    &amp;lt;/div&amp;gt; 
    &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
     图表 2. STS下载页面
@@ -437,7 +437,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 &amp;lt;/div&amp;gt;</description>	  
     </item><item>
       <title>安装 Spring Boot CLI</title>
-      <link>http://localhost:80/blog/2018/06/springboot.html</link>
+      <link>http://springdev.io/blog/2018/06/springboot.html</link>
       <pubDate>星期日, 3 六月 2018 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/06/springboot.html</guid>
       <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
@@ -534,7 +534,7 @@ Spring Boot v1.5.13.RELEASE&amp;lt;/pre&amp;gt;
 &amp;lt;/div&amp;gt;</description>	  
     </item><item>
       <title>安装 Maven</title>
-      <link>http://localhost:80/blog/2018/06/maven.html</link>
+      <link>http://springdev.io/blog/2018/06/maven.html</link>
       <pubDate>星期六, 2 六月 2018 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/06/maven.html</guid>
       <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
@@ -627,7 +627,7 @@ Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T15:58:1
 &amp;lt;/div&amp;gt;</description>	  
     </item><item>
       <title>安装 Java SDK 8</title>
-      <link>http://localhost:80/blog/2018/06/jdk.html</link>
+      <link>http://springdev.io/blog/2018/06/jdk.html</link>
       <pubDate>星期五, 1 六月 2018 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/06/jdk.html</guid>
       <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
