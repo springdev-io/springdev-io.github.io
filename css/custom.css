@@ -8,3 +8,8 @@ a.spring-logo span {
   width: 242px;
   background-position: 500px 0px;
 }
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em;border:none;vertical-align: inherit;}
