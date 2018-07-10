@@ -1,0 +1,10 @@
+a.spring-logo {
+  background: url("../img/spring-logo.png") 0px 0px no-repeat;
+}
+a.spring-logo span {
+  background: url("../img/spring-logo.png") 0px -48px no-repeat;
+}
+.icon.icon-spring-logo-mobile {
+  width: 242px;
+  background-position: 500px 0px;
+}

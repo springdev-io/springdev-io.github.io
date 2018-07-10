@@ -7,13 +7,19 @@
         <loc>http://springdev.io/index.html</loc>
         <lastmod>2018-06-06</lastmod>
     </url><url>
-        <loc>http://springdev.io/blog/2018/springboot.html</loc>
-        <lastmod>2018-06-08</lastmod>
+        <loc>http://springdev.io/blog/2018/hello_world.html</loc>
+        <lastmod>2018-06-05</lastmod>
     </url><url>
         <loc>http://springdev.io/blog/2018/sts.html</loc>
-        <lastmod>2018-06-06</lastmod>
+        <lastmod>2018-06-04</lastmod>
+    </url><url>
+        <loc>http://springdev.io/blog/2018/springboot.html</loc>
+        <lastmod>2018-06-03</lastmod>
+    </url><url>
+        <loc>http://springdev.io/blog/2018/maven.html</loc>
+        <lastmod>2018-06-02</lastmod>
     </url><url>
         <loc>http://springdev.io/blog/2018/jdk.html</loc>
-        <lastmod>2018-06-04</lastmod>
+        <lastmod>2018-06-01</lastmod>
     </url>
 </urlset>

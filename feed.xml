@@ -6,13 +6,439 @@
     <atom:link href="http://springdev.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Spring Books</description>
     <language>en-gb</language>
-    <pubDate>星期二, 10 七月 2018 12:08:56 +0800</pubDate>
-    <lastBuildDate>星期二, 10 七月 2018 12:08:56 +0800</lastBuildDate>
+    <pubDate>星期二, 10 七月 2018 19:47:35 +0800</pubDate>
+    <lastBuildDate>星期二, 10 七月 2018 19:47:35 +0800</lastBuildDate>
 
     <item>
+      <title>热身：编写一个Hello World项目</title>
+      <link>http://springdev.io/blog/2018/hello_world.html</link>
+      <pubDate>星期二, 5 六月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/hello_world.html</guid>
+      <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
+ &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
+  目录
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;ul class=&amp;quot;sectlevel1&amp;quot;&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#创建一个新工程&amp;quot;&amp;gt;创建一个新工程&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#导入刚才创建的工程&amp;quot;&amp;gt;导入刚才创建的工程&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#代码一览&amp;quot;&amp;gt;代码一览&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#启动工程&amp;quot;&amp;gt;启动工程&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#开始编写代码了&amp;quot;&amp;gt;开始编写代码了&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#小结&amp;quot;&amp;gt;小结&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    概要
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;blockquote&amp;gt;
+     本文介绍如何快速创建一个Spring Boot Web应用，然后编写一个示例页面并运行它。 
+   &amp;lt;/blockquote&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;创建一个新工程&amp;quot;&amp;gt;创建一个新工程&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在经过前面几个章节的准备，我们已经搭建好了本地开发环境，是时候开始热身准备创建一个Spring应用了。接下来我们要通过一步一步的介绍如何从创建空白工程，然后简单写一个&amp;lt;code&amp;gt;Hello World&amp;lt;/code&amp;gt;应用，是的，它非常简单，但是足够可以说明我们已经开始上路了，这是万里长征的第一步。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    使用Spring CLI 创建一个新工程
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;$ mkdir hello-world
+$ cd hello-world
+$ spring init --name hello-world --artifactId hello-world --groupId com.rainboyan.securitybook --language java --boot-version 1.5.13.RELEASE --type maven-project --dependencies web,thymeleaf,devtools --extract&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;导入刚才创建的工程&amp;quot;&amp;gt;导入刚才创建的工程&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;打开STS，点击菜单&amp;lt;span class=&amp;quot;menuseq&amp;quot;&amp;gt;&amp;lt;b class=&amp;quot;menu&amp;quot;&amp;gt;File&amp;lt;/b&amp;gt;&amp;amp;nbsp;&amp;lt;i class=&amp;quot;fa fa-angle-right caret&amp;quot;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;b class=&amp;quot;menuitem&amp;quot;&amp;gt;Import&amp;lt;/b&amp;gt;&amp;lt;/span&amp;gt;，选择导入向导Maven下的&amp;lt;code&amp;gt;Existing Maven Projects&amp;lt;/code&amp;gt;，在下一步中选择刚刚创建的工程目录，确定后导入到STS中。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://springdev.io/images/import_existing_maven_project_01.png&amp;quot; alt=&amp;quot;import existing maven project 01&amp;quot;&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    图表 1. 第一步 选择Import Existing Maven Projects
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://springdev.io/images/import_existing_maven_project_02.png&amp;quot; alt=&amp;quot;import existing maven project 02&amp;quot;&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    图表 2. 第二步 打开创建的工程所在目录
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;成功导入项目后，可以看到项目的界面：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://springdev.io/images/sts_workspace.png&amp;quot; alt=&amp;quot;sts workspace&amp;quot;&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    图表 3. 导入后的STS界面
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;代码一览&amp;quot;&amp;gt;代码一览&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;此时创建的新工程hello-world目录结构如下:&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;├── mvnw
+├── mvnw.cmd
+├── pom.xml
+└── src
+    ├── main
+    │&amp;amp;nbsp;&amp;amp;nbsp; ├── java
+    │&amp;amp;nbsp;&amp;amp;nbsp; │&amp;amp;nbsp;&amp;amp;nbsp; └── com
+    │&amp;amp;nbsp;&amp;amp;nbsp; │&amp;amp;nbsp;&amp;amp;nbsp;     └── rainboyan
+    │&amp;amp;nbsp;&amp;amp;nbsp; │&amp;amp;nbsp;&amp;amp;nbsp;         └── securitybook
+    │&amp;amp;nbsp;&amp;amp;nbsp; │&amp;amp;nbsp;&amp;amp;nbsp;             └── helloworld
+    │&amp;amp;nbsp;&amp;amp;nbsp; │&amp;amp;nbsp;&amp;amp;nbsp;                 └── HelloWorldApplication.java
+    │&amp;amp;nbsp;&amp;amp;nbsp; └── resources
+    │&amp;amp;nbsp;&amp;amp;nbsp;     ├── application.properties
+    │&amp;amp;nbsp;&amp;amp;nbsp;     ├── static
+    │&amp;amp;nbsp;&amp;amp;nbsp;     └── templates
+    └── test
+        └── java
+            └── com
+                └── rainboyan
+                    └── securitybook
+                        └── helloworld
+                            └── HelloWorldApplicationTests.java&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在工程根目录打开&amp;lt;code&amp;gt;pom.xml&amp;lt;/code&amp;gt;，其内容如下：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    pom.xml
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-xml&amp;quot; data-lang=&amp;quot;xml&amp;quot;&amp;gt;&amp;amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;amp;gt;
+&amp;amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;
+	xsi:schemaLocation=&amp;quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;quot;&amp;amp;gt;
+	&amp;amp;lt;modelVersion&amp;amp;gt;4.0.0&amp;amp;lt;/modelVersion&amp;amp;gt;
+
+	&amp;amp;lt;groupId&amp;amp;gt;com.rainboyan.securitybook&amp;amp;lt;/groupId&amp;amp;gt;
+	&amp;amp;lt;artifactId&amp;amp;gt;hello-world&amp;amp;lt;/artifactId&amp;amp;gt;
+	&amp;amp;lt;version&amp;amp;gt;0.0.1-SNAPSHOT&amp;amp;lt;/version&amp;amp;gt;
+	&amp;amp;lt;packaging&amp;amp;gt;jar&amp;amp;lt;/packaging&amp;amp;gt;
+
+	&amp;amp;lt;name&amp;amp;gt;hello-world&amp;amp;lt;/name&amp;amp;gt;
+	&amp;amp;lt;description&amp;amp;gt;Demo project for Spring Boot&amp;amp;lt;/description&amp;amp;gt;
+
+	&amp;amp;lt;parent&amp;amp;gt;
+		&amp;amp;lt;groupId&amp;amp;gt;org.springframework.boot&amp;amp;lt;/groupId&amp;amp;gt;
+		&amp;amp;lt;artifactId&amp;amp;gt;spring-boot-starter-parent&amp;amp;lt;/artifactId&amp;amp;gt;
+		&amp;amp;lt;version&amp;amp;gt;1.5.13.RELEASE&amp;amp;lt;/version&amp;amp;gt;
+		&amp;amp;lt;relativePath/&amp;amp;gt; &amp;amp;lt;!-- lookup parent from repository --&amp;amp;gt;
+	&amp;amp;lt;/parent&amp;amp;gt;
+
+	&amp;amp;lt;properties&amp;amp;gt;
+		&amp;amp;lt;project.build.sourceEncoding&amp;amp;gt;UTF-8&amp;amp;lt;/project.build.sourceEncoding&amp;amp;gt;
+		&amp;amp;lt;project.reporting.outputEncoding&amp;amp;gt;UTF-8&amp;amp;lt;/project.reporting.outputEncoding&amp;amp;gt;
+		&amp;amp;lt;java.version&amp;amp;gt;1.8&amp;amp;lt;/java.version&amp;amp;gt;
+	&amp;amp;lt;/properties&amp;amp;gt;
+
+	&amp;amp;lt;dependencies&amp;amp;gt;
+		&amp;amp;lt;dependency&amp;amp;gt;
+			&amp;amp;lt;groupId&amp;amp;gt;org.springframework.boot&amp;amp;lt;/groupId&amp;amp;gt;
+			&amp;amp;lt;artifactId&amp;amp;gt;spring-boot-starter-thymeleaf&amp;amp;lt;/artifactId&amp;amp;gt;
+		&amp;amp;lt;/dependency&amp;amp;gt;
+		&amp;amp;lt;dependency&amp;amp;gt;
+			&amp;amp;lt;groupId&amp;amp;gt;org.springframework.boot&amp;amp;lt;/groupId&amp;amp;gt;
+			&amp;amp;lt;artifactId&amp;amp;gt;spring-boot-starter-web&amp;amp;lt;/artifactId&amp;amp;gt;
+		&amp;amp;lt;/dependency&amp;amp;gt;
+
+		&amp;amp;lt;dependency&amp;amp;gt;
+			&amp;amp;lt;groupId&amp;amp;gt;org.springframework.boot&amp;amp;lt;/groupId&amp;amp;gt;
+			&amp;amp;lt;artifactId&amp;amp;gt;spring-boot-devtools&amp;amp;lt;/artifactId&amp;amp;gt;
+			&amp;amp;lt;scope&amp;amp;gt;runtime&amp;amp;lt;/scope&amp;amp;gt;
+		&amp;amp;lt;/dependency&amp;amp;gt;
+		&amp;amp;lt;dependency&amp;amp;gt;
+			&amp;amp;lt;groupId&amp;amp;gt;org.springframework.boot&amp;amp;lt;/groupId&amp;amp;gt;
+			&amp;amp;lt;artifactId&amp;amp;gt;spring-boot-starter-test&amp;amp;lt;/artifactId&amp;amp;gt;
+			&amp;amp;lt;scope&amp;amp;gt;test&amp;amp;lt;/scope&amp;amp;gt;
+		&amp;amp;lt;/dependency&amp;amp;gt;
+	&amp;amp;lt;/dependencies&amp;amp;gt;
+
+	&amp;amp;lt;build&amp;amp;gt;
+		&amp;amp;lt;plugins&amp;amp;gt;
+			&amp;amp;lt;plugin&amp;amp;gt;
+				&amp;amp;lt;groupId&amp;amp;gt;org.springframework.boot&amp;amp;lt;/groupId&amp;amp;gt;
+				&amp;amp;lt;artifactId&amp;amp;gt;spring-boot-maven-plugin&amp;amp;lt;/artifactId&amp;amp;gt;
+			&amp;amp;lt;/plugin&amp;amp;gt;
+		&amp;amp;lt;/plugins&amp;amp;gt;
+	&amp;amp;lt;/build&amp;amp;gt;
+
+
+&amp;amp;lt;/project&amp;amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在Package Explorer中打开应用主程序文件：&amp;lt;code&amp;gt;HelloWorldApplication.java&amp;lt;/code&amp;gt;，可以看到这个文件代码非常简单。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    src/main/java/com/rainboyan/scuritybook/helloworld/HelloWorldApplication.java
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;package com.rainboyan.securitybook.helloworld;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class HelloWorldApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(HelloWorldApplication.class, args);
+	}
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;启动工程&amp;quot;&amp;gt;启动工程&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;截止目前，我们还没有写任何代码，但是Spring Boot已经生成的代码我们可以先启动下看看效果。首先选中刚才的工程，然后打开菜单&amp;lt;span class=&amp;quot;menuseq&amp;quot;&amp;gt;&amp;lt;b class=&amp;quot;menu&amp;quot;&amp;gt;Run&amp;lt;/b&amp;gt;&amp;amp;nbsp;&amp;lt;i class=&amp;quot;fa fa-angle-right caret&amp;quot;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;b class=&amp;quot;submenu&amp;quot;&amp;gt;Run as&amp;lt;/b&amp;gt;&amp;amp;nbsp;&amp;lt;i class=&amp;quot;fa fa-angle-right caret&amp;quot;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;b class=&amp;quot;menuitem&amp;quot;&amp;gt;Spring Boot App&amp;lt;/b&amp;gt;&amp;lt;/span&amp;gt;，应用就开始启动了，可以在控制台看到启动应用的日志。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;19:24:05.659 [main] DEBUG org.springframework.boot.devtools.settings.DevToolsSettings - Included patterns for restart : []
+19:24:05.661 [main] DEBUG org.springframework.boot.devtools.settings.DevToolsSettings - Excluded patterns for restart : [/spring-boot-starter/target/classes/, /spring-boot-autoconfigure/target/classes/, /spring-boot-starter-[\w-]+/, /spring-boot/target/classes/, /spring-boot-actuator/target/classes/, /spring-boot-devtools/target/classes/]
+19:24:05.661 [main] DEBUG org.springframework.boot.devtools.restart.ChangeableUrls - Matching URLs for reloading : [file:/Users/rain/Development/alpha/books/spring-security-book/source/hello-world/target/classes/]
+
+  .   ____          _            __ _ _
+ /\\ / ___&amp;#39;_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | &amp;#39;_ | &amp;#39;_| | &amp;#39;_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  &amp;#39;  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::       (v1.5.13.RELEASE)
+
+2018-06-05 19:24:05.930  INFO 86432 --- [  restartedMain] c.r.s.helloworld.HelloWorldApplication   : Starting HelloWorldApplication on Michaels-MBP.lan with PID 86432 (/Users/rain/Development/alpha/books/spring-security-book/source/hello-world/target/classes started by rain in /Users/rain/Development/alpha/books/spring-security-book/source/hello-world)
+2018-06-05 19:24:05.931  INFO 86432 --- [  restartedMain] c.r.s.helloworld.HelloWorldApplication   : No active profile set, falling back to default profiles: default
+2018-06-05 19:24:06.133  INFO 86432 --- [  restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@574f5267: startup date [Fri Jun 22 19:24:06 CST 2018]; root of context hierarchy
+2018-06-05 19:24:07.282  INFO 86432 --- [  restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-06-05 19:24:07.311  INFO 86432 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 19:24:07.311  INFO 86432 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 19:24:07.402  INFO 86432 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-05 19:24:07.402  INFO 86432 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1273 ms
+2018-06-05 19:24:07.502  INFO 86432 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: &amp;#39;dispatcherServlet&amp;#39; to [/]
+2018-06-05 19:24:07.505  INFO 86432 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: &amp;#39;characterEncodingFilter&amp;#39; to: [/*]
+2018-06-05 19:24:07.505  INFO 86432 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: &amp;#39;hiddenHttpMethodFilter&amp;#39; to: [/*]
+2018-06-05 19:24:07.506  INFO 86432 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: &amp;#39;httpPutFormContentFilter&amp;#39; to: [/*]
+2018-06-05 19:24:07.506  INFO 86432 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: &amp;#39;requestContextFilter&amp;#39; to: [/*]
+2018-06-05 19:24:07.738  INFO 86432 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@574f5267: startup date [Fri Jun 22 19:24:06 CST 2018]; root of context hierarchy
+2018-06-05 19:24:07.792  INFO 86432 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &amp;quot;{[/error]}&amp;quot; onto public org.springframework.http.ResponseEntity&amp;amp;lt;java.util.Map&amp;amp;lt;java.lang.String, java.lang.Object&amp;amp;gt;&amp;amp;gt; org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-05 19:24:07.792  INFO 86432 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &amp;quot;{[/error],produces=[text/html]}&amp;quot; onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-05 19:24:07.804  INFO 86432 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2018-06-05 19:24:07.817  INFO 86432 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-05 19:24:07.817  INFO 86432 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-05 19:24:07.851  INFO 86432 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-05 19:24:08.190  INFO 86432 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-06-05 19:24:08.229  INFO 86432 --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-06-05 19:24:08.280  INFO 86432 --- [  restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-06-05 19:24:08.285  INFO 86432 --- [  restartedMain] c.r.s.helloworld.HelloWorldApplication   : Started HelloWorldApplication in 2.612 seconds (JVM running for 3.592)&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;除了在STS中启动应用外，还可以在命令行控制台中通过Maven命令来启动，&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;$ mvn spring-boot:run&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;待启动完成后，打开浏览器，输入地址：&amp;lt;a href=&amp;quot;http://localhost:8080/&amp;quot; class=&amp;quot;bare&amp;quot;&amp;gt;http://localhost:8080/&amp;lt;/a&amp;gt;，将会看到下面的空白错误页面：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://springdev.io/images/whitelabel_error_page.png&amp;quot; alt=&amp;quot;whitelabel error page&amp;quot;&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;不用奇怪，因为到目前为止，我们并没有开始创建任何页面。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;开始编写代码了&amp;quot;&amp;gt;开始编写代码了&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;接下来我们开始编写欢迎页面。在&amp;lt;code&amp;gt;src/main/resources/templates&amp;lt;/code&amp;gt;目录中新增一个index.html，内容如下：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    src/main/resources/templates/index.html
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-html&amp;quot; data-lang=&amp;quot;html&amp;quot;&amp;gt;&amp;amp;lt;!DOCTYPE html&amp;amp;gt;
+&amp;amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot; xmlns:th=&amp;quot;http://www.thymeleaf.org&amp;quot;&amp;amp;gt;
+    &amp;amp;lt;head&amp;amp;gt;
+        &amp;amp;lt;title&amp;amp;gt;Spring Security Book&amp;amp;lt;/title&amp;amp;gt;
+    &amp;amp;lt;/head&amp;amp;gt;
+    &amp;amp;lt;body&amp;amp;gt;
+        &amp;amp;lt;h1&amp;amp;gt;Hello, World!&amp;amp;lt;/h1&amp;amp;gt;
+
+    &amp;amp;lt;/body&amp;amp;gt;
+&amp;amp;lt;/html&amp;amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;编写&amp;lt;code&amp;gt;MvcConfig.java&amp;lt;/code&amp;gt;类，设置首页视图。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    src/main/java/com/rainboyan/securitybook/helloworld/MvcConfig.java
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;package com.rainboyan.securitybook.helloworld;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+@Configuration
+public class MvcConfig extends WebMvcConfigurerAdapter {
+
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController(&amp;quot;/&amp;quot;).setViewName(&amp;quot;index&amp;quot;);
+    }
+
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;保存代码，再次启动后会看到下图：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://springdev.io/images/hello_world_page.png&amp;quot; alt=&amp;quot;hello world page&amp;quot;&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;小结&amp;quot;&amp;gt;小结&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;真棒，恭喜你，现在已经可以通过命令行快速创建一个Spring Boot应用，然后编写简单代码并成功运行它了。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
+      <title>安装 STS</title>
+      <link>http://springdev.io/blog/2018/sts.html</link>
+      <pubDate>星期一, 4 六月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/sts.html</guid>
+      <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
+ &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
+  目录
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;ul class=&amp;quot;sectlevel1&amp;quot;&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#通过下载安装包来安装&amp;quot;&amp;gt;通过下载安装包来安装&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#使用scoop安装sts&amp;quot;&amp;gt;使用Scoop安装STS&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    概要
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;blockquote&amp;gt;
+     本文主要介绍有关STS的工具特性和如何安装。 
+   &amp;lt;/blockquote&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Spring Tool Suite（简称：STS）是Spring Source开发团队在基于Eclipse基础上为Spring应用的开发专门定制的一款集成开发环境，对于Spring应用的编码实现、调试、部署等各个流程，集成了包括Pivotal tc Server、Pivotal Cloud Foundry、Git、Maven、AspectJ等工具，极大提供了开发效率。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    主要特性如下：
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;ul&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;支持Java 8&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;集成Git、Gradle、Maven等工具&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;更好的识别Spring项目，能够识别Spring配置文件，诸如命名空间、控制器、Bean的定义&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring配置文件的校验检查，更早发现错误&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;重构增强，除了对于Java代码的重构功能，还支持Spring配置文件中的重构，比如Bean的重命名&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;代码快速提示，无论是Java代码和配置文件都能根据内容快速提示&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;图形化展示项目中Bean的依赖关系，支持Spring Integration、Spring Batch、Spring Webflow&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;AOP最佳支持&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;集成Cloud Foundry和Pivotal tc Server，云部署开发更加简单&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+   &amp;lt;/ul&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;通过下载安装包来安装&amp;quot;&amp;gt;通过下载安装包来安装&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;浏览器打开STS官方网站&amp;lt;a href=&amp;quot;https://spring.io/tools/sts&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;STS&amp;lt;/a&amp;gt;，当前最新版本是：3.9.4，基于Eclipse 4.7.3a构建。除了使用完整安装包，如果本地已经安装了Eclipse，那么还可以通过插件的方式来安装。STS官方提供了Eclipse 4.6、4.7、4.8等几个主流版本的插件可下载本地安装，也可以通过在线安装插件。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://springdev.io/images/sts_homepage.png&amp;quot; alt=&amp;quot;sts homepage&amp;quot;&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    图表 1. STS官方主页
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;http://springdev.io/images/sts_download_page.png&amp;quot; alt=&amp;quot;sts download page&amp;quot;&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    图表 2. STS下载页面
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;使用scoop安装sts&amp;quot;&amp;gt;使用Scoop安装STS&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://scoop.sh&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Scoop&amp;lt;/a&amp;gt;是使用PowerShell语言为Windows系统开发的一个命令行的安装管理工具，功能与OSX Homebrew类似。 Scoop的详细安装请参考&amp;lt;a href=&amp;quot;https://github.com/lukesampson/scoop/wiki/Quick-Start&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;官方安装说明&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在命令行窗口执行下面的命令来安装STS如下：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;&amp;amp;gt; scoop bucket add extras
+&amp;amp;gt; scoop install sts&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
       <title>安装 Spring Boot CLI</title>
       <link>http://springdev.io/blog/2018/springboot.html</link>
-      <pubDate>星期五, 8 六月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期日, 3 六月 2018 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/springboot.html</guid>
       <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
  &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
@@ -27,6 +453,14 @@
 &amp;lt;/div&amp;gt; 
 &amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
  &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    概要
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;blockquote&amp;gt;
+     本文主要介绍Spring Boot的多种安装方式。 
+   &amp;lt;/blockquote&amp;gt; 
+  &amp;lt;/div&amp;gt; 
   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
    &amp;lt;p&amp;gt;Spring Boot CLI 是一个快速创建原型项目的命令行工具。&amp;lt;/p&amp;gt; 
   &amp;lt;/div&amp;gt; 
@@ -99,17 +533,19 @@ Spring Boot v1.5.13.RELEASE&amp;lt;/pre&amp;gt;
  &amp;lt;/div&amp;gt; 
 &amp;lt;/div&amp;gt;</description>	  
     </item><item>
-      <title>安装 STS Eclipse</title>
-      <link>http://springdev.io/blog/2018/sts.html</link>
-      <pubDate>星期三, 6 六月 2018 00:00:00 +0800</pubDate>
-      <guid isPermaLink="false">blog/2018/sts.html</guid>
+      <title>安装 Maven</title>
+      <link>http://springdev.io/blog/2018/maven.html</link>
+      <pubDate>星期六, 2 六月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/maven.html</guid>
       <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
  &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
   目录
  &amp;lt;/div&amp;gt; 
  &amp;lt;ul class=&amp;quot;sectlevel1&amp;quot;&amp;gt; 
-  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#通过下载安装包来安装&amp;quot;&amp;gt;通过下载安装包来安装&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#使用scoop安装sts&amp;quot;&amp;gt;使用Scoop安装STS&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#下载离线安装包手动安装&amp;quot;&amp;gt;1. 下载离线安装包手动安装&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#使用sdkman安装&amp;quot;&amp;gt;2. 使用SDKMAN安装&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#使用osx_homebrew安装&amp;quot;&amp;gt;3. 使用OSX Homebrew安装&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#使用scoop安装&amp;quot;&amp;gt;4. 使用Scoop安装&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
  &amp;lt;/ul&amp;gt; 
 &amp;lt;/div&amp;gt; 
 &amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
@@ -119,75 +555,80 @@ Spring Boot v1.5.13.RELEASE&amp;lt;/pre&amp;gt;
     概要
    &amp;lt;/div&amp;gt; 
    &amp;lt;blockquote&amp;gt;
-     这是一篇关于介绍STS工具特性和如何安装的文章。 
+     本文主要介绍Maven的多种安装方式。 
    &amp;lt;/blockquote&amp;gt; 
   &amp;lt;/div&amp;gt; 
   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
-   &amp;lt;p&amp;gt;Spring Tool Suite（简称：STS）是Spring Source开发团队在基于Eclipse基础上为Spring应用的开发专门定制的一款集成开发环境，对于Spring应用的编码实现、调试、部署等各个流程，集成了包括Pivotal tc Server、Pivotal Cloud Foundry、Git、Maven、AspectJ等工具，极大提供了开发效率。&amp;lt;/p&amp;gt; 
-  &amp;lt;/div&amp;gt; 
-  &amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
-   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
-    主要特性如下：
-   &amp;lt;/div&amp;gt; 
-   &amp;lt;ul&amp;gt; 
-    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;支持Java 8&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;集成Git、Gradle、Maven等工具&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;更好的识别Spring项目，能够识别Spring配置文件，诸如命名空间、控制器、Bean的定义&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring配置文件的校验检查，更早发现错误&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;重构增强，除了对于Java代码的重构功能，还支持Spring配置文件中的重构，比如Bean的重命名&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;代码快速提示，无论是Java代码和配置文件都能根据内容快速提示&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;图形化展示项目中Bean的依赖关系，支持Spring Integration、Spring Batch、Spring Webflow&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;AOP最佳支持&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;集成Cloud Foundry和Pivotal tc Server，云部署开发更加简单&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-   &amp;lt;/ul&amp;gt; 
+   &amp;lt;p&amp;gt;Maven是一个Java平台上非常流行的项目构建和管理工具，支持项目的编译、打包、测试、第三方依赖包管理，在很多知名的开源项目和企业中使用。同时也能和Ant进行集成，保证一些使用Ant的旧项目能够顺利迁移，同时也可以提供一些比较灵活性。&amp;lt;/p&amp;gt; 
   &amp;lt;/div&amp;gt; 
  &amp;lt;/div&amp;gt; 
 &amp;lt;/div&amp;gt; 
 &amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
- &amp;lt;h2 id=&amp;quot;通过下载安装包来安装&amp;quot;&amp;gt;通过下载安装包来安装&amp;lt;/h2&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;下载离线安装包手动安装&amp;quot;&amp;gt;1. 下载离线安装包手动安装&amp;lt;/h2&amp;gt; 
  &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
-   &amp;lt;p&amp;gt;浏览器打开STS官方网站&amp;lt;a href=&amp;quot;https://spring.io/tools/sts&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;STS&amp;lt;/a&amp;gt;，当前最新版本是：3.9.4，基于Eclipse 4.7.3a构建。除了使用完整安装包，如果本地已经安装了Eclipse，那么还可以通过插件的方式来安装。STS官方提供了Eclipse 4.6、4.7、4.8等几个主流版本的插件可下载本地安装，也可以通过在线安装插件。&amp;lt;/p&amp;gt; 
-  &amp;lt;/div&amp;gt; 
-  &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
-   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
-    &amp;lt;img src=&amp;quot;http://springdev.io/images/sts_homepage.png&amp;quot; alt=&amp;quot;sts homepage&amp;quot;&amp;gt; 
-   &amp;lt;/div&amp;gt; 
-   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
-    图表 1. STS官方主页
-   &amp;lt;/div&amp;gt; 
-  &amp;lt;/div&amp;gt; 
-  &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
-   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
-    &amp;lt;img src=&amp;quot;http://springdev.io/images/sts_download_page.png&amp;quot; alt=&amp;quot;sts download page&amp;quot;&amp;gt; 
-   &amp;lt;/div&amp;gt; 
-   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
-    图表 2. STS下载页面
-   &amp;lt;/div&amp;gt; 
+   &amp;lt;p&amp;gt;当前使用的版本是3.5.2，去&amp;lt;a href=&amp;quot;http://maven.apache.org/download.cgi&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Maven官方&amp;lt;/a&amp;gt;下载 &amp;lt;a href=&amp;quot;https://archive.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.zip&amp;quot;&amp;gt;apache-maven-3.5.2-bin.zip&amp;lt;/a&amp;gt; 或者 &amp;lt;a href=&amp;quot;https://archive.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz&amp;quot;&amp;gt;apache-maven-3.5.2-bin.tar.gz&amp;lt;/a&amp;gt;，然后解压到本地目录并设置好&amp;lt;code&amp;gt;M2_HOME&amp;lt;/code&amp;gt;和&amp;lt;code&amp;gt;Path&amp;lt;/code&amp;gt;环境变量即可。&amp;lt;/p&amp;gt; 
   &amp;lt;/div&amp;gt; 
  &amp;lt;/div&amp;gt; 
 &amp;lt;/div&amp;gt; 
 &amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
- &amp;lt;h2 id=&amp;quot;使用scoop安装sts&amp;quot;&amp;gt;使用Scoop安装STS&amp;lt;/h2&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;使用sdkman安装&amp;quot;&amp;gt;2. 使用SDKMAN安装&amp;lt;/h2&amp;gt; 
  &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
-   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://scoop.sh&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Scoop&amp;lt;/a&amp;gt;是使用PowerShell语言为Windows系统开发的一个命令行的安装管理工具，功能与OSX Homebrew类似。 Scoop的详细安装请参考&amp;lt;a href=&amp;quot;https://github.com/lukesampson/scoop/wiki/Quick-Start&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;官方安装说明&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; 
-  &amp;lt;/div&amp;gt; 
-  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
-   &amp;lt;p&amp;gt;在命令行窗口执行下面的命令来安装STS如下：&amp;lt;/p&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://sdkman.io&amp;quot;&amp;gt;SDKMAN&amp;lt;/a&amp;gt;是一个JVM上各种语言SDK和工具包的安装管理工具，它的前身是GVM。&amp;lt;/p&amp;gt; 
   &amp;lt;/div&amp;gt; 
   &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
-    &amp;lt;pre&amp;gt;&amp;amp;gt; scoop bucket add extras
-&amp;amp;gt; scoop install sts&amp;lt;/pre&amp;gt; 
+    &amp;lt;pre&amp;gt;$ sdk install maven&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;使用osx_homebrew安装&amp;quot;&amp;gt;3. 使用OSX Homebrew安装&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://brew.sh&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Homebrew&amp;lt;/a&amp;gt;是专为macOS系统设计的软件包安装管理工具。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在终端控制台上执行下面的命令来安装Maven：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;$ brew install maven&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;使用scoop安装&amp;quot;&amp;gt;4. 使用Scoop安装&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://scoop.sh&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Scoop&amp;lt;/a&amp;gt;是使用PowerShell语言为Windows系统开发的一个命令行的安装管理工具，功能与OSX Homebrew类似。 Scoop的详细安装请参考 &amp;lt;a href=&amp;quot;https://github.com/lukesampson/scoop/wiki/Quick-Start&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;官方安装说明&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在命令行窗口执行下面的命令来安装Maven如下：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;$ scoop install maven&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;安装之后，检查下安装是否正确：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;$ mvn --version
+Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T15:58:13+08:00)&amp;lt;/pre&amp;gt; 
    &amp;lt;/div&amp;gt; 
   &amp;lt;/div&amp;gt; 
  &amp;lt;/div&amp;gt; 
 &amp;lt;/div&amp;gt;</description>	  
     </item><item>
-      <title>安装 Java SDK 1.8</title>
+      <title>安装 Java SDK 8</title>
       <link>http://springdev.io/blog/2018/jdk.html</link>
-      <pubDate>星期一, 4 六月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期五, 1 六月 2018 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/jdk.html</guid>
       <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
  &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
@@ -205,7 +646,7 @@ Spring Boot v1.5.13.RELEASE&amp;lt;/pre&amp;gt;
     概要
    &amp;lt;/div&amp;gt; 
    &amp;lt;blockquote&amp;gt;
-     本文主要讲述如何在各种操作系统上安装JDK 8。 
+     本文主要讲述如何安装JDK 8。 
    &amp;lt;/blockquote&amp;gt; 
   &amp;lt;/div&amp;gt; 
  &amp;lt;/div&amp;gt; 

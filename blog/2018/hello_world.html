@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute"
+      data-search data-mobile-support>
+
+  <head>
+  <meta charset="utf-8"/>
+  <title>热身：编写一个Hello World项目 - Spring Dev</title>
+  <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="description" content="Spring Dev Site"/>
+  <meta name="author" content="rainboyan.com"/>
+  <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <script src="/jspm_packages/system.js"></script>
+  <script>
+    System.config({baseURL: "/"});
+  </script>
+  <script src="/config.js"></script>
+  <script>
+      System.import('/app/main.js')
+  </script>
+</head>
+  <body>
+  <div class="viewport">
+    <header class="navbar header--navbar desktop-only">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <div class="spring-logo--container">
+            <a class="spring-logo" href="/"><span></span></a>
+          </div>
+          <ul class="nav pull-right">
+            <li class="navbar-link">
+              <a href="/projects/" >Projects</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/blog/" >Blog</a>
+            </li>
+            <li class="navbar-link nav-search js-nav-search">
+              <a>
+                <i class="icon-search navbar-search--icon js-search-input-open"></i>
+                <span class="search-input-close js-search-input-close">
+                  <i class="icon-remove"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-dropdown--container js-search-dropdown">
+        <div class="container-fluid">
+          <div class="search-form--container">
+            <form class="form-inline form-search" action="../../search" method="get">
+              <input type="text" class="search-query search-form--form js-search-input" placeholder="Search for documentation, guides, and posts..." name="q" value="" />
+              <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div>
+    <div class="mobile-navigation--wrapper mobile-only">
+      <div class="navigation-drawer--container">
+        <div class="mobile-search--container">
+          <form class="form-inline form-search" action="../../search" method="get">
+            <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            <input type="text" class="search-query search-form--form js-search-input" placeholder="Search..." name="q" value="" />
+          </form>
+        </div>
+        <div class="navigation-item-list">
+          <div class="navbar-link">
+            <a href="/">
+              Home
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/projects/">
+              Projects
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/books/">
+              Books
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/blog/">
+              Blog
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <div class="nav-icon js-open-nav-drawer">
+          <i class="icon-reorder"></i>
+        </div>
+        <div class="header-center-icon">
+          <a href="../../">
+            <div class="icon icon-spring-logo-mobile"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid" layout:fragment="top-content"></div>
+    <div layout:fragment="full-width--layout"></div>
+    <main layout:fragment="content" class="body--container container-fluid">
+      <div class="main-body--wrapper">
+        <div class="row-fluid blog--wrapper">
+          <article class="span8 mobile-left-pane" id="content">
+            <header class="desktop-only">
+              <div class="blog-category content--title">
+                <div>Engineering</div>
+              </div>
+              <div class="blog-category active content--title">
+                <div>Article</div>
+              </div>
+              <div class="blog-category content--title">
+                <div>News and Events</div>
+              </div>
+            </header>
+            <div class="blog--container">
+              <header>
+                <h1 class="blog--title">热身：编写一个Hello World项目</h1>
+                <div class="meta-data--container">
+                  <div class="meta-data--item desktop-only">
+                    <div class="meta-data--icon icon blog-icon releases"></div>
+                    <span>
+                      <a class="category" href="../../tags/article.html">article</a>&nbsp;
+                    </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="https://gravatar.com/avatar/05a651471a510a339e1375e6f989ab87?s=20&amp;d=mm">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon calendar"></div>
+                      <time class="date" pubdate="" datetime=''>05 六月 2018</time>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon comments"></div>
+                      <a class="comments" href="../../blog/2018/hello_world.html#gitalk-container">评论
+                      </a>
+                    </div>
+                </div>
+              </header>
+              <div class="blog--post"><div id="toc" class="toc"> 
+ <div id="toctitle">
+  目录
+ </div> 
+ <ul class="sectlevel1"> 
+  <li><a href="#创建一个新工程">创建一个新工程</a></li> 
+  <li><a href="#导入刚才创建的工程">导入刚才创建的工程</a></li> 
+  <li><a href="#代码一览">代码一览</a></li> 
+  <li><a href="#启动工程">启动工程</a></li> 
+  <li><a href="#开始编写代码了">开始编写代码了</a></li> 
+  <li><a href="#小结">小结</a></li> 
+ </ul> 
+</div> 
+<div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="quoteblock abstract"> 
+   <div class="title">
+    概要
+   </div> 
+   <blockquote>
+     本文介绍如何快速创建一个Spring Boot Web应用，然后编写一个示例页面并运行它。 
+   </blockquote> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="创建一个新工程">创建一个新工程</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>在经过前面几个章节的准备，我们已经搭建好了本地开发环境，是时候开始热身准备创建一个Spring应用了。接下来我们要通过一步一步的介绍如何从创建空白工程，然后简单写一个<code>Hello World</code>应用，是的，它非常简单，但是足够可以说明我们已经开始上路了，这是万里长征的第一步。</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    使用Spring CLI 创建一个新工程
+   </div> 
+   <div class="content"> 
+    <pre>$ mkdir hello-world
+$ cd hello-world
+$ spring init --name hello-world --artifactId hello-world --groupId com.rainboyan.securitybook --language java --boot-version 1.5.13.RELEASE --type maven-project --dependencies web,thymeleaf,devtools --extract</pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="导入刚才创建的工程">导入刚才创建的工程</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>打开STS，点击菜单<span class="menuseq"><b class="menu">File</b>&nbsp;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Import</b></span>，选择导入向导Maven下的<code>Existing Maven Projects</code>，在下一步中选择刚刚创建的工程目录，确定后导入到STS中。</p> 
+  </div> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="http://springdev.io/images/import_existing_maven_project_01.png" alt="import existing maven project 01"> 
+   </div> 
+   <div class="title">
+    图表 1. 第一步 选择Import Existing Maven Projects
+   </div> 
+  </div> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="http://springdev.io/images/import_existing_maven_project_02.png" alt="import existing maven project 02"> 
+   </div> 
+   <div class="title">
+    图表 2. 第二步 打开创建的工程所在目录
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>成功导入项目后，可以看到项目的界面：</p> 
+  </div> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="http://springdev.io/images/sts_workspace.png" alt="sts workspace"> 
+   </div> 
+   <div class="title">
+    图表 3. 导入后的STS界面
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="代码一览">代码一览</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>此时创建的新工程hello-world目录结构如下:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre>├── mvnw
+├── mvnw.cmd
+├── pom.xml
+└── src
+    ├── main
+    │&nbsp;&nbsp; ├── java
+    │&nbsp;&nbsp; │&nbsp;&nbsp; └── com
+    │&nbsp;&nbsp; │&nbsp;&nbsp;     └── rainboyan
+    │&nbsp;&nbsp; │&nbsp;&nbsp;         └── securitybook
+    │&nbsp;&nbsp; │&nbsp;&nbsp;             └── helloworld
+    │&nbsp;&nbsp; │&nbsp;&nbsp;                 └── HelloWorldApplication.java
+    │&nbsp;&nbsp; └── resources
+    │&nbsp;&nbsp;     ├── application.properties
+    │&nbsp;&nbsp;     ├── static
+    │&nbsp;&nbsp;     └── templates
+    └── test
+        └── java
+            └── com
+                └── rainboyan
+                    └── securitybook
+                        └── helloworld
+                            └── HelloWorldApplicationTests.java</pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>在工程根目录打开<code>pom.xml</code>，其内容如下：</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    pom.xml
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+	&lt;groupId&gt;com.rainboyan.securitybook&lt;/groupId&gt;
+	&lt;artifactId&gt;hello-world&lt;/artifactId&gt;
+	&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+	&lt;packaging&gt;jar&lt;/packaging&gt;
+
+	&lt;name&gt;hello-world&lt;/name&gt;
+	&lt;description&gt;Demo project for Spring Boot&lt;/description&gt;
+
+	&lt;parent&gt;
+		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+		&lt;version&gt;1.5.13.RELEASE&lt;/version&gt;
+		&lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+	&lt;/parent&gt;
+
+	&lt;properties&gt;
+		&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+		&lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
+		&lt;java.version&gt;1.8&lt;/java.version&gt;
+	&lt;/properties&gt;
+
+	&lt;dependencies&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+			&lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
+		&lt;/dependency&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+			&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+		&lt;/dependency&gt;
+
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+			&lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+			&lt;scope&gt;runtime&lt;/scope&gt;
+		&lt;/dependency&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+			&lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+			&lt;scope&gt;test&lt;/scope&gt;
+		&lt;/dependency&gt;
+	&lt;/dependencies&gt;
+
+	&lt;build&gt;
+		&lt;plugins&gt;
+			&lt;plugin&gt;
+				&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+				&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+			&lt;/plugin&gt;
+		&lt;/plugins&gt;
+	&lt;/build&gt;
+
+
+&lt;/project&gt;</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>在Package Explorer中打开应用主程序文件：<code>HelloWorldApplication.java</code>，可以看到这个文件代码非常简单。</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    src/main/java/com/rainboyan/scuritybook/helloworld/HelloWorldApplication.java
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package com.rainboyan.securitybook.helloworld;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class HelloWorldApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(HelloWorldApplication.class, args);
+	}
+}</code></pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="启动工程">启动工程</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>截止目前，我们还没有写任何代码，但是Spring Boot已经生成的代码我们可以先启动下看看效果。首先选中刚才的工程，然后打开菜单<span class="menuseq"><b class="menu">Run</b>&nbsp;<i class="fa fa-angle-right caret"></i> <b class="submenu">Run as</b>&nbsp;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Spring Boot App</b></span>，应用就开始启动了，可以在控制台看到启动应用的日志。</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre>19:24:05.659 [main] DEBUG org.springframework.boot.devtools.settings.DevToolsSettings - Included patterns for restart : []
+19:24:05.661 [main] DEBUG org.springframework.boot.devtools.settings.DevToolsSettings - Excluded patterns for restart : [/spring-boot-starter/target/classes/, /spring-boot-autoconfigure/target/classes/, /spring-boot-starter-[\w-]+/, /spring-boot/target/classes/, /spring-boot-actuator/target/classes/, /spring-boot-devtools/target/classes/]
+19:24:05.661 [main] DEBUG org.springframework.boot.devtools.restart.ChangeableUrls - Matching URLs for reloading : [file:/Users/rain/Development/alpha/books/spring-security-book/source/hello-world/target/classes/]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::       (v1.5.13.RELEASE)
+
+2018-06-05 19:24:05.930  INFO 86432 --- [  restartedMain] c.r.s.helloworld.HelloWorldApplication   : Starting HelloWorldApplication on Michaels-MBP.lan with PID 86432 (/Users/rain/Development/alpha/books/spring-security-book/source/hello-world/target/classes started by rain in /Users/rain/Development/alpha/books/spring-security-book/source/hello-world)
+2018-06-05 19:24:05.931  INFO 86432 --- [  restartedMain] c.r.s.helloworld.HelloWorldApplication   : No active profile set, falling back to default profiles: default
+2018-06-05 19:24:06.133  INFO 86432 --- [  restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@574f5267: startup date [Fri Jun 22 19:24:06 CST 2018]; root of context hierarchy
+2018-06-05 19:24:07.282  INFO 86432 --- [  restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-06-05 19:24:07.311  INFO 86432 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 19:24:07.311  INFO 86432 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 19:24:07.402  INFO 86432 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-05 19:24:07.402  INFO 86432 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1273 ms
+2018-06-05 19:24:07.502  INFO 86432 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-06-05 19:24:07.505  INFO 86432 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-06-05 19:24:07.505  INFO 86432 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-06-05 19:24:07.506  INFO 86432 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-06-05 19:24:07.506  INFO 86432 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-06-05 19:24:07.738  INFO 86432 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@574f5267: startup date [Fri Jun 22 19:24:06 CST 2018]; root of context hierarchy
+2018-06-05 19:24:07.792  INFO 86432 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt; org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-05 19:24:07.792  INFO 86432 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-05 19:24:07.804  INFO 86432 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2018-06-05 19:24:07.817  INFO 86432 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-05 19:24:07.817  INFO 86432 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-05 19:24:07.851  INFO 86432 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-05 19:24:08.190  INFO 86432 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-06-05 19:24:08.229  INFO 86432 --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-06-05 19:24:08.280  INFO 86432 --- [  restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-06-05 19:24:08.285  INFO 86432 --- [  restartedMain] c.r.s.helloworld.HelloWorldApplication   : Started HelloWorldApplication in 2.612 seconds (JVM running for 3.592)</pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>除了在STS中启动应用外，还可以在命令行控制台中通过Maven命令来启动，</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre>$ mvn spring-boot:run</pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>待启动完成后，打开浏览器，输入地址：<a href="http://localhost:8080/" class="bare">http://localhost:8080/</a>，将会看到下面的空白错误页面：</p> 
+  </div> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="http://springdev.io/images/whitelabel_error_page.png" alt="whitelabel error page"> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>不用奇怪，因为到目前为止，我们并没有开始创建任何页面。</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="开始编写代码了">开始编写代码了</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>接下来我们开始编写欢迎页面。在<code>src/main/resources/templates</code>目录中新增一个index.html，内容如下：</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    src/main/resources/templates/index.html
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-html" data-lang="html">&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"&gt;
+    &lt;head&gt;
+        &lt;title&gt;Spring Security Book&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello, World!&lt;/h1&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>编写<code>MvcConfig.java</code>类，设置首页视图。</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    src/main/java/com/rainboyan/securitybook/helloworld/MvcConfig.java
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package com.rainboyan.securitybook.helloworld;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+@Configuration
+public class MvcConfig extends WebMvcConfigurerAdapter {
+
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("index");
+    }
+
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>保存代码，再次启动后会看到下图：</p> 
+  </div> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="http://springdev.io/images/hello_world_page.png" alt="hello world page"> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="小结">小结</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>真棒，恭喜你，现在已经可以通过命令行快速创建一个Spring Boot应用，然后编写简单代码并成功运行它了。</p> 
+  </div> 
+ </div> 
+</div></div>
+              <ul id="direction" class="pagination blog-pagination pager">
+              <li class="previous"><a  href="../../blog/2018/sts.html"> ←安装 STS</a></li>
+              
+              </ul>
+            </div>
+            <section id="gitalk-container"></section>
+          </article>
+          <aside class="span4 mobile-right-pane">
+      <div>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category active">
+            <div class="icon blog-icon all-posts"></div>
+            <a href="/blog/">全部内容</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon engineering"></div>
+            <a href="/tags/article.html">书籍文章</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon releases"></div>
+            <a href="/tags/release.html">版本发布</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news-and-events"></div>
+            <a href="/tags/news.html">新闻资讯</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="navbar">
+              <div class="container">
+                <ul class="nav">
+                  <li><a href="../../team.html">Team</a></li>
+                  <li><a href="../../services.html">Services</a></li>
+                  <li><a href="../../tools.html">Tools</a></li>
+                </ul>
+              </div>
+            </div>
+            &copy; <span>2018</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
+            <a href="../../terms-of-use.html">Terms of Use</a>,
+            <a href="../../privacy-policy.html">Privacy</a>,
+            <a href="../../trademarks.html">Trademark Guidelines</a> and
+            <span id="teconsent"></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="scrim"></div>
+  </div>
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: 'e0ad4e23b37963590faf',
+        clientSecret: '1bbf06b574f0e6623211f8cc029f874db67c7dfe',
+        repo: 'springdev-issues',
+        owner: 'springdev-org',
+        admin: ['rainboyan'],
+        id: 'Comments',
+        distractionFreeMode: true
+      });
+      gitalk.render('gitalk-container');
+  </script>
+  </body>
+</html>
