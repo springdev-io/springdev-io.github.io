@@ -1,12 +1,20 @@
 a.spring-logo {
-  background: url("../img/spring-logo.png") 0px 0px no-repeat;
+  background: url("../img/springdev-logo.png") 0px 0px no-repeat;
 }
 a.spring-logo span {
-  background: url("../img/spring-logo.png") 0px -48px no-repeat;
+  background: url("../img/springdev-logo.png") 0px -48px no-repeat;
 }
 .icon.icon-spring-logo-mobile {
+  background: url("../img/springdev-mobile-logo.png") 0px 0px no-repeat;
+  display: inline-block !important;
   width: 242px;
-  background-position: 500px 0px;
+  height: 60px;
+  margin-top: -13px;
+  transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  -ms-transform: scale(0.5);
 }
 .menuseq,.menuref{color:#000}
 .menuseq b:not(.caret),.menuref{font-weight:inherit}
