@@ -15,6 +15,7 @@ System.config({
             "feature/filterableList/getUrlFilter.js",
             "feature/filterableList/main.js",
             "feature/formWidgets/main.js",
+            "feature/gotoTop/main.js",
             "feature/hide-show-guide/main.js",
             "feature/hide-show-guide/storage.js",
             "feature/homepage/main.js",
