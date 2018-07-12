@@ -6,10 +6,528 @@
     <atom:link href="https://springdev.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Spring Books</description>
     <language>en-gb</language>
-    <pubDate>星期四, 12 七月 2018 09:32:44 +0800</pubDate>
-    <lastBuildDate>星期四, 12 七月 2018 09:32:44 +0800</lastBuildDate>
+    <pubDate>星期四, 12 七月 2018 13:21:29 +0800</pubDate>
+    <lastBuildDate>星期四, 12 七月 2018 13:21:29 +0800</lastBuildDate>
 
     <item>
+      <title>HTTP Basic认证</title>
+      <link>https://springdev.io/blog/2018/06/http_basic_auth.html</link>
+      <pubDate>星期四, 7 六月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/06/http_basic_auth.html</guid>
+      <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
+ &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
+  目录
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;ul class=&amp;quot;sectlevel1&amp;quot;&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#创建新工程&amp;quot;&amp;gt;1. 创建新工程&amp;lt;/a&amp;gt; 
+   &amp;lt;ul class=&amp;quot;sectlevel2&amp;quot;&amp;gt; 
+    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#使用spring_cli创建一个新工程&amp;quot;&amp;gt;1.1. 使用Spring CLI创建一个新工程&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#使用sts的新建工程向导来创建一个新工程&amp;quot;&amp;gt;1.2. 使用STS的新建工程向导来创建一个新工程&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+   &amp;lt;/ul&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#编写欢迎页面&amp;quot;&amp;gt;2. 编写欢迎页面&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#添加maven依赖&amp;quot;&amp;gt;3. 添加Maven依赖&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#运行应用&amp;quot;&amp;gt;4. 运行应用&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#登录认证&amp;quot;&amp;gt;5. 登录认证&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#禁用basic认证&amp;quot;&amp;gt;6. 禁用Basic认证&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#修改默认用户名和密码&amp;quot;&amp;gt;7. 修改默认用户名和密码&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#设置安全拦截路径&amp;quot;&amp;gt;8. 设置安全拦截路径&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#编写测试代码&amp;quot;&amp;gt;9. 编写测试代码&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#小结&amp;quot;&amp;gt;10. 小结&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    概要
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;blockquote&amp;gt;
+     本文通过一个示例来讲解如何启用HTTP Basic认证来保护Web应用。 
+   &amp;lt;/blockquote&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;创建新工程&amp;quot;&amp;gt;1. 创建新工程&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;使用spring_cli创建一个新工程&amp;quot;&amp;gt;1.1. 使用Spring CLI创建一个新工程&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+     &amp;lt;pre&amp;gt;$ mkdir basic-auth
+$ spring init --name basic-auth --artifactId basic-auth --groupId com.rainboyan.securitybook --language java --boot-version 1.5.13.RELEASE --type maven-project --dependencies web,thymeleaf,devtools --extract&amp;lt;/pre&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;使用sts的新建工程向导来创建一个新工程&amp;quot;&amp;gt;1.2. 使用STS的新建工程向导来创建一个新工程&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;使用 kbd::[⌘+N]快捷键打开新建工程向导，如下图：&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+     &amp;lt;img src=&amp;quot;https://springdev.io/images/new_spring_boot_project_01.png&amp;quot; alt=&amp;quot;new spring boot project 01&amp;quot;&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+     图表 1. 第一步 选择Spring Boot Starter
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+     &amp;lt;img src=&amp;quot;https://springdev.io/images/new_spring_boot_project_02.png&amp;quot; alt=&amp;quot;new spring boot project 02&amp;quot;&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+     图表 2. 第二步 填入项目的名称、包名等
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+     &amp;lt;img src=&amp;quot;https://springdev.io/images/new_spring_boot_project_03.png&amp;quot; alt=&amp;quot;new spring boot project 03&amp;quot;&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+     图表 3. 第三步 使用Spring Boot 1.5.13版本，并选择Web、Thymeleaf、DevTools
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+     &amp;lt;img src=&amp;quot;https://springdev.io/images/new_spring_boot_project_04.png&amp;quot; alt=&amp;quot;new spring boot project 04&amp;quot;&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+     图表 4. 第四步 最后确定
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;sect3&amp;quot;&amp;gt; 
+    &amp;lt;h4 id=&amp;quot;导入刚才创建的工程&amp;quot;&amp;gt;1.2.1. 导入刚才创建的工程&amp;lt;/h4&amp;gt; 
+    &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+     &amp;lt;p&amp;gt;打开STS，点击菜单&amp;lt;span class=&amp;quot;menuseq&amp;quot;&amp;gt;&amp;lt;b class=&amp;quot;menu&amp;quot;&amp;gt;File&amp;lt;/b&amp;gt;&amp;amp;nbsp;&amp;lt;i class=&amp;quot;fa fa-angle-right caret&amp;quot;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;b class=&amp;quot;menuitem&amp;quot;&amp;gt;Import&amp;lt;/b&amp;gt;&amp;lt;/span&amp;gt;，选择导入向导Maven下的&amp;lt;code&amp;gt;Existing Maven Projects&amp;lt;/code&amp;gt;，在下一步中选择刚刚创建的工程目录，确定后导入到STS中。&amp;lt;/p&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+     &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+      &amp;lt;img src=&amp;quot;https://springdev.io/images/import_existing_maven_project_01.png&amp;quot; alt=&amp;quot;import existing maven project 01&amp;quot;&amp;gt; 
+     &amp;lt;/div&amp;gt; 
+     &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+      图表 5. 第一步 选择Import Existing Maven Projects
+     &amp;lt;/div&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+     &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+      &amp;lt;img src=&amp;quot;https://springdev.io/images/import_existing_maven_project_02.png&amp;quot; alt=&amp;quot;import existing maven project 02&amp;quot;&amp;gt; 
+     &amp;lt;/div&amp;gt; 
+     &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+      图表 6. 第二步 打开创建的工程所在目录
+     &amp;lt;/div&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+     &amp;lt;p&amp;gt;成功导入项目后，可以看到项目的界面：&amp;lt;/p&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+     &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+      &amp;lt;img src=&amp;quot;https://springdev.io/images/basic_auth_project_import.png&amp;quot; alt=&amp;quot;basic auth project import&amp;quot;&amp;gt; 
+     &amp;lt;/div&amp;gt; 
+     &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+      图表 7. 导入后的STS界面
+     &amp;lt;/div&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+     &amp;lt;p&amp;gt;此时创建的新工程basic-auth目录结构如下:&amp;lt;/p&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+     &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+      &amp;lt;pre&amp;gt;├── mvnw
+├── mvnw.cmd
+├── pom.xml
+└── src
+    ├── main
+    │&amp;amp;nbsp;&amp;amp;nbsp; ├── java
+    │&amp;amp;nbsp;&amp;amp;nbsp; │&amp;amp;nbsp;&amp;amp;nbsp; └── com
+    │&amp;amp;nbsp;&amp;amp;nbsp; │&amp;amp;nbsp;&amp;amp;nbsp;     └── rainboyan
+    │&amp;amp;nbsp;&amp;amp;nbsp; │&amp;amp;nbsp;&amp;amp;nbsp;         └── securitybook
+    │&amp;amp;nbsp;&amp;amp;nbsp; │&amp;amp;nbsp;&amp;amp;nbsp;             └── basicauth
+    │&amp;amp;nbsp;&amp;amp;nbsp; │&amp;amp;nbsp;&amp;amp;nbsp;                 └── BasicAuthApplication.java
+    │&amp;amp;nbsp;&amp;amp;nbsp; └── resources
+    │&amp;amp;nbsp;&amp;amp;nbsp;     ├── application.properties
+    │&amp;amp;nbsp;&amp;amp;nbsp;     ├── static
+    │&amp;amp;nbsp;&amp;amp;nbsp;     └── templates
+    └── test
+        └── java
+            └── com
+                └── rainboyan
+                    └── securitybook
+                        └── basicauth
+                            └── BasicAuthApplicationTests.java&amp;lt;/pre&amp;gt; 
+     &amp;lt;/div&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+     &amp;lt;p&amp;gt;在工程根目录打开&amp;lt;code&amp;gt;pom.xml&amp;lt;/code&amp;gt;，其内容如下：&amp;lt;/p&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+     &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+      pom.xml
+     &amp;lt;/div&amp;gt; 
+     &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+      &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-xml&amp;quot; data-lang=&amp;quot;xml&amp;quot;&amp;gt;&amp;amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;amp;gt;
+&amp;amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;
+	xsi:schemaLocation=&amp;quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;quot;&amp;amp;gt;
+	&amp;amp;lt;modelVersion&amp;amp;gt;4.0.0&amp;amp;lt;/modelVersion&amp;amp;gt;
+
+	&amp;amp;lt;groupId&amp;amp;gt;com.rainboyan.securitybook&amp;amp;lt;/groupId&amp;amp;gt;
+	&amp;amp;lt;artifactId&amp;amp;gt;basic-auth&amp;amp;lt;/artifactId&amp;amp;gt;
+	&amp;amp;lt;version&amp;amp;gt;0.0.1-SNAPSHOT&amp;amp;lt;/version&amp;amp;gt;
+	&amp;amp;lt;packaging&amp;amp;gt;jar&amp;amp;lt;/packaging&amp;amp;gt;
+
+	&amp;amp;lt;name&amp;amp;gt;basic-auth&amp;amp;lt;/name&amp;amp;gt;
+	&amp;amp;lt;description&amp;amp;gt;Demo project for Spring Boot&amp;amp;lt;/description&amp;amp;gt;
+
+	&amp;amp;lt;parent&amp;amp;gt;
+		&amp;amp;lt;groupId&amp;amp;gt;org.springframework.boot&amp;amp;lt;/groupId&amp;amp;gt;
+		&amp;amp;lt;artifactId&amp;amp;gt;spring-boot-starter-parent&amp;amp;lt;/artifactId&amp;amp;gt;
+		&amp;amp;lt;version&amp;amp;gt;1.5.13.RELEASE&amp;amp;lt;/version&amp;amp;gt;
+		&amp;amp;lt;relativePath/&amp;amp;gt; &amp;amp;lt;!-- lookup parent from repository --&amp;amp;gt;
+	&amp;amp;lt;/parent&amp;amp;gt;
+
+	&amp;amp;lt;properties&amp;amp;gt;
+		&amp;amp;lt;project.build.sourceEncoding&amp;amp;gt;UTF-8&amp;amp;lt;/project.build.sourceEncoding&amp;amp;gt;
+		&amp;amp;lt;project.reporting.outputEncoding&amp;amp;gt;UTF-8&amp;amp;lt;/project.reporting.outputEncoding&amp;amp;gt;
+		&amp;amp;lt;java.version&amp;amp;gt;1.8&amp;amp;lt;/java.version&amp;amp;gt;
+	&amp;amp;lt;/properties&amp;amp;gt;
+
+	&amp;amp;lt;dependencies&amp;amp;gt;
+		&amp;amp;lt;dependency&amp;amp;gt;
+			&amp;amp;lt;groupId&amp;amp;gt;org.springframework.boot&amp;amp;lt;/groupId&amp;amp;gt;
+			&amp;amp;lt;artifactId&amp;amp;gt;spring-boot-starter-thymeleaf&amp;amp;lt;/artifactId&amp;amp;gt;
+		&amp;amp;lt;/dependency&amp;amp;gt;
+		&amp;amp;lt;dependency&amp;amp;gt;
+			&amp;amp;lt;groupId&amp;amp;gt;org.springframework.boot&amp;amp;lt;/groupId&amp;amp;gt;
+			&amp;amp;lt;artifactId&amp;amp;gt;spring-boot-starter-web&amp;amp;lt;/artifactId&amp;amp;gt;
+		&amp;amp;lt;/dependency&amp;amp;gt;
+
+		&amp;amp;lt;dependency&amp;amp;gt;
+			&amp;amp;lt;groupId&amp;amp;gt;org.springframework.boot&amp;amp;lt;/groupId&amp;amp;gt;
+			&amp;amp;lt;artifactId&amp;amp;gt;spring-boot-devtools&amp;amp;lt;/artifactId&amp;amp;gt;
+			&amp;amp;lt;scope&amp;amp;gt;runtime&amp;amp;lt;/scope&amp;amp;gt;
+		&amp;amp;lt;/dependency&amp;amp;gt;
+		&amp;amp;lt;dependency&amp;amp;gt;
+			&amp;amp;lt;groupId&amp;amp;gt;org.springframework.boot&amp;amp;lt;/groupId&amp;amp;gt;
+			&amp;amp;lt;artifactId&amp;amp;gt;spring-boot-starter-test&amp;amp;lt;/artifactId&amp;amp;gt;
+			&amp;amp;lt;scope&amp;amp;gt;test&amp;amp;lt;/scope&amp;amp;gt;
+		&amp;amp;lt;/dependency&amp;amp;gt;
+	&amp;amp;lt;/dependencies&amp;amp;gt;
+
+	&amp;amp;lt;build&amp;amp;gt;
+		&amp;amp;lt;plugins&amp;amp;gt;
+			&amp;amp;lt;plugin&amp;amp;gt;
+				&amp;amp;lt;groupId&amp;amp;gt;org.springframework.boot&amp;amp;lt;/groupId&amp;amp;gt;
+				&amp;amp;lt;artifactId&amp;amp;gt;spring-boot-maven-plugin&amp;amp;lt;/artifactId&amp;amp;gt;
+			&amp;amp;lt;/plugin&amp;amp;gt;
+		&amp;amp;lt;/plugins&amp;amp;gt;
+	&amp;amp;lt;/build&amp;amp;gt;
+
+
+&amp;amp;lt;/project&amp;amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+     &amp;lt;/div&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+     &amp;lt;p&amp;gt;在Package Explorer中打开应用主程序文件：BasicAuthApplication.java，可以看到这个文件代码非常简单。&amp;lt;/p&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+     &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+      src/main/java/com/rainboyan/scuritybook/basicauth/BasicAuthApplication.java
+     &amp;lt;/div&amp;gt; 
+     &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+      &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;package com.rainboyan.securitybook.basicauth;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class BasicAuthApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(BasicAuthApplication.class, args);
+	}
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+     &amp;lt;/div&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;编写欢迎页面&amp;quot;&amp;gt;2. 编写欢迎页面&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;接下来我们开始编写欢迎页面。在src/main/resources/templates中新增一个index.html，内容如下：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    src/main/resources/templates/index.html
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-html&amp;quot; data-lang=&amp;quot;html&amp;quot;&amp;gt;&amp;amp;lt;!DOCTYPE html&amp;amp;gt;
+&amp;amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot; xmlns:th=&amp;quot;http://www.thymeleaf.org&amp;quot;&amp;amp;gt;
+    &amp;amp;lt;head&amp;amp;gt;
+        &amp;amp;lt;title&amp;amp;gt;Spring Security Book | Basic Authentication Example&amp;amp;lt;/title&amp;amp;gt;
+    &amp;amp;lt;/head&amp;amp;gt;
+    &amp;amp;lt;body&amp;amp;gt;
+        &amp;amp;lt;h1&amp;amp;gt;Welcome!&amp;amp;lt;/h1&amp;amp;gt;
+
+    &amp;amp;lt;/body&amp;amp;gt;
+&amp;amp;lt;/html&amp;amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;接下来编写&amp;lt;code&amp;gt;MvcConfig.java&amp;lt;/code&amp;gt;类，设置首页视图。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    src/main/java/com/rainboyan/securitybook/basicauth/MvcConfig.java
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;package com.rainboyan.securitybook.basicauth;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframewozrk.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+@Configuration
+public class MvcConfig extends WebMvcConfigurerAdapter {
+
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController(&amp;quot;/&amp;quot;).setViewName(&amp;quot;index&amp;quot;);
+    }
+
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;添加maven依赖&amp;quot;&amp;gt;3. 添加Maven依赖&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Spring Boot提供了针对集成Spring Security 的&amp;lt;code&amp;gt;spring-boot-starter-security&amp;lt;/code&amp;gt;，在项目依赖中引入即可。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;具体如下在pom.xml 中增加下列依赖：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    pom.xml
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-xml&amp;quot; data-lang=&amp;quot;xml&amp;quot;&amp;gt;&amp;amp;lt;dependency&amp;amp;gt;
+    &amp;amp;lt;groupId&amp;amp;gt;org.springframework.boot&amp;amp;lt;/groupId&amp;amp;gt;
+    &amp;amp;lt;artifactId&amp;amp;gt;spring-boot-starter-security&amp;amp;lt;/artifactId&amp;amp;gt;
+&amp;amp;lt;/dependency&amp;amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;运行应用&amp;quot;&amp;gt;4. 运行应用&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;通过菜单 &amp;lt;span class=&amp;quot;menuseq&amp;quot;&amp;gt;&amp;lt;b class=&amp;quot;menu&amp;quot;&amp;gt;Run&amp;lt;/b&amp;gt;&amp;amp;nbsp;&amp;lt;i class=&amp;quot;fa fa-angle-right caret&amp;quot;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;b class=&amp;quot;submenu&amp;quot;&amp;gt;Run as&amp;lt;/b&amp;gt;&amp;amp;nbsp;&amp;lt;i class=&amp;quot;fa fa-angle-right caret&amp;quot;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;b class=&amp;quot;menuitem&amp;quot;&amp;gt;Spring Boot App&amp;lt;/b&amp;gt;&amp;lt;/span&amp;gt;，或者使用Maven命令都可以启动。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在启动过程中会出现下面日志：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;...
+2018-06-07 12:34:08.181  INFO 11502 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-07 12:34:08.222  INFO 11502 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-07 12:34:08.608  INFO 11502 --- [  restartedMain] b.a.s.AuthenticationManagerConfiguration :
+
+Using default security password: 9f72d51f-c42c-45bb-a041-b3bbd33b44ab
+
+2018-06-07 12:34:08.654  INFO 11502 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern=&amp;#39;/css/**&amp;#39;], Ant [pattern=&amp;#39;/js/**&amp;#39;], Ant [pattern=&amp;#39;/images/**&amp;#39;], Ant [pattern=&amp;#39;/webjars/**&amp;#39;], Ant [pattern=&amp;#39;/**/favicon.ico&amp;#39;], Ant [pattern=&amp;#39;/error&amp;#39;]]], []
+2018-06-07 12:34:08.711  INFO 11502 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern=&amp;#39;/**&amp;#39;]]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8f04b60, org.springframework.security.web.context.SecurityContextPersistenceFilter@7df59e44, org.springframework.security.web.header.HeaderWriterFilter@75dafe9a, org.springframework.security.web.authentication.logout.LogoutFilter@4feeceaa, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5a756f31, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6a07fe58, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78f4726c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e3beab6, org.springframework.security.web.session.SessionManagementFilter@2d5cdd40, org.springframework.security.web.access.ExceptionTranslationFilter@735da450, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7491c80b]
+
+...&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;登录认证&amp;quot;&amp;gt;5. 登录认证&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;通过启动日志可以发现，Spring Security的DefaultSecurityFilterChain已经起作用了，注意这里Spring Boot自动配置默认为&amp;lt;code&amp;gt;user&amp;lt;/code&amp;gt;用户生成一个随机密码：&amp;lt;code&amp;gt;9f72d51f-c42c-45bb-a041-b3bbd33b44ab&amp;lt;/code&amp;gt;。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;我们打开浏览器，输入地址：&amp;lt;a href=&amp;quot;http://localhost:8080/&amp;quot; class=&amp;quot;bare&amp;quot;&amp;gt;http://localhost:8080/&amp;lt;/a&amp;gt;，会出现弹框要求输入用户名和密码，然后输入Username：user和Passowrd：9f72d51f-c42c-45bb-a041-b3bbd33b44ab，点击 &amp;lt;b class=&amp;quot;button&amp;quot;&amp;gt;Sign In&amp;lt;/b&amp;gt;，最后则会看到熟悉的欢迎界面，这说明认证通过了。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;https://springdev.io/images/basic_auth_login_dialog.png&amp;quot; alt=&amp;quot;basic auth login dialog&amp;quot;&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;禁用basic认证&amp;quot;&amp;gt;6. 禁用Basic认证&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;当Spring Security的依赖加上后，Spring Boot 会默认启用Basic 认证拦截所有浏览器请求，你可以设置为&amp;lt;code class=&amp;quot;red&amp;quot;&amp;gt;false&amp;lt;/code&amp;gt;来禁用。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;security.basic.enabled=false&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;修改默认用户名和密码&amp;quot;&amp;gt;7. 修改默认用户名和密码&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Spring Boot 默认配置了Basic认证相关的参数：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;security.user.name=manager     # 设置用户的用户名
+security.user.password=passwd  # 设置用户的密码，如果没有设置会采用随机数
+security.user.role=USER        # 设置用户的角色&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;admonitionblock note&amp;quot;&amp;gt; 
+   &amp;lt;table&amp;gt; 
+    &amp;lt;tbody&amp;gt;
+     &amp;lt;tr&amp;gt; 
+      &amp;lt;td class=&amp;quot;icon&amp;quot;&amp;gt; &amp;lt;i class=&amp;quot;fa icon-note&amp;quot; title=&amp;quot;Note&amp;quot;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;/td&amp;gt; 
+      &amp;lt;td class=&amp;quot;content&amp;quot;&amp;gt; 除了在配置文件中设置用户信息外，还可以通过编码方式来设置提供用户数据源。 &amp;lt;/td&amp;gt; 
+     &amp;lt;/tr&amp;gt; 
+    &amp;lt;/tbody&amp;gt;
+   &amp;lt;/table&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;设置安全拦截路径&amp;quot;&amp;gt;8. 设置安全拦截路径&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;security.basic.path=/api/*,/admin/*&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;编写测试代码&amp;quot;&amp;gt;9. 编写测试代码&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;添加&amp;lt;code&amp;gt;spring-security-test&amp;lt;/code&amp;gt;依赖：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-xml&amp;quot; data-lang=&amp;quot;xml&amp;quot;&amp;gt;&amp;amp;lt;dependency&amp;amp;gt;
+  &amp;amp;lt;groupId&amp;amp;gt;org.springframework.security&amp;amp;lt;/groupId&amp;amp;gt;
+  &amp;amp;lt;artifactId&amp;amp;gt;spring-security-test&amp;amp;lt;/artifactId&amp;amp;gt;
+  &amp;amp;lt;scope&amp;amp;gt;test&amp;amp;lt;/scope&amp;amp;gt;
+&amp;amp;lt;/dependency&amp;amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;为了测试Basic认证，首先要设置默认密码而不是采用随机密码。 修改&amp;lt;code&amp;gt;application.properties&amp;lt;/code&amp;gt;，添加如下配置:&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;security.user.password=password&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;接着编写测试用例代码：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;package com.rainboyan.securitybook.basicauth;
+
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
+import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
+
+@RunWith(SpringRunner.class)  &amp;lt;i class=&amp;quot;conum&amp;quot; data-value=&amp;quot;1&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;b&amp;gt;(1)&amp;lt;/b&amp;gt;
+@SpringBootTest  &amp;lt;i class=&amp;quot;conum&amp;quot; data-value=&amp;quot;2&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;b&amp;gt;(2)&amp;lt;/b&amp;gt;
+public class BasicAuthApplicationTests {
+
+	@Autowired
+	private WebApplicationContext context;
+
+	private MockMvc mvc;
+
+	@Before
+	public void setup() {  &amp;lt;i class=&amp;quot;conum&amp;quot; data-value=&amp;quot;3&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;b&amp;gt;(3)&amp;lt;/b&amp;gt;
+		mvc = MockMvcBuilders
+				.webAppContextSetup(context)
+				.apply(springSecurity())  &amp;lt;i class=&amp;quot;conum&amp;quot; data-value=&amp;quot;4&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;b&amp;gt;(4)&amp;lt;/b&amp;gt;
+				.build();
+	}
+
+	@Test
+	public void basicAuthWithCustomPassword() throws Exception {
+		mvc.perform(
+				get(&amp;quot;/&amp;quot;).with(httpBasic(&amp;quot;user&amp;quot;, &amp;quot;password&amp;quot;))) &amp;lt;i class=&amp;quot;conum&amp;quot; data-value=&amp;quot;5&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;b&amp;gt;(5)&amp;lt;/b&amp;gt;
+						.andExpect(status().isOk());  &amp;lt;i class=&amp;quot;conum&amp;quot; data-value=&amp;quot;6&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;b&amp;gt;(6)&amp;lt;/b&amp;gt;
+	}
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;colist arabic&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    代码说明如下：
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;table&amp;gt; 
+    &amp;lt;tbody&amp;gt;
+     &amp;lt;tr&amp;gt; 
+      &amp;lt;td&amp;gt;&amp;lt;i class=&amp;quot;conum&amp;quot; data-value=&amp;quot;1&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;b&amp;gt;1&amp;lt;/b&amp;gt;&amp;lt;/td&amp;gt; 
+      &amp;lt;td&amp;gt;SpringRunner是在Spring 4.3版本新增的注解，是SpringJUnit4ClassRunner的别名。SpringJUnit4ClassRunner.class提供了集成JUnit 4.4的能力。&amp;lt;/td&amp;gt; 
+     &amp;lt;/tr&amp;gt; 
+     &amp;lt;tr&amp;gt; 
+      &amp;lt;td&amp;gt;&amp;lt;i class=&amp;quot;conum&amp;quot; data-value=&amp;quot;2&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;b&amp;gt;2&amp;lt;/b&amp;gt;&amp;lt;/td&amp;gt; 
+      &amp;lt;td&amp;gt;Spring Boot提供了@SpringBootTest注解，该注解简化了Spring Boot应用的测试，提供了对应spring-test中@ContextConfiguration的功能，用于创建ApplicationContext。&amp;lt;/td&amp;gt; 
+     &amp;lt;/tr&amp;gt; 
+     &amp;lt;tr&amp;gt; 
+      &amp;lt;td&amp;gt;&amp;lt;i class=&amp;quot;conum&amp;quot; data-value=&amp;quot;3&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;b&amp;gt;3&amp;lt;/b&amp;gt;&amp;lt;/td&amp;gt; 
+      &amp;lt;td&amp;gt;测试准备工作&amp;lt;/td&amp;gt; 
+     &amp;lt;/tr&amp;gt; 
+     &amp;lt;tr&amp;gt; 
+      &amp;lt;td&amp;gt;&amp;lt;i class=&amp;quot;conum&amp;quot; data-value=&amp;quot;4&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;b&amp;gt;4&amp;lt;/b&amp;gt;&amp;lt;/td&amp;gt; 
+      &amp;lt;td&amp;gt;添加Spring Security的一些功能特性&amp;lt;/td&amp;gt; 
+     &amp;lt;/tr&amp;gt; 
+     &amp;lt;tr&amp;gt; 
+      &amp;lt;td&amp;gt;&amp;lt;i class=&amp;quot;conum&amp;quot; data-value=&amp;quot;5&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;b&amp;gt;5&amp;lt;/b&amp;gt;&amp;lt;/td&amp;gt; 
+      &amp;lt;td&amp;gt;设置Basic认证需要的用户名和密码&amp;lt;/td&amp;gt; 
+     &amp;lt;/tr&amp;gt; 
+     &amp;lt;tr&amp;gt; 
+      &amp;lt;td&amp;gt;&amp;lt;i class=&amp;quot;conum&amp;quot; data-value=&amp;quot;6&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;b&amp;gt;6&amp;lt;/b&amp;gt;&amp;lt;/td&amp;gt; 
+      &amp;lt;td&amp;gt;测试验证结果是符合预期，这里是响应状态码为200，表示请求成功&amp;lt;/td&amp;gt; 
+     &amp;lt;/tr&amp;gt; 
+    &amp;lt;/tbody&amp;gt;
+   &amp;lt;/table&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;小结&amp;quot;&amp;gt;10. 小结&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Basic认证由于比较简单，在项目早期可以很快实施，但是由于在每次请求都会输入用户名和密码所以安全性并不高。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
       <title>热身：编写一个Hello World项目</title>
       <link>https://springdev.io/blog/2018/06/hello_world.html</link>
       <pubDate>星期二, 5 六月 2018 00:00:00 +0800</pubDate>
