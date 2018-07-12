@@ -57,3 +57,6 @@ b.conum *{color:inherit!important}
 .blog--container .blog--post .colist>table tr > td {
     background:none;
 }
+.content--title {
+    margin-top: -50px;
+}
