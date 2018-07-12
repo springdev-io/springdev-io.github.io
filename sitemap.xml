@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>http://springdev.io/projects/index.html</loc>
+        <loc>https://springdev.io/projects/index.html</loc>
         <lastmod>2018-06-06</lastmod>
     </url><url>
-        <loc>http://springdev.io/index.html</loc>
+        <loc>https://springdev.io/index.html</loc>
         <lastmod>2018-06-06</lastmod>
     </url><url>
-        <loc>http://springdev.io/blog/2018/06/hello_world.html</loc>
+        <loc>https://springdev.io/404.html</loc>
+        <lastmod>2018-06-06</lastmod>
+    </url><url>
+        <loc>https://springdev.io/blog/2018/06/hello_world.html</loc>
         <lastmod>2018-06-05</lastmod>
     </url><url>
-        <loc>http://springdev.io/blog/2018/06/sts.html</loc>
+        <loc>https://springdev.io/blog/2018/06/sts.html</loc>
         <lastmod>2018-06-04</lastmod>
     </url><url>
-        <loc>http://springdev.io/blog/2018/06/springboot.html</loc>
+        <loc>https://springdev.io/blog/2018/06/springboot.html</loc>
         <lastmod>2018-06-03</lastmod>
     </url><url>
-        <loc>http://springdev.io/blog/2018/06/maven.html</loc>
+        <loc>https://springdev.io/blog/2018/06/maven.html</loc>
         <lastmod>2018-06-02</lastmod>
     </url><url>
-        <loc>http://springdev.io/blog/2018/06/jdk.html</loc>
+        <loc>https://springdev.io/blog/2018/06/jdk.html</loc>
         <lastmod>2018-06-01</lastmod>
     </url>
 </urlset>
