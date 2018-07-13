@@ -6,10 +6,71 @@
     <atom:link href="https://springdev.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Spring Books</description>
     <language>en-gb</language>
-    <pubDate>星期四, 12 七月 2018 18:49:28 +0800</pubDate>
-    <lastBuildDate>星期四, 12 七月 2018 18:49:28 +0800</lastBuildDate>
+    <pubDate>星期五, 13 七月 2018 18:51:04 +0800</pubDate>
+    <lastBuildDate>星期五, 13 七月 2018 18:51:04 +0800</lastBuildDate>
 
     <item>
+      <title>Spring一周回顾（2018年7月13日）</title>
+      <link>https://springdev.io/blog/2018/07/this_week_in_spring_july_13th_2018.html</link>
+      <pubDate>星期五, 13 七月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/07/this_week_in_spring_july_13th_2018.html</guid>
+      <description>&amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+  概要
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;blockquote&amp;gt;
+   本文带你回顾最近一周有关Spring社区的一些有趣的事情。 
+ &amp;lt;/blockquote&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/joshlong&amp;quot;&amp;gt;Spring龙大师&amp;lt;/a&amp;gt;每周一期必写的&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/10/this-week-in-spring-july-10th-2018&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;This Week in Spring&amp;lt;/a&amp;gt;，相信国内外的Spring开发者都一定是必读的文章，而我就是其中一个忠实的粉丝。这篇文章不是原文对照翻译，而是摘取一部分再加上国内的热门文章，同时有我的理解和分析，毕竟这是一篇针对中国开发者而写的文章。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;最近一段时间在写一本关于&amp;lt;a href=&amp;quot;https://spring.io/projects/spring-security&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Security&amp;lt;/a&amp;gt;的新书，想着写的过程中先放一部分内容发到博客上，或许能对一部分碰巧遇到同类问题的开发者有所帮助，那也是好的。所以就想到采用&amp;lt;a href=&amp;quot;https://github.com/spring-io/sagan&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Sagan&amp;lt;/a&amp;gt;&amp;lt;sup class=&amp;quot;footnote&amp;quot;&amp;gt;[&amp;lt;a id=&amp;quot;_footnoteref_1&amp;quot; class=&amp;quot;footnote&amp;quot; href=&amp;quot;#_footnote_1&amp;quot; title=&amp;quot;View footnote.&amp;quot;&amp;gt;1&amp;lt;/a&amp;gt;]&amp;lt;/sup&amp;gt;的主题来搭建博客，Sagan的整个代码是采用&amp;lt;a href=&amp;quot;https://spring.io/projects/spring-boot&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Boot&amp;lt;/a&amp;gt;来开发，对我写个技术文章来讲究显得太复杂了，所以最后采用&amp;lt;a href=&amp;quot;https://jbake.org&amp;quot;&amp;gt;JBake&amp;lt;/a&amp;gt;&amp;lt;sup class=&amp;quot;footnote&amp;quot;&amp;gt;[&amp;lt;a id=&amp;quot;_footnoteref_2&amp;quot; class=&amp;quot;footnote&amp;quot; href=&amp;quot;#_footnote_2&amp;quot; title=&amp;quot;View footnote.&amp;quot;&amp;gt;2&amp;lt;/a&amp;gt;]&amp;lt;/sup&amp;gt;来构建博客，文章采用Markdown或者Asciidoc来编写，最后发布在&amp;lt;a href=&amp;quot;https://pages.github.com/&amp;quot;&amp;gt;Github Pages&amp;lt;/a&amp;gt;上，这样很快就搞定，最重要是能满足我对写作良好体验的要求。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;好了，言归正传。一起来看看，本周Spring官方及开发社区发生了哪些新鲜事。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+  首先来看看Spring官方团队给我们带来了
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;ul&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/05/spring-tool-suite-3-9-5-released&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Tool Suite 3.9.5版本发布了&amp;lt;/a&amp;gt;，升级到&amp;lt;a href=&amp;quot;https://www.eclipse.org/photon/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Eclipse Photon&amp;lt;/a&amp;gt;，这样就可以支持JDK 9/10，另外其他一些性能优化和问题修复。有关Eclipse Photon的新特性，请到&amp;lt;a href=&amp;quot;https://www.eclipse.org/photon/noteworthy/index.php&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;这里&amp;lt;/a&amp;gt;会有更详细的介绍。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Cloud Data Flow &amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/05/spring-cloud-data-flow-1-6-m1-and-1-5-2-released&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;1.5.2发布&amp;lt;/a&amp;gt;，同时 &amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/12/spring-cloud-data-flow-1-6-m2-released&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;1.6 M2 也发布&amp;lt;/a&amp;gt;，1.6的亮点是任务调度原生集成到PCF。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/12/spring-cloud-stream-elmhurst-sr1-released&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Cloud Stream Elmhurst.SR1 发布了&amp;lt;/a&amp;gt;，这是一个维护性版本，Spring Boot默认使用2.0.3.RELEASE。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Social的负责人&amp;lt;a href=&amp;quot;https://spring.io/team/cwalls&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Craig Walls&amp;lt;/a&amp;gt;在上周二正式决定&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/03/spring-social-end-of-life-announcement&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Social进入EOL&amp;lt;/a&amp;gt;，这包括其中的一些针对特定社交平台的API绑定实现项目，比如&amp;lt;code&amp;gt;Facebook&amp;lt;/code&amp;gt;、&amp;lt;code&amp;gt;Twitter&amp;lt;/code&amp;gt;、&amp;lt;code&amp;gt;LinkedIn&amp;lt;/code&amp;gt;等，因为其中的一些核心特性已经纳入到Spring Security 5了，在Spring Security 5中可以很好的扩展来实现达到相应的目的。接下来一年会继续提供问题修复和支持，但是不会发布新特性版本。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring背后公司的产品&amp;lt;a href=&amp;quot;https://content.pivotal.io/blog/how-pivotal-cloud-foundry-2-2-helps-you-improve-the-metrics-that-matter&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Pivotal Cloud Foundry 2.2发布&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Boot项目目前正在招募开源贡献者，用以帮助完善文档和部分功能代码，详情看&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/issues?q=is%3Aopen+is%3Aissue+label%3A%22status%3A+ideal-for-contribution%22&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Github的问题列表&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://steeltoe.io/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Steeltoe.NET&amp;lt;/a&amp;gt;作为.NET平台上类似Spring Cloud参考实现的云原生应用库，在Nuget上已经有超过50万的下载量，这背后的云原生技术推手&amp;lt;a href=&amp;quot;http://www.pivotal.io/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Pivotal Software&amp;lt;/a&amp;gt;功不可没，开源开放的积极推动旨在吸引和影响更多的开发者加入到这一阵营。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+  接下来，再看看国内外社区一些新动态
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;ul&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.jhipster.tech/2018/07/12/jhipster-release-5.1.0.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;JHipster 5.1.0发布&amp;lt;/a&amp;gt;，此版本共关闭了29个问题和PR，升级JHipster Registry到v4.0.0，另外修复了Angular在构建多个延迟加载模块时出现错误的问题。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Thibaud Lepretre最近更新了&amp;lt;code&amp;gt;cas-security-spring-boot-starter&amp;lt;/code&amp;gt;的&amp;lt;a href=&amp;quot;https://github.com/kakawait/cas-security-spring-boot-starter/blob/master/CHANGELOG.md&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;1.0版本计划&amp;lt;/a&amp;gt;，首次支持Spring Boot 2。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Netflix官方在Eureka项目Wiki上更新：&amp;lt;a href=&amp;quot;https://github.com/Netflix/eureka/wiki&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Eureka 2.0停止开发&amp;lt;/a&amp;gt;，但是1.9.x仍然会持续更新，这个消息对于朋友圈和社区的一些不明真相的朋友引起了不比要的恐慌。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;写在最后，需要特别说明的是，作为一个针对&amp;lt;a href=&amp;quot;https://springdev.io&amp;quot;&amp;gt;Spring开发的站点&amp;lt;/a&amp;gt;，我还是要简单介绍下网站的定位，前期还是以我自己写技术文章、翻译官方文档，以及编译优质文章汇总为主，也欢迎开源爱好者投稿和提供文章、新闻线索。后面会逐步开放，接收社区成员的加入，共同打造优质的技术内容服务社区组织，希望大家提一些意见和建议，我也会逐步优化和改进，尽情期待。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;当你读到这篇文章时，也许正在赶回家的路上，周末愉快！&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div id=&amp;quot;footnotes&amp;quot;&amp;gt; 
+ &amp;lt;hr&amp;gt; 
+ &amp;lt;div class=&amp;quot;footnote&amp;quot; id=&amp;quot;_footnote_1&amp;quot;&amp;gt; 
+  &amp;lt;a href=&amp;quot;#_footnoteref_1&amp;quot;&amp;gt;1&amp;lt;/a&amp;gt;. Spring.io的官方网站的源代码 
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;div class=&amp;quot;footnote&amp;quot; id=&amp;quot;_footnote_2&amp;quot;&amp;gt; 
+  &amp;lt;a href=&amp;quot;#_footnoteref_2&amp;quot;&amp;gt;2&amp;lt;/a&amp;gt;. JBake是一款静态网站和博客生成工具，专为开发者和设计师打造，Java语言开发并且开源 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
       <title>HTTP Basic认证</title>
       <link>https://springdev.io/blog/2018/06/http_basic_auth.html</link>
       <pubDate>星期四, 7 六月 2018 00:00:00 +0800</pubDate>

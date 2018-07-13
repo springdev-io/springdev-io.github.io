@@ -132,6 +132,92 @@
               </style>
               <article class="blog--container blog-preview">
                 <h2 class="blog--title">
+                    <a href="../../../blog/2018/07/this_week_in_spring_july_13th_2018.html">Spring一周回顾（2018年7月13日）</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon engineering"></div>
+                        <span>
+                        <a class="category" href="../../../tags/news.html">news</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Fri Jul 13 00:00:00 CST 2018">七月 13, 2018</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/07/this_week_in_spring_july_13th_2018.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">本文带你回顾最近一周有关Spring社区的一些有趣的事情。</div>
+                    <div class="desktop-only"><div class="quoteblock abstract"> 
+ <div class="title">
+  概要
+ </div> 
+ <blockquote>
+   本文带你回顾最近一周有关Spring社区的一些有趣的事情。 
+ </blockquote> 
+</div> 
+<div class="paragraph"> 
+ <p><a href="https://github.com/joshlong">Spring龙大师</a>每周一期必写的<a href="https://spring.io/blog/2018/07/10/this-week-in-spring-july-10th-2018" class="external" target="_blank" rel="noopener">This Week in Spring</a>，相信国内外的Spring开发者都一定是必读的文章，而我就是其中一个忠实的粉丝。这篇文章不是原文对照翻译，而是摘取一部分再加上国内的热门文章，同时有我的理解和分析，毕竟这是一篇针对中国开发者而写的文章。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>最近一段时间在写一本关于<a href="https://spring.io/projects/spring-security" class="external" target="_blank" rel="noopener">Spring Security</a>的新书，想着写的过程中先放一部分内容发到博客上，或许能对一部分碰巧遇到同类问题的开发者有所帮助，那也是好的。所以就想到采用<a href="https://github.com/spring-io/sagan" class="external" target="_blank" rel="noopener">Sagan</a><sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup>的主题来搭建博客，Sagan的整个代码是采用<a href="https://spring.io/projects/spring-boot" class="external" target="_blank" rel="noopener">Spring Boot</a>来开发，对我写个技术文章来讲究显得太复杂了，所以最后采用<a href="https://jbake.org">JBake</a><sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup>来构建博客，文章采用Markdown或者Asciidoc来编写，最后发布在<a href="https://pages.github.com/">Github Pages</a>上，这样很快就搞定，最重要是能满足我对写作良好体验的要求。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>好了，言归正传。一起来看看，本周Spring官方及开发社区发生了哪些新鲜事。</p> 
+</div> 
+<div class="ulist"> 
+ <div class="title">
+  首先来看看Spring官方团队给我们带来了
+ </div> 
+ <ul> 
+  <li> <p><a href="https://spring.io/blog/2018/07/05/spring-tool-suite-3-9-5-released" class="external" target="_blank" rel="noopener">Spring Tool Suite 3.9.5版本发布了</a>，升级到<a href="https://www.eclipse.org/photon/" class="external" target="_blank" rel="noopener">Eclipse Photon</a>，这样就可以支持JDK 9/10，另外其他一些性能优化和问题修复。有关Eclipse Photon的新特性，请到<a href="https://www.eclipse.org/photon/noteworthy/index.php" class="external" target="_blank" rel="noopener">这里</a>会有更详细的介绍。</p> </li> 
+  <li> <p>Spring Cloud Data Flow <a href="https://spring.io/blog/2018/07/05/spring-cloud-data-flow-1-6-m1-and-1-5-2-released" class="external" target="_blank" rel="noopener">1.5.2发布</a>，同时 <a href="https://spring.io/blog/2018/07/12/spring-cloud-data-flow-1-6-m2-released" class="external" target="_blank" rel="noopener">1.6 M2 也发布</a>，1.6的亮点是任务调度原生集成到PCF。</p> </li> 
+  <li> <p><a href="https://spring.io/blog/2018/07/12/spring-cloud-stream-elmhurst-sr1-released" class="external" target="_blank" rel="noopener">Spring Cloud Stream Elmhurst.SR1 发布了</a>，这是一个维护性版本，Spring Boot默认使用2.0.3.RELEASE。</p> </li> 
+  <li> <p>Spring Social的负责人<a href="https://spring.io/team/cwalls" class="external" target="_blank" rel="noopener">Craig Walls</a>在上周二正式决定<a href="https://spring.io/blog/2018/07/03/spring-social-end-of-life-announcement" class="external" target="_blank" rel="noopener">Spring Social进入EOL</a>，这包括其中的一些针对特定社交平台的API绑定实现项目，比如<code>Facebook</code>、<code>Twitter</code>、<code>LinkedIn</code>等，因为其中的一些核心特性已经纳入到Spring Security 5了，在Spring Security 5中可以很好的扩展来实现达到相应的目的。接下来一年会继续提供问题修复和支持，但是不会发布新特性版本。</p> </li> 
+  <li> <p>Spring背后公司的产品<a href="https://content.pivotal.io/blog/how-pivotal-cloud-foundry-2-2-helps-you-improve-the-metrics-that-matter" class="external" target="_blank" rel="noopener">Pivotal Cloud Foundry 2.2发布</a></p> </li> 
+  <li> <p>Spring Boot项目目前正在招募开源贡献者，用以帮助完善文档和部分功能代码，详情看<a href="https://github.com/spring-projects/spring-boot/issues?q=is%3Aopen+is%3Aissue+label%3A%22status%3A+ideal-for-contribution%22" class="external" target="_blank" rel="noopener">Github的问题列表</a>。</p> </li> 
+  <li> <p><a href="http://steeltoe.io/" class="external" target="_blank" rel="noopener">Steeltoe.NET</a>作为.NET平台上类似Spring Cloud参考实现的云原生应用库，在Nuget上已经有超过50万的下载量，这背后的云原生技术推手<a href="http://www.pivotal.io/" class="external" target="_blank" rel="noopener">Pivotal Software</a>功不可没，开源开放的积极推动旨在吸引和影响更多的开发者加入到这一阵营。</p> </li> 
+ </ul> 
+</div> 
+<div class="ulist"> 
+ <div class="title">
+  接下来，再看看国内外社区一些新动态
+ </div> 
+ <ul> 
+  <li> <p><a href="https://www.jhipster.tech/2018/07/12/jhipster-release-5.1.0.html" class="external" target="_blank" rel="noopener">JHipster 5.1.0发布</a>，此版本共关闭了29个问题和PR，升级JHipster Registry到v4.0.0，另外修复了Angular在构建多个延迟加载模块时出现错误的问题。</p> </li> 
+  <li> <p>Thibaud Lepretre最近更新了<code>cas-security-spring-boot-starter</code>的<a href="https://github.com/kakawait/cas-security-spring-boot-starter/blob/master/CHANGELOG.md" class="external" target="_blank" rel="noopener">1.0版本计划</a>，首次支持Spring Boot 2。</p> </li> 
+  <li> <p>Netflix官方在Eureka项目Wiki上更新：<a href="https://github.com/Netflix/eureka/wiki" class="external" target="_blank" rel="noopener">Eureka 2.0停止开发</a>，但是1.9.x仍然会持续更新，这个消息对于朋友圈和社区的一些不明真相的朋友引起了不比要的恐慌。</p> </li> 
+ </ul> 
+</div> 
+<div class="paragraph"> 
+ <p>写在最后，需要特别说明的是，作为一个针对<a href="https://springdev.io">Spring开发的站点</a>，我还是要简单介绍下网站的定位，前期还是以我自己写技术文章、翻译官方文档，以及编译优质文章汇总为主，也欢迎开源爱好者投稿和提供文章、新闻线索。后面会逐步开放，接收社区成员的加入，共同打造优质的技术内容服务社区组织，希望大家提一些意见和建议，我也会逐步优化和改进，尽情期待。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>当你读到这篇文章时，也许正在赶回家的路上，周末愉快！</p> 
+</div> 
+<div id="footnotes"> 
+ <hr> 
+ <div class="footnote" id="_footnote_1"> 
+  <a href="#_footnoteref_1">1</a>. Spring.io的官方网站的源代码 
+ </div> 
+ <div class="footnote" id="_footnote_2"> 
+  <a href="#_footnoteref_2">2</a>. JBake是一款静态网站和博客生成工具，专为开发者和设计师打造，Java语言开发并且开源 
+ </div> 
+</div></div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/07/this_week_in_spring_july_13th_2018.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
                     <a href="../../../blog/2018/06/http_basic_auth.html">HTTP Basic认证</a>
                 </h2>
                 <header class="meta-data--container">
@@ -1271,124 +1357,6 @@ Spring Boot v1.5.13.RELEASE</pre>
                     查看...
                 </a>
               </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2018/06/maven.html">安装 Maven</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon engineering"></div>
-                        <span>
-                        <a class="category" href="../../../tags/article.html">article</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Sat Jun 02 00:00:00 CST 2018">六月 2, 2018</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/06/maven.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">本文主要介绍Maven的多种安装方式。</div>
-                    <div class="desktop-only"><div id="toc" class="toc"> 
- <div id="toctitle">
-  目录
- </div> 
- <ul class="sectlevel1"> 
-  <li><a href="#下载离线安装包手动安装">1. 下载离线安装包手动安装</a></li> 
-  <li><a href="#使用sdkman安装">2. 使用SDKMAN安装</a></li> 
-  <li><a href="#使用osx_homebrew安装">3. 使用OSX Homebrew安装</a></li> 
-  <li><a href="#使用scoop安装">4. 使用Scoop安装</a></li> 
- </ul> 
-</div> 
-<div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="quoteblock abstract"> 
-   <div class="title">
-    概要
-   </div> 
-   <blockquote>
-     本文主要介绍Maven的多种安装方式。 
-   </blockquote> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Maven是一个Java平台上非常流行的项目构建和管理工具，支持项目的编译、打包、测试、第三方依赖包管理，在很多知名的开源项目和企业中使用。同时也能和Ant进行集成，保证一些使用Ant的旧项目能够顺利迁移，同时也可以提供一些比较灵活性。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="下载离线安装包手动安装">1. 下载离线安装包手动安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>当前使用的版本是3.5.2，去<a href="http://maven.apache.org/download.cgi" class="external" target="_blank" rel="noopener">Maven官方</a>下载 <a href="https://archive.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.zip">apache-maven-3.5.2-bin.zip</a> 或者 <a href="https://archive.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz">apache-maven-3.5.2-bin.tar.gz</a>，然后解压到本地目录并设置好<code>M2_HOME</code>和<code>Path</code>环境变量即可。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用sdkman安装">2. 使用SDKMAN安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="http://sdkman.io">SDKMAN</a>是一个JVM上各种语言SDK和工具包的安装管理工具，它的前身是GVM。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ sdk install maven</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用osx_homebrew安装">3. 使用OSX Homebrew安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://brew.sh" class="external" target="_blank" rel="noopener">Homebrew</a>是专为macOS系统设计的软件包安装管理工具。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在终端控制台上执行下面的命令来安装Maven：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ brew install maven</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用scoop安装">4. 使用Scoop安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://scoop.sh" class="external" target="_blank" rel="noopener">Scoop</a>是使用PowerShell语言为Windows系统开发的一个命令行的安装管理工具，功能与OSX Homebrew类似。 Scoop的详细安装请参考 <a href="https://github.com/lukesampson/scoop/wiki/Quick-Start" class="external" target="_blank" rel="noopener">官方安装说明</a>。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在命令行窗口执行下面的命令来安装Maven如下：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ scoop install maven</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>安装之后，检查下安装是否正确：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ mvn --version
-Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T15:58:13+08:00)</pre> 
-   </div> 
-  </div> 
- </div> 
-</div></div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/06/maven.html">
-                    查看...
-                </a>
-              </article>
             </div>
             <ul id="pagination_control" class="pagination blog-pagination pager">
               <li class="previous disabled"><a  href="">&larr; 前一页</a></li>
@@ -1424,6 +1392,11 @@ Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T15:58:1
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
             <div class="icon blog-icon news-and-events"></div>
+            <a href="../../../blog/2018/07/this_week_in_spring_july_13th_2018.html">Spring一周回顾（20...</a>
+            <span class="pull-right">七月 13, 2018</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news-and-events"></div>
             <a href="../../../blog/2018/06/http_basic_auth.html">HTTP Basic认证</a>
             <span class="pull-right">六月 7, 2018</span>
           </li>
@@ -1442,11 +1415,7 @@ Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T15:58:1
             <a href="../../../blog/2018/06/springboot.html">安装 Spring Boo...</a>
             <span class="pull-right">六月 3, 2018</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news-and-events"></div>
-            <a href="../../../blog/2018/06/maven.html">安装 Maven</a>
-            <span class="pull-right">六月 2, 2018</span>
-          </li>
+          
           
         </ul>
       </div>
