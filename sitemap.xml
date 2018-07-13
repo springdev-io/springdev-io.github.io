@@ -4,9 +4,6 @@
         <loc>https://springdev.io/projects/index.html</loc>
         <lastmod>2018-06-06</lastmod>
     </url><url>
-        <loc>https://springdev.io/index.html</loc>
-        <lastmod>2018-06-06</lastmod>
-    </url><url>
         <loc>https://springdev.io/404.html</loc>
         <lastmod>2018-06-06</lastmod>
     </url><url>
@@ -30,5 +27,8 @@
     </url><url>
         <loc>https://springdev.io/blog/2018/06/jdk.html</loc>
         <lastmod>2018-06-01</lastmod>
+    </url><url>
+        <loc>https://springdev.io/index.html</loc>
+        <lastmod>2018-06-06</lastmod>
     </url>
 </urlset>
