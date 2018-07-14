@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute"
-      data-code-prettify data-clipboard-buttons data-goto-top data-mobile-support>
+      data-code-prettify data-clipboard-buttons data-goto-top data-nav-menu data-mobile-support>
 
   <head>
   <meta charset="utf-8"/>
@@ -39,10 +39,13 @@
               <a href="/projects/" >Projects</a>
             </li>
             <li class="navbar-link">
+              <a href="/guides/" >Guides</a>
+            </li>
+            <li class="navbar-link">
               <a href="/blog/" >Blog</a>
             </li>
             <li class="navbar-link nav-search js-nav-search">
-              <a>
+              <a href="#">
                 <i class="icon-search navbar-search--icon js-search-input-open"></i>
                 <span class="search-input-close js-search-input-close">
                   <i class="icon-remove"></i>
@@ -82,6 +85,12 @@
           <div class="navbar-link">
             <a href="/projects/">
               Projects
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/guides/">
+              Guides
               <i class="icon-chevron-right pull-right"></i>
             </a>
           </div>
@@ -192,7 +201,7 @@ $ spring init --name basic-auth --artifactId basic-auth --groupId com.rainboyan.
    </div> 
    <div class="imageblock"> 
     <div class="content"> 
-     <img src="https://springdev.io/images/new_spring_boot_project_01.png" alt="new spring boot project 01"> 
+     <img src="http://localhost:80/images/new_spring_boot_project_01.png" alt="new spring boot project 01"> 
     </div> 
     <div class="title">
      图表 1. 第一步 选择Spring Boot Starter
@@ -200,7 +209,7 @@ $ spring init --name basic-auth --artifactId basic-auth --groupId com.rainboyan.
    </div> 
    <div class="imageblock"> 
     <div class="content"> 
-     <img src="https://springdev.io/images/new_spring_boot_project_02.png" alt="new spring boot project 02"> 
+     <img src="http://localhost:80/images/new_spring_boot_project_02.png" alt="new spring boot project 02"> 
     </div> 
     <div class="title">
      图表 2. 第二步 填入项目的名称、包名等
@@ -208,7 +217,7 @@ $ spring init --name basic-auth --artifactId basic-auth --groupId com.rainboyan.
    </div> 
    <div class="imageblock"> 
     <div class="content"> 
-     <img src="https://springdev.io/images/new_spring_boot_project_03.png" alt="new spring boot project 03"> 
+     <img src="http://localhost:80/images/new_spring_boot_project_03.png" alt="new spring boot project 03"> 
     </div> 
     <div class="title">
      图表 3. 第三步 使用Spring Boot 1.5.13版本，并选择Web、Thymeleaf、DevTools
@@ -216,7 +225,7 @@ $ spring init --name basic-auth --artifactId basic-auth --groupId com.rainboyan.
    </div> 
    <div class="imageblock"> 
     <div class="content"> 
-     <img src="https://springdev.io/images/new_spring_boot_project_04.png" alt="new spring boot project 04"> 
+     <img src="http://localhost:80/images/new_spring_boot_project_04.png" alt="new spring boot project 04"> 
     </div> 
     <div class="title">
      图表 4. 第四步 最后确定
@@ -229,7 +238,7 @@ $ spring init --name basic-auth --artifactId basic-auth --groupId com.rainboyan.
     </div> 
     <div class="imageblock"> 
      <div class="content"> 
-      <img src="https://springdev.io/images/import_existing_maven_project_01.png" alt="import existing maven project 01"> 
+      <img src="http://localhost:80/images/import_existing_maven_project_01.png" alt="import existing maven project 01"> 
      </div> 
      <div class="title">
       图表 5. 第一步 选择Import Existing Maven Projects
@@ -237,7 +246,7 @@ $ spring init --name basic-auth --artifactId basic-auth --groupId com.rainboyan.
     </div> 
     <div class="imageblock"> 
      <div class="content"> 
-      <img src="https://springdev.io/images/import_existing_maven_project_02.png" alt="import existing maven project 02"> 
+      <img src="http://localhost:80/images/import_existing_maven_project_02.png" alt="import existing maven project 02"> 
      </div> 
      <div class="title">
       图表 6. 第二步 打开创建的工程所在目录
@@ -248,7 +257,7 @@ $ spring init --name basic-auth --artifactId basic-auth --groupId com.rainboyan.
     </div> 
     <div class="imageblock"> 
      <div class="content"> 
-      <img src="https://springdev.io/images/basic_auth_project_import.png" alt="basic auth project import"> 
+      <img src="http://localhost:80/images/basic_auth_project_import.png" alt="basic auth project import"> 
      </div> 
      <div class="title">
       图表 7. 导入后的STS界面
@@ -486,7 +495,7 @@ Using default security password: 9f72d51f-c42c-45bb-a041-b3bbd33b44ab
   </div> 
   <div class="imageblock"> 
    <div class="content"> 
-    <img src="https://springdev.io/images/basic_auth_login_dialog.png" alt="basic auth login dialog"> 
+    <img src="http://localhost:80/images/basic_auth_login_dialog.png" alt="basic auth login dialog"> 
    </div> 
   </div> 
  </div> 

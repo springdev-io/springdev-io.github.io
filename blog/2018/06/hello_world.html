@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute"
-      data-code-prettify data-clipboard-buttons data-goto-top data-mobile-support>
+      data-code-prettify data-clipboard-buttons data-goto-top data-nav-menu data-mobile-support>
 
   <head>
   <meta charset="utf-8"/>
@@ -39,10 +39,13 @@
               <a href="/projects/" >Projects</a>
             </li>
             <li class="navbar-link">
+              <a href="/guides/" >Guides</a>
+            </li>
+            <li class="navbar-link">
               <a href="/blog/" >Blog</a>
             </li>
             <li class="navbar-link nav-search js-nav-search">
-              <a>
+              <a href="#">
                 <i class="icon-search navbar-search--icon js-search-input-open"></i>
                 <span class="search-input-close js-search-input-close">
                   <i class="icon-remove"></i>
@@ -82,6 +85,12 @@
           <div class="navbar-link">
             <a href="/projects/">
               Projects
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/guides/">
+              Guides
               <i class="icon-chevron-right pull-right"></i>
             </a>
           </div>
@@ -191,7 +200,7 @@ $ spring init --name hello-world --artifactId hello-world --groupId com.rainboya
   </div> 
   <div class="imageblock"> 
    <div class="content"> 
-    <img src="https://springdev.io/images/import_existing_maven_project_01.png" alt="import existing maven project 01"> 
+    <img src="http://localhost:80/images/import_existing_maven_project_01.png" alt="import existing maven project 01"> 
    </div> 
    <div class="title">
     图表 1. 第一步 选择Import Existing Maven Projects
@@ -199,7 +208,7 @@ $ spring init --name hello-world --artifactId hello-world --groupId com.rainboya
   </div> 
   <div class="imageblock"> 
    <div class="content"> 
-    <img src="https://springdev.io/images/import_existing_maven_project_02.png" alt="import existing maven project 02"> 
+    <img src="http://localhost:80/images/import_existing_maven_project_02.png" alt="import existing maven project 02"> 
    </div> 
    <div class="title">
     图表 2. 第二步 打开创建的工程所在目录
@@ -210,7 +219,7 @@ $ spring init --name hello-world --artifactId hello-world --groupId com.rainboya
   </div> 
   <div class="imageblock"> 
    <div class="content"> 
-    <img src="https://springdev.io/images/sts_workspace.png" alt="sts workspace"> 
+    <img src="http://localhost:80/images/sts_workspace.png" alt="sts workspace"> 
    </div> 
    <div class="title">
     图表 3. 导入后的STS界面
@@ -402,7 +411,7 @@ public class HelloWorldApplication {
   </div> 
   <div class="imageblock"> 
    <div class="content"> 
-    <img src="https://springdev.io/images/whitelabel_error_page.png" alt="whitelabel error page"> 
+    <img src="http://localhost:80/images/whitelabel_error_page.png" alt="whitelabel error page"> 
    </div> 
   </div> 
   <div class="paragraph"> 
@@ -462,7 +471,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
   </div> 
   <div class="imageblock"> 
    <div class="content"> 
-    <img src="https://springdev.io/images/hello_world_page.png" alt="hello world page"> 
+    <img src="http://localhost:80/images/hello_world_page.png" alt="hello world page"> 
    </div> 
   </div> 
  </div> 

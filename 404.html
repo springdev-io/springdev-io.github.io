@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute"
-      data-goto-top data-mobile-support data-search>
+      data-goto-top data-mobile-support data-search data-nav-menu>
 
   <head>
   <meta charset="utf-8"/>
@@ -38,10 +38,13 @@
               <a href="/projects/" >Projects</a>
             </li>
             <li class="navbar-link">
+              <a href="/guides/" >Guides</a>
+            </li>
+            <li class="navbar-link">
               <a href="/blog/" >Blog</a>
             </li>
             <li class="navbar-link nav-search js-nav-search">
-              <a>
+              <a href="#">
                 <i class="icon-search navbar-search--icon js-search-input-open"></i>
                 <span class="search-input-close js-search-input-close">
                   <i class="icon-remove"></i>
@@ -85,6 +88,12 @@
             </a>
           </div>
           <div class="navbar-link">
+            <a href="/guides/">
+              Guides
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
             <a href="/blog/">
               Blog
               <i class="icon-chevron-right pull-right"></i>
@@ -110,7 +119,7 @@
     <div><div class="container"> 
  <div class="main-body--wrapper"> 
   <div class="error-page"> 
-   <img src="https://springdev.io/img/404-icon.png"> 
+   <img src="http://localhost:80/img/404-icon.png"> 
    <div class="error-title">
     Page not found
    </div> 
