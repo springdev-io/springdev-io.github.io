@@ -166,22 +166,11 @@
                 </header>
                 <section class='blog--post'>
                     <div class="mobile-only">本文主要介绍Maven的多种安装方式。</div>
-                    <div class="desktop-only"><div id="toc" class="toc"> 
- <div id="toctitle">
-  目录
- </div> 
- <ul class="sectlevel1"> 
-  <li><a href="#下载离线安装包手动安装">1. 下载离线安装包手动安装</a></li> 
-  <li><a href="#使用sdkman安装">2. 使用SDKMAN安装</a></li> 
-  <li><a href="#使用osx_homebrew安装">3. 使用OSX Homebrew安装</a></li> 
-  <li><a href="#使用scoop安装">4. 使用Scoop安装</a></li> 
- </ul> 
-</div> 
-<div id="preamble"> 
+                    <div class="desktop-only"><div id="preamble"> 
  <div class="sectionbody"> 
   <div class="quoteblock abstract"> 
    <div class="title">
-    概要
+     概要 
    </div> 
    <blockquote>
      本文主要介绍Maven的多种安装方式。 
@@ -189,68 +178,6 @@
   </div> 
   <div class="paragraph"> 
    <p>Maven是一个Java平台上非常流行的项目构建和管理工具，支持项目的编译、打包、测试、第三方依赖包管理，在很多知名的开源项目和企业中使用。同时也能和Ant进行集成，保证一些使用Ant的旧项目能够顺利迁移，同时也可以提供一些比较灵活性。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="下载离线安装包手动安装">1. 下载离线安装包手动安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>当前使用的版本是3.5.2，去<a href="http://maven.apache.org/download.cgi" class="external" target="_blank" rel="noopener">Maven官方</a>下载 <a href="https://archive.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.zip">apache-maven-3.5.2-bin.zip</a> 或者 <a href="https://archive.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz">apache-maven-3.5.2-bin.tar.gz</a>，然后解压到本地目录并设置好<code>M2_HOME</code>和<code>Path</code>环境变量即可。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用sdkman安装">2. 使用SDKMAN安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="http://sdkman.io">SDKMAN</a>是一个JVM上各种语言SDK和工具包的安装管理工具，它的前身是GVM。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ sdk install maven</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用osx_homebrew安装">3. 使用OSX Homebrew安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://brew.sh" class="external" target="_blank" rel="noopener">Homebrew</a>是专为macOS系统设计的软件包安装管理工具。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在终端控制台上执行下面的命令来安装Maven：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ brew install maven</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用scoop安装">4. 使用Scoop安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://scoop.sh" class="external" target="_blank" rel="noopener">Scoop</a>是使用PowerShell语言为Windows系统开发的一个命令行的安装管理工具，功能与OSX Homebrew类似。 Scoop的详细安装请参考 <a href="https://github.com/lukesampson/scoop/wiki/Quick-Start" class="external" target="_blank" rel="noopener">官方安装说明</a>。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在命令行窗口执行下面的命令来安装Maven如下：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ scoop install maven</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>安装之后，检查下安装是否正确：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ mvn --version
-Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T15:58:13+08:00)</pre> 
-   </div> 
   </div> 
  </div> 
 </div></div>
@@ -284,20 +211,11 @@ Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T15:58:1
                 </header>
                 <section class='blog--post'>
                     <div class="mobile-only">本文主要讲述如何安装JDK 8。</div>
-                    <div class="desktop-only"><div id="toc" class="toc"> 
- <div id="toctitle">
-  目录
- </div> 
- <ul class="sectlevel1"> 
-  <li><a href="#在oracle官方下载安装程序">1. 在Oracle官方下载安装程序</a></li> 
-  <li><a href="#使用sdkman_安装">2. 使用SDKMAN 安装</a></li> 
- </ul> 
-</div> 
-<div id="preamble"> 
+                    <div class="desktop-only"><div id="preamble"> 
  <div class="sectionbody"> 
   <div class="quoteblock abstract"> 
    <div class="title">
-    概要
+     概要 
    </div> 
    <blockquote>
      本文主要讲述如何安装JDK 8。 
@@ -321,7 +239,7 @@ Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T15:58:1
   </div> 
   <div class="admonitionblock note"> 
    <table> 
-    <tbody>
+    <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
       <td class="content"> 
@@ -329,32 +247,8 @@ Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T15:58:1
         <p>JAVA_HOME 环境变量必须正确配置。 可以通过右键单击我的电脑，选择属性菜单，然后在高级页签中选择环境变量。添加环境变量 JAVA_HOME即可。</p> 
        </div> </td> 
      </tr> 
-    </tbody>
+    </tbody> 
    </table> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用sdkman_安装">2. 使用SDKMAN 安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="http://sdkman.io" class="external" target="_blank" rel="noopener">SDKMAN</a>是一个JVM上各种语言SDK和工具包的安装管理工具，提供了一些常用SDK的安装和升级功能，类似Ruby的<strong>RVM</strong>或NodeJS下的nvm，可以同时安装多个版本并支持随时切换使用。支持Java、Scala、Kotlin、Groovy、Grails、Ant、Maven、Gradle等流行SDK和工具。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ sdk i java 8.0.172-zulu</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>安装完并配置好环境变量后，可以测试下是否成功，打开一个控制台窗口，输入如下命令：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ java version
-openjdk version "1.8.0_172"
-OpenJDK Runtime Environment (Zulu 8.30.0.1-win64) (build 1.8.0_172-b01)
-OpenJDK 64-Bit Server VM (Zulu 8.30.0.1-win64) (build 25.172-b01, mixed mode)</pre> 
-   </div> 
   </div> 
  </div> 
 </div></div>
