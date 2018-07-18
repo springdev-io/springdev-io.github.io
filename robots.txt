@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /app/
+Disallow: /img/
+Disallow: /jspm_packages/
+Disallow: /js/
+Disallow: /images/
+Disallow: _config.yml
+Disallow: config.js
+Disallow: LICENSE
