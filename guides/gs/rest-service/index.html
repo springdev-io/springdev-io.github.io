@@ -79,25 +79,25 @@
         <div class="navigation-item-list">
           <div class="navbar-link">
             <a href="/">
-              Home
+              首页
               <i class="icon-chevron-right pull-right"></i>
             </a>
           </div>
           <div class="navbar-link">
             <a href="/projects/">
-              Projects
+              项目
               <i class="icon-chevron-right pull-right"></i>
             </a>
           </div>
           <div class="navbar-link">
             <a href="/guides/">
-              Guides
+              指南
               <i class="icon-chevron-right pull-right"></i>
             </a>
           </div>
           <div class="navbar-link">
             <a href="/blog/">
-              Blog
+              博客
               <i class="icon-chevron-right pull-right"></i>
             </a>
           </div>
@@ -135,9 +135,9 @@
  <ul class="sectlevel1"> 
   <li><a href="#你将构建什么">你将构建什么</a></li> 
   <li><a href="#你需要准备什么">你需要准备什么</a></li> 
-  <li><a href="#如何学习完成该指南">如何学习完成该指南</a></li> 
-  <li><a href="#reveal-gradle">通过Gradle构建</a></li> 
-  <li><a href="#scratch">通过Gradle构建</a> 
+  <li><a href="#how_to_complete_this_guide">How to complete this guide</a></li> 
+  <li><a href="#reveal-gradle">Build with Gradle</a></li> 
+  <li><a href="#scratch">Build with Gradle</a> 
    <ul class="sectlevel2"> 
     <li><a href="#create_the_directory_structure">Create the directory structure</a></li> 
     <li><a href="#create_a_gradle_build_file">Create a Gradle build file</a></li> 
@@ -209,11 +209,11 @@
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>大约需要15分钟</p> </li> 
-    <li> <p>自己喜欢的文本编辑器或者集成开发环境（IDE）</p> </li> 
-    <li> <p><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK 1.8</a> 以上版本</p> </li> 
+    <li> <p>About 15 minutes</p> </li> 
+    <li> <p>A favorite text editor or IDE</p> </li> 
+    <li> <p><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK 1.8</a> or later</p> </li> 
     <li> <p><a href="http://www.gradle.org/downloads">Gradle 4+</a> or <a href="http://maven.apache.org/download.cgi">Maven 3.2+</a></p> </li> 
-    <li> <p>你可以直接导入代码到IDE</p> 
+    <li> <p>You can also import the code straight into your IDE:</p> 
      <div class="ulist"> 
       <ul> 
        <li> <p><a href="/guides/gs/sts">Spring Tool Suite (STS)</a></p> </li> 
@@ -225,36 +225,36 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="如何学习完成该指南">如何学习完成该指南</h2> 
+ <h2 id="how_to_complete_this_guide">How to complete this guide</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>和大多数<a href="/guides">起步指南</a>一样，你既可以从头开始一步步按照章节完成练习，也可以跳过你熟悉的章节。不管哪种方式，最终保证程序可正常运行。</p> 
+   <p>Like most Spring <a href="/guides">Getting Started guides</a>, you can start from scratch and complete each step, or you can bypass basic setup steps that are already familiar to you. Either way, you end up with working code.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>如果<strong>从头开始</strong>，请移步<a href="#scratch">通过Gradle构建</a>.</p> 
+   <p>To <strong>start from scratch</strong>, move on to <a href="#scratch">Build with Gradle</a>.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>你也可以<strong>跳过基础部分</strong>，请按照下面操作：</p> 
+   <p>To <strong>skip the basics</strong>, do the following:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p><a href="https://github.com/spring-guides/gs-rest-service/archive/master.zip">下载</a> 并解压本指南的代码，或者通过<a href="/understanding/Git">Git</a>克隆到本地: <code>git clone <a href="https://github.com/spring-guides/gs-rest-service.git" class="bare">https://github.com/spring-guides/gs-rest-service.git</a></code></p> </li> 
+    <li> <p><a href="https://github.com/spring-guides/gs-rest-service/archive/master.zip">Download</a> and unzip the source repository for this guide, or clone it using <a href="/understanding/Git">Git</a>: <code>git clone <a href="https://github.com/spring-guides/gs-rest-service.git" class="bare">https://github.com/spring-guides/gs-rest-service.git</a></code></p> </li> 
     <li> <p>cd into <code>gs-rest-service/initial</code></p> </li> 
     <li> <p>Jump ahead to <a href="#initial">创建一个资源表述类</a>.</p> </li> 
    </ul> 
   </div> 
   <div class="paragraph"> 
-   <p><strong>当你完成时</strong>，你可以和`gs-rest-service/complete`对比检查完成的工作。</p> 
+   <p><strong>When you’re finished</strong>, you can check your results against the code in <code>gs-rest-service/complete</code>.</p> 
   </div> 
  </div> 
 </div> 
 <div class="sect1 reveal-gradle"> 
- <h2 id="reveal-gradle">通过Gradle构建</h2> 
+ <h2 id="reveal-gradle">Build with Gradle</h2> 
  <div class="sectionbody"> 
  </div> 
 </div> 
 <div class="sect1 use-gradle"> 
- <h2 id="scratch">通过Gradle构建</h2> 
+ <h2 id="scratch">Build with Gradle</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>First you set up a basic build script. You can use any build system you like when building apps with Spring, but the code you need to work with <a href="http://gradle.org">Gradle</a> and <a href="https://maven.apache.org">Maven</a> is included here. If you’re not familiar with either, refer to <a href="/guides/gs/gradle">Building Java Projects with Gradle</a> or <a href="/guides/gs/maven">Building Java Projects with Maven</a>.</p> 

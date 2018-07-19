@@ -6,8 +6,8 @@
     <atom:link href="https://springdev.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Spring开发者，是一个专为广大Spring开发者们提供Spring相关开源技术的开发工具、技术框架、业界资讯、博客文章、培训教程、活动交流等开源社交综合性服务网站。</description>
     <language>zh-CN</language>
-    <pubDate>星期二, 17 七月 2018 22:01:23 +0800</pubDate>
-    <lastBuildDate>星期二, 17 七月 2018 22:01:23 +0800</lastBuildDate>
+    <pubDate>星期四, 19 七月 2018 13:46:46 +0800</pubDate>
+    <lastBuildDate>星期四, 19 七月 2018 13:46:46 +0800</lastBuildDate>
 
     <item>
       <title>Spring一周回顾（2018年7月13日）</title>
@@ -1011,6 +1011,359 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
     &amp;lt;pre&amp;gt;&amp;amp;gt; scoop bucket add extras
 &amp;amp;gt; scoop install sts&amp;lt;/pre&amp;gt; 
    &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
+      <title>Spring Boot CLI使用详解</title>
+      <link>https://springdev.io/blog/2018/06/springbootcli.html</link>
+      <pubDate>星期日, 3 六月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/06/springbootcli.html</guid>
+      <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
+ &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
+  目录
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;ul class=&amp;quot;sectlevel1&amp;quot;&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#常用命令及参数说明&amp;quot;&amp;gt;1. 常用命令及参数说明&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#运行groovy脚本程序&amp;quot;&amp;gt;2. 运行Groovy脚本程序&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#快速创建一个空白工程&amp;quot;&amp;gt;3. 快速创建一个空白工程&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    概要
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;blockquote&amp;gt;
+     本文详细介绍了Spring Boot CLI的命令以及在实际开发中如何使用。 
+   &amp;lt;/blockquote&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在之前的文章中&amp;lt;a href=&amp;quot;/springboot.html&amp;quot;&amp;gt;安装Spring Boot CLI&amp;lt;/a&amp;gt;，我们介绍了几种常见的快速安装方式。接下来这个章节，我们会详细介绍它的命令和在实际开发中的使用。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Spring Boot CLI是一个快速创建原型项目的命令行工具。对大多数开发人员来说，相比IDE的菜单选择和向导界面，会更倾向使用命令行来处理一些基础工作，比如创建项目、运行测试、编译打包等等，Spring Boot CLI就是为这些人准备的。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;常用命令及参数说明&amp;quot;&amp;gt;1. 常用命令及参数说明&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;打开一个终端控制台窗口，我们键入&amp;lt;code&amp;gt;spring&amp;lt;/code&amp;gt;命令，就会看到控制台打印出了该命令的帮助说明。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;table class=&amp;quot;tableblock frame-all grid-all stretch&amp;quot;&amp;gt; 
+   &amp;lt;colgroup&amp;gt; 
+    &amp;lt;col&amp;gt; 
+    &amp;lt;col&amp;gt; 
+   &amp;lt;/colgroup&amp;gt; 
+   &amp;lt;thead&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;th class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;命令&amp;lt;/th&amp;gt; 
+     &amp;lt;th class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;功能说明&amp;lt;/th&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+   &amp;lt;/thead&amp;gt; 
+   &amp;lt;tbody&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;run&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;运行一个Groovy脚本程序&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;test&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;测试一个Groovy脚本程序&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;grab&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;从远程仓库下载Groovy脚本程序需要的依赖包&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;jar&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;将一个Groovy脚本程序打包成可执行的JAR文件&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;war&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;将一个Groovy脚本程序打包成可执行的WAR文件&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;install&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;安装依赖包并下载到lib/ext目录&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;uninstall&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;卸载依赖包并从lib/ext目录删除&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;init&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;初始创建一个新工程，和start.spring.io提供的页面功能一样&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+   &amp;lt;/tbody&amp;gt; 
+  &amp;lt;/table&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;$ spring
+
+usage: spring [--help] [--version]
+       &amp;amp;lt;command&amp;amp;gt; [&amp;amp;lt;args&amp;amp;gt;]
+
+Available commands are:
+
+  run [options] &amp;amp;lt;files&amp;amp;gt; [--] [args]
+    Run a spring groovy script
+
+  test [options] &amp;amp;lt;files&amp;amp;gt; [--] [args]
+    Run a spring groovy script test
+
+  grab
+    Download a spring groovy script&amp;#39;s dependencies to ./repository
+
+  jar [options] &amp;amp;lt;jar-name&amp;amp;gt; &amp;amp;lt;files&amp;amp;gt;
+    Create a self-contained executable jar file from a Spring Groovy script
+
+  war [options] &amp;amp;lt;war-name&amp;amp;gt; &amp;amp;lt;files&amp;amp;gt;
+    Create a self-contained executable war file from a Spring Groovy script
+
+  install [options] &amp;amp;lt;coordinates&amp;amp;gt;
+    Install dependencies to the lib/ext directory
+
+  uninstall [options] &amp;amp;lt;coordinates&amp;amp;gt;
+    Uninstall dependencies from the lib/ext directory
+
+  init [options] [location]
+    Initialize a new project using Spring Initializr (start.spring.io)
+
+  shell
+    Start a nested shell
+
+Common options:
+
+  -d, --debug Verbose mode
+    Print additional status information for the command you are running
+
+
+See &amp;#39;spring help &amp;amp;lt;command&amp;amp;gt;&amp;#39; for more information on a specific command.&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;运行groovy脚本程序&amp;quot;&amp;gt;2. 运行Groovy脚本程序&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;接下来我们重点讲解&amp;lt;code&amp;gt;run&amp;lt;/code&amp;gt;和&amp;lt;code&amp;gt;init&amp;lt;/code&amp;gt;这两个命令的用法。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在终端控制台上执行下面的命令来查看下帮助：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;$ spring help run
+spring run - Run a spring groovy script
+
+usage: spring run [options] &amp;amp;lt;files&amp;amp;gt; [--] [args]
+
+Option                     Description
+------                     -----------
+--autoconfigure [Boolean]  Add autoconfigure compiler
+                             transformations (default: true)
+--classpath, -cp           Additional classpath entries
+--no-guess-dependencies    Do not attempt to guess dependencies
+--no-guess-imports         Do not attempt to guess imports
+-q, --quiet                Quiet logging
+-v, --verbose              Verbose logging of dependency
+                             resolution
+--watch                    Watch the specified file for changes&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;接着，我们简单编写一段Groovy脚本程序：&amp;lt;code&amp;gt;hello.groovy&amp;lt;/code&amp;gt;，代码如下&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;@RestController
+class WebApplication {
+
+	@RequestMapping(&amp;quot;/&amp;quot;)
+	String home() {
+		&amp;quot;Hello World!&amp;quot;
+	}
+
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;然后试着执行命令：&amp;lt;code&amp;gt;spring run hello.groovy&amp;lt;/code&amp;gt;，是的，没错，它的确可以跑起来，这真是太棒了！&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;Resolving dependencies.....................
+
+  .   ____          _            __ _ _
+ /\\ / ___&amp;#39;_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | &amp;#39;_ | &amp;#39;_| | &amp;#39;_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  &amp;#39;  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::       (v1.5.13.RELEASE)
+
+2018-06-03 11:25:23.632  INFO 10692 --- [       runner-0] o.s.boot.SpringApplication               : Starting application on Jill with PID 10692 (started by rain in D:\Development\springdev\springdev.io\code)
+2018-06-03 11:25:23.647  INFO 10692 --- [       runner-0] o.s.boot.SpringApplication               : No active profile set, falling back to default profiles: default
+2018-06-03 11:25:24.471  INFO 10692 --- [       runner-0] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7d093264: startup date [Sun Jun 03 11:25:24 CST 2018]; root of context hierarchy
+2018-06-03 11:25:26.742  INFO 10692 --- [       runner-0] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-06-03 11:25:26.810  INFO 10692 --- [       runner-0] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-03 11:25:26.812  INFO 10692 --- [       runner-0] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-03 11:25:27.031  INFO 10692 --- [ost-startStop-1] org.apache.catalina.loader.WebappLoader  : Unknown loader org.springframework.boot.cli.compiler.ExtendedGroovyClassLoader$DefaultScopeParentClassLoader@73e0e880 class org.springframework.boot.cli.compiler.ExtendedGroovyClassLoader$DefaultScopeParentClassLoader
+2018-06-03 11:25:27.123  INFO 10692 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-03 11:25:27.123  INFO 10692 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2652 ms
+2018-06-03 11:25:27.448  INFO 10692 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: &amp;#39;dispatcherServlet&amp;#39; to [/]
+2018-06-03 11:25:27.457  INFO 10692 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: &amp;#39;characterEncodingFilter&amp;#39; to: [/*]
+2018-06-03 11:25:27.458  INFO 10692 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: &amp;#39;hiddenHttpMethodFilter&amp;#39; to: [/*]
+2018-06-03 11:25:27.458  INFO 10692 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: &amp;#39;httpPutFormContentFilter&amp;#39; to: [/*]
+2018-06-03 11:25:27.458  INFO 10692 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: &amp;#39;requestContextFilter&amp;#39; to: [/*]
+2018-06-03 11:25:28.188  INFO 10692 --- [       runner-0] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7d093264: startup date [Thu Jul 19 11:25:24 CST 2018]; root of context hierarchy
+2018-06-03 11:25:28.336  INFO 10692 --- [       runner-0] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &amp;quot;{[/]}&amp;quot; onto public java.lang.String WebApplication.home()
+2018-06-03 11:25:28.344  INFO 10692 --- [       runner-0] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &amp;quot;{[/error]}&amp;quot; onto public org.springframework.http.ResponseEntity&amp;amp;lt;java.util.Map&amp;amp;lt;java.lang.String, java.lang.Object&amp;amp;gt;&amp;amp;gt; org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-03 11:25:28.345  INFO 10692 --- [       runner-0] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &amp;quot;{[/error],produces=[text/html]}&amp;quot; onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-03 11:25:28.428  INFO 10692 --- [       runner-0] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 11:25:28.429  INFO 10692 --- [       runner-0] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 11:25:28.531  INFO 10692 --- [       runner-0] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 11:25:29.935  INFO 10692 --- [       runner-0] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-06-03 11:25:30.026  INFO 10692 --- [       runner-0] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-06-03 11:25:30.036  INFO 10692 --- [       runner-0] o.s.boot.SpringApplication               : Started application in 7.352 seconds (JVM running for 39.869)&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;快速创建一个空白工程&amp;quot;&amp;gt;3. 快速创建一个空白工程&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;如果在IDE中创建一个Spring新工程，大概至少需要四步，首先打开新建向导&amp;lt;code&amp;gt;Spring Starter Project&amp;lt;/code&amp;gt;，接着输入项目名称、包名，选择语言、类型等，然后选择工程依赖，如Web、Thymeleaf、DevTools等，最后检查并确定。这的确太繁琐了，如果还得做好几遍的话。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;但是这些使用Spring Boot CLI就能轻轻松松完成，打开控制台，输入下面这段命令即可：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;$ spring init --name hello-world --artifactId hello-world --groupId org.springbooks --language java --boot-version 1.5.13.RELEASE --type maven-project --dependencies web,thymeleaf,devtools --extract&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;这的确是很简单，对于我们只要记住一些常用的命令参数而已：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;对于&amp;lt;code&amp;gt;spring init&amp;lt;/code&amp;gt;的参数，有以下几个：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;table class=&amp;quot;tableblock frame-all grid-all stretch&amp;quot;&amp;gt; 
+   &amp;lt;colgroup&amp;gt; 
+    &amp;lt;col&amp;gt; 
+    &amp;lt;col&amp;gt; 
+    &amp;lt;col&amp;gt; 
+   &amp;lt;/colgroup&amp;gt; 
+   &amp;lt;thead&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;th class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;参数&amp;lt;/th&amp;gt; 
+     &amp;lt;th class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;说明&amp;lt;/th&amp;gt; 
+     &amp;lt;th class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;默认值&amp;lt;/th&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+   &amp;lt;/thead&amp;gt; 
+   &amp;lt;tbody&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;name&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;项目的名称&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;demo&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;packageName&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;项目的包名&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;com.example.demo&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;description&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;项目的描述&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;Demo project for Spring Boot&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;artifactId&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;项目的构件名称&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;demo&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;groupId&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;项目的组织名称&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;com.example&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;javaVersion&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;Java语言的版本&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;1.8&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;language&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;可以选择语言，java、groovy、kotlin&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;java&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;packaging&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;项目打包类型，可选择：jar、war&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;jar&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;type&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;项目类型，可选择：maven-project，gradle-project&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;maven-project&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;version&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;项目的版本号&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;0.0.1-SNAPSHOT&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;bootVersion&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;Spring Boot的版本&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+     &amp;lt;td class=&amp;quot;tableblock halign-left valign-top&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;tableblock&amp;quot;&amp;gt;默认是安装的版本，如：2.0.3.RELEASE&amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+   &amp;lt;/tbody&amp;gt; 
+  &amp;lt;/table&amp;gt; 
+  &amp;lt;div class=&amp;quot;exampleblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    Example 1. 举个例子：通过CLI创建新项目
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+     &amp;lt;p&amp;gt;$ spring init --name hello-world --artifactId hello-world --groupId org.springbooks --language java --boot-version 1.5.13.RELEASE --type maven-project --dependencies web,thymeleaf,devtools --extract&amp;lt;/p&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;我们继续来看，创建的项目目录如下：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;├── mvnw
+├── mvnw.cmd
+├── pom.xml
+└── src
+    ├── main
+    │&amp;amp;nbsp;&amp;amp;nbsp; ├── java
+    │&amp;amp;nbsp;&amp;amp;nbsp; │&amp;amp;nbsp;&amp;amp;nbsp; └── org
+    │&amp;amp;nbsp;&amp;amp;nbsp; │&amp;amp;nbsp;&amp;amp;nbsp;     └── springbooks
+    │&amp;amp;nbsp;&amp;amp;nbsp; │&amp;amp;nbsp;&amp;amp;nbsp;         └── helloworld
+    │&amp;amp;nbsp;&amp;amp;nbsp; │&amp;amp;nbsp;&amp;amp;nbsp;             └── HelloWorldApplication.java
+    │&amp;amp;nbsp;&amp;amp;nbsp; └── resources
+    │&amp;amp;nbsp;&amp;amp;nbsp;     ├── application.properties
+    │&amp;amp;nbsp;&amp;amp;nbsp;     ├── static
+    │&amp;amp;nbsp;&amp;amp;nbsp;     └── templates
+    └── test
+        └── java
+            └── org
+                └── springbooks
+                    └── helloworld
+                        └── HelloWorldApplicationTests.java&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;一切就这么容易搞定，接下来看你的了。&amp;lt;/p&amp;gt; 
   &amp;lt;/div&amp;gt; 
  &amp;lt;/div&amp;gt; 
 &amp;lt;/div&amp;gt;</description>	  
