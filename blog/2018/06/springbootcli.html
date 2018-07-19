@@ -157,7 +157,7 @@
  <ul class="sectlevel1"> 
   <li><a href="#常用命令及参数说明">1. 常用命令及参数说明</a></li> 
   <li><a href="#运行groovy脚本程序">2. 运行Groovy脚本程序</a></li> 
-  <li><a href="#快速创建一个空白工程">3. 快速创建一个空白工程</a></li> 
+  <li><a href="#快速创建一个新工程">3. 快速创建一个新工程</a></li> 
  </ul> 
 </div> 
 <div id="preamble"> 
@@ -171,7 +171,7 @@
    </blockquote> 
   </div> 
   <div class="paragraph"> 
-   <p>在之前的文章中<a href="/springboot.html">安装Spring Boot CLI</a>，我们介绍了几种常见的快速安装方式。接下来这个章节，我们会详细介绍它的命令和在实际开发中的使用。</p> 
+   <p>在之前的文章中<a href="/blog/2018/06/springboot.html">安装Spring Boot CLI</a>，我们介绍了几种常见的快速安装方式。接下来这个章节，我们会详细介绍它的命令和在实际开发中的使用。</p> 
   </div> 
   <div class="paragraph"> 
    <p>Spring Boot CLI是一个快速创建原型项目的命令行工具。对大多数开发人员来说，相比IDE的菜单选择和向导界面，会更倾向使用命令行来处理一些基础工作，比如创建项目、运行测试、编译打包等等，Spring Boot CLI就是为这些人准备的。</p> 
@@ -366,7 +366,7 @@ class WebApplication {
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="快速创建一个空白工程">3. 快速创建一个空白工程</h2> 
+ <h2 id="快速创建一个新工程">3. 快速创建一个新工程</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>如果在IDE中创建一个Spring新工程，大概至少需要四步，首先打开新建向导<code>Spring Starter Project</code>，接着输入项目名称、包名，选择语言、类型等，然后选择工程依赖，如Web、Thymeleaf、DevTools等，最后检查并确定。这的确太繁琐了，如果还得做好几遍的话。</p> 
@@ -441,7 +441,7 @@ class WebApplication {
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">项目类型，可选择：maven-project，gradle-project</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">项目类型，可选择：maven-project，maven-build，gradle-project，gradle-build</p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">maven-project</p></td> 
     </tr> 
     <tr> 
@@ -456,14 +456,93 @@ class WebApplication {
     </tr> 
    </tbody> 
   </table> 
-  <div class="exampleblock"> 
+  <div class="paragraph"> 
+   <p>其中大部分参数都有默认值，可以省略暂时不填写。对于<code>dependencies</code>，可以通过以下命令来获取：</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre>$ spring init --list</pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>对于常用的一些依赖模块，详见下面的表格：</p> 
+  </div> 
+  <table class="tableblock frame-all grid-all stretch"> 
+   <colgroup> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">名称</th> 
+     <th class="tableblock halign-left valign-top">说明</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">actuator</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Production ready features to help you monitor and manage your application</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">aop</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Create your own Aspects using Spring AOP and AspectJ</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">cache</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring’s Cache abstraction</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">data-jpa</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Java Persistence API including spring-data-jpa, spring-orm and Hibernate</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">data-mongodb</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">MongoDB NoSQL Database, including spring-data-mongodb</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">data-redis</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Redis key-value data store, including spring-data-redis</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">devtools</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Boot Development Tools</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">flyway</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Flyway Database Migrations library</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">freemarker</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">FreeMarker templating engine</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">mybatis</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Persistence support using MyBatis</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">mysql</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">MySQL JDBC driver</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">security</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Secure your application via spring-security</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">thymeleaf</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Thymeleaf templating engine</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">web</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Full-stack web development with Tomcat and Spring MVC</p></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <div class="listingblock"> 
    <div class="title">
-    Example 1. 举个例子：通过CLI创建新项目
+    举个例子：通过CLI创建新项目
    </div> 
    <div class="content"> 
-    <div class="paragraph"> 
-     <p>$ spring init --name hello-world --artifactId hello-world --groupId org.springbooks --language java --boot-version 1.5.13.RELEASE --type maven-project --dependencies web,thymeleaf,devtools --extract</p> 
-    </div> 
+    <pre>$ spring init --name hello-world --artifactId hello-world --groupId org.springbooks --language java --boot-version 1.5.13.RELEASE --type maven-project --dependencies web,thymeleaf,devtools --extract</pre> 
    </div> 
   </div> 
   <div class="paragraph"> 
