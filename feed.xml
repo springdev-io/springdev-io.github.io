@@ -6,10 +6,41 @@
     <atom:link href="https://springdev.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Spring开发者，是一个专为广大Spring开发者们提供Spring相关开源技术的开发工具、技术框架、业界资讯、博客文章、培训教程、活动交流等开源社交综合性服务网站。</description>
     <language>zh-CN</language>
-    <pubDate>星期五, 20 七月 2018 18:00:20 +0800</pubDate>
-    <lastBuildDate>星期五, 20 七月 2018 18:00:20 +0800</lastBuildDate>
+    <pubDate>星期五, 20 七月 2018 20:58:01 +0800</pubDate>
+    <lastBuildDate>星期五, 20 七月 2018 20:58:01 +0800</lastBuildDate>
 
     <item>
+      <title>Spring一周回顾（2018年7月20日）</title>
+      <link>https://springdev.io/blog/2018/07/this_week_in_spring_july_20th_2018.html</link>
+      <pubDate>星期五, 20 七月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/07/this_week_in_spring_july_20th_2018.html</guid>
+      <description>&amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+  概要
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;blockquote&amp;gt;
+   本文带你回顾最近一周有关Spring社区的一些有趣的事情。 
+ &amp;lt;/blockquote&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;七月是毕业季令人有些感伤的日子，也是小朋友开始暑假放飞快乐的日子，同时也是一年之中下半场的开始。是的，不知不觉2018已经过去了一半，一定有些事没有做好而感到失望，也一定有很多事规划着要做而欣喜。 各位Spring粉丝们，大家周末好！看着&amp;lt;a href=&amp;quot;https://github.com/joshlong&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;龙大神&amp;lt;/a&amp;gt;本周又忙着在世界各地参加各种会议活动，为活动准备演讲材料《Reactive Spring》，在忙碌的同时也不忘如期发布本周新一期的&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/17/this-week-in-spring-july-17th-2018&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;This Week in Spring&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+ &amp;lt;ul&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/13/spring-batch-4-1-0-m2-released&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Batch 4.1.0.M2发布了&amp;lt;/a&amp;gt;，本版本提供了一些新特性，比如简化分块步骤、新增类&amp;lt;code&amp;gt;JsonFileItemWriter&amp;lt;/code&amp;gt;、新增了&amp;lt;code&amp;gt;BeanValidatingItemProcessor&amp;lt;/code&amp;gt;用以支持校验Bean。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/19/spring-rest-docs-1-2-5-release&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring REST Docs 1.2.5.RELEASE&amp;lt;/a&amp;gt;和&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/19/spring-rest-docs-2-0-2-release&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring REST Docs 2.0.2.RELEASE&amp;lt;/a&amp;gt;同时发布，修复了若干BUG。InfoQ有放出一个关于介绍使用Spring REST Docs的&amp;lt;a href=&amp;quot;https://www.infoq.com/presentations/documentation-api-spring-rest&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;视频&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/18/dependency-management-plugin-1-0-6-release&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Dependency Management Plugin 1.0.6.RELEASE发布&amp;lt;/a&amp;gt;，该版本修复了若干问题，将会包含在随后的Spring Boot 1.5.15和2.0.4一起提供。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Cloud Function上月已经发布了1.0.0正式版本，即将加入到Spring Initializr中提供创建项目可选项，再来看看之前有关介绍的&amp;lt;a href=&amp;quot;https://spring.io/blog/2017/07/05/introducing-spring-cloud-function&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;文章&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring架构师&amp;lt;a href=&amp;quot;https://ewolff.com&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Eberhard Wolff&amp;lt;/a&amp;gt;已经更新了他的演示项目的代码，可以在他的&amp;lt;a href=&amp;quot;https://github.com/ewolff?tab=repositories&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;GitHub主页&amp;lt;/a&amp;gt;看到更新。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.infoq.com/news/2018/07/axon-query-subscriptions-kafka&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Axon Framework 3.3 提供订阅查询API和支持Kafka集成支持&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://grails.org&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Grails的研发团队&amp;lt;/a&amp;gt;昨天刚刚发布了&amp;lt;a href=&amp;quot;http://micronaut.io&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;MicroNaut微服务框架&amp;lt;/a&amp;gt;的1.0.0.M3版本，他们从Grails多年的开发中借鉴了大量优秀的设计思想，同时又吸取了之前Grails的一些教训，非常期待正式版本的到来。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://blogs.apache.org/groovy/entry/groovy-2-5-1-released&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Groovy 2.5.1发布了&amp;lt;/a&amp;gt;，该版本修复了44个Bug，为兼容JDK多个版本而持续优化。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;当你读到这篇文章时，也许正在赶回家的路上或者已经回到温暖的家里，——周末愉快！&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
       <title>关于Spring开发指南</title>
       <link>https://springdev.io/blog/2018/07/spring_guides_intro.html</link>
       <pubDate>星期四, 19 七月 2018 00:00:00 +0800</pubDate>
