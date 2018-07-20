@@ -6,10 +6,83 @@
     <atom:link href="https://springdev.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Spring开发者，是一个专为广大Spring开发者们提供Spring相关开源技术的开发工具、技术框架、业界资讯、博客文章、培训教程、活动交流等开源社交综合性服务网站。</description>
     <language>zh-CN</language>
-    <pubDate>星期四, 19 七月 2018 17:51:11 +0800</pubDate>
-    <lastBuildDate>星期四, 19 七月 2018 17:51:11 +0800</lastBuildDate>
+    <pubDate>星期五, 20 七月 2018 17:41:26 +0800</pubDate>
+    <lastBuildDate>星期五, 20 七月 2018 17:41:26 +0800</lastBuildDate>
 
     <item>
+      <title>关于Spring开发指南</title>
+      <link>https://springdev.io/blog/2018/07/spring_guides_intro.html</link>
+      <pubDate>星期四, 19 七月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/07/spring_guides_intro.html</guid>
+      <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
+ &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
+  目录
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;ul class=&amp;quot;sectlevel1&amp;quot;&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#关于spring开发指南&amp;quot;&amp;gt;关于Spring开发指南&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#学习建议&amp;quot;&amp;gt;学习建议&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#文档和代码下载使用&amp;quot;&amp;gt;文档和代码下载使用&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+    概要
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;blockquote&amp;gt;
+     本文主要介绍如何学习使用官方的Spring开发指南。 
+   &amp;lt;/blockquote&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://springdev.io/guides/&amp;quot;&amp;gt;Spring开发指南&amp;lt;/a&amp;gt;是Spring官方提供的学习Spring技术的入门级型开发指南，内容主题全面覆盖了Spring技术栈，每篇指南都遵循一套标准化的学习流程，从新手入门到专题介绍，从基础概念介绍到准备工作，从零开始到完成编码和测试验证，同时提供了多种主流构建方式（Maven、Gradle、IDE），项目完整的源代码放在Github上可下载，内容与版本同步更新，作为初学者的技术入门和了解新技术都是一套不错的开发必备指南，也有很好的学习借鉴和指导性。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;如果有人问我推荐什么资料，我一定首先官方的开发指南，再配合各个框架参考文档，作为入门学习已经足够了。但是让很多人望而却步的是“看着一大篇英文就头疼”，这的确是个问题，这需要一边写着代码还得一边在线翻译资料。作为一个专业的软件开发人，这似乎是必经之路，无论你走过多少路都得回到开始的地方，源代码和参考文档就是那个“最初的地方”。当然，我也能理解，学习一门英语也非“一朝一夕之事”。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;关于spring开发指南&amp;quot;&amp;gt;关于Spring开发指南&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Spring开发指南分为三个类型，&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+   &amp;lt;ul&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;新手入门&amp;lt;/strong&amp;gt;（Getting Started Guides），适合新手入门，一般是使用Spring技术来构建诸如“Hello World”的简单示例，学习时间在15到30分钟&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;专题&amp;lt;/strong&amp;gt;（Topical Guides），比新手入门的内容广泛，带有独特观点的技术讲解，适合全面的理解技术和框架的架构设计，学习时间在一个小时左右&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;教程&amp;lt;/strong&amp;gt;（Tutorials），更加深度和主题的企业级应用开发，提供现实世界复杂问题的解决方案，学习时间在2到3小时&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+   &amp;lt;/ul&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在新手入门阶段，往往需要提前了解一些基础知识和概念，这些知识有助于理解所学内容和顺利完成学习任务。比如，JSON、REST、POJO、JavaScript、Tomcat等，除此之外，还需要会安装一些常用Java相关开发工具，比如Java SDK、Git、STS等，这些都会在开发中经常用到。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;目前已经提供的新手入门，已有发布有&amp;lt;code&amp;gt;69&amp;lt;/code&amp;gt;篇，涵盖主题有前端（jQuery、AngularJS、Vaadin）、工具（Maven、Gradle、STS、IntelliJ IDEA.）、数据库（MySQL、JPA、Redis、MongoDB、 Neo4j）、消息与服务（JMS、Web Service）、云（Google Cloud、Cloud Foundry、网关、配置管理）、测试、安全等等，已经相当全面了。而专题方面则只有一篇是关于Spring Security的，这个我目前正在写一些有关的文章。教程方面目前也有&amp;lt;code&amp;gt;5&amp;lt;/code&amp;gt;篇，仍然有更多可完善的内容，尤其是关于Spring Cloud方面比较缺乏。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;学习建议&amp;quot;&amp;gt;学习建议&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;如果是刚接触到Spring技术，建议先从新手入门学起，先跟着示例一步一步将代码完成，这样会有个基本认识，如果有不清楚的地方可以先查找Spring框架对应的参考文档。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;文档和代码下载使用&amp;quot;&amp;gt;文档和代码下载使用&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;官方的开发指南都托管在&amp;lt;a href=&amp;quot;https://github.com/spring-guides&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Github&amp;lt;/a&amp;gt;上，所有的代码遵守&amp;lt;a href=&amp;quot;http://apache.org/licenses/LICENSE-2.0&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;ASLv2&amp;lt;/a&amp;gt;，而所有的文档遵守&amp;lt;a href=&amp;quot;http://creativecommons.org/licenses/by-nd/3.0/&amp;quot;&amp;gt;Attribution, NoDerivatives creative commons license&amp;lt;/a&amp;gt;，任何人都可以阅读、下载包括分发，但是禁止演绎，也就是不允许修改和翻译。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;由于版权限制，所以启动翻译的计划暂时搁置，但是仍然会提供原创文档。&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
       <title>Spring一周回顾（2018年7月13日）</title>
       <link>https://springdev.io/blog/2018/07/this_week_in_spring_july_13th_2018.html</link>
       <pubDate>星期五, 13 七月 2018 00:00:00 +0800</pubDate>
@@ -939,6 +1012,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
  &amp;lt;/div&amp;gt; 
  &amp;lt;ul class=&amp;quot;sectlevel1&amp;quot;&amp;gt; 
   &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#通过下载安装包来安装&amp;quot;&amp;gt;通过下载安装包来安装&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#使用osx_homebrew安装&amp;quot;&amp;gt;使用OSX Homebrew安装&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
   &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#使用scoop安装sts&amp;quot;&amp;gt;使用Scoop安装STS&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; 
  &amp;lt;/ul&amp;gt; 
 &amp;lt;/div&amp;gt; 
@@ -960,7 +1034,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
     主要特性如下：
    &amp;lt;/div&amp;gt; 
    &amp;lt;ul&amp;gt; 
-    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;支持Java 8&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;支持Java 8/9/10&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;集成Git、Gradle、Maven等工具&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;更好的识别Spring项目，能够识别Spring配置文件，诸如命名空间、控制器、Bean的定义&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring配置文件的校验检查，更早发现错误&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
@@ -994,6 +1068,25 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
    &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
     图表 2. STS下载页面
    &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;使用osx_homebrew安装&amp;quot;&amp;gt;使用OSX Homebrew安装&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://brew.sh&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Homebrew&amp;lt;/a&amp;gt;是专为macOS系统设计的软件包安装管理工具。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在终端控制台上执行下面的命令来安装STS：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;$ brew cask install sts&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在Linux系统上，有&amp;lt;a href=&amp;quot;//http://linuxbrew.sh&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Homebrew的Fork版本：Linuxbrew&amp;lt;/a&amp;gt;，可以尝试一下。&amp;lt;/p&amp;gt; 
   &amp;lt;/div&amp;gt; 
  &amp;lt;/div&amp;gt; 
 &amp;lt;/div&amp;gt; 
