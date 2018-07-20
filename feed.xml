@@ -6,8 +6,8 @@
     <atom:link href="https://springdev.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Spring开发者，是一个专为广大Spring开发者们提供Spring相关开源技术的开发工具、技术框架、业界资讯、博客文章、培训教程、活动交流等开源社交综合性服务网站。</description>
     <language>zh-CN</language>
-    <pubDate>星期五, 20 七月 2018 17:41:26 +0800</pubDate>
-    <lastBuildDate>星期五, 20 七月 2018 17:41:26 +0800</lastBuildDate>
+    <pubDate>星期五, 20 七月 2018 17:56:19 +0800</pubDate>
+    <lastBuildDate>星期五, 20 七月 2018 17:56:19 +0800</lastBuildDate>
 
     <item>
       <title>关于Spring开发指南</title>
@@ -35,10 +35,10 @@
    &amp;lt;/blockquote&amp;gt; 
   &amp;lt;/div&amp;gt; 
   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
-   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://springdev.io/guides/&amp;quot;&amp;gt;Spring开发指南&amp;lt;/a&amp;gt;是Spring官方提供的学习Spring技术的入门级型开发指南，内容主题全面覆盖了Spring技术栈，每篇指南都遵循一套标准化的学习流程，从新手入门到专题介绍，从基础概念介绍到准备工作，从零开始到完成编码和测试验证，同时提供了多种主流构建方式（Maven、Gradle、IDE），项目完整的源代码放在Github上可下载，内容与版本同步更新，作为初学者的技术入门和了解新技术都是一套不错的开发必备指南，也有很好的学习借鉴和指导性。&amp;lt;/p&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://springdev.io/guides/&amp;quot;&amp;gt;Spring开发指南&amp;lt;/a&amp;gt;是Spring官方提供的Spring技术的入门级学习指南，内容主题全面覆盖了Spring技术栈，每篇指南都遵循一套标准化的学习流程，从新手入门到专题介绍，从基础概念介绍到编码实战，即使你什么都不会，也可以从零开始跟着文档一步步完成编码，最终完成学习这并不是一件难事，在每个指南中同时提供了多种主流构建方式（Maven、Gradle、IDE），项目完整的源代码放在Github上可下载，内容与最新版本同步更新，作为初学者的技术入门和了解新技术都是一套不错的必备之选，也有很好的学习借鉴和指导性。&amp;lt;/p&amp;gt; 
   &amp;lt;/div&amp;gt; 
   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
-   &amp;lt;p&amp;gt;如果有人问我推荐什么资料，我一定首先官方的开发指南，再配合各个框架参考文档，作为入门学习已经足够了。但是让很多人望而却步的是“看着一大篇英文就头疼”，这的确是个问题，这需要一边写着代码还得一边在线翻译资料。作为一个专业的软件开发人，这似乎是必经之路，无论你走过多少路都得回到开始的地方，源代码和参考文档就是那个“最初的地方”。当然，我也能理解，学习一门英语也非“一朝一夕之事”。&amp;lt;/p&amp;gt; 
+   &amp;lt;p&amp;gt;如果有人问我推荐什么资料，我一定首先推荐官方的开发指南，再配合各个框架参考文档，作为入门学习已经足够了。但是让很多人望而却步的是“看着一大篇英文就头疼”，这的确是个问题，这需要一边写着代码还得一边在线翻译资料。作为一个专业的软件开发人，这似乎是必经之路，无论你走过多少路都得回到开始的地方，源代码和参考文档就是那个“最初的地方”。当然，我也能理解，学习一门英语也非“一朝一夕之事”。&amp;lt;/p&amp;gt; 
   &amp;lt;/div&amp;gt; 
  &amp;lt;/div&amp;gt; 
 &amp;lt;/div&amp;gt; 
