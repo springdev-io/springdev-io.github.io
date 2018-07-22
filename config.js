@@ -17,6 +17,7 @@ System.config({
     "jquery": "npm:jquery@1.12.4",
     "jquery-timeago": "github:rmm5t/jquery-timeago@1.5.3",
     "most": "npm:most@0.2.4",
+    "switchery": "github:abpetkov/switchery@0.8.2",
     "traceur": "github:jmcriffey/bower-traceur@0.0.93",
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.93",
     "github:jspm/nodelibs-assert@0.1.0": {

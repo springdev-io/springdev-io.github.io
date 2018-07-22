@@ -22,6 +22,7 @@ System.config({
             "feature/infoPopups/main.js",
             "feature/map/main.js",
             "feature/mobileSupport/main.js",
+            "feature/navMenu/main.js",
             "feature/platformDownloads/main.js",
             "feature/prettify/main.js",
             "feature/search/SearchController.js",
@@ -29,7 +30,9 @@ System.config({
             "feature/searchFacets/filterForm.js",
             "feature/searchFacets/main.js",
             "feature/stsImport/main.js",
+            "feature/switchSidebar/main.js",
             "feature/timeAgo/main.js",
+            "github:abpetkov/switchery@0.8.2/dist/switchery.min.js",
             "github:jspm/nodelibs-process@0.1.2.js",
             "github:jspm/nodelibs-process@0.1.2/index.js",
             "github:rmm5t/jquery-timeago@1.5.3.js",
@@ -155,6 +158,7 @@ System.config({
         "npm:vm-browserify@0.0.4": {
             "indexof": "npm:indexof@0.0.1"
         },
+        "switchery": "github:abpetkov/switchery@0.8.2",
         "traceur": "github:jmcriffey/bower-traceur@0.0.93",
         "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.93"
     },

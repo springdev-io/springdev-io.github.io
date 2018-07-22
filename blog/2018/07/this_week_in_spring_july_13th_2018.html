@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute"
-      data-code-prettify data-clipboard-buttons data-goto-top data-nav-menu data-mobile-support>
+      data-code-prettify data-clipboard-buttons data-goto-top data-nav-menu data-switch-sidebar data-mobile-support>
 
   <head>
   <meta charset="utf-8"/>
@@ -120,11 +120,21 @@
     <div layout:fragment="full-width--layout"></div>
     <main layout:fragment="content" class="body--container container-fluid">
       <div class="main-body--wrapper">
+        <div class="desktop-only">
+          <h1 class="blog-category active content--title">新闻资讯</h1>
+          <div class="blog-category content--title">
+            <div>Engineering</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>Releases</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>News and Events</div>
+          </div>
+				  <div class="switch-sidebar pull-right"><input type="checkbox" class="js-switch"/></div>
+        </div>
         <div class="row-fluid blog--wrapper">
           <article class="span8 mobile-left-pane" id="content">
-            <header class="desktop-only">
-              <div class="blog-category active content--title">新闻资讯</div>
-            </header>
             <div class="blog--container">
               <header>
                 <h1 class="blog--title">Spring一周回顾（2018年7月13日）</h1>

@@ -86,3 +86,11 @@ b.conum *{color:inherit!important}
     color: #fff;
     background-color: #6db33f;
 }
+.switch-sidebar {
+    margin-top: -50px;
+}
+.switchery-small {
+    border-radius: 20px;
+    height: 20px;
+    width: 43px;
+}
