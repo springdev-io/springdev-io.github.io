@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute"
-      data-mobile-support data-goto-top data-search>
+<html data-mobile-support data-goto-top data-search>
 
   <head>
   <meta charset="utf-8"/>
@@ -117,9 +115,9 @@
     </div>
   </div>
 
-    <div class="container-fluid" layout:fragment="top-content"></div>
-    <div layout:fragment="full-width--layout"></div>
-    <main layout:fragment="content" class="body--container container-fluid">
+    <div class="container-fluid"></div>
+    <div></div>
+    <main class="body--container container-fluid">
       <div class="main-body--wrapper">
         <div class="desktop-only">
           <h1 class="blog-category active content--title">
