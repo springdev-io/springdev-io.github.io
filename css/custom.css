@@ -63,7 +63,9 @@ b.conum *{color:inherit!important}
 .content-right-pane--container ul li ul.sectlevel2 {
     display: none;
 }
-
+.header--navbar .navbar-inner .navbar-link a {
+    font-size: 16px;
+}
 #toTop {
     color: #fff;
     text-align: center;
