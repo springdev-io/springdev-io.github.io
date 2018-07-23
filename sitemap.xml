@@ -19,12 +19,6 @@
         <loc>https://springdev.io/blog/2018/07/this_week_in_spring_july_13th_2018.html</loc>
         <lastmod>2018-07-13</lastmod>
     </url><url>
-        <loc>https://springdev.io/blog/2018/06/http_basic_auth.html</loc>
-        <lastmod>2018-06-07</lastmod>
-    </url><url>
-        <loc>https://springdev.io/blog/2018/06/hello_world.html</loc>
-        <lastmod>2018-06-05</lastmod>
-    </url><url>
         <loc>https://springdev.io/blog/2018/06/sts.html</loc>
         <lastmod>2018-06-04</lastmod>
     </url><url>
@@ -42,5 +36,14 @@
     </url><url>
         <loc>https://springdev.io/index.html</loc>
         <lastmod>2018-06-06</lastmod>
+    </url><url>
+        <loc>https://springdev.io/guides/tutorials/http-digest-auth/index.html</loc>
+        <lastmod>2018-06-07</lastmod>
+    </url><url>
+        <loc>https://springdev.io/guides/tutorials/http-basic-auth/index.html</loc>
+        <lastmod>2018-06-07</lastmod>
+    </url><url>
+        <loc>https://springdev.io/guides/tutorials/hello-world/index.html</loc>
+        <lastmod>2018-06-05</lastmod>
     </url>
 </urlset>
