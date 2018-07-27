@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute"
-      data-mobile-support data-goto-top data-search>
+<html data-mobile-support data-goto-top data-nav-menu data-search>
 
   <head>
   <meta charset="utf-8"/>
-  <title>Tags: rest - Spring Dev</title>
+  <title>Tags: release - Spring Dev</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
@@ -117,9 +115,9 @@
     </div>
   </div>
 
-    <div class="container-fluid" layout:fragment="top-content"></div>
-    <div layout:fragment="full-width--layout"></div>
-    <main layout:fragment="content" class="body--container container-fluid">
+    <div class="container-fluid"></div>
+    <div></div>
+    <main class="body--container container-fluid">
       <div class="main-body--wrapper">
         <div class="desktop-only">
           <h1 class="blog-category active content--title">
@@ -138,31 +136,35 @@
         <div class="row-fluid blog--wrapper">
           <div class="span8 mobile-left-pane">
             <div class="page-header">
-              <h1>??category.rest_zh_CN??</h1>
+              <h1>版本发布</h1>
             </div>
-            
+            <div>
+              <h3>2018年七月</h3>
+
+              <h4 style="padding-left:1.2em;">26 - <a href="/blog/2018/07/spring_framework_5_1_goes_rc1.html">Spring Framework 5.1 RC1发布了</a></h4>
+            </div>
           </div>
           <aside class="span4 mobile-right-pane">
       <div><h2>文章分类</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
-          <li class="blog-category active">
+          <li class="blog-category">
             <div class="icon blog-icon all-posts"></div>
             <a href="/blog/">全部内容</a>
             <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon engineering"></div>
-            <a href="/tags/article.html">书籍文章</a>
+            <a href="/blog/category/article.html">书籍文章</a>
             <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
           </li>
-          <li class="blog-category">
+          <li class="blog-category active">
             <div class="icon blog-icon releases"></div>
-            <a href="/tags/release.html">版本发布</a>
+            <a href="/blog/category/release.html">版本发布</a>
             <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon news-and-events"></div>
-            <a href="/tags/news.html">新闻资讯</a>
+            <a href="/blog/category/news.html">新闻资讯</a>
             <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
           </li>
         </ul>
@@ -171,29 +173,31 @@
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
             <div class="icon blog-icon news-and-events"></div>
+            <a href="../../../blog/2018/07/this_week_in_spring_july_27th_2018.html">Spring一周回顾（20...</a>
+            <span class="pull-right">2018-07-27</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news-and-events"></div>
+            <a href="../../../blog/2018/07/spring_framework_5_1_goes_rc1.html">Spring Framew...</a>
+            <span class="pull-right">2018-07-26</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news-and-events"></div>
+            <a href="../../../blog/2018/07/this_week_in_spring_july_20th_2018.html">Spring一周回顾（20...</a>
+            <span class="pull-right">2018-07-20</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news-and-events"></div>
+            <a href="../../../blog/2018/07/spring_guides_intro.html">关于Spring开发指南</a>
+            <span class="pull-right">2018-07-19</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news-and-events"></div>
             <a href="../../../blog/2018/07/this_week_in_spring_july_13th_2018.html">Spring一周回顾（20...</a>
             <span class="pull-right">2018-07-13</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news-and-events"></div>
-            <a href="../../../blog/2018/06/http_basic_auth.html">HTTP Basic认证</a>
-            <span class="pull-right">2018-06-07</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news-and-events"></div>
-            <a href="../../../blog/2018/06/hello_world.html">热身：编写一个Hello ...</a>
-            <span class="pull-right">2018-06-05</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news-and-events"></div>
-            <a href="../../../blog/2018/06/sts.html">安装 STS</a>
-            <span class="pull-right">2018-06-04</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news-and-events"></div>
-            <a href="../../../blog/2018/06/springboot.html">安装 Spring Boo...</a>
-            <span class="pull-right">2018-06-03</span>
-          </li>
+          
+          
           
           
           
