@@ -6,8 +6,8 @@
     <atom:link href="https://springdev.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Spring开发者，是一个专为广大Spring开发者们提供Spring相关开源技术的开发工具、技术框架、业界资讯、博客文章、培训教程、活动交流等开源社交综合性服务网站。</description>
     <language>zh-CN</language>
-    <pubDate>星期二, 31 七月 2018 03:49:13 +0800</pubDate>
-    <lastBuildDate>星期二, 31 七月 2018 03:49:13 +0800</lastBuildDate>
+    <pubDate>星期二, 31 七月 2018 03:55:27 +0800</pubDate>
+    <lastBuildDate>星期二, 31 七月 2018 03:55:27 +0800</lastBuildDate>
 
     <item>
       <title>Spring Boot 2.0.4现已可用</title>
@@ -353,50 +353,6 @@ Mono&amp;amp;lt;String&amp;amp;gt; users(@RegisteredOAuth2AuthorizedClient(&amp;
  &amp;lt;/div&amp;gt; 
 &amp;lt;/div&amp;gt;</description>	  
     </item><item>
-      <title>Spring一周回顾（2018年7月27日）</title>
-      <link>https://springdev.io/blog/2018/07/this_week_in_spring_july_27th_2018.html</link>
-      <pubDate>星期五, 27 七月 2018 00:00:00 +0800</pubDate>
-      <guid isPermaLink="false">blog/2018/07/this_week_in_spring_july_27th_2018.html</guid>
-      <description>&amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
- &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
-  概要
- &amp;lt;/div&amp;gt; 
- &amp;lt;blockquote&amp;gt;
-   本文带你回顾最近一周有关Spring社区的一些有趣的事情。 
- &amp;lt;/blockquote&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;首先，在此恭喜&amp;lt;a href=&amp;quot;https://github.com/joshlong&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;龙大神&amp;lt;/a&amp;gt;被评选进入&amp;lt;a href=&amp;quot;https://jaxlondon.com/blog/java-core-languages/top-20-java-influencers-of-2018/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;2018最具影响力的Java技术专家&amp;lt;/a&amp;gt;，排行榜上面公布了这些专家们的twitter账号，由于众所周知的原因，Twitter在中国大陆不能访问，所以你要是想关注的话就只能搭梯子上去了。&amp;lt;/p&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;好了，各位Spring粉丝们，大家周末好！本周新一期的&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/25/this-week-in-spring-july-24th-2018&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;This Week in Spring - July 24th&amp;lt;/a&amp;gt;如约而至，内容很精彩。&amp;lt;/p&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
- &amp;lt;ul&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-framework-5-1-goes-rc1&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Framework 5.1发布第一个RC版本&amp;lt;/a&amp;gt;，Spring Boot 2.1 M1下周发布时将会集成进来，同时Spring Framework 5.0.8也已经发布&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-framework-5-0-8-available-now&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Framework 5.0.8&amp;lt;/a&amp;gt;，此版本包括修复了40个问题和改进，将会和Spring Boot接下来的2.0.4版本一起使用&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-security-5-0-7-released&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Security 5.0.7发布&amp;lt;/a&amp;gt;，关闭了8个问题，包括升级依赖和修复OAuth2相关问题&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-data-lovelace-rc1-available&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Data Lovelace RC1发布&amp;lt;/a&amp;gt;，关闭了194个&amp;lt;a href=&amp;quot;https://jira.spring.io/issues/?filter=16137&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;问题&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://in.relation.to/2018/07/24/hibernate-orm-533-final-out/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Hibernate ORM 5.3.3.Final发布&amp;lt;/a&amp;gt;，基于即将到来的JDK 11进行兼容测试&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.oschina.net/news/98314/java-11-api-changes-so-far&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;看看JDK 11有哪些特性变更&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+2018.2+Release+Notes&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;IntelliJ IDEA 2018.2发布了&amp;lt;/a&amp;gt;，修复和增强JDK10/11的支持，增加了对Groovy语言2.5和3.0的一些支持，内置Gradle升级到4.8，修复BUG，支持默认任务，自动监测并编译buildSrc项目，还有Spring&amp;amp;amp;Spring Boot的一些新特性和改进等等&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.elastic.co/guide/en/kibana/6.3/release-notes-6.3.2.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Kibana 6.3.2发布&amp;lt;/a&amp;gt;，建议升级&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.elastic.co/guide/en/logstash/6.3/logstash-6-3-2.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Logstash 6.3.2发布&amp;lt;/a&amp;gt;，建议升级&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.hashicorp.com/blog/consul-1-2-service-mesh&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;HashiCorp Consul 1.2发布&amp;lt;/a&amp;gt;，主要亮点是自动将现有的Consul集群转换为服务网格解决方案，同时服务与服务之间的通信自动安全增强，使用TLS加密与基于身份的授权&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.infoq.com/news/2018/07/knative-kubernetes-serverless&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Google Releases Knative&amp;lt;/a&amp;gt;，Knative是一个用来构建、部署和管理无服务器工作负载的框架&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://istio.io/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Istio 1.0发布进入倒计时&amp;lt;/a&amp;gt;，准确的说是在7月31号下午三点正式发布&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/angular/angular/blob/master/CHANGELOG.md&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Angular 6.1.0发布了&amp;lt;/a&amp;gt;，要使用起来，不能掉队了&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://icampaign.com.cn/pivotal/spring/index.php&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;“应用无忧Spring实战营”活动资料下载&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://springdev.io/guides/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring开发社区的指南板块正在改版中&amp;lt;/a&amp;gt;，已经发布部分学习教程，后续会继续更新&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://www.infoq.com/cn/articles/5-microservices-trends-to-watch-in-2018&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;2018年5大微服务发展趋势&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://www.infoq.com/cn/articles/cncf-survey-china&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;来自CNCF的调查报告：中国的云原生之路&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://gr8conf.us/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;GR8Conf US 2018已经圆满结束&amp;lt;/a&amp;gt;，三天的大会干货满满，不能去现场实在遗憾，部分文档和代码已经放出，得赶紧补一补了。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
- &amp;lt;/ul&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;本期内容如此精彩，可以收藏先。一周忙碌的工作结束，祝你有个愉快而轻松的周末！&amp;lt;/p&amp;gt; 
-&amp;lt;/div&amp;gt;</description>	  
-    </item><item>
       <title>Spring Data Ingalls SR14和Kay SR9发布了</title>
       <link>https://springdev.io/blog/2018/07/spring_data_ingalls_sr14_and_kay_sr9_released.html</link>
       <pubDate>星期五, 27 七月 2018 00:00:00 +0800</pubDate>
@@ -461,6 +417,50 @@ Mono&amp;amp;lt;String&amp;amp;gt; users(@RegisteredOAuth2AuthorizedClient(&amp;
    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Data Couchbase 3.0.9 - &amp;lt;a href=&amp;quot;https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/3.0.9.RELEASE&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Artifacts&amp;lt;/a&amp;gt; - &amp;lt;a href=&amp;quot;https://docs.spring.io/spring-data/couchbase/docs/3.0.9.RELEASE/api&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Javadoc&amp;lt;/a&amp;gt; - &amp;lt;a href=&amp;quot;https://docs.spring.io/spring-data/couchbase/docs/3.0.9.RELEASE/reference/html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Documentation&amp;lt;/a&amp;gt; - &amp;lt;a href=&amp;quot;https://docs.spring.io/spring-data/couchbase/docs/3.0.9.RELEASE/changelog.txt&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Changelog&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
   &amp;lt;/ul&amp;gt; 
  &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
+      <title>Spring一周回顾（2018年7月27日）</title>
+      <link>https://springdev.io/blog/2018/07/this_week_in_spring_july_27th_2018.html</link>
+      <pubDate>星期五, 27 七月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/07/this_week_in_spring_july_27th_2018.html</guid>
+      <description>&amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+  概要
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;blockquote&amp;gt;
+   本文带你回顾最近一周有关Spring社区的一些有趣的事情。 
+ &amp;lt;/blockquote&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;首先，在此恭喜&amp;lt;a href=&amp;quot;https://github.com/joshlong&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;龙大神&amp;lt;/a&amp;gt;被评选进入&amp;lt;a href=&amp;quot;https://jaxlondon.com/blog/java-core-languages/top-20-java-influencers-of-2018/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;2018最具影响力的Java技术专家&amp;lt;/a&amp;gt;，排行榜上面公布了这些专家们的twitter账号，由于众所周知的原因，Twitter在中国大陆不能访问，所以你要是想关注的话就只能搭梯子上去了。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;好了，各位Spring粉丝们，大家周末好！本周新一期的&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/25/this-week-in-spring-july-24th-2018&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;This Week in Spring - July 24th&amp;lt;/a&amp;gt;如约而至，内容很精彩。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+ &amp;lt;ul&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-framework-5-1-goes-rc1&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Framework 5.1发布第一个RC版本&amp;lt;/a&amp;gt;，Spring Boot 2.1 M1下周发布时将会集成进来，同时Spring Framework 5.0.8也已经发布&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-framework-5-0-8-available-now&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Framework 5.0.8&amp;lt;/a&amp;gt;，此版本包括修复了40个问题和改进，将会和Spring Boot接下来的2.0.4版本一起使用&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-security-5-0-7-released&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Security 5.0.7发布&amp;lt;/a&amp;gt;，关闭了8个问题，包括升级依赖和修复OAuth2相关问题&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-data-lovelace-rc1-available&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Data Lovelace RC1发布&amp;lt;/a&amp;gt;，关闭了194个&amp;lt;a href=&amp;quot;https://jira.spring.io/issues/?filter=16137&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;问题&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://in.relation.to/2018/07/24/hibernate-orm-533-final-out/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Hibernate ORM 5.3.3.Final发布&amp;lt;/a&amp;gt;，基于即将到来的JDK 11进行兼容测试&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.oschina.net/news/98314/java-11-api-changes-so-far&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;看看JDK 11有哪些特性变更&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+2018.2+Release+Notes&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;IntelliJ IDEA 2018.2发布了&amp;lt;/a&amp;gt;，修复和增强JDK10/11的支持，增加了对Groovy语言2.5和3.0的一些支持，内置Gradle升级到4.8，修复BUG，支持默认任务，自动监测并编译buildSrc项目，还有Spring&amp;amp;amp;Spring Boot的一些新特性和改进等等&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.elastic.co/guide/en/kibana/6.3/release-notes-6.3.2.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Kibana 6.3.2发布&amp;lt;/a&amp;gt;，建议升级&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.elastic.co/guide/en/logstash/6.3/logstash-6-3-2.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Logstash 6.3.2发布&amp;lt;/a&amp;gt;，建议升级&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.hashicorp.com/blog/consul-1-2-service-mesh&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;HashiCorp Consul 1.2发布&amp;lt;/a&amp;gt;，主要亮点是自动将现有的Consul集群转换为服务网格解决方案，同时服务与服务之间的通信自动安全增强，使用TLS加密与基于身份的授权&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.infoq.com/news/2018/07/knative-kubernetes-serverless&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Google Releases Knative&amp;lt;/a&amp;gt;，Knative是一个用来构建、部署和管理无服务器工作负载的框架&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://istio.io/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Istio 1.0发布进入倒计时&amp;lt;/a&amp;gt;，准确的说是在7月31号下午三点正式发布&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/angular/angular/blob/master/CHANGELOG.md&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Angular 6.1.0发布了&amp;lt;/a&amp;gt;，要使用起来，不能掉队了&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://icampaign.com.cn/pivotal/spring/index.php&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;“应用无忧Spring实战营”活动资料下载&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://springdev.io/guides/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring开发社区的指南板块正在改版中&amp;lt;/a&amp;gt;，已经发布部分学习教程，后续会继续更新&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://www.infoq.com/cn/articles/5-microservices-trends-to-watch-in-2018&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;2018年5大微服务发展趋势&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://www.infoq.com/cn/articles/cncf-survey-china&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;来自CNCF的调查报告：中国的云原生之路&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://gr8conf.us/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;GR8Conf US 2018已经圆满结束&amp;lt;/a&amp;gt;，三天的大会干货满满，不能去现场实在遗憾，部分文档和代码已经放出，得赶紧补一补了。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;本期内容如此精彩，可以收藏先。一周忙碌的工作结束，祝你有个愉快而轻松的周末！&amp;lt;/p&amp;gt; 
 &amp;lt;/div&amp;gt;</description>	  
     </item><item>
       <title>Spring Framework 5.1 RC1发布了</title>
