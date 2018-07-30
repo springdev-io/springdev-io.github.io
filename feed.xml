@@ -6,10 +6,397 @@
     <atom:link href="https://springdev.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Spring开发者，是一个专为广大Spring开发者们提供Spring相关开源技术的开发工具、技术框架、业界资讯、博客文章、培训教程、活动交流等开源社交综合性服务网站。</description>
     <language>zh-CN</language>
-    <pubDate>星期六, 28 七月 2018 01:01:56 +0800</pubDate>
-    <lastBuildDate>星期六, 28 七月 2018 01:01:56 +0800</lastBuildDate>
+    <pubDate>星期二, 31 七月 2018 03:49:13 +0800</pubDate>
+    <lastBuildDate>星期二, 31 七月 2018 03:49:13 +0800</lastBuildDate>
 
     <item>
+      <title>Spring Boot 2.0.4现已可用</title>
+      <link>https://springdev.io/blog/2018/07/spring_boot_2_0_4_available_now.html</link>
+      <pubDate>星期一, 30 七月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/07/spring_boot_2_0_4_available_now.html</guid>
+      <description>&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;Spring Boot 2.0.4包含了&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/milestone/113?closed=1&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;90个修复、改进和依赖项更新&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+  其中修复的部分BUG
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;ul&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/issues/13921&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;当使用EndpointRequest.toAnyEndpoint()时/actuator/不安全&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/issues/13834&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;提供一致的方法来发现主要DispatcherServlet的路径&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/issues/13900&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;项目特定设置未在Eclipse中应用&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/issues/13636&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;由于缺少默认构造函数而无法绑定的属性很难诊断&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/issues/13155&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;在使用JdbcTemplate之前，数据库迁移可能尚未运行&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/issues/13508&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;RedisCacheConfiguration缺少@ConditionalOnClass检查&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+  依赖升级
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;ul&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Framework 5.0.8&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Data Kay SR9&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Security 5.0.7.RELEASE&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Session Apple-SR4&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Integration 5.0.7.RELEASE&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Web Services 3.0.3.RELEASE&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Kafka 2.1.8.RELEASE&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring HATEOAS 0.25.0.RELEASE&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Amqp 2.0.5.RELEASE&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring REST Docs 2.0.2.RELEASE&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Micrometer 1.0.6&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Netty 4.1.27.Final&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Hibernate Validator 6.0.11.Final&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Kafka 1.0.2&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Jna 4.5.2&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Mariadb 2.2.6&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Postgresql 42.2.4&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Kotlin 1.2.51&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Solr 6.6.5&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Johnzon Jsonb 1.1.8&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Jooq 3.10.8&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Rxjava2 2.1.16&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
+      <title>Spring Boot 1.x在一年后将停止更新</title>
+      <link>https://springdev.io/blog/2018/07/spring_boot_1_x_eol_aug_1st_2019.html</link>
+      <pubDate>星期一, 30 七月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/07/spring_boot_1_x_eol_aug_1st_2019.html</guid>
+      <description>&amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+  概要
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;blockquote&amp;gt;
+   今天，Spring Boot的合伙创始人
+  &amp;lt;a href=&amp;quot;https://spring.io/team/pwebb&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Phil Webb&amp;lt;/a&amp;gt;在官方博客正式宣布了Spring Boot 1.x将在2018年8月1号后的一年后停止维护。Spring Boot 1.5分支从
+  &amp;lt;a href=&amp;quot;https://spring.io/blog/2017/01/30/spring-boot-1-5-1-released&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;1.5.1发布&amp;lt;/a&amp;gt;到现在总共发布了15次， 正好经历了18个月。 
+ &amp;lt;/blockquote&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;以下是其全文内容：&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;所有好东西都必须结束，对于1.x系列的Spring Boot，这意味着我们将需要在今天开始的12个月后，也就是在2019年8月1日停止维护。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;我们将继续发布偶尔的1.5.x维护版本，直到那时为止，然后结束分支。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;现有的Spring Boot 1.x用户应该相应地进行规划，以确保它们在该日期之前已升级到最新的2.x版本。另请注意，Spring Boot 2.0及更高版本需要Java 8+，因此如果你运行的是Java 6或7，则还应该计划升级JDK。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;有关将Spring Boot 1.5应用程序升级到2.0需要执行的操作的详细说明，请查看&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;迁移指南&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;祝你好运！&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
+      <title>Spring Boot 1.5.15现已可用</title>
+      <link>https://springdev.io/blog/2018/07/spring_boot_1_5_15_available_now.html</link>
+      <pubDate>星期一, 30 七月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/07/spring_boot_1_5_15_available_now.html</guid>
+      <description>&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;Spring Boot 1.5.15包含了&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/milestone/114?closed=1&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;35个修复、改进和依赖项更新&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+  其中修复的部分BUG
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;ul&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/pull/13863&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Flyway文件系统前缀位置检查&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/issues/13803&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;当Jetty的WebAppContext无法启动时，应用程序仍然启动成功&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/issues/13588&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;由于BeanTypeRegistry持有过时信息，重写的bean定义会导致错误的Bean条件判断&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/issues/13450&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;在springProfile的name属性中使用时，不会替换属性占位符&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/issues/7735&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;自动配置的MultipartConfigElement会阻止CommonsMultipartResolver解析请求部分&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/issues/12742&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;如果Undertow启用了访问日志记录，当容器停止时，线程会泄漏&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+  依赖升级
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;ul&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Data Ingalls SR14&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Amqp 1.7.9.RELEASE&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Dependency Management Plugin 1.0.6.RELEASE&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Httpclient 4.5.6&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Httpcore 4.4.10&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Tomcat 8.5.32&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Narayana 5.5.32.Final&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Maven Enforcer Plugin 1.4.1&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Git Commit Id Plugin 2.2.4&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
+      <title>Spring Security 5.1.0 M2发布了</title>
+      <link>https://springdev.io/blog/2018/07/spring_security_5_1_0_m2_released.html</link>
+      <pubDate>星期日, 29 七月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/07/spring_security_5_1_0_m2_released.html</guid>
+      <description>&amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Spring Security的项目负责人&amp;lt;a href=&amp;quot;https://spring.io/team/rwinch&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Rob Winch&amp;lt;/a&amp;gt;在官方博客宣布了&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/30/spring-security-5-1-0-m2-released&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;5.1.0.M2版本发布&amp;lt;/a&amp;gt;的消息，这个版本总共关闭了&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-security/milestone/106?closed=1&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;100多个任务单&amp;lt;/a&amp;gt;，其中有不少新特性。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;下面我们将一起来看看有哪些亮点。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;oauth2&amp;quot;&amp;gt;OAuth2&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;oauth2资源服务器_oauth2_resource_server&amp;quot;&amp;gt;OAuth2资源服务器（OAuth2 Resource Server）&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;添加了对OAuth2资源服务器的基本支持。 参见示例：&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-security/tree/5.1.0.M2/samples/boot/oauth2resourceserver&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;oauth2resourceserver&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;authorization_code_flow&amp;quot;&amp;gt;Authorization Code Flow&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;用户现在可以使用OAuth 2.0授权代码授予获取访问令牌。参见示例： &amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-security/tree/5.1.0.M2/samples/boot/authcodegrant&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;authcodegrant&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;支持oauth2和webclient&amp;quot;&amp;gt;支持OAuth2和WebClient&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;现在内置了对OAuth2和WebClient的支持。具体如下：&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+    &amp;lt;ul&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;添加访问令牌到请求中&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;访问令牌过期时自动刷新&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;解析要使用的访问令牌&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;/ul&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;例如，在Servlet环境中，你可以像这样配置Bean：&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+     &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;@Bean
+WebClient webClient(OAuth2AuthorizedClientRepository repository) {
+    ServletOAuth2AuthorizedClientExchangeFilterFunction filter =
+        new ServletOAuth2AuthorizedClientExchangeFilterFunction(repository);
+    return WebClient.builder()
+        .filter(new OAuth2AuthorizedClientExchangeFilterFunction())
+        .apply(filter.oauth2Configuration())
+        .build();
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;现在，你可以通过多种不同方式添加OAuth令牌。 如果需要，可以使用Spring MVC支持解析&amp;lt;code&amp;gt;OAuth2AuthorizedClient&amp;lt;/code&amp;gt;。如果授权服务器返回刷新令牌，而访问令牌也即将过期时，Spring Security则将透明地更新访问令牌并提交更新后的访问令牌。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+     &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;@GetMapping(&amp;quot;/users&amp;quot;)
+Mono&amp;amp;lt;String&amp;amp;gt; users(@RegisteredOAuth2AuthorizedClient(&amp;quot;client-id&amp;quot;)
+        OAuth2AuthorizedClient authorizedClient) {
+    return this.webClient.get()
+        .uri(&amp;quot;https://api.example.com/user&amp;quot;)
+        .attributes(oauth2AuthorizedClient(authorizedClient))
+        .retrieve()
+        .bodyToMono(String.class);
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;你还可以通过“WebClient”解析访问令牌。 例如：&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+     &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;Mono&amp;amp;lt;String&amp;amp;gt; users() {
+    return this.webClient.get()
+        .uri(&amp;quot;https://api.example.com/user&amp;quot;)
+        .attributes(clientRegistrationId(&amp;quot;client-id&amp;quot;))
+        .retrieve()
+        .bodyToMono(String.class);
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;如果使用OAuth2登录或OIDC进行身份验证，则可以获取默认访问令牌而无需用户交互。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+     &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;Mono&amp;amp;lt;String&amp;amp;gt; users() {
+    // if Authenticated with OIDC
+    // OAuth2 Log In use the access token associated to log in
+    return this.webClient.get()
+        .uri(&amp;quot;https://api.example.com/user&amp;quot;)
+        .retrieve()
+        .bodyToMono(String.class);
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;webflux_oauth2登录支持oidc&amp;quot;&amp;gt;WebFlux OAuth2登录支持OIDC&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;WebFlux应用程序现在可以使用OAuth2和OIDC进行身份验证。 参见示例： &amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-security/tree/master/samples/boot/oauth2login-webflux&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;oauth2login-webflux&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;能够从oidc_discovery创建clientregistration&amp;quot;&amp;gt;能够从OIDC Discovery创建ClientRegistration&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;之前，用户希望与OIDC提供程序集成需要配置所有端点。例如，在Spring Boot中需要这样做：&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+     &amp;lt;pre&amp;gt;spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          okta:
+            client-id: okta-client-id
+            client-secret: okta-client-secret
+        provider:
+          okta:
+            authorization-uri: https://foo.oktapreview.com/oauth2/v1/authorize
+            token-uri: https://foo.oktapreview.com/oauth2/v1/token
+            user-info-uri: https://foo.oktapreview.com/oauth2/v1/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: https://foo.oktapreview.com/oauth2/v1/keys&amp;lt;/pre&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;现在，用户可以简单的配置发行者uri。例如:&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+     &amp;lt;pre&amp;gt;spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          okta:
+            client-id: okta-client-id
+            client-secret: okta-client-secret
+        provider:
+          okta:
+            issuer-uri: https://foo.oktapreview.com/oauth2/default/&amp;lt;/pre&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;支持自定义授权请求&amp;quot;&amp;gt;支持自定义授权请求&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;添加了&amp;lt;code&amp;gt;OAuth2AuthorizationRequestResolver&amp;lt;/code&amp;gt;用于支持自定义授权请求。 例如，如果用户想要从请求中添加/删除范围，他们现在可以轻松地执行此操作。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;单个clientregistration将会重定向到登录&amp;quot;&amp;gt;单个ClientRegistration将会重定向到登录&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;使用单个提供程序配置OAuth2/OIDC登录时，不是仅显示一个提供程序，而是更改默认值以立即重定向到提供程序。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;配置改进&amp;quot;&amp;gt;配置改进&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;现代化默认登录页面&amp;quot;&amp;gt;现代化默认登录页面&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;默认登录页面已经采用html5编写，看起来更具视觉吸引力。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;默认注销页面_default_log_out_page&amp;quot;&amp;gt;默认注销页面(Default Log Out Page)&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;由于添加了CSRF注销保护，因此默认应用程序无法注销。 现在，如果正在使用默认登录页面（即没有配置登录页面），那么还有一个默认的注销页面，它显示了一个注销表单。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;简化requestcache配置&amp;quot;&amp;gt;简化RequestCache配置&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;用户现在可以配置默认的RequestCache，将其暴露为&amp;lt;code&amp;gt;@ Bean&amp;lt;/code&amp;gt;。 已经更新了&amp;lt;code&amp;gt;HttpSessionRequestCache&amp;lt;/code&amp;gt;，不再要求该值为&amp;lt;code&amp;gt;DefaultRequestCache&amp;lt;/code&amp;gt;。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;强化你的应用程序_hardening_your_application&amp;quot;&amp;gt;强化你的应用程序(Hardening Your Application)&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;跨站点跟踪和http动词篡改保护_cross_site_tracing_http_verb_tampering_protection&amp;quot;&amp;gt;跨站点跟踪和HTTP动词篡改保护（Cross Site Tracing &amp;amp;amp; HTTP Verb Tampering Protection）&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;Spring Security 5.1 添加了 &amp;lt;a href=&amp;quot;https://www.owasp.org/index.php/Cross_Site_Tracing&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;&amp;lt;em&amp;gt;blank&amp;quot;&amp;gt;跨站点跟踪&amp;lt;/a&amp;gt; 和 &amp;lt;a href=&amp;quot;https://www.owasp.org/index.php/Testing_for_HTTP_Verb_Tampering&amp;lt;/em&amp;gt;(OTG-INPVAL-003)&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;HTTP动词篡改&amp;lt;/a&amp;gt;保护.&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;密码编码升级_password_encoding_upgrades&amp;quot;&amp;gt;密码编码升级（Password Encoding Upgrades）&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;用户可以实现&amp;lt;a href=&amp;quot;https://docs.spring.io/spring-security/site/docs/5.1.0.M2/api/org/springframework/security/core/userdetails/UserDetailsPasswordService.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;UserDetailsPasswordService&amp;lt;/a&amp;gt; 并暴露为 &amp;lt;code&amp;gt;@Bean&amp;lt;/code&amp;gt;，当认证成功后Spring Security的&amp;lt;code&amp;gt;DaoAuthenticationProvider&amp;lt;/code&amp;gt;将会：&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+    &amp;lt;ul&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;检查密码存储机制是否需要使用新的&amp;lt;a href=&amp;quot;https://docs.spring.io/spring-security/site/docs/5.1.0.M2/api/org/springframework/security/crypto/password/PasswordEncoder.html#upgradeEncoding-java.lang.String-&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;PasswordEncoder.upgradeEncoding&amp;lt;/a&amp;gt;方法来更新。例如， 如果它是采用sha256中编码的，那么默认情况下，Spring Security会建议它升级到BCrypt。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;如果需要升级密码编码，它将使用当前的&amp;lt;code&amp;gt;PasswordEncoder&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;code&amp;gt;UserDetails&amp;lt;/code&amp;gt;和新密码将被传递给&amp;lt;code&amp;gt;UserDetailsPasswordService&amp;lt;/code&amp;gt;，因此可以使用升级的密码编码保存。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;/ul&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;依赖更新&amp;quot;&amp;gt;依赖更新&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;我们已经更新了框架的依赖关系，以确保框架的传递依赖关系是最新的。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://projects.spring.io/spring-security/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;项目主页&amp;lt;/a&amp;gt; | &amp;lt;a href=&amp;quot;https://docs.spring.io/spring-security/site/docs/5.1.0.M2/reference/htmlsingle/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;参考手册&amp;lt;/a&amp;gt; | &amp;lt;a href=&amp;quot;https://stackoverflow.com/questions/tagged/spring-security&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;在线帮助&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
+      <title>Spring一周回顾（2018年7月27日）</title>
+      <link>https://springdev.io/blog/2018/07/this_week_in_spring_july_27th_2018.html</link>
+      <pubDate>星期五, 27 七月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/07/this_week_in_spring_july_27th_2018.html</guid>
+      <description>&amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+  概要
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;blockquote&amp;gt;
+   本文带你回顾最近一周有关Spring社区的一些有趣的事情。 
+ &amp;lt;/blockquote&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;首先，在此恭喜&amp;lt;a href=&amp;quot;https://github.com/joshlong&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;龙大神&amp;lt;/a&amp;gt;被评选进入&amp;lt;a href=&amp;quot;https://jaxlondon.com/blog/java-core-languages/top-20-java-influencers-of-2018/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;2018最具影响力的Java技术专家&amp;lt;/a&amp;gt;，排行榜上面公布了这些专家们的twitter账号，由于众所周知的原因，Twitter在中国大陆不能访问，所以你要是想关注的话就只能搭梯子上去了。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;好了，各位Spring粉丝们，大家周末好！本周新一期的&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/25/this-week-in-spring-july-24th-2018&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;This Week in Spring - July 24th&amp;lt;/a&amp;gt;如约而至，内容很精彩。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+ &amp;lt;ul&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-framework-5-1-goes-rc1&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Framework 5.1发布第一个RC版本&amp;lt;/a&amp;gt;，Spring Boot 2.1 M1下周发布时将会集成进来，同时Spring Framework 5.0.8也已经发布&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-framework-5-0-8-available-now&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Framework 5.0.8&amp;lt;/a&amp;gt;，此版本包括修复了40个问题和改进，将会和Spring Boot接下来的2.0.4版本一起使用&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-security-5-0-7-released&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Security 5.0.7发布&amp;lt;/a&amp;gt;，关闭了8个问题，包括升级依赖和修复OAuth2相关问题&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-data-lovelace-rc1-available&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Data Lovelace RC1发布&amp;lt;/a&amp;gt;，关闭了194个&amp;lt;a href=&amp;quot;https://jira.spring.io/issues/?filter=16137&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;问题&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://in.relation.to/2018/07/24/hibernate-orm-533-final-out/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Hibernate ORM 5.3.3.Final发布&amp;lt;/a&amp;gt;，基于即将到来的JDK 11进行兼容测试&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.oschina.net/news/98314/java-11-api-changes-so-far&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;看看JDK 11有哪些特性变更&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+2018.2+Release+Notes&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;IntelliJ IDEA 2018.2发布了&amp;lt;/a&amp;gt;，修复和增强JDK10/11的支持，增加了对Groovy语言2.5和3.0的一些支持，内置Gradle升级到4.8，修复BUG，支持默认任务，自动监测并编译buildSrc项目，还有Spring&amp;amp;amp;Spring Boot的一些新特性和改进等等&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.elastic.co/guide/en/kibana/6.3/release-notes-6.3.2.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Kibana 6.3.2发布&amp;lt;/a&amp;gt;，建议升级&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.elastic.co/guide/en/logstash/6.3/logstash-6-3-2.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Logstash 6.3.2发布&amp;lt;/a&amp;gt;，建议升级&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.hashicorp.com/blog/consul-1-2-service-mesh&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;HashiCorp Consul 1.2发布&amp;lt;/a&amp;gt;，主要亮点是自动将现有的Consul集群转换为服务网格解决方案，同时服务与服务之间的通信自动安全增强，使用TLS加密与基于身份的授权&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.infoq.com/news/2018/07/knative-kubernetes-serverless&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Google Releases Knative&amp;lt;/a&amp;gt;，Knative是一个用来构建、部署和管理无服务器工作负载的框架&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://istio.io/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Istio 1.0发布进入倒计时&amp;lt;/a&amp;gt;，准确的说是在7月31号下午三点正式发布&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/angular/angular/blob/master/CHANGELOG.md&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Angular 6.1.0发布了&amp;lt;/a&amp;gt;，要使用起来，不能掉队了&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://icampaign.com.cn/pivotal/spring/index.php&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;“应用无忧Spring实战营”活动资料下载&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://springdev.io/guides/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring开发社区的指南板块正在改版中&amp;lt;/a&amp;gt;，已经发布部分学习教程，后续会继续更新&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://www.infoq.com/cn/articles/5-microservices-trends-to-watch-in-2018&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;2018年5大微服务发展趋势&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://www.infoq.com/cn/articles/cncf-survey-china&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;来自CNCF的调查报告：中国的云原生之路&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://gr8conf.us/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;GR8Conf US 2018已经圆满结束&amp;lt;/a&amp;gt;，三天的大会干货满满，不能去现场实在遗憾，部分文档和代码已经放出，得赶紧补一补了。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;本期内容如此精彩，可以收藏先。一周忙碌的工作结束，祝你有个愉快而轻松的周末！&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
       <title>Spring Data Ingalls SR14和Kay SR9发布了</title>
       <link>https://springdev.io/blog/2018/07/spring_data_ingalls_sr14_and_kay_sr9_released.html</link>
       <pubDate>星期五, 27 七月 2018 00:00:00 +0800</pubDate>
@@ -74,50 +461,6 @@
    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Data Couchbase 3.0.9 - &amp;lt;a href=&amp;quot;https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/3.0.9.RELEASE&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Artifacts&amp;lt;/a&amp;gt; - &amp;lt;a href=&amp;quot;https://docs.spring.io/spring-data/couchbase/docs/3.0.9.RELEASE/api&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Javadoc&amp;lt;/a&amp;gt; - &amp;lt;a href=&amp;quot;https://docs.spring.io/spring-data/couchbase/docs/3.0.9.RELEASE/reference/html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Documentation&amp;lt;/a&amp;gt; - &amp;lt;a href=&amp;quot;https://docs.spring.io/spring-data/couchbase/docs/3.0.9.RELEASE/changelog.txt&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Changelog&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
   &amp;lt;/ul&amp;gt; 
  &amp;lt;/div&amp;gt; 
-&amp;lt;/div&amp;gt;</description>	  
-    </item><item>
-      <title>Spring一周回顾（2018年7月27日）</title>
-      <link>https://springdev.io/blog/2018/07/this_week_in_spring_july_27th_2018.html</link>
-      <pubDate>星期五, 27 七月 2018 00:00:00 +0800</pubDate>
-      <guid isPermaLink="false">blog/2018/07/this_week_in_spring_july_27th_2018.html</guid>
-      <description>&amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
- &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
-  概要
- &amp;lt;/div&amp;gt; 
- &amp;lt;blockquote&amp;gt;
-   本文带你回顾最近一周有关Spring社区的一些有趣的事情。 
- &amp;lt;/blockquote&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;首先，在此恭喜&amp;lt;a href=&amp;quot;https://github.com/joshlong&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;龙大神&amp;lt;/a&amp;gt;被评选进入&amp;lt;a href=&amp;quot;https://jaxlondon.com/blog/java-core-languages/top-20-java-influencers-of-2018/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;2018最具影响力的Java技术专家&amp;lt;/a&amp;gt;，排行榜上面公布了这些专家们的twitter账号，由于众所周知的原因，Twitter在中国大陆不能访问，所以你要是想关注的话就只能搭梯子上去了。&amp;lt;/p&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;好了，各位Spring粉丝们，大家周末好！本周新一期的&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/25/this-week-in-spring-july-24th-2018&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;This Week in Spring - July 24th&amp;lt;/a&amp;gt;如约而至，内容很精彩。&amp;lt;/p&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
- &amp;lt;ul&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-framework-5-1-goes-rc1&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Framework 5.1发布第一个RC版本&amp;lt;/a&amp;gt;，Spring Boot 2.1 M1下周发布时将会集成进来，同时Spring Framework 5.0.8也已经发布&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-framework-5-0-8-available-now&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Framework 5.0.8&amp;lt;/a&amp;gt;，此版本包括修复了40个问题和改进，将会和Spring Boot接下来的2.0.4版本一起使用&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-security-5-0-7-released&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Security 5.0.7发布&amp;lt;/a&amp;gt;，关闭了8个问题，包括升级依赖和修复OAuth2相关问题&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/26/spring-data-lovelace-rc1-available&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Data Lovelace RC1发布&amp;lt;/a&amp;gt;，关闭了194个&amp;lt;a href=&amp;quot;https://jira.spring.io/issues/?filter=16137&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;问题&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://in.relation.to/2018/07/24/hibernate-orm-533-final-out/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Hibernate ORM 5.3.3.Final发布&amp;lt;/a&amp;gt;，基于即将到来的JDK 11进行兼容测试&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.oschina.net/news/98314/java-11-api-changes-so-far&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;看看JDK 11有哪些特性变更&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+2018.2+Release+Notes&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;IntelliJ IDEA 2018.2发布了&amp;lt;/a&amp;gt;，修复和增强JDK10/11的支持，增加了对Groovy语言2.5和3.0的一些支持，内置Gradle升级到4.8，修复BUG，支持默认任务，自动监测并编译buildSrc项目，还有Spring&amp;amp;amp;Spring Boot的一些新特性和改进等等&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.elastic.co/guide/en/kibana/6.3/release-notes-6.3.2.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Kibana 6.3.2发布&amp;lt;/a&amp;gt;，建议升级&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.elastic.co/guide/en/logstash/6.3/logstash-6-3-2.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Logstash 6.3.2发布&amp;lt;/a&amp;gt;，建议升级&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.hashicorp.com/blog/consul-1-2-service-mesh&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;HashiCorp Consul 1.2发布&amp;lt;/a&amp;gt;，主要亮点是自动将现有的Consul集群转换为服务网格解决方案，同时服务与服务之间的通信自动安全增强，使用TLS加密与基于身份的授权&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.infoq.com/news/2018/07/knative-kubernetes-serverless&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Google Releases Knative&amp;lt;/a&amp;gt;，Knative是一个用来构建、部署和管理无服务器工作负载的框架&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://istio.io/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Istio 1.0发布进入倒计时&amp;lt;/a&amp;gt;，准确的说是在7月31号下午三点正式发布&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/angular/angular/blob/master/CHANGELOG.md&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Angular 6.1.0发布了&amp;lt;/a&amp;gt;，要使用起来，不能掉队了&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://icampaign.com.cn/pivotal/spring/index.php&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;“应用无忧Spring实战营”活动资料下载&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://springdev.io/guides/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring开发社区的指南板块正在改版中&amp;lt;/a&amp;gt;，已经发布部分学习教程，后续会继续更新&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://www.infoq.com/cn/articles/5-microservices-trends-to-watch-in-2018&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;2018年5大微服务发展趋势&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://www.infoq.com/cn/articles/cncf-survey-china&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;来自CNCF的调查报告：中国的云原生之路&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://gr8conf.us/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;GR8Conf US 2018已经圆满结束&amp;lt;/a&amp;gt;，三天的大会干货满满，不能去现场实在遗憾，部分文档和代码已经放出，得赶紧补一补了。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
- &amp;lt;/ul&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;本期内容如此精彩，可以收藏先。一周忙碌的工作结束，祝你有个愉快而轻松的周末！&amp;lt;/p&amp;gt; 
 &amp;lt;/div&amp;gt;</description>	  
     </item><item>
       <title>Spring Framework 5.1 RC1发布了</title>
