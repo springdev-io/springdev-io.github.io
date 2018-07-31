@@ -6,13 +6,256 @@
     <atom:link href="https://springdev.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Spring开发者，是一个专为广大Spring开发者们提供Spring相关开源技术的开发工具、技术框架、业界资讯、博客文章、培训教程、活动交流等开源社交综合性服务网站。</description>
     <language>zh-CN</language>
-    <pubDate>星期二, 31 七月 2018 03:55:27 +0800</pubDate>
-    <lastBuildDate>星期二, 31 七月 2018 03:55:27 +0800</lastBuildDate>
+    <pubDate>星期三, 1 八月 2018 01:32:55 +0800</pubDate>
+    <lastBuildDate>星期三, 1 八月 2018 01:32:55 +0800</lastBuildDate>
 
     <item>
+      <title>Spring Boot 2.1.0 M1发布</title>
+      <link>https://springdev.io/blog/2018/07/spring_boot_2_1_m1.html</link>
+      <pubDate>星期二, 31 七月 2018 08:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/07/spring_boot_2_1_m1.html</guid>
+      <description>&amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Spring Boot 2.1的第一个里程碑已经发布，可以从里程碑库中获取。 此版本关闭了180多个问题和拉取请求。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;第一个里程碑建立在Spring Framework 5.1.RC1、Spring Data Lovelace RC1和Spring Security 5.1 M2等最新的项目之上。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;其他亮点还包括：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+   &amp;lt;ul&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;采用Undertow 2.0 and Tomcat 9.0，支持Servlet 4&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;缓存端点&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;支持查询单个组件的运行状况&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;支持多配置文件YAML文档中的配置文件表达式和&amp;amp;lt;springProfile&amp;amp;gt; Logback配置&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+   &amp;lt;/ul&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;我对Spring Boot 2.1.0 M1发行说明进行了详细的整理，内容如下：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;从spring_boot_2_0升级&amp;quot;&amp;gt;从Spring Boot 2.0升级&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;弃用的类&amp;quot;&amp;gt;弃用的类&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;在此版本中已删除了Spring Boot 2.0中不推荐使用的类，方法和属性。 请确保在升级之前不要调用已弃用的方法。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;bean覆盖&amp;quot;&amp;gt;Bean覆盖&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;默认情况下禁用Bean覆盖以防止意外覆盖bean。如果依赖于覆盖，则需要将&amp;lt;code&amp;gt;spring.main.allow-bean-definition-overriding&amp;lt;/code&amp;gt;设置为&amp;lt;code&amp;gt;true&amp;lt;/code&amp;gt;。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;info和health默认不安全&amp;quot;&amp;gt;info和health默认不安全&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;如果&amp;lt;code&amp;gt;spring-security&amp;lt;/code&amp;gt;在没有任何安全配置的类路径上，则&amp;lt;code&amp;gt;/info&amp;lt;/code&amp;gt;和&amp;lt;code&amp;gt;/health&amp;lt;/code&amp;gt;现在公开以保持一致性。如果类路径上有&amp;lt;code&amp;gt;spring-security&amp;lt;/code&amp;gt;且未提供任何安全配置，则需要明确保护它们。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;json_simple&amp;quot;&amp;gt;Json Simple&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;不再提供json-simple的依赖关系管理，并且已删除使用它的JsonParser实现。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;jersey_1&amp;quot;&amp;gt;Jersey 1&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;不再支持Jersey 1。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;spring_provides&amp;quot;&amp;gt;spring.provides&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;Starter可以声明&amp;lt;code&amp;gt;META-INF/spring.provides&amp;lt;/code&amp;gt;，以便IDE可以找出它提供的依赖关系。扫描Starter POM以获得它声明的直接依赖性应该足以指示。如果你负责第三方启动器并声明此文件，则可以将其删除。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;servlet路径&amp;quot;&amp;gt;Servlet路径&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;&amp;lt;code&amp;gt;server.servlet.path&amp;lt;/code&amp;gt;属性已改为&amp;lt;code&amp;gt;spring.mvc.servlet.path&amp;lt;/code&amp;gt;。如果你以编程方式依赖该属性来获取&amp;lt;code&amp;gt;DispatcherServlet&amp;lt;/code&amp;gt;的路径，请改为使用&amp;lt;code&amp;gt;DispatcherServletPath&amp;lt;/code&amp;gt;。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;maven插件&amp;quot;&amp;gt;Maven插件&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;finalName属性不再可自定义以与标准Maven插件的行为保持一致。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;值得关注的一些新内容&amp;quot;&amp;gt;值得关注的一些新内容&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;第三方库升级&amp;quot;&amp;gt;第三方库升级&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;Spring Boot 2.1构建于Spring Framework 5.1之上并需要它。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;我们已尽可能升级到其他第三方jars的最新稳定版本。此版本中的一些值得注意的依赖项升级包括：&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+    &amp;lt;ul&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Tomcat 9&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Undertow 2&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Hibernate 5.3&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;JUnit 5.2&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;/ul&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;profile表达式&amp;quot;&amp;gt;Profile表达式&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;Profile匹配已得到改进，以支持表达式格式。例如，&amp;lt;code&amp;gt;product &amp;amp;amp;(us-east | eu-central)&amp;lt;/code&amp;gt; 表示生产配置文件处于活动状态且&amp;lt;code&amp;gt;us-east&amp;lt;/code&amp;gt;或&amp;lt;code&amp;gt;eu-central&amp;lt;/code&amp;gt;配置文件处于活动状态时匹配。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+    &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+     Profile表达式可用于下列场景：
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;ul&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;使用@Profile来启用组件&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;加载多种profile的YAML文档&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;使用&amp;amp;lt;springProfile&amp;amp;gt;启用Logback配置&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;/ul&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;actuator&amp;quot;&amp;gt;Actuator&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;sect3&amp;quot;&amp;gt; 
+    &amp;lt;h4 id=&amp;quot;缓存端点&amp;quot;&amp;gt;缓存端点&amp;lt;/h4&amp;gt; 
+    &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+     &amp;lt;p&amp;gt;新的&amp;lt;code&amp;gt;/actuator/caches&amp;lt;/code&amp;gt;端点列出可用的CacheManager实例及其各自的缓存基本元数据。有关更多详细信息，请参阅API。&amp;lt;/p&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;sect3&amp;quot;&amp;gt; 
+    &amp;lt;h4 id=&amp;quot;spring_integration图形化端点&amp;quot;&amp;gt;Spring Integration图形化端点&amp;lt;/h4&amp;gt; 
+    &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+     &amp;lt;p&amp;gt;如果你使用的是Spring Integration，则可以在&amp;lt;code&amp;gt;/actuator/integrationgraph&amp;lt;/code&amp;gt;中采用图形化的方式来展示所有Spring Integration组件。有关更多详细信息，请参阅API。&amp;lt;/p&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;sect3&amp;quot;&amp;gt; 
+    &amp;lt;h4 id=&amp;quot;健康端点&amp;quot;&amp;gt;健康端点&amp;lt;/h4&amp;gt; 
+    &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+     &amp;lt;p&amp;gt;现在，&amp;lt;code&amp;gt;HealthIndicatorRegistry&amp;lt;/code&amp;gt;bean可用于在运行时添加和删除&amp;lt;code&amp;gt;HealthIndicator&amp;lt;/code&amp;gt;。如有必要，还会改进运行状况端点以查询特定指示符。 例如&amp;lt;code&amp;gt;/actuator/health/db&amp;lt;/code&amp;gt;仅执行“db”&amp;lt;code&amp;gt;HealthIndicator&amp;lt;/code&amp;gt;。有关更多详细信息，请参阅API。&amp;lt;/p&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+     &amp;lt;p&amp;gt;Apache Cassandra的响应式HealthIndicator已经可用。&amp;lt;/p&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;sect3&amp;quot;&amp;gt; 
+    &amp;lt;h4 id=&amp;quot;micrometer&amp;quot;&amp;gt;Micrometer&amp;lt;/h4&amp;gt; 
+    &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+     &amp;lt;p&amp;gt;常用标记可以声明方式应用于所有计量表，如以下示例所示：&amp;lt;/p&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+     &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+      &amp;lt;pre&amp;gt;management.metrics.tags.region=us-east-1
+management.metrics.tags.stack=prod&amp;lt;/pre&amp;gt; 
+     &amp;lt;/div&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+     &amp;lt;p&amp;gt;上面的示例为所有仪表添加了一个区域和堆栈标签，其值分别为&amp;lt;code&amp;gt;us-east-1&amp;lt;/code&amp;gt;和&amp;lt;code&amp;gt;prod&amp;lt;/code&amp;gt;。&amp;lt;/p&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+    &amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+     &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+      指标范围已得到改善：
+     &amp;lt;/div&amp;gt; 
+     &amp;lt;ul&amp;gt; 
+      &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Hibernate指标&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+      &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;code&amp;gt;WebClient&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;/ul&amp;gt; 
+    &amp;lt;/div&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;安全&amp;quot;&amp;gt;安全&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;添加了对WebFlux OAuth2登录的支持。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;OpenID Connect提供程序可用使用&amp;lt;code&amp;gt;issuer-uri&amp;lt;/code&amp;gt;来更容易配置，&amp;lt;code&amp;gt;issuer-uri&amp;lt;/code&amp;gt;是为其颁发者标识符的URI。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;elasticsearch_rest客户端&amp;quot;&amp;gt;Elasticsearch REST客户端&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;作为Jest的替代选项，&amp;lt;code&amp;gt;RestClient&amp;lt;/code&amp;gt;和&amp;lt;code&amp;gt;RestHighLevelClient&amp;lt;/code&amp;gt;的自动配置提供了命名空间为&amp;lt;code&amp;gt;spring.elasticsearch.rest.*&amp;lt;/code&amp;gt;的可配置选项。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;jms_code_connectionfactory_code_缓存&amp;quot;&amp;gt;JMS &amp;lt;code&amp;gt;ConnectionFactory&amp;lt;/code&amp;gt;缓存&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;默认情况下，使用&amp;lt;code&amp;gt;CachingConnectionFactory&amp;lt;/code&amp;gt;缓存自动配置的&amp;lt;code&amp;gt;ConnectionFactory&amp;lt;/code&amp;gt;，直到启用pool选项或将&amp;lt;code&amp;gt;spring.jms.cache.enabled&amp;lt;/code&amp;gt;设置为&amp;lt;code&amp;gt;false&amp;lt;/code&amp;gt;。 Pooling选项也已扩展到Artemis（请参阅&amp;lt;code&amp;gt;spring.jms.artemis.pool.*&amp;lt;/code&amp;gt;）。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;quartz&amp;quot;&amp;gt;Quartz&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;&amp;lt;code&amp;gt;spring.quartz&amp;lt;/code&amp;gt;命名空间增加了多个配置项。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;junit_5&amp;quot;&amp;gt;JUnit 5&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;所有&amp;lt;code&amp;gt;@…​&amp;lt;/code&amp;gt;测试注释都使用&amp;lt;code&amp;gt;@ExtendedWith(SpringExtension.class)&amp;lt;/code&amp;gt;进行元注释，因此如果你使用的是JUnit，则可以删除此设置的冗余部分。Spring Boot使用的&amp;lt;code&amp;gt;maven-surefire-plugin&amp;lt;/code&amp;gt;版本，不需要任何自定义设置就能使用JUnit 5。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;maven插件_2&amp;quot;&amp;gt;Maven插件&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;通过使用&amp;lt;a href=&amp;quot;http://docs.spring.io/spring-boot/docs/2.1.0.M1/maven-plugin/examples/run-system-properties.html&amp;quot;&amp;gt;系统属性&amp;lt;/a&amp;gt;和&amp;lt;a href=&amp;quot;http://docs.spring.io/spring-boot/docs/2.1.0.M1/maven-plugin/examples/run-env-variables.html&amp;quot;&amp;gt;环境变量&amp;lt;/a&amp;gt;的专用选项，改进了指定参数。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;也可以重新打包和替换&amp;lt;code&amp;gt;classified&amp;lt;/code&amp;gt;构件，请参阅&amp;lt;code&amp;gt;classified&amp;lt;/code&amp;gt;属性的更新文档。&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;sect2&amp;quot;&amp;gt; 
+   &amp;lt;h3 id=&amp;quot;其他&amp;quot;&amp;gt;其他&amp;lt;/h3&amp;gt; 
+   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+    &amp;lt;p&amp;gt;除了上面列出的变化之外，还有许多小的调整和改进，包括：&amp;lt;/p&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+    &amp;lt;ul&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;code&amp;gt;@ConditionalOnEnabledEndpoint&amp;lt;/code&amp;gt;可用于任何组件（例如，端点仅需要的东西，如果端点被禁用则不应创建）。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;code&amp;gt;@WebMvcTest&amp;lt;/code&amp;gt;也自动配置Spring Data REST（例如支持Sort和Pageable请求参数）。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;不再需要导出虚假的&amp;lt;code&amp;gt;ResourceConfig&amp;lt;/code&amp;gt;以启用Jersey支持。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;使用自动配置的&amp;lt;code&amp;gt;WebServiceTemplateBuilder&amp;lt;/code&amp;gt;创建&amp;lt;code&amp;gt;WebServiceTemplate&amp;lt;/code&amp;gt;更容易。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Jackson可见性可以使用&amp;lt;code&amp;gt;spring.jackson.visibility.*&amp;lt;/code&amp;gt;来配置。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;在使用Devtools的情况下，错误页面会显示出堆栈跟踪。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;JNDI查找已得到改进，默认情况下启用&amp;lt;code&amp;gt;resourceRef&amp;lt;/code&amp;gt;。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;可以通过&amp;lt;code&amp;gt;RabbitRetryTemplateCustomizer&amp;lt;/code&amp;gt;来自定义Rabbit使用的&amp;lt;code&amp;gt;RetryTemplate&amp;lt;/code&amp;gt;。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;自动配置排除现在保证应用一致。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+     &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;使用Reactor Netty支持HTTP/2。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;/ul&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+   &amp;lt;div class=&amp;quot;admonitionblock note&amp;quot;&amp;gt; 
+    &amp;lt;table&amp;gt; 
+     &amp;lt;tbody&amp;gt;
+      &amp;lt;tr&amp;gt; 
+       &amp;lt;td class=&amp;quot;icon&amp;quot;&amp;gt; &amp;lt;i class=&amp;quot;fa icon-note&amp;quot; title=&amp;quot;Note&amp;quot;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;/td&amp;gt; 
+       &amp;lt;td class=&amp;quot;content&amp;quot;&amp;gt; 
+        &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+         &amp;lt;p&amp;gt;由于本次发布的版本包含特性比较多，因此这篇文章确实有点长，可用先收藏后慢慢看，后续版本版发布我会继续详细报道，敬请关注。&amp;lt;/p&amp;gt; 
+        &amp;lt;/div&amp;gt; &amp;lt;/td&amp;gt; 
+      &amp;lt;/tr&amp;gt; 
+     &amp;lt;/tbody&amp;gt;
+    &amp;lt;/table&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
       <title>Spring Boot 2.0.4现已可用</title>
       <link>https://springdev.io/blog/2018/07/spring_boot_2_0_4_available_now.html</link>
-      <pubDate>星期一, 30 七月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期一, 30 七月 2018 17:21:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/07/spring_boot_2_0_4_available_now.html</guid>
       <description>&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
  &amp;lt;p&amp;gt;Spring Boot 2.0.4包含了&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/milestone/113?closed=1&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;90个修复、改进和依赖项更新&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; 
@@ -60,42 +303,9 @@
  &amp;lt;/ul&amp;gt; 
 &amp;lt;/div&amp;gt;</description>	  
     </item><item>
-      <title>Spring Boot 1.x在一年后将停止更新</title>
-      <link>https://springdev.io/blog/2018/07/spring_boot_1_x_eol_aug_1st_2019.html</link>
-      <pubDate>星期一, 30 七月 2018 00:00:00 +0800</pubDate>
-      <guid isPermaLink="false">blog/2018/07/spring_boot_1_x_eol_aug_1st_2019.html</guid>
-      <description>&amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
- &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
-  概要
- &amp;lt;/div&amp;gt; 
- &amp;lt;blockquote&amp;gt;
-   今天，Spring Boot的合伙创始人
-  &amp;lt;a href=&amp;quot;https://spring.io/team/pwebb&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Phil Webb&amp;lt;/a&amp;gt;在官方博客正式宣布了Spring Boot 1.x将在2018年8月1号后的一年后停止维护。Spring Boot 1.5分支从
-  &amp;lt;a href=&amp;quot;https://spring.io/blog/2017/01/30/spring-boot-1-5-1-released&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;1.5.1发布&amp;lt;/a&amp;gt;到现在总共发布了15次， 正好经历了18个月。 
- &amp;lt;/blockquote&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;以下是其全文内容：&amp;lt;/p&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;所有好东西都必须结束，对于1.x系列的Spring Boot，这意味着我们将需要在今天开始的12个月后，也就是在2019年8月1日停止维护。&amp;lt;/p&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;我们将继续发布偶尔的1.5.x维护版本，直到那时为止，然后结束分支。&amp;lt;/p&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;现有的Spring Boot 1.x用户应该相应地进行规划，以确保它们在该日期之前已升级到最新的2.x版本。另请注意，Spring Boot 2.0及更高版本需要Java 8+，因此如果你运行的是Java 6或7，则还应该计划升级JDK。&amp;lt;/p&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;有关将Spring Boot 1.5应用程序升级到2.0需要执行的操作的详细说明，请查看&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;迁移指南&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;祝你好运！&amp;lt;/p&amp;gt; 
-&amp;lt;/div&amp;gt;</description>	  
-    </item><item>
       <title>Spring Boot 1.5.15现已可用</title>
       <link>https://springdev.io/blog/2018/07/spring_boot_1_5_15_available_now.html</link>
-      <pubDate>星期一, 30 七月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期一, 30 七月 2018 15:20:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/07/spring_boot_1_5_15_available_now.html</guid>
       <description>&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
  &amp;lt;p&amp;gt;Spring Boot 1.5.15包含了&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/milestone/114?closed=1&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;35个修复、改进和依赖项更新&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; 
@@ -130,9 +340,42 @@
  &amp;lt;/ul&amp;gt; 
 &amp;lt;/div&amp;gt;</description>	  
     </item><item>
+      <title>Spring Boot 1.x在一年后将停止更新</title>
+      <link>https://springdev.io/blog/2018/07/spring_boot_1_x_eol_aug_1st_2019.html</link>
+      <pubDate>星期一, 30 七月 2018 15:19:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/07/spring_boot_1_x_eol_aug_1st_2019.html</guid>
+      <description>&amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+  概要
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;blockquote&amp;gt;
+   今天，Spring Boot的合伙创始人
+  &amp;lt;a href=&amp;quot;https://spring.io/team/pwebb&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Phil Webb&amp;lt;/a&amp;gt;在官方博客正式宣布了Spring Boot 1.x将在2018年8月1号后的一年后停止维护。Spring Boot 1.5分支从
+  &amp;lt;a href=&amp;quot;https://spring.io/blog/2017/01/30/spring-boot-1-5-1-released&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;1.5.1发布&amp;lt;/a&amp;gt;到现在总共发布了15次， 正好经历了18个月。 
+ &amp;lt;/blockquote&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;以下是其全文内容：&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;所有好东西都必须结束，对于1.x系列的Spring Boot，这意味着我们将需要在今天开始的12个月后，也就是在2019年8月1日停止维护。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;我们将继续发布偶尔的1.5.x维护版本，直到那时为止，然后结束分支。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;现有的Spring Boot 1.x用户应该相应地进行规划，以确保它们在该日期之前已升级到最新的2.x版本。另请注意，Spring Boot 2.0及更高版本需要Java 8+，因此如果你运行的是Java 6或7，则还应该计划升级JDK。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;有关将Spring Boot 1.5应用程序升级到2.0需要执行的操作的详细说明，请查看&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;迁移指南&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;祝你好运！&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
       <title>Spring Security 5.1.0 M2发布了</title>
       <link>https://springdev.io/blog/2018/07/spring_security_5_1_0_m2_released.html</link>
-      <pubDate>星期日, 29 七月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期一, 30 七月 2018 12:44:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/07/spring_security_5_1_0_m2_released.html</guid>
       <description>&amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
  &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
@@ -355,7 +598,7 @@ Mono&amp;amp;lt;String&amp;amp;gt; users(@RegisteredOAuth2AuthorizedClient(&amp;
     </item><item>
       <title>Spring Data Ingalls SR14和Kay SR9发布了</title>
       <link>https://springdev.io/blog/2018/07/spring_data_ingalls_sr14_and_kay_sr9_released.html</link>
-      <pubDate>星期五, 27 七月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期五, 27 七月 2018 08:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/07/spring_data_ingalls_sr14_and_kay_sr9_released.html</guid>
       <description>&amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
  &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
@@ -421,7 +664,7 @@ Mono&amp;amp;lt;String&amp;amp;gt; users(@RegisteredOAuth2AuthorizedClient(&amp;
     </item><item>
       <title>Spring一周回顾（2018年7月27日）</title>
       <link>https://springdev.io/blog/2018/07/this_week_in_spring_july_27th_2018.html</link>
-      <pubDate>星期五, 27 七月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期五, 27 七月 2018 08:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/07/this_week_in_spring_july_27th_2018.html</guid>
       <description>&amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
  &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
@@ -465,7 +708,7 @@ Mono&amp;amp;lt;String&amp;amp;gt; users(@RegisteredOAuth2AuthorizedClient(&amp;
     </item><item>
       <title>Spring Framework 5.1 RC1发布了</title>
       <link>https://springdev.io/blog/2018/07/spring_framework_5_1_goes_rc1.html</link>
-      <pubDate>星期四, 26 七月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期四, 26 七月 2018 08:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/07/spring_framework_5_1_goes_rc1.html</guid>
       <description>&amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
  &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
@@ -493,7 +736,7 @@ Mono&amp;amp;lt;String&amp;amp;gt; users(@RegisteredOAuth2AuthorizedClient(&amp;
     </item><item>
       <title>Spring一周回顾（2018年7月20日）</title>
       <link>https://springdev.io/blog/2018/07/this_week_in_spring_july_20th_2018.html</link>
-      <pubDate>星期五, 20 七月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期五, 20 七月 2018 08:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/07/this_week_in_spring_july_20th_2018.html</guid>
       <description>&amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
  &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
@@ -530,7 +773,7 @@ Mono&amp;amp;lt;String&amp;amp;gt; users(@RegisteredOAuth2AuthorizedClient(&amp;
     </item><item>
       <title>关于Spring开发指南</title>
       <link>https://springdev.io/blog/2018/07/spring_guides_intro.html</link>
-      <pubDate>星期四, 19 七月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期四, 19 七月 2018 08:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/07/spring_guides_intro.html</guid>
       <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
  &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
@@ -603,7 +846,7 @@ Mono&amp;amp;lt;String&amp;amp;gt; users(@RegisteredOAuth2AuthorizedClient(&amp;
     </item><item>
       <title>Spring一周回顾（2018年7月13日）</title>
       <link>https://springdev.io/blog/2018/07/this_week_in_spring_july_13th_2018.html</link>
-      <pubDate>星期五, 13 七月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期五, 13 七月 2018 08:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/07/this_week_in_spring_july_13th_2018.html</guid>
       <description>&amp;lt;div class=&amp;quot;quoteblock abstract&amp;quot;&amp;gt; 
  &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
@@ -664,7 +907,7 @@ Mono&amp;amp;lt;String&amp;amp;gt; users(@RegisteredOAuth2AuthorizedClient(&amp;
     </item><item>
       <title>安装 STS</title>
       <link>https://springdev.io/blog/2018/06/sts.html</link>
-      <pubDate>星期一, 4 六月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期一, 4 六月 2018 08:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/06/sts.html</guid>
       <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
  &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
@@ -770,7 +1013,7 @@ Mono&amp;amp;lt;String&amp;amp;gt; users(@RegisteredOAuth2AuthorizedClient(&amp;
     </item><item>
       <title>Spring Boot CLI使用详解</title>
       <link>https://springdev.io/blog/2018/06/springbootcli.html</link>
-      <pubDate>星期日, 3 六月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期日, 3 六月 2018 09:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/06/springbootcli.html</guid>
       <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
  &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
@@ -1202,7 +1445,7 @@ class WebApplication {
     </item><item>
       <title>安装 Spring Boot CLI</title>
       <link>https://springdev.io/blog/2018/06/springboot.html</link>
-      <pubDate>星期日, 3 六月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期日, 3 六月 2018 08:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/06/springboot.html</guid>
       <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
  &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
@@ -1299,7 +1542,7 @@ Spring Boot v1.5.13.RELEASE&amp;lt;/pre&amp;gt;
     </item><item>
       <title>安装 Maven</title>
       <link>https://springdev.io/blog/2018/06/maven.html</link>
-      <pubDate>星期六, 2 六月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期六, 2 六月 2018 08:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/06/maven.html</guid>
       <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
  &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
@@ -1392,7 +1635,7 @@ Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T15:58:1
     </item><item>
       <title>安装 Java SDK 8</title>
       <link>https://springdev.io/blog/2018/06/jdk.html</link>
-      <pubDate>星期五, 1 六月 2018 00:00:00 +0800</pubDate>
+      <pubDate>星期五, 1 六月 2018 08:00:00 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/06/jdk.html</guid>
       <description>&amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;toc&amp;quot;&amp;gt; 
  &amp;lt;div id=&amp;quot;toctitle&amp;quot;&amp;gt;
