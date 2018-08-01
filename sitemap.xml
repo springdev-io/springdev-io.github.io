@@ -10,13 +10,19 @@
         <loc>https://springdev.io/404.html</loc>
         <lastmod>2018-06-06</lastmod>
     </url><url>
-        <loc>https://springdev.io/blog/2018/07/spring_boot_2_1_m1.html</loc>
+        <loc>https://springdev.io/blog/2018/07/spring_io_platform_cairo_sr3.html</loc>
+        <lastmod>2018-07-31</lastmod>
+    </url><url>
+        <loc>https://springdev.io/blog/2018/07/spring_io_platform_brussels_sr12.html</loc>
         <lastmod>2018-07-31</lastmod>
     </url><url>
         <loc>https://springdev.io/blog/2018/07/spring_cloud_edgware_eol_aug_1st_2019.html</loc>
         <lastmod>2018-07-30</lastmod>
     </url><url>
         <loc>https://springdev.io/blog/2018/07/spring_cloud_data_flow_1_6_ga_released.html</loc>
+        <lastmod>2018-07-30</lastmod>
+    </url><url>
+        <loc>https://springdev.io/blog/2018/07/spring_boot_2_1_m1.html</loc>
         <lastmod>2018-07-30</lastmod>
     </url><url>
         <loc>https://springdev.io/blog/2018/07/spring_boot_2_0_4_available_now.html</loc>

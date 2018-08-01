@@ -57,6 +57,11 @@ b.conum *{color:inherit!important}
 .blog--container .blog--post .colist>table tr > td {
     background:none;
 }
+
+.blog--container .blog--post .admonitionblock.caution {
+  border-left: 4px solid #f12222;
+  background-color: #f1c4c4;
+}
 .content--title {
     margin-top: -50px;
 }
