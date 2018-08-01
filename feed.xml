@@ -6,34 +6,10 @@
     <atom:link href="https://springdev.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Spring开发者，是一个专为广大Spring开发者们提供Spring相关开源技术的开发工具、技术框架、业界资讯、博客文章、培训教程、活动交流等开源社交综合性服务网站。</description>
     <language>zh-CN</language>
-    <pubDate>星期三, 1 八月 2018 18:12:23 +0800</pubDate>
-    <lastBuildDate>星期三, 1 八月 2018 18:12:23 +0800</lastBuildDate>
+    <pubDate>星期三, 1 八月 2018 20:09:20 +0800</pubDate>
+    <lastBuildDate>星期三, 1 八月 2018 20:09:20 +0800</lastBuildDate>
 
     <item>
-      <title>Spring Cloud Data Flow 1.6 正式版发布</title>
-      <link>https://springdev.io/blog/2018/07/spring_cloud_data_flow_1_6_ga_released.html</link>
-      <pubDate>星期二, 31 七月 2018 09:00:00 +0800</pubDate>
-      <guid isPermaLink="false">blog/2018/07/spring_cloud_data_flow_1_6_ga_released.html</guid>
-      <description>&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://cloud.spring.io/spring-cloud-dataflow/&amp;quot;&amp;gt;Spring Cloud Data Flow&amp;lt;/a&amp;gt;团队宣布Spring Cloud Data Flow 1.6正式版发布。&amp;lt;/p&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;与此同时，开发团队正在制定1.7计划，在GitHub上可以了解更多详情。其中一个重点领域是支持Spring Cloud Function编程模型，这也有助于简化应用程序启动器和自定义业务逻辑的组合。&amp;lt;/p&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;1.6版本有以下几个亮点：&amp;lt;/p&amp;gt; 
-&amp;lt;/div&amp;gt; 
-&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
- &amp;lt;ul&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;任务调度在PCF上的原生集成支持&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;仪表板改进&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Kubernetes支持增强&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;组合任务运行器安全性&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;DSL和部署属性解析改进&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;批处理数据库结构的优化&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
- &amp;lt;/ul&amp;gt; 
-&amp;lt;/div&amp;gt;</description>	  
-    </item><item>
       <title>Spring Boot 2.1.0 M1发布</title>
       <link>https://springdev.io/blog/2018/07/spring_boot_2_1_m1.html</link>
       <pubDate>星期二, 31 七月 2018 08:00:00 +0800</pubDate>
@@ -275,6 +251,47 @@ management.metrics.tags.stack=prod&amp;lt;/pre&amp;gt;
    &amp;lt;/div&amp;gt; 
   &amp;lt;/div&amp;gt; 
  &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
+      <title>Spring Cloud Edgware 进入EOL倒计时</title>
+      <link>https://springdev.io/blog/2018/07/spring_cloud_edgware_eol_aug_1st_2019.html</link>
+      <pubDate>星期一, 30 七月 2018 19:56:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/07/spring_cloud_edgware_eol_aug_1st_2019.html</guid>
+      <description>&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;不出意料，&amp;lt;a href=&amp;quot;https://springdev.io/blog/2018/07/spring_boot_1_x_eol_aug_1st_2019.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Boot 1.x在被宣布即将EOL&amp;lt;/a&amp;gt;之后，Spring Cloud Edgware版本也宣布&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/07/30/spring-cloud-edgware-eol-aug-1st-2019&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;进入EOL倒计时&amp;lt;/a&amp;gt;。如果你还记得的话，早在一个月以前，开发团队就宣布&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/06/19/spring-cloud-finchley-release-is-available#lifecycle-announcements-for-release-train-versions&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Camden版本已经进入EOL，而Dalston版本在本年底结束维护&amp;lt;/a&amp;gt;，希望大家能够赶上这版本火车前进的速度。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;开发团队将继续发布偶尔需要的Edgware维护版本，直到2019年8月1号为止，然后结束分支。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;现有的Spring Cloud用户应该相应地进行规划，以确保他们在该日期之前升级到最新的Finchley版本。另请注意，Spring Cloud Finchley及更高版本需要Spring Boot 2.x，这需要Java 8+。因此，如果你运行的是Java 6或7，那么你还应该计划升级JDK。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;祝你好运！&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
+      <title>Spring Cloud Data Flow 1.6 正式版发布</title>
+      <link>https://springdev.io/blog/2018/07/spring_cloud_data_flow_1_6_ga_released.html</link>
+      <pubDate>星期一, 30 七月 2018 19:31:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/07/spring_cloud_data_flow_1_6_ga_released.html</guid>
+      <description>&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://cloud.spring.io/spring-cloud-dataflow/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Cloud Data Flow&amp;lt;/a&amp;gt;团队宣布Spring Cloud Data Flow 1.6正式版发布。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;与此同时，开发团队正在制定1.7计划，在GitHub上可以了解更多详情。其中一个重点领域是支持Spring Cloud Function编程模型，这也有助于简化应用程序启动器和自定义业务逻辑的组合。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;1.6版本有以下几个亮点：&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+ &amp;lt;ul&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;任务调度在PCF上的原生集成支持&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;仪表板改进&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Kubernetes支持增强&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;组合任务运行器安全性&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;DSL和部署属性解析改进&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;批处理数据库结构的优化&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
 &amp;lt;/div&amp;gt;</description>	  
     </item><item>
       <title>Spring Boot 2.0.4现已可用</title>
