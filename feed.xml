@@ -6,10 +6,90 @@
     <atom:link href="https://springdev.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Spring开发者，是一个专为广大Spring开发者们提供Spring相关开源技术的开发工具、技术框架、业界资讯、博客文章、培训教程、活动交流等开源社交综合性服务网站。</description>
     <language>zh-CN</language>
-    <pubDate>星期六, 4 八月 2018 15:39:05 +0800</pubDate>
-    <lastBuildDate>星期六, 4 八月 2018 15:39:05 +0800</lastBuildDate>
+    <pubDate>星期五, 10 八月 2018 07:53:12 +0800</pubDate>
+    <lastBuildDate>星期五, 10 八月 2018 07:53:12 +0800</lastBuildDate>
 
     <item>
+      <title>Spring Cloud for Google Cloud Platform 1.0 正式版发布</title>
+      <link>https://springdev.io/blog/2018/08/spring_cloud_for_google_cloud_platform_1_0_goes_ga.html</link>
+      <pubDate>星期四, 9 八月 2018 12:16:43 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/08/spring_cloud_for_google_cloud_platform_1_0_goes_ga.html</guid>
+      <description>&amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;今天，Artem Bilan在博客中宣布，&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/08/09/spring-cloud-for-google-cloud-platform-1-0-goes-ga&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Cloud for Google Cloud Platform 项目的1.0 版本终于可用了！&amp;lt;/a&amp;gt;，Google Cloud团队也在官方博客上发表了&amp;lt;a href=&amp;quot;https://cloud.google.com/blog/products/gcp/calling-java-developers-spring-cloud-gcp-1-0-is-now-generally-available&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;文章&amp;lt;/a&amp;gt;做了相应的介绍。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;这个项目在Spring 团队和Google Cloud 团队历时一年多的时间，共同合作完成。旨在利用众所周知的Spring 框架的设计模式和抽象能力，以便为Java开发人员使用GCP服务带来Spring和Spring Boot的优势。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;具体来讲，Spring Cloud GCP可以让你利用Spring框架的强大功能和简单性：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+   &amp;lt;ul&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;发布和订阅Google Cloud Pub/Sub主题&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;通过属性配置Spring JDBC以使用Google Cloud SQL&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;从Google Cloud Storage备份的Spring Resources写入和读取&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;使用Google Cloud Pub/Sub在后台与Spring Integration交换消息&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;使用Spring Cloud Sleuth和Google Stackdriver Trace跟踪应用程序的执行情况&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+    &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;通过Spring Integration GCS渠道适配器消费和生成Google云端存储数据&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+   &amp;lt;/ul&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;如何使用&amp;quot;&amp;gt;如何使用？&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;可以通过引入Maven BOM的依赖来使用：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;&amp;amp;lt;dependencyManagement&amp;amp;gt;
+    &amp;amp;lt;dependencies&amp;amp;gt;
+        &amp;amp;lt;dependency&amp;amp;gt;
+            &amp;amp;lt;groupId&amp;amp;gt;org.springframework.cloud&amp;amp;lt;/groupId&amp;amp;gt;
+            &amp;amp;lt;artifactId&amp;amp;gt;spring-cloud-gcp-dependencies&amp;amp;lt;/artifactId&amp;amp;gt;
+            &amp;amp;lt;version&amp;amp;gt;1.0.0.RELEASE&amp;amp;lt;/version&amp;amp;gt;
+            &amp;amp;lt;type&amp;amp;gt;pom&amp;amp;lt;/type&amp;amp;gt;
+            &amp;amp;lt;scope&amp;amp;gt;import&amp;amp;lt;/scope&amp;amp;gt;
+        &amp;amp;lt;/dependency&amp;amp;gt;
+    &amp;amp;lt;/dependencies&amp;amp;gt;
+&amp;amp;lt;/dependencyManagement&amp;amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;后续工作&amp;quot;&amp;gt;后续工作&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;现在团队正在忙于更多的集成，最近发布了一个1.1.0.M1版本，它支持了Spring Data Cloud Spanner和Spring Cloud Config。正在进行的重点工作是针对Spring Data抽象的Google Cloud Datastore。未来将会提供更多Google Cloud功能，并为他们展示基于Spring的API和配置的便利性。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://cloud.spring.io/spring-cloud-gcp&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;项目主页&amp;lt;/a&amp;gt; | &amp;lt;a href=&amp;quot;https://github.com/spring-cloud/spring-cloud-gcp/issues&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;问题管理&amp;lt;/a&amp;gt; | &amp;lt;a href=&amp;quot;https://docs.spring.io/spring-cloud-gcp/docs/1.0.0.RELEASE/reference/htmlsingle&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;使用手册&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
+      <title>Reactor Californium-M1 在这个夏天发布</title>
+      <link>https://springdev.io/blog/2018/08/reactor_californium_m1_this_summers_milestone_release_train.html</link>
+      <pubDate>星期二, 7 八月 2018 09:08:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/08/reactor_californium_m1_this_summers_milestone_release_train.html</guid>
+      <description>&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;命名代号为&amp;lt;code&amp;gt;Californium&amp;lt;/code&amp;gt;的第一个里程碑版本发布，这是Reactor的第三个重要版本，此次修复了大量问题以及一些优化改进。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;这个里程碑版本包括有：&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+ &amp;lt;ul&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;code&amp;gt;reactor-core&amp;lt;/code&amp;gt; &amp;lt;code&amp;gt;3.2.0.M3&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;code&amp;gt;reactor-extra&amp;lt;/code&amp;gt; &amp;lt;code&amp;gt;3.2.0.M1&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;code&amp;gt;reactor-netty&amp;lt;/code&amp;gt; &amp;lt;code&amp;gt;0.8.0.M1&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
       <title>Spring一周回顾（2018年8月3日）</title>
       <link>https://springdev.io/blog/2018/08/this_week_in_spring_august_3rd_2018.html</link>
       <pubDate>星期五, 3 八月 2018 22:00:00 +0800</pubDate>
@@ -290,6 +370,54 @@ dependencies {
  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
   &amp;lt;p&amp;gt;一如既往，我们非常欢迎来自&amp;lt;a href=&amp;quot;https://github.com/spring-cloud/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;GitHub&amp;lt;/a&amp;gt;, &amp;lt;a href=&amp;quot;https://gitter.im/spring-cloud/spring-cloud&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Gitter&amp;lt;/a&amp;gt;, &amp;lt;a href=&amp;quot;https://stackoverflow.com/questions/tagged/spring-cloud&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Stack Overflow&amp;lt;/a&amp;gt; 以及&amp;lt;a href=&amp;quot;https://twitter.com/SpringCloud&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Twitter&amp;lt;/a&amp;gt;上的反馈。&amp;lt;/p&amp;gt; 
  &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
+      <title>Spring Vault 2.1 M1 已发布</title>
+      <link>https://springdev.io/blog/2018/08/spring_vault_2_1_m1_available_now.html</link>
+      <pubDate>星期三, 1 八月 2018 10:40:17 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/08/spring_vault_2_1_m1_available_now.html</guid>
+      <description>&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;Spring Vault 2.1 M1 已发布，该版本总共关闭了47个任务单。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;其中有一些亮点如下：&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+ &amp;lt;ul&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;支持Google Cloud Compute和Google Cloud IAM身份验证机制&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;通过&amp;lt;code&amp;gt;VaultKeyValueOperations&amp;lt;/code&amp;gt;集成Vault的版本化Key-Value后端&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Vault的包装端点的模板API&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;在响应式AppRole认证中支持完全拉模式，以前版本的限制现已解除&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;改进了Vault登录失败的异常层次结构&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;此版本与Vault版本从0.5.2到0.10.3都兼容。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;ulist&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;
+  第三方依赖升级如下：
+ &amp;lt;/div&amp;gt; 
+ &amp;lt;ul&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Spring Framework 5.0.8&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Spring Security 5.0.3&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Spring Data Kay SR9&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Vault 0.10.3&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Apache HttpClient 4.5.6&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to HttpCore 4.4.10&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Netty 4.1.28.Final&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to OkHttp 3.11.0&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Jackson 2.9.6&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to AWS SDK 1.11.376&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Google IAM v1-rev254-1.23.0&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Google OAuth 0.10.0&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+ &amp;lt;/ul&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;Spring Vault 2.1 M1将在下一个Spring Cloud Vault 2.1里程碑中被选入。在接下来将发布的Spring Vault 2.1 RC1我们的待办事项包含了一些提供的任务单，定于9月初发布，GA版本预计在10月初发布。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;详细的变更记录参见&amp;lt;a href=&amp;quot;https://docs.spring.io/spring-vault/docs/2.1.0.M1/changelog.txt&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;这里&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; 
 &amp;lt;/div&amp;gt;</description>	  
     </item><item>
       <title>Spring IO Platform Cairo SR3 发布</title>
