@@ -159,10 +159,22 @@
                 </div>
               </header>
               <div class="blog--post"><div class="paragraph"> 
- <p>Spring Cloud Skipper 1.1.0.M1 发布</p> 
+ <p>Spring Cloud Skipper 1.1.0.M1 发布了。</p> 
 </div> 
 <div class="paragraph"> 
- <p>详细的变更记录参见<a href="https://docs.spring.io/spring-vault/docs/2.1.0.M1/changelog.txt" class="external" target="_blank" rel="noopener">这里</a>。</p> 
+ <p>Spring Cloud Skipper是一个轻量级工具，允许你发现Spring引导应用程序并在多个云平台上管理它们的生命周期。你可以单独使用Skipper或将其与持续集成管道集成，以帮助实现持续部署实践。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>参考指南中的<a href="https://docs.spring.io/spring-cloud-skipper/docs/1.1.0.M1/reference/htmlsingle/#getting-started" class="external" target="_blank" rel="noopener">入门部分</a>是开始使用的最佳入口。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>专注于Cloud Foundry清单:</p> 
+</div> 
+<div class="paragraph"> 
+ <p>这个里程碑版本添加了一个新特性，可以执行生命周期操作，在任何可以使用Cloud Foundry<code>manifest</code>格式部署到Cloud Foundry的应用程序上安装、升级、回滚和删除。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>为此，我们将引入一个名为<code>CloudFoundryApplication</code>的新“kind”作为规范，它可以包括<a href="https://docs.spring.io/spring-cloud-skipper/docs/1.1.0.M1/reference/htmlsingle/#package-templates-cf">这里</a>提到的Cloud Foundry清单条目。可以在安装/升级操作期间重写这些清单项。请查看这些<a href="https://docs.spring.io/spring-cloud-skipper/docs/1.1.0.M1/reference/htmlsingle/#tour-cf-manifest" class="external" target="_blank" rel="noopener">示例</a>，了解更多关于如何在Skipper中管理基于Cloud Foundry清单的包的信息。</p> 
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/08/spring_cloud_for_google_cloud_platform_1_0_goes_ga.html"> ←Spring Cloud for Google Cloud Platform 1.0 正式版发布</a></li>
