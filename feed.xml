@@ -6,8 +6,8 @@
     <atom:link href="https://springdev.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Spring开发者，是一个专为广大Spring开发者们提供Spring相关开源技术的开发工具、技术框架、业界资讯、博客文章、培训教程、活动交流等开源社交综合性服务网站。</description>
     <language>zh-CN</language>
-    <pubDate>星期六, 11 八月 2018 21:01:57 +0800</pubDate>
-    <lastBuildDate>星期六, 11 八月 2018 21:01:57 +0800</lastBuildDate>
+    <pubDate>星期日, 12 八月 2018 12:50:55 +0800</pubDate>
+    <lastBuildDate>星期日, 12 八月 2018 12:50:55 +0800</lastBuildDate>
 
     <item>
       <title>Spring一周回顾（2018年8月10日）</title>
@@ -35,6 +35,8 @@
   &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://flink.apache.org/news/2018/08/09/release-1.6.0.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Apache Flink 1.6.0 发布&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
   &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/ErnestOrt/Trampoline&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;使用Trampoline工具来管理本地Spring Boot应用实例&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
   &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/lettuce-io/lettuce-core/releases&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Redis Client Lettuce 4.4.6.Final 和 5.0.5.RELEASE 同时更新发布&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://www.infoq.com/cn/articles/tips-for-high-availability&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;来自Netflix的系统高可用建议&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;一年一度的&amp;lt;a href=&amp;quot;https://springoneplatform.io/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;SpringOne Platform&amp;lt;/a&amp;gt;将9月24-27日在Washington D.C举办，届时将有众多业界大咖们作为演讲嘉宾，比如熟知的&amp;lt;a href=&amp;quot;https://springoneplatform.io/2018/speakers/rod-johnson&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Rod Johnson&amp;lt;/a&amp;gt;、&amp;lt;a href=&amp;quot;https://springoneplatform.io/2018/speakers/josh-long&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;龙之春&amp;lt;/a&amp;gt;、&amp;lt;a href=&amp;quot;https://springoneplatform.io/2018/speakers/matt-raible&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Matt Raible&amp;lt;/a&amp;gt;、&amp;lt;a href=&amp;quot;https://springoneplatform.io/2018/speakers/phillip-webb&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Phillip Webb&amp;lt;/a&amp;gt;，真想过去现场学习下，见一见几位偶像们，无奈只缺一张机票。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
   &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;ASF的官方全球会议&amp;lt;a href=&amp;quot;http://apachecon.com/acna18/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;ApacheCon&amp;lt;/a&amp;gt;，将于9月24日-27日在加拿大的蒙特利尔举办，同时也是Apache社区庆祝20周年的一次盛大活动。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
   &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;由华为团队主导开发的微服务框架 &amp;lt;a href=&amp;quot;http://servicecomb.incubator.apache.org/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Apache ServiceComb&amp;lt;/a&amp;gt;的 Service-Center 1.0.0 和 ServiceComb Java-Chassis 1.0.0 发布了&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
   &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;如果你是第一次关注这个系列，可以看看&amp;lt;a href=&amp;quot;https://springdev.io/blog/2018/08/this_week_in_spring_august_3rd_2018.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;上一期的《Spring 一周回顾》&amp;lt;/a&amp;gt;，也一定会有很多收获！&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
@@ -318,7 +320,7 @@
  &amp;lt;h2 id=&amp;quot;测试你的代码&amp;quot;&amp;gt;测试你的代码&amp;lt;/h2&amp;gt; 
  &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
-   &amp;lt;p&amp;gt;这不是Spring Boot特有的，但它需要提醒！测试你的代码。如果你没有编写测试，那么你将从一开始就编写遗留代码。&amp;lt;/p&amp;gt; 
+   &amp;lt;p&amp;gt;这不是Spring Boot特有的，但它需要提醒——测试你的代码！如果你没有编写测试，那么你将从一开始就编写遗留代码。&amp;lt;/p&amp;gt; 
   &amp;lt;/div&amp;gt; 
   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
    &amp;lt;p&amp;gt;如果有其他人使用你的代码库，那边改变任何东西将会变得危险。当你有多个服务相互依赖时，这甚至可能更具风险。&amp;lt;/p&amp;gt; 
@@ -329,7 +331,7 @@
  &amp;lt;/div&amp;gt; 
 &amp;lt;/div&amp;gt; 
 &amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
- &amp;lt;h2 id=&amp;quot;use_testing_slices_to_make_your_testing_easier_and_more_focused&amp;quot;&amp;gt;Use testing slices to make your testing easier and more focused&amp;lt;/h2&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;使用测试切片让测试更容易_并且更专注&amp;quot;&amp;gt;使用测试切片让测试更容易，并且更专注&amp;lt;/h2&amp;gt; 
  &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
    &amp;lt;p&amp;gt;这一条实践来自Madhura Bhave（Spring 开发者, &amp;lt;a href=&amp;quot;https://twitter.com/madhurabhave23&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;@madhurabhave23&amp;lt;/a&amp;gt;）。&amp;lt;/p&amp;gt; 
@@ -388,10 +390,22 @@
       <pubDate>星期四, 9 八月 2018 18:22:38 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/08/spring-cloud-skipper-1-1-0-m1.html</guid>
       <description>&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;Spring Cloud Skipper 1.1.0.M1 发布&amp;lt;/p&amp;gt; 
+ &amp;lt;p&amp;gt;Spring Cloud Skipper 1.1.0.M1 发布了。&amp;lt;/p&amp;gt; 
 &amp;lt;/div&amp;gt; 
 &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
- &amp;lt;p&amp;gt;详细的变更记录参见&amp;lt;a href=&amp;quot;https://docs.spring.io/spring-vault/docs/2.1.0.M1/changelog.txt&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;这里&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; 
+ &amp;lt;p&amp;gt;Spring Cloud Skipper是一个轻量级工具，允许你发现Spring引导应用程序并在多个云平台上管理它们的生命周期。你可以单独使用Skipper或将其与持续集成管道集成，以帮助实现持续部署实践。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;参考指南中的&amp;lt;a href=&amp;quot;https://docs.spring.io/spring-cloud-skipper/docs/1.1.0.M1/reference/htmlsingle/#getting-started&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;入门部分&amp;lt;/a&amp;gt;是开始使用的最佳入口。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;专注于Cloud Foundry清单:&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;这个里程碑版本添加了一个新特性，可以执行生命周期操作，在任何可以使用Cloud Foundry&amp;lt;code&amp;gt;manifest&amp;lt;/code&amp;gt;格式部署到Cloud Foundry的应用程序上安装、升级、回滚和删除。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;为此，我们将引入一个名为&amp;lt;code&amp;gt;CloudFoundryApplication&amp;lt;/code&amp;gt;的新“kind”作为规范，它可以包括&amp;lt;a href=&amp;quot;https://docs.spring.io/spring-cloud-skipper/docs/1.1.0.M1/reference/htmlsingle/#package-templates-cf&amp;quot;&amp;gt;这里&amp;lt;/a&amp;gt;提到的Cloud Foundry清单条目。可以在安装/升级操作期间重写这些清单项。请查看这些&amp;lt;a href=&amp;quot;https://docs.spring.io/spring-cloud-skipper/docs/1.1.0.M1/reference/htmlsingle/#tour-cf-manifest&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;示例&amp;lt;/a&amp;gt;，了解更多关于如何在Skipper中管理基于Cloud Foundry清单的包的信息。&amp;lt;/p&amp;gt; 
 &amp;lt;/div&amp;gt;</description>	  
     </item><item>
       <title>Spring Cloud for Google Cloud Platform 1.0 正式版发布</title>
@@ -761,6 +775,12 @@ dependencies {
       <pubDate>星期三, 1 八月 2018 10:40:17 +0800</pubDate>
       <guid isPermaLink="false">blog/2018/08/spring_vault_2_1_m1_available_now.html</guid>
       <description>&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://projects.spring.io/spring-vault/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Vault&amp;lt;/a&amp;gt;提供熟悉的Spring抽象和客户端支持，用于访问、存储和撤销机密。它提供了与Vault交互的低级和高级抽象，使用户免于底层接口问题。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+ &amp;lt;p&amp;gt;通过HashiCorp的Vault，你可以在所有环境中为应用程序管理外部机密数据。Vault可以管理静态和动态机密，例如应用程序数据，远程应用程序/资源的用户名/密码，并为外部服务提供凭据，如MySQL、PostgreSQL、Apache Cassandra、Consul、AWS等。&amp;lt;/p&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
  &amp;lt;p&amp;gt;Spring Vault 2.1 M1 已发布，该版本总共关闭了47个任务单。&amp;lt;/p&amp;gt; 
 &amp;lt;/div&amp;gt; 
 &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
@@ -783,18 +803,18 @@ dependencies {
   第三方依赖升级如下：
  &amp;lt;/div&amp;gt; 
  &amp;lt;ul&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Spring Framework 5.0.8&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Spring Security 5.0.3&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Spring Data Kay SR9&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Vault 0.10.3&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Apache HttpClient 4.5.6&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to HttpCore 4.4.10&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Netty 4.1.28.Final&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to OkHttp 3.11.0&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Jackson 2.9.6&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to AWS SDK 1.11.376&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Google IAM v1-rev254-1.23.0&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Upgrade to Google OAuth 0.10.0&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Framework 5.0.8&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Security 5.0.3&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Spring Data Kay SR9&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Vault 0.10.3&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Apache HttpClient 4.5.6&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;HttpCore 4.4.10&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Netty 4.1.28.Final&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;OkHttp 3.11.0&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Jackson 2.9.6&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;AWS SDK 1.11.376&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Google IAM v1-rev254-1.23.0&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;Google OAuth 0.10.0&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
  &amp;lt;/ul&amp;gt; 
 &amp;lt;/div&amp;gt; 
 &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 

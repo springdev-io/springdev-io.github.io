@@ -71,6 +71,18 @@ b.conum *{color:inherit!important}
 .header--navbar .navbar-inner .navbar-link a {
     font-size: 16px;
 }
+.icon.blog-icon.all-posts {
+  background-position: 20px 561px;
+}
+.icon.blog-icon.article {
+  background-position: 20px 477px;
+}
+.icon.blog-icon.release {
+  background-position: 20px 433px;
+}
+.icon.blog-icon.news {
+  background-position: 20px 387px;
+}
 #toTop {
     color: #fff;
     text-align: center;
