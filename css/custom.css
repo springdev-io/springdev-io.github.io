@@ -62,6 +62,22 @@ b.conum *{color:inherit!important}
   border-left: 4px solid #f12222;
   background-color: #f1c4c4;
 }
+.blog--container .blog--post .quoteblock {
+    margin: 20px 0;
+    padding: 0 0 0 10px;
+    border-left: 5px solid #1d97d4;
+}
+.blog--container .blog--post blockquote {
+    padding: 0 0 0 15px;
+    margin: 0 0 20px;
+    border: none;
+}
+.blog--container .blog--post .quoteblock .attribution {
+    text-align: right;
+}
+pre {
+    overflow: hidden;
+}
 .content--title {
     margin-top: -50px;
 }

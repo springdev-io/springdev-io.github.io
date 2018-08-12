@@ -6,10 +6,382 @@
     <atom:link href="https://springdev.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Spring开发者，是一个专为广大Spring开发者们提供Spring相关开源技术的开发工具、技术框架、业界资讯、博客文章、培训教程、活动交流等开源社交综合性服务网站。</description>
     <language>zh-CN</language>
-    <pubDate>星期日, 12 八月 2018 12:50:55 +0800</pubDate>
-    <lastBuildDate>星期日, 12 八月 2018 12:50:55 +0800</lastBuildDate>
+    <pubDate>星期一, 13 八月 2018 02:43:34 +0800</pubDate>
+    <lastBuildDate>星期一, 13 八月 2018 02:43:34 +0800</lastBuildDate>
 
     <item>
+      <title>10 种保护Spring Boot应用程序的绝佳方法</title>
+      <link>https://springdev.io/blog/2018/08/10-ways-to-secure-spring-boot.html</link>
+      <pubDate>星期六, 11 八月 2018 23:00:00 +0800</pubDate>
+      <guid isPermaLink="false">blog/2018/08/10-ways-to-secure-spring-boot.html</guid>
+      <description>&amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Spring Boot大大简化了Spring应用程序的开发。它的自动配置和启动器依赖性减少了启动应用程序所需的代码和配置量。如果你已经习惯了Spring和当天的大量XML，Spring Boot是一股清新的空气。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Spring Boot于2014年首次发布，自那以后发生了很多变化。与代码质量和测试非常相似，安全性已经成为开发人员关心的问题。如果你是开发人员并且你关心安全性问题，那么你认为自己应该是这样。本文旨在教你如何创建更安全的Spring Boot应用程序。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;我与Snyk的Java Champion和开发者关系总监Simon Maple合作完成了这篇文章。我们都为安全行业的公司工作，热爱Java，并希望帮助开发人员创建更安全的应用程序。我们认为撰写这篇文章将是回馈社区的有趣方式。如果你有我们列出的其他建议，请在评论中添加！&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;在生产中使用https&amp;quot;&amp;gt;1. 在生产中使用HTTPS&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;传输层安全性（TLS）是HTTPS的官方名称。你可能听说过它称为SSL（安全套接字层）。SSL是已弃用的名称，TLS是一种加密协议，可通过计算机网络提供安全通信。其主要目标是确保计算机应用程序之间的隐私和数据完整性。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;过去，TLS/SSL证书很昂贵，而且HTTPS被认为很慢。机器变得更快，解决了性能问题，Let’s Encrypt提供免费的TLS证书。这两项发展改变了游戏，并使TLS成为主流。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;2018年7月24日，Google Chrome已将HTTP网站标记为“不安全”。虽然这在网络社区引起了相当多的争议，但它已然如此。 知名安全研究员特洛伊·亨特（Troy Hunt）创建了一个为什么没有HTTPS？跟踪不使用HTTPS的大型网站的网站。你可能没有开发下一个大型网站，但为什么限制自己？&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;生成和更新加密TLS证书可以自动化。由于他们是免费的，所以没有理由不去做！&amp;lt;a href=&amp;quot;https://dzone.com/articles/spring-boot-secured-by-lets-encrypt&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Boot Secured By Let’s Encrypt&amp;lt;/a&amp;gt;是介绍如何做到这一点的有用指南。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;要在Spring Boot应用程序中强制使用HTTPS，你可以扩展&amp;lt;code&amp;gt;WebSecurityConfigurerAdapter&amp;lt;/code&amp;gt;并要求安全连接。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;@Configuration
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.requiresChannel().requiresSecure();
+    }
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;这个配置会强制在开发时也使用HTTPS，这可能会很麻烦，因为你必须使用自签名证书。如果你正在使用Heroku，Cloud Foundry或其他云提供商，更合理的配置是寻找&amp;lt;code&amp;gt;X-Forwarded-Proto&amp;lt;/code&amp;gt;请求头。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;@Configuration
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.requiresChannel()
+            .requestMatchers(r -&amp;amp;gt; r.getHeader(&amp;quot;X-Forwarded-Proto&amp;quot;) != null)
+            .requiresSecure();
+    }
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;云提供商可以大大简化TLS证书。亚马逊证书管理器与Let’s Encrypt完全相同，但默认情况下它内置于所有AWS产品/服务中。它允许你提供100％免费的SSL证书并处理自动续订等，只需零工作/配置。Heroku也有自动证书管理。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;另一个重要的事情是使用HTTP严格传输安全性（HSTS）。HSTS是一种Web安全策略机制，可以保护网站免受协议降级攻击和cookie劫持。服务器使用名为&amp;lt;code&amp;gt;Strict-Transport-Security&amp;lt;/code&amp;gt;的响应头字段将HSTS策略传送到浏览器。Spring Security默认发送此标头，以避免在开始时出现不必要的HTTP跃点。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;借助snyk检查你的依赖_check_your_dependencies_with_snyk&amp;quot;&amp;gt;2. 借助Snyk检查你的依赖（Check Your Dependencies with Snyk）&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;你很可能不知道应用程序使用了多少直接依赖项。你也很可能不知道应用程序使用了多少传递依赖项。这通常是正常的，尽管依赖性构成了整个应用程序的大部分。攻击者越来越多地针对开源依赖项，因为它们的重用为恶意黑客提供了许多受害者。确保应用程序的整个依赖关系树中没有已知的漏洞非常重要。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Snyk测试你的应用程序构建工件，标记那些已知漏洞的依赖项。它在仪表板为你提供了在应用程序中使用的软件包中存在的漏洞列表。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;https://springdev.io/images/snyk-vulnerabilities.png&amp;quot; alt=&amp;quot;Snyk Vulnerabilities&amp;quot;&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;此外，它还将建议升级版本或提供补丁以通过针对源代码存储库的拉取请求来修复你的安全问题。Snyk还保护你的环境，在你的存储库上提交的任何拉取请求都将通过Webhooks触发自动测试，这样可以确保它们不会引入新的已知漏洞。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;每天都会在现有项目和库中发现新的漏洞，因此监控和保护生产部署也很重要。Snyk创建快照并监控你的部署，以便在发现新漏洞时，你可以通过喜欢的渠道、JIRA、Slack或电子邮件自动接收通知，并创建拉取请求以提供新漏洞的升级和补丁。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Snyk可通过Web界面和命令行界面获得，因此你可以轻松地将其与持续集成环境集成，并将其配置为当存在严重性超出设定阈值的漏洞时中断构建。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;你可以&amp;lt;a href=&amp;quot;https://snyk.io/signup&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;免费使用Snyk&amp;lt;/a&amp;gt;用于开源项目，也可以用于私有项目，但每月只有有限次数的测试。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;升级到最新版本&amp;quot;&amp;gt;3. 升级到最新版本&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;定期升级应用程序中的依赖项有多种理由，安全性是让你有升级动力的最重要原因之一。&amp;lt;a href=&amp;quot;https://start.spring.io&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;start.spring.io&amp;lt;/a&amp;gt;启动页面尽可能使用最新版本的Spring软件包以及依赖项。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;quoteblock&amp;quot;&amp;gt; 
+   &amp;lt;blockquote&amp;gt;
+     我发现在依赖项中寻找漏洞可能有助于激励人们升级。然而，有大量证据表明并非所有CVE都被报道。一般来说，我发现理想（也许不实用）的解决方案是最新和最好的。 
+   &amp;lt;/blockquote&amp;gt; 
+   &amp;lt;div class=&amp;quot;attribution&amp;quot;&amp;gt;
+     — Rob Winch 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;基础架构升级通常不如依赖项升级具有破坏性，因为库的作者对向后兼容性和版本之间的行为更改的敏感性各不相同。话虽如此，当你在配置中发现安全漏洞时，你有三种选择：升级、修补程序或忽略。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;在对应用程序进行必要的更改以使用较新版本之后，就应用程序的整体运行状况而言，升级是最安全的。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;对易受攻击的项目的修补程序消除了程序包中的漏洞，但通常会留下一个可能未经过充分测试的配置。由于修补程序只会更改易受攻击的代码，因此对库的代码更改将会减少，因此可以降低破坏向后兼容性或引入行为更改的可能性。像Snyk这样的第三方安全公司为许多漏洞提供了补丁程序，因此如果无法升级到更新版本的库，你仍然可以使用旧版本的补丁程序。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Ignoring a vulnerability is, of course, an option, but not a good one. Perhaps you know of a vulnerability, but do not believe it is directly exploitable. Keep in mind that it might not be in your application flow today, but at some point, a developer might add additional code that uses a vulnerable path.&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;当然，忽略漏洞是一种选择，但不是一个好选择。也许你知道一个漏洞，但不相信它是可以直接利用的。请记住，它可能不在你的应用程序流程中，但在某些时候，开发人员可能会添加使用易受攻击路径的其他代码。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;启用csrf保护&amp;quot;&amp;gt;4. 启用CSRF保护&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;跨站点请求伪造&amp;lt;/a&amp;gt;是一种攻击，强制用户在他们当前登录的应用程序中执行不需要的操作。如果用户是普通用户，则成功攻击可能涉及状态更改请求，如转移资金或更改其电子邮件地址。如果用户具有提升的权限，则CSRF攻击可能会危及整个应用程序。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Spring Security具有&amp;lt;a href=&amp;quot;https://docs.spring.io/spring-security/site/docs/current/reference/html/csrf.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;出色的CSRF支持&amp;lt;/a&amp;gt;，默认情况下处于启用状态。如果你正在使用Spring MVC的&amp;amp;lt;form:form&amp;amp;gt;标签或Thymeleaf并且添加了注解&amp;lt;code&amp;gt;@EnableWebSecurity&amp;lt;/code&amp;gt;，则CSRF标记将作为隐藏输入字段自动添加。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;如果你正在使用像Angular或React这样的JavaScript框架，则需要配置&amp;lt;code&amp;gt;CookieCsrfTokenRepository&amp;lt;/code&amp;gt;，以便JavaScript可以读取cookie。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;@EnableWebSecurity
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .csrf()
+                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+    }
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;如果你使用的是 Angular，这样设置就够了。如果你使用的是 React，则需要从cookie中读取&amp;lt;code&amp;gt;XSRF-TOKEN&amp;lt;/code&amp;gt; 并作为请求头&amp;lt;code&amp;gt;X-XSRF-TOKEN&amp;lt;/code&amp;gt;发回。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;当请求是HTTPS协议时，Spring Security会自动为&amp;lt;code&amp;gt;XSRF-TOKEN&amp;lt;/code&amp;gt; cookie添加安全标志。Spring Security不对CSRF cookie使用&amp;lt;code&amp;gt;SameSite = strict&amp;lt;/code&amp;gt;标志，但在使用Spring Session或WebFlux会话会这样处理。会话cookie对于识别用户是有意义，但它对CSRF cookie没有多少用处，因为CSRF令牌也需要存放在请求中。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;使用内容安全策略来防止xss攻击&amp;quot;&amp;gt;5. 使用内容安全策略来防止XSS攻击&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;内容安全策略（Content Security Policy，简称“CSP”）是一个增加的安全层，可帮助缓解XSS（跨站点脚本）和数据注入攻击。要启用它，你需要配置应用程序以返回&amp;lt;code&amp;gt;Content-Security-Policy&amp;lt;/code&amp;gt;标头。你还可以在HTML页面中使用&amp;lt;code&amp;gt;&amp;amp;lt;meta http-equiv =&amp;quot;Content-Security-Policy&amp;quot;&amp;amp;gt;&amp;lt;/code&amp;gt;标记。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Spring Security默认提供了许多安全标头：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Content-Type-Options: nosniff
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-Frame-Options: DENY
+X-XSS-Protection: 1; mode=block&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Spring Security默认不添加CSP。你可以使用以下配置在Spring Boot应用程序中启用CSP标头。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;@EnableWebSecurity
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.headers()
+            .contentSecurityPolicy(&amp;quot;script-src &amp;#39;self&amp;#39; https://trustedscripts.example.com; object-src https://trustedplugins.example.com; report-uri /csp-report-endpoint/&amp;quot;);
+    }
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;CSP是防止XSS攻击的良好防御。请记住，打开CSP以允许CDN这也意味着允许访问许多非常古老且易受攻击的JavaScript库。这意味着使用CDN通常对应用程序的安全性没有多大帮助。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;你可以使用&amp;lt;a href=&amp;quot;https://securityheaders.com/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;securityheaders.com&amp;lt;/a&amp;gt;测试你的CSP标头是否与实际是一致的。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;使用openid_connect进行身份验证&amp;quot;&amp;gt;6. 使用OpenID Connect进行身份验证&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;OAuth 2.0是行业标准的授权协议。它使用范围来定义授权用户可以执行的操作的权限。但是，OAuth 2.0不是身份验证协议，并且不提供有关经过身份验证的用户的信息。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;OpenID Connect（OIDC）是一个OAuth 2.0扩展，提供用户信息。除了访问令牌之外，它还添加了ID令牌，以及可以从中获取其他信息的&amp;lt;code&amp;gt;/userinfo&amp;lt;/code&amp;gt;端点。它还添加了端点发现功能和动态客户端注册。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;下图显示了OIDC如何用于身份验证。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;https://springdev.io/images/oidc-for-authentication.png&amp;quot; alt=&amp;quot;OIDC for authentication&amp;quot;&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;如果使用OIDC进行身份验证，则无需担心存储用户、密码或对用户进行身份验证。相反，你将使用身份提供商（IdP）为你执行此操作。你的IdP甚至可能提供多因素身份验证（MFA）等安全附加组件。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;要了解如何在Spring Boot应用程序中使用OIDC，请参阅&amp;lt;a href=&amp;quot;https://developer.okta.com/blog/2017/12/18/spring-security-5-oidc&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Security 5.0和OIDC入门&amp;lt;/a&amp;gt;。要概括如何使用它，你首先需要向项目添加一些依赖项，然后在&amp;lt;code&amp;gt;application.yml&amp;lt;/code&amp;gt;文件中配置一些属性。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre&amp;gt;spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          okta:
+            client-id: {clientId}
+            client-secret: {clientSecret}
+            scope: openid email profile
+        provider:
+          okta:
+            issuer-uri: https://{yourOktaDomain}/oauth2/default&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;admonitionblock note&amp;quot;&amp;gt; 
+   &amp;lt;table&amp;gt; 
+    &amp;lt;tbody&amp;gt;
+     &amp;lt;tr&amp;gt; 
+      &amp;lt;td class=&amp;quot;icon&amp;quot;&amp;gt; &amp;lt;i class=&amp;quot;fa icon-note&amp;quot; title=&amp;quot;Note&amp;quot;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;/td&amp;gt; 
+      &amp;lt;td class=&amp;quot;content&amp;quot;&amp;gt; 使用&amp;lt;code&amp;gt;issuer-uri&amp;lt;/code&amp;gt;仅在Spring Security 5.1中支持，Spring Security 5.1正在积极开发中并计划于2018年9月发布。 &amp;lt;/td&amp;gt; 
+     &amp;lt;/tr&amp;gt; 
+    &amp;lt;/tbody&amp;gt;
+   &amp;lt;/table&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;你可以使用像&amp;lt;a href=&amp;quot;https://www.keycloak.org/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Keycloak&amp;lt;/a&amp;gt;这样的开源系统来设置自己的OIDC服务器。如果你不想在生产中维护自己的服务器，可以使用Okta的Developer API。立即注册免费帐户，每月在&amp;lt;a href=&amp;quot;https://developer.okta.com/signup/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;developer.okta.com/signup&amp;lt;/a&amp;gt;上获得1000名活跃用户！&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;如果你想使用OAuth 2.0，OIDC及其允许的不同流程，请参阅&amp;lt;a href=&amp;quot;https://www.oauth.com/playground/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;https://www.oauth.com/playground&amp;lt;/a&amp;gt;。此站点不需要你创建帐户，但它确实使用了Okta的开发人员API。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;管理密码_使用哈希密码&amp;quot;&amp;gt;7. 管理密码？ 使用哈希密码！&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;以纯文本格式存储密码是你可以为应用程序的安全性做的最糟糕的事情之一。幸运的是，Spring Security默认情况下不允许使用纯文本密码。 它还附带了一个加密模块，可用于对称加密、密钥生成和密码散列（也就是密码编码）。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;code&amp;gt;PasswordEncoder&amp;lt;/code&amp;gt;是Spring Security中密码散列的主要接口，如下所示：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;public interface PasswordEncoder {
+    String encode(String rawPassword);
+    boolean matches(String rawPassword, String encodedPassword);
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Spring Security提供了几种实现，最常用的是&amp;lt;code&amp;gt;BCryptPasswordEncoder&amp;lt;/code&amp;gt;和&amp;lt;code&amp;gt;Pbkdf2PasswordEncoder&amp;lt;/code&amp;gt;。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;对于一般的密码管理，我们建议使用SCrypt或Argon2。SCrypt现在已经过时了（已经有一段时间了），并且有一个BCrypt没有的额外的复杂因素，这使得暴力成倍地变得更加困难/昂贵。它由着名的密码学家/安全人员（Colin Percival）编写，并且在几乎所有编程语言中都有很好的库。SCrypt也得到Latacora的认可。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;来自Okta Developer Relations团队的密码专家Randall Degges：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;quoteblock&amp;quot;&amp;gt; 
+   &amp;lt;blockquote&amp;gt;
+     Argon2相对较新（现在已有几年历史），但已经过广泛的审核，并且是许多组织在几年内参与的加密哈希挑战的结果。毫无疑问，它们的“最强”散列算法都增加了scrypt没有的另一层复杂性，这使得与scrypt相比它被暴力破解的难度成倍地增加。Argon2非常棒，我在几种语言中使用它取得了巨大的成功，但如果你担心过于尖锐的scrypt是一个安全的赌注，而不是有争议的。 
+   &amp;lt;/blockquote&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;来自Spring Security负责人Rob Winch：&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;quoteblock&amp;quot;&amp;gt; 
+   &amp;lt;blockquote&amp;gt;
+     我喜欢BCrypt，但一般的建议是单向自适应哈希。某些用户出于合规性原因可能需要使用PBKDF2。有一个为Argon2支持记录的票证，但是我找不到任何Apache 2协议开源的原生Java实现（如果你知道，请告诉我们！）。相反，这些库依赖于他们委托的二进制文件，从我的角度来看，这是不理想的。我们处于到底是考虑备选还是最大化利用二进制委托实现的选择矛盾之中。(We are on the fence about waiting vs. leveraging one of the implementations that delegate to a binary.) 
+   &amp;lt;/blockquote&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;对于那些想要使用SCrypt的人，可以通过&amp;lt;code&amp;gt;SCryptPasswordEncoder&amp;lt;/code&amp;gt;中的Bouncy Castle在Spring Security中获得支持。Spring Security 5.1（即2018年9月下旬）将附带&amp;lt;a href=&amp;quot;https://github.com/spring-projects/spring-security/issues/2778&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;&amp;lt;code&amp;gt;UserDetailsPasswordService&amp;lt;/code&amp;gt; API&amp;lt;/a&amp;gt;，允许你升级密码存储。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;安全地存储秘密&amp;quot;&amp;gt;8. 安全地存储秘密&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;应谨慎处理敏感信息，如密码、访问令牌等。你不能将它们随意的以纯文本形式传递，或者为了被访问而将它们保存在本地存储中。由于&amp;lt;a href=&amp;quot;https://github.com/search?q=removed+password&amp;amp;amp;type=Commits&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;GitHub的历史&amp;lt;/a&amp;gt;已经一次又一次证明，开发人员并没有仔细考虑如何存储他们的秘密。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;当然，你能够也应该加密你的敏感数据，例如密码。现在你的密码是安全的，你有一个新的秘密，你的解密密钥！你对这个新秘密有什么看法？ 也许存放在本地？ 也许在另一个地方，你认为攻击者很难找到它。这不能解决问题：它只是暂时被推迟了。如果没有适当的流程，你只是让黑客稍微难以解开你的秘密而已。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;一个好的做法是将保密信息存储在保管库中，该保管库可用于存储，还提供对应用程序可能使用的服务的访问权限，甚至生成凭据。&amp;lt;a href=&amp;quot;https://www.vaultproject.io/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;HashiCorp的Vault&amp;lt;/a&amp;gt;使得存储机密变得轻而易举，并提供了许多额外的服务。可以配置保险柜，以便没有人可以访问所有数据，不提供单点控制。根密钥Vault定期被更改，仅存储在内存中。有一个主开关，当被触发时会密封你的保管库，如果出现问题就阻止它共享秘密。Vault使用分配给可以限定特定用户，服务或应用程序的策略的令牌。你还可以与LDAP等常用身份验证机制集成以获取令牌。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;除了没有问题的“黄金路径视图”外，Vault还可以提供应用在被黑客入侵时的备选方案。此时，撤销单个或多个秘密很重要，可能是由特定用户或特定类型。Vault提供了一种自动化的方式，可以在时机成熟时快速完成。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;如果你对此感兴趣，请务必花一些时间查看&amp;lt;a href=&amp;quot;https://projects.spring.io/spring-vault/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Vault&amp;lt;/a&amp;gt;，它为HashiCorp Vault添加抽象，为客户端提供基于Spring注解方式，允许访问、存储和撤销机密而不会迷失在底层架构中。以下代码段显示了使用注释从Spring Vault中提取密码的难易程度。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;listingblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;pre class=&amp;quot;prettyprint highlight&amp;quot;&amp;gt;&amp;lt;code class=&amp;quot;language-java&amp;quot; data-lang=&amp;quot;java&amp;quot;&amp;gt;@Value(&amp;quot;${password}&amp;quot;)
+String password;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;使用owasp的zap测试你的应用程序&amp;quot;&amp;gt;9. 使用OWASP的ZAP测试你的应用程序&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;OWASP ZAP&amp;lt;/a&amp;gt;安全工具是一个代理，可在运行时对你的实时应用程序执行渗透测试。它托管在GitHub上，是一个受欢迎的（超过4k星）免费的开源项目。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;OWASP ZAP用于查找漏洞的两种方法是Spider和Active Scan。Spider工具以URL种子开头，它将访问并解析每个响应，识别超链接并将它们添加到列表中。然后，它将这些新找到的URL并以递归方式继续遍历，为你的Web应用程序创建URL映射。Active Scan工具将根据潜在漏洞列表自动测试你选择的目标。它为你提供了一个报告，显示你的Web应用程序可被利用的地方，以及有关漏洞的详细信息。&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;让你的安全团队进行代码审查&amp;quot;&amp;gt;10. 让你的安全团队进行代码审查&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;代码评审对任何高效的软件开发团队都至关重要。在Okta，我们所有的生产代码和官方开源项目都需要通过我们的安全专家团队进行分析。你的公司可能没有安全专家，但如果你正在处理敏感数据，也许你应该这样做！&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt; 
+&amp;lt;div class=&amp;quot;sect1&amp;quot;&amp;gt; 
+ &amp;lt;h2 id=&amp;quot;不要因为你的缺乏安全感而令人不安&amp;quot;&amp;gt;不要因为你的缺乏安全感而令人不安&amp;lt;/h2&amp;gt; 
+ &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;Okta有一些很棒的T恤，上面写着“我发现你缺乏安全感”令人不安。我们喜欢在机场旅行时听到戴上乳胶手套的声音。不要做一名缺乏安全性的Spring Boot应用程序开发人员！&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;imageblock&amp;quot;&amp;gt; 
+   &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt; 
+    &amp;lt;img src=&amp;quot;https://springdev.io/images/i-find-your-lack-of-security-disturbing.png&amp;quot; alt=&amp;quot;I find your lack of security disturbing&amp;quot;&amp;gt; 
+   &amp;lt;/div&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+  &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
+   &amp;lt;p&amp;gt;原文：&amp;lt;a href=&amp;quot;https://developer.okta.com/blog/2018/07/30/10-ways-to-secure-spring-boot&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;10 Excellent Ways to Secure Your Spring Boot Application&amp;lt;/a&amp;gt;。&amp;lt;br&amp;gt; 作者：&amp;lt;a href=&amp;quot;http://raibledesigns.com/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Matt Raible&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt; 翻译：&amp;lt;a href=&amp;quot;https://rainboyan.com&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Rain&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; 
+  &amp;lt;/div&amp;gt; 
+ &amp;lt;/div&amp;gt; 
+&amp;lt;/div&amp;gt;</description>	  
+    </item><item>
       <title>Spring一周回顾（2018年8月10日）</title>
       <link>https://springdev.io/blog/2018/08/this-week-in-spring-august-10th-2018.html</link>
       <pubDate>星期五, 10 八月 2018 22:00:00 +0800</pubDate>
@@ -28,12 +400,18 @@
   &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://springdev.io/blog/2018/08/spring_vault_2_1_m1_available_now.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Vault 2.1 M1 已发布&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
   &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;我翻译了&amp;lt;a href=&amp;quot;https://springdev.io/blog/2018/08/spring-boot-best-practices.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Boot 最佳实践&amp;lt;/a&amp;gt;，并增加了第一条最佳实践，原文在&amp;lt;a href=&amp;quot;https://www.e4developer.com/2018/08/06/spring-boot-best-practices/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;这里&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
   &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;谷歌开源的高性能 RPC 框架 &amp;lt;a href=&amp;quot;https://github.com/grpc/grpc/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;gRPC 1.14.1 发布&amp;lt;/a&amp;gt;，如果你需要在Spring Boot项目中集成gRPC，可以参考这个&amp;lt;a href=&amp;quot;https://github.com/LogNet/grpc-spring-boot-starter&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;开源的Starter&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;谷歌开源机器学习库 &amp;lt;a href=&amp;quot;https://github.com/tensorflow/tensorflow/releases/tag/v1.10.0&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;TensorFlow 1.10.0 正式发布&amp;lt;/a&amp;gt;，这里有官方微信公众号的&amp;lt;a href=&amp;quot;https://mp.weixin.qq.com/s/KjFZ7GnVN3lituuu24o3Aw&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;发布说明&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;谷歌开源机器学习库 &amp;lt;a href=&amp;quot;https://github.com/tensorflow/tensorflow/releases/tag/v1.10.0&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;TensorFlow 1.10.0 正式发布&amp;lt;/a&amp;gt;，具体内容见&amp;lt;a href=&amp;quot;https://www.tensorflowers.cn/t/5906&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;发布说明&amp;lt;/a&amp;gt;。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
   &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://zookeeper.apache.org/doc/current/releasenotes.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Apache ZooKeeper 3.4.13 发布&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
   &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;蚂蚁金服开源的基于Spring Boot的研发框架 &amp;lt;a href=&amp;quot;https://github.com/alipay/sofa-boot/releases/tag/v2.4.4&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;SOFABoot 2.4.4 发布&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/grails/grails-core/releases&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Grails 3.3.7 和 3.3.8 接连更新发布&amp;lt;/a&amp;gt;，此次更新依赖Spring Boot升级到1.5.15.RELEASE。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://grails.org&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Grails研发团队&amp;lt;/a&amp;gt;发布了&amp;lt;a href=&amp;quot;http://micronaut.io&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;微服务框架MicroNaut&amp;lt;/a&amp;gt;的1.0.0.M4版本，升级依赖Kafka 2.0.0、Netty 4.1.27.Final，支持Velocity、Thymeleaf等模板引擎，以及其他改进和BUG修复。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
   &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/gradle/gradle/releases/tag/v4.10.0-RC1&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Gradle 4.10 RC1 发布&amp;lt;/a&amp;gt;，此次默认启用Java的增量编译功能，此外Kotlin DSL也发布1.0 RC1。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://flink.apache.org/news/2018/08/09/release-1.6.0.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Apache Flink 1.6.0 发布&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
-  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/ErnestOrt/Trampoline&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;使用Trampoline工具来管理本地Spring Boot应用实例&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;面向分布式数据流处理和批量数据处理的开源计算平台 &amp;lt;a href=&amp;quot;https://flink.apache.org/news/2018/08/09/release-1.6.0.html&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Apache Flink 1.6.0 发布&amp;lt;/a&amp;gt;，解决了超过360个问题。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;开源面向文档的数据库管理系统 &amp;lt;a href=&amp;quot;https://blog.couchdb.org/2018/08/08/2-2/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Apache CouchDB 2.2.0 发布&amp;lt;/a&amp;gt;，性能提升以及众多新特性。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;开源分布式发布订阅消息系统 &amp;lt;a href=&amp;quot;https://pulsar.incubator.apache.org/release-notes/#2.1.0-incubating&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Apache Pulsar 2.1.0 发布&amp;lt;/a&amp;gt;，由Yahoo开发，现已捐给Apache正在孵化中。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;开源流处理平台，高性能分布式发布订阅消息系统 &amp;lt;a href=&amp;quot;https://kafka.apache.org/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Apache Kafka 2.0.0 发布&amp;lt;/a&amp;gt;，这里有篇&amp;lt;a href=&amp;quot;http://www.infoq.com/cn/news/2018/08/kafka2.0-new-features&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;文章&amp;lt;/a&amp;gt;介绍了其中的新特性。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;开源分布式消息和流数据处理平台 &amp;lt;a href=&amp;quot;https://rocketmq.apache.org/release_notes/release-notes-4.3.0/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Apache RocketMQ 4.3.0 发布&amp;lt;/a&amp;gt;，RocketMQ联合创始人冯嘉在&amp;lt;a href=&amp;quot;http://www.infoq.com/cn/news/2018/08/rocketmq-4.3-release&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;文章&amp;lt;/a&amp;gt;中详细介绍了4.3.0的新特性：支持分布式事务。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
+  &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;使用&amp;lt;a href=&amp;quot;https://github.com/ErnestOrt/Trampoline&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Trampoline&amp;lt;/a&amp;gt;工具来管理本地Spring Boot应用实例&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
   &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/lettuce-io/lettuce-core/releases&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Redis Client Lettuce 4.4.6.Final 和 5.0.5.RELEASE 同时更新发布&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
   &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://www.infoq.com/cn/articles/tips-for-high-availability&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;来自Netflix的系统高可用建议&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
   &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;一年一度的&amp;lt;a href=&amp;quot;https://springoneplatform.io/&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;SpringOne Platform&amp;lt;/a&amp;gt;将9月24-27日在Washington D.C举办，届时将有众多业界大咖们作为演讲嘉宾，比如熟知的&amp;lt;a href=&amp;quot;https://springoneplatform.io/2018/speakers/rod-johnson&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Rod Johnson&amp;lt;/a&amp;gt;、&amp;lt;a href=&amp;quot;https://springoneplatform.io/2018/speakers/josh-long&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;龙之春&amp;lt;/a&amp;gt;、&amp;lt;a href=&amp;quot;https://springoneplatform.io/2018/speakers/matt-raible&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Matt Raible&amp;lt;/a&amp;gt;、&amp;lt;a href=&amp;quot;https://springoneplatform.io/2018/speakers/phillip-webb&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Phillip Webb&amp;lt;/a&amp;gt;，真想过去现场学习下，见一见几位偶像们，无奈只缺一张机票。&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; 
@@ -415,7 +793,7 @@
       <description>&amp;lt;div id=&amp;quot;preamble&amp;quot;&amp;gt; 
  &amp;lt;div class=&amp;quot;sectionbody&amp;quot;&amp;gt; 
   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
-   &amp;lt;p&amp;gt;今天，Artem Bilan在博客中宣布，&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/08/09/spring-cloud-for-google-cloud-platform-1-0-goes-ga&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Cloud for Google Cloud Platform 项目的1.0 版本终于可用了！&amp;lt;/a&amp;gt;，Google Cloud团队也在官方博客上发表了&amp;lt;a href=&amp;quot;https://cloud.google.com/blog/products/gcp/calling-java-developers-spring-cloud-gcp-1-0-is-now-generally-available&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;文章&amp;lt;/a&amp;gt;做了相应的介绍。&amp;lt;/p&amp;gt; 
+   &amp;lt;p&amp;gt;今天，Artem Bilan在博客中宣布，&amp;lt;a href=&amp;quot;https://spring.io/blog/2018/08/09/spring-cloud-for-google-cloud-platform-1-0-goes-ga&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;Spring Cloud for Google Cloud Platform 项目的1.0 版本终于可用了！&amp;lt;/a&amp;gt;Google Cloud团队也在官方博客上发表了&amp;lt;a href=&amp;quot;https://cloud.google.com/blog/products/gcp/calling-java-developers-spring-cloud-gcp-1-0-is-now-generally-available&amp;quot; class=&amp;quot;external&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;&amp;gt;文章&amp;lt;/a&amp;gt;做了相应的介绍。&amp;lt;/p&amp;gt; 
   &amp;lt;/div&amp;gt; 
   &amp;lt;div class=&amp;quot;paragraph&amp;quot;&amp;gt; 
    &amp;lt;p&amp;gt;这个项目在Spring 团队和Google Cloud 团队历时一年多的时间，共同合作完成。旨在利用众所周知的Spring 框架的设计模式和抽象能力，以便为Java开发人员使用GCP服务带来Spring和Spring Boot的优势。&amp;lt;/p&amp;gt; 
