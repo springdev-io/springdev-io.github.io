@@ -62,12 +62,27 @@ b.conum *{color:inherit!important}
   border-left: 4px solid #f12222;
   background-color: #f1c4c4;
 }
+.blog--container .blog--post .quoteblock.abstract blockquote {
+  margin: 20px 0;
+  padding: 0 0 0 10px;
+  border-left: 5px solid #dddddd;
+}
+.blog--container .blog--post .quoteblock.abstract blockquote p {
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 24px;
+}
+.blog--container .blog--post .quoteblock.abstract {
+    margin: 20px 0;
+    padding: 0 0 0 10px;
+    border-left: none;
+}
 .blog--container .blog--post .quoteblock {
     margin: 20px 0;
     padding: 0 0 0 10px;
     border-left: 5px solid #1d97d4;
 }
-.blog--container .blog--post blockquote {
+.blog--container .blog--post .quoteblock blockquote {
     padding: 0 0 0 15px;
     margin: 0 0 20px;
     border: none;
