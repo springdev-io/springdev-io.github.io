@@ -164,7 +164,7 @@
    <p>Spring Boot大大简化了Spring应用程序的开发。它的自动配置和起步依赖减少了启动应用程序所需的代码和配置量。如果你之前在Spring中使用过大量的XML配置，那么你会觉得Spring Boot就是一股清新的空气。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Spring Boot于2014年首次发布，自那以后更新了很多。就像代码质量和测试一样，安全性已成为开发人员非常关心的问题。如果你是一名开发人员且却对安全并不关心，那么你应该考虑下是否应该如此。本文旨在教你如何创建更安全的Spring Boot应用程序。</p> 
+   <p>Spring Boot于2014年首次发布，自那以后更新了很多。就像代码质量和测试一样，安全性已成为开发人员非常关心的问题。如果你是一名开发人员却对安全并不关心，那么你应该考虑下是否应该如此。本文旨在教你如何创建更安全的Spring Boot应用程序。</p> 
   </div> 
   <div class="paragraph"> 
    <p>我与<a href="https://twitter.com/sjmaple" class="external" target="_blank" rel="noopener">Simon Maple</a>合作完成了这篇文章，他是一名Java冠军程序员和Snyk的开发者关系总监。我们都在安全行业的公司工作，热爱Java，并希望帮助开发人员创建更安全的应用程序。我们认为以撰写这篇文章这种方式来回馈社区是有趣的。除了下面这些我们已列出的，如果你还有其他的建议，请在评论中告诉我们！</p> 
@@ -230,7 +230,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
  <h2 id="借助snyk检查你的依赖_check_your_dependencies_with_snyk">2. 借助Snyk检查你的依赖（Check Your Dependencies with Snyk）</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>你很可能不知道应用程序使用了多少直接依赖项。你也很可能不知道应用程序使用了多少传递依赖项。这通常是正常的，尽管依赖性构成了整个应用程序的大部分。攻击者越来越多地针对开源依赖项，因为它们的重用为恶意黑客提供了许多受害者。确保应用程序的整个依赖关系树中没有已知的漏洞非常重要。</p> 
+   <p>你很可能不知道应用程序使用了多少直接依赖项，你也很可能不知道应用程序使用了多少传递依赖项。这通常是正常的，尽管依赖性构成了整个应用程序的大部分。攻击者越来越多地针对开源依赖项，因为它们的重用为恶意黑客提供了许多受害者。确保应用程序的整个依赖关系树中没有已知的漏洞非常重要。</p> 
   </div> 
   <div class="paragraph"> 
    <p>Snyk测试你的应用程序构建工件，标记那些已知漏洞的依赖项。它在仪表板为你提供了在应用程序中使用的软件包中存在的漏洞列表。</p> 
@@ -418,7 +418,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="管理密码_密码哈希加密">7. 管理密码？ 密码哈希加密！</h2> 
+ <h2 id="管理密码_使用密码哈希">7. 管理密码？ 使用密码哈希！</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>以纯文本格式存储密码是你可以为应用程序的安全性做的最糟糕的事情之一。幸运的是，Spring Security默认情况下不允许使用纯文本密码。它还附带了一个加密模块，可用于对称加密、密钥生成和密码散列（也就是密码编码）。</p> 
@@ -438,7 +438,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
    <p>Spring Security提供了几种实现，最常用的是<code>BCryptPasswordEncoder</code>和<code>Pbkdf2PasswordEncoder</code>。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>对于一般的密码管理，我们建议使用SCrypt或Argon2。SCrypt现在已经过时了（已经有一段时间了），并且有一个BCrypt没有的额外的复杂因素，这使得暴力成倍地变得更加困难/昂贵。它由着名的密码学家/安全人员（Colin Percival）编写，并且在几乎所有编程语言中都有很好的库。SCrypt也得到Latacora的认可。</p> 
+   <p>对于一般的密码管理，我们建议使用SCrypt或Argon2。SCrypt现在已经过时了（已经有一段时间了），并且有一个BCrypt没有的额外的复杂因素，这使得暴力成倍地变得更加困难或者昂贵。它由着名的密码学家/安全人员（Colin Percival）编写，并且在几乎所有编程语言中都有很好的库。SCrypt也得到Latacora的认可。</p> 
   </div> 
   <div class="paragraph"> 
    <p>来自Okta Developer Relations团队的密码专家Randall Degges：</p> 
@@ -462,16 +462,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="安全地存储秘密">8. 安全地存储秘密</h2> 
+ <h2 id="安全地存储秘密_secrets">8. 安全地存储秘密（Secrets）</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>应谨慎处理敏感信息，如密码、访问令牌等。你不能将它们随意的以纯文本形式传递，或者为了被访问而将它们保存在本地存储中。由于<a href="https://github.com/search?q=removed+password&amp;type=Commits" class="external" target="_blank" rel="noopener">GitHub的历史</a>已经一次又一次证明，开发人员并没有仔细考虑如何存储他们的秘密。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>当然，你能够也应该加密你的敏感数据，例如密码。现在你的密码是安全的，你有一个新的秘密，你的解密密钥！你对这个新秘密有什么看法？ 也许存放在本地？ 也许在另一个地方，你认为攻击者很难找到它。这不能解决问题：它只是暂时被推迟了。如果没有适当的流程，你只是让黑客稍微难以解开你的秘密而已。</p> 
+   <p>当然，你能够也应该加密你的敏感数据，例如密码。现在你的密码是安全的，你有一个新的秘密：你的解密密钥！你对这个新秘密有什么看法？ 也许存放在本地？ 也许在另一个地方，你认为攻击者很难找到它。这不能解决问题：它只是暂时被推迟了。如果没有适当的流程，你只是让黑客稍微难以解开你的秘密而已。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>一个好的做法是将保密信息存储在保管库中，该保管库可用于存储，还提供对应用程序可能使用的服务的访问权限，甚至生成凭据。<a href="https://www.vaultproject.io/" class="external" target="_blank" rel="noopener">HashiCorp的Vault</a>使得存储机密变得轻而易举，并提供了许多额外的服务。可以配置保险柜，以便没有人可以访问所有数据，不提供单点控制。根密钥Vault定期被更改，仅存储在内存中。有一个主开关，当被触发时会密封你的保管库，如果出现问题就阻止它共享秘密。Vault使用分配给可以限定特定用户，服务或应用程序的策略的令牌。你还可以与LDAP等常用身份验证机制集成以获取令牌。</p> 
+   <p>一个好的做法是将保密信息存储在保管库中，该保管库可用于存储，还提供对应用程序可能使用的服务的访问权限，甚至生成凭据。<a href="https://www.vaultproject.io/" class="external" target="_blank" rel="noopener">HashiCorp的Vault</a>使得存储机密变得轻而易举，并提供了许多额外的服务。可以配置保险柜，以便没有人可以访问所有数据，不提供单点控制。根密钥Vault定期被更改，仅存储在内存中。它有一个主开关，当被触发时会密封你的保管库，如果出现问题就阻止它共享秘密。Vault使用分配给可以限定特定用户，服务或应用程序的策略的令牌。你还可以与LDAP等常用身份验证机制集成以获取令牌。</p> 
   </div> 
   <div class="paragraph"> 
    <p>除了没有问题的“黄金路径视图”（golden-path view）外，Vault还可以提供应用在被黑客入侵时的备选方案。此时，撤销单个或多个秘密很重要，可能是由特定用户或特定类型。Vault提供了一种自动化的方式，可以在时机成熟时快速完成。</p> 
