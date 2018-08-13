@@ -161,13 +161,13 @@
               <div class="blog--post"><div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Spring Boot大大简化了Spring应用程序的开发。它的自动配置和启动器依赖性减少了启动应用程序所需的代码和配置量。如果你已经习惯了Spring和当天的大量XML，Spring Boot是一股清新的空气。</p> 
+   <p>Spring Boot大大简化了Spring应用程序的开发。它的自动配置和起步依赖减少了启动应用程序所需的代码和配置量。如果你之前在Spring中使用过大量的XML配置，那么你会觉得Spring Boot就是一股清新的空气。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Spring Boot于2014年首次发布，自那以后发生了很多变化。与代码质量和测试非常相似，安全性已经成为开发人员关心的问题。如果你是开发人员并且你关心安全性问题，那么你认为自己应该是这样。本文旨在教你如何创建更安全的Spring Boot应用程序。</p> 
+   <p>Spring Boot于2014年首次发布，自那以后更新了很多。就像代码质量和测试一样，安全性已成为开发人员非常关心的问题。如果你是一名开发人员且却对安全并不关心，那么你应该考虑下是否应该如此。本文旨在教你如何创建更安全的Spring Boot应用程序。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>我与Snyk的Java Champion和开发者关系总监Simon Maple合作完成了这篇文章。我们都为安全行业的公司工作，热爱Java，并希望帮助开发人员创建更安全的应用程序。我们认为撰写这篇文章将是回馈社区的有趣方式。如果你有我们列出的其他建议，请在评论中添加！</p> 
+   <p>我与<a href="https://twitter.com/sjmaple" class="external" target="_blank" rel="noopener">Simon Maple</a>合作完成了这篇文章，他是一名Java冠军程序员和Snyk的开发者关系总监。我们都在安全行业的公司工作，热爱Java，并希望帮助开发人员创建更安全的应用程序。我们认为以撰写这篇文章这种方式来回馈社区是有趣的。除了下面这些我们已列出的，如果你还有其他的建议，请在评论中告诉我们！</p> 
   </div> 
  </div> 
 </div> 
@@ -178,13 +178,13 @@
    <p>传输层安全性（TLS）是HTTPS的官方名称。你可能听说过它称为SSL（安全套接字层）。SSL是已弃用的名称，TLS是一种加密协议，可通过计算机网络提供安全通信。其主要目标是确保计算机应用程序之间的隐私和数据完整性。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>过去，TLS/SSL证书很昂贵，而且HTTPS被认为很慢。机器变得更快，解决了性能问题，Let’s Encrypt提供免费的TLS证书。这两项发展改变了游戏，并使TLS成为主流。</p> 
+   <p>过去，TLS/SSL证书很昂贵，而且HTTPS被认为很慢。机器的运算速度极大提升解决了性能问题，而<a href="https://letsencrypt.org/" class="external" target="_blank" rel="noopener">Let’s Encrypt</a>提供免费的TLS证书。这两项发展改变了现状，并使TLS很快成为主流。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>2018年7月24日，Google Chrome已将HTTP网站标记为“不安全”。虽然这在网络社区引起了相当多的争议，但它已然如此。 知名安全研究员特洛伊·亨特（Troy Hunt）创建了一个为什么没有HTTPS？跟踪不使用HTTPS的大型网站的网站。你可能没有开发下一个大型网站，但为什么限制自己？</p> 
+   <p>2018年7月24日，Google Chrome已将<a href="https://www.wired.com/story/google-chrome-https-not-secure-label/" class="external" target="_blank" rel="noopener">HTTP网站标记为“不安全”</a>。虽然这在网络社区引起了相当多的争议，但它已然如此。知名安全研究员Troy Hunt创建了一个<a href="https://www.troyhunt.com/why-no-https-heres-the-worlds-largest-websites-not-redirecting-insecure-requests/" class="external" target="_blank" rel="noopener">“为什么不使用HTTPS？”</a>来记录不使用HTTPS的大型网站。你可能没有开发下一个大型网站，但为什么限制自己不使用呢？</p> 
   </div> 
   <div class="paragraph"> 
-   <p>生成和更新加密TLS证书可以自动化。由于他们是免费的，所以没有理由不去做！<a href="https://dzone.com/articles/spring-boot-secured-by-lets-encrypt" class="external" target="_blank" rel="noopener">Spring Boot Secured By Let’s Encrypt</a>是介绍如何做到这一点的有用指南。</p> 
+   <p>生成和更新加密TLS证书可以自动化。由于它们是免费的，所以没有理由不去做！<a href="https://dzone.com/articles/spring-boot-secured-by-lets-encrypt" class="external" target="_blank" rel="noopener">Spring Boot Secured By Let’s Encrypt</a>是介绍如何做到这一点的有用指南。</p> 
   </div> 
   <div class="paragraph"> 
    <p>要在Spring Boot应用程序中强制使用HTTPS，你可以扩展<code>WebSecurityConfigurerAdapter</code>并要求安全连接。</p> 
@@ -219,7 +219,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>云提供商可以大大简化TLS证书。亚马逊证书管理器与Let’s Encrypt完全相同，但默认情况下它内置于所有AWS产品/服务中。它允许你提供100％免费的SSL证书并处理自动续订等，只需零工作/配置。Heroku也有自动证书管理。</p> 
+   <p>云提供商可以大大简化TLS证书。<a href="https://aws.amazon.com/certificate-manager/" class="external" target="_blank" rel="noopener">亚马逊证书管理器</a>与Let’s Encrypt完全相同，但默认情况下它内置于所有AWS产品或服务中。它允许你提供100％免费的SSL证书并处理自动续订等，只需零配置工作。Heroku也有自动证书管理。</p> 
   </div> 
   <div class="paragraph"> 
    <p>另一个重要的事情是使用HTTP严格传输安全性（HSTS）。HSTS是一种Web安全策略机制，可以保护网站免受协议降级攻击和cookie劫持。服务器使用名为<code>Strict-Transport-Security</code>的响应头字段将HSTS策略传送到浏览器。Spring Security默认发送此标头，以避免在开始时出现不必要的HTTP跃点。</p> 
@@ -278,9 +278,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
    <p>对易受攻击的项目的修补程序消除了程序包中的漏洞，但通常会留下一个可能未经过充分测试的配置。由于修补程序只会更改易受攻击的代码，因此对库的代码更改将会减少，因此可以降低破坏向后兼容性或引入行为更改的可能性。像Snyk这样的第三方安全公司为许多漏洞提供了补丁程序，因此如果无法升级到更新版本的库，你仍然可以使用旧版本的补丁程序。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Ignoring a vulnerability is, of course, an option, but not a good one. Perhaps you know of a vulnerability, but do not believe it is directly exploitable. Keep in mind that it might not be in your application flow today, but at some point, a developer might add additional code that uses a vulnerable path.</p> 
-  </div> 
-  <div class="paragraph"> 
    <p>当然，忽略漏洞是一种选择，但不是一个好选择。也许你知道一个漏洞，但不相信它是可以直接利用的。请记住，它可能不在你的应用程序流程中，但在某些时候，开发人员可能会添加使用易受攻击路径的其他代码。</p> 
   </div> 
  </div> 
@@ -312,7 +309,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>如果你使用的是 Angular，这样设置就够了。如果你使用的是 React，则需要从cookie中读取<code>XSRF-TOKEN</code> 并作为请求头<code>X-XSRF-TOKEN</code>发回。</p> 
+   <p>如果你使用的是Angular，这样设置就够了。如果你使用的是React，则需要从cookie中读取<code>XSRF-TOKEN</code>的值并作为标头<code>X-XSRF-TOKEN</code>发回。</p> 
   </div> 
   <div class="paragraph"> 
    <p>当请求是HTTPS协议时，Spring Security会自动为<code>XSRF-TOKEN</code> cookie添加安全标志。Spring Security不对CSRF cookie使用<code>SameSite = strict</code>标志，但在使用Spring Session或WebFlux会话会这样处理。会话cookie对于识别用户是有意义，但它对CSRF cookie没有多少用处，因为CSRF令牌也需要存放在请求中。</p> 
@@ -421,10 +418,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="管理密码_使用哈希密码">7. 管理密码？ 使用哈希密码！</h2> 
+ <h2 id="管理密码_密码哈希加密">7. 管理密码？ 密码哈希加密！</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>以纯文本格式存储密码是你可以为应用程序的安全性做的最糟糕的事情之一。幸运的是，Spring Security默认情况下不允许使用纯文本密码。 它还附带了一个加密模块，可用于对称加密、密钥生成和密码散列（也就是密码编码）。</p> 
+   <p>以纯文本格式存储密码是你可以为应用程序的安全性做的最糟糕的事情之一。幸运的是，Spring Security默认情况下不允许使用纯文本密码。它还附带了一个加密模块，可用于对称加密、密钥生成和密码散列（也就是密码编码）。</p> 
   </div> 
   <div class="paragraph"> 
    <p><code>PasswordEncoder</code>是Spring Security中密码散列的主要接口，如下所示：</p> 
@@ -477,7 +474,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
    <p>一个好的做法是将保密信息存储在保管库中，该保管库可用于存储，还提供对应用程序可能使用的服务的访问权限，甚至生成凭据。<a href="https://www.vaultproject.io/" class="external" target="_blank" rel="noopener">HashiCorp的Vault</a>使得存储机密变得轻而易举，并提供了许多额外的服务。可以配置保险柜，以便没有人可以访问所有数据，不提供单点控制。根密钥Vault定期被更改，仅存储在内存中。有一个主开关，当被触发时会密封你的保管库，如果出现问题就阻止它共享秘密。Vault使用分配给可以限定特定用户，服务或应用程序的策略的令牌。你还可以与LDAP等常用身份验证机制集成以获取令牌。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>除了没有问题的“黄金路径视图”外，Vault还可以提供应用在被黑客入侵时的备选方案。此时，撤销单个或多个秘密很重要，可能是由特定用户或特定类型。Vault提供了一种自动化的方式，可以在时机成熟时快速完成。</p> 
+   <p>除了没有问题的“黄金路径视图”（golden-path view）外，Vault还可以提供应用在被黑客入侵时的备选方案。此时，撤销单个或多个秘密很重要，可能是由特定用户或特定类型。Vault提供了一种自动化的方式，可以在时机成熟时快速完成。</p> 
   </div> 
   <div class="paragraph"> 
    <p>如果你对此感兴趣，请务必花一些时间查看<a href="https://projects.spring.io/spring-vault/" class="external" target="_blank" rel="noopener">Spring Vault</a>，它为HashiCorp Vault添加抽象，为客户端提供基于Spring注解方式，允许访问、存储和撤销机密而不会迷失在底层架构中。以下代码段显示了使用注释从Spring Vault中提取密码的难易程度。</p> 
