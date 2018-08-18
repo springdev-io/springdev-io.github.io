@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring一周回顾（2018年7月20日） - Spring 开发者</title>
+  <title>Spring Framework 5.1 RC2 发布了 - Spring 开发者</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring一周回顾（2018年7月20日）" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-07-20'><meta property="og:description" content="本文带你回顾最近一周有关Spring社区的一些有趣的事情。" />
+  <meta property="og:title" content="Spring Framework 5.1 RC2 发布了" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-08-17'><meta property="og:description" content="Spring Framework 5.1 发布第二个RC，继续开发更多新特性和优化工作。" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -119,7 +119,7 @@
     <main class="body--container container-fluid">
       <div class="main-body--wrapper">
         <div class="desktop-only">
-          <h1 class="blog-category active content--title">新闻资讯</h1>
+          <h1 class="blog-category active content--title">版本发布</h1>
           <div class="blog-category content--title">
             <div>Engineering</div>
           </div>
@@ -135,12 +135,12 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Spring一周回顾（2018年7月20日）</h1>
+                <h1 class="blog--title">Spring Framework 5.1 RC2 发布了</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
-                    <div class="meta-data--icon icon blog-icon news"></div>
+                    <div class="meta-data--icon icon blog-icon release"></div>
                     <span>
-                      <a class="category" href="../../../blog/category/news.html">news</a>&nbsp;
+                      <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
                     </span>
                     </div>
                     <div class="meta-data--item">
@@ -149,50 +149,33 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-07-20</time>
+                      <time class="date" pubdate="" datetime=''>2018-08-17</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/07/this_week_in_spring_july_20th_2018.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2018/08/spring-framework-5-1-rc2-available-now.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="quoteblock abstract"> 
- <div class="title">
-  概要
- </div> 
- <blockquote>
-   本文带你回顾最近一周有关Spring社区的一些有趣的事情。 
- </blockquote> 
+              <div class="blog--post"><div class="paragraph"> 
+ <p>Spring Framework 5.1 发布第二个RC，继续开发更多新特性和优化工作。</p> 
 </div> 
 <div class="paragraph"> 
- <p>七月是毕业季令人有些感伤的日子，也是小朋友开始暑假放飞快乐的日子，同时也是一年之中下半场的开始。是的，不知不觉2018已经过去了一半，一定有些事没有做好而感到失望，也一定有很多事规划着要做而欣喜。如果你感到我有点情绪低落，那一定是患上了“世界杯后遗症”，据说写文章和跑步可以有效治疗。</p> 
+ <p>Spring Framework 5.1 需要JDK 8及以上版本，特别是支持JDK 11这个LTS版本。官方推荐升级到5.1版本，以便能够使用JDK 11的新特性。除此之外，该版本还支持<a href="https://www.graalvm.org/" class="external" target="_blank" rel="noopener">GraalVM</a>，这是Oracle四月份宣布开源的一个支持多语言的高性能虚拟机，目前在开源社区已经大量测试使用。</p> 
 </div> 
 <div class="paragraph"> 
- <p>各位Spring粉丝们，大家周末好！看着<a href="https://github.com/joshlong" class="external" target="_blank" rel="noopener">龙大神</a>本周又忙着在世界各地参加各种会议活动，为活动准备演讲材料《Reactive Spring》，在忙碌的同时也不忘如期发布本周新一期的<a href="https://spring.io/blog/2018/07/17/this-week-in-spring-july-17th-2018" class="external" target="_blank" rel="noopener">This Week in Spring</a>。</p> 
-</div> 
-<div class="ulist"> 
- <div class="title">
-  Spring社区本周回顾
- </div> 
- <ul> 
-  <li> <p><a href="https://spring.io/blog/2018/07/13/spring-batch-4-1-0-m2-released" class="external" target="_blank" rel="noopener">Spring Batch 4.1.0.M2发布了</a>，本版本提供了一些新特性，比如简化分块步骤、新增类<code>JsonFileItemWriter</code>、新增了<code>BeanValidatingItemProcessor</code>用以支持校验Bean。</p> </li> 
-  <li> <p><a href="https://spring.io/blog/2018/07/19/spring-rest-docs-1-2-5-release" class="external" target="_blank" rel="noopener">Spring REST Docs 1.2.5.RELEASE</a>和<a href="https://spring.io/blog/2018/07/19/spring-rest-docs-2-0-2-release" class="external" target="_blank" rel="noopener">Spring REST Docs 2.0.2.RELEASE</a>同时发布，修复了若干BUG。InfoQ有放出一个关于介绍使用Spring REST Docs的<a href="https://www.infoq.com/presentations/documentation-api-spring-rest" class="external" target="_blank" rel="noopener">视频</a>。</p> </li> 
-  <li> <p><a href="https://spring.io/blog/2018/07/18/dependency-management-plugin-1-0-6-release" class="external" target="_blank" rel="noopener">Dependency Management Plugin 1.0.6.RELEASE发布</a>，该版本修复了若干问题，将会包含在随后的Spring Boot 1.5.15和2.0.4一起提供。</p> </li> 
-  <li> <p>Spring Cloud Function上月已经发布了1.0.0正式版本，即将加入到Spring Initializr中提供创建项目可选项，再来看看之前有关介绍的<a href="https://spring.io/blog/2017/07/05/introducing-spring-cloud-function" class="external" target="_blank" rel="noopener">文章</a>。</p> </li> 
-  <li> <p>Spring架构师<a href="https://ewolff.com" class="external" target="_blank" rel="noopener">Eberhard Wolff</a>已经更新了他的演示项目的代码，可以在他的<a href="https://github.com/ewolff?tab=repositories" class="external" target="_blank" rel="noopener">GitHub主页</a>看到更新。</p> </li> 
-  <li> <p><a href="https://www.infoq.com/news/2018/07/axon-query-subscriptions-kafka" class="external" target="_blank" rel="noopener">Axon Framework 3.3 提供订阅查询API和支持Kafka集成支持</a></p> </li> 
-  <li> <p><a href="https://grails.org" class="external" target="_blank" rel="noopener">Grails的研发团队</a>昨天刚刚发布了<a href="http://micronaut.io" class="external" target="_blank" rel="noopener">MicroNaut微服务框架</a>的1.0.0.M3版本，他们从Grails多年的开发中借鉴了大量优秀的设计思想，同时又吸取了之前Grails的一些教训，非常期待正式版本的到来。</p> </li> 
-  <li> <p><a href="https://blogs.apache.org/groovy/entry/groovy-2-5-1-released" class="external" target="_blank" rel="noopener">Groovy 2.5.1发布了</a>，该版本修复了44个Bug，为兼容JDK多个版本而持续优化。</p> </li> 
- </ul> 
+ <p>Spring Framework 5.1 RC2的依赖升级了Reactor Californium M2、RxJava 2.2和JUnit 5.3 RC1。其中解决了有关支持JDK 11 和GraalVM的几个问题，同时继续完成5.1版本的新特性开发，包括改善日志输出和优化启动性能。</p> 
 </div> 
 <div class="paragraph"> 
- <p>写完这篇文章，我就要出去跑上一圈了。当你读到这篇文章时，也许正在赶回家的路上或者已经回到温暖的家里，——周末愉快！</p> 
+ <p>开发团队计划在九月上旬发布5.1 RC3，将会集成Reactor Californium RC1，并改进JDK 11 的支持，GA版本将会在9月底发布。Spring Boot 2.1 M2将会在下周发布，这样就可以在<a href="http://start.spring.io/" class="external" target="_blank" rel="noopener">Spring Initializr</a>使用到Spring Framework 5.1 RC2！</p> 
+</div> 
+<div class="paragraph"> 
+ <p>更多地新特性，请看这里<a href="https://github.com/spring-projects/spring-framework/wiki/What’s-New-in-Spring-Framework-5.x" class="external" target="_blank" rel="noopener">What’s New in Spring Framework 5.x</a></p> 
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/07/spring_guides_intro.html"> ←关于Spring开发指南</a></li>
-              <li class="next"><a href="../../../blog/2018/07/spring_framework_5_1_goes_rc1.html">Spring Framework 5.1 RC1发布了 →</a></li>
+              <li class="previous"><a  href="../../../blog/2018/08/what-is-the-oauth-2-0-authorization-code-grant-type.html"> ←什么是OAuth 2.0 授权码模式？</a></li>
+              
               </ul>
             </div>
             <section id="gitalk-container"></section>
