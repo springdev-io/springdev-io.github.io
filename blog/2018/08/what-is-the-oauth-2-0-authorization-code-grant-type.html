@@ -284,13 +284,13 @@ Pragma: no-cache
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="何时使用授权代码模式">何时使用授权代码模式</h2> 
+ <h2 id="何时使用授权码模式">何时使用授权码模式</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>授权码模式最适用于Web和移动应用程序。由于授权码模式具有交换访问令牌的授权代码的额外步骤，因此它提供了隐式授权类型中不存在的附加安全层。</p> 
+   <p>授权码模式最适用于Web和移动应用程序。由于授权码模式具有交换访问令牌的额外步骤，因此它提供了隐式授权类型中不存在的附加安全层。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>如果你在移动应用程序或任何其他类型的无法存储客户端密钥的应用程序中使用授权代码模式，那么你还应该使用<a href="https://www.oauth.com/oauth2-servers/pkce/" class="external" target="_blank" rel="noopener">PKCE扩展</a>，该扩展可以提供针对授权代码可能存在的其他攻击（截获）的保护。</p> 
+   <p>如果你在移动应用程序或任何其他类型的无法存储客户端密钥的应用程序中使用授权码模式，那么你还应该使用<a href="https://www.oauth.com/oauth2-servers/pkce/" class="external" target="_blank" rel="noopener">PKCE扩展</a>，该扩展可以提供针对授权代码可能存在的其他攻击（截获）的保护。</p> 
   </div> 
   <div class="paragraph"> 
    <p>代码交换步骤确保攻击者无法拦截访问令牌，因为访问令牌始终通过应用程序和OAuth服务器之间的安全反向通道发送。</p> 
