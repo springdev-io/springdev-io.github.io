@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>安装 STS - Spring 开发者</title>
+  <title>Spring Cloud Stream Kinesis Binder 1.0 发布 - Spring 开发者</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="安装 STS" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-06-04'><meta property="og:description" content="本文主要介绍有关STS的工具特性和如何安装。" />
+  <meta property="og:title" content="Spring Cloud Stream Kinesis Binder 1.0 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-08-21'><meta property="og:description" content="Spring Cloud Stream Kinesis Binder 1.0 发布" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -119,7 +119,7 @@
     <main class="body--container container-fluid">
       <div class="main-body--wrapper">
         <div class="desktop-only">
-          <h1 class="blog-category active content--title">书籍文章</h1>
+          <h1 class="blog-category active content--title">版本发布</h1>
           <div class="blog-category content--title">
             <div>Engineering</div>
           </div>
@@ -135,12 +135,12 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">安装 STS</h1>
+                <h1 class="blog--title">Spring Cloud Stream Kinesis Binder 1.0 发布</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
-                    <div class="meta-data--icon icon blog-icon article"></div>
+                    <div class="meta-data--icon icon blog-icon release"></div>
                     <span>
-                      <a class="category" href="../../../blog/category/article.html">article</a>&nbsp;
+                      <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
                     </span>
                     </div>
                     <div class="meta-data--item">
@@ -149,119 +149,171 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-06-04</time>
+                      <time class="date" pubdate="" datetime=''>2018-08-21</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/06/sts.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2018/08/spring-cloud-stream-kinesis-binder-1-0-ga.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
               <div class="blog--post"><div id="toc" class="toc"> 
  <div id="toctitle">
-  目录
+  本文内容
  </div> 
  <ul class="sectlevel1"> 
-  <li><a href="#通过下载安装包来安装">通过下载安装包来安装</a></li> 
-  <li><a href="#使用osx_homebrew安装">使用OSX Homebrew安装</a></li> 
-  <li><a href="#使用scoop安装sts">使用Scoop安装STS</a></li> 
+  <li><a href="#介绍">介绍</a> 
+   <ul class="sectlevel2"> 
+    <li><a href="#amazon_web_services_aws">Amazon Web Services（AWS）</a></li> 
+    <li><a href="#amazon_kinesis">Amazon Kinesis</a></li> 
+    <li><a href="#spring_cloud_stream">Spring Cloud Stream</a></li> 
+    <li><a href="#spring_cloud_stream_binder_for_aws_kinesis">Spring Cloud Stream Binder for AWS Kinesis</a></li> 
+    <li><a href="#配置参数">配置参数</a></li> 
+   </ul> </li> 
+  <li><a href="#如何使用">如何使用</a> 
+   <ul class="sectlevel2"> 
+    <li><a href="#在maven中添加依赖项">在Maven中添加依赖项</a></li> 
+   </ul> </li> 
+  <li><a href="#参考资料">参考资料</a></li> 
  </ul> 
 </div> 
 <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="quoteblock abstract"> 
-   <div class="title">
-    概要
-   </div> 
    <blockquote>
-     本文主要介绍有关STS的工具特性和如何安装。 
+     Spring Cloud Stream Kinesis Binder 1.0 正式发布，这也意味着在生产级Spring应用中，您将可以很轻松的集成AWS Kinesis，并很容易的构建一个消息驱动的微服务应用程序。本文将带您详细了解Amazon Kinesis以及如何在项目中使用。 
    </blockquote> 
   </div> 
-  <div class="paragraph"> 
-   <p>Spring Tool Suite（简称：STS）是Spring Source开发团队在基于Eclipse基础上为Spring应用的开发专门定制的一款集成开发环境，对于Spring应用的编码实现、调试、部署等各个流程，集成了包括Pivotal tc Server、Pivotal Cloud Foundry、Git、Maven、AspectJ等工具，极大提供了开发效率。</p> 
-  </div> 
-  <div class="ulist"> 
-   <div class="title">
-    主要特性如下：
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="介绍">介绍</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="amazon_web_services_aws">Amazon Web Services（AWS）</h3> 
+   <div class="paragraph"> 
+    <p><a href="http://aws.amazon.com/" class="external" target="_blank" rel="noopener">亚马逊网络服务</a>（Amazon Web Services：AWS）于2006年推出，通过其云计算平台为企业提供关键的基础设施服务。使用云计算业务可以采用新的业务模式，从而无需计划和投资采购自己的IT基础架构。他们可以使用云服务提供商提供的基础架构和服务，并在使用服务时付费。访问<a href="http://aws.amazon.com/products/" class="external" target="_blank" rel="noopener">http://aws.amazon.com/products/</a>，了解亚马逊作为其云计算服务的一部分提供的各种产品的更多详细信息。</p> 
    </div> 
-   <ul> 
-    <li> <p>支持Java 8/9/10</p> </li> 
-    <li> <p>集成Git、Gradle、Maven等工具</p> </li> 
-    <li> <p>更好的识别Spring项目，能够识别Spring配置文件，诸如命名空间、控制器、Bean的定义</p> </li> 
-    <li> <p>Spring配置文件的校验检查，更早发现错误</p> </li> 
-    <li> <p>重构增强，除了对于Java代码的重构功能，还支持Spring配置文件中的重构，比如Bean的重命名</p> </li> 
-    <li> <p>代码快速提示，无论是Java代码和配置文件都能根据内容快速提示</p> </li> 
-    <li> <p>图形化展示项目中Bean的依赖关系，支持Spring Integration、Spring Batch、Spring Webflow</p> </li> 
-    <li> <p>AOP最佳支持</p> </li> 
-    <li> <p>集成Cloud Foundry和Pivotal tc Server，云部署开发更加简单</p> </li> 
-   </ul> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="amazon_kinesis">Amazon Kinesis</h3> 
+   <div class="paragraph"> 
+    <p>Amazon Kinesis 可让您轻松收集、处理和分析实时流数据，以便您及时获得见解并对新信息快速做出响应。Amazon Kinesis 提供多种核心功能，可以经济高效地处理任意规模的流数据，同时具有很高的灵活性，让您可以选择最符合应用程序需求的工具。借助 Amazon Kinesis，您可以获取实时数据 (例如视频、音频、应用程序日志、网站点击流) 以及关于机器学习、分析和其他应用程序的 IoT 遥测数据。借助 Amazon Kinesis，您可以即刻对收到的数据进行处理和分析并做出响应，无需等到收集完全部数据后才开始进行处理。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_stream">Spring Cloud Stream</h3> 
+   <div class="paragraph"> 
+    <p>Spring Cloud Stream是一个用于构建消息驱动的微服务应用程序的框架。Spring Cloud Stream构建于Spring Boot之上，用于创建独立的生产级Spring应用程序，并使用Spring Integration提供与消息代理的连接。它提供了来自多个供应商的中间件的固定配置，引入了持久化的发布-订阅语义，消费者分组和分区的概念。</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Spring Cloud Stream的核心构建组件有：</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>目标绑定器（Destination Binders）：负责提供与外部消息传递系统集成的组件。</p> </li> 
+     <li> <p>目标绑定（Destination Bindings）：外部消息传递系统和应用程序之间的桥接消息的生产者和消费者（由目标绑定器创建）。</p> </li> 
+     <li> <p>消息（Message）：生产者和消费者用于与目标绑定器（以及通过外部消息传递系统的其他应用程序）通信的规范数据结构。</p> </li> 
+    </ul> 
+   </div> 
+   <div class="paragraph"> 
+    <p>目前，Spring Cloud Stream支持<a href="https://github.com/spring-cloud/spring-cloud-stream-binder-rabbit" class="external" target="_blank" rel="noopener">RabbitMQ</a>和<a href="https://github.com/spring-cloud/spring-cloud-stream-binder-kafka" class="external" target="_blank" rel="noopener">Apache Kafka</a>绑定器，也将包含更多绑定器实现（例如：<a href="https://github.com/spring-cloud/spring-cloud-gcp/tree/master/spring-cloud-gcp-pubsub-stream-binder" class="external" target="_blank" rel="noopener">Google PubSub</a>和<a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis" class="external" target="_blank" rel="noopener">AWS Kinesis</a>）。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_stream_binder_for_aws_kinesis">Spring Cloud Stream Binder for AWS Kinesis</h3> 
+   <div class="paragraph"> 
+    <p>Spring Cloud Stream Binder for AWS Kinesis提供了Spring Cloud Stream的绑定实现。此实现在其基础上使用Spring Integration AWS Kinesis通道适配器。下图解释了Kinesis Binder实现如何将每个配置的目标映射到AWS Kinesis Streams：</p> 
+   </div> 
+   <div class="imageblock"> 
+    <div class="content"> 
+     <img src="https://springdev.io/images/kinesis-binder.png" alt="Kinesis binder"> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>与Apache Kafka不同，AWS Kinesis不为消费者分组提供开箱即用的支持。此功能的支持是作为<code>KinesisMessageDrivenChannelAdapter</code>中分片检查点的<code>MetadataStore</code>密钥的一部分来实现的 - <code>[CONSUMER_GROUP]：[STREAM]：[SHARD_ID]</code>。此外，<code>LockRegistry</code>用于确保对每个分片的独占访问。这样，同一个消费者分组中只有一个通道适配器将消费来自其配置的流中的单个分片的消息。</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>AWS Kinesis中的分区逻辑类似于Apache Kafka支持，但逻辑略有不同。生产者端的<code>partitionKey</code>确定将数据记录分配给流中的哪个分片。分区键是Unicode字符串，每个键的最大长度限制为256个字符。AWS Kinesis使用分区键作为哈希函数的输入，该哈希函数将分区键和关联数据映射到特定分片。具体来说，MD5哈希函数用于将分区键映射到128位整数值，并将关联的数据记录映射到分片。作为此散列机制的结果，具有相同分区键的所有数据记录映射到流中的相同分片。但同时我们无法选择明确发送的目标分片。虽然手动计算哈希值（并分别对producer使用<code>explicitHashKeyExpression</code>），但我们可以通过包含在<code>HashKeyRange</code>中来跟踪目标分片。</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>默认情况下，分区键是消息载体中<code>Object.hash()</code>的结果。</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>在AWS Kinesis Binder的情况下，Spring Cloud Stream分区处理逻辑被排除，因为它不再使用，并且提供的<code>producer.partitionKeyExpression</code>直接传播到<code>KinesisMessageHandler</code>。</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>在消费者方面，<code>instanceCount</code>和<code>instanceIndex</code>用于在组中的消费者之间均匀分配分片。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="配置参数">配置参数</h3> 
+   <div class="paragraph"> 
+    <p>有关特定于Kinesis 绑定器和绑定通道的设置，在项目<a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis/blob/master/spring-cloud-stream-binder-kinesis-docs/src/main/asciidoc/overview.adoc#configuration-options" class="external" target="_blank" rel="noopener">说明文档</a>中有详细的介绍。</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>有关通用绑定配置选项和属性，请参阅<a href="https://github.com/spring-cloud/spring-cloud-stream/blob/master/spring-cloud-stream-core-docs/src/main/asciidoc/spring-cloud-stream-overview.adoc#configuration-options" class="external" target="_blank" rel="noopener">Spring Cloud Stream core文档</a>。</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="通过下载安装包来安装">通过下载安装包来安装</h2> 
+ <h2 id="如何使用">如何使用</h2> 
  <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>浏览器打开STS官方网站<a href="https://spring.io/tools/sts" class="external" target="_blank" rel="noopener">STS</a>，当前最新版本是：3.9.4，基于Eclipse 4.7.3a构建。除了使用完整安装包，如果本地已经安装了Eclipse，那么还可以通过插件的方式来安装。STS官方提供了Eclipse 4.6、4.7、4.8等几个主流版本的插件可下载本地安装，也可以通过在线安装插件。</p> 
-  </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="https://springdev.io/images/sts_homepage.png" alt="sts homepage"> 
+  <div class="sect2"> 
+   <h3 id="在maven中添加依赖项">在Maven中添加依赖项</h3> 
+   <div class="paragraph"> 
+    <p>如果使用Maven，可以在项目POM的依赖中添加如下，这些组件已经发布到Spring Release和Maven Central了。</p> 
    </div> 
-   <div class="title">
-    图表 1. STS官方主页
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-cloud-stream-binder-kinesis&lt;/artifactId&gt;
+    &lt;version&gt;1.0.0.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;</code></pre> 
+    </div> 
    </div> 
-  </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="https://springdev.io/images/sts_download_page.png" alt="sts download page"> 
+   <div class="paragraph"> 
+    <p><code>spring-cloud-stream-binder-kinesis</code>本身依赖了<code>spring-integration-aws</code>组件，使用其来实现一些集成。如果引入前者依赖项，那么后者可以不用再引入。</p> 
    </div> 
-   <div class="title">
-    图表 2. STS下载页面
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody>
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> 
+        <div class="paragraph"> 
+         <p>关于<a href="https://springdev.io/blog/2018/08/spring-integration-for-aws-2-0-ga.html" class="external" target="_blank" rel="noopener">Spring Integration for AWS 2.0</a>，会有详细介绍说明。</p> 
+        </div> </td> 
+      </tr> 
+     </tbody>
+    </table> 
    </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="使用osx_homebrew安装">使用OSX Homebrew安装</h2> 
+ <h2 id="参考资料">参考资料</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p><a href="https://brew.sh" class="external" target="_blank" rel="noopener">Homebrew</a>是专为macOS系统设计的软件包安装管理工具。</p> 
+   <p>Spring Integration：<a href="https://github.com/spring-projects/spring-integration" class="external" target="_blank" rel="noopener">https://github.com/spring-projects/spring-integration</a></p> 
   </div> 
   <div class="paragraph"> 
-   <p>在终端控制台上执行下面的命令来安装STS：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ brew cask install sts</pre> 
-   </div> 
+   <p>Spring Integration Extension for AWS：<a href="https://github.com/spring-projects/spring-integration-aws" class="external" target="_blank" rel="noopener">https://github.com/spring-projects/spring-integration-aws</a></p> 
   </div> 
   <div class="paragraph"> 
-   <p>在Linux系统上，有<a href="//http://linuxbrew.sh" class="external" target="_blank" rel="noopener">Homebrew的Fork版本：Linuxbrew</a>，可以尝试一下。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用scoop安装sts">使用Scoop安装STS</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://scoop.sh" class="external" target="_blank" rel="noopener">Scoop</a>是使用PowerShell语言为Windows系统开发的一个命令行的安装管理工具，功能与OSX Homebrew类似。 Scoop的详细安装请参考<a href="https://github.com/lukesampson/scoop/wiki/Quick-Start" class="external" target="_blank" rel="noopener">官方安装说明</a>。</p> 
+   <p>Spring Cloud for Amazon Web Services：<a href="https://cloud.spring.io/spring-cloud-aws/" class="external" target="_blank" rel="noopener">https://cloud.spring.io/spring-cloud-aws/</a></p> 
   </div> 
   <div class="paragraph"> 
-   <p>在命令行窗口执行下面的命令来安装STS如下：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>&gt; scoop bucket add extras
-&gt; scoop install sts</pre> 
-   </div> 
+   <p>Spring Cloud Stream Kinesis Binder：<a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis" class="external" target="_blank" rel="noopener">https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis</a></p> 
   </div> 
  </div> 
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/06/springbootcli.html"> ←Spring Boot CLI使用详解</a></li>
-              <li class="next"><a href="../../../blog/2018/07/this_week_in_spring_july_13th_2018.html">Spring一周回顾（2018年7月13日） →</a></li>
+              <li class="previous"><a  href="../../../blog/2018/08/spring-integration-for-aws-2-0-ga.html"> ←Spring Integration for AWS 2.0 发布</a></li>
+              
               </ul>
             </div>
             <section id="gitalk-container"></section>
