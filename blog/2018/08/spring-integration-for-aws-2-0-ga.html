@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring Boot 2.1.0 M1发布 - Spring 开发者</title>
+  <title>Spring Integration for AWS 2.0 发布 - Spring 开发者</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring Boot 2.1.0 M1发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-07-30'><meta property="og:description" content="Spring Boot 2.1.0 M1已发布，可以从里程碑库中获取。此版本关闭了180多个问题和拉取请求。" />
+  <meta property="og:title" content="Spring Integration for AWS 2.0 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-08-21'><meta property="og:description" content="Spring Integration for AWS 2.0 发布" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -135,7 +135,7 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Spring Boot 2.1.0 M1发布</h1>
+                <h1 class="blog--title">Spring Integration for AWS 2.0 发布</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
                     <div class="meta-data--icon icon blog-icon release"></div>
@@ -149,256 +149,238 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-07-30</time>
+                      <time class="date" pubdate="" datetime=''>2018-08-21</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/07/spring_boot_2_1_m1.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2018/08/spring-integration-for-aws-2-0-ga.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
+              <div class="blog--post"><div id="toc" class="toc"> 
+ <div id="toctitle">
+  本文内容
+ </div> 
+ <ul class="sectlevel1"> 
+  <li><a href="#介绍">介绍</a></li> 
+  <li><a href="#如何使用">如何使用</a> 
+   <ul class="sectlevel2"> 
+    <li><a href="#在maven中添加依赖">在Maven中添加依赖</a></li> 
+    <li><a href="#集成amazon_s3_服务">集成Amazon S3 服务</a></li> 
+   </ul> </li> 
+  <li><a href="#这样做的好处">这样做的好处</a></li> 
+  <li><a href="#参考资料">参考资料</a></li> 
+ </ul> 
+</div> 
+<div class="sect1"> 
+ <h2 id="介绍">介绍</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Spring Boot 2.1的第一个里程碑已经发布，可以从里程碑库中获取。此版本关闭了180多个问题和拉取请求。</p> 
+   <p><a href="http://aws.amazon.com/" class="external" target="_blank" rel="noopener">亚马逊网络服务</a>（Amazon Web Services：AWS）于2006年推出，通过其云计算平台为企业提供关键的基础设施服务。使用云计算业务可以采用新的业务模式，从而无需计划和投资采购自己的IT基础架构。他们可以使用云服务提供商提供的基础架构和服务，并在使用服务时付费。访问<a href="http://aws.amazon.com/products/" class="external" target="_blank" rel="noopener">http://aws.amazon.com/products/</a>，了解亚马逊作为其云计算服务的一部分提供的各种产品的更多详细信息。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>第一个里程碑建立在Spring Framework 5.1.RC1、Spring Data Lovelace RC1和Spring Security 5.1 M2等最新的项目之上。</p> 
+   <p>Spring Integration AWS 扩展，通过<a href="http://aws.amazon.com/sdkforjava/" class="external" target="_blank" rel="noopener">AWS Java SDK</a>为Spring Integration提供了集成各种AWS服务的适配器。请注意，Spring Integration AWS Extension基于Spring Cloud AWS项目。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>其他亮点还包括：</p> 
+   <p>Spring Integration AWS 扩展已支持集成的服务有：</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>采用Undertow 2.0 and Tomcat 9.0，支持Servlet 4</p> </li> 
-    <li> <p>缓存端点</p> </li> 
-    <li> <p>支持查询单个组件的运行状况</p> </li> 
-    <li> <p>支持多配置文件YAML文档中的配置文件表达式和&lt;springProfile&gt; Logback配置</p> </li> 
+    <li> <p>Amazon Simple Email Service (SES)</p> </li> 
+    <li> <p>Amazon Simple Storage Service (S3)</p> </li> 
+    <li> <p>Amazon Simple Queue Service (SQS)</p> </li> 
+    <li> <p>Amazon Simple Notification Service (SNS)</p> </li> 
+    <li> <p>Amazon DynamoDB</p> </li> 
+    <li> <p>Amazon SimpleDB</p> </li> 
    </ul> 
   </div> 
-  <div class="paragraph"> 
-   <p>我对Spring Boot 2.1.0 M1发行说明进行了详细的整理，内容如下：</p> 
-  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="从spring_boot_2_0升级">从Spring Boot 2.0升级</h2> 
+ <h2 id="如何使用">如何使用</h2> 
  <div class="sectionbody"> 
   <div class="sect2"> 
-   <h3 id="弃用的类">弃用的类</h3> 
+   <h3 id="在maven中添加依赖">在Maven中添加依赖</h3> 
    <div class="paragraph"> 
-    <p>在此版本中已删除了Spring Boot 2.0中不推荐使用的类，方法和属性。请确保在升级之前不要调用已弃用的方法。</p> 
+    <p>如果使用Maven，可以在项目POM的依赖中添加如下，这些组件已经发布到Spring Release和Maven Central了。</p> 
    </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="bean覆盖">Bean覆盖</h3> 
-   <div class="paragraph"> 
-    <p>默认情况下禁用Bean覆盖以防止意外覆盖bean。如果依赖于覆盖，则需要将<code>spring.main.allow-bean-definition-overriding</code>设置为<code>true</code>。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="info和health默认不安全">info和health默认不安全</h3> 
-   <div class="paragraph"> 
-    <p>如果<code>spring-security</code>在没有任何安全配置的类路径上，则<code>/info</code>和<code>/health</code>将会被公开以保持一致性。如果类路径上有<code>spring-security</code>且未提供任何安全配置，则需要明确保护它们。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="json_simple">Json Simple</h3> 
-   <div class="paragraph"> 
-    <p>不再提供json-simple的依赖关系管理，并且已删除使用它的JsonParser实现。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="jersey_1">Jersey 1</h3> 
-   <div class="paragraph"> 
-    <p>不再支持Jersey 1。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="spring_provides">spring.provides</h3> 
-   <div class="paragraph"> 
-    <p>Starter可以声明<code>META-INF/spring.provides</code>，以便IDE可以找出它提供的依赖关系。扫描Starter POM以获得它声明的直接依赖性应该足以指示。如果你负责第三方启动器并声明此文件，则可以将其删除。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="servlet路径">Servlet路径</h3> 
-   <div class="paragraph"> 
-    <p><code>server.servlet.path</code>属性已改为<code>spring.mvc.servlet.path</code>。如果你以编程方式依赖该属性来获取<code>DispatcherServlet</code>的路径，请改为使用<code>DispatcherServletPath</code>。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="maven插件">Maven插件</h3> 
-   <div class="paragraph"> 
-    <p>finalName属性不再可自定义以与标准Maven插件的行为保持一致。</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="值得关注的一些新内容">值得关注的一些新内容</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="第三方库升级">第三方库升级</h3> 
-   <div class="paragraph"> 
-    <p>Spring Boot 2.1构建于Spring Framework 5.1之上并需要它。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>我们已尽可能升级到其他第三方jars的最新稳定版本。此版本中的一些值得注意的依赖项升级包括：</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Tomcat 9</p> </li> 
-     <li> <p>Undertow 2</p> </li> 
-     <li> <p>Hibernate 5.3</p> </li> 
-     <li> <p>JUnit 5.2</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="profile表达式">Profile表达式</h3> 
-   <div class="paragraph"> 
-    <p>Profile匹配已得到改进，以支持表达式格式。例如，<code>product &amp;(us-east | eu-central)</code> 表示生产配置文件处于活动状态且<code>us-east</code>或<code>eu-central</code>配置文件处于活动状态时匹配。</p> 
-   </div> 
-   <div class="ulist"> 
-    <div class="title">
-     Profile表达式可用于下列场景：
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.integration&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-integration-aws&lt;/artifactId&gt;
+    &lt;version&gt;2.0.0.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;</code></pre> 
     </div> 
-    <ul> 
-     <li> <p>使用@Profile来启用组件</p> </li> 
-     <li> <p>加载多种profile的YAML文档</p> </li> 
-     <li> <p>使用&lt;springProfile&gt;启用Logback配置</p> </li> 
-    </ul> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="actuator">Actuator</h3> 
+   <h3 id="集成amazon_s3_服务">集成Amazon S3 服务</h3> 
    <div class="sect3"> 
-    <h4 id="缓存端点">缓存端点</h4> 
+    <h4 id="入站通道适配器">入站通道适配器</h4> 
     <div class="paragraph"> 
-     <p>新的<code>/actuator/caches</code>端点列出可用的CacheManager实例及其各自的缓存基本元数据。有关更多详细信息，请参阅API。</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="spring_integration图形化端点">Spring Integration图形化端点</h4> 
-    <div class="paragraph"> 
-     <p>如果你使用的是Spring Integration，则可以在<code>/actuator/integrationgraph</code>中采用图形化的方式来展示所有Spring Integration组件。有关更多详细信息，请参阅API。</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="健康端点">健康端点</h4> 
-    <div class="paragraph"> 
-     <p>现在，<code>HealthIndicatorRegistry</code>bean可用于在运行时添加和删除<code>HealthIndicator</code>。如有必要，还会改进运行状况端点以查询特定指示符。 例如<code>/actuator/health/db</code>仅执行“db”<code>HealthIndicator</code>。有关更多详细信息，请参阅API。</p> 
+     <p>S3 通道适配器（Channel Adapters）基于<code>AmazonS3</code>模板和<code>TransferManager</code>。</p> 
     </div> 
     <div class="paragraph"> 
-     <p>Apache Cassandra的响应式HealthIndicator已经可用。</p> 
+     <p>S3 入站通道适配器（Inbound Channel Adapter），由<code>S3InboundFileSynchronizingMessageSource</code>（<code>&lt;int-aws:s3-inbound-channel-adapter&gt;</code>）来表示，允许将S3对象作为文件从S3存储桶拉到本地目录以进行同步。这个适配器与Spring Integration的模块FTP和SFTP中的入站通道适配器完全类似。</p> 
     </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="micrometer">Micrometer</h4> 
     <div class="paragraph"> 
-     <p>常用标记可以声明方式应用于所有计量表，如以下示例所示：</p> 
+     <p>Java 配置方式如下：</p> 
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre>management.metrics.tags.region=us-east-1
-management.metrics.tags.stack=prod</pre> 
+      <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@SpringBootApplication
+public static class MyConfiguration {
+
+    @Autowired
+    private AmazonS3 amazonS3;
+
+    @Bean
+    public S3InboundFileSynchronizer s3InboundFileSynchronizer() {
+      S3InboundFileSynchronizer synchronizer = new S3InboundFileSynchronizer(amazonS3());
+      synchronizer.setDeleteRemoteFiles(true);
+      synchronizer.setPreserveTimestamp(true);
+      synchronizer.setRemoteDirectory(S3_BUCKET);
+      synchronizer.setFilter(new S3RegexPatternFileListFilter(".*\\.test$"));
+      Expression expression = PARSER.parseExpression("#this.toUpperCase() + '.a'");
+      synchronizer.setLocalFilenameGeneratorExpression(expression);
+      return synchronizer;
+    }
+
+    @Bean
+    @InboundChannelAdapter(value = "s3FilesChannel", poller = @Poller(fixedDelay = "100"))
+    public S3InboundFileSynchronizingMessageSource s3InboundFileSynchronizingMessageSource() {
+      S3InboundFileSynchronizingMessageSource messageSource =
+          new S3InboundFileSynchronizingMessageSource(s3InboundFileSynchronizer());
+      messageSource.setAutoCreateLocalDirectory(true);
+      messageSource.setLocalDirectory(LOCAL_FOLDER);
+      messageSource.setLocalFilter(new AcceptOnceFileListFilter&lt;File&gt;());
+      return messageSource;
+    }
+
+    @Bean
+    public PollableChannel s3FilesChannel() {
+      return new QueueChannel();
+    }
+}</code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
-     <p>上面的示例为所有仪表添加了一个区域和堆栈标签，其值分别为<code>us-east-1</code>和<code>prod</code>。</p> 
+     <p>使用此配置，你将从<code>s3FilesChannel</code>接收带有<code>java.io.File</code> <code>payload</code>的消息，可以定期将Amazon S3存储桶中的内容同步到本地目录。</p> 
     </div> 
-    <div class="ulist"> 
-     <div class="title">
-      指标范围已得到改善：
+    <div class="paragraph"> 
+     <p>如果使用XML的配置，类似这样：</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;bean id="s3SessionFactory" class="org.springframework.integration.aws.support.S3SessionFactory"/&gt;
+
+&lt;int-aws:s3-inbound-channel-adapter channel="s3Channel"
+                   session-factory="s3SessionFactory"
+                   auto-create-local-directory="true"
+                   delete-remote-files="true"
+                   preserve-timestamp="true"
+                   filename-pattern="*.txt"
+                   local-directory="."
+                   local-filename-generator-expression="#this.toUpperCase() + '.a' + @fooString"
+                   temporary-file-suffix=".foo"
+                   local-filter="acceptAllFilter"
+                   remote-directory-expression="'my_bucket'"&gt;
+    &lt;int:poller fixed-rate="1000"/&gt;
+&lt;/int-aws:s3-inbound-channel-adapter&gt;</code></pre> 
      </div> 
-     <ul> 
-      <li> <p>Hibernate指标</p> </li> 
-      <li> <p><code>WebClient</code></p> </li> 
-     </ul> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="出站通道适配器">出站通道适配器</h4> 
+    <div class="paragraph"> 
+     <p>S3 出站通道适配器，由<code>S3MessageHandler</code>（<code>&lt;int-aws:s3-outbound-channel-adapter&gt; 和 &lt;int-aws:s3-outbound-gateway&gt;</code>）表示，允许上传、下载、拷贝等S3存储桶提供的操作（参见：<code>S3MessageHandler.Command</code>枚举）。</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>使用Java配置：</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@SpringBootApplication
+public static class MyConfiguration {
+
+    @Autowired
+    private AmazonS3 amazonS3;
+
+    @Bean
+    @ServiceActivator(inputChannel = "s3UploadChannel")
+    public MessageHandler s3MessageHandler() {
+      return new S3MessageHandler(amazonS3, "myBuck");
+    }
+
+}</code></pre> 
+     </div> 
+    </div> 
+    <div class="paragraph"> 
+     <p>使用此配置，你可以执行<code>transferManager.upload()</code>操作，使用<code>java.io.File</code> 作为<code>payload</code>发送消息，其中文件名用作S3对象键。</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>使用XML配置：</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;bean id="transferManager" class="com.amazonaws.services.s3.transfer.TransferManager"/&gt;
+
+&lt;int-aws:s3-outbound-channel-adapter transfer-manager="transferManager"
+                   channel="s3SendChannel"
+                   bucket="foo"
+                   command="DOWNLOAD"
+                   key="myDirectory"/&gt;</code></pre> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="出站网关">出站网关</h4> 
+    <div class="paragraph"> 
+     <p>S3 出站网关（Outbound Gateway），Java配置使用<code>S3MessageHandler</code>带构造函数参数<code>produceReply = true</code>定义，XML配置通过<code>&lt;int-aws:s3-outbound-gateway&gt;</code>来声明。</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>此网关的“请求-回复”是异步的，并且<code>TransferManager</code>操作的传输结果将发送到<code>outputChannel</code>，假设传输进度跟踪在下游传输流中。</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>你可以用<code>S3ProgressListener</code>来跟踪传输进度，也可以在下游传输流中将其填充到返回的<code>Transfer</code>中。</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>如需了解更多信息，请查看<code>S3MessageHandler</code>的Java文档，以及<code>&lt;int-aws:s3-outbound-channel-adapter&gt;</code> 和 <code>&lt;int-aws:s3-outbound-gateway&gt;</code>的描述。</p> 
     </div> 
    </div> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="安全">安全</h3> 
-   <div class="paragraph"> 
-    <p>添加了对WebFlux OAuth2登录的支持。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>OpenID Connect提供程序可用使用<code>issuer-uri</code>来更容易配置，<code>issuer-uri</code>是为其颁发者标识符的URI。</p> 
-   </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="这样做的好处">这样做的好处</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Spring Integration提供了Spring编程模型的扩展，以支持众所周知的企业集成模式（EIP）。</p> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="elasticsearch_rest客户端">Elasticsearch REST客户端</h3> 
-   <div class="paragraph"> 
-    <p>作为Jest的替代选项，<code>RestClient</code>和<code>RestHighLevelClient</code>的自动配置提供了命名空间为<code>spring.elasticsearch.rest.*</code>的可配置选项。</p> 
-   </div> 
+  <div class="paragraph"> 
+   <p>Spring Integration for AWS <code>2.0</code>的主要目的是遵循设计良好的Spring Integration抽象，在其基础上扩展支持AWS服务的能力，提供编程一致的系统集成模式。当你的应用程序部署到Amazon云环境中或依赖AWS服务时，这些新组件也可用于任何其他分布式任务。例如，AWS S3入站通道适配器可以将<code>DynamoDbMetadataStore</code>用于<code>S3PersistentAcceptOnceFileListFilter</code>，以防止在多个分布式应用程序实例中访问相同的已处理资源。<code>DynamoDbLockRegistry</code>可用于应用程序集群中的Leader Election（领导者选举）。</p> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="jms_code_connectionfactory_code_缓存">JMS <code>ConnectionFactory</code>缓存</h3> 
-   <div class="paragraph"> 
-    <p>默认情况下，使用<code>CachingConnectionFactory</code>缓存自动配置的<code>ConnectionFactory</code>，直到启用pool选项或将<code>spring.jms.cache.enabled</code>设置为<code>false</code>。 Pooling选项也已扩展到Artemis（请参阅<code>spring.jms.artemis.pool.*</code>）。</p> 
-   </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="参考资料">参考资料</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Spring Integration：<a href="https://github.com/spring-projects/spring-integration" class="external" target="_blank" rel="noopener">https://github.com/spring-projects/spring-integration</a></p> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="quartz">Quartz</h3> 
-   <div class="paragraph"> 
-    <p><code>spring.quartz</code>命名空间增加了多个配置项。</p> 
-   </div> 
+  <div class="paragraph"> 
+   <p>Spring Integration Extension for AWS：<a href="https://github.com/spring-projects/spring-integration-aws" class="external" target="_blank" rel="noopener">https://github.com/spring-projects/spring-integration-aws</a></p> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="junit_5">JUnit 5</h3> 
-   <div class="paragraph"> 
-    <p>所有<code>@…​</code>测试注释都使用<code>@ExtendedWith(SpringExtension.class)</code>进行元注释，因此如果你使用的是JUnit，则可以删除此设置的冗余部分。Spring Boot使用的<code>maven-surefire-plugin</code>版本，不需要任何自定义设置就能使用JUnit 5。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="maven插件_2">Maven插件</h3> 
-   <div class="paragraph"> 
-    <p>通过使用<a href="http://docs.spring.io/spring-boot/docs/2.1.0.M1/maven-plugin/examples/run-system-properties.html" class="external" target="_blank" rel="noopener">系统属性</a>和<a href="http://docs.spring.io/spring-boot/docs/2.1.0.M1/maven-plugin/examples/run-env-variables.html" class="external" target="_blank" rel="noopener">环境变量</a>的专用选项，改进了指定参数。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>也可以重新打包和替换<code>classified</code>构件，请参阅<code>classified</code>属性的更新文档。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="其他">其他</h3> 
-   <div class="paragraph"> 
-    <p>除了上面列出的变化之外，还有许多小的调整和改进，包括：</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><code>@ConditionalOnEnabledEndpoint</code>可用于任何组件（例如，端点仅需要的东西，如果端点被禁用则不应创建）。</p> </li> 
-     <li> <p><code>@WebMvcTest</code>也自动配置Spring Data REST（例如支持Sort和Pageable请求参数）。</p> </li> 
-     <li> <p>不再需要导出虚假的<code>ResourceConfig</code>以启用Jersey支持。</p> </li> 
-     <li> <p>使用自动配置的<code>WebServiceTemplateBuilder</code>创建<code>WebServiceTemplate</code>更容易。</p> </li> 
-     <li> <p>Jackson可见性可以使用<code>spring.jackson.visibility.*</code>来配置。</p> </li> 
-     <li> <p>在使用Devtools的情况下，错误页面会显示出堆栈跟踪。</p> </li> 
-     <li> <p>JNDI查找已得到改进，默认情况下启用<code>resourceRef</code>。</p> </li> 
-     <li> <p>可以通过<code>RabbitRetryTemplateCustomizer</code>来自定义Rabbit使用的<code>RetryTemplate</code>。</p> </li> 
-     <li> <p>自动配置排除现在保证应用一致。</p> </li> 
-     <li> <p>使用Reactor Netty支持HTTP/2。</p> </li> 
-    </ul> 
-   </div> 
-   <div class="admonitionblock note"> 
-    <table> 
-     <tbody>
-      <tr> 
-       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> 
-        <div class="paragraph"> 
-         <p>由于本次发布的版本包含特性比较多，因此这篇文章确实有点长，可用先收藏后慢慢看，后续版本版发布我会继续详细报道，敬请关注。</p> 
-        </div> </td> 
-      </tr> 
-     </tbody>
-    </table> 
-   </div> 
+  <div class="paragraph"> 
+   <p>Spring Cloud for Amazon Web Services：<a href="https://cloud.spring.io/spring-cloud-aws/" class="external" target="_blank" rel="noopener">https://cloud.spring.io/spring-cloud-aws/</a></p> 
   </div> 
  </div> 
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/07/spring_boot_2_0_4_available_now.html"> ←Spring Boot 2.0.4现已可用</a></li>
-              <li class="next"><a href="../../../blog/2018/07/spring_cloud_data_flow_1_6_ga_released.html">Spring Cloud Data Flow 1.6 正式版发布 →</a></li>
+              <li class="previous"><a  href="../../../blog/2018/08/spring-security-5-1-0-rc1-released.html"> ←Spring Security 5.1.0.RC1 发布</a></li>
+              
               </ul>
             </div>
             <section id="gitalk-container"></section>
