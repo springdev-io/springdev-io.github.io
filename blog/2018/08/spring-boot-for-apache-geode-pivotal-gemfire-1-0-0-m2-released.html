@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring一周回顾（2018年8月17日） - Spring 开发者</title>
+  <title>Spring Boot for Apache Geode 和 Pivotal GemFire 1.0.0.M2 发布 - Spring 开发者</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring一周回顾（2018年8月17日）" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-08-17'><meta property="og:description" content="这是Spring开发团队非常忙碌的一周。" />
+  <meta property="og:title" content="Spring Boot for Apache Geode 和 Pivotal GemFire 1.0.0.M2 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-08-31'><meta property="og:description" content="Spring Boot for Apache Geode 和 Pivotal GemFire 1.0.0.M2 发布，可以从里程碑库中获取。" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -119,7 +119,7 @@
     <main class="body--container container-fluid">
       <div class="main-body--wrapper">
         <div class="desktop-only">
-          <h1 class="blog-category active content--title">新闻资讯</h1>
+          <h1 class="blog-category active content--title">版本发布</h1>
           <div class="blog-category content--title">
             <div>Engineering</div>
           </div>
@@ -135,12 +135,12 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Spring一周回顾（2018年8月17日）</h1>
+                <h1 class="blog--title">Spring Boot for Apache Geode 和 Pivotal GemFire 1.0.0.M2 发布</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
-                    <div class="meta-data--icon icon blog-icon news"></div>
+                    <div class="meta-data--icon icon blog-icon release"></div>
                     <span>
-                      <a class="category" href="../../../blog/category/news.html">news</a>&nbsp;
+                      <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
                     </span>
                     </div>
                     <div class="meta-data--item">
@@ -149,47 +149,104 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-08-17</time>
+                      <time class="date" pubdate="" datetime=''>2018-08-31</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/08/this-week-in-spring-august-17th-2018.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2018/08/spring-boot-for-apache-geode-pivotal-gemfire-1-0-0-m2-released.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="paragraph"> 
- <p>大家好，Spring开发者们，又到了每周必读的《Spring一周回顾》时间。上周翻译的<a href="https://springdev.io/blog/2018/08/spring-boot-best-practices.html" class="external" target="_blank" rel="noopener">《Spring Boot最佳实践》</a>非常受欢迎，获得了大量点赞和收藏，同时也被CSDN收录并微信转发，相信对于读到的Spring开发者们一定会有所帮助，这当然也是我非常乐意为之的事情，感谢大家继续关注！</p> 
+              <div class="blog--post"><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Spring Boot for Apache Geode 和 Pivotal GemFire 1.0.0.M2 发布。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>总的来说，这个版本带来了以下改进：</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>支持Spring Session的自动配置，当使用Apache Geode 或者 Pivotal GemFire / Pivotal Cloud Cache (PCC)来管理Spring Boot应用程序的 (HTTP) 会话状态</p> </li> 
+    <li> <p>使用Spring Boot自动配置的Spring缓存抽象时，可识别<code>spring.cache.type</code></p> </li> 
+    <li> <p>对文档的补充和改进</p> </li> 
+    <li> <p>升级Spring Framework <code>5.0.8.RELEASE</code>，Spring Boot <code>2.0.4.RELEASE</code> 和 Spring Data <code>Kay-SR9</code></p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>此版本基于最近推出的<a href="https://springdev.io/blog/2018/08/spring-session-for-apache-geode-pivotal-gemfire-2-0-5-release-and-2-1-0-m1-released.html" class="external" target="_blank" rel="noopener">Spring Session for Apache Geode/Pivotal GemFire (SSDG) 2.0.5.RELEASE</a>构建。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>SSDG的一个关键附加功能是使用Properties和一个新的<code>SpringSessionGemFireConfigurer</code>回调接口，来启用Apache Geode / Pivotal GemFire / PCC 动态配置Spring Session。这样，即使在Spring Boot的自动配置环境中，用户也可以自定义配置以满足其应用程序要求。</p> 
+  </div> 
+ </div> 
 </div> 
-<div class="paragraph"> 
- <p>本周我为你带来了如下内容：</p> 
+<div class="sect1"> 
+ <h2 id="使用属性配置_configuration_with_properties">使用属性配置（Configuration with Properties）</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>In addition to the Properties discussed here and documented here, Spring Boot for Apache Geode &amp; Pivotal GemFire additionally recognizes the following properties:</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>除了<a href="https://docs.spring.io/autorepo/docs/spring-session-data-geode-build/2.0.5.RELEASE/reference/html5/#httpsession-gemfire-configuration-properties" class="external" target="_blank" rel="noopener">文档中配置属性</a>之外，Apache Geode和Pivotal GemFire的Spring Boot还识别以下属性：</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><code>spring.session.timeout</code></p> </li> 
+    <li> <p><code>server.servlet.session.timeout</code></p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>同样，如果设置了这些属性的任何组合的话，<code>spring.session.data.gemfire.session.expiration.max-inactive-interval-seconds</code>将优先于<code>spring.session.timeout</code>，它又优先于<code>server.servlet.session.timeout</code>。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Spring Boot for Apache Geode/Pivotal GemFire 能够识别<code>spring.session.store-type</code>。但是，遗憾的是，此属性也无法设置成<code>gemfire</code> 或者 <code>geode</code>，因为这些值不能被Spring Boot识别成为有效的<a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/session/StoreType.html" class="external" target="_blank" rel="noopener"><code>StoreType</code></a>。</p> 
+  </div> 
+ </div> 
 </div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/spring-framework-5-1-rc2-available-now.html" class="external" target="_blank" rel="noopener">Spring Framework 5.1 RC2 发布</a>，继续开发更多新特性和优化工作。</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/spring-session-apple-sr4-and-bean-m1-released.html" class="external" target="_blank" rel="noopener">Spring Session Bean-M1 和Apple-SR4 同时发布！</a></p> </li> 
-  <li> <p><a href="https://spring.io/tools4" class="external" target="_blank" rel="noopener">Spring Tools 4 M14 发布</a>，Spring Tools 4作为下一代企业级应用开发的Spring IDE，将会支持Eclipse Java IDE，Visual Studio Code，和 Atom Editor，极大提高编码效率和改善Spring应用的开发体验。</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/spring-cloud-open-service-broker-2-0-1-release-is-now-available.html" class="external" target="_blank" rel="noopener">Spring Cloud Open Service Broker 2.0.1.RELEASE 已发布</a></p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/spring-cloud-skipper-1-1-0-m1.html" class="external" target="_blank" rel="noopener">Spring Cloud Skipper 1.1.0.M1 发布</a></p> </li> 
-  <li> <p><a href="https://projectriff.io/blog/announcing-riff-0-1-1-on-Knative/" class="external" target="_blank" rel="noopener">riff v0.1.1 发布，支持Knative</a></p> </li> 
-  <li> <p><a href="http://in.relation.to/2018/08/14/hibernate-orm-535-final-out/" class="external" target="_blank" rel="noopener">Hibernate ORM 5.3.5.Final 发布</a>，原生支持Sybase中的分页查询</p> </li> 
-  <li> <p><a href="http://in.relation.to/2018/08/13/hibernate-validator-6012-final-out/" class="external" target="_blank" rel="noopener">Hibernate Validator 6.0.12.Final 发布</a>，改进支持 JDK 11</p> </li> 
-  <li> <p><a href="https://blogs.apache.org/groovy/entry/groovy-2-5-2-released" class="external" target="_blank" rel="noopener">Groovy 2.5.2 发布</a></p> </li> 
-  <li> <p><a href="https://github.com/neo4j/neo4j/wiki/Neo4j-3.4-changelog" class="external" target="_blank" rel="noopener">Neo4j 3.4.6 发布</a>，有关新特性的介绍看<a href="https://neo4j.com/whats-new-in-neo4j/" class="external" target="_blank" rel="noopener">这里</a></p> </li> 
-  <li> <p>Spring Data Neo4j项目负责人和数据传奇人物Michael Hunger刚刚宣布<a href="https://github.com/neo4j-contrib/neo4j-jdbc/releases" class="external" target="_blank" rel="noopener">发布Neo4j JDBC驱动程序3.4.0</a>，支持Neo4j 3.4.x中的空间和日期/时间数据类型以及完整的集群/路由支持。</p> </li> 
-  <li> <p><a href="http://www.infoq.com/cn/news/2018/08/Prometheus-cncf-gradu" class="external" target="_blank" rel="noopener">继Kubernetes之后，Prometheus正式从CNCF毕业</a></p> </li> 
-  <li> <p><a href="http://www.infoq.com/cn/news/2018/08/whitesource-free-oss-checking" class="external" target="_blank" rel="noopener">WhiteSource推出免费开源的漏洞检查工具</a></p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/10-ways-to-secure-spring-boot.html" class="external" target="_blank" rel="noopener">10 种保护Spring Boot应用程序的绝佳方法</a>，来自Matt Raible和Simon Maple合作的成果。</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/spring-boot-best-practices.html" class="external" target="_blank" rel="noopener">16 条Spring Boot最佳实践</a>，来自业界Spring开发者们的精彩总结！</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/this_week_in_spring_august_10th_2018.html" class="external" target="_blank" rel="noopener">上一期的《Spring 一周回顾》</a>同样精彩，值得一读！</p> </li> 
- </ul> 
+<div class="sect1"> 
+ <h2 id="使用configurer配置_configuration_using_a_configurer">使用Configurer配置（Configuration using a Configurer）</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Spring Boot for Apache Geode &amp; Pivotal GemFire 除了Spring Session for Apache Geode/Pivotal GemFire针对新的<code>SpringSessionGemFireConfigurer</code>回调接口提供之外，没有其他任何内容，正如此处所讨论和记录的那样。</p> 
+  </div> 
+ </div> 
 </div> 
-<div class="paragraph"> 
- <p>好的，周末愉快，我们下周见！</p> 
+<div class="sect1"> 
+ <h2 id="下一步">下一步</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>接下来，Spring Boot for Apache Geode &amp; Pivotal GemFire 将提供OOTB HealthIndicators，用以评估和监控Apache Geode / Pivotal GemFire驱动的Spring Boot应用程序的运行时健康状况。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>有关 Spring Boot <code>HealthIndicators</code>的更多内容可以查看<a href="https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html#production-ready-health" class="external" target="_blank" rel="noopener">这里</a>。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>这将在下一版本<code>1.0.0.M3</code>中提供。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>长远的规划将会支持Spring Boot Actuator。于此同时，也正在努力用Micrometer改进Apache Geode / Pivotal GemFire的统计架构。这将作为Spring Boot for Apache Geode和Pviotal GemFire的Actuator支持的基础。这很可能在SBDG 1.1中提供。</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="如何使用">如何使用</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>您可以通过<a href="https://repo.spring.io/libs-milestone/org/springframework/geode/spring-geode-starter/1.0.0.M2/" class="external" target="_blank" rel="noopener">Spring libs-milestone 库</a>来获取新包，通过在Maven中增加以下依赖项：</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><code>org.springframework.geode:spring-geode-starter</code> （Apache Geode）</p> </li> 
+    <li> <p><code>org.springframework.geode:spring-gemfire-starter</code> （Pivotal GemFire/PCC）</p> </li> 
+   </ul> 
+  </div> 
+ </div> 
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/08/spring-session-apple-sr4-and-bean-m1-released.html"> ←Spring Session Apple-SR4 和 Bean-M1 同时发布</a></li>
-              <li class="next"><a href="../../../blog/2018/08/spring-data-lovelace-rc2-available.html">Spring Data Lovelace RC2 发布 →</a></li>
+              <li class="previous"><a  href="../../../blog/2018/08/spring-batch-4-1-0-m3-released.html"> ←Spring Batch 4.1.0.M3 发布</a></li>
+              <li class="next"><a href="../../../blog/2018/08/this-week-in-spring-august-31th-2018.html">Spring一周回顾（2018年8月31日） →</a></li>
               </ul>
             </div>
             <section id="gitalk-container"></section>
