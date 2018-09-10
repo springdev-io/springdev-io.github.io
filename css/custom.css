@@ -93,6 +93,11 @@ pre {
 .content-right-pane--container ul li ul.sectlevel2 {
     display: none;
 }
+.right-pane-widget--container.secondary-nav li a {
+  text-transform: none;
+  color: #888;
+  text-decoration: none;
+}
 .header--navbar .navbar-inner .navbar-link a {
     font-size: 16px;
 }
