@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring Boot 1.5.15现已可用 - Spring 开发者</title>
+  <title>Spring Boot 2.0.5 发布 - Spring 开发者</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring Boot 1.5.15现已可用" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-07-30'><meta property="og:description" content="Spring Boot 1.5.15发布了，包含了35个修复、改进和依赖项更新。" />
+  <meta property="og:title" content="Spring Boot 2.0.5 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-09-12'><meta property="og:description" content="Spring Boot 2.0.5 发布，也升级了第三方依赖。" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -135,7 +135,7 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Spring Boot 1.5.15现已可用</h1>
+                <h1 class="blog--title">Spring Boot 2.0.5 发布</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
                     <div class="meta-data--icon icon blog-icon release"></div>
@@ -149,50 +149,89 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-07-30</time>
+                      <time class="date" pubdate="" datetime=''>2018-09-12</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/07/spring_boot_1_5_15_available_now.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2018/09/spring-boot-2-0-5.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
               <div class="blog--post"><div class="paragraph"> 
- <p>Spring Boot 1.5.15包含了<a href="https://github.com/spring-projects/spring-boot/milestone/114?closed=1" class="external" target="_blank" rel="noopener">35个修复、改进和依赖项更新</a>。</p> 
+ <p>Spring Boot 2.0.5 发布，共解决了<a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.0.5.RELEASE" class="external" target="_blank" rel="noopener"><code>89</code>项问题修复、改进和依赖项更新</a>，建议使用<code>2.0.x</code>的用户升级到此版本。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>其中部分新特性：</p> 
 </div> 
 <div class="ulist"> 
- <div class="title">
-  其中修复的部分BUG
- </div> 
  <ul> 
-  <li> <p><a href="https://github.com/spring-projects/spring-boot/pull/13863" class="external" target="_blank" rel="noopener">Flyway文件系统前缀位置检查</a></p> </li> 
-  <li> <p><a href="https://github.com/spring-projects/spring-boot/issues/13803" class="external" target="_blank" rel="noopener">当Jetty的WebAppContext无法启动时，应用程序仍然启动成功</a></p> </li> 
-  <li> <p><a href="https://github.com/spring-projects/spring-boot/issues/13588" class="external" target="_blank" rel="noopener">由于BeanTypeRegistry持有过时信息，重写的bean定义会导致错误的Bean条件判断</a></p> </li> 
-  <li> <p><a href="https://github.com/spring-projects/spring-boot/issues/13450" class="external" target="_blank" rel="noopener">在springProfile的name属性中使用时，不会替换属性占位符</a></p> </li> 
-  <li> <p><a href="https://github.com/spring-projects/spring-boot/issues/7735" class="external" target="_blank" rel="noopener">自动配置的MultipartConfigElement会阻止CommonsMultipartResolver解析请求部分</a></p> </li> 
-  <li> <p><a href="https://github.com/spring-projects/spring-boot/issues/12742" class="external" target="_blank" rel="noopener">如果Undertow启用了访问日志记录，当容器停止时，线程会泄漏</a></p> </li> 
+  <li> <p>增加条件到<code>WebServicesAutoConfiguration</code>以支持lists</p> </li> 
+  <li> <p>WebFlux和WebMvc增加支持<code>MeterFilter#maximumAllowableTags</code></p> </li> 
+  <li> <p>WebFlux自动配置<code>HiddenHttpMethodFilter</code></p> </li> 
+  <li> <p>允许actuator端点被<code>mvcMatchers</code>使用</p> </li> 
  </ul> 
 </div> 
+<div class="paragraph"> 
+ <p>其中修复已知BUG：</p> 
+</div> 
 <div class="ulist"> 
- <div class="title">
-  依赖升级
- </div> 
  <ul> 
-  <li> <p>Spring Data Ingalls SR14</p> </li> 
-  <li> <p>Spring Amqp 1.7.9.RELEASE</p> </li> 
-  <li> <p>Dependency Management Plugin 1.0.6.RELEASE</p> </li> 
-  <li> <p>Httpclient 4.5.6</p> </li> 
-  <li> <p>Httpcore 4.4.10</p> </li> 
-  <li> <p>Tomcat 8.5.32</p> </li> 
-  <li> <p>Narayana 5.5.32.Final</p> </li> 
-  <li> <p>Maven Enforcer Plugin 1.4.1</p> </li> 
-  <li> <p>Git Commit Id Plugin 2.2.4</p> </li> 
+  <li> <p><code>EmbeddedWebServerFactoryCustomizerAutoConfiguration</code> 缺少注解<code>@ConditionalOnWebApplication</code></p> </li> 
+  <li> <p><code>ReactiveSecurityAutoConfiguration</code>缺少条件注解</p> </li> 
+  <li> <p>Spring Integration的JDBC自动配置没有使用自动配置的<code>DataSource</code></p> </li> 
+  <li> <p><code>EndpointServerWebExchangeMatcher.matches</code>出现NPE</p> </li> 
+  <li> <p><code>OriginTrackedFieldError.toString()</code>被调用时会出现堆栈溢出</p> </li> 
+  <li> <p><code>FlywayEndpoint</code>的基线schema出现NPE</p> </li> 
+  <li> <p>依赖配置中缺少<code>micrometer-registry-cloudwatch</code></p> </li> 
+  <li> <p>当使用starter-web，starter-webflux和<code>spring.main.web-application-type=reactive</code>时会出现<code>NoSuchBeanDefinitionException</code></p> </li> 
+  <li> <p><code>HttpExchangeTracer#postProcessRequestHeaders</code>从不被调用</p> </li> 
+  <li> <p>当Couchbase消失时，CouchbaseHealthIndicator可以挂起</p> </li> 
+  <li> <p>Spring Boot 2.x中<code>localProperties</code>优先级高于<code>environmentProperties</code></p> </li> 
  </ul> 
+</div> 
+<div class="paragraph"> 
+ <p>依赖升级到最新版本：</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p>Spring Framework <code>5.0.9</code></p> </li> 
+  <li> <p>Spring Data <code>Kay SR10</code></p> </li> 
+  <li> <p>Spring Session <code>Apple-SR5</code></p> </li> 
+  <li> <p>Spring Security <code>5.0.8.RELEASE</code></p> </li> 
+  <li> <p>Spring Integration <code>5.0.8</code></p> </li> 
+  <li> <p>Spring Kafka <code>2.1.10.RELEASE</code></p> </li> 
+  <li> <p>Spring Amqp 2.0.6.RELEASE</p> </li> 
+  <li> <p>Spring Kafka 2.1.9.RELEASE</p> </li> 
+  <li> <p>Spring Cloud Connectors 2.0.3.RELEASE</p> </li> 
+  <li> <p>Activemq 5.15.6</p> </li> 
+  <li> <p>Derby 10.14.2.0</p> </li> 
+  <li> <p>Elasticsearch 5.6.11</p> </li> 
+  <li> <p>Hibernate Validator 6.0.12.Final</p> </li> 
+  <li> <p>Httpasyncclient 4.1.4</p> </li> 
+  <li> <p>Infinispan 9.3.3.Final</p> </li> 
+  <li> <p>Janino 3.0.9</p> </li> 
+  <li> <p>Jaybird 3.0.5</p> </li> 
+  <li> <p>Javax Mail 1.6.2</p> </li> 
+  <li> <p>Jest 5.3.4</p> </li> 
+  <li> <p>Jetty El <code>8.5.33</code></p> </li> 
+  <li> <p>Johnzon Jsonb 1.1.9</p> </li> 
+  <li> <p>Junit Jupiter 5.3.1</p> </li> 
+  <li> <p>Lettuce 5.0.5.RELEASE</p> </li> 
+  <li> <p>Neo4j Ogm <code>3.1.2</code></p> </li> 
+  <li> <p>Netty <code>4.1.29.Final</code></p> </li> 
+  <li> <p>Postgresql 42.2.5</p> </li> 
+  <li> <p>Reactor Bom <code>Bismuth-SR11</code></p> </li> 
+  <li> <p>Rxjava2 2.1.17</p> </li> 
+  <li> <p>Unboundid Ldapsdk 4.0.7</p> </li> 
+ </ul> 
+</div> 
+<div class="paragraph"> 
+ <p>上一个版本的发布记录在<a href="https://springdev.io/blog/2018/07/spring_boot_2_0_4_available_now.html" class="external" target="_blank" rel="noopener">这里</a>查看。</p> 
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/07/spring_boot_1_x_eol_aug_1st_2019.html"> ←Spring Boot 1.x在一年后将停止更新</a></li>
-              <li class="next"><a href="../../../blog/2018/07/spring_boot_2_0_4_available_now.html">Spring Boot 2.0.4现已可用 →</a></li>
+              <li class="previous"><a  href="../../../blog/2018/09/spring-boot-1-5-16.html"> ←Spring Boot 1.5.16 发布</a></li>
+              
               </ul>
             </div>
             <section id="gitalk-container"></section>
