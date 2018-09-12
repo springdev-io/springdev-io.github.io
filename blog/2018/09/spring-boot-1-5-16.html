@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>安装 Maven - Spring 开发者</title>
+  <title>Spring Boot 1.5.16 发布 - Spring 开发者</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="安装 Maven" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-06-02'><meta property="og:description" content="本文主要介绍Maven的多种安装方式。" />
+  <meta property="og:title" content="Spring Boot 1.5.16 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-09-11'><meta property="og:description" content="Spring Boot 1.5.16 发布，也升级了第三方依赖。" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -119,7 +119,7 @@
     <main class="body--container container-fluid">
       <div class="main-body--wrapper">
         <div class="desktop-only">
-          <h1 class="blog-category active content--title">书籍文章</h1>
+          <h1 class="blog-category active content--title">版本发布</h1>
           <div class="blog-category content--title">
             <div>Engineering</div>
           </div>
@@ -135,12 +135,12 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">安装 Maven</h1>
+                <h1 class="blog--title">Spring Boot 1.5.16 发布</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
-                    <div class="meta-data--icon icon blog-icon article"></div>
+                    <div class="meta-data--icon icon blog-icon release"></div>
                     <span>
-                      <a class="category" href="../../../blog/category/article.html">article</a>&nbsp;
+                      <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
                     </span>
                     </div>
                     <div class="meta-data--item">
@@ -149,106 +149,40 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-06-02</time>
+                      <time class="date" pubdate="" datetime=''>2018-09-11</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/06/maven.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2018/09/spring-boot-1-5-16.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="toc" class="toc"> 
- <div id="toctitle">
-  目录
- </div> 
- <ul class="sectlevel1"> 
-  <li><a href="#下载离线安装包手动安装">1. 下载离线安装包手动安装</a></li> 
-  <li><a href="#使用sdkman安装">2. 使用SDKMAN安装</a></li> 
-  <li><a href="#使用osx_homebrew安装">3. 使用OSX Homebrew安装</a></li> 
-  <li><a href="#使用scoop安装">4. 使用Scoop安装</a></li> 
+              <div class="blog--post"><div class="paragraph"> 
+ <p>Spring Boot 1.5.16 发布，共解决了<a href="https://github.com/spring-projects/spring-boot/milestone/116?closed=1" class="external" target="_blank" rel="noopener"><code>27</code>项问题修复、改进和依赖项更新</a>，建议升级。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>依赖升级到最新版本：</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p>Spring Framework 4.3.19</p> </li> 
+  <li> <p>Spring Security 4.2.8.RELEASE</p> </li> 
+  <li> <p>Spring Data Ingalls SR15</p> </li> 
+  <li> <p>Rabbit Amqp Client 4.8.1</p> </li> 
+  <li> <p>Spring Amqp 1.7.10</p> </li> 
+  <li> <p>Httpasyncclient 4.1.4</p> </li> 
+  <li> <p>Jetty 9.4.12.v20180830</p> </li> 
+  <li> <p>Tomcat 8.5.34</p> </li> 
+  <li> <p>Mysql 5.1.47</p> </li> 
  </ul> 
 </div> 
-<div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="quoteblock abstract"> 
-   <div class="title">
-    概要
-   </div> 
-   <blockquote>
-     本文主要介绍Maven的多种安装方式。 
-   </blockquote> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Maven是一个Java平台上非常流行的项目构建和管理工具，支持项目的编译、打包、测试、第三方依赖包管理，在很多知名的开源项目和企业中使用。同时也能和Ant进行集成，保证一些使用Ant的旧项目能够顺利迁移，同时也可以提供一些比较灵活性。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="下载离线安装包手动安装">1. 下载离线安装包手动安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>当前使用的版本是3.5.2，去<a href="http://maven.apache.org/download.cgi" class="external" target="_blank" rel="noopener">Maven官方</a>下载 <a href="https://archive.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.zip">apache-maven-3.5.2-bin.zip</a> 或者 <a href="https://archive.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz">apache-maven-3.5.2-bin.tar.gz</a>，然后解压到本地目录并设置好<code>M2_HOME</code>和<code>Path</code>环境变量即可。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用sdkman安装">2. 使用SDKMAN安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="http://sdkman.io">SDKMAN</a>是一个JVM上各种语言SDK和工具包的安装管理工具，它的前身是GVM。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ sdk install maven</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用osx_homebrew安装">3. 使用OSX Homebrew安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://brew.sh" class="external" target="_blank" rel="noopener">Homebrew</a>是专为macOS系统设计的软件包安装管理工具。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在终端控制台上执行下面的命令来安装Maven：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ brew install maven</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用scoop安装">4. 使用Scoop安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://scoop.sh" class="external" target="_blank" rel="noopener">Scoop</a>是使用PowerShell语言为Windows系统开发的一个命令行的安装管理工具，功能与OSX Homebrew类似。 Scoop的详细安装请参考 <a href="https://github.com/lukesampson/scoop/wiki/Quick-Start" class="external" target="_blank" rel="noopener">官方安装说明</a>。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在命令行窗口执行下面的命令来安装Maven如下：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ scoop install maven</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>安装之后，检查下安装是否正确：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ mvn --version
-Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T15:58:13+08:00)</pre> 
-   </div> 
-  </div> 
- </div> 
+<div class="paragraph"> 
+ <p>上次发布记录在<a href="https://springdev.io/blog/2018/07/spring_boot_1_5_15_available_now.html" class="external" target="_blank" rel="noopener">这里</a>。</p> 
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/06/jdk.html"> ←安装 Java SDK 8</a></li>
-              <li class="next"><a href="../../../blog/2018/06/springboot.html">安装 Spring Boot CLI →</a></li>
+              <li class="previous"><a  href="../../../blog/2018/09/spring-data-ingalls-sr15-and-kay-sr10-released.html"> ←Spring Data Ingalls SR15 和 Kay SR10 同时发布</a></li>
+              
               </ul>
             </div>
             <section id="gitalk-container"></section>
