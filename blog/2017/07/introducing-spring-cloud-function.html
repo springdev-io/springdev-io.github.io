@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring一周回顾（2018年8月17日） - Spring 开发者</title>
+  <title>介绍Spring Cloud Function 项目 - Spring 开发者</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring一周回顾（2018年8月17日）" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-08-17'><meta property="og:description" content="这是Spring开发团队非常忙碌的一周。" />
+  <meta property="og:title" content="介绍Spring Cloud Function 项目" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2017-07-05'><meta property="og:description" content="介绍Spring Cloud Function 项目" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -119,7 +119,7 @@
     <main class="body--container container-fluid">
       <div class="main-body--wrapper">
         <div class="desktop-only">
-          <h1 class="blog-category active content--title">新闻资讯</h1>
+          <h1 class="blog-category active content--title">书籍文章</h1>
           <div class="blog-category content--title">
             <div>Engineering</div>
           </div>
@@ -135,12 +135,12 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Spring一周回顾（2018年8月17日）</h1>
+                <h1 class="blog--title">介绍Spring Cloud Function 项目</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
-                    <div class="meta-data--icon icon blog-icon news"></div>
+                    <div class="meta-data--icon icon blog-icon article"></div>
                     <span>
-                      <a class="category" href="../../../blog/category/news.html">news</a>&nbsp;
+                      <a class="category" href="../../../blog/category/article.html">article</a>&nbsp;
                     </span>
                     </div>
                     <div class="meta-data--item">
@@ -149,47 +149,131 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-08-17</time>
+                      <time class="date" pubdate="" datetime=''>2017-07-05</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/08/this-week-in-spring-august-17th-2018.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2017/07/introducing-spring-cloud-function.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
               <div class="blog--post"><div class="paragraph"> 
- <p>大家好，Spring开发者们，又到了每周必读的《Spring一周回顾》时间。上周翻译的<a href="https://springdev.io/blog/2018/08/spring-boot-best-practices.html" class="external" target="_blank" rel="noopener">《Spring Boot最佳实践》</a>非常受欢迎，获得了大量点赞和收藏，同时也被CSDN收录并微信转发，相信对于读到的Spring开发者们一定会有所帮助，这当然也是我非常乐意为之的事情，感谢大家继续关注！</p> 
-</div> 
-<div class="paragraph"> 
- <p>本周我为你带来了如下内容：</p> 
+ <p>Spring Cloud Function是一个新项目，具有以下高阶目标：</p> 
 </div> 
 <div class="ulist"> 
  <ul> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/spring-framework-5-1-rc2-available-now.html" class="external" target="_blank" rel="noopener">Spring Framework 5.1 RC2 发布</a>，继续开发更多新特性和优化工作。</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/spring-session-apple-sr4-and-bean-m1-released.html" class="external" target="_blank" rel="noopener">Spring Session Bean-M1 和Apple-SR4 同时发布！</a></p> </li> 
-  <li> <p><a href="https://spring.io/tools4" class="external" target="_blank" rel="noopener">Spring Tools 4 M14 发布</a>，Spring Tools 4作为下一代企业级应用开发的Spring IDE，将会支持Eclipse Java IDE，Visual Studio Code，和 Atom Editor，极大提高编码效率和改善Spring应用的开发体验。</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/spring-cloud-open-service-broker-2-0-1-release-is-now-available.html" class="external" target="_blank" rel="noopener">Spring Cloud Open Service Broker 2.0.1.RELEASE 已发布</a></p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/spring-cloud-skipper-1-1-0-m1.html" class="external" target="_blank" rel="noopener">Spring Cloud Skipper 1.1.0.M1 发布</a></p> </li> 
-  <li> <p><a href="https://projectriff.io/blog/announcing-riff-0-1-1-on-Knative/" class="external" target="_blank" rel="noopener">riff v0.1.1 发布，支持Knative</a></p> </li> 
-  <li> <p><a href="http://in.relation.to/2018/08/14/hibernate-orm-535-final-out/" class="external" target="_blank" rel="noopener">Hibernate ORM 5.3.5.Final 发布</a>，原生支持Sybase中的分页查询</p> </li> 
-  <li> <p><a href="http://in.relation.to/2018/08/13/hibernate-validator-6012-final-out/" class="external" target="_blank" rel="noopener">Hibernate Validator 6.0.12.Final 发布</a>，改进支持 JDK 11</p> </li> 
-  <li> <p><a href="https://blogs.apache.org/groovy/entry/groovy-2-5-2-released" class="external" target="_blank" rel="noopener">Groovy 2.5.2 发布</a></p> </li> 
-  <li> <p><a href="https://github.com/neo4j/neo4j/wiki/Neo4j-3.4-changelog" class="external" target="_blank" rel="noopener">Neo4j 3.4.6 发布</a>，有关新特性的介绍看<a href="https://neo4j.com/whats-new-in-neo4j/" class="external" target="_blank" rel="noopener">这里</a></p> </li> 
-  <li> <p>Spring Data Neo4j项目负责人和数据传奇人物Michael Hunger刚刚宣布<a href="https://github.com/neo4j-contrib/neo4j-jdbc/releases" class="external" target="_blank" rel="noopener">发布Neo4j JDBC驱动程序3.4.0</a>，支持Neo4j 3.4.x中的空间和日期/时间数据类型以及完整的集群/路由支持。</p> </li> 
-  <li> <p><a href="http://www.infoq.com/cn/news/2018/08/Prometheus-cncf-gradu" class="external" target="_blank" rel="noopener">继Kubernetes之后，Prometheus正式从CNCF毕业</a></p> </li> 
-  <li> <p><a href="http://www.infoq.com/cn/news/2018/08/whitesource-free-oss-checking" class="external" target="_blank" rel="noopener">WhiteSource推出免费开源的漏洞检查工具</a></p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/10-ways-to-secure-spring-boot.html" class="external" target="_blank" rel="noopener">10 种保护Spring Boot应用程序的绝佳方法</a>，来自Matt Raible和Simon Maple合作的成果。</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/spring-boot-best-practices.html" class="external" target="_blank" rel="noopener">16 条Spring Boot最佳实践</a>，来自业界Spring开发者们的精彩总结！</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/this_week_in_spring_august_10th_2018.html" class="external" target="_blank" rel="noopener">上一期的《Spring 一周回顾》</a>同样精彩，值得一读！</p> </li> 
+  <li> <p>通过函数促进业务逻辑的实现</p> </li> 
+  <li> <p>将业务逻辑的开发生命周期与任何特定运行时目标分离，以便相同的代码可以作为Web端点，流处理器或任务运行</p> </li> 
+  <li> <p>支持无服务器提供商之间的统一编程模型，以及独立运行（本地或PaaS）的能力</p> </li> 
+  <li> <p>在无服务器提供商上启用Spring Boot功能（自动配置，依赖注入，指标）</p> </li> 
  </ul> 
 </div> 
 <div class="paragraph"> 
- <p>好的，周末愉快，我们下周见！</p> 
+ <p>就像Spring一直在推广基于普通java对象（POJO）的编程模型一样，Spring Cloud Function也基于普通的函数来推广编程模型。我们指的是<code>java.util.function</code>包中定义的核心接口：<code>Function</code>，<code>Consumer</code>和<code>Supplier</code>。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>这些类型的实现可以通过<code>@FunctionScan</code>启用的类路径扫描显式或隐式地注册为Bean。参数和（或）返回类型可以选择使用Reactor的<code>Flux</code>，它是Reactive Streams的<code>Publisher</code>。这样可以实现与其他Reactive Streams组件的互操作性，甚至是基于其他实现的组件，例如RxJava 2，并且它为此处理模型带来了非阻塞IO和反压等反应性功能（有关更多信息，请参阅Project Reactor）。只要参数和（或）返回类型不是<code>Flux</code>，Spring Cloud Function就会将它们包装起来，以便函数可以通过<code>Flux</code>进行互操作。对于简单的一次性处理用例，您可以保持简单：</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class Greeter implements Function&lt;String, String&gt; {
+  public String apply(String name) {
+    return "Hello " + name;
+  }
+}</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>但是，如果您需要通过窗口化（windowing）或减少操作（reduce operations）来实现处理数据集作为处理单元的函数，则可以使用<code>Flux</code>类型：</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-java" data-lang="java">public static class WordCount
+    implements Function&lt;Flux&lt;String&gt;, Flux&lt;Map&lt;String, Integer&gt;&gt;&gt; {
+  public Flux&lt;Map&lt;String, Integer&gt;&gt; apply(Flux&lt;String&gt; phrases) {
+    return phrases.window(3)
+      .flatMap(f -&gt; f.flatMap(phrase -&gt; Flux.fromArray(phrase.split("\\W")))
+      .reduce(new HashMap&lt;String, Integer&gt;(),
+        (map, word) -&gt; { map.merge(word, 1, Integer::sum); return map; }));
+  }
+}</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>依靠函数类型也可以轻松编写功能，例如：</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-java" data-lang="java">twistAndShout = twist.andThen(shout);</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>当然，也可以使用lambdas定义函数，例如：</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-java" data-lang="java">Function&lt;String, String&gt; shout =  s -&gt; s.toUpperCase() + “!”;</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>实际上，Spring Cloud Function支持动态地将基于String的lambdas编译为函数实例。这在原型设计或添加一些简单的转换逻辑时尤其有用，因为今天常用的是Spring表达式语言。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>您可能会问为什么Spring需要推广此模型，因为您无论如何都可以轻松创建<code>Function</code>，<code>Consumer</code>和<code>Supplier</code>实例。要知道答案涉及控制反转，这应该不足为奇。多年来，好莱坞原则已经描述了从基本依赖注入到Spring无处不在地使用模板模式的所有内容：“不要打电话给我们，我们会打电话给你”。上面提到的<code>Flux</code>-adapting实际上是控制反转的一个例子，但更重要的一个是业务逻辑与部署配置文件的分离。在这种情况下，业务逻辑指的是函数，而部署配置文件可以是REST应用程序，流处理应用程序或有限任务。Spring Cloud Function为每种类型提供JAR，并且在每种情况下，自动配置的<code>FunctionCatalog</code>用于在<code>ApplicationContext</code>中定位<code>Functions</code>，<code>Consumers</code>和<code>Suppliers</code>。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>例如，要将上面显示的Greeter函数部署为REST端点，只需要添加“spring-cloud-function-web”依赖关系，如此<a href="https://github.com/markfisher/spring-cloud-function-blog-samples/blob/master/greeter/pom.xml" class="external" target="_blank" rel="noopener">POM</a>中所示。这还包括Spring Boot Maven插件，以便构建生成可执行的JAR：</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">./mvnw clean install
+java -jar greeter/target/greeter-0.0.1-SNAPSHOT.jar</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>然后可以使用curl调用它：</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">$ curl -H "Content-Type: text/plain" :8080/greeter -d World
+Hello World</code></pre> 
+ </div> 
+</div> 
+<div class="paragraph"> 
+ <p>同样，要将功能部署为流处理器（stream-processor），只需要添加“spring-cloud-function-stream”依赖性，而这种依赖性依赖于Spring Cloud Stream。正如Spring Cloud Stream提供了<a href="https://docs.spring.io/spring-cloud-stream/docs/current/reference/htmlsingle/#_binders" class="external" target="_blank" rel="noopener">Binder抽象</a>，无需定义通道适配器。Spring Cloud Function无需声明Service Cloudators，Transformers等组件，甚至是Spring Cloud Stream委派的使用了<code>@StreamListener</code>注解的方法。“spring-cloud-function-stream”JAR本身提供了所有这些功能。这是另一个将反转控制提升到另一个层次的案例。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>在本博客系列的第2部分中，我们将提供在下一版Spring Cloud Data Flow中如何使用Suppliers，Functions和Consumers的示例。基本思想是，无论何时需要提供一些自定义逻辑，您都可以实现简单的函数。这是一个可选择模型的完美例子，你不仅不需要提供样板，而且最好还是让框架处理它。</p> 
+</div> 
+<div class="paragraph"> 
+ <p><code>mySupplier | myFunction | myConsumer</code></p> 
+</div> 
+<div class="paragraph"> 
+ <p>部署配置文件甚至可以扩展到无服务器（即，函数即服务）提供商，例如AWS Lambda和Apache OpenWhisk（以及Azure函数和Google云函数，一旦它们提供对Java的支持）。在本博客系列的第3部分中，我们将深入了解该主题的更多详细信息，但是现在您可以仔细阅读<a href="https://github.com/spring-cloud/spring-cloud-function/tree/master/spring-cloud-function-adapters/spring-cloud-function-adapter-aws" class="external" target="_blank" rel="noopener">AWS Lambda适配器</a>和<a href="https://github.com/spring-cloud/spring-cloud-function/tree/master/spring-cloud-function-adapters/spring-cloud-function-adapter-openwhisk" class="external" target="_blank" rel="noopener">Apache OpenWhisk适配器</a>的文档。即将发布的博客还将介绍与基于Kubernetes的无服务器框架（如<a href="http://fission.io/" class="external" target="_blank" rel="noopener">Fission</a>）的集成。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>除了将业务逻辑和基础架构分离之外，各种部署配置文件JAR和FaaS适配器都可以提高可移植性。开发人员可以完全隔离实现一个函数，包括仅关注输入和输出参数的单元测试。然后，该函数可以与依赖包一起打包，该依赖包允许它在目标环境中运行，从独立的REST应用程序到Spring Cloud Data Flow或FaaS提供商都能支持。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>这将我们带到这个介绍性博客的最后一点。“无服务器”一词产生了很多激烈争论，几乎总是会有解释：“当然还有服务器，但你不必考虑它们。”因此，虽然我们将拒绝引入“无框架”，相同的概念确实可以应用于框架。在上面的Spring Cloud Data Flow示例中，函数开发人员不需要考虑框架，甚至不需要生成在其依赖项中具有任何框架代码的工件。同样的想法适用于FaaS适配器。我们基本上把控制反转推到了能够将好莱坞原则转变为：“不依赖于我们，我们将依靠你”的程度。这在好莱坞可能不会很好，但对于开发人员而言，这意味着您只需编写一个函数，将其打包到JAR中，并将其注册以用于各种端点或适配器。一如既往，Spring遵循Alan Kay强力主张的原则：“简单的事情应该很简单，复杂的事情应该是可能的。”在即将发布的博客文章中，我们将深入探讨Spring Cloud Function带来的一些更复杂的特性，但我们永远不会忘记保持事情简单。</p> 
+</div> 
+<div class="admonitionblock note"> 
+ <table> 
+  <tbody>
+   <tr> 
+    <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+    <td class="content"> 
+     <div class="paragraph"> 
+      <p>原文：<a href="https://spring.io/blog/2017/07/05/introducing-spring-cloud-function" class="external" target="_blank" rel="noopener">https://spring.io/blog/2017/07/05/introducing-spring-cloud-function</a><br> 翻译：春之雨<br> 说明：版权归原文作者，翻译仅供学习参考，勿做商用。时间仓促，翻译不免出错，欢迎反馈和讨论，感谢阅读。</p> 
+     </div> </td> 
+   </tr> 
+  </tbody>
+ </table> 
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/08/spring-session-apple-sr4-and-bean-m1-released.html"> ←Spring Session Apple-SR4 和 Bean-M1 同时发布</a></li>
-              <li class="next"><a href="../../../blog/2018/08/spring-data-lovelace-rc2-available.html">Spring Data Lovelace RC2 发布 →</a></li>
+              
+              
               </ul>
             </div>
             <section id="gitalk-container"></section>
