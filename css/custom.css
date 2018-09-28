@@ -9,7 +9,18 @@ a.spring-logo {
 a.spring-logo span {
   background: url("../img/springdev-logo.png") 0px -48px no-repeat;
 }
-
+.icon.icon-spring-logo-mobile {   
+  background: url("../img/springdev-mobile-logo.png") 0px 0px no-repeat;   
+  display: inline-block !important;    
+  width: 242px;    
+  height: 60px;    
+  margin-top: -13px;   
+  transform: scale(0.5);   
+  -moz-transform: scale(0.5);    
+  -webkit-transform: scale(0.5);   
+  -o-transform: scale(0.5);    
+  -ms-transform: scale(0.5);   
+}
 .pagination {
     margin: 10px 0 0;
 }
