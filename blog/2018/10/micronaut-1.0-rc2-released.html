@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html data-code-prettify data-clipboard-buttons data-goto-top data-nav-menu data-switch-sidebar data-mobile-support>
+
+  <head>
+  <meta charset="utf-8"/>
+  <title>Micronaut 1.0 RC2 发布，详细揭秘实现原理 - Spring技术社区</title>
+  <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="description" content="Spring Dev Site"/>
+  <meta name="author" content="rainboyan.com"/>
+  <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
+  <meta property="og:title" content="Micronaut 1.0 RC2 发布，详细揭秘实现原理" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-10-08'><meta property="og:description" content="Micronaut 1.0 RC2 发布，借助最先进的AOT（预先编译）技术。" />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/css/blog.css" />
+  <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="/jspm_packages/system.js"></script>
+  <script>
+    System.config({baseURL: "/"});
+  </script>
+  <script src="/config.js"></script>
+  <script>
+      System.import('app/main.js')
+  </script>
+</head>
+  <body>
+  <div class="viewport">
+    <header class="navbar header--navbar desktop-only">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <div class="spring-logo--container">
+            <a class="spring-logo" href="/"><span></span></a>
+          </div>
+          <ul class="nav pull-right">
+            <li class="navbar-link">
+              <a href="/projects/" >项目</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/guides/" >指南</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/blog/" >博客</a>
+            </li>
+            <li class="navbar-link nav-search js-nav-search">
+              <a>
+                <i class="icon-search navbar-search--icon js-search-input-open"></i>
+                <span class="search-input-close js-search-input-close">
+                  <i class="icon-remove"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-dropdown--container js-search-dropdown">
+        <div class="container-fluid">
+          <div class="search-form--container">
+            <form class="form-inline form-search" action="../../../search" method="get">
+              <input type="text" class="search-query search-form--form js-search-input" placeholder="Search for documentation, guides, and posts..." name="q" value="" />
+              <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div>
+    <div class="mobile-navigation--wrapper mobile-only">
+      <div class="navigation-drawer--container">
+        <div class="mobile-search--container">
+          <form class="form-inline form-search" action="../../../search" method="get">
+            <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            <input type="text" class="search-query search-form--form js-search-input" placeholder="Search..." name="q" value="" />
+          </form>
+        </div>
+        <div class="navigation-item-list">
+          <div class="navbar-link">
+            <a href="/">
+              首页
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/projects/">
+              项目
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/guides/">
+              指南
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/blog/">
+              博客
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <div class="nav-icon js-open-nav-drawer">
+          <i class="icon-reorder"></i>
+        </div>
+        <div class="header-center-icon">
+          <a href="../../../">
+            <div class="icon icon-spring-logo-mobile"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid"></div>
+    <div></div>
+    <main class="body--container container-fluid">
+      <div class="main-body--wrapper">
+        <div class="desktop-only">
+          <h1 class="blog-category active content--title">版本发布</h1>
+          <div class="blog-category content--title">
+            <div>Engineering</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>Releases</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>News and Events</div>
+          </div>
+          <div class="switch-sidebar pull-right"><input type="checkbox" class="js-switch"/></div>
+        </div>
+        <div class="row-fluid blog--wrapper">
+          <article class="span8 mobile-left-pane" id="content">
+            <div class="blog--container">
+              <header>
+                <h1 class="blog--title">Micronaut 1.0 RC2 发布，详细揭秘实现原理</h1>
+                <div class="meta-data--container">
+                  <div class="meta-data--item desktop-only">
+                    <div class="meta-data--icon icon blog-icon release"></div>
+                    <span>
+                      <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                    </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon calendar"></div>
+                      <time class="date" pubdate="" datetime=''>2018-10-08</time>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon comments"></div>
+                      <a class="comments" href="../../../blog/2018/10/micronaut-1.0-rc2-released.html#gitalk-container">评论
+                      </a>
+                    </div>
+                </div>
+              </header>
+              <div class="blog--post"><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="quoteblock abstract"> 
+   <blockquote>
+     本文的作者是Graeme Rocher，他是Grails和Micronaut框架的项目负责人，主导Grails开发10多年，有着丰富的Grails和Spring架构经验。由于Grails和Micronaut的开发团队和社区与Spring项目之间都很有渊源，而我也是其中最早的用户和参与者，所以本文将Micronaut介绍给Spring技术社区，后续也会发布更多相关的技术文章，欢迎大家积极参与讨论和分享。 
+   </blockquote> 
+  </div> 
+  <div class="paragraph"> 
+   <p>以下内容来自OCI官方博客，由Graeme Rocher发表：</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>继上周的Micronaut 1.0.0 RC1发布之后，我们很高兴地宣布推出Micronaut 1.0.0 RC2，其中包括社区反馈后的改进（感谢所有报告问题的人！）。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>第二个RC提供了另一个机会来测试Micronaut并提供反馈，因为我们建立了GA版本计划，将于10月23日发布 - 正好赶上旧金山的Oracle Code One 2018，我将在大会上展示Micronaut！</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>此外，如果您在欧洲，旧金山不远，请考虑参加Voxxed Days Paris，我将在10月30日在那里展示Micronaut。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>在我之前的文章中，我详细阐述了我们使用Micronaut进行的一些设计选择，尽可能避免使用反射，以及这对开发人员和应用程序的性能有何益处。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>在这篇文章中，我将详细阐述传统Java框架面临的挑战以及Micronaut如何解决这些挑战。</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="java_giveth_and_taketh_away">JAVA GIVETH AND TAKETH AWAY</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Java和JVM提供了一个强大的平台，可以在其上构建可提高开发人员工作效率的框架。诸如注释、反射、创建运行时代理的能力等功能是大多数Java框架工作的主要内容。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>不幸的是，开发人员必须处理的一些挑战和限制导致内存消耗或启动时间受到影响，包括：</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>类型擦除 - Java泛型系统后来在Java的生命周期中添加；由于向后兼容性是必需的，因此结果是类型擦除。处理类型擦除的现有Java框架和工具中的运行时逻辑量是令人兴奋的。</p> </li> 
+    <li> <p>缺少注解元数据 - Java有注解，但Java框架中出现了许多模式，用于使用注解构造型（或元注解），默认情况下，Java API不支持这些注解构造型。因此，计算注解元数据留给每个框架来实现。</p> </li> 
+    <li> <p>无参数名称 - 默认情况下，Java和JVM不保留参数名称信息。可以通过向Java编译器添加-parameters标志来解决此问题，但默认情况下会禁用它。</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>为什么这些问题对像Spring和Jakarta EE这样的Java框架来说是一个挑战？让我们举一个简单的例子来定义一个接口：</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">interface HelloOperations&lt;T&gt; {
+    @Get("/hello/{name}")
+    T hello(@NotBlank T name);
+
+    @Get("/hello-many/{names}")
+    T helloMany(@NotEmpty List&lt;T&gt; names);
+}
+
+@Controller("/")
+class HelloController implements HelloOperations&lt;String&gt; {
+
+    @Override
+    String hello(String name)  {
+        // logic here
+    }
+
+    @Override
+    String helloMany(List&lt;String&gt; names)  {
+        // logic here
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p><code>HelloOperations</code>接口上的第2行和第3行使用注解定义路径，此外，在name参数上定义<code>@NotBlank</code>约束。（请注意，我使用过Micronaut注解，但同样的例子可以用Jakarta EE或Spring编写）。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><code>HelloController</code>实现接口并提供逻辑。现在，您会认为这个看似简单的示例对于框架开发人员来说很容易处理，但涉及的任务包括：</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>计算每个方法和控制器类的注解元数据和构造型</p> </li> 
+    <li> <p>遍历<code>HelloController</code>类的类和接口层次结构，以找出name参数上的继承注解</p> </li> 
+    <li> <p>处理泛型和类型擦除要求，该参数在返回类型和参数的类上引入</p> </li> 
+    <li> <p>生成运行时代理以验证<code>@NotBlank</code>约束，该约束反射性地调用<code>HelloController</code></p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>所有这些只是一个微不足道的例子。随着您添加更多方法，更深层次的继承层次结构，更多接口等，需求变得越来越复杂，并且所有这些需求都必须在运行时处理。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>为了支持Java开发人员喜爱的所有这些功能而不会对运行时性能产生负面影响，传统的Java框架会大量缓存，从而导致内存消耗增加，因为这两个问题无法协调 - 您必须在运行时性能低或内存消耗量少之间做出选择。</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="micronaut的解决方式">Micronaut的解决方式</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>那么Micronaut如何处理这种情况呢？</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Micronaut不是在运行时对您的类执行所有这些分析，而是使用预先编译（AOT）在编译时计算所有内容。</p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="通用类型信息">通用类型信息</h3> 
+   <div class="paragraph"> 
+    <p>Bean和方法参数的所有泛型类型信息都是提前计算的。例如，要在AOP拦截器内的helloMany方法中检索List的类型参数，您只需执行以下操作：</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">public Object intercept(MethodInvocationContext context) {
+       Map&lt;String, MutableArgumentValue&lt;?&gt;&gt; parameters = context.getParameters();
+       MutableArgumentValue&lt;?&gt; namesArgument = parameters.get("names");
+       Argument&lt;?&gt; typeArgument = namesArgument.getFirstTypeVariable().orElse(Argument.OBJECT_ARGUMENT);
+      ....
+}</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>请注意，参数名称数据存在且未被删除。源代码级别的处理允许Micronaut保留参数名称数据。</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>此外，Micronaut还将计算类型的类型参数并将它们存储在<code>BeanDefinition</code>中，因此如果您需要计算类型的类型参数，则无需跳过反射环（reflective hoops）：</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">BeanDefinition&lt;HelloController&gt; helloDefinition =
+                  beanContext.getBeanDefinition(HelloController.class);
+
+List&lt;Argument&lt;?&gt;&gt; typeArguments =
+                  helloDefinition.getTypeArguments(HelloOperations.class);
+
+// do something with the type arguments</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>上面的示例先从<code>BeanDefinition</code>检索出<code>HelloController</code> bean，然后检索用于<code>HelloOperations</code>接口的类型参数，所有这些都不需要昂贵的反射处理。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="注解元数据_annotation_metadata">注解元数据（ANNOTATION METADATA）</h3> 
+   <div class="paragraph"> 
+    <p>常规Java API使您可以跳过箍来检索前一个示例中的注释元数据。您必须遍历类和接口层次结构，反射性地加载每个方法并可能处理可见性问题以检索包含在层次结构中的所有<code>java.lang.reflect.Method</code>实例。</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>然后，您必须通过查看返回多维数组的<code>getParameterAnnotations()</code>方法来处理每个方法以将所有潜在注释合并在一起，其中每个参数都按照它们在方法中出现的顺序索引。</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Micronaut不需要所有这些复杂性，因为注释元数据已在编译时计算：</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">Map&lt;String, MutableArgumentValue&lt;?&gt;&gt; parameters = context.getParameters();
+MutableArgumentValue&lt;?&gt; namesArgument = parameters.get("names");
+if (namesArgument.getAnnotationMetadata().hasStereotype(NotEmpty.class)) {
+    if (CollectionUtils.isEmpty((Collection) namesArgument.getValue())) {
+        throw new IllegalArgumentException("Named parameter cannot be blank");
+    }
+}</code></pre> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="无反射的代理_reflection_free_proxies">无反射的代理（REFLECTION-FREE PROXIES）</h3> 
+   <div class="paragraph"> 
+    <p>最后，Micronaut还将在编译时生成一个常规类的代理，而不是通过Java的本机代理机制创建的代理，从而消除了在代理级别进行反射的需要。</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>这有许多好处，包括：</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>减少运行时的工作量，改善启动并减少内存消耗</p> </li> 
+     <li> <p>更短，更容易理解堆栈跟踪 - 由于代理直接调用您的代码，因此巨大的框架级堆栈跟踪不是问题</p> </li> 
+     <li> <p>JIT更容易优化 - Java JIT比反射调用更容易优化直接调用</p> </li> 
+     <li> <p>无需缓存反射数据 - 读取反射数据非常昂贵，因此大多数框架都会缓存方法引用，从而进一步增加内存需求</p> </li> 
+     <li> <p>更容易与GraalVM兼容 - 尽管GraalVM原生镜像可以使用代理，但这些代理必须<a href="https://github.com/oracle/graal/blob/master/substratevm/DYNAMIC_PROXY.md">提前配置</a></p> </li> 
+    </ul> 
+   </div> 
+   <div class="paragraph"> 
+    <p>这可能听起来很复杂，但它为开发人员带来的简单性是一个巨大的胜利。例如，如果您希望实施AOP通知，例如介绍通知，则只需要几个步骤。</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>例如，假设您希望在编译时从接口实现逻辑。例如，测试框架通常具有用于创建从接口返回替代值的存根或模拟的工具。让我们看看如何在Mironaut中实现存根。第1步是创建注解，例如：</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Introduction
+@Type(StubIntroduction.class)
+@Bean
+@Documented
+@Retention(RUNTIME)
+@Target({ElementType.TYPE, ElementType.ANNOTATION_TYPE, ElementType.METHOD})
+public @interface Stub {
+    String value() default "";
+}</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>在第1行，通知被定义为介绍通知，并在第2行给出了一种<code>StubIntroduction</code>。<code>StubInroduction</code>类型应该实现<code>MethodInterceptor</code>接口。以下是一个简单的实现：</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Singleton
+public class StubIntroduction implements MethodInterceptor&lt;Object,Object&gt; {
+
+    @Override
+    public Object intercept(MethodInvocationContext&lt;Object, Object&gt; context) {
+        return context.getValue(
+                Stub.class,
+                context.getReturnType().getType()
+        ).orElse(null);
+    }
+}</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>在第6行，实现尝试将给定的值转换为<code>@Stub</code>注解，并将其作为方法调用的结果返回，否则返回null。现在您可以在任何界面上使用<code>@Stub</code>注解：</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Stub
+public interface StubExample {
+
+    @Stub("10")
+    int getNumber();
+
+    @Stub("Fred")
+    String getName();
+}</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p><code>getNumber()</code>方法将返回10，<code>getName()</code>方法将返回“Fred”。就这么简单。没有必要依赖容器来添加这个功能，或者构建一个<code>ProxyFactoryBean</code>实现来在运行时配置任何东西，它就能够工作而且它可以在不使用任何反射的情况下工作。</p> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="总结">总结</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>除了非常适合微服务之外，Micronaut还是一个通用的应用程序框架，具有巨大的潜力，可以彻底改变现代Java应用程序的效率。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>通过AOT编译，Micronaut能够预先计算您的应用程序的要求，并在启动和运行之前完成大量繁重工作。这与前几代Java应用程序框架的工作完全不同，它允许Micronaut可以做传统的Java框架通常做不到的事情。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>感谢所有为RC1提供问题报告的人，请继续提供问题报告！</p> 
+  </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> 
+       <div class="paragraph"> 
+        <p>原文：https://objectcomputing.com/news/2018/10/08/micronaut-10-rc2<br> 作者：Graeme Rocher<br> 翻译：春之雨<br> 说明：版权归原文作者，翻译仅供学习参考。时间仓促，翻译不免出错，欢迎反馈和讨论，感谢阅读。</p> 
+       </div> </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+ </div> 
+</div></div>
+              <ul id="direction" class="pagination blog-pagination pager">
+              <li class="previous"><a  href="../../../blog/2018/10/this-week-in-spring-october-5th-2018.html"> ←Spring一周回顾（2018年10月5日）</a></li>
+              <li class="next"><a href="../../../blog/2018/10/this-week-in-spring-october-12th-2018.html">Spring一周回顾（2018年10月12日） →</a></li>
+              </ul>
+            </div>
+            <section id="gitalk-container"></section>
+          </article>
+          <aside class="span4 mobile-right-pane">
+      <div><h2>文章分类</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category active">
+            <div class="icon blog-icon all-posts"></div>
+            <a href="/blog/">全部内容</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon engineering"></div>
+            <a href="/blog/category/article.html">书籍文章</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon releases"></div>
+            <a href="/blog/category/release.html">版本发布</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news-and-events"></div>
+            <a href="/blog/category/news.html">新闻资讯</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div><h2>最新文章</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/10/spring-data-lovelace-sr1-kay-sr11-and-ingalls-sr16-released.html" title="Spring Data Lovelace SR1、Kay SR11和Ingalls SR16 同时发布">Spring Data Lov...</a>
+            <span class="pull-right">2018-10-15</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/10/spring-framework-5-1-1-5-0-10-and-4-3-20-available-now.html" title="Spring Framework 5.1.1、5.0.10和4.3.20 同时发布">Spring Framewor...</a>
+            <span class="pull-right">2018-10-15</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news"></div>
+            <a href="../../../blog/2018/10/this-week-in-spring-october-12th-2018.html" title="Spring一周回顾（2018年10月12日）">Spring一周回顾（2018...</a>
+            <span class="pull-right">2018-10-12</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/10/micronaut-1.0-rc2-released.html" title="Micronaut 1.0 RC2 发布，详细揭秘实现原理">Micronaut 1.0 R...</a>
+            <span class="pull-right">2018-10-08</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news"></div>
+            <a href="../../../blog/2018/10/this-week-in-spring-october-5th-2018.html" title="Spring一周回顾（2018年10月5日）">Spring一周回顾（2018...</a>
+            <span class="pull-right">2018-10-05</span>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </aside>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="navbar">
+              <div class="container">
+                <ul class="nav">
+                  <li><a href="../../../team.html">Team</a></li>
+                  <li><a href="../../../services.html">Services</a></li>
+                  <li><a href="../../../tools.html">Tools</a></li>
+                </ul>
+              </div>
+            </div>
+            &copy; <span>2018</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
+            <a href="../../../terms-of-use.html">Terms of Use</a>,
+            <a href="../../../privacy-policy.html">Privacy</a>,
+            <a href="../../../trademarks.html">Trademark Guidelines</a> and
+            <span id="teconsent"></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="scrim"></div>
+  </div>
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: 'e0ad4e23b37963590faf',
+        clientSecret: '1bbf06b574f0e6623211f8cc029f874db67c7dfe',
+        repo: 'springdev-issues',
+        owner: 'springdev-io',
+        admin: ['rainboyan'],
+        id: 'Comments',
+        distractionFreeMode: true
+      });
+      gitalk.render('gitalk-container');
+  </script>
+  </body>
+</html>
