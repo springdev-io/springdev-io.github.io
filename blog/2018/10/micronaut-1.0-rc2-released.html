@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Micronaut 1.0 RC2 发布，详细揭秘实现原理 - Spring技术社区</title>
+  <title>Micronaut 1.0 RC2 发布，详细介绍了其实现技术及原理 - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Micronaut 1.0 RC2 发布，详细揭秘实现原理" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-10-08'><meta property="og:description" content="Micronaut 1.0 RC2 发布，借助最先进的AOT（预先编译）技术。" />
+  <meta property="og:title" content="Micronaut 1.0 RC2 发布，详细介绍了其实现技术及原理" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-10-08'><meta property="og:description" content="Micronaut 1.0 RC2 发布了，本文接着上一次发布说明详细介绍了其实现技术及原理。" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -135,7 +135,7 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Micronaut 1.0 RC2 发布，详细揭秘实现原理</h1>
+                <h1 class="blog--title">Micronaut 1.0 RC2 发布，详细介绍了其实现技术及原理</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
                     <div class="meta-data--icon icon blog-icon release"></div>
@@ -169,13 +169,13 @@
    <p>以下内容来自OCI官方博客，由Graeme Rocher发表：</p> 
   </div> 
   <div class="paragraph"> 
-   <p>继上周的Micronaut 1.0.0 RC1发布之后，我们很高兴地宣布推出Micronaut 1.0.0 RC2，其中包括社区反馈后的改进（感谢所有报告问题的人！）。</p> 
+   <p>继上周的<a href="https://springdev.io/blog/2018/09/micronaut-1.0-rc1-released.html" class="external" target="_blank" rel="noopener">Micronaut 1.0.0 RC1发布</a>之后，我们很高兴地宣布推出<a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0.RC2" class="external" target="_blank" rel="noopener">Micronaut 1.0.0 RC2</a>，其中包括社区反馈后的改进（感谢所有报告问题的人！）。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>第二个RC提供了另一个机会来测试Micronaut并提供反馈，因为我们建立了GA版本计划，将于10月23日发布 - 正好赶上旧金山的Oracle Code One 2018，我将在大会上展示Micronaut！</p> 
+   <p>第二个RC提供了另一个机会来测试Micronaut并提供反馈，因为我们建立了GA版本计划，将于10月23日发布 - 正好赶上旧金山的<a href="https://objectcomputing.com/resources/events/conferences/oracle-code-one-2018" class="external" target="_blank" rel="noopener">Oracle Code One 2018</a>，我将在大会上<a href="https://oracle.rainfocus.com/widget/oracle/oow18/catalogcodeone18?search=Micronaut" class="external" target="_blank" rel="noopener">展示Micronaut</a>！</p> 
   </div> 
   <div class="paragraph"> 
-   <p>此外，如果您在欧洲，旧金山不远，请考虑参加Voxxed Days Paris，我将在10月30日在那里展示Micronaut。</p> 
+   <p>此外，如果您在欧洲，旧金山不远，请考虑参加<a href="https://objectcomputing.com/resources/events/conferences/voxxed-days-microservices-paris-2018" class="external" target="_blank" rel="noopener">Voxxed Days Paris</a>，我将<a href="https://voxxeddays.com/microservices/2018/10/05/graeme-rocher-on-micronaut/" class="external" target="_blank" rel="noopener">于10月30日在那里展示Micronaut</a>。</p> 
   </div> 
   <div class="paragraph"> 
    <p>在我之前的文章中，我详细阐述了我们使用Micronaut进行的一些设计选择，尽可能避免使用反射，以及这对开发人员和应用程序的性能有何益处。</p> 
@@ -186,7 +186,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="java_giveth_and_taketh_away">JAVA GIVETH AND TAKETH AWAY</h2> 
+ <h2 id="java_优势与不足">Java 优势与不足</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Java和JVM提供了一个强大的平台，可以在其上构建可提高开发人员工作效率的框架。诸如注释、反射、创建运行时代理的能力等功能是大多数Java框架工作的主要内容。</p> 
@@ -263,7 +263,7 @@ class HelloController implements HelloOperations&lt;String&gt; {
   <div class="sect2"> 
    <h3 id="通用类型信息">通用类型信息</h3> 
    <div class="paragraph"> 
-    <p>Bean和方法参数的所有泛型类型信息都是提前计算的。例如，要在AOP拦截器内的helloMany方法中检索List的类型参数，您只需执行以下操作：</p> 
+    <p>Bean和方法参数的所有泛型类型信息都是提前计算的。例如，要在AOP拦截器内的<code>helloMany</code>方法中检索List的类型参数，您只需执行以下操作：</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
@@ -279,7 +279,7 @@ class HelloController implements HelloOperations&lt;String&gt; {
     <p>请注意，参数名称数据存在且未被删除。源代码级别的处理允许Micronaut保留参数名称数据。</p> 
    </div> 
    <div class="paragraph"> 
-    <p>此外，Micronaut还将计算类型的类型参数并将它们存储在<code>BeanDefinition</code>中，因此如果您需要计算类型的类型参数，则无需跳过反射环（reflective hoops）：</p> 
+    <p>此外，Micronaut还将计算类型的类型参数并将它们存储在<code>BeanDefinition</code>中，因此如果您需要计算类型的类型参数，则无需跳过反射箍（reflective hoops）：</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
@@ -320,7 +320,7 @@ if (namesArgument.getAnnotationMetadata().hasStereotype(NotEmpty.class)) {
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="无反射的代理_reflection_free_proxies">无反射的代理（REFLECTION-FREE PROXIES）</h3> 
+   <h3 id="无反射的代理">无反射的代理</h3> 
    <div class="paragraph"> 
     <p>最后，Micronaut还将在编译时生成一个常规类的代理，而不是通过Java的本机代理机制创建的代理，从而消除了在代理级别进行反射的需要。</p> 
    </div> 
@@ -333,7 +333,7 @@ if (namesArgument.getAnnotationMetadata().hasStereotype(NotEmpty.class)) {
      <li> <p>更短，更容易理解堆栈跟踪 - 由于代理直接调用您的代码，因此巨大的框架级堆栈跟踪不是问题</p> </li> 
      <li> <p>JIT更容易优化 - Java JIT比反射调用更容易优化直接调用</p> </li> 
      <li> <p>无需缓存反射数据 - 读取反射数据非常昂贵，因此大多数框架都会缓存方法引用，从而进一步增加内存需求</p> </li> 
-     <li> <p>更容易与GraalVM兼容 - 尽管GraalVM原生镜像可以使用代理，但这些代理必须<a href="https://github.com/oracle/graal/blob/master/substratevm/DYNAMIC_PROXY.md">提前配置</a></p> </li> 
+     <li> <p>更容易与GraalVM兼容 - 尽管GraalVM原生镜像可以使用代理，但这些代理必须<a href="https://github.com/oracle/graal/blob/master/substratevm/DYNAMIC_PROXY.md" class="external" target="_blank" rel="noopener">提前配置</a></p> </li> 
     </ul> 
    </div> 
    <div class="paragraph"> 
@@ -473,7 +473,7 @@ public interface StubExample {
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/micronaut-1.0-rc2-released.html" title="Micronaut 1.0 RC2 发布，详细揭秘实现原理">Micronaut 1.0 R...</a>
+            <a href="../../../blog/2018/10/micronaut-1.0-rc2-released.html" title="Micronaut 1.0 RC2 发布，详细介绍了其实现技术及原理">Micronaut 1.0 R...</a>
             <span class="pull-right">2018-10-08</span>
           </li>
           <li class="blog-category">
