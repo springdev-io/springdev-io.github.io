@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring Cloud Data Flow 1.7 M1 发布 - Spring技术社区</title>
+  <title>Spring Boot 1.5.17 发布 - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring Cloud Data Flow 1.7 M1 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-09-18'><meta property="og:description" content="Spring Cloud Data Flow 1.7 M1 发布" />
+  <meta property="og:title" content="Spring Boot 1.5.17 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-10-16'><meta property="og:description" content="Spring Boot 1.5.17 发布，19项问题修复、改进和依赖项更新。" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -135,7 +135,7 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Spring Cloud Data Flow 1.7 M1 发布</h1>
+                <h1 class="blog--title">Spring Boot 1.5.17 发布</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
                     <div class="meta-data--icon icon blog-icon release"></div>
@@ -149,151 +149,41 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-09-18</time>
+                      <time class="date" pubdate="" datetime=''>2018-10-16</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/09/spring-cloud-data-flow-1-7-m1-released.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2018/10/spring-boot-1-5-17.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://cloud.spring.io/spring-cloud-dataflow/" class="external" target="_blank" rel="noopener">Spring Cloud Data Flow</a>团队宣布Spring Cloud Data Flow <code>1.7 M1</code> 发布。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>下面是其中一些亮点：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>改进 UI</p> </li> 
-    <li> <p>流应用程序DSL</p> </li> 
-    <li> <p>审计跟踪（Audit trail）</p> </li> 
-    <li> <p>并发任务启动限制（Concurrent Task Launch Limiting）</p> </li> 
-    <li> <p>流和任务校验</p> </li> 
-    <li> <p>强制升级流应用</p> </li> 
-   </ul> 
-  </div> 
- </div> 
+              <div class="blog--post"><div class="paragraph"> 
+ <p>Spring Boot 1.5.17 发布，共解决了<a href="https://github.com/spring-projects/spring-boot/releases/tag/v1.5.17.RELEASE" class="external" target="_blank" rel="noopener"><code>19</code>项问题修复、改进和依赖项更新</a>，建议升级。</p> 
 </div> 
-<div class="sect1"> 
- <h2 id="改进_ui">改进 UI</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>UI具有全新的外观。导航已从标签换成了左侧导航系统。这为使用Flo设计师创建流提供了更多的屏幕空间，通过最小化左侧导航可以获得更多的屏幕空间。有一种快速搜索功能，可以搜索所有不同的数据流（Data Flow）类别。添加了其他颜色和整体主题更改，使UI看起来更生动。更深入的核心，路线管理得到了改进，我们使用BrowserStack / SauceLabs增加了端到端的测试覆盖率。</p> 
-  </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="https://springdev.io/images/dataflow-flo-create-stream.png" alt="dataflow flo create stream"> 
-   </div> 
-  </div> 
- </div> 
+<div class="paragraph"> 
+ <p>第三方依赖升级到最新版本：</p> 
 </div> 
-<div class="sect1"> 
- <h2 id="流应用程序dsl">流应用程序DSL</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>并非所有用例都可以通过线性管道（pipeline）来解决，其中数据从源到处理器流到接收器，并且每个应用程序连接一个目的地。某些用例需要一组具有多个输入和输出的应用程序。Spring Cloud Stream通过使用用户定义的绑定接口支持此拓扑，但数据流不支持此拓扑。在Kafka Streams应用程序中有多个输入和输出也很常见。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>此外，并非所有用例都使用Spring Cloud Stream应用程序解决。可以仅使用Spring Integration编写向Kafka或RabbitMQ应用程序发送同步请求/回复消息的http网关应用程序。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在这些情况下，Data Flow无法判定从一个应用程序到另一个应用程序的数据流，因此无法像使用<a href="https://docs.spring.io/spring-cloud-dataflow/docs/1.7.0.M1/reference/htmlsingle/#spring-cloud-dataflow-stream-intro-dsl" class="external" target="_blank" rel="noopener">Stream Pipeline DSL</a>时那样设置应用程序的目标属性。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>为了解决这些使用场景，我们引入了Stream Application DSL。此DSL使用<code>,</code>（逗号）而不是<code>|</code>（管道符号）来指示数据流不应配置应用程序的绑定属性。相反，开发人员需要设置适当的部署属性以“连接”应用程序。下面使用DSL来演示<a href="https://github.com/spring-projects/spring-integration-samples/tree/master/applications/cafe" class="external" target="_blank" rel="noopener">EIP Cafe示例</a>：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">dataflow:&gt; stream create --definition "orderGeneratorApp, baristaApp, hotDrinkDeliveryApp, coldDrinkDeliveryApp" --name myCafeStream</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>DSL中列出的应用程序需要注册为<code>--type app</code>。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在这个流中，<code>baristaApp</code>有两个输出目标，分别由<code>hotDrinkDeliveryApp</code>和<code>coldDrinkDeliveryApp</code>使用。部署流时，设置目标属性，使目标与所需的数据流匹配，例如：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code>app.baristaApp.spring.cloud.stream.bindings.hotDrinks.destination=hotDrinksDest
-app.baristaApp.spring.cloud.stream.bindings.coldDrinks.destination=coldDrinksDest
-app.hotDrinkDeliveryApp.spring.cloud.stream.bindings.input.destination=hotDrinksDest
-app.coldDrinkDeliveryApp.spring.cloud.stream.bindings.input.destination=coldDrinksDest</code></pre> 
-   </div> 
-  </div> 
- </div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p>Spring Framework 4.3.20.RELEASE</p> </li> 
+  <li> <p>Spring Data Ingalls SR16</p> </li> 
+  <li> <p>Spring Amqp 1.7.11.RELEASE</p> </li> 
+  <li> <p>Spring Security 4.2.9.RELEASE</p> </li> 
+  <li> <p>Spring Security OAuth 2.0.16</p> </li> 
+  <li> <p>Spring Web Services 2.4.3.RELEASE</p> </li> 
+  <li> <p>Rabbit Amqp Client 4.8.3</p> </li> 
+  <li> <p>Appengine Sdk 1.9.66</p> </li> 
+  <li> <p>GemFire 8.2.12</p> </li> 
+  <li> <p>Undertow 1.4.26.Final</p> </li> 
+ </ul> 
 </div> 
-<div class="sect1"> 
- <h2 id="审计跟踪_audit_trail">审计跟踪（Audit trail）</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>为了帮助回答“谁做了什么，何时做什么？”的问题。引入了审计跟踪来存储涉及应用程序注册、计划、流和任务的操作。对于应用程序和计划，将审核创建和删除操作。对于流，将审核创建、删除、部署、取消部署、更新和回滚。对于任务，审计创建，启动和破坏。审计信息在UI中可用于查询。访问shell中的审计信息也将提供。</p> 
-  </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="https://springdev.io/images/dataflow-dashboard-audit.png" alt="dataflow dashboard audit"> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="并发任务启动限制">并发任务启动限制</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Cloud Data Flow允许您强制执行最大数量的并发运行任务，以防止计算资源饱和。可以通过设置<code>spring.cloud.dataflow.task.maximum-concurrent-tasks</code>属性来配置此限制。默认值为<code>20</code>。您还可以通过REST端点<code>/tasks/executions/current</code>检索当前正在执行的任务数。新的<code>tasklauncher-dataflow</code>应用程序利用此功能仅在并发任务数低于最大值时才启动任务。该功能也是正在开发的新FTP摄取示例应用程序的核心。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="流和任务校验">流和任务校验</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>新的shell命令<code>stream validate</code>和<code>task validate</code>将验证流或任务应用程序资源是否有效且可访问。这可以避免在部署时获得异常。使用UI进行验证即将发布。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="强制升级流应用">强制升级流应用</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>强制升级！升级流应用时，您现在可以使用选项<code>--force</code>来部署当前部署的应用程序的新实例，即使没有更改应用程序或部署属性也是如此。在启动时由应用程序本身获取配置信息（例如从Spring Cloud Config Server获取）时，需要此行为。您可以使用选项<code>--app-names</code>指定要强制升级的应用程序。如果未指定任何应用程序名称，则将强制升级所有应用程序。您还可以将<code>--force</code>和<code>--app-names</code>选项与<code>--properties</code>或<code>--propertiesFile</code>选项一起指定。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="保持联系">保持联系</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>与往常一样，我们欢迎反馈和贡献，请通过<a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow" class="external" target="_blank" rel="noopener">Stackoverflow</a>或<a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues" class="external" target="_blank" rel="noopener">GitHub</a>或通过<a href="https://gitter.im/spring-cloud/spring-cloud-dataflow" class="external" target="_blank" rel="noopener">Gitter</a>与我们联系。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>相关文章：</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><a href="https://springdev.io/blog/2018/07/spring_cloud_data_flow_1_6_ga_released.html" class="external" target="_blank" rel="noopener">Spring Cloud Data Flow 1.6 正式版发布</a></p> 
-  </div> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody>
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> 
-       <div class="paragraph"> 
-        <p>原文：<a href="https://spring.io/blog/2018/09/18/spring-cloud-data-flow-1-7-m1-released" class="external" target="_blank" rel="noopener">https://spring.io/blog/2018/09/18/spring-cloud-data-flow-1-7-m1-released</a><br> 翻译：春之雨<br> 说明：版权归原文作者，翻译仅供学习参考。欢迎反馈和讨论，感谢阅读。</p> 
-       </div> </td> 
-     </tr> 
-    </tbody>
-   </table> 
-  </div> 
- </div> 
+<div class="paragraph"> 
+ <p>上次发布记录在<a href="https://springdev.io/blog/2018/09/spring-boot-1-5-16.html" class="external" target="_blank" rel="noopener">这里</a>。</p> 
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/09/introducing-spring-data-jdbc.html"> ←介绍 Spring Data JDBC</a></li>
-              <li class="next"><a href="../../../blog/2018/09/announcing-spring-cloud-function-2-0-0-m2.html">Spring Cloud Function 2.0.0.M2 发布 →</a></li>
+              <li class="previous"><a  href="../../../blog/2018/10/spring-data-lovelace-sr1-kay-sr11-and-ingalls-sr16-released.html"> ←Spring Data Lovelace SR1、Kay SR11和Ingalls SR16 同时发布</a></li>
+              <li class="next"><a href="../../../blog/2018/10/spring-security-5-1-1-5-0-9-and-4-2-9-released.html">Spring Security 5.1.1、5.0.9和4.2.9 同时发布 →</a></li>
               </ul>
             </div>
             <section id="gitalk-container"></section>
