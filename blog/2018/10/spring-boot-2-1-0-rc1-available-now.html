@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring Framework 5.1.1、5.0.10和4.3.20 同时发布 - Spring技术社区</title>
+  <title>Spring Boot 2.1.0 RC1 发布 - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring Framework 5.1.1、5.0.10和4.3.20 同时发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-10-15'><meta property="og:description" content="Spring Framework 5.1.1、5.0.10和4.3.20 同时发布，主要都是一些问题修复。" />
+  <meta property="og:title" content="Spring Boot 2.1.0 RC1 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-10-17'><meta property="og:description" content="Spring Boot 2.1.0 RC1 发布，可以从里程碑库中获取。此版本关闭了100多个问题和PR。" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -135,7 +135,7 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Spring Framework 5.1.1、5.0.10和4.3.20 同时发布</h1>
+                <h1 class="blog--title">Spring Boot 2.1.0 RC1 发布</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
                     <div class="meta-data--icon icon blog-icon release"></div>
@@ -149,39 +149,88 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-10-15</time>
+                      <time class="date" pubdate="" datetime=''>2018-10-17</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/10/spring-framework-5-1-1-5-0-10-and-4-3-20-available-now.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2018/10/spring-boot-2-1-0-rc1-available-now.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
               <div class="blog--post"><div class="paragraph"> 
- <p>Spring Framework 5.1.1、5.0.10和4.3.20 同时发布，这些版本都是一些问题修复。</p> 
+ <p>Spring Boot 2.1 RC1 已经发布，可以从里程碑库中获取。此版本关闭了<a href="https://github.com/spring-projects/spring-boot/milestone/107?closed=1" class="external" target="_blank" rel="noopener">100多个问题和PR</a>。这次发布作为第一个候选版本，也意味着在最终的2.1 GA版本发布之前，不会添加任何主要的API更改或新功能。正式版预计在月底发布。</p> 
 </div> 
 <div class="paragraph"> 
- <p><code>5.1.1</code>是5.1之后的第一个维护性版本，解决了<a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10000&amp;version=17148" class="external" target="_blank" rel="noopener">30多个问题单</a>，<code>5.0.10</code>解决了<a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10000&amp;version=17115" class="external" target="_blank" rel="noopener">20多个问题单</a>，<code>4.3.20</code>则是<a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10000&amp;version=17116" class="external" target="_blank" rel="noopener">一个相当小的补丁发布</a>。</p> 
+ <p>我们从之前的里程碑中精选了一部分内容，并提供了一些值得注意的新功能，包括：</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p>其他Micrometer注册表的自动配置：AppOptics，Humio和KairosDB</p> </li> 
+  <li> <p>支持Jersey指标（线程池和HTTP请求）</p> </li> 
+  <li> <p>与Hibernate的<code>BeanContainer</code> API集成</p> </li> 
+ </ul> 
 </div> 
 <div class="paragraph"> 
- <p>Spring Boot 2.1的第一个候选版本，基于Spring Framework 5.1.1，即将推出！开发团队还将在本周晚些时候跟进相应的Spring Boot 2.0.6和1.5.17版本。</p> 
+ <p>其中一些主要的第三方依赖升级版本如下：</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p>Spring Framework 5.1.1.RELEASE</p> </li> 
+  <li> <p>Spring Integration 5.1.0.RC2</p> </li> 
+  <li> <p>Spring Security 5.1.1.RELEASE</p> </li> 
+  <li> <p>Spring Data Lovelace SR1</p> </li> 
+  <li> <p>Spring Amqp 2.1.0.RELEASE</p> </li> 
+  <li> <p>Reactor Californium-SR1</p> </li> 
+  <li> <p>Byte Buddy 1.9.1</p> </li> 
+  <li> <p>Commons Lang3 3.8.1</p> </li> 
+  <li> <p>Couchbase Client 2.7.0</p> </li> 
+  <li> <p>Dropwizard Metrics 4.0.3</p> </li> 
+  <li> <p>Ehcache3 3.6.1</p> </li> 
+  <li> <p>Elasticsearch 6.4.2</p> </li> 
+  <li> <p>Embedded Mongo to 3.5.5</p> </li> 
+  <li> <p>Flyway 5.2.0</p> </li> 
+  <li> <p>Groovy 2.5.3</p> </li> 
+  <li> <p>Glassfish Jaxb 2.3.1</p> </li> 
+  <li> <p>Hazelcast 3.10.6</p> </li> 
+  <li> <p>Hibernate 5.3.7.Final</p> </li> 
+  <li> <p>Infinispan 9.4.0.Final</p> </li> 
+  <li> <p>Influxdb Java 2.14</p> </li> 
+  <li> <p>Javax Jaxws 2.3.1</p> </li> 
+  <li> <p>Kotlin 1.2.71</p> </li> 
+  <li> <p>Lettuce 5.1.1.RELEASE</p> </li> 
+  <li> <p>Micrometer 1.1.0-rc.1</p> </li> 
+  <li> <p>Mockito 2.23.0</p> </li> 
+  <li> <p>Netty Tcnative 2.0.17.Final</p> </li> 
+  <li> <p>Saaj Impl 1.5.0</p> </li> 
+  <li> <p>Sendgrid 4.3.0</p> </li> 
+  <li> <p>Sqlite Jdbc 3.25.2</p> </li> 
+  <li> <p>Selenium Htmlunit 2.33.0</p> </li> 
+ </ul> 
 </div> 
 <div class="paragraph"> 
- <p><a href="https://spring.io/projects/spring-framework" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-projects/spring-framework" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://jira.spring.io/browse/SPR" class="external" target="_blank" rel="noopener">问题</a> | <a href="https://docs.spring.io/spring-framework/docs/5.1.1.RELEASE/spring-framework-reference" class="external" target="_blank" rel="noopener">文档</a></p> 
+ <p>此版本还一并解决了<a href="https://springdev.io/blog/2018/10/spring-boot-2-0-6.html" class="external" target="_blank" rel="noopener">最近刚刚发布的2.0.6版本</a>已关闭的<a href="https://github.com/spring-projects/spring-boot/milestone/121?closed=1" class="external" target="_blank" rel="noopener">97个问题</a>。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>有关更改和升级说明的完整列表，请参阅WIKI上的<a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.1.0-RC1-Release-Notes" class="external" target="_blank" rel="noopener">Spring Boot 2.1.0.RC1发行说明</a>。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>要开始使用Spring Boot 2.1.0 RC1并研究这些新功能，您可以在start.spring.io上轻松创建新项目。</p> 
 </div> 
 <div class="paragraph"> 
  <p>相关文章：</p> 
 </div> 
 <div class="ulist"> 
  <ul> 
-  <li> <p><a href="https://springdev.io/blog/2018/09/spring-framework-5-1-goes-ga.html" class="external" target="_blank" rel="noopener">Spring Framework 5.1 正式发布</a></p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/09/spring-framework-5-1-rc3-5-0-9-and-4-3-19-available-now.html" class="external" target="_blank" rel="noopener">Spring Framework 5.1 RC3，5.0.9 和 4.3.19 同时发布</a></p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/09/spring-boot-2-1-m4-available-now.html" class="external" target="_blank" rel="noopener">Spring Boot 2.1.0 M4 发布</a></p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/09/spring-boot-2-1-m3-available-now.html" class="external" target="_blank" rel="noopener">Spring Boot 2.1.0 M3 发布</a></p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/08/spring-boot-2-1-m2-available-now.html" class="external" target="_blank" rel="noopener">Spring Boot 2.1.0 M2 发布</a></p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/07/spring_boot_2_1_m1.html" class="external" target="_blank" rel="noopener">Spring Boot 2.1.0 M1 发布</a></p> </li> 
  </ul> 
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/10/this-week-in-spring-october-12th-2018.html"> ←Spring一周回顾（2018年10月12日）</a></li>
-              <li class="next"><a href="../../../blog/2018/10/spring-data-lovelace-sr1-kay-sr11-and-ingalls-sr16-released.html">Spring Data Lovelace SR1、Kay SR11和Ingalls SR16 同时发布 →</a></li>
+              <li class="previous"><a  href="../../../blog/2018/10/spring-boot-2-0-6.html"> ←Spring Boot 2.0.6 发布</a></li>
+              
               </ul>
             </div>
             <section id="gitalk-container"></section>
