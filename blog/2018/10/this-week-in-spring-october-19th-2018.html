@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring Batch 4.1.0.M3 发布 - Spring技术社区</title>
+  <title>Spring一周回顾（2018年10月19日） - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring Batch 4.1.0.M3 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-08-31'><meta property="og:description" content="Spring Batch 4.1.0.M3 发布，可以从里程碑库中获取。" />
+  <meta property="og:title" content="Spring一周回顾（2018年10月19日）" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-10-19'><meta property="og:description" content="Spring 开发者们每周必读的《Spring一周回顾》，本期为您介绍Micronaut框架，构建微服务应用新选择。" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -119,7 +119,7 @@
     <main class="body--container container-fluid">
       <div class="main-body--wrapper">
         <div class="desktop-only">
-          <h1 class="blog-category active content--title">版本发布</h1>
+          <h1 class="blog-category active content--title">新闻资讯</h1>
           <div class="blog-category content--title">
             <div>Engineering</div>
           </div>
@@ -135,12 +135,12 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Spring Batch 4.1.0.M3 发布</h1>
+                <h1 class="blog--title">Spring一周回顾（2018年10月19日）</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
-                    <div class="meta-data--icon icon blog-icon release"></div>
+                    <div class="meta-data--icon icon blog-icon news"></div>
                     <span>
-                      <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                      <a class="category" href="../../../blog/category/news.html">news</a>&nbsp;
                     </span>
                     </div>
                     <div class="meta-data--item">
@@ -149,115 +149,83 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-08-31</time>
+                      <time class="date" pubdate="" datetime=''>2018-10-19</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/08/spring-batch-4-1-0-m3-released.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2018/10/this-week-in-spring-october-19th-2018.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Batch 4.1.0.M3 发布，本次发布带来了如下特性：</p> 
-  </div> 
- </div> 
+              <div class="blog--post"><div class="paragraph"> 
+ <p>大家好，Spring 粉丝们，感谢一如既往的等待，又到了每周必读的《Spring一周回顾》时间。</p> 
 </div> 
-<div class="sect1"> 
- <h2 id="支持_jsr_305">支持 JSR-305</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>这个里程碑的主题是添加对JSR-305注解的支持。利用Spring Framework的<a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#null-safety" class="external" target="_blank" rel="noopener">Null-safety</a>注解，并在Spring Batch的所有公共API中添加它们。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>这些注释不仅在使用Spring Batch API时强制执行null安全性，而且还可以由IDE用于提供与可空性相关的有用信息。例如，如果用户想要实现<code>ItemReader</code>接口，那么任何支持JSR-305注释的IDE都将生成如下内容：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class MyItemReader implements ItemReader&lt;String&gt; {
-
-    @Nullable
-    public String read() throws Exception {
-        return null;
-    }
-
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在<code>read</code>方法添加<code>@Nullable</code> 注解，明确表示此方法可能返回<code>null</code>。这正如在Javadoc中说明的那样，即当数据源处理完成时，read方法应返回null。</p> 
-  </div> 
- </div> 
+<div class="paragraph"> 
+ <p>中国开源年会 COSCon'18于本周末在深圳南山举办，两天的时间，来自国内外众多开源爱好者参与了大会，其中来自有Apache的VP Justin Mclean、GitHub未来CEO Nat Friedman等国内外技术大咖们带来了主题分享。此外还有微软、华为、阿里、腾讯等相关产品和开源的技术分享，作为本次大会的主办方开源社也在大会上正式发布了2018年中国开源年度报告。</p> 
 </div> 
-<div class="sect1"> 
- <h2 id="完善_flatfileitemwriter_builder">完善 FlatFileItemWriter Builder</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>此版本中添加的另一个小功能是简化了文件写入的配置。具体来说，这些更新简化了分隔和固定宽度文件的配置。以下是更改前后的示例。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">// Before
-@Bean
-public FlatFileItemWriter&lt;Item&gt; itemWriter(Resource resource) {
-    BeanWrapperFieldExtractor&lt;Item&gt; fieldExtractor =
-            new BeanWrapperFieldExtractor&lt;Item&gt;();
-    fieldExtractor.setNames(new String[] {"field1", "field2", "field3"});
-    fieldExtractor.afterPropertiesSet();
-
-    DelimitedLineAggregator aggregator = new DelimitedLineAggregator();
-    aggregator.setFieldExtractor(fieldExtractor);
-    aggregator.setDelimiter(";");
-
-    return new FlatFileItemWriterBuilder&lt;Item&gt;()
-            .name("itemWriter")
-            .resource(resource)
-            .lineAggregator(aggregator)
-            .build();
-}
-
-// After
-@Bean
-public FlatFileItemWriter&lt;Item&gt; itemWriter(Resource resource) {
-    return new FlatFileItemWriterBuilder&lt;Item&gt;()
-            .name("itemWriter")
-            .resource(resource)
-            .delimited()
-            .delimiter(";")
-            .names(new String[] {"field1", "field2", "field3"})
-            .build();
-}</code></pre> 
-   </div> 
-  </div> 
- </div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p><a href="https://mp.weixin.qq.com/s/w15EEYeLaL6_On3B-bzj_w" class="external" target="_blank" rel="noopener">2018年中国开源年度报告正式发布 l COSCon'18 特辑</a></p> </li> 
+  <li> <p><a href="https://mp.weixin.qq.com/s/ccEYMl2_0QZ5B5VHSqDXLA" class="external" target="_blank" rel="noopener">GitHub发布史上最大更新，年度报告出炉！</a></p> </li> 
+  <li> <p><a href="https://mp.weixin.qq.com/s/Cm185uX3q9h34mylqZVCRA" class="external" target="_blank" rel="noopener">GitHub CEO 参加COSCon‘18</a></p> </li> 
+  <li> <p><a href="https://mp.weixin.qq.com/s/QudlJnY-6mC66tPlklCljg" class="external" target="_blank" rel="noopener">腾讯三大运维开源项目齐聚“OSCAR开源先锋日”</a></p> </li> 
+ </ul> 
 </div> 
-<div class="sect1"> 
- <h2 id="其他一些优化">其他一些优化</h2> 
- <div class="sectionbody"> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>通过继承<code>DefaultBatchConfigurer</code>提供自定义事务管理器的功能</p> </li> 
-    <li> <p>修复某些方法名称中的不一致问题</p> </li> 
-   </ul> 
-  </div> 
- </div> 
+<div class="paragraph"> 
+ <p>接下来，本周的《Spring一周回顾》我为大家带来了如下内容：</p> 
 </div> 
-<div class="sect1"> 
- <h2 id="反馈">反馈</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>有关更改的完整列表，请查看<a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10090&amp;version=16889" class="external" target="_blank" rel="noopener">更改记录</a>。这是第一个RC之前的最后一个里程碑版本！</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><a href="https://projects.springdev.io/spring-batch" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-projects/spring-batch" class="external" target="_blank" rel="noopener">项目源码</a> | <a href="https://docs.spring.io/spring-batch/4.1.x/reference/html/index.html" class="external" target="_blank" rel="noopener">参考手册</a></p> 
-  </div> 
- </div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p><a href="https://springdev.io/blog/2018/10/spring-cloud-data-flow-1-7-rc1-released.html" class="external" target="_blank" rel="noopener">Spring Cloud Data Flow 1.7 RC1 发布</a>，基于1.7 M1中引入的核心功能，并进行了一些改进。</p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/10/spring-io-platform-cairo-sr5.html" class="external" target="_blank" rel="noopener">Spring IO Platform Cairo-SR5 发布</a>，升级多个项目依赖。</p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/10/spring-io-platform-brussels-sr14.html" class="external" target="_blank" rel="noopener">Spring IO Platform Brussels-SR14 发布</a>，升级多个项目依赖。</p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/10/spring-cloud-edgware-sr5-has-been-released.html" class="external" target="_blank" rel="noopener">Spring Cloud Edgware.SR5 发布</a>，部分模块更新。</p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/10/spring-security-5-1-1-5-0-9-and-4-2-9-released.html" class="external" target="_blank" rel="noopener">Spring Security 5.1.1、5.0.9和4.2.9 同时发布</a>，主要是解决部分缺陷、升级第三方依赖以及优化。</p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/10/spring-boot-2-1-0-rc1-available-now.html" class="external" target="_blank" rel="noopener">Spring Boot 2.1.0 RC1 发布</a>，正式版预计在月底发布。</p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/10/spring-boot-2-0-6.html" class="external" target="_blank" rel="noopener">Spring Boot 2.0.6 发布</a>，共解决了97项问题修复、改进和依赖项更新，以及2个安全问题，建议使用2.0.x的用户升级到此版本。</p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/10/spring-boot-1-5-17.html" class="external" target="_blank" rel="noopener">Spring Boot 1.5.17 发布</a>，共解决了19项问题修复、改进和依赖项更新。</p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/10/spring-framework-5-1-1-5-0-10-and-4-3-20-available-now.html" class="external" target="_blank" rel="noopener">Spring Framework 5.1.1、5.0.10和4.3.20 同时发布</a>，修复一些问题。</p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/10/spring-data-lovelace-sr1-kay-sr11-and-ingalls-sr16-released.html" class="external" target="_blank" rel="noopener">Spring Data Lovelace SR1、Kay SR11和Ingalls SR16 同时发布</a>，主要包含错误修复和一些依赖性升级，总共修复了70多个问题。</p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/10/micronaut-1.0-rc3-released.html" class="external" target="_blank" rel="noopener">Micronaut 1.0 RC3和Micronaut Test 1.0 RC1 发布</a>，GA版本将在10月23日发布。</p> </li> 
+  <li> <p><a href="https://struts.apache.org/download.cgi" class="external" target="_blank" rel="noopener">Apache Struts 2.3.36和2.5.18 同时发布</a></p> </li> 
+  <li> <p><a href="https://beam.apache.org/get-started/downloads/" class="external" target="_blank" rel="noopener">Apache Beam 2.7.0 已发布</a></p> </li> 
+  <li> <p><a href="https://www.jhipster.tech/2018/10/16/jhipster-release-5.5.0.html" class="external" target="_blank" rel="noopener">JHipster 5.5.0 已发布</a>，关闭了84个问题和PR。</p> </li> 
+  <li> <p><a href="https://www.hashicorp.com/blog/vagrant-2-2-0" class="external" target="_blank" rel="noopener">HashiCorp Vagrant 2.2.0 已发布</a>，提供了新工具：Vagrant Cloud CLI</p> </li> 
+  <li> <p><a href="https://www.graalvm.org/" class="external" target="_blank" rel="noopener">GraalVM</a> 的<a href="https://github.com/oracle/graal/releases/tag/vm-1.0.0-rc8" class="external" target="_blank" rel="noopener">Community Edition 1.0 RC8 发布</a></p> </li> 
+  <li> <p><a href="https://redis.io" class="external" target="_blank" rel="noopener">Redis 5.0 已发布</a>，提供新的<a href="https://redis.io/topics/streams-intro" class="external" target="_blank" rel="noopener">流数据类型</a>，新的模块API：Timers, Cluster and Dictionary等</p> </li> 
+  <li> <p><a href="https://code.visualstudio.com/updates/v1_28" class="external" target="_blank" rel="noopener">Visual Studio Code 1.28.2 已发布</a></p> </li> 
+  <li> <p><a href="https://blogs.msdn.microsoft.com/typescript/announcing-typescript-3-1/" class="external" target="_blank" rel="noopener">TypeScript 3.1.3 已发布</a></p> </li> 
+  <li> <p><a href="https://github.com/angular/angular/releases" class="external" target="_blank" rel="noopener">Angular 7.0.0 正式发布</a></p> </li> 
+ </ul> 
+</div> 
+<div class="paragraph"> 
+ <p>接下来的相关社区活动：</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p><a href="http://www.huodongxing.com/event/2460034772400" class="external" target="_blank" rel="noopener">阿里云APM城市技术行·深圳站——应用全链路性能和诊断最佳实践</a>，时间：10月27日 13:30-17:30，地点：南山区高新南七道16空体新媒体实验室</p> </li> 
+  <li> <p><a href="http://springonetour.io/2018/beijing" class="external" target="_blank" rel="noopener">SpringOne Tour 2018 技术峰会</a>，2018年11月3日在北京京仪大酒店，来自Pivotal美国的Spring明星大咖和国内技术专家组成了豪华阵容，他们将与大家分享并探讨现代应用开发、DevOps、CI/CD、云计算等话题。</p> </li> 
+  <li> <p><a href="https://www.oschina.net/2018-shenzhen-ceremony" class="external" target="_blank" rel="noopener">2018源创会年终盛典</a>由开源中国主办，将于12月16日在深圳南山举办，欢迎报名参加！</p> </li> 
+ </ul> 
+</div> 
+<div class="paragraph"> 
+ <p>历史好文推荐：</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p><a href="https://springdev.io/blog/2018/10/this-week-in-spring-october-5th-2018.html" class="external" target="_blank" rel="noopener">上一期的《Spring 一周回顾》</a>同样精彩，值得一读！</p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/09/the-spring-book-list-2018.html" class="external" target="_blank" rel="noopener">《Spring 最全书单，送给爱学习的你》</a>，80本国内外已出版的Spring相关的书，可以根据自己需要选择阅读！</p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/08/10-ways-to-secure-spring-boot.html" class="external" target="_blank" rel="noopener">10 种保护Spring Boot应用程序的绝佳方法</a>，来自业界安全专家和开源大咖Matt Raible和Simon Maple合作的成果。</p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2018/08/spring-boot-best-practices.html" class="external" target="_blank" rel="noopener">16 条Spring Boot最佳实践</a>，来自业界Spring大咖们的精彩总结！</p> </li> 
+ </ul> 
+</div> 
+<div class="paragraph"> 
+ <p>周末愉快，感谢阅读，我们下周见！</p> 
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/08/spring-session-for-apache-geode-pivotal-gemfire-2-0-5-release-and-2-1-0-m1-released.html"> ←Spring Session for Apache Geode/Pivotal GemFire 2.0.5.RELEASE 和 2.1.0.M1 同时发布</a></li>
-              <li class="next"><a href="../../../blog/2018/08/spring-boot-for-apache-geode-pivotal-gemfire-1-0-0-m2-released.html">Spring Boot for Apache Geode 和 Pivotal GemFire 1.0.0.M2 发布 →</a></li>
+              <li class="previous"><a  href="../../../blog/2018/10/spring-cloud-data-flow-1-7-rc1-released.html"> ←Spring Cloud Data Flow 1.7 RC1 发布</a></li>
+              
               </ul>
             </div>
             <section id="gitalk-container"></section>
