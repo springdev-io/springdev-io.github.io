@@ -303,7 +303,7 @@ public class HelloController {
    <p>实际上，一个来自静态编译技术使用者的常见批评是，基于注解的编程模型在注解中使用的动态引用是不能做到静态检查的。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>尽管这些问题并未阻止基于注释的编程模型成为Java开发人员中最受欢迎的编程模型，但它们可能会导致令人沮丧的体验。这是我们想要在Micronaut的设计中解决的问题。</p> 
+   <p>尽管这些问题并未阻止基于注解的编程模型成为Java开发人员中最受欢迎的编程模型，但它们可能会导致令人沮丧的体验。这是我们想要在Micronaut的设计中解决的问题。</p> 
   </div> 
   <div class="paragraph"> 
    <p>我们举一个例子，考虑以下简单的路由定义：</p> 
@@ -344,7 +344,7 @@ public Single&lt;String&gt; hello(@NotBlank String na) {
  <h2 id="特点4_在编译时映射注解_mapping_annotations_at_compile_time">特点4：在编译时映射注解（MAPPING ANNOTATIONS AT COMPILE TIME）</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>我们在Micronaut设计中采用的方法需要创建一组新的Java注释，以便触发AOT编译。</p> 
+   <p>我们在Micronaut设计中采用的方法需要创建一组新的Java注解，以便触发AOT编译。</p> 
   </div> 
   <div class="paragraph"> 
    <p>与运行时对框架级注解进行分析的传统Java框架不同，如Java EE（现为Jakarta EE）和Spring，Micronaut执行相同的分析，但是在编译时，允许启动性能更快（特别是随着应用程序的增长）并且内存消耗要低得多。</p> 
@@ -377,7 +377,7 @@ public Single&lt;String&gt; hello(@NotBlank String na) {
    <p>如您所见，第1行接收要映射的注解，并且能够返回一个或多个新注解，这些注解映射到内部框架功能（在本例中为安全性）。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>我们期望使用此功能在将来支持更多标准Java注释。</p> 
+   <p>我们期望使用此功能在将来支持更多标准Java注解。</p> 
   </div> 
  </div> 
 </div> 

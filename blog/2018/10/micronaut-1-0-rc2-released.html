@@ -189,7 +189,7 @@
  <h2 id="java_优势与不足">Java 优势与不足</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Java和JVM提供了一个强大的平台，可以在其上构建可提高开发人员工作效率的框架。诸如注释、反射、创建运行时代理的能力等功能是大多数Java框架工作的主要内容。</p> 
+   <p>Java和JVM提供了一个强大的平台，可以在其上构建可提高开发人员工作效率的框架。诸如注解、反射、创建运行时代理的能力等功能是大多数Java框架工作的主要内容。</p> 
   </div> 
   <div class="paragraph"> 
    <p>不幸的是，开发人员必须处理的一些挑战和限制导致内存消耗或启动时间受到影响，包括：</p> 
@@ -299,13 +299,13 @@ List&lt;Argument&lt;?&gt;&gt; typeArguments =
   <div class="sect2"> 
    <h3 id="注解元数据_annotation_metadata">注解元数据（ANNOTATION METADATA）</h3> 
    <div class="paragraph"> 
-    <p>常规Java API使您可以跳过箍来检索前一个示例中的注释元数据。您必须遍历类和接口层次结构，反射性地加载每个方法并可能处理可见性问题以检索包含在层次结构中的所有<code>java.lang.reflect.Method</code>实例。</p> 
+    <p>常规Java API使您可以跳过箍来检索前一个示例中的注解元数据。您必须遍历类和接口层次结构，反射性地加载每个方法并可能处理可见性问题以检索包含在层次结构中的所有<code>java.lang.reflect.Method</code>实例。</p> 
    </div> 
    <div class="paragraph"> 
-    <p>然后，您必须通过查看返回多维数组的<code>getParameterAnnotations()</code>方法来处理每个方法以将所有潜在注释合并在一起，其中每个参数都按照它们在方法中出现的顺序索引。</p> 
+    <p>然后，您必须通过查看返回多维数组的<code>getParameterAnnotations()</code>方法来处理每个方法以将所有潜在注解合并在一起，其中每个参数都按照它们在方法中出现的顺序索引。</p> 
    </div> 
    <div class="paragraph"> 
-    <p>Micronaut不需要所有这些复杂性，因为注释元数据已在编译时计算：</p> 
+    <p>Micronaut不需要所有这些复杂性，因为注解元数据已在编译时计算：</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
