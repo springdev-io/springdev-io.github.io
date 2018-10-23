@@ -141,6 +141,247 @@
               </style>
               <article class="blog--container blog-preview">
                 <h2 class="blog--title">
+                    <a href="../../../blog/2018/10/spring-cloud-edgware-sr5-has-been-released.html">Spring Cloud Edgware.SR5 发布</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon release"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Wed Oct 17 23:04:05 CST 2018">2018-10-17</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/10/spring-cloud-edgware-sr5-has-been-released.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Spring Cloud Edgware.SR5 发布，修复了大量缺陷，也升级了第三方依赖。</div>
+                    <div class="desktop-only"><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p><a href="https://cloud.spring.io/" class="external" target="_blank" rel="noopener">Spring Cloud Edgware</a> Service Release 5 (SR5) 现已发布，可以从 <a href="https://repo.spring.io/release" class="external" target="_blank" rel="noopener">repo.spring.io</a> 和 Maven Central获取到。</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="值得注意的更新">值得注意的更新</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_commons">Spring Cloud Commons</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-commons/issues?q=is%3Aclosed+milestone%3A1.3.5.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_config">Spring Cloud Config</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-config/issues?q=is%3Aclosed+milestone%3A1.4.5.RELEASE" class="external" target="_blank" rel="noopener">文档和缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_contract">Spring Cloud Contract</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-contract/issues?q=is%3Aclosed+milestone%3A1.2.6.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+   <div class="paragraph"> 
+    <p>通过<a href="https://github.com/spring-cloud/spring-cloud-contract/pull/707">＃707</a>，我们有一个测试监听器来处理关闭和启动WireMock服务器的问题。由于此更改，如果要为测试桩重用相同的端口，则不再需要在测试中设置<code>@DirtiesContext</code>。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_sleuth">Spring Cloud Sleuth</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues?q=is%3Aclosed+milestone%3A1.3.5.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+   <div class="paragraph"> 
+    <p>通过<a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/1077">＃1077</a>，我们增加了对单个请求头B3传播的支持。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_netflix">Spring Cloud Netflix</h3> 
+   <div class="paragraph"> 
+    <p><a href="https://github.com/spring-cloud/spring-cloud-netflix/issues?q=is%3Aclosed+milestone%3A1.4.6.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_vault">Spring Cloud Vault</h3> 
+   <div class="paragraph"> 
+    <p><a href="https://github.com/spring-cloud/spring-cloud-vault/issues?q=is%3Aclosed+milestone%3A1.1.2" class="external" target="_blank" rel="noopener">缺陷修复</a></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_consul">Spring Cloud Consul</h3> 
+   <div class="paragraph"> 
+    <p><a href="https://github.com/spring-cloud/spring-cloud-consul/issues?q=is%3Aclosed+milestone%3A1.3.5.RELEASE">缺陷修复</a></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>以下模块作为<code>Edgware.SR5</code>的一部分进行了更新：</p> 
+   </div> 
+   <table class="tableblock frame-all grid-all stretch"> 
+    <colgroup> 
+     <col> 
+     <col> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">模块</th> 
+      <th class="tableblock halign-left valign-top">版本</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud AWS</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1.2.3.RELEASE</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Contract</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1.2.6.RELEASE</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Consul</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1.3.5.RELEASE</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Zookeeper</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1.2.2.RELEASE</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Sleuth</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1.3.5.RELEASE</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Config</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1.4.5.RELEASE</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Netflix</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1.4.6.RELEASE</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Commons</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1.3.5.RELEASE</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Bus</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1.3.4.RELEASE</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Security</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1.2.3.RELEASE</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Cloudfoundry</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.2.RELEASE</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Function</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1.0.1.RELEASE</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Vault</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.2.RELEASE</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Gateway</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1.0.2.RELEASE</p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p>要使用BOM开始使用Maven（仅限依赖关系管理）：</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+            &lt;version&gt;Edgware.SR5&lt;/version&gt;
+            &lt;type&gt;pom&lt;/type&gt;
+            &lt;scope&gt;import&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-starter-config&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    ...
+&lt;/dependencies&gt;</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>或者，Gradle：</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">buildscript {
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.2.RELEASE"
+    }
+}
+
+
+
+apply plugin: "io.spring.dependency-management"
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Edgware.SR5'
+    }
+}
+
+dependencies {
+    compile 'org.springframework.cloud:spring-cloud-starter-config'
+    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    ...
+}</code></pre> 
+    </div> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> 
+        <div class="paragraph"> 
+         <p>原文：https://spring.io/blog/2018/10/17/spring-cloud-edgware-sr5-has-been-released<br> 作者：Ryan Baxter<br> 翻译：春之雨</p> 
+        </div> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+ </div> 
+</div></div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/10/spring-cloud-edgware-sr5-has-been-released.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
                     <a href="../../../blog/2018/10/spring-boot-2-1-0-rc1-available-now.html">Spring Boot 2.1.0 RC1 发布</a>
                 </h2>
                 <header class="meta-data--container">
@@ -311,41 +552,6 @@
                     查看...
                 </a>
               </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2018/10/micronaut-1.0-rc3-released.html">Micronaut 1.0 RC3和Micronaut Test 1.0 RC1 发布</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon release"></div>
-                        <span>
-                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Tue Oct 16 09:00:00 CST 2018">2018-10-16</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/10/micronaut-1.0-rc3-released.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">Micronaut 1.0 RC3和Micronaut Test 1.0 RC1 发布了，10月23日将会发布GA版本。</div>
-                    <div class="desktop-only"><div class="quoteblock abstract"> 
- <blockquote>
-   本文的作者是Graeme Rocher，他是Grails和Micronaut框架的项目负责人，主导Grails开发10多年，有着丰富的Grails和Spring架构经验。由于Grails和Micronaut的开发团队和社区与Spring项目之间都很有渊源，而我也是其中最早的用户和参与者，所以本文将Micronaut介绍给Spring技术社区，后续也会发布更多相关的技术文章，欢迎大家积极参与讨论和分享。 
- </blockquote> 
-</div></div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/10/micronaut-1.0-rc3-released.html">
-                    查看...
-                </a>
-              </article>
             </div>
             <ul id="pagination_control" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../">&larr; 前一页</a></li>
@@ -380,6 +586,11 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/10/micronaut-1-0-ga-released.html" title="Micronaut 1.0 正式发布">Micronaut 1.0 正式发布</a>
+            <span class="pull-right">2018-10-23</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/10/this-week-in-spring-october-19th-2018.html" title="Spring一周回顾（2018年10月19日）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-10-19</span>
@@ -399,11 +610,7 @@
             <a href="../../../blog/2018/10/spring-io-platform-brussels-sr14.html" title="Spring IO Platform Brussels-SR14 发布">Spring IO Platf...</a>
             <span class="pull-right">2018-10-18</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-edgware-sr5-has-been-released.html" title="Spring Cloud Edgware.SR5 发布">Spring Cloud Ed...</a>
-            <span class="pull-right">2018-10-17</span>
-          </li>
+          
           
           
           

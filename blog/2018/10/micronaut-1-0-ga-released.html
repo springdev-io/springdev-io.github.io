@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring IO Platform Cairo SR3 发布 - Spring技术社区</title>
+  <title>Micronaut 1.0 正式发布 - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring IO Platform Cairo SR3 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-07-31'><meta property="og:description" content="Spring IO Platform Cairo SR3 发布，升级多个项目版本。" />
+  <meta property="og:title" content="Micronaut 1.0 正式发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-10-23'><meta property="og:description" content="Micronaut 1.0 正式发布了。" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -135,7 +135,7 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Spring IO Platform Cairo SR3 发布</h1>
+                <h1 class="blog--title">Micronaut 1.0 正式发布</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
                     <div class="meta-data--icon icon blog-icon release"></div>
@@ -149,55 +149,69 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-07-31</time>
+                      <time class="date" pubdate="" datetime=''>2018-10-23</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/07/spring_io_platform_cairo_sr3.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2018/10/micronaut-1-0-ga-released.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="paragraph"> 
- <p><a href="https://platform.spring.io/platform/" class="external" target="_blank" rel="noopener">Spring IO Platform</a> Cairo-SR3 现已发布，可以从 repo.spring.io 和 Maven Central获取到。</p> 
+              <div class="blog--post"><div class="quoteblock abstract"> 
+ <blockquote>
+   本文的作者是Graeme Rocher，他是Grails和Micronaut框架的项目负责人，主导Grails开发10多年，有着丰富的Grails和Spring架构经验。由于Grails和Micronaut的开发团队和社区与Spring项目之间都很有渊源，而我也是其中最早的用户和参与者，所以本文将Micronaut介绍给Spring技术社区，后续也会发布更多相关的技术文章，欢迎大家积极参与讨论和分享。 
+ </blockquote> 
 </div> 
 <div class="paragraph"> 
- <p>此维护版本升级了平台中许多项目的版本：</p> 
+ <p>Micronaut 是由来自OCI公司Grails团队开发的新一代基于JVM的现代全栈框架，用于构建模块化和易于测试的微服务应用程序。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>以下内容来自OCI官方博客，由Graeme Rocher发表：</p> 
+</div> 
+<div class="paragraph"> 
+ <p>令人非常兴奋的是，OCI的Micronaut团队今天宣布推出Micronaut 1.0 GA。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>在一年多的时间里，Micronaut 1.0代表了我们的使命中的一次重大飞跃，使开发人员能够为JVM创建高效、低内存占用的微服务和无服务器应用程序。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Micronaut包含现代开发人员为JVM有效构建微服务所需的所有工具，而不会影响内存占用和启动时间，包括：</p> 
 </div> 
 <div class="ulist"> 
  <ul> 
-  <li> <p>Spring AMQP 2.0.5</p> </li> 
-  <li> <p>Spring Boot 2.0.4</p> </li> 
-  <li> <p>Spring Data Kay SR9</p> </li> 
-  <li> <p>Spring Framework 5.0.8</p> </li> 
-  <li> <p>Spring HATEOAS 0.25.0</p> </li> 
-  <li> <p>Spring Integration 5.0.7</p> </li> 
-  <li> <p>Spring Kafka 2.1.8</p> </li> 
-  <li> <p>Spring REST Docs 2.0.2</p> </li> 
-  <li> <p>Spring Security 5.0.7</p> </li> 
-  <li> <p>Spring Session Apple SR4</p> </li> 
-  <li> <p>Spring Web Services 3.0.3</p> </li> 
+  <li> <p>集成的编译时依赖注入和AOP</p> </li> 
+  <li> <p>云原生配置管理</p> </li> 
+  <li> <p>服务发现和客户端负载均衡</p> </li> 
+  <li> <p>集成的HTTP客户端和基于服务器的Netty</p> </li> 
+  <li> <p>合理的默认值和自动配置</p> </li> 
  </ul> 
 </div> 
 <div class="paragraph"> 
- <p>除此之外，其他一些第三方依赖库的版本也有升级</p> 
+ <p>有关Micronaut 1.0的设计和开发的见解，请查看InfoQ的<a href="https://www.infoq.com/news/2018/10/the-road-to-micronaut-1.0">“Micronaut 1.0之道”</a>文章和我之前关于<a href="https://objectcomputing.com/news/2018/10/08/micronaut-10-rc2">“预先编译（AOT）的力量”</a>的文章。</p> 
 </div> 
-<div class="admonitionblock caution"> 
+<div class="paragraph"> 
+ <p>要了解有关Micronaut的更多信息，请参加周四在<a href="https://objectcomputing.com/resources/events/conferences/oracle-code-one-2018">Oracle CodeOne 2018</a>上的<a href="https://oracle.rainfocus.com/widget/oracle/oow18/catalogcodeone18?search=Micronaut">我的演讲</a>，或者下周在巴黎的<a href="https://voxxeddays.com/microservices/2018/10/05/graeme-rocher-on-micronaut/">Voxxed Days</a>的演讲。</p> 
+</div> 
+<div class="paragraph"> 
+ <p>感谢社区中在本GA版本的开发过程中提供了宝贵意见的每一个人，欢迎使用Micronaut 1.0！</p> 
+</div> 
+<div class="admonitionblock note"> 
  <table> 
   <tbody>
    <tr> 
-    <td class="icon"> <i class="fa icon-caution" title="Caution"></i> </td> 
-    <td class="content"> Spring IO Platform在2019年4月9号将会停止维护。 </td> 
+    <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+    <td class="content"> 
+     <div class="paragraph"> 
+      <p>原文：https://objectcomputing.com/news/2018/10/23/micronaut-10-ga-released<br> 作者：Graeme Rocher<br> 翻译：春之雨<br> 说明：版权归原文作者，翻译仅供学习参考。时间仓促，翻译不免出错，欢迎反馈和讨论，感谢阅读。</p> 
+     </div> </td> 
    </tr> 
   </tbody>
  </table> 
-</div> 
-<div class="paragraph"> 
- <p><a href="https://platform.spring.io/platform" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-io/platform" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://github.com/spring-io/platform/issues" class="external" target="_blank" rel="noopener">问题跟踪</a> | <a href="https://docs.spring.io/platform/docs/Cairo-SR3/reference/htmlsingle" class="external" target="_blank" rel="noopener">参考文档</a></p> 
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/07/spring_io_platform_brussels_sr12.html"> ←Spring IO Platform Brussels SR12 发布</a></li>
-              <li class="next"><a href="../../../blog/2018/08/spring_vault_2_1_m1_available_now.html">Spring Vault 2.1 M1 已发布 →</a></li>
+              <li class="previous"><a  href="../../../blog/2018/10/this-week-in-spring-october-19th-2018.html"> ←Spring一周回顾（2018年10月19日）</a></li>
+              
               </ul>
             </div>
             <section id="gitalk-container"></section>
