@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring Security 5.1.0.RC2 发布 - Spring技术社区</title>
+  <title>Spring Cloud Finchley.SR2 发布 - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring Security 5.1.0.RC2 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-09-10'><meta property="og:description" content="Spring Security 5.1.0.RC2 发布，共解决了50多个问题单，其中不少是针对OAuth2的配置和自定义能力增强，继续改进WebFlux风格的相关安全配置，此外也升级了依赖：Spring 5.1.0.RC3、Spring Boot 2.1.0.M2和Reactor Californium-M2。" />
+  <meta property="og:title" content="Spring Cloud Finchley.SR2 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-10-24'><meta property="og:description" content="Spring Cloud Finchley.SR2 发布" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -135,7 +135,7 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Spring Security 5.1.0.RC2 发布</h1>
+                <h1 class="blog--title">Spring Cloud Finchley.SR2 发布</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
                     <div class="meta-data--icon icon blog-icon release"></div>
@@ -149,11 +149,11 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-09-10</time>
+                      <time class="date" pubdate="" datetime=''>2018-10-24</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/09/spring-security-5-1-0-rc2-released.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2018/10/spring-cloud-finchley-sr2-is-available.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
@@ -161,214 +161,250 @@
               <div class="blog--post"><div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p><a href="http://projects.springdev.io/spring-security/" class="external" target="_blank" rel="noopener">Spring Security</a>是一个功能强大且可高度自定义的身份验证和访问控制框架。它是保护基于Spring的应用程序的事实上的标准。</p> 
+   <p><a href="https://cloud.spring.io/" class="external" target="_blank" rel="noopener">Spring Cloud Finchley</a> SR2（Service Release）已经发布，可以在<a href="https://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-dependencies/Finchley.SR2/" class="external" target="_blank" rel="noopener">Maven Central</a>上获取到。</p> 
   </div> 
   <div class="paragraph"> 
-   <p>其特性如下：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>对身份验证和授权的全面和可扩展的支持</p> </li> 
-    <li> <p>防止会话固定，点击劫持，跨站点请求伪造等攻击</p> </li> 
-    <li> <p>Servlet API集成</p> </li> 
-    <li> <p>支持与Spring Web MVC集成</p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Security 5.1.0.RC2 发布，共解决了50多个问题单，其中不少是针对OAuth2的配置和自定义能力增强，继续改进WebFlux风格的相关安全配置，此外也升级了依赖：Spring 5.1.0.RC3、Spring Boot 2.1.0.M2和Reactor Californium-M2。</p> 
+   <p>此次更新，主要是升级到Spring Boot <code>2.0.6.RELEASE</code>，其中包含的几个模块也都是解决一些缺陷和依赖升级，所以建议升级到此版本。您可以查看Finchley<a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Finchley-Release-Notes" class="external" target="_blank" rel="noopener">发布说明</a>以获取更多信息。</p> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="简化oauth2_dsl">简化OAuth2 DSL</h2> 
+ <h2 id="模块更新说明">模块更新说明</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>在之前，Spring Security DSL有两种OAuth写法：</p> 
+   <p>具体而言，下面是每个更新模块的详细介绍。</p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_gateway">Spring Cloud Gateway</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>支持Hystrix超时中的WebFlux错误处理 <a href="https://github.com/spring-cloud/spring-cloud-gateway/issues/553" class="external" target="_blank" rel="noopener">#553</a></p> </li> 
+     <li> <p>在PEM文件中读取多个证书 <a href="https://github.com/spring-cloud/spring-cloud-gateway/pull/583" class="external" target="_blank" rel="noopener">#583</a></p> </li> 
+     <li> <p>支持配置TLS超时 <a href="https://github.com/spring-cloud/spring-cloud-gateway/pull/578" class="external" target="_blank" rel="noopener">#578</a></p> </li> 
+     <li> <p><code>ModifyRequestBodyGatewayFilterFactory</code>适当更新请求头 <a href="https://github.com/spring-cloud/spring-cloud-gateway/issues/492" class="external" target="_blank" rel="noopener">#492</a></p> </li> 
+     <li> <p>支持重定向过滤器中的相对路径跳转 <a href="https://github.com/spring-cloud/spring-cloud-gateway/issues/468" class="external" target="_blank" rel="noopener">#468</a></p> </li> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-gateway/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">其他缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_sleuth">Spring Cloud Sleuth</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_config">Spring Cloud Config</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>传播Git克隆错误 <a href="https://github.com/spring-cloud/spring-cloud-config/issues/1160" class="external" target="_blank" rel="noopener">＃1160</a></p> </li> 
+     <li> <p>Gitee和Gogs的webhook支持 <a href="https://github.com/spring-cloud/spring-cloud-config/pull/1140" class="external" target="_blank" rel="noopener">#1140</a></p> </li> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-config/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_netflix">Spring Cloud Netflix</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>支持接受Sidecars中的所有证书 <a href="https://github.com/spring-cloud/spring-cloud-netflix/pull/3224" class="external" target="_blank" rel="noopener">#3224</a></p> </li> 
+     <li> <p><code>HystrixCommands.fallback</code>现在支持接受导致回调被调用的<code>Throwable</code> <a href="https://github.com/spring-cloud/spring-cloud-netflix/issues/3210" class="external" target="_blank" rel="noopener">#3210</a></p> </li> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-netflix/issues?q=milestone%3A2.0.2.RELEASE+is%3Aclosed" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_commons">Spring Cloud Commons</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>使用<code>@LoadBalanced WebClient</code>时更好的错误处理 <a href="https://github.com/spring-cloud/spring-cloud-commons/issues/386" class="external" target="_blank" rel="noopener">#386</a></p> </li> 
+     <li> <p><code>InstancePreRegisteredEvent</code>在<a href="https://cloud.spring.io/spring-cloud-static/Finchley.SR2/single/spring-cloud.html#_serviceregistry_auto_registration_events">服务注册</a>之前触发</p> </li> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-commons/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_contract">Spring Cloud Contract</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-contract/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_vault">Spring Cloud Vault</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-vault/issues?q=is%3Aclosed+milestone%3A2.0.2" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_openfeign">Spring Cloud Openfeign</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>在Feign客户端中添加对<code>MultipartFile</code>的支持 <a href="https://github.com/spring-cloud/spring-cloud-openfeign/issues/62" class="external" target="_blank" rel="noopener">#62</a></p> </li> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-openfeign/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_security">Spring Cloud Security</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>依赖升级</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_aws">Spring Cloud AWS</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-aws/issues?q=is%3Aclosed+milestone%3A2.0.1.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="模块及版本">模块及版本</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>以下模块作为Finchley.SR2的一部分进行了更新：</p> 
+  </div> 
+  <table class="tableblock frame-all grid-all stretch"> 
+   <caption class="title">
+    Table 1. 更新的模块及版本
+   </caption> 
+   <colgroup> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">模块</th> 
+     <th class="tableblock halign-left valign-top">版本</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Gateway</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Sleuth</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Config</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Netflix</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Commons</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Contract</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Vault</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Openfeign</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud AWS</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.1.RELEASE</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Cloud Foundry</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.1.RELEASE</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Security</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.1.RELEASE</p></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="如何使用">如何使用</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>要使用BOM开始使用Maven（仅限依赖关系管理）：</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">http
-    .oauth2Login()...</code></pre> 
+    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+            &lt;version&gt;Finchley.SR2&lt;/version&gt;
+            &lt;type&gt;pom&lt;/type&gt;
+            &lt;scope&gt;import&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-starter-config&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    ...
+&lt;/dependencies&gt;</code></pre> 
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>和</p> 
+   <p>或者，使用Gradle：</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">http
-    .oauth2()
-        .client()...</code></pre> 
+    <pre class="prettyprint highlight"><code>buildscript {
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.5.RELEASE"
+    }
+}
+
+
+
+apply plugin: "io.spring.dependency-management"
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.SR2'
+    }
+}
+
+dependencies {
+    compile 'org.springframework.cloud:spring-cloud-starter-config'
+    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    ...
+}</code></pre> 
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>这是有道理的，因为一个是身份验证机制，如<code>formLogin</code>和<code>openidLogin</code>，其他 - 客户端，<code>resourceServer</code>和<code>authorizationServer</code>--更像OAuth 2.0特有的。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>但最后，这种分离感觉就像不必要的额外打字一样，所以我们决定将层次结构对齐，这意味着，从本版本开始，我们现在拥有：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">http
-    .oauth2Login()...
-    .oauth2Client()...
-    .oauth2ResourceServer()</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>DSL的重构不会涉及任何功能或特性变更，只需更少的键入。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="webclient扩展">WebClient扩展</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>开发团队一直在努力使用WebClient，我们很高兴地宣布一些针对Servlet和WebFlux应用程序的新OAuth 2.0 WebClient扩展。通过这些扩展，可以轻松地在机器之间无缝地传输OAuth 2.0权限。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在<a href="https://github.com/spring-projects/spring-security/issues/4921">OAuth 2.0 Web Client 相关需求单</a>中可以看到所有详细信息。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="servlet改进">Servlet改进</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="oauth2">OAuth2</h3> 
-   <div class="sect3"> 
-    <h4 id="token请求配置_token_request_configuration">Token请求配置（Token Request Configuration）</h4> 
-    <div class="paragraph"> 
-     <p>OAuth 2.0的第一部分是规范合规性。下一个版本引入了更多支持，可以将Spring Security配置为与扩展或偏离规范的提供程序一起使用。</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>例如，现在可以<a href="https://github.com/spring-projects/spring-security/issues/5466" class="external" target="_blank" rel="noopener">自定义从客户端到授权服务器的令牌请求</a>。</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="资源服务器声明映射_resource_server_claims_mapping">资源服务器声明映射（Resource Server Claims Mapping）</h4> 
-    <div class="paragraph"> 
-     <p>除此之外，Resource Server还支持<a href="https://github.com/spring-projects/spring-security/issues/5223" class="external" target="_blank" rel="noopener">自定义从传入JWT解析的声明集</a>。当应用程序需要添加或删除声明或需要以自定义方式解析声明时，这很方便：</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="prettyprint highlight"><code class="language-java" data-lang="java">NimbusJwtDecoderJwkSupport decoder = // ...
-decoder.setClaimSetConverter(
-    MappedJwtClaimSetConverter
-        .withDefaults("custom-date", this::convertToInstant));</code></pre> 
-     </div> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="提供更多提供商配置元数据_more_provider_configuration_metadata_available">提供更多提供商配置元数据（More Provider Configuration Metadata Available）</h4> 
-    <div class="paragraph"> 
-     <p>规范合规的过程也在继续。在此版本中，添加了对<a href="https://github.com/spring-projects/spring-security/pull/5729" class="external" target="_blank" rel="noopener">从OIDC Provider Configuration端点返回的任何元数据</a>的收集和提供的支持。</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>现在，<code>ClientRegistration</code>增加了方法<code>getConfigurationMetadata</code>，它与针对特定属性的方法一起，并返回整个提供的属性的映射。</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="restoperations支持">RestOperations支持</h4> 
-    <div class="paragraph"> 
-     <p>此版本还支持<a href="https://github.com/spring-projects/spring-security/issues/5602" class="external" target="_blank" rel="noopener">对各种端点的HTTP请求的完全自定义</a>。</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>这对于配置超时、发现、缓存以及在与授权服务器通信时充分利用<code>RestTemplate</code>的复杂性非常方便。</p> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="其他优化">其他优化</h3> 
-   <div class="sect3"> 
-    <h4 id="x_509_principal提取">X.509 Principal提取</h4> 
-    <div class="paragraph"> 
-     <p>还增加了对<a href="https://github.com/spring-projects/spring-security/issues/5771" class="external" target="_blank" rel="noopener">通过策略派生X.509主体</a>的支持。</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="ldap自定义环境变量">LDAP自定义环境变量</h4> 
-    <div class="paragraph"> 
-     <p>添加了配置自定义环境变量的支持，以通知创建<code>LdapContext</code>。</p> 
-    </div> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="webflux改进">WebFlux改进</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="oauth2资源服务器_resource_server">OAuth2资源服务器（Resource Server）</h3> 
-   <div class="paragraph"> 
-    <p>最初为基于Servlet的资源服务器发布的几个功能在WebFlux端的RC2版本中也添加进来了。对响应式特性的支持类似，但有一个很小却很重要的不同点。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>In Spring Security WebFlux, it is more typical to have an authentication manager per request type. In this release, then, WebFlux ships with authentication manager configuration for Resource Server:</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>在Spring Security WebFlux中，每个请求类型具有一个身份验证管理器更为常见。在此版本中，WebFlux中资源服务器的身份验证管理器配置：</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">http
-    .oauth2ResourceServer()
-        .authenticationManager(customAuthenticationManager())</code></pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>这在应用程序需要将<code>Jwt</code>自定义转换为一组授权权限的情况下很有用。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="oauth2_client">OAuth2 Client</h3> 
-   <div class="paragraph"> 
-    <p>现在，<code>@RegisteredOAuth2AuthorizedClient</code>注解在WebFlux中也支持client_credentials授权模式。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="重定向跳转https">重定向跳转Https</h3> 
-   <div class="paragraph"> 
-    <p>最后但同样重要的是，<a href="https://github.com/spring-projects/spring-security/issues/5749" class="external" target="_blank" rel="noopener">https重定向支持</a>已添加到WebFlux，可通过<code>http.redirectToHttps()</code>或直接通过<code>HttpsRedirectWebFilter</code>访问。</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="依赖升级">依赖升级</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>一些依赖升级到最新版本：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Spring 5.1.0.RC3</p> </li> 
-    <li> <p>Spring Boot 2.1.0.M2</p> </li> 
-    <li> <p>hibernate-entitymanager 5.3.6.Final</p> </li> 
-    <li> <p>nimbus-jose-jwt 6.0.2</p> </li> 
-    <li> <p>oauth2-oidc-sdk 6.0</p> </li> 
-    <li> <p>HtmlUnit 2.32.1</p> </li> 
-    <li> <p>assertj 3.11.1</p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p><a href="https://projects.spring.io/spring-security/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://docs.spring.io/spring-security/site/docs/5.1.0.RC1/reference/htmlsingle/" class="external" target="_blank" rel="noopener">参考文档</a> | <a href="https://stackoverflow.com/questions/tagged/spring-security" class="external" target="_blank" rel="noopener">问答社区</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>其它相关文章：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><a href="https://springdev.io/blog/2018/08/spring-security-5-1-0-rc1-released.html" class="external" target="_blank" rel="noopener">Spring Security 5.1.0.RC1 发布</a></p> </li> 
-    <li> <p><a href="https://springdev.io/blog/2018/09/spring-framework-5-1-rc3-5-0-9-and-4-3-19-available-now.html" class="external" target="_blank" rel="noopener">Spring Framework 5.1.0.RC3 发布</a></p> </li> 
-    <li> <p><a href="https://springdev.io/blog/2018/08/spring-boot-2-1-m2-available-now.html" class="external" target="_blank" rel="noopener">Spring Boot 2.1.0.M2 发布</a></p> </li> 
-   </ul> 
+   <p>一如既往，我们非常欢迎来自<a href="https://github.com/spring-cloud/" class="external" target="_blank" rel="noopener">GitHub</a>, <a href="https://gitter.im/spring-cloud/spring-cloud" class="external" target="_blank" rel="noopener">Gitter</a>, <a href="https://stackoverflow.com/questions/tagged/spring-cloud" class="external" target="_blank" rel="noopener">Stack Overflow</a> 以及<a href="https://twitter.com/SpringCloud" class="external" target="_blank" rel="noopener">Twitter</a>上的反馈。</p> 
   </div> 
  </div> 
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/09/spring-data-ingalls-sr15-and-kay-sr10-released.html"> ←Spring Data Ingalls SR15 和 Kay SR10 同时发布</a></li>
-              <li class="next"><a href="../../../blog/2018/09/spring-security-5-0-8-and-4-2-8-released.html">Spring Security 5.0.8和4.2.8 同时发布 →</a></li>
+              <li class="previous"><a  href="../../../blog/2018/10/micronaut-1-0-ga-released.html"> ←Micronaut 1.0 正式发布</a></li>
+              
               </ul>
             </div>
             <section id="gitalk-container"></section>
