@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Micronaut 1.0 RC3和Micronaut Test 1.0 RC1 发布 - Spring技术社区</title>
+  <title>Spring Cloud for Alibaba 0.2.0 发布 - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Micronaut 1.0 RC3和Micronaut Test 1.0 RC1 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-10-16'><meta property="og:description" content="Micronaut 1.0 RC3和Micronaut Test 1.0 RC1 发布了，10月23日将会发布GA版本。" />
+  <meta property="og:title" content="Spring Cloud for Alibaba 0.2.0 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-10-30'><meta property="og:description" content="Spring Cloud for Alibaba 0.2.0 发布，这是。" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -135,7 +135,7 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Micronaut 1.0 RC3和Micronaut Test 1.0 RC1 发布</h1>
+                <h1 class="blog--title">Spring Cloud for Alibaba 0.2.0 发布</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
                     <div class="meta-data--icon icon blog-icon release"></div>
@@ -149,100 +149,149 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-10-16</time>
+                      <time class="date" pubdate="" datetime=''>2018-10-30</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/10/micronaut-1-0-rc3-released.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="quoteblock abstract"> 
- <blockquote>
-   本文的作者是Graeme Rocher，他是Grails和Micronaut框架的项目负责人，主导Grails开发10多年，有着丰富的Grails和Spring架构经验。由于Grails和Micronaut的开发团队和社区与Spring项目之间都很有渊源，而我也是其中最早的用户和参与者，所以本文将Micronaut介绍给Spring技术社区，后续也会发布更多相关的技术文章，欢迎大家积极参与讨论和分享。 
- </blockquote> 
-</div> 
-<div class="paragraph"> 
- <p>以下内容来自OCI官方博客，由Graeme Rocher发表：</p> 
-</div> 
-<div class="paragraph"> 
- <p><a href="https://objectcomputing.com/resources/events/conferences/oracle-code-one-2018" class="external" target="_blank" rel="noopener">Oracle Code One 2018</a>还有一周时间就要到来，来自OCI的Micronaut团队很高兴地宣布推出<a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0.RC3" class="external" target="_blank" rel="noopener">Micronaut 1.0 RC3</a>。</p> 
-</div> 
-<div class="paragraph"> 
- <p>这是我们在10月23日发布GA之前的最终候选版本。</p> 
-</div> 
-<div class="paragraph"> 
- <p>在这个版本中，我们很高兴地宣布第一个Micronaut Test RC：JUnit 5和Spock的简单扩展集合，增加了一些小细节，使测试Micronaut应用程序更加简单。</p> 
-</div> 
-<div class="paragraph"> 
- <p>Micronaut Test为Micronaut添加了以下用于测试的功能：</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p>自动启动和停止服务器以获得测试套件的范围</p> </li> 
-  <li> <p>使用模拟替换测试套件范围中的现有bean</p> </li> 
-  <li> <p>允许依赖注入到测试实例中</p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>以下是用Spock编写的测试示例：</p> 
-</div> 
-<div class="listingblock"> 
- <div class="content"> 
-  <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package io.micronaut.test.spock
-
-import io.micronaut.test.annotation.MicronautTest
-import spock.lang.*
-import javax.inject.Inject
-
-@MicronautTest
-class MathServiceSpec extends Specification {
-
-    @Inject
-    MathService mathService
-
-    @Unroll
-    void "should compute #num times 4"() {
-        when:
-        def result = mathService.compute(num)
-
-        then:
-        result == expected
-
-        where:
-        num | expected
-        2   | 8
-        3   | 12
-    }
-}</code></pre> 
+              <div class="blog--post"><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>大家好，很高兴地告诉大家，今天 Spring Cloud Alibaba 的第一个版本发布了。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Spring Cloud Alibaba项目由两部分组成：包含了阿里巴巴的开源组件和阿里云的产品。旨在利用众所周知的 Spring 框架的设计模式和抽象能力，以便为Java开发人员使用阿里巴巴产品带来Spring Boot和Spring Cloud的优势。</p> 
+  </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> 
+       <div class="paragraph"> 
+        <p>Spring Cloud Alibaba 项目是由阿里巴巴维护的社区项目。</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><strong>注意</strong>： 版本 0.2.0.RELEASE 对应的是 Spring Boot 2.x 版本，版本 0.1.0.RELEASE 对应的是 Spring Boot 1.x 版本.</p> 
+       </div> </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
  </div> 
 </div> 
-<div class="paragraph"> 
- <p>从上面的示例中可以看出，只需将<code>@MicronautTest</code>注解添加到任何Spock或JUnit 5测试中，测试就会自动注入依赖。</p> 
+<div class="sect1"> 
+ <h2 id="阿里巴巴开源组件">阿里巴巴开源组件</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>其中阿里巴巴开源组件的命名前缀为<code>spring-cloud-alibaba</code>，提供了如下特性：</p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="服务发现_service_discovery">服务发现（Service Discovery）</h3> 
+   <div class="paragraph"> 
+    <p><code>spring-cloud-alibaba-nacos-discovery-starter</code>实现了 spring cloud common 中定义的 registry 相关规范接口 <code>NacosAutoServiceRegistration</code> ，<code>NacosServiceRegistry</code> 和 <code>NacosDiscoveryClient</code> 等，引入依赖并添加一些简单的配置即可将你的服务注册到Nacos Server中，并且支持与Ribbon的集成。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="配置管理_configuration_management">配置管理（Configuration Management）</h3> 
+   <div class="paragraph"> 
+    <p><code>spring-cloud-alibaba-nacos-config-starter</code> 中 <code>NacosPropertySourceLocator</code>实现了 <code>PropertySoureLocator</code> 接口，引入依赖并添加一些简单的配置即可从 Nacos Server 中获取应用配置并设置在 Spring 的 Environment 中。而且无需依赖其他组件即可支持配置的实时推送和推送状态查询。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="高可用防护">高可用防护</h3> 
+   <div class="paragraph"> 
+    <p><code>spring-cloud-alibaba-sentinel-starter</code> 默认集成了 Servlet、RestTemplate、Dubbo、RocketMQ 的限流(Flow Control)降级(Circuit Breaking and Concurrency)，只需要引入依赖即可完成限流降级的集成动作。并支持在应用运行状态下通过 Sentinel 控制台来实时修改限流降级的策略和阈值。</p> 
+   </div> 
+  </div> 
+ </div> 
 </div> 
-<div class="paragraph"> 
- <p>Micronaut Test包含更多功能，包括与Spock的模拟框架和Mockito for JUnit 5的集成。</p> 
+<div class="sect1"> 
+ <h2 id="阿里云产品组件">阿里云产品组件</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>阿里云的产品组件的命名前缀为 <code>spring-cloud-alicloud</code> ，提供了如下特性：</p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="服务发现服务_application_naming_service">服务发现服务（Application Naming Service）</h3> 
+   <div class="paragraph"> 
+    <p>阿里云提供的服务发现服务ANS，除了服务发现的基本功能外，提供了更低成本SaaS 化服务发现服务，同时在接口的调用中加入了加密逻辑，更好地保护你的服务。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="配置管理服务_application_configuration_management">配置管理服务（Application Configuration Management）</h3> 
+   <div class="paragraph"> 
+    <p>阿里云提供的 Nacos 配置管理服务ACM，除了服务发现的基本功能外，提供了更低成本的 SaaS 化配置管理服务，以及更加安全的配置管理，并且还包含了完整的推送轨迹查询。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="对象存储服务_object_storage_service">对象存储服务（Object Storage Service）</h3> 
+   <div class="paragraph"> 
+    <p>阿里云提供的海量、安全、低成本、高可靠的云存储服务OSS。支持在任何应用、任何时间、任何地点存储和访问任意类型的数据。 只需要自动注入一个 OSS Client，即可直接使用存储与下载功能。</p> 
+   </div> 
+  </div> 
+ </div> 
 </div> 
-<div class="paragraph"> 
- <p>感谢所有在RC过程中提供反馈的人以及计划下周在旧金山参加Oracle Code One 2018的人 - 到时见！</p> 
+<div class="sect1"> 
+ <h2 id="如何使用_how_to_use">如何使用（How to Use）</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>这些组件在 <a href="https://repo.spring.io/release/" class="external" target="_blank" rel="noopener">Spring release</a> 仓库中，可以通过如下 BOM 来使用：</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-alibaba-dependencies&lt;/artifactId&gt;
+            &lt;version&gt;0.2.0.RELEASE&lt;/version&gt;
+            &lt;type&gt;pom&lt;/type&gt;
+            &lt;scope&gt;import&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;</code></pre> 
+   </div> 
+  </div> 
+ </div> 
 </div> 
-<div class="admonitionblock note"> 
- <table> 
-  <tbody>
-   <tr> 
-    <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-    <td class="content"> 
-     <div class="paragraph"> 
-      <p>原文：https://objectcomputing.com/news/2018/10/16/micronaut-10-rc3<br> 作者：Graeme Rocher<br> 翻译：春之雨<br> 说明：版权归原文作者，翻译仅供学习参考。时间仓促，翻译不免出错，欢迎反馈和讨论，感谢阅读。</p> 
-     </div> </td> 
-   </tr> 
-  </tbody>
- </table> 
+<div class="sect1"> 
+ <h2 id="后续计划_what_next">后续计划（What Next?）</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p><strong>RocketMQ</strong> Apache RocketMQ™ 是基于Java的高性能、高吞吐量的分布式消息和流计算平台。<code>spring-cloud-stream-binder-rocket</code>&nbsp;模块基于&nbsp;<a href="https://spring.io/projects/spring-integration">Spring Integration</a>和<a href="https://cloud.spring.io/spring-cloud-stream/" class="external" target="_blank" rel="noopener">Spring Cloud Stream</a>. 使得开发者在使用 Spring Cloud Stream 和 Spring Cloud Bus 时候可以选择使用 RocketMQ 作为消息中间件。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>AliCloud Schedulerx</strong> 阿里中间件团队开发的一款分布式任务调度产品，支持周期性的任务与固定时间点触发任务。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>AliCloud SLS</strong> 针对日志类数据的一站式服务，在阿里巴巴集团经历大量大数据场景锤炼而成。您无需开发就能快捷完成日志数据采集、消费、投递以及查询分析等功能，提升运维、运营效率，建立数据技术（DT）时代海量日志处理能力。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/issues" class="external" target="_blank" rel="noopener">问题跟踪</a> | <a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/README-zh.md" class="external" target="_blank" rel="noopener">中文文档</a></p> 
+  </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> 
+       <div class="paragraph"> 
+        <p>原文：https://spring.io/blog/2018/10/30/spring-cloud-for-alibaba-0-2-0-released<br> 作者：肖京</p> 
+       </div> </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+ </div> 
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/10/spring-data-lovelace-sr1-kay-sr11-and-ingalls-sr16-released.html"> ←Spring Data Lovelace SR1、Kay SR11和Ingalls SR16 同时发布</a></li>
-              <li class="next"><a href="../../../blog/2018/10/spring-boot-1-5-17.html">Spring Boot 1.5.17 发布 →</a></li>
+              <li class="previous"><a  href="../../../blog/2018/10/spring-for-apache-kafka-2-2-released.html"> ←Spring for Apache Kafka 2.2 发布</a></li>
+              
               </ul>
             </div>
             <section id="gitalk-container"></section>
