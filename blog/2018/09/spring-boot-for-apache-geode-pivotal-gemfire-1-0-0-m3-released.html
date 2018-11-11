@@ -158,95 +158,129 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Boot for Apache Geode和Pivotal GemFire 1.0.0.M3（以下简称：SBDG）发布。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在1.0最终GA之前的所有特性已经基本完成了，在最终GA之前还有1个开发里程碑（RC1）。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="新特性">新特性</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>SBDG <code>1.0.0.M3</code>增加了对Apache Geode和Pivotal GemFire（以及Pivotal Cloud Cache，由Pivotal GemFire支持）使用Spring Boot的Actuator功能的支持。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>具体来说，这个支持包括Spring Boot <code>HealthIndicators</code>，用于评估以下GemFire/Geode组件的状态和运行状况：</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>总的来说，这个版本带来了以下改进：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Cache</p> </li> 
-    <li> <p>DistributedSystem / DistributedMember</p> </li> 
-    <li> <p>ResourceManager</p> </li> 
-    <li> <p>Regions</p> </li> 
-    <li> <p>Indexes</p> </li> 
-    <li> <p>DiskStores</p> </li> 
-    <li> <p>Continuous Queries</p> </li> 
-    <li> <p>CacheServers</p> </li> 
-    <li> <p>Pools</p> </li> 
-    <li> <p>AsyncEventQueues</p> </li> 
-    <li> <p>GatewaySenders</p> </li> 
-    <li> <p>GatewayReceivers</p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>除基本状态信息外，GemFire/Geode <code>HealthIndicators</code>还提供基本配置元数据详细信息以及GemFire/Geode组件本身的运行时特征和行为。这包括简单的指标，如缓存区域命中/未命中计数或客户端和服务器之间的连接负载，等等。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>“必要的”配置元数据详细信息在一个方便的位置提供，因此您无需筛选所有命令行参数、日志文件、属性文件和其他配置文件，只需查找每个GemFire/Geode的配置在应用程序架构中使用的对象。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>有关提供的<code>HealthIndicators</code>的更多详细信息，请访问<a href="https://docs.spring.io/autorepo/docs/spring-boot-data-geode-build/1.0.0.BUILD-SNAPSHOT/reference/htmlsingle/#actuator" class="external" target="_blank" rel="noopener">此处</a>。</p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="示例">示例</h3> 
-   <div class="paragraph"> 
-    <p>还有一个未记录的示例，你可以在<a href="https://github.com/spring-projects/spring-boot-data-geode/tree/samples/samples/boot/actuator" class="external" target="_blank" rel="noopener"><code>samples</code></a>分支上查看。示例Spring Boot应用程序是一个用于温度传感器的简单温度监控服务，并使用Apache Geode CQ功能将温度事件发送到客户端（监视器）。它使用足够的Geode组件来使Actuator健康端点变得有趣。</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="如何使用">如何使用</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>您可以通过Spring <a href="https://repo.spring.io/libs-milestone/org/springframework/geode/spring-geode-starter/1.0.0.M3/" class="external" target="_blank" rel="noopener">libs-milestone repo</a>来获取新包，使用的话需要在Maven中增加以下依赖项：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><code>org.springframework.geode:spring-geode-starter</code> （Apache Geode）</p> </li> 
-    <li> <p><code>org.springframework.geode:spring-gemfire-starter</code> （Pivotal GemFire/PCC）</p> </li> 
-   </ul> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="后续计划">后续计划</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>通过RC1，我们打算完成以下内容：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>更多示例，并附有文档</p> </li> 
-    <li> <p>扩大测试范围，涵盖所有UC方式</p> </li> 
-    <li> <p>评审文档的正确性和简洁性</p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>一如既往地欢迎反馈！</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><a href="https://github.com/spring-projects/spring-boot-data-geode/issues" class="external" target="_blank" rel="noopener">问题</a> | <a href="https://github.com/spring-projects/spring-boot-data-geode/pulls" class="external" target="_blank" rel="noopener">PR</a> | <a href="https://stackoverflow.com/questions/tagged/spring-boot" class="external" target="_blank" rel="noopener">StackOverflow</a></p> 
-  </div> 
- </div> 
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Boot for Apache Geode和Pivotal GemFire 1.0.0.M3（以下简称：SBDG）发布。</p>
+</div>
+<div class="paragraph">
+<p>在1.0最终GA之前的所有特性已经基本完成了，在最终GA之前还有1个开发里程碑（RC1）。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="新特性">新特性</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>SBDG <code>1.0.0.M3</code>增加了对Apache Geode和Pivotal GemFire（以及Pivotal Cloud Cache，由Pivotal GemFire支持）使用Spring Boot的Actuator功能的支持。</p>
+</div>
+<div class="paragraph">
+<p>具体来说，这个支持包括Spring Boot <code>HealthIndicators</code>，用于评估以下GemFire/Geode组件的状态和运行状况：</p>
+</div>
+<div class="paragraph">
+<p>总的来说，这个版本带来了以下改进：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cache</p>
+</li>
+<li>
+<p>DistributedSystem / DistributedMember</p>
+</li>
+<li>
+<p>ResourceManager</p>
+</li>
+<li>
+<p>Regions</p>
+</li>
+<li>
+<p>Indexes</p>
+</li>
+<li>
+<p>DiskStores</p>
+</li>
+<li>
+<p>Continuous Queries</p>
+</li>
+<li>
+<p>CacheServers</p>
+</li>
+<li>
+<p>Pools</p>
+</li>
+<li>
+<p>AsyncEventQueues</p>
+</li>
+<li>
+<p>GatewaySenders</p>
+</li>
+<li>
+<p>GatewayReceivers</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>除基本状态信息外，GemFire/Geode <code>HealthIndicators</code>还提供基本配置元数据详细信息以及GemFire/Geode组件本身的运行时特征和行为。这包括简单的指标，如缓存区域命中/未命中计数或客户端和服务器之间的连接负载，等等。</p>
+</div>
+<div class="paragraph">
+<p>“必要的”配置元数据详细信息在一个方便的位置提供，因此您无需筛选所有命令行参数、日志文件、属性文件和其他配置文件，只需查找每个GemFire/Geode的配置在应用程序架构中使用的对象。</p>
+</div>
+<div class="paragraph">
+<p>有关提供的<code>HealthIndicators</code>的更多详细信息，请访问<a href="https://docs.spring.io/autorepo/docs/spring-boot-data-geode-build/1.0.0.BUILD-SNAPSHOT/reference/htmlsingle/#actuator" class="external" target="_blank" rel="noopener">此处</a>。</p>
+</div>
+<div class="sect2">
+<h3 id="示例">示例</h3>
+<div class="paragraph">
+<p>还有一个未记录的示例，你可以在<a href="https://github.com/spring-projects/spring-boot-data-geode/tree/samples/samples/boot/actuator" class="external" target="_blank" rel="noopener"><code>samples</code></a>分支上查看。示例Spring Boot应用程序是一个用于温度传感器的简单温度监控服务，并使用Apache Geode CQ功能将温度事件发送到客户端（监视器）。它使用足够的Geode组件来使Actuator健康端点变得有趣。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="如何使用">如何使用</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>您可以通过Spring <a href="https://repo.spring.io/libs-milestone/org/springframework/geode/spring-geode-starter/1.0.0.M3/" class="external" target="_blank" rel="noopener">libs-milestone repo</a>来获取新包，使用的话需要在Maven中增加以下依赖项：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>org.springframework.geode:spring-geode-starter</code> （Apache Geode）</p>
+</li>
+<li>
+<p><code>org.springframework.geode:spring-gemfire-starter</code> （Pivotal GemFire/PCC）</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="后续计划">后续计划</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>通过RC1，我们打算完成以下内容：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>更多示例，并附有文档</p>
+</li>
+<li>
+<p>扩大测试范围，涵盖所有UC方式</p>
+</li>
+<li>
+<p>评审文档的正确性和简洁性</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>一如既往地欢迎反馈！</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/spring-projects/spring-boot-data-geode/issues" class="external" target="_blank" rel="noopener">问题</a> | <a href="https://github.com/spring-projects/spring-boot-data-geode/pulls" class="external" target="_blank" rel="noopener">PR</a> | <a href="https://stackoverflow.com/questions/tagged/spring-boot" class="external" target="_blank" rel="noopener">StackOverflow</a></p>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/09/this-week-in-spring-september-21th-2018.html"> ←Spring一周回顾（2018年9月21日）</a></li>
@@ -283,30 +317,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

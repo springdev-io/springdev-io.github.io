@@ -158,112 +158,140 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>授权码模式可能是你将遇到的最常见的OAuth 2.0授权模式。用户授权应用程序后，Web应用程序和原生应用程序都会使用它来获取访问令牌。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>这篇文章是我们探索经常使用的OAuth 2.0授权类型的系列的第一部分。如果你想在我们深入了解之前稍微回顾一下并了解有关OAuth 2.0的更多信息，请查看Okta开发人员博客上的“什么是OAuth？”。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="oauth_2_0_授权模式是什么">OAuth 2.0 授权模式是什么？</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>在OAuth 2.0中，术语“授权模式”是指应用程序获取访问令牌的方式。OAuth 2.0定义了几种授权模式，包括授权代码模式。OAuth 2.0扩展还可以定义新的授权模式。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>每种授权模式都针对特定用例进行了优化，无论是Web应用程序，原生应用程序，无法启动Web浏览器的设备，还是服务器到服务器应用程序。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="授权码模式">授权码模式</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>授权代码模式主要被Web和移动应用程序使用。它与大多数其他授权模式不同，首先要求应用程序启动浏览器以开始流程。在较高级别，流程包括以下几个步骤：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>应用程序打开浏览器以将用户发送到OAuth服务器</p> </li> 
-    <li> <p>用户看到授权提示并批准应用程序的请求</p> </li> 
-    <li> <p>使用查询字符串中的授权代码将用户重定向回应用程序</p> </li> 
-    <li> <p>应用程序交换访问令牌的授权代码</p> </li> 
-   </ul> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="获得用户的权限">获得用户的权限</h3> 
-   <div class="paragraph"> 
-    <p>OAuth旨在使用户能够授予对应用程序的有限访问权限。应用程序首先需要确定它请求的权限，然后将用户发送到浏览器以获得其权限。要开始授权流程，应用程序会构建如下所示的URL，并打开该URL的浏览器。</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>https://authorization-server.com/auth
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>授权码模式可能是你将遇到的最常见的OAuth 2.0授权模式。用户授权应用程序后，Web应用程序和原生应用程序都会使用它来获取访问令牌。</p>
+</div>
+<div class="paragraph">
+<p>这篇文章是我们探索经常使用的OAuth 2.0授权类型的系列的第一部分。如果你想在我们深入了解之前稍微回顾一下并了解有关OAuth 2.0的更多信息，请查看Okta开发人员博客上的“什么是OAuth？”。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="oauth_2_0_授权模式是什么">OAuth 2.0 授权模式是什么？</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在OAuth 2.0中，术语“授权模式”是指应用程序获取访问令牌的方式。OAuth 2.0定义了几种授权模式，包括授权代码模式。OAuth 2.0扩展还可以定义新的授权模式。</p>
+</div>
+<div class="paragraph">
+<p>每种授权模式都针对特定用例进行了优化，无论是Web应用程序，原生应用程序，无法启动Web浏览器的设备，还是服务器到服务器应用程序。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="授权码模式">授权码模式</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>授权代码模式主要被Web和移动应用程序使用。它与大多数其他授权模式不同，首先要求应用程序启动浏览器以开始流程。在较高级别，流程包括以下几个步骤：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>应用程序打开浏览器以将用户发送到OAuth服务器</p>
+</li>
+<li>
+<p>用户看到授权提示并批准应用程序的请求</p>
+</li>
+<li>
+<p>使用查询字符串中的授权代码将用户重定向回应用程序</p>
+</li>
+<li>
+<p>应用程序交换访问令牌的授权代码</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="获得用户的权限">获得用户的权限</h3>
+<div class="paragraph">
+<p>OAuth旨在使用户能够授予对应用程序的有限访问权限。应用程序首先需要确定它请求的权限，然后将用户发送到浏览器以获得其权限。要开始授权流程，应用程序会构建如下所示的URL，并打开该URL的浏览器。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>https://authorization-server.com/auth
  ?response_type=code
  &amp;client_id=29352915982374239857
  &amp;redirect_uri=https%3A%2F%2Fexample-app.com%2Fcallback
  &amp;scope=create+delete
- &amp;state=xcoiv98y2kd22vusuye3kch</pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>下面是每个参数的详细说明：</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><code>response_type = code</code> - 这告诉授权服务器应用程序正在启动授权代码流。</p> </li> 
-     <li> <p><code>client_id</code> - 开发人员首次注册应用程序时获取的应用程序的公共标识符。</p> </li> 
-     <li> <p><code>redirect_uri</code> - 告知授权服务器在批准请求后将用户返回的位置。</p> </li> 
-     <li> <p><code>scope</code> - 一个或多个以空格分隔的字符串，指示应用程序请求的权限。你正在使用的特定OAuth API将定义它支持的范围。</p> </li> 
-     <li> <p><code>state</code> - 应用程序生成随机字符串并将其包含在请求中。然后，应该在用户授权应用程序后检查是否返回了相同的值。这用于防止CSRF攻击。</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p>当用户访问此URL时，授权服务器将向他们显示一个提示，询问他们是否要授权此应用程序的请求。</p> 
-   </div> 
-   <div class="imageblock"> 
-    <div class="content"> 
-     <img src="https://springdev.io/images/oauth-prompt.png" alt="OAuth Prompt"> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="重定向回应用程序">重定向回应用程序</h3> 
-   <div class="paragraph"> 
-    <p>如果用户批准了请求，授权服务器会将浏览器重定向回应用程序指定的<code>redirect_uri</code>，并向查询字符串添加<code>code</code>和<code>state</code>。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><code>state</code>值将与应用程序最初在请求中设置的值相同。应用程序应检查重定向中的状态是否与其最初设置的状态匹配。这可以防止CSRF和其他相关攻击。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><code>code</code>是授权服务器生成的授权代码。此代码相对较短，通常持续1到10分钟，具体取决于OAuth服务。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="交换访问令牌的授权码">交换访问令牌的授权码</h3> 
-   <div class="paragraph"> 
-    <p>我们准备结束这一流程。现在应用程序具有授权代码，它可以使用它来获取访问令牌。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>应用程序使用以下参数向服务的令牌端点发出POST请求：</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><code>grant_type = authorization_code</code> - 这告诉令牌端点应用程序正在使用授权代码授权类型。</p> </li> 
-     <li> <p><code>code</code> - 应用程序包含重定向中给出的授权代码。</p> </li> 
-     <li> <p><code>redirect_uri</code> - 请求代码时使用的相同重定向URI。某些API不需要此参数，因此你需要仔细检查你正在访问的特定API的文档。</p> </li> 
-     <li> <p><code>client_id</code> - 应用程序的客户端ID。</p> </li> 
-     <li> <p><code>client_secret</code> - 应用程序的客户端密钥。这确保了获取访问令牌的请求仅来自应用程序，而不是来自可能截获授权代码的潜在攻击者。</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p>令牌端点将验证请求中的所有参数，确保代码未过期以及客户端ID和密钥匹配。如果所有内容都检查正确，它将生成一个访问令牌并在响应中返回它！</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>HTTP/1.1 200 OK
+ &amp;state=xcoiv98y2kd22vusuye3kch</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>下面是每个参数的详细说明：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>response_type = code</code> - 这告诉授权服务器应用程序正在启动授权代码流。</p>
+</li>
+<li>
+<p><code>client_id</code> - 开发人员首次注册应用程序时获取的应用程序的公共标识符。</p>
+</li>
+<li>
+<p><code>redirect_uri</code> - 告知授权服务器在批准请求后将用户返回的位置。</p>
+</li>
+<li>
+<p><code>scope</code> - 一个或多个以空格分隔的字符串，指示应用程序请求的权限。你正在使用的特定OAuth API将定义它支持的范围。</p>
+</li>
+<li>
+<p><code>state</code> - 应用程序生成随机字符串并将其包含在请求中。然后，应该在用户授权应用程序后检查是否返回了相同的值。这用于防止CSRF攻击。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>当用户访问此URL时，授权服务器将向他们显示一个提示，询问他们是否要授权此应用程序的请求。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/oauth-prompt.png" alt="OAuth Prompt">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="重定向回应用程序">重定向回应用程序</h3>
+<div class="paragraph">
+<p>如果用户批准了请求，授权服务器会将浏览器重定向回应用程序指定的<code>redirect_uri</code>，并向查询字符串添加<code>code</code>和<code>state</code>。</p>
+</div>
+<div class="paragraph">
+<p><code>state</code>值将与应用程序最初在请求中设置的值相同。应用程序应检查重定向中的状态是否与其最初设置的状态匹配。这可以防止CSRF和其他相关攻击。</p>
+</div>
+<div class="paragraph">
+<p><code>code</code>是授权服务器生成的授权代码。此代码相对较短，通常持续1到10分钟，具体取决于OAuth服务。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="交换访问令牌的授权码">交换访问令牌的授权码</h3>
+<div class="paragraph">
+<p>我们准备结束这一流程。现在应用程序具有授权代码，它可以使用它来获取访问令牌。</p>
+</div>
+<div class="paragraph">
+<p>应用程序使用以下参数向服务的令牌端点发出POST请求：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>grant_type = authorization_code</code> - 这告诉令牌端点应用程序正在使用授权代码授权类型。</p>
+</li>
+<li>
+<p><code>code</code> - 应用程序包含重定向中给出的授权代码。</p>
+</li>
+<li>
+<p><code>redirect_uri</code> - 请求代码时使用的相同重定向URI。某些API不需要此参数，因此你需要仔细检查你正在访问的特定API的文档。</p>
+</li>
+<li>
+<p><code>client_id</code> - 应用程序的客户端ID。</p>
+</li>
+<li>
+<p><code>client_secret</code> - 应用程序的客户端密钥。这确保了获取访问令牌的请求仅来自应用程序，而不是来自可能截获授权代码的潜在攻击者。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>令牌端点将验证请求中的所有参数，确保代码未过期以及客户端ID和密钥匹配。如果所有内容都检查正确，它将生成一个访问令牌并在响应中返回它！</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>HTTP/1.1 200 OK
 Content-Type: application/json
 Cache-Control: no-store
 Pragma: no-cache
@@ -274,31 +302,33 @@ Pragma: no-cache
   "expires_in":3600,
   "refresh_token":"IwOGYzYTlmM2YxOTQ5MGE3YmNmMDFkNTVk",
   "scope":"create delete"
-}</pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>授权码模式的流程已完成！该应用程序现在具有可在发出API请求时使用的访问令牌。</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="何时使用授权码模式">何时使用授权码模式</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>授权码模式最适用于Web和移动应用程序。由于授权码模式具有交换访问令牌的额外步骤，因此它提供了隐式授权类型中不存在的附加安全层。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>如果你在移动应用程序或任何其他类型的无法存储客户端密钥的应用程序中使用授权码模式，那么你还应该使用<a href="https://www.oauth.com/oauth2-servers/pkce/" class="external" target="_blank" rel="noopener">PKCE扩展</a>，该扩展可以提供针对授权代码可能存在的其他攻击（截获）的保护。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>代码交换步骤确保攻击者无法拦截访问令牌，因为访问令牌始终通过应用程序和OAuth服务器之间的安全反向通道发送。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>原文：<a href="https://developer.okta.com/blog/2018/04/10/oauth-authorization-code-grant-type" class="external" target="_blank" rel="noopener">What is the OAuth 2.0 Authorization Code Grant Type?</a>。<br> 作者：<a href="https://aaronparecki.com/" class="external" target="_blank" rel="noopener">Aaron Parecki</a><br> 翻译：<a href="https://rainboyan.com" class="external" target="_blank" rel="noopener">Rain</a></p> 
-  </div> 
- </div> 
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>授权码模式的流程已完成！该应用程序现在具有可在发出API请求时使用的访问令牌。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="何时使用授权码模式">何时使用授权码模式</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>授权码模式最适用于Web和移动应用程序。由于授权码模式具有交换访问令牌的额外步骤，因此它提供了隐式授权类型中不存在的附加安全层。</p>
+</div>
+<div class="paragraph">
+<p>如果你在移动应用程序或任何其他类型的无法存储客户端密钥的应用程序中使用授权码模式，那么你还应该使用<a href="https://www.oauth.com/oauth2-servers/pkce/" class="external" target="_blank" rel="noopener">PKCE扩展</a>，该扩展可以提供针对授权代码可能存在的其他攻击（截获）的保护。</p>
+</div>
+<div class="paragraph">
+<p>代码交换步骤确保攻击者无法拦截访问令牌，因为访问令牌始终通过应用程序和OAuth服务器之间的安全反向通道发送。</p>
+</div>
+<div class="paragraph">
+<p>原文：<a href="https://developer.okta.com/blog/2018/04/10/oauth-authorization-code-grant-type" class="external" target="_blank" rel="noopener">What is the OAuth 2.0 Authorization Code Grant Type?</a>。<br>
+作者：<a href="https://aaronparecki.com/" class="external" target="_blank" rel="noopener">Aaron Parecki</a><br>
+翻译：<a href="https://rainboyan.com" class="external" target="_blank" rel="noopener">Rain</a></p>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/08/spring-cloud-open-service-broker-2-0-1-release-is-now-available.html"> ←Spring Cloud Open Service Broker 2.0.1.RELEASE 已发布</a></li>
@@ -335,30 +365,35 @@ Pragma: no-cache
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

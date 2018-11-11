@@ -158,38 +158,46 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="paragraph"> 
- <p>Spring Cloud Function是一个新项目，具有以下高阶目标：</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p>通过函数促进业务逻辑的实现</p> </li> 
-  <li> <p>将业务逻辑的开发生命周期与任何特定运行时目标分离，以便相同的代码可以作为Web端点，流处理器或任务运行</p> </li> 
-  <li> <p>支持无服务器提供商之间的统一编程模型，以及独立运行（本地或PaaS）的能力</p> </li> 
-  <li> <p>在无服务器提供商上启用Spring Boot功能（自动配置，依赖注入，指标）</p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>就像Spring一直在推广基于普通java对象（POJO）的编程模型一样，Spring Cloud Function也基于普通的函数来推广编程模型。我们指的是<code>java.util.function</code>包中定义的核心接口：<code>Function</code>，<code>Consumer</code>和<code>Supplier</code>。</p> 
-</div> 
-<div class="paragraph"> 
- <p>这些类型的实现可以通过<code>@FunctionScan</code>启用的类路径扫描显式或隐式地注册为Bean。参数和（或）返回类型可以选择使用Reactor的<code>Flux</code>，它是Reactive Streams的<code>Publisher</code>。这样可以实现与其他Reactive Streams组件的互操作性，甚至是基于其他实现的组件，例如RxJava 2，并且它为此处理模型带来了非阻塞IO和反压等反应性功能（有关更多信息，请参阅Project Reactor）。只要参数和（或）返回类型不是<code>Flux</code>，Spring Cloud Function就会将它们包装起来，以便函数可以通过<code>Flux</code>进行互操作。对于简单的一次性处理用例，您可以保持简单：</p> 
-</div> 
-<div class="listingblock"> 
- <div class="content"> 
-  <pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class Greeter implements Function&lt;String, String&gt; {
+              <div class="blog--post"><div class="paragraph">
+<p>Spring Cloud Function是一个新项目，具有以下高阶目标：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>通过函数促进业务逻辑的实现</p>
+</li>
+<li>
+<p>将业务逻辑的开发生命周期与任何特定运行时目标分离，以便相同的代码可以作为Web端点，流处理器或任务运行</p>
+</li>
+<li>
+<p>支持无服务器提供商之间的统一编程模型，以及独立运行（本地或PaaS）的能力</p>
+</li>
+<li>
+<p>在无服务器提供商上启用Spring Boot功能（自动配置，依赖注入，指标）</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>就像Spring一直在推广基于普通java对象（POJO）的编程模型一样，Spring Cloud Function也基于普通的函数来推广编程模型。我们指的是<code>java.util.function</code>包中定义的核心接口：<code>Function</code>，<code>Consumer</code>和<code>Supplier</code>。</p>
+</div>
+<div class="paragraph">
+<p>这些类型的实现可以通过<code>@FunctionScan</code>启用的类路径扫描显式或隐式地注册为Bean。参数和（或）返回类型可以选择使用Reactor的<code>Flux</code>，它是Reactive Streams的<code>Publisher</code>。这样可以实现与其他Reactive Streams组件的互操作性，甚至是基于其他实现的组件，例如RxJava 2，并且它为此处理模型带来了非阻塞IO和反压等反应性功能（有关更多信息，请参阅Project Reactor）。只要参数和（或）返回类型不是<code>Flux</code>，Spring Cloud Function就会将它们包装起来，以便函数可以通过<code>Flux</code>进行互操作。对于简单的一次性处理用例，您可以保持简单：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class Greeter implements Function&lt;String, String&gt; {
   public String apply(String name) {
     return "Hello " + name;
   }
-}</code></pre> 
- </div> 
-</div> 
-<div class="paragraph"> 
- <p>但是，如果您需要通过窗口函数或reduce方法来实现处理数据集作为处理单元的函数，则可以使用<code>Flux</code>类型：</p> 
-</div> 
-<div class="listingblock"> 
- <div class="content"> 
-  <pre class="prettyprint highlight"><code class="language-java" data-lang="java">public static class WordCount
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>但是，如果您需要通过窗口函数或reduce方法来实现处理数据集作为处理单元的函数，则可以使用<code>Flux</code>类型：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public static class WordCount
     implements Function&lt;Flux&lt;String&gt;, Flux&lt;Map&lt;String, Integer&gt;&gt;&gt; {
   public Flux&lt;Map&lt;String, Integer&gt;&gt; apply(Flux&lt;String&gt; phrases) {
     return phrases.window(3)
@@ -197,82 +205,85 @@
       .reduce(new HashMap&lt;String, Integer&gt;(),
         (map, word) -&gt; { map.merge(word, 1, Integer::sum); return map; }));
   }
-}</code></pre> 
- </div> 
-</div> 
-<div class="paragraph"> 
- <p>依靠函数类型也可以轻松编写功能，例如：</p> 
-</div> 
-<div class="listingblock"> 
- <div class="content"> 
-  <pre class="prettyprint highlight"><code class="language-java" data-lang="java">twistAndShout = twist.andThen(shout);</code></pre> 
- </div> 
-</div> 
-<div class="paragraph"> 
- <p>当然，也可以使用lambdas定义函数，例如：</p> 
-</div> 
-<div class="listingblock"> 
- <div class="content"> 
-  <pre class="prettyprint highlight"><code class="language-java" data-lang="java">Function&lt;String, String&gt; shout =  s -&gt; s.toUpperCase() + “!”;</code></pre> 
- </div> 
-</div> 
-<div class="paragraph"> 
- <p>实际上，Spring Cloud Function支持动态地将基于String的lambdas编译为函数实例。这在原型设计或添加一些简单的转换逻辑时尤其有用，因为今天常用的是Spring表达式语言。</p> 
-</div> 
-<div class="paragraph"> 
- <p>您可能会问为什么Spring需要推广此模型，因为您无论如何都可以轻松创建<code>Function</code>，<code>Consumer</code>和<code>Supplier</code>实例。要知道答案涉及控制反转，这应该不足为奇。多年来，好莱坞原则已经描述了从基本依赖注入到Spring无处不在地使用模板模式的所有内容：“不要打电话给我们，我们会打电话给你”。上面提到的<code>Flux</code>-adapting实际上是控制反转的一个例子，但更重要的一个是业务逻辑与部署配置文件的分离。在这种情况下，业务逻辑指的是函数，而部署配置文件可以是REST应用程序，流处理应用程序或有限任务。Spring Cloud Function为每种类型提供JAR，并且在每种情况下，自动配置的<code>FunctionCatalog</code>用于在<code>ApplicationContext</code>中定位<code>Functions</code>，<code>Consumers</code>和<code>Suppliers</code>。</p> 
-</div> 
-<div class="paragraph"> 
- <p>例如，要将上面显示的Greeter函数部署为REST端点，只需要添加“spring-cloud-function-web”依赖关系，如此<a href="https://github.com/markfisher/spring-cloud-function-blog-samples/blob/master/greeter/pom.xml" class="external" target="_blank" rel="noopener">POM</a>中所示。这还包括Spring Boot Maven插件，以便构建生成可执行的JAR：</p> 
-</div> 
-<div class="listingblock"> 
- <div class="content"> 
-  <pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">./mvnw clean install
-java -jar greeter/target/greeter-0.0.1-SNAPSHOT.jar</code></pre> 
- </div> 
-</div> 
-<div class="paragraph"> 
- <p>然后可以使用curl调用它：</p> 
-</div> 
-<div class="listingblock"> 
- <div class="content"> 
-  <pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">$ curl -H "Content-Type: text/plain" :8080/greeter -d World
-Hello World</code></pre> 
- </div> 
-</div> 
-<div class="paragraph"> 
- <p>同样，要将功能部署为流处理器（stream-processor），只需要添加“spring-cloud-function-stream”依赖性，而这种依赖性依赖于Spring Cloud Stream。正如Spring Cloud Stream提供了<a href="https://docs.spring.io/spring-cloud-stream/docs/current/reference/htmlsingle/#_binders" class="external" target="_blank" rel="noopener">Binder抽象</a>，无需定义通道适配器。Spring Cloud Function无需声明Service Cloudators，Transformers等组件，甚至是Spring Cloud Stream委派的使用了<code>@StreamListener</code>注解的方法。“spring-cloud-function-stream”JAR本身提供了所有这些功能。这是另一个将反转控制提升到另一个层次的案例。</p> 
-</div> 
-<div class="paragraph"> 
- <p>在本博客系列的第2部分中，我们将提供在下一版Spring Cloud Data Flow中如何使用Suppliers，Functions和Consumers的示例。基本思想是，无论何时需要提供一些自定义逻辑，您都可以实现简单的函数。这是一个可选择模型的完美例子，你不仅不需要提供样板，而且最好还是让框架处理它。</p> 
-</div> 
-<div class="paragraph"> 
- <p><code>mySupplier | myFunction | myConsumer</code></p> 
-</div> 
-<div class="paragraph"> 
- <p>部署配置文件甚至可以扩展到无服务器（即，函数即服务）提供商，例如AWS Lambda和Apache OpenWhisk（以及Azure函数和Google云函数，一旦它们提供对Java的支持）。在本博客系列的第3部分中，我们将深入了解该主题的更多详细信息，但是现在您可以仔细阅读<a href="https://github.com/spring-cloud/spring-cloud-function/tree/master/spring-cloud-function-adapters/spring-cloud-function-adapter-aws" class="external" target="_blank" rel="noopener">AWS Lambda适配器</a>和<a href="https://github.com/spring-cloud/spring-cloud-function/tree/master/spring-cloud-function-adapters/spring-cloud-function-adapter-openwhisk" class="external" target="_blank" rel="noopener">Apache OpenWhisk适配器</a>的文档。即将发布的博客还将介绍与基于Kubernetes的无服务器框架（如<a href="http://fission.io/" class="external" target="_blank" rel="noopener">Fission</a>）的集成。</p> 
-</div> 
-<div class="paragraph"> 
- <p>除了将业务逻辑和基础架构分离之外，各种部署配置文件JAR和FaaS适配器都可以提高可移植性。开发人员可以完全隔离实现一个函数，包括仅关注输入和输出参数的单元测试。然后，该函数可以与依赖包一起打包，该依赖包允许它在目标环境中运行，从独立的REST应用程序到Spring Cloud Data Flow或FaaS提供商都能支持。</p> 
-</div> 
-<div class="paragraph"> 
- <p>这将我们带到这个介绍性博客的最后一点。“Serverless”一词产生了很多激烈争论，几乎总是会有解释：“当然还有服务器，但你不必考虑它们。”因此，虽然我们将拒绝引入“无框架”，相同的概念确实可以应用于框架。在上面的Spring Cloud Data Flow示例中，函数开发人员不需要考虑框架，甚至不需要生成在其依赖项中具有任何框架代码的工件。同样的想法适用于FaaS适配器。我们基本上把控制反转推到了能够将好莱坞原则转变为：“不依赖于我们，我们将依靠你”的程度。这在好莱坞可能不会很好，但对于开发人员而言，这意味着您只需编写一个函数，将其打包到JAR中，并将其注册以用于各种端点或适配器。一如既往，Spring遵循Alan Kay强力主张的原则：“简单的事情应该很简单，复杂的事情应该是可能的。”在即将发布的博客文章中，我们将深入探讨Spring Cloud Function带来的一些更复杂的特性，但我们永远不会忘记保持事情简单。</p> 
-</div> 
-<div class="admonitionblock note"> 
- <table> 
-  <tbody>
-   <tr> 
-    <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-    <td class="content"> 
-     <div class="paragraph"> 
-      <p>原文：<a href="https://spring.io/blog/2017/07/05/introducing-spring-cloud-function" class="external" target="_blank" rel="noopener">https://spring.io/blog/2017/07/05/introducing-spring-cloud-function</a><br> 翻译：春之雨<br> 说明：版权归原文作者，翻译仅供学习参考，勿做商用。时间仓促，翻译不免出错，欢迎反馈和讨论，感谢阅读。</p> 
-     </div> </td> 
-   </tr> 
-  </tbody>
- </table> 
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>依靠函数类型也可以轻松编写功能，例如：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">twistAndShout = twist.andThen(shout);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>当然，也可以使用lambdas定义函数，例如：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Function&lt;String, String&gt; shout =  s -&gt; s.toUpperCase() + “!”;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>实际上，Spring Cloud Function支持动态地将基于String的lambdas编译为函数实例。这在原型设计或添加一些简单的转换逻辑时尤其有用，因为今天常用的是Spring表达式语言。</p>
+</div>
+<div class="paragraph">
+<p>您可能会问为什么Spring需要推广此模型，因为您无论如何都可以轻松创建<code>Function</code>，<code>Consumer</code>和<code>Supplier</code>实例。要知道答案涉及控制反转，这应该不足为奇。多年来，好莱坞原则已经描述了从基本依赖注入到Spring无处不在地使用模板模式的所有内容：“不要打电话给我们，我们会打电话给你”。上面提到的<code>Flux</code>-adapting实际上是控制反转的一个例子，但更重要的一个是业务逻辑与部署配置文件的分离。在这种情况下，业务逻辑指的是函数，而部署配置文件可以是REST应用程序，流处理应用程序或有限任务。Spring Cloud Function为每种类型提供JAR，并且在每种情况下，自动配置的<code>FunctionCatalog</code>用于在<code>ApplicationContext</code>中定位<code>Functions</code>，<code>Consumers</code>和<code>Suppliers</code>。</p>
+</div>
+<div class="paragraph">
+<p>例如，要将上面显示的Greeter函数部署为REST端点，只需要添加“spring-cloud-function-web”依赖关系，如此<a href="https://github.com/markfisher/spring-cloud-function-blog-samples/blob/master/greeter/pom.xml" class="external" target="_blank" rel="noopener">POM</a>中所示。这还包括Spring Boot Maven插件，以便构建生成可执行的JAR：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">./mvnw clean install
+java -jar greeter/target/greeter-0.0.1-SNAPSHOT.jar</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>然后可以使用curl调用它：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">$ curl -H "Content-Type: text/plain" :8080/greeter -d World
+Hello World</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>同样，要将功能部署为流处理器（stream-processor），只需要添加“spring-cloud-function-stream”依赖性，而这种依赖性依赖于Spring Cloud Stream。正如Spring Cloud Stream提供了<a href="https://docs.spring.io/spring-cloud-stream/docs/current/reference/htmlsingle/#_binders" class="external" target="_blank" rel="noopener">Binder抽象</a>，无需定义通道适配器。Spring Cloud Function无需声明Service Cloudators，Transformers等组件，甚至是Spring Cloud Stream委派的使用了<code>@StreamListener</code>注解的方法。“spring-cloud-function-stream”JAR本身提供了所有这些功能。这是另一个将反转控制提升到另一个层次的案例。</p>
+</div>
+<div class="paragraph">
+<p>在本博客系列的第2部分中，我们将提供在下一版Spring Cloud Data Flow中如何使用Suppliers，Functions和Consumers的示例。基本思想是，无论何时需要提供一些自定义逻辑，您都可以实现简单的函数。这是一个可选择模型的完美例子，你不仅不需要提供样板，而且最好还是让框架处理它。</p>
+</div>
+<div class="paragraph">
+<p><code>mySupplier | myFunction | myConsumer</code></p>
+</div>
+<div class="paragraph">
+<p>部署配置文件甚至可以扩展到无服务器（即，函数即服务）提供商，例如AWS Lambda和Apache OpenWhisk（以及Azure函数和Google云函数，一旦它们提供对Java的支持）。在本博客系列的第3部分中，我们将深入了解该主题的更多详细信息，但是现在您可以仔细阅读<a href="https://github.com/spring-cloud/spring-cloud-function/tree/master/spring-cloud-function-adapters/spring-cloud-function-adapter-aws" class="external" target="_blank" rel="noopener">AWS Lambda适配器</a>和<a href="https://github.com/spring-cloud/spring-cloud-function/tree/master/spring-cloud-function-adapters/spring-cloud-function-adapter-openwhisk" class="external" target="_blank" rel="noopener">Apache OpenWhisk适配器</a>的文档。即将发布的博客还将介绍与基于Kubernetes的无服务器框架（如<a href="http://fission.io/" class="external" target="_blank" rel="noopener">Fission</a>）的集成。</p>
+</div>
+<div class="paragraph">
+<p>除了将业务逻辑和基础架构分离之外，各种部署配置文件JAR和FaaS适配器都可以提高可移植性。开发人员可以完全隔离实现一个函数，包括仅关注输入和输出参数的单元测试。然后，该函数可以与依赖包一起打包，该依赖包允许它在目标环境中运行，从独立的REST应用程序到Spring Cloud Data Flow或FaaS提供商都能支持。</p>
+</div>
+<div class="paragraph">
+<p>这将我们带到这个介绍性博客的最后一点。“Serverless”一词产生了很多激烈争论，几乎总是会有解释：“当然还有服务器，但你不必考虑它们。”因此，虽然我们将拒绝引入“无框架”，相同的概念确实可以应用于框架。在上面的Spring Cloud Data Flow示例中，函数开发人员不需要考虑框架，甚至不需要生成在其依赖项中具有任何框架代码的工件。同样的想法适用于FaaS适配器。我们基本上把控制反转推到了能够将好莱坞原则转变为：“不依赖于我们，我们将依靠你”的程度。这在好莱坞可能不会很好，但对于开发人员而言，这意味着您只需编写一个函数，将其打包到JAR中，并将其注册以用于各种端点或适配器。一如既往，Spring遵循Alan Kay强力主张的原则：“简单的事情应该很简单，复杂的事情应该是可能的。”在即将发布的博客文章中，我们将深入探讨Spring Cloud Function带来的一些更复杂的特性，但我们永远不会忘记保持事情简单。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>原文：<a href="https://spring.io/blog/2017/07/05/introducing-spring-cloud-function" class="external" target="_blank" rel="noopener">https://spring.io/blog/2017/07/05/introducing-spring-cloud-function</a><br>
+翻译：春之雨<br>
+说明：版权归原文作者，翻译仅供学习参考，勿做商用。时间仓促，翻译不免出错，欢迎反馈和讨论，感谢阅读。</p>
+</div>
+</td>
+</tr>
+</table>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              
+              <li class="previous"><a  href="../../../blog/2006/08/seven-simple-reasons-to-use-appfuse.html"> ←使用 AppFuse 的七个理由</a></li>
               <li class="next"><a href="../../../blog/2018/05/micronaut-open-sourced.html">Micronaut 正式开源，构建微服务应用新选择！ →</a></li>
               </ul>
             </div>
@@ -306,30 +317,35 @@ Hello World</code></pre>
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

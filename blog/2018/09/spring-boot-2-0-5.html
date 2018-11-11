@@ -158,76 +158,164 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="paragraph"> 
- <p>Spring Boot 2.0.5 发布，共解决了<a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.0.5.RELEASE" class="external" target="_blank" rel="noopener"><code>89</code>项问题修复、改进和依赖项更新</a>，建议使用<code>2.0.x</code>的用户升级到此版本。</p> 
-</div> 
-<div class="paragraph"> 
- <p>其中部分新特性：</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p>增加条件到<code>WebServicesAutoConfiguration</code>以支持lists</p> </li> 
-  <li> <p>WebFlux和WebMvc增加支持<code>MeterFilter#maximumAllowableTags</code></p> </li> 
-  <li> <p>WebFlux自动配置<code>HiddenHttpMethodFilter</code></p> </li> 
-  <li> <p>允许actuator端点被<code>mvcMatchers</code>使用</p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>其中修复已知BUG：</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p><code>EmbeddedWebServerFactoryCustomizerAutoConfiguration</code> 缺少注解<code>@ConditionalOnWebApplication</code></p> </li> 
-  <li> <p><code>ReactiveSecurityAutoConfiguration</code>缺少条件注解</p> </li> 
-  <li> <p>Spring Integration的JDBC自动配置没有使用自动配置的<code>DataSource</code></p> </li> 
-  <li> <p><code>EndpointServerWebExchangeMatcher.matches</code>出现NPE</p> </li> 
-  <li> <p><code>OriginTrackedFieldError.toString()</code>被调用时会出现堆栈溢出</p> </li> 
-  <li> <p><code>FlywayEndpoint</code>的基线schema出现NPE</p> </li> 
-  <li> <p>依赖配置中缺少<code>micrometer-registry-cloudwatch</code></p> </li> 
-  <li> <p>当使用starter-web，starter-webflux和<code>spring.main.web-application-type=reactive</code>时会出现<code>NoSuchBeanDefinitionException</code></p> </li> 
-  <li> <p><code>HttpExchangeTracer#postProcessRequestHeaders</code>从不被调用</p> </li> 
-  <li> <p>当Couchbase消失时，CouchbaseHealthIndicator可以挂起</p> </li> 
-  <li> <p>Spring Boot 2.x中<code>localProperties</code>优先级高于<code>environmentProperties</code></p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>依赖升级到最新版本：</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p>Spring Framework <code>5.0.9</code></p> </li> 
-  <li> <p>Spring Data <code>Kay SR10</code></p> </li> 
-  <li> <p>Spring Session <code>Apple-SR5</code></p> </li> 
-  <li> <p>Spring Security <code>5.0.8.RELEASE</code></p> </li> 
-  <li> <p>Spring Integration <code>5.0.8</code></p> </li> 
-  <li> <p>Spring Kafka <code>2.1.10.RELEASE</code></p> </li> 
-  <li> <p>Spring Amqp 2.0.6.RELEASE</p> </li> 
-  <li> <p>Spring Kafka 2.1.9.RELEASE</p> </li> 
-  <li> <p>Spring Cloud Connectors 2.0.3.RELEASE</p> </li> 
-  <li> <p>Activemq 5.15.6</p> </li> 
-  <li> <p>Derby 10.14.2.0</p> </li> 
-  <li> <p>Elasticsearch 5.6.11</p> </li> 
-  <li> <p>Hibernate Validator 6.0.12.Final</p> </li> 
-  <li> <p>Httpasyncclient 4.1.4</p> </li> 
-  <li> <p>Infinispan 9.3.3.Final</p> </li> 
-  <li> <p>Janino 3.0.9</p> </li> 
-  <li> <p>Jaybird 3.0.5</p> </li> 
-  <li> <p>Javax Mail 1.6.2</p> </li> 
-  <li> <p>Jest 5.3.4</p> </li> 
-  <li> <p>Jetty El <code>8.5.33</code></p> </li> 
-  <li> <p>Johnzon Jsonb 1.1.9</p> </li> 
-  <li> <p>Junit Jupiter 5.3.1</p> </li> 
-  <li> <p>Lettuce 5.0.5.RELEASE</p> </li> 
-  <li> <p>Neo4j Ogm <code>3.1.2</code></p> </li> 
-  <li> <p>Netty <code>4.1.29.Final</code></p> </li> 
-  <li> <p>Postgresql 42.2.5</p> </li> 
-  <li> <p>Reactor Bom <code>Bismuth-SR11</code></p> </li> 
-  <li> <p>Rxjava2 2.1.17</p> </li> 
-  <li> <p>Unboundid Ldapsdk 4.0.7</p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>上一个版本的发布记录在<a href="https://springdev.io/blog/2018/07/spring_boot_2_0_4_available_now.html" class="external" target="_blank" rel="noopener">这里</a>查看。</p> 
+              <div class="blog--post"><div class="paragraph">
+<p>Spring Boot 2.0.5 发布，共解决了<a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.0.5.RELEASE" class="external" target="_blank" rel="noopener"><code>89</code>项问题修复、改进和依赖项更新</a>，建议使用<code>2.0.x</code>的用户升级到此版本。</p>
+</div>
+<div class="paragraph">
+<p>其中部分新特性：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>增加条件到<code>WebServicesAutoConfiguration</code>以支持lists</p>
+</li>
+<li>
+<p>WebFlux和WebMvc增加支持<code>MeterFilter#maximumAllowableTags</code></p>
+</li>
+<li>
+<p>WebFlux自动配置<code>HiddenHttpMethodFilter</code></p>
+</li>
+<li>
+<p>允许actuator端点被<code>mvcMatchers</code>使用</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>其中修复已知BUG：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>EmbeddedWebServerFactoryCustomizerAutoConfiguration</code> 缺少注解<code>@ConditionalOnWebApplication</code></p>
+</li>
+<li>
+<p><code>ReactiveSecurityAutoConfiguration</code>缺少条件注解</p>
+</li>
+<li>
+<p>Spring Integration的JDBC自动配置没有使用自动配置的<code>DataSource</code></p>
+</li>
+<li>
+<p><code>EndpointServerWebExchangeMatcher.matches</code>出现NPE</p>
+</li>
+<li>
+<p><code>OriginTrackedFieldError.toString()</code>被调用时会出现堆栈溢出</p>
+</li>
+<li>
+<p><code>FlywayEndpoint</code>的基线schema出现NPE</p>
+</li>
+<li>
+<p>依赖配置中缺少<code>micrometer-registry-cloudwatch</code></p>
+</li>
+<li>
+<p>当使用starter-web，starter-webflux和<code>spring.main.web-application-type=reactive</code>时会出现<code>NoSuchBeanDefinitionException</code></p>
+</li>
+<li>
+<p><code>HttpExchangeTracer#postProcessRequestHeaders</code>从不被调用</p>
+</li>
+<li>
+<p>当Couchbase消失时，CouchbaseHealthIndicator可以挂起</p>
+</li>
+<li>
+<p>Spring Boot 2.x中<code>localProperties</code>优先级高于<code>environmentProperties</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>依赖升级到最新版本：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Spring Framework <code>5.0.9</code></p>
+</li>
+<li>
+<p>Spring Data <code>Kay SR10</code></p>
+</li>
+<li>
+<p>Spring Session <code>Apple-SR5</code></p>
+</li>
+<li>
+<p>Spring Security <code>5.0.8.RELEASE</code></p>
+</li>
+<li>
+<p>Spring Integration <code>5.0.8</code></p>
+</li>
+<li>
+<p>Spring Kafka <code>2.1.10.RELEASE</code></p>
+</li>
+<li>
+<p>Spring Amqp 2.0.6.RELEASE</p>
+</li>
+<li>
+<p>Spring Kafka 2.1.9.RELEASE</p>
+</li>
+<li>
+<p>Spring Cloud Connectors 2.0.3.RELEASE</p>
+</li>
+<li>
+<p>Activemq 5.15.6</p>
+</li>
+<li>
+<p>Derby 10.14.2.0</p>
+</li>
+<li>
+<p>Elasticsearch 5.6.11</p>
+</li>
+<li>
+<p>Hibernate Validator 6.0.12.Final</p>
+</li>
+<li>
+<p>Httpasyncclient 4.1.4</p>
+</li>
+<li>
+<p>Infinispan 9.3.3.Final</p>
+</li>
+<li>
+<p>Janino 3.0.9</p>
+</li>
+<li>
+<p>Jaybird 3.0.5</p>
+</li>
+<li>
+<p>Javax Mail 1.6.2</p>
+</li>
+<li>
+<p>Jest 5.3.4</p>
+</li>
+<li>
+<p>Jetty El <code>8.5.33</code></p>
+</li>
+<li>
+<p>Johnzon Jsonb 1.1.9</p>
+</li>
+<li>
+<p>Junit Jupiter 5.3.1</p>
+</li>
+<li>
+<p>Lettuce 5.0.5.RELEASE</p>
+</li>
+<li>
+<p>Neo4j Ogm <code>3.1.2</code></p>
+</li>
+<li>
+<p>Netty <code>4.1.29.Final</code></p>
+</li>
+<li>
+<p>Postgresql 42.2.5</p>
+</li>
+<li>
+<p>Reactor Bom <code>Bismuth-SR11</code></p>
+</li>
+<li>
+<p>Rxjava2 2.1.17</p>
+</li>
+<li>
+<p>Unboundid Ldapsdk 4.0.7</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>上一个版本的发布记录在<a href="https://springdev.io/blog/2018/07/spring_boot_2_0_4_available_now.html" class="external" target="_blank" rel="noopener">这里</a>查看。</p>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/09/spring-boot-1-5-16.html"> ←Spring Boot 1.5.16 发布</a></li>
@@ -264,30 +352,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

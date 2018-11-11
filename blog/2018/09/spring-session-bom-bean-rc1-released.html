@@ -158,71 +158,87 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Session使得支持会话集群变得轻而易举，同时不依赖于特定应用程序容器的解决方案。它提供了针对<code>HttpSession</code>、<code>WebSocket</code>、<code>WebSession</code>的无缝集成。目前已经集成并实现了JDBC、Hazelcast、Redis、MogoDB、Geode和GemFire等多种存储方案。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Session BOM <code>Bean-RC1</code>现已发布，此版本基于Spring Session <code>2.1.0.RC1</code>，共解决了<a href="https://github.com/spring-projects/spring-session/milestone/42?closed=1">13个问题</a>。以下内容是本次发布的亮点。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="支持java_11">支持Java 11</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Session现在支持Java 11，而所需的最低版本保留在Java 8。我们的CI配置已得到增强，因此现在可以针对Java 8、10和11持续验证项目。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="依赖升级">依赖升级</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Session <code>2.1.0.RC1</code> 基于以下几个关键的第三方依赖之上构建：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Spring Framework <code>5.1.0.RELEASE</code></p> </li> 
-    <li> <p>Spring Data <code>Lovelace-RELEASE</code></p> </li> 
-    <li> <p>Spring Security <code>5.1.0.RELEASE</code></p> </li> 
-    <li> <p>Project Reactor <code>Californium-RELEASE</code></p> </li> 
-    <li> <p>Hazelcast <code>3.10.5</code></p> </li> 
-   </ul> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="其他">其他</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>该版本还提供了一些错误修复和性能改进，最值得注意的是：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>通过延迟反序列化属性来改进Jdbc <code>OperationsSessionRepository</code>性能</p> </li> 
-    <li> <p>利用Hazelcast的<code>Offloadable</code>来改进了<code>HazelcastSessionRepository#save</code>性能</p> </li> 
-    <li> <p>修复了在同一Redis实例中使用多个数据库时<code>RedisOperationsSessionRepository</code>处理<code>HttpSessionEvent</code>不正确的问题</p> </li> 
-   </ul> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="如何使用">如何使用</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>随着第一个候选版本的发布，Spring Session <code>Bean</code>现在被认为是功能完备的，我们希望社区在发布稳定的<code>Bean-RELEASE</code>之前向我们提供反馈。这预计在10月中旬，也就是Spring Boot <code>2.1.0.RC1</code>发布前不久。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>您可以通过配置依赖关系管理来试用一下Spring Session <code>Bean-RC1</code>，如下所示：</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>使用Maven：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependencyManagement&gt;
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Session使得支持会话集群变得轻而易举，同时不依赖于特定应用程序容器的解决方案。它提供了针对<code>HttpSession</code>、<code>WebSocket</code>、<code>WebSession</code>的无缝集成。目前已经集成并实现了JDBC、Hazelcast、Redis、MogoDB、Geode和GemFire等多种存储方案。</p>
+</div>
+<div class="paragraph">
+<p>Spring Session BOM <code>Bean-RC1</code>现已发布，此版本基于Spring Session <code>2.1.0.RC1</code>，共解决了<a href="https://github.com/spring-projects/spring-session/milestone/42?closed=1">13个问题</a>。以下内容是本次发布的亮点。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="支持java_11">支持Java 11</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Session现在支持Java 11，而所需的最低版本保留在Java 8。我们的CI配置已得到增强，因此现在可以针对Java 8、10和11持续验证项目。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="依赖升级">依赖升级</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Session <code>2.1.0.RC1</code> 基于以下几个关键的第三方依赖之上构建：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Spring Framework <code>5.1.0.RELEASE</code></p>
+</li>
+<li>
+<p>Spring Data <code>Lovelace-RELEASE</code></p>
+</li>
+<li>
+<p>Spring Security <code>5.1.0.RELEASE</code></p>
+</li>
+<li>
+<p>Project Reactor <code>Californium-RELEASE</code></p>
+</li>
+<li>
+<p>Hazelcast <code>3.10.5</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="其他">其他</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>该版本还提供了一些错误修复和性能改进，最值得注意的是：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>通过延迟反序列化属性来改进Jdbc <code>OperationsSessionRepository</code>性能</p>
+</li>
+<li>
+<p>利用Hazelcast的<code>Offloadable</code>来改进了<code>HazelcastSessionRepository#save</code>性能</p>
+</li>
+<li>
+<p>修复了在同一Redis实例中使用多个数据库时<code>RedisOperationsSessionRepository</code>处理<code>HttpSessionEvent</code>不正确的问题</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="如何使用">如何使用</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>随着第一个候选版本的发布，Spring Session <code>Bean</code>现在被认为是功能完备的，我们希望社区在发布稳定的<code>Bean-RELEASE</code>之前向我们提供反馈。这预计在10月中旬，也就是Spring Boot <code>2.1.0.RC1</code>发布前不久。</p>
+</div>
+<div class="paragraph">
+<p>您可以通过配置依赖关系管理来试用一下Spring Session <code>Bean-RC1</code>，如下所示：</p>
+</div>
+<div class="paragraph">
+<p>使用Maven：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependencyManagement&gt;
     &lt;dependencies&gt;
         &lt;dependency&gt;
             &lt;groupId&gt;org.springframework.session&lt;/groupId&gt;
@@ -232,15 +248,15 @@
             &lt;scope&gt;import&lt;/scope&gt;
         &lt;/dependency&gt;
     &lt;/dependencies&gt;
-&lt;/dependencyManagement&gt;</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>使用Gradle：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">plugins {
+&lt;/dependencyManagement&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>使用Gradle：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">plugins {
     id 'io.spring.dependency-management' version '1.0.6.RELEASE'
 }
 
@@ -248,47 +264,50 @@ dependencyManagement {
     imports {
         mavenBom 'org.springframework.session:spring-session-bom:Bean-RC1'
     }
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Boot尝鲜者在即将推出的<code>2.1.0.M4</code>中可以使用Spring Session <code>Bean-RC1</code>，而Spring Boot <code>2.0.x</code>用户可以简单地更新<code>spring-session-bom.version</code>属性，如下所示：</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>使用Maven：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;properties&gt;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Spring Boot尝鲜者在即将推出的<code>2.1.0.M4</code>中可以使用Spring Session <code>Bean-RC1</code>，而Spring Boot <code>2.0.x</code>用户可以简单地更新<code>spring-session-bom.version</code>属性，如下所示：</p>
+</div>
+<div class="paragraph">
+<p>使用Maven：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;properties&gt;
     &lt;sspring-session-bom.version&gt;Bean-RC1&lt;/spring-session-bom.version&gt;
-&lt;/properties&gt;</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>使用Gradle：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">ext['spring-session-bom.version'] = 'Bean-RC1'</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p><a href="https://projects.spring.io/spring-session/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://docs.spring.io/spring-session/docs/2.1.0.RC1/reference/html5/" class="external" target="_blank" rel="noopener">文档手册</a> | <a href="https://github.com/spring-projects/spring-session" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://github.com/spring-projects/spring-session/issues" class="external" target="_blank" rel="noopener">问题跟踪</a> | <a href="https://stackoverflow.com/questions/tagged/spring-session" class="external" target="_blank" rel="noopener">Stack Overflow</a> | <a href="https://gitter.im/spring-projects/spring-session" class="external" target="_blank" rel="noopener">Gitter</a></p> 
-  </div> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody>
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> 
-       <div class="paragraph"> 
-        <p>原文：<a href="https://spring.io/blog/2018/09/24/spring-session-bom-bean-rc1-released" class="external" target="_blank" rel="noopener">https://spring.io/blog/2018/09/24/spring-session-bom-bean-rc1-released</a><br> 编译：春之雨<br> 说明：版权归原文作者，翻译仅供学习参考。欢迎反馈和讨论，感谢阅读。</p> 
-       </div> </td> 
-     </tr> 
-    </tbody>
-   </table> 
-  </div> 
- </div> 
+&lt;/properties&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>使用Gradle：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">ext['spring-session-bom.version'] = 'Bean-RC1'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://projects.spring.io/spring-session/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://docs.spring.io/spring-session/docs/2.1.0.RC1/reference/html5/" class="external" target="_blank" rel="noopener">文档手册</a> | <a href="https://github.com/spring-projects/spring-session" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://github.com/spring-projects/spring-session/issues" class="external" target="_blank" rel="noopener">问题跟踪</a> | <a href="https://stackoverflow.com/questions/tagged/spring-session" class="external" target="_blank" rel="noopener">Stack Overflow</a> | <a href="https://gitter.im/spring-projects/spring-session" class="external" target="_blank" rel="noopener">Gitter</a></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>原文：<a href="https://spring.io/blog/2018/09/24/spring-session-bom-bean-rc1-released" class="external" target="_blank" rel="noopener">https://spring.io/blog/2018/09/24/spring-session-bom-bean-rc1-released</a><br>
+编译：春之雨<br>
+说明：版权归原文作者，翻译仅供学习参考。欢迎反馈和讨论，感谢阅读。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/09/spring-boot-for-apache-geode-pivotal-gemfire-1-0-0-m3-released.html"> ←Spring Boot for Apache Geode和Pivotal GemFire 1.0.0.M3 发布</a></li>
@@ -325,30 +344,35 @@ dependencyManagement {
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

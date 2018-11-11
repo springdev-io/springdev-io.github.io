@@ -158,122 +158,154 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://spring.io/team/awilkinson" class="external" target="_blank" rel="noopener">Andy Wilkinson</a>在博客宣布了<a href="https://spring.io/blog/2018/10/30/spring-boot-2-1-0" class="external" target="_blank" rel="noopener">Spring Boot 2.1.0 发布</a>。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>现在已经可以从<a href="https://search.maven.org/#search|ga|1|g%3A%22org.springframework.boot%22">Maven Central</a>，<a href="https://bintray.com/bintray/jcenter/org.springframework.boot%3Aspring-boot/view">Bintray</a>，和<a href="https://repo.spring.io/release" class="external" target="_blank" rel="noopener">Spring release</a>仓库下载到。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>此版本增加了大量新功能和改进。有关完整<a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.1-Release-Notes#upgrading-from-spring-boot-20">升级说明</a>以及<a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.1-Release-Notes#new-and-noteworthy">新的和值得注意</a>的功能，请参阅<a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.1-Release-Notes">发行说明</a>。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="2_1_中的新功能">2.1 中的新功能</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="第三方库升级">第三方库升级</h3> 
-   <div class="paragraph"> 
-    <p>我们尽可能升级到其他第三方库的最新稳定版本。此版本中的一些值得注意的依赖项升级包括：</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Hibernate 5.3</p> </li> 
-     <li> <p>Micrometer 1.1</p> </li> 
-     <li> <p>Reactor Californium</p> </li> 
-     <li> <p>Spring Data Lovelace</p> </li> 
-     <li> <p>Spring Framework 5.1</p> </li> 
-     <li> <p>Tomcat 9</p> </li> 
-     <li> <p>Undertow 2</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="性能改进">性能改进</h3> 
-   <div class="paragraph"> 
-    <p>作为我们不断努力提高性能的一部分，我们在Spring Boot 2.1中取得了一些重大进展。应用程序现在可以更快地启动并消耗更少的内存。这在具有非常严格的内存限制的环境中尤其有用。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>我们还接受了Spring Framework和Spring Data JPA对Hibernate异步启动的支持。如果您使用Spring Data JPA并设置<code>spring.data.jpa.repositories.bootstrap-mode=deferred</code>，则Hibernate将在单独的线程中启动，而应用程序的其余启动处理将并行进行。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="支持_java_11">支持 Java 11</h3> 
-   <div class="paragraph"> 
-    <p>继Spring Framework 5.1对Java 11的支持之后，Spring Boot 2.1现在也支持Java 11，同时还与Java 8保持兼容。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="支持_datasize">支持 DataSize</h3> 
-   <div class="paragraph"> 
-    <p>如果属性需要以字节或类似方便的单位表示大小，则它可以设置<code>org.springframework.util.unit.DataSize</code>属性。与Spring Boot 2.0中引入的<code>Duration</code>支持类似，数据大小支持允许在<code>application.properties</code>中配置值时指定单位。例如，<code>10MB</code>可用于10兆字节的值。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="actuator_端点">Actuator 端点</h3> 
-   <div class="paragraph"> 
-    <p>Spring Boot 2.1中引入了两个新的Actuator端点：</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><code>/actuator/caches</code>提供有关应用程序缓存管理器的信息</p> </li> 
-     <li> <p><code>/actuator/integrationgraph</code>提供了Spring Integration组件的图形表示</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p>还增强了health端点，以允许对单个组件的健康状况进行查询。例如，对<code>/actuator/health/db</code>的请求仅执行“db”HealthIndicator。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="metrics">Metrics</h3> 
-   <div class="paragraph"> 
-    <p>除了升级到Micrometer 1.1之外，还添加了用于导出到AppOptics、Humio和KariosDB的自动配置。指标范围也得到了改进，包括：</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Hibernate 度量</p> </li> 
-     <li> <p>Spring Framework的WebClient</p> </li> 
-     <li> <p>Kafka 消费度量</p> </li> 
-     <li> <p>Log4j2 度量</p> </li> 
-     <li> <p>Jetty 服务器线程池度量</p> </li> 
-     <li> <p>服务端Jersey HTTP请求度量</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p><a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.1-Release-Notes">发行说明</a>中记录了许多其他变更和改进。您还可以在下一版本中找到我们计划删除的已弃用类和方法的列表。</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="致谢">致谢</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>我们想借此机会再次感谢所有用户和贡献者。我们现在有超过<a href="https://github.com/spring-projects/spring-boot/graphs/contributors">500人</a>提交代码，并且已经有超过<a href="https://github.com/spring-projects/spring-boot/commits/master">19000个提交</a>到该项目。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>如果您有兴趣帮忙，请查看问题库中的<a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution">“ideal for contribution”标签</a>。如果您有一般性问题，请在stackoverflow.com上使用<a href="https://stackoverflow.com/tags/spring-boot"><code>spring-boot</code>标签</a>或在<a href="https://gitter.im/spring-projects/spring-boot">Gitter</a>上与社区其他人聊天。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><a href="https://projects.spring.io/spring-boot/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-projects/spring-boot" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://github.com/spring-projects/spring-boot/issues" class="external" target="_blank" rel="noopener">Issues</a>, <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle" class="external" target="_blank" rel="noopener">使用文档</a></p> 
-  </div> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody>
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> 
-       <div class="paragraph"> 
-        <p>原文：https://spring.io/blog/2018/10/30/spring-boot-2-1-0<br> 作者：Andy Wilkinson</p> 
-       </div> </td> 
-     </tr> 
-    </tbody>
-   </table> 
-  </div> 
- </div> 
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://spring.io/team/awilkinson" class="external" target="_blank" rel="noopener">Andy Wilkinson</a>在博客宣布了<a href="https://spring.io/blog/2018/10/30/spring-boot-2-1-0" class="external" target="_blank" rel="noopener">Spring Boot 2.1.0 发布</a>。</p>
+</div>
+<div class="paragraph">
+<p>现在已经可以从<a href="https://search.maven.org/#search|ga|1|g%3A%22org.springframework.boot%22">Maven Central</a>，<a href="https://bintray.com/bintray/jcenter/org.springframework.boot%3Aspring-boot/view">Bintray</a>，和<a href="https://repo.spring.io/release" class="external" target="_blank" rel="noopener">Spring release</a>仓库下载到。</p>
+</div>
+<div class="paragraph">
+<p>此版本增加了大量新功能和改进。有关完整<a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.1-Release-Notes#upgrading-from-spring-boot-20">升级说明</a>以及<a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.1-Release-Notes#new-and-noteworthy">新的和值得注意</a>的功能，请参阅<a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.1-Release-Notes">发行说明</a>。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="2_1_中的新功能">2.1 中的新功能</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="第三方库升级">第三方库升级</h3>
+<div class="paragraph">
+<p>我们尽可能升级到其他第三方库的最新稳定版本。此版本中的一些值得注意的依赖项升级包括：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Hibernate 5.3</p>
+</li>
+<li>
+<p>Micrometer 1.1</p>
+</li>
+<li>
+<p>Reactor Californium</p>
+</li>
+<li>
+<p>Spring Data Lovelace</p>
+</li>
+<li>
+<p>Spring Framework 5.1</p>
+</li>
+<li>
+<p>Tomcat 9</p>
+</li>
+<li>
+<p>Undertow 2</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="性能改进">性能改进</h3>
+<div class="paragraph">
+<p>作为我们不断努力提高性能的一部分，我们在Spring Boot 2.1中取得了一些重大进展。应用程序现在可以更快地启动并消耗更少的内存。这在具有非常严格的内存限制的环境中尤其有用。</p>
+</div>
+<div class="paragraph">
+<p>我们还接受了Spring Framework和Spring Data JPA对Hibernate异步启动的支持。如果您使用Spring Data JPA并设置<code>spring.data.jpa.repositories.bootstrap-mode=deferred</code>，则Hibernate将在单独的线程中启动，而应用程序的其余启动处理将并行进行。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="支持_java_11">支持 Java 11</h3>
+<div class="paragraph">
+<p>继Spring Framework 5.1对Java 11的支持之后，Spring Boot 2.1现在也支持Java 11，同时还与Java 8保持兼容。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="支持_datasize">支持 DataSize</h3>
+<div class="paragraph">
+<p>如果属性需要以字节或类似方便的单位表示大小，则它可以设置<code>org.springframework.util.unit.DataSize</code>属性。与Spring Boot 2.0中引入的<code>Duration</code>支持类似，数据大小支持允许在<code>application.properties</code>中配置值时指定单位。例如，<code>10MB</code>可用于10兆字节的值。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator_端点">Actuator 端点</h3>
+<div class="paragraph">
+<p>Spring Boot 2.1中引入了两个新的Actuator端点：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>/actuator/caches</code>提供有关应用程序缓存管理器的信息</p>
+</li>
+<li>
+<p><code>/actuator/integrationgraph</code>提供了Spring Integration组件的图形表示</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>还增强了health端点，以允许对单个组件的健康状况进行查询。例如，对<code>/actuator/health/db</code>的请求仅执行“db”HealthIndicator。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="metrics">Metrics</h3>
+<div class="paragraph">
+<p>除了升级到Micrometer 1.1之外，还添加了用于导出到AppOptics、Humio和KariosDB的自动配置。指标范围也得到了改进，包括：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Hibernate 度量</p>
+</li>
+<li>
+<p>Spring Framework的WebClient</p>
+</li>
+<li>
+<p>Kafka 消费度量</p>
+</li>
+<li>
+<p>Log4j2 度量</p>
+</li>
+<li>
+<p>Jetty 服务器线程池度量</p>
+</li>
+<li>
+<p>服务端Jersey HTTP请求度量</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.1-Release-Notes">发行说明</a>中记录了许多其他变更和改进。您还可以在下一版本中找到我们计划删除的已弃用类和方法的列表。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="致谢">致谢</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>我们想借此机会再次感谢所有用户和贡献者。我们现在有超过<a href="https://github.com/spring-projects/spring-boot/graphs/contributors">500人</a>提交代码，并且已经有超过<a href="https://github.com/spring-projects/spring-boot/commits/master">19000个提交</a>到该项目。</p>
+</div>
+<div class="paragraph">
+<p>如果您有兴趣帮忙，请查看问题库中的<a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution">“ideal for contribution”标签</a>。如果您有一般性问题，请在stackoverflow.com上使用<a href="https://stackoverflow.com/tags/spring-boot"><code>spring-boot</code>标签</a>或在<a href="https://gitter.im/spring-projects/spring-boot">Gitter</a>上与社区其他人聊天。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://projects.spring.io/spring-boot/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-projects/spring-boot" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://github.com/spring-projects/spring-boot/issues" class="external" target="_blank" rel="noopener">Issues</a>, <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle" class="external" target="_blank" rel="noopener">使用文档</a></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>原文：https://spring.io/blog/2018/10/30/spring-boot-2-1-0<br>
+作者：Andy Wilkinson</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/10/spring-batch-4-1-goes-ga.html"> ←Spring Batch 4.1 正式发布</a></li>
@@ -310,30 +342,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

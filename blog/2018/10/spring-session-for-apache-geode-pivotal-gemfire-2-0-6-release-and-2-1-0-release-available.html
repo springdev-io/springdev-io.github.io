@@ -158,34 +158,32 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Data 团队的<a href="https://github.com/jxblum" class="external" target="_blank" rel="noopener">John Blum</a>在<a href="https://spring.io/blog/2018/10/26/spring-session-for-apache-geode-pivotal-gemfire-2-0-6-release-and-2-1-0-release-available" class="external" target="_blank" rel="noopener">开发者博客上</a>宣布了<strong>Spring Session for Apache Geode/Pivotal GemFire</strong>（SSDG）<code>2.0.6.RELEASE</code>和<code>2.1.0.RELEASE</code>同时发布！</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>SSDG <code>2.0.6.RELEASE</code> 基于 Spring Framework <code>5.0.10.RELEASE</code>、Spring Data <code>Kay-SR11</code> 和 Spring Session core <code>2.0.7.RELEASE</code>等核心依赖升级。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>SSDG <code>2.1.0.RELEASE</code> 基于 Spring Framework <code>5.1.1.RELEASE</code>、Spring Data <code>Lovelace-SR1</code> 和 Spring Session <code>2.1.0.RELEASE</code>，另外还包括对自定义会话过期策略和规则的支持。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="自定义会话过期配置">自定义会话过期配置</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Session for Apache Geode &amp; Pivotal GemFire现在提供了一个新的Strategy接口：<code>SessionExpirationPolicy</code>，允许用户根据会话到期的方式和时间自定义规则。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>接口大致定义为：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    SessionExpirationPolicy
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">import java.time.Duration;
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Data 团队的<a href="https://github.com/jxblum" class="external" target="_blank" rel="noopener">John Blum</a>在<a href="https://spring.io/blog/2018/10/26/spring-session-for-apache-geode-pivotal-gemfire-2-0-6-release-and-2-1-0-release-available" class="external" target="_blank" rel="noopener">开发者博客上</a>宣布了<strong>Spring Session for Apache Geode/Pivotal GemFire</strong>（SSDG）<code>2.0.6.RELEASE</code>和<code>2.1.0.RELEASE</code>同时发布！</p>
+</div>
+<div class="paragraph">
+<p>SSDG <code>2.0.6.RELEASE</code> 基于 Spring Framework <code>5.0.10.RELEASE</code>、Spring Data <code>Kay-SR11</code> 和 Spring Session core <code>2.0.7.RELEASE</code>等核心依赖升级。</p>
+</div>
+<div class="paragraph">
+<p>SSDG <code>2.1.0.RELEASE</code> 基于 Spring Framework <code>5.1.1.RELEASE</code>、Spring Data <code>Lovelace-SR1</code> 和 Spring Session <code>2.1.0.RELEASE</code>，另外还包括对自定义会话过期策略和规则的支持。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="自定义会话过期配置">自定义会话过期配置</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Session for Apache Geode &amp; Pivotal GemFire现在提供了一个新的Strategy接口：<code>SessionExpirationPolicy</code>，允许用户根据会话到期的方式和时间自定义规则。</p>
+</div>
+<div class="paragraph">
+<p>接口大致定义为：</p>
+</div>
+<div class="listingblock">
+<div class="title">SessionExpirationPolicy</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">import java.time.Duration;
 
 @FunctionalInterface
 interface SessionExpirationPolicy {
@@ -195,34 +193,35 @@ interface SessionExpirationPolicy {
   default ExpirationAction getExpirationAction() {
     return ExpirationAction.INVALIDATE;
   }
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>用户只需要实现<code>determineExpirationTimeout</code>方法，该方法返回一个<code>Optional java.time.Duration</code>，表示Session到期之前的时间长度。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><code>Duration</code>是可选的，因此，在某些情况下，如果您的自定义策略无法确定特定会话的到期超时时间，则返回<code>Optional.empty()</code>将表示使用Apache Geode或Pivotal GemFire的默认为区域管理应用程序会话状态配置的空闲超时时间策略。默认空闲超时时间为30分钟，您可以通过设置<a href="https://docs.spring.io/autorepo/docs/spring-session-data-geode-build/2.1.0.RELEASE/api/org/springframework/session/data/gemfire/config/annotation/web/http/EnableGemFireHttpSession.html">@EnableGemFireHttpSession</a>注解的<a href="https://docs.spring.io/autorepo/docs/spring-session-data-geode-build/2.1.0.RELEASE/api/org/springframework/session/data/gemfire/config/annotation/web/http/EnableGemFireHttpSession.html#maxInactiveIntervalInSeconds--">maxInactiveIntervalInSeconds</a>属性来更改。</p> 
-  </div> 
-  <div class="admonitionblock tip"> 
-   <table> 
-    <tbody>
-     <tr> 
-      <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-      <td class="content"> 
-       <div class="paragraph"> 
-        <p>也可以通过在Spring Boot的<code>application.properties</code>中设置<code>spring.session.data.gemfire.session.expiration.max-inactive-interval-seconds</code>。或者，在Spring容器中声明一个类型为<code>SpringSessionGemFireConfigurer</code>的Bean并且重载<code>getMaxInactiveIntervalInSeconds()</code>方法来实现。</p> 
-       </div> </td> 
-     </tr> 
-    </tbody>
-   </table> 
-  </div> 
-  <div class="paragraph"> 
-   <p>然后，您只需将自定义<code>SessionExpirationPolicy</code>实例声明为Spring容器中的bean，然后通过设置<code>@EnableGemFireHttpSession</code>注解的<code>sessionExpirationPolicyBeanName</code>属性来确保Spring Session for Apache Geode或Pivotal GemFire了解它，如下所示：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@SpringBootApplication
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>用户只需要实现<code>determineExpirationTimeout</code>方法，该方法返回一个<code>Optional java.time.Duration</code>，表示Session到期之前的时间长度。</p>
+</div>
+<div class="paragraph">
+<p><code>Duration</code>是可选的，因此，在某些情况下，如果您的自定义策略无法确定特定会话的到期超时时间，则返回<code>Optional.empty()</code>将表示使用Apache Geode或Pivotal GemFire的默认为区域管理应用程序会话状态配置的空闲超时时间策略。默认空闲超时时间为30分钟，您可以通过设置<a href="https://docs.spring.io/autorepo/docs/spring-session-data-geode-build/2.1.0.RELEASE/api/org/springframework/session/data/gemfire/config/annotation/web/http/EnableGemFireHttpSession.html">@EnableGemFireHttpSession</a>注解的<a href="https://docs.spring.io/autorepo/docs/spring-session-data-geode-build/2.1.0.RELEASE/api/org/springframework/session/data/gemfire/config/annotation/web/http/EnableGemFireHttpSession.html#maxInactiveIntervalInSeconds--">maxInactiveIntervalInSeconds</a>属性来更改。</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>也可以通过在Spring Boot的<code>application.properties</code>中设置<code>spring.session.data.gemfire.session.expiration.max-inactive-interval-seconds</code>。或者，在Spring容器中声明一个类型为<code>SpringSessionGemFireConfigurer</code>的Bean并且重载<code>getMaxInactiveIntervalInSeconds()</code>方法来实现。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>然后，您只需将自定义<code>SessionExpirationPolicy</code>实例声明为Spring容器中的bean，然后通过设置<code>@EnableGemFireHttpSession</code>注解的<code>sessionExpirationPolicyBeanName</code>属性来确保Spring Session for Apache Geode或Pivotal GemFire了解它，如下所示：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@SpringBootApplication
 @EnableGemFireHttpSession(
   sessionExpirationPolicyBeanName = "customExpirationPolicy"
 )
@@ -234,51 +233,52 @@ class MySpringSessionApplication {
   }
 
   ...
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>因为<code>SessionExpirationPolicy</code>实例是一个bean，就像Spring容器中的任何其他托管bean一样，您可以根据需要配置它，注入对其他bean的引用等等。</p> 
-  </div> 
-  <div class="admonitionblock tip"> 
-   <table> 
-    <tbody>
-     <tr> 
-      <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-      <td class="content"> 
-       <div class="paragraph"> 
-        <p>同样，自定义bean<code>SessionExpirationPolicy</code>的名称可以通过在Spring Boot的<code>application.properties</code>中设置<code>spring.session.data.gemfire.session.expiration.bean-name</code>，或者在Spring的容器中声明一个类型<code>SprinSessionGemFireConfigurer</code>的实例，并且重载<code>getSessionExpirationPolicyBeanName()</code>方法来实现。</p> 
-       </div> </td> 
-     </tr> 
-    </tbody>
-   </table> 
-  </div> 
-  <div class="paragraph"> 
-   <p>更多细节可以在<a href="https://docs.spring.io/autorepo/docs/spring-session-data-geode-build/2.1.0.RELEASE/reference/html5/#httpsession-gemfire-expiration">文档</a>中找到。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="固定到期时长_fixed_duration_expiration">固定到期时长（Fixed Duration Expiration）</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>除了允许自定义会话过期策略和规则之外，Spring Session for Apache Geode &amp; Pivotal GemFire还提供了开箱即用的此接口的实现，以支持固定到期超时时间。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>这在当会话尚未闲置时，会话应该在一段固定的持续时间（可能是1小时）之后超时的情况下非常有用。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>这个需求实际上出现在核心Spring Session 问题<a href="https://github.com/spring-projects/spring-session/issues/922">＃922</a> - 在一段时间之后“会话必须超时”。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>虽然Spring Session的store providers都无法使用此功能，但可以使用Apache Geode或Pivotal GemFire。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>通过以下简单方法来启用：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">import org.springframework.session.data.gemfire.expiration.support.FixedTimeoutSessionExpirationPolicy;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>因为<code>SessionExpirationPolicy</code>实例是一个bean，就像Spring容器中的任何其他托管bean一样，您可以根据需要配置它，注入对其他bean的引用等等。</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>同样，自定义bean<code>SessionExpirationPolicy</code>的名称可以通过在Spring Boot的<code>application.properties</code>中设置<code>spring.session.data.gemfire.session.expiration.bean-name</code>，或者在Spring的容器中声明一个类型<code>SprinSessionGemFireConfigurer</code>的实例，并且重载<code>getSessionExpirationPolicyBeanName()</code>方法来实现。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>更多细节可以在<a href="https://docs.spring.io/autorepo/docs/spring-session-data-geode-build/2.1.0.RELEASE/reference/html5/#httpsession-gemfire-expiration">文档</a>中找到。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="固定到期时长fixed_duration_expiration">固定到期时长（Fixed Duration Expiration）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>除了允许自定义会话过期策略和规则之外，Spring Session for Apache Geode &amp; Pivotal GemFire还提供了开箱即用的此接口的实现，以支持固定到期超时时间。</p>
+</div>
+<div class="paragraph">
+<p>这在当会话尚未闲置时，会话应该在一段固定的持续时间（可能是1小时）之后超时的情况下非常有用。</p>
+</div>
+<div class="paragraph">
+<p>这个需求实际上出现在核心Spring Session 问题<a href="https://github.com/spring-projects/spring-session/issues/922">＃922</a> - 在一段时间之后“会话必须超时”。</p>
+</div>
+<div class="paragraph">
+<p>虽然Spring Session的store providers都无法使用此功能，但可以使用Apache Geode或Pivotal GemFire。</p>
+</div>
+<div class="paragraph">
+<p>通过以下简单方法来启用：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">import org.springframework.session.data.gemfire.expiration.support.FixedTimeoutSessionExpirationPolicy;
 
 @SpringBootApplication
 @EnableGemFireHttpSession(
@@ -292,43 +292,48 @@ class MySpringSessionApplication {
   }
 
   ...
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>当然，Spring Session for Apache Geode &amp; Pivotal GemFire会谨慎地处理Session的空闲超时。因此，只要空闲超时或固定超时已经过去，会话就会到期，这是首先发生的。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>同样，可以在<a href="https://docs.spring.io/autorepo/docs/spring-session-data-geode-build/2.1.0.RELEASE/reference/html5/#httpsession-gemfire-expiration-fixed-timeout-configuration">文档</a>中找到更多详细信息。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>与往常一样，非常感谢您的反馈。享受编码的乐趣，我们下次再见！</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><a href="https://github.com/spring-projects/spring-session-data-geode" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-projects/spring-session-data-geode/issues" class="external" target="_blank" rel="noopener">问题</a> | <a href="https://stackoverflow.com/questions/tagged/spring-session" class="external" target="_blank" rel="noopener">Stack Overflow</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>相关文章：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><a href="https://springdev.io/blog/2018/08/spring-session-for-apache-geode-pivotal-gemfire-2-0-5-release-and-2-1-0-m1-released.html" class="external" target="_blank" rel="noopener">Spring Session for Apache Geode/Pivotal GemFire 2.0.5.RELEASE 和 2.1.0.M1 同时发布</a></p> </li> 
-   </ul> 
-  </div> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody>
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> 
-       <div class="paragraph"> 
-        <p>原文：https://spring.io/blog/2018/10/26/spring-session-for-apache-geode-pivotal-gemfire-2-0-6-release-and-2-1-0-release-available<br> 翻译：春之雨<br> 说明：版权归原文作者，翻译仅供学习参考。欢迎反馈和讨论，感谢阅读。</p> 
-       </div> </td> 
-     </tr> 
-    </tbody>
-   </table> 
-  </div> 
- </div> 
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>当然，Spring Session for Apache Geode &amp; Pivotal GemFire会谨慎地处理Session的空闲超时。因此，只要空闲超时或固定超时已经过去，会话就会到期，这是首先发生的。</p>
+</div>
+<div class="paragraph">
+<p>同样，可以在<a href="https://docs.spring.io/autorepo/docs/spring-session-data-geode-build/2.1.0.RELEASE/reference/html5/#httpsession-gemfire-expiration-fixed-timeout-configuration">文档</a>中找到更多详细信息。</p>
+</div>
+<div class="paragraph">
+<p>与往常一样，非常感谢您的反馈。享受编码的乐趣，我们下次再见！</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/spring-projects/spring-session-data-geode" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-projects/spring-session-data-geode/issues" class="external" target="_blank" rel="noopener">问题</a> | <a href="https://stackoverflow.com/questions/tagged/spring-session" class="external" target="_blank" rel="noopener">Stack Overflow</a></p>
+</div>
+<div class="paragraph">
+<p>相关文章：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://springdev.io/blog/2018/08/spring-session-for-apache-geode-pivotal-gemfire-2-0-5-release-and-2-1-0-m1-released.html" class="external" target="_blank" rel="noopener">Spring Session for Apache Geode/Pivotal GemFire 2.0.5.RELEASE 和 2.1.0.M1 同时发布</a></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>原文：https://spring.io/blog/2018/10/26/spring-session-for-apache-geode-pivotal-gemfire-2-0-6-release-and-2-1-0-release-available<br>
+翻译：春之雨<br>
+说明：版权归原文作者，翻译仅供学习参考。欢迎反馈和讨论，感谢阅读。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/10/spring-cloud-data-flow-1-7-ga-released.html"> ←Spring Cloud Data Flow 1.7 正式发布</a></li>
@@ -365,30 +370,35 @@ class MySpringSessionApplication {
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

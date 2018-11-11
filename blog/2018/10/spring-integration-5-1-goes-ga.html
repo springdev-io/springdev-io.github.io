@@ -158,35 +158,35 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://spring.io/team/artembilan" class="external" target="_blank" rel="noopener">Artem Bilan</a>在博客上宣布了，<a href="https://spring.io/blog/2018/10/29/spring-integration-5-1-goes-ga" class="external" target="_blank" rel="noopener">Spring Integration 5.1.0 GA 已发布！</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>现在已经可以从Maven Central，JCenter，和<a href="https://repo.spring.io/release" class="external" target="_blank" rel="noopener">Spring release</a>仓库下载到。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">compile "org.springframework.integration:spring-integration-core:5.1.0.RELEASE"</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>首先，我要感谢所有社区成员对框架的持续积极贡献！</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>除了常规依赖项升级，错误修复和内部性能改进之外，这个版本中还引入了一些值得注意的新功能：</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="boundrabbitchanneladvice">BoundRabbitChannelAdvice</h3> 
- <div class="paragraph"> 
-  <p>对于严格排序的消息，可在发布时使用<code>BoundRabbitChannelAdvice</code>作为<code>MessageHandler</code>的建议，以允许在同一个线程绑定的<code>Channel</code>中执行所有下游AMQP操作。通常与分离器（splitter）或其他能够发送多条消息的机制一起使用：</p> 
- </div> 
- <div class="listingblock"> 
-  <div class="content"> 
-   <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Bean
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://spring.io/team/artembilan" class="external" target="_blank" rel="noopener">Artem Bilan</a>在博客上宣布了，<a href="https://spring.io/blog/2018/10/29/spring-integration-5-1-goes-ga" class="external" target="_blank" rel="noopener">Spring Integration 5.1.0 GA 已发布！</a></p>
+</div>
+<div class="paragraph">
+<p>现在已经可以从Maven Central，JCenter，和<a href="https://repo.spring.io/release" class="external" target="_blank" rel="noopener">Spring release</a>仓库下载到。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">compile "org.springframework.integration:spring-integration-core:5.1.0.RELEASE"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>首先，我要感谢所有社区成员对框架的持续积极贡献！</p>
+</div>
+<div class="paragraph">
+<p>除了常规依赖项升级，错误修复和内部性能改进之外，这个版本中还引入了一些值得注意的新功能：</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="boundrabbitchanneladvice">BoundRabbitChannelAdvice</h3>
+<div class="paragraph">
+<p>对于严格排序的消息，可在发布时使用<code>BoundRabbitChannelAdvice</code>作为<code>MessageHandler</code>的建议，以允许在同一个线程绑定的<code>Channel</code>中执行所有下游AMQP操作。通常与分离器（splitter）或其他能够发送多条消息的机制一起使用：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Bean
 public IntegrationFlow flow(RabbitTemplate template) {
     return IntegrationFlows.from(Gateway.class)
             .split(s -&gt; s.delimiters(",")
@@ -194,24 +194,24 @@ public IntegrationFlow flow(RabbitTemplate template) {
             .&lt;String, String&gt;transform(String::toUpperCase)
             .handle(Amqp.outboundAdapter(template).routingKey("rk"))
             .get();
-}</code></pre> 
-  </div> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="响应式轮询_reactive_polling">响应式轮询（Reactive Polling）</h3> 
- <div class="paragraph"> 
-  <p>如果将<code>SourcePollingChannelAdapter</code>或<code>PollingConsumer</code>配置为<code>FluxMessageChannel</code>类型的输出通道<code>outputChannel</code>，则调度程序不会执行轮询任务，而是基于时间<code>trigger.nextExecutionTime()</code>作为后续<code>Mono.delay()</code>被<code>Flux.generate()</code>调用。因此，真正的轮询源按需执行，以满足<code>FluxMessageChannel</code>传播的下游背压（downstream back-pressure）。对于最终配置，<code>PollerMetadata</code>选项保持不变且透明。</p> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="java_dsl_code_fluxtransform_code">Java DSL <code>fluxTransform()</code></h3> 
- <div class="paragraph"> 
-  <p><code>IntegrationFlowDefinition</code>现在提供了新的<code>fluxTransform()</code>运算符，该运算符接受一个<code>Function</code>，用于响应式的转换输入消息的<code>Flux</code>。<code>fluxTransform()</code>的实现完全基于Reactor的<code>Flux.transform()</code>运算符，如果函数不处理已经存在的消息，则将请求标头复制到回复消息。调用内部包含输入和输出<code>FluxMessageChannel</code>实例：</p> 
- </div> 
- <div class="listingblock"> 
-  <div class="content"> 
-   <pre class="prettyprint highlight"><code class="language-java" data-lang="java">IntegrationFlow integrationFlow = f -&gt; f
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="响应式轮询reactive_polling">响应式轮询（Reactive Polling）</h3>
+<div class="paragraph">
+<p>如果将<code>SourcePollingChannelAdapter</code>或<code>PollingConsumer</code>配置为<code>FluxMessageChannel</code>类型的输出通道<code>outputChannel</code>，则调度程序不会执行轮询任务，而是基于时间<code>trigger.nextExecutionTime()</code>作为后续<code>Mono.delay()</code>被<code>Flux.generate()</code>调用。因此，真正的轮询源按需执行，以满足<code>FluxMessageChannel</code>传播的下游背压（downstream back-pressure）。对于最终配置，<code>PollerMetadata</code>选项保持不变且透明。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="java_dsl_fluxtransform">Java DSL <code>fluxTransform()</code></h3>
+<div class="paragraph">
+<p><code>IntegrationFlowDefinition</code>现在提供了新的<code>fluxTransform()</code>运算符，该运算符接受一个<code>Function</code>，用于响应式的转换输入消息的<code>Flux</code>。<code>fluxTransform()</code>的实现完全基于Reactor的<code>Flux.transform()</code>运算符，如果函数不处理已经存在的消息，则将请求标头复制到回复消息。调用内部包含输入和输出<code>FluxMessageChannel</code>实例：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">IntegrationFlow integrationFlow = f -&gt; f
         .split()
         .&lt;String, String&gt;fluxTransform(flux -&gt; flux
                 .map(Message::getPayload)
@@ -223,45 +223,45 @@ public IntegrationFlow flow(RabbitTemplate template) {
                         .map(Message::getPayload)
                         .map(String.class::cast)
                         .collect(Collectors.joining(","))))
-        .channel(resultChannel);</code></pre> 
-  </div> 
- </div> 
- <div class="paragraph"> 
-  <p>此外，Java DSL为方便起见提供了更多运算符：<code>nullChannel()</code>，<code>convert(Class &lt;？&gt;)</code>和<code>logAndReply()</code>。有关更多信息，请参阅他们的Javadocs。</p> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="java_function_改进">Java Function 改进</h3> 
- <div class="paragraph"> 
-  <p><code>java.util.function</code>接口现在充当消息传递端点的一等公民。<code>Function&lt;?, ?&gt;</code> 和 <code>Consumer&lt;?&gt;</code>可以在<code>@ServiceActivator</code>或<code>@Transformer</code>定义中直接使用，例如：</p> 
- </div> 
- <div class="listingblock"> 
-  <div class="content"> 
-   <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Bean
+        .channel(resultChannel);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>此外，Java DSL为方便起见提供了更多运算符：<code>nullChannel()</code>，<code>convert(Class &lt;？&gt;)</code>和<code>logAndReply()</code>。有关更多信息，请参阅他们的Javadocs。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="java_function_改进">Java Function 改进</h3>
+<div class="paragraph">
+<p><code>java.util.function</code>接口现在充当消息传递端点的一等公民。<code>Function&lt;?, ?&gt;</code> 和 <code>Consumer&lt;?&gt;</code>可以在<code>@ServiceActivator</code>或<code>@Transformer</code>定义中直接使用，例如：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Bean
 @Transformer(inputChannel = "functionServiceChannel")
 public Function&lt;String, String&gt; functionAsService() {
     return String::toUpperCase;
-}</code></pre> 
-  </div> 
- </div> 
- <div class="paragraph"> 
-  <p><code>Supplier&lt;?&gt;</code>接口可以简单的与<code>@InboundChannelAdapter</code>注解一起使用，或者作为<code>&lt;int:inbound-channel-adapter&gt;</code>的引用ref：</p> 
- </div> 
- <div class="listingblock"> 
-  <div class="content"> 
-   <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Bean
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>Supplier&lt;?&gt;</code>接口可以简单的与<code>@InboundChannelAdapter</code>注解一起使用，或者作为<code>&lt;int:inbound-channel-adapter&gt;</code>的引用ref：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Bean
 @InboundChannelAdapter(value = "inputChannel", poller = @Poller(fixedDelay = "1000"))
 public Supplier&lt;String&gt; pojoSupplier() {
     return () -&gt; "foo";
-}</code></pre> 
-  </div> 
- </div> 
- <div class="paragraph"> 
-  <p>Kotlin lambdas现在也可以直接用于消息传递端点定义：</p> 
- </div> 
- <div class="listingblock"> 
-  <div class="content"> 
-   <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Bean
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Kotlin lambdas现在也可以直接用于消息传递端点定义：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Bean
 @Transformer(inputChannel = "functionServiceChannel")
 fun kotlinFunction(): (String) -&gt; String {
     return { it.toUpperCase() }
@@ -278,64 +278,66 @@ fun kotlinConsumer(): (Message&lt;Any&gt;) -&gt; Unit {
         poller = [Poller(fixedRate = "10", maxMessagesPerPoll = "1")])
 fun kotlinSupplier(): () -&gt; String {
     return { "baz" }
-}</code></pre> 
-  </div> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="micrometer">Micrometer</h3> 
- <div class="paragraph"> 
-  <p>随着升级到Micrometer 1.1版本，框架现在可以自动从<code>MeterRegistry</code>中删除已注册的meters。当我们开发动态<code>IntegrationFlow</code>并在运行时注册和删除它们时，这变得非常方便。</p> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="jmx_mbeans可删除">JMX MBeans可删除</h3> 
- <div class="paragraph"> 
-  <p>现在MBean可在运行时（例如通过动态<code>IntegrationFlow</code>）被注册，而当它们的bean在运行时被销毁时，也会自动从JMX服务器注册中被删除。</p> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="http动态映射_dynamic_mapping">HTTP动态映射（Dynamic Mapping）</h3> 
- <div class="paragraph"> 
-  <p>HTTP（和WebFlux）入站端点如果是在运行时声明（例如通过动态<code>IntegrationFlow</code>），那么在<code>HandlerMapping</code>中将会自动注册它们的请求映射，同时在它们的bean被销毁时也会自动被删除。</p> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="支持spring_social_twitter">支持Spring Social Twitter</h3> 
- <div class="paragraph"> 
-  <p>由于Spring Social项目即将<a href="https://spring.io/blog/2018/07/03/spring-social-end-of-life-announcement" class="external" target="_blank" rel="noopener">End of Life</a>，我们已经将<code>spring-integration-twitter</code>模块移动到<a href="https://github.com/spring-projects/spring-integration-extensions" class="external" target="_blank" rel="noopener">Spring Integration Extensions</a>下的独立项目，并刚刚发布了一个<code>org.springframework.integration:spring-integration-social-twitter:1.0.0.RELEASE</code>，它也是完全基于Spring Integration <code>5.1</code>。</p> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="小结">小结</h3> 
- <div class="paragraph"> 
-  <p>有关更多变更的内容，请参阅参考手册的<a href="https://docs.spring.io/spring-integration/docs/5.1.0.RELEASE/reference/html/whats-new.html" class="external" target="_blank" rel="noopener">“新增内容”</a>一章。另请参阅<a href="https://github.com/spring-projects/spring-integration/wiki/Spring-Integration-5.0-to-5.1-Migration-Guide" class="external" target="_blank" rel="noopener">迁移指南</a>以了解此版本中的更改以及如何处理它们。</p> 
- </div> 
- <div class="paragraph"> 
-  <p>此版本是Spring Boot <code>2.1 GA</code>的基础。</p> 
- </div> 
- <div class="paragraph"> 
-  <p>接下来，我们准备将master切换到<code>5.2</code>版本，开始开发新功能和有价值的改进！</p> 
- </div> 
- <div class="paragraph"> 
-  <p>欢迎通过合适的沟通渠道提供任何反馈，特性创意、评论、错误报告和问题：</p> 
- </div> 
- <div class="paragraph"> 
-  <p><a href="https://projects.spring.io/spring-integration/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://jira.spring.io/browse/INT" class="external" target="_blank" rel="noopener">JIRA</a> |<a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc" class="external" target="_blank" rel="noopener">参与贡献</a> | <a href="https://stackoverflow.com/questions/tagged/spring-session" class="external" target="_blank" rel="noopener">寻求帮助</a> | <a href="https://gitter.im/spring-projects/spring-integration" class="external" target="_blank" rel="noopener">在线群聊</a></p> 
- </div> 
- <div class="admonitionblock note"> 
-  <table> 
-   <tbody>
-    <tr> 
-     <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-     <td class="content"> 
-      <div class="paragraph"> 
-       <p>原文：https://spring.io/blog/2018/10/29/spring-integration-5-1-goes-ga<br> 作者：Artem Bilan</p> 
-      </div> </td> 
-    </tr> 
-   </tbody>
-  </table> 
- </div> 
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="micrometer">Micrometer</h3>
+<div class="paragraph">
+<p>随着升级到Micrometer 1.1版本，框架现在可以自动从<code>MeterRegistry</code>中删除已注册的meters。当我们开发动态<code>IntegrationFlow</code>并在运行时注册和删除它们时，这变得非常方便。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="jmx_mbeans可删除">JMX MBeans可删除</h3>
+<div class="paragraph">
+<p>现在MBean可在运行时（例如通过动态<code>IntegrationFlow</code>）被注册，而当它们的bean在运行时被销毁时，也会自动从JMX服务器注册中被删除。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="http动态映射dynamic_mapping">HTTP动态映射（Dynamic Mapping）</h3>
+<div class="paragraph">
+<p>HTTP（和WebFlux）入站端点如果是在运行时声明（例如通过动态<code>IntegrationFlow</code>），那么在<code>HandlerMapping</code>中将会自动注册它们的请求映射，同时在它们的bean被销毁时也会自动被删除。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="支持spring_social_twitter">支持Spring Social Twitter</h3>
+<div class="paragraph">
+<p>由于Spring Social项目即将<a href="https://spring.io/blog/2018/07/03/spring-social-end-of-life-announcement" class="external" target="_blank" rel="noopener">End of Life</a>，我们已经将<code>spring-integration-twitter</code>模块移动到<a href="https://github.com/spring-projects/spring-integration-extensions" class="external" target="_blank" rel="noopener">Spring Integration Extensions</a>下的独立项目，并刚刚发布了一个<code>org.springframework.integration:spring-integration-social-twitter:1.0.0.RELEASE</code>，它也是完全基于Spring Integration <code>5.1</code>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="小结">小结</h3>
+<div class="paragraph">
+<p>有关更多变更的内容，请参阅参考手册的<a href="https://docs.spring.io/spring-integration/docs/5.1.0.RELEASE/reference/html/whats-new.html" class="external" target="_blank" rel="noopener">“新增内容”</a>一章。另请参阅<a href="https://github.com/spring-projects/spring-integration/wiki/Spring-Integration-5.0-to-5.1-Migration-Guide" class="external" target="_blank" rel="noopener">迁移指南</a>以了解此版本中的更改以及如何处理它们。</p>
+</div>
+<div class="paragraph">
+<p>此版本是Spring Boot <code>2.1 GA</code>的基础。</p>
+</div>
+<div class="paragraph">
+<p>接下来，我们准备将master切换到<code>5.2</code>版本，开始开发新功能和有价值的改进！</p>
+</div>
+<div class="paragraph">
+<p>欢迎通过合适的沟通渠道提供任何反馈，特性创意、评论、错误报告和问题：</p>
+</div>
+<div class="paragraph">
+<p><a href="https://projects.spring.io/spring-integration/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://jira.spring.io/browse/INT" class="external" target="_blank" rel="noopener">JIRA</a> |<a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc" class="external" target="_blank" rel="noopener">参与贡献</a> | <a href="https://stackoverflow.com/questions/tagged/spring-session" class="external" target="_blank" rel="noopener">寻求帮助</a> | <a href="https://gitter.im/spring-projects/spring-integration" class="external" target="_blank" rel="noopener">在线群聊</a></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>原文：https://spring.io/blog/2018/10/29/spring-integration-5-1-goes-ga<br>
+作者：Artem Bilan</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/10/spring-for-apache-kafka-2-2-released.html"> ←Spring for Apache Kafka 2.2 发布</a></li>
@@ -372,30 +374,35 @@ fun kotlinSupplier(): () -&gt; String {
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

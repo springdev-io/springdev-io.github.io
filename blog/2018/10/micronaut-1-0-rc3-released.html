@@ -158,39 +158,45 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="quoteblock abstract"> 
- <blockquote>
-   本文的作者是Graeme Rocher，他是Grails和Micronaut框架的项目负责人，主导Grails开发10多年，有着丰富的Grails和Spring架构经验。由于Grails和Micronaut的开发团队和社区与Spring项目之间都很有渊源，而我也是其中最早的用户和参与者，所以本文将Micronaut介绍给Spring技术社区，后续也会发布更多相关的技术文章，欢迎大家积极参与讨论和分享。 
- </blockquote> 
-</div> 
-<div class="paragraph"> 
- <p>以下内容来自OCI官方博客，由Graeme Rocher发表：</p> 
-</div> 
-<div class="paragraph"> 
- <p><a href="https://objectcomputing.com/resources/events/conferences/oracle-code-one-2018" class="external" target="_blank" rel="noopener">Oracle Code One 2018</a>还有一周时间就要到来，来自OCI的Micronaut团队很高兴地宣布推出<a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0.RC3" class="external" target="_blank" rel="noopener">Micronaut 1.0 RC3</a>。</p> 
-</div> 
-<div class="paragraph"> 
- <p>这是我们在10月23日发布GA之前的最终候选版本。</p> 
-</div> 
-<div class="paragraph"> 
- <p>在这个版本中，我们很高兴地宣布第一个Micronaut Test RC：JUnit 5和Spock的简单扩展集合，增加了一些小细节，使测试Micronaut应用程序更加简单。</p> 
-</div> 
-<div class="paragraph"> 
- <p>Micronaut Test为Micronaut添加了以下用于测试的功能：</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p>自动启动和停止服务器以获得测试套件的范围</p> </li> 
-  <li> <p>使用模拟替换测试套件范围中的现有bean</p> </li> 
-  <li> <p>允许依赖注入到测试实例中</p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>以下是用Spock编写的测试示例：</p> 
-</div> 
-<div class="listingblock"> 
- <div class="content"> 
-  <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package io.micronaut.test.spock
+              <div class="blog--post"><div class="quoteblock abstract">
+<blockquote>
+本文的作者是Graeme Rocher，他是Grails和Micronaut框架的项目负责人，主导Grails开发10多年，有着丰富的Grails和Spring架构经验。由于Grails和Micronaut的开发团队和社区与Spring项目之间都很有渊源，而我也是其中最早的用户和参与者，所以本文将Micronaut介绍给Spring技术社区，后续也会发布更多相关的技术文章，欢迎大家积极参与讨论和分享。
+</blockquote>
+</div>
+<div class="paragraph">
+<p>以下内容来自OCI官方博客，由Graeme Rocher发表：</p>
+</div>
+<div class="paragraph">
+<p><a href="https://objectcomputing.com/resources/events/conferences/oracle-code-one-2018" class="external" target="_blank" rel="noopener">Oracle Code One 2018</a>还有一周时间就要到来，来自OCI的Micronaut团队很高兴地宣布推出<a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0.RC3" class="external" target="_blank" rel="noopener">Micronaut 1.0 RC3</a>。</p>
+</div>
+<div class="paragraph">
+<p>这是我们在10月23日发布GA之前的最终候选版本。</p>
+</div>
+<div class="paragraph">
+<p>在这个版本中，我们很高兴地宣布第一个Micronaut Test RC：JUnit 5和Spock的简单扩展集合，增加了一些小细节，使测试Micronaut应用程序更加简单。</p>
+</div>
+<div class="paragraph">
+<p>Micronaut Test为Micronaut添加了以下用于测试的功能：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>自动启动和停止服务器以获得测试套件的范围</p>
+</li>
+<li>
+<p>使用模拟替换测试套件范围中的现有bean</p>
+</li>
+<li>
+<p>允许依赖注入到测试实例中</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>以下是用Spock编写的测试示例：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package io.micronaut.test.spock
 
 import io.micronaut.test.annotation.MicronautTest
 import spock.lang.*
@@ -215,30 +221,34 @@ class MathServiceSpec extends Specification {
         2   | 8
         3   | 12
     }
-}</code></pre> 
- </div> 
-</div> 
-<div class="paragraph"> 
- <p>从上面的示例中可以看出，只需将<code>@MicronautTest</code>注解添加到任何Spock或JUnit 5测试中，测试就会自动注入依赖。</p> 
-</div> 
-<div class="paragraph"> 
- <p>Micronaut Test包含更多功能，包括与Spock的模拟框架和Mockito for JUnit 5的集成。</p> 
-</div> 
-<div class="paragraph"> 
- <p>感谢所有在RC过程中提供反馈的人以及计划下周在旧金山参加Oracle Code One 2018的人 - 到时见！</p> 
-</div> 
-<div class="admonitionblock note"> 
- <table> 
-  <tbody>
-   <tr> 
-    <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-    <td class="content"> 
-     <div class="paragraph"> 
-      <p>原文：https://objectcomputing.com/news/2018/10/16/micronaut-10-rc3<br> 作者：Graeme Rocher<br> 翻译：春之雨<br> 说明：版权归原文作者，翻译仅供学习参考。时间仓促，翻译不免出错，欢迎反馈和讨论，感谢阅读。</p> 
-     </div> </td> 
-   </tr> 
-  </tbody>
- </table> 
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>从上面的示例中可以看出，只需将<code>@MicronautTest</code>注解添加到任何Spock或JUnit 5测试中，测试就会自动注入依赖。</p>
+</div>
+<div class="paragraph">
+<p>Micronaut Test包含更多功能，包括与Spock的模拟框架和Mockito for JUnit 5的集成。</p>
+</div>
+<div class="paragraph">
+<p>感谢所有在RC过程中提供反馈的人以及计划下周在旧金山参加Oracle Code One 2018的人 - 到时见！</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>原文：https://objectcomputing.com/news/2018/10/16/micronaut-10-rc3<br>
+作者：Graeme Rocher<br>
+翻译：春之雨<br>
+说明：版权归原文作者，翻译仅供学习参考。时间仓促，翻译不免出错，欢迎反馈和讨论，感谢阅读。</p>
+</div>
+</td>
+</tr>
+</table>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/10/spring-data-lovelace-sr1-kay-sr11-and-ingalls-sr16-released.html"> ←Spring Data Lovelace SR1、Kay SR11和Ingalls SR16 同时发布</a></li>
@@ -275,30 +285,35 @@ class MathServiceSpec extends Specification {
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

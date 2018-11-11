@@ -158,194 +158,236 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://cloud.spring.io/" class="external" target="_blank" rel="noopener">Spring Cloud Finchley</a> SR2（Service Release）已经发布，可以在<a href="https://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-dependencies/Finchley.SR2/" class="external" target="_blank" rel="noopener">Maven Central</a>上获取到。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>此次更新，主要是升级到Spring Boot <code>2.0.6.RELEASE</code>，其中包含的几个模块也都是解决一些缺陷和依赖升级，所以建议升级到此版本。您可以查看Finchley<a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Finchley-Release-Notes" class="external" target="_blank" rel="noopener">发布说明</a>以获取更多信息。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="模块更新说明">模块更新说明</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>具体而言，下面是每个更新模块的详细介绍。</p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="spring_cloud_gateway">Spring Cloud Gateway</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>支持Hystrix超时中的WebFlux错误处理 <a href="https://github.com/spring-cloud/spring-cloud-gateway/issues/553" class="external" target="_blank" rel="noopener">#553</a></p> </li> 
-     <li> <p>在PEM文件中读取多个证书 <a href="https://github.com/spring-cloud/spring-cloud-gateway/pull/583" class="external" target="_blank" rel="noopener">#583</a></p> </li> 
-     <li> <p>支持配置TLS超时 <a href="https://github.com/spring-cloud/spring-cloud-gateway/pull/578" class="external" target="_blank" rel="noopener">#578</a></p> </li> 
-     <li> <p><code>ModifyRequestBodyGatewayFilterFactory</code>适当更新请求头 <a href="https://github.com/spring-cloud/spring-cloud-gateway/issues/492" class="external" target="_blank" rel="noopener">#492</a></p> </li> 
-     <li> <p>支持重定向过滤器中的相对路径跳转 <a href="https://github.com/spring-cloud/spring-cloud-gateway/issues/468" class="external" target="_blank" rel="noopener">#468</a></p> </li> 
-     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-gateway/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">其他缺陷修复</a></p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="spring_cloud_sleuth">Spring Cloud Sleuth</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="spring_cloud_config">Spring Cloud Config</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>传播Git克隆错误 <a href="https://github.com/spring-cloud/spring-cloud-config/issues/1160" class="external" target="_blank" rel="noopener">＃1160</a></p> </li> 
-     <li> <p>Gitee和Gogs的webhook支持 <a href="https://github.com/spring-cloud/spring-cloud-config/pull/1140" class="external" target="_blank" rel="noopener">#1140</a></p> </li> 
-     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-config/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="spring_cloud_netflix">Spring Cloud Netflix</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>支持接受Sidecars中的所有证书 <a href="https://github.com/spring-cloud/spring-cloud-netflix/pull/3224" class="external" target="_blank" rel="noopener">#3224</a></p> </li> 
-     <li> <p><code>HystrixCommands.fallback</code>现在支持接受导致回调被调用的<code>Throwable</code> <a href="https://github.com/spring-cloud/spring-cloud-netflix/issues/3210" class="external" target="_blank" rel="noopener">#3210</a></p> </li> 
-     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-netflix/issues?q=milestone%3A2.0.2.RELEASE+is%3Aclosed" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="spring_cloud_commons">Spring Cloud Commons</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>使用<code>@LoadBalanced WebClient</code>时更好的错误处理 <a href="https://github.com/spring-cloud/spring-cloud-commons/issues/386" class="external" target="_blank" rel="noopener">#386</a></p> </li> 
-     <li> <p><code>InstancePreRegisteredEvent</code>在<a href="https://cloud.spring.io/spring-cloud-static/Finchley.SR2/single/spring-cloud.html#_serviceregistry_auto_registration_events">服务注册</a>之前触发</p> </li> 
-     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-commons/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="spring_cloud_contract">Spring Cloud Contract</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-contract/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="spring_cloud_vault">Spring Cloud Vault</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-vault/issues?q=is%3Aclosed+milestone%3A2.0.2" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="spring_cloud_openfeign">Spring Cloud Openfeign</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>在Feign客户端中添加对<code>MultipartFile</code>的支持 <a href="https://github.com/spring-cloud/spring-cloud-openfeign/issues/62" class="external" target="_blank" rel="noopener">#62</a></p> </li> 
-     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-openfeign/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="spring_cloud_security">Spring Cloud Security</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>依赖升级</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="spring_cloud_aws">Spring Cloud AWS</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-aws/issues?q=is%3Aclosed+milestone%3A2.0.1.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
-    </ul> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="模块及版本">模块及版本</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>以下模块作为Finchley.SR2的一部分进行了更新：</p> 
-  </div> 
-  <table class="tableblock frame-all grid-all stretch"> 
-   <caption class="title">
-    Table 1. 更新的模块及版本
-   </caption> 
-   <colgroup> 
-    <col> 
-    <col> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">模块</th> 
-     <th class="tableblock halign-left valign-top">版本</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Gateway</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Sleuth</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Config</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Netflix</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Commons</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Contract</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Vault</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Openfeign</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud AWS</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.1.RELEASE</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Cloud Foundry</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.1.RELEASE</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Security</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.1.RELEASE</p></td> 
-    </tr> 
-   </tbody> 
-  </table> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="如何使用">如何使用</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>要使用BOM开始使用Maven（仅限依赖关系管理）：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependencyManagement&gt;
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://cloud.spring.io/" class="external" target="_blank" rel="noopener">Spring Cloud Finchley</a> SR2（Service Release）已经发布，可以在<a href="https://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-dependencies/Finchley.SR2/" class="external" target="_blank" rel="noopener">Maven Central</a>上获取到。</p>
+</div>
+<div class="paragraph">
+<p>此次更新，主要是升级到Spring Boot <code>2.0.6.RELEASE</code>，其中包含的几个模块也都是解决一些缺陷和依赖升级，所以建议升级到此版本。您可以查看Finchley<a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Finchley-Release-Notes" class="external" target="_blank" rel="noopener">发布说明</a>以获取更多信息。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="模块更新说明">模块更新说明</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>具体而言，下面是每个更新模块的详细介绍。</p>
+</div>
+<div class="sect2">
+<h3 id="spring_cloud_gateway">Spring Cloud Gateway</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>支持Hystrix超时中的WebFlux错误处理 <a href="https://github.com/spring-cloud/spring-cloud-gateway/issues/553" class="external" target="_blank" rel="noopener">#553</a></p>
+</li>
+<li>
+<p>在PEM文件中读取多个证书 <a href="https://github.com/spring-cloud/spring-cloud-gateway/pull/583" class="external" target="_blank" rel="noopener">#583</a></p>
+</li>
+<li>
+<p>支持配置TLS超时 <a href="https://github.com/spring-cloud/spring-cloud-gateway/pull/578" class="external" target="_blank" rel="noopener">#578</a></p>
+</li>
+<li>
+<p><code>ModifyRequestBodyGatewayFilterFactory</code>适当更新请求头 <a href="https://github.com/spring-cloud/spring-cloud-gateway/issues/492" class="external" target="_blank" rel="noopener">#492</a></p>
+</li>
+<li>
+<p>支持重定向过滤器中的相对路径跳转 <a href="https://github.com/spring-cloud/spring-cloud-gateway/issues/468" class="external" target="_blank" rel="noopener">#468</a></p>
+</li>
+<li>
+<p><a href="https://github.com/spring-cloud/spring-cloud-gateway/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">其他缺陷修复</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spring_cloud_sleuth">Spring Cloud Sleuth</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spring_cloud_config">Spring Cloud Config</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>传播Git克隆错误 <a href="https://github.com/spring-cloud/spring-cloud-config/issues/1160" class="external" target="_blank" rel="noopener">＃1160</a></p>
+</li>
+<li>
+<p>Gitee和Gogs的webhook支持 <a href="https://github.com/spring-cloud/spring-cloud-config/pull/1140" class="external" target="_blank" rel="noopener">#1140</a></p>
+</li>
+<li>
+<p><a href="https://github.com/spring-cloud/spring-cloud-config/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spring_cloud_netflix">Spring Cloud Netflix</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>支持接受Sidecars中的所有证书 <a href="https://github.com/spring-cloud/spring-cloud-netflix/pull/3224" class="external" target="_blank" rel="noopener">#3224</a></p>
+</li>
+<li>
+<p><code>HystrixCommands.fallback</code>现在支持接受导致回调被调用的<code>Throwable</code> <a href="https://github.com/spring-cloud/spring-cloud-netflix/issues/3210" class="external" target="_blank" rel="noopener">#3210</a></p>
+</li>
+<li>
+<p><a href="https://github.com/spring-cloud/spring-cloud-netflix/issues?q=milestone%3A2.0.2.RELEASE+is%3Aclosed" class="external" target="_blank" rel="noopener">缺陷修复</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spring_cloud_commons">Spring Cloud Commons</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>使用<code>@LoadBalanced WebClient</code>时更好的错误处理 <a href="https://github.com/spring-cloud/spring-cloud-commons/issues/386" class="external" target="_blank" rel="noopener">#386</a></p>
+</li>
+<li>
+<p><code>InstancePreRegisteredEvent</code>在<a href="https://cloud.spring.io/spring-cloud-static/Finchley.SR2/single/spring-cloud.html#_serviceregistry_auto_registration_events">服务注册</a>之前触发</p>
+</li>
+<li>
+<p><a href="https://github.com/spring-cloud/spring-cloud-commons/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spring_cloud_contract">Spring Cloud Contract</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/spring-cloud/spring-cloud-contract/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spring_cloud_vault">Spring Cloud Vault</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/spring-cloud/spring-cloud-vault/issues?q=is%3Aclosed+milestone%3A2.0.2" class="external" target="_blank" rel="noopener">缺陷修复</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spring_cloud_openfeign">Spring Cloud Openfeign</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>在Feign客户端中添加对<code>MultipartFile</code>的支持 <a href="https://github.com/spring-cloud/spring-cloud-openfeign/issues/62" class="external" target="_blank" rel="noopener">#62</a></p>
+</li>
+<li>
+<p><a href="https://github.com/spring-cloud/spring-cloud-openfeign/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spring_cloud_security">Spring Cloud Security</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>依赖升级</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spring_cloud_aws">Spring Cloud AWS</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/spring-cloud/spring-cloud-aws/issues?q=is%3Aclosed+milestone%3A2.0.1.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="模块及版本">模块及版本</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>以下模块作为Finchley.SR2的一部分进行了更新：</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content stretch">
+<caption class="title">Table 1. 更新的模块及版本</caption>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">模块</th>
+<th class="tableblock halign-left valign-top">版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Gateway</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Sleuth</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Config</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Netflix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Commons</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Contract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Vault</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Openfeign</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2.RELEASE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud AWS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.1.RELEASE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Cloud Foundry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.1.RELEASE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Security</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.1.RELEASE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="如何使用">如何使用</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>要使用BOM开始使用Maven（仅限依赖关系管理）：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependencyManagement&gt;
     &lt;dependencies&gt;
         &lt;dependency&gt;
             &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
@@ -366,15 +408,15 @@
         &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;
     &lt;/dependency&gt;
     ...
-&lt;/dependencies&gt;</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>或者，使用Gradle：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code>buildscript {
+&lt;/dependencies&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>或者，使用Gradle：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code>buildscript {
     dependencies {
         classpath "io.spring.gradle:dependency-management-plugin:1.0.5.RELEASE"
     }
@@ -394,13 +436,13 @@ dependencies {
     compile 'org.springframework.cloud:spring-cloud-starter-config'
     compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     ...
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>一如既往，我们非常欢迎来自<a href="https://github.com/spring-cloud/" class="external" target="_blank" rel="noopener">GitHub</a>, <a href="https://gitter.im/spring-cloud/spring-cloud" class="external" target="_blank" rel="noopener">Gitter</a>, <a href="https://stackoverflow.com/questions/tagged/spring-cloud" class="external" target="_blank" rel="noopener">Stack Overflow</a> 以及<a href="https://twitter.com/SpringCloud" class="external" target="_blank" rel="noopener">Twitter</a>上的反馈。</p> 
-  </div> 
- </div> 
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>一如既往，我们非常欢迎来自<a href="https://github.com/spring-cloud/" class="external" target="_blank" rel="noopener">GitHub</a>, <a href="https://gitter.im/spring-cloud/spring-cloud" class="external" target="_blank" rel="noopener">Gitter</a>, <a href="https://stackoverflow.com/questions/tagged/spring-cloud" class="external" target="_blank" rel="noopener">Stack Overflow</a> 以及<a href="https://twitter.com/SpringCloud" class="external" target="_blank" rel="noopener">Twitter</a>上的反馈。</p>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/10/micronaut-1-0-ga-released.html"> ←Micronaut 1.0 正式发布</a></li>
@@ -437,30 +479,35 @@ dependencies {
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

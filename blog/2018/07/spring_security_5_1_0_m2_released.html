@@ -158,49 +158,55 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Security的项目负责人<a href="https://spring.io/team/rwinch" class="external" target="_blank" rel="noopener">Rob Winch</a>在官方博客宣布了<a href="https://spring.io/blog/2018/07/30/spring-security-5-1-0-m2-released" class="external" target="_blank" rel="noopener">5.1.0.M2版本发布</a>的消息，这个版本总共关闭了<a href="https://github.com/spring-projects/spring-security/milestone/106?closed=1" class="external" target="_blank" rel="noopener">100多个任务单</a>，其中有不少新特性。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>下面我们将一起来看看有哪些亮点。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="oauth2">OAuth2</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="oauth2资源服务器_oauth2_resource_server">OAuth2资源服务器（OAuth2 Resource Server）</h3> 
-   <div class="paragraph"> 
-    <p>添加了对OAuth2资源服务器的基本支持。 参见示例：<a href="https://github.com/spring-projects/spring-security/tree/5.1.0.M2/samples/boot/oauth2resourceserver" class="external" target="_blank" rel="noopener">oauth2resourceserver</a></p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="authorization_code_flow">Authorization Code Flow</h3> 
-   <div class="paragraph"> 
-    <p>用户现在可以使用OAuth 2.0授权代码授予获取访问令牌。参见示例： <a href="https://github.com/spring-projects/spring-security/tree/5.1.0.M2/samples/boot/authcodegrant" class="external" target="_blank" rel="noopener">authcodegrant</a></p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="支持oauth2和webclient">支持OAuth2和WebClient</h3> 
-   <div class="paragraph"> 
-    <p>现在内置了对OAuth2和WebClient的支持。具体如下：</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>添加访问令牌到请求中</p> </li> 
-     <li> <p>访问令牌过期时自动刷新</p> </li> 
-     <li> <p>解析要使用的访问令牌</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p>例如，在Servlet环境中，你可以像这样配置Bean：</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Bean
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Security的项目负责人<a href="https://spring.io/team/rwinch" class="external" target="_blank" rel="noopener">Rob Winch</a>在官方博客宣布了<a href="https://spring.io/blog/2018/07/30/spring-security-5-1-0-m2-released" class="external" target="_blank" rel="noopener">5.1.0.M2版本发布</a>的消息，这个版本总共关闭了<a href="https://github.com/spring-projects/spring-security/milestone/106?closed=1" class="external" target="_blank" rel="noopener">100多个任务单</a>，其中有不少新特性。</p>
+</div>
+<div class="paragraph">
+<p>下面我们将一起来看看有哪些亮点。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="oauth2">OAuth2</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="oauth2资源服务器oauth2_resource_server">OAuth2资源服务器（OAuth2 Resource Server）</h3>
+<div class="paragraph">
+<p>添加了对OAuth2资源服务器的基本支持。 参见示例：<a href="https://github.com/spring-projects/spring-security/tree/5.1.0.M2/samples/boot/oauth2resourceserver" class="external" target="_blank" rel="noopener">oauth2resourceserver</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="authorization_code_flow">Authorization Code Flow</h3>
+<div class="paragraph">
+<p>用户现在可以使用OAuth 2.0授权代码授予获取访问令牌。参见示例： <a href="https://github.com/spring-projects/spring-security/tree/5.1.0.M2/samples/boot/authcodegrant" class="external" target="_blank" rel="noopener">authcodegrant</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="支持oauth2和webclient">支持OAuth2和WebClient</h3>
+<div class="paragraph">
+<p>现在内置了对OAuth2和WebClient的支持。具体如下：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>添加访问令牌到请求中</p>
+</li>
+<li>
+<p>访问令牌过期时自动刷新</p>
+</li>
+<li>
+<p>解析要使用的访问令牌</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>例如，在Servlet环境中，你可以像这样配置Bean：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Bean
 WebClient webClient(OAuth2AuthorizedClientRepository repository) {
     ServletOAuth2AuthorizedClientExchangeFilterFunction filter =
         new ServletOAuth2AuthorizedClientExchangeFilterFunction(repository);
@@ -208,15 +214,15 @@ WebClient webClient(OAuth2AuthorizedClientRepository repository) {
         .filter(new OAuth2AuthorizedClientExchangeFilterFunction())
         .apply(filter.oauth2Configuration())
         .build();
-}</code></pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>现在，你可以通过多种不同方式添加OAuth令牌。 如果需要，可以使用Spring MVC支持解析<code>OAuth2AuthorizedClient</code>。如果授权服务器返回刷新令牌，而访问令牌也即将过期时，Spring Security则将透明地更新访问令牌并提交更新后的访问令牌。</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@GetMapping("/users")
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>现在，你可以通过多种不同方式添加OAuth令牌。 如果需要，可以使用Spring MVC支持解析<code>OAuth2AuthorizedClient</code>。如果授权服务器返回刷新令牌，而访问令牌也即将过期时，Spring Security则将透明地更新访问令牌并提交更新后的访问令牌。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@GetMapping("/users")
 Mono&lt;String&gt; users(@RegisteredOAuth2AuthorizedClient("client-id")
         OAuth2AuthorizedClient authorizedClient) {
     return this.webClient.get()
@@ -224,53 +230,54 @@ Mono&lt;String&gt; users(@RegisteredOAuth2AuthorizedClient("client-id")
         .attributes(oauth2AuthorizedClient(authorizedClient))
         .retrieve()
         .bodyToMono(String.class);
-}</code></pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>你还可以通过“WebClient”解析访问令牌。 例如：</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">Mono&lt;String&gt; users() {
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>你还可以通过“WebClient”解析访问令牌。 例如：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Mono&lt;String&gt; users() {
     return this.webClient.get()
         .uri("https://api.example.com/user")
         .attributes(clientRegistrationId("client-id"))
         .retrieve()
         .bodyToMono(String.class);
-}</code></pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>如果使用OAuth2登录或OIDC进行身份验证，则可以获取默认访问令牌而无需用户交互。</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">Mono&lt;String&gt; users() {
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>如果使用OAuth2登录或OIDC进行身份验证，则可以获取默认访问令牌而无需用户交互。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Mono&lt;String&gt; users() {
     // if Authenticated with OIDC
     // OAuth2 Log In use the access token associated to log in
     return this.webClient.get()
         .uri("https://api.example.com/user")
         .retrieve()
         .bodyToMono(String.class);
-}</code></pre> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="webflux_oauth2登录支持oidc">WebFlux OAuth2登录支持OIDC</h3> 
-   <div class="paragraph"> 
-    <p>WebFlux应用程序现在可以使用OAuth2和OIDC进行身份验证。 参见示例： <a href="https://github.com/spring-projects/spring-security/tree/master/samples/boot/oauth2login-webflux" class="external" target="_blank" rel="noopener">oauth2login-webflux</a></p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="能够从oidc_discovery创建clientregistration">能够从OIDC Discovery创建ClientRegistration</h3> 
-   <div class="paragraph"> 
-    <p>之前，用户希望与OIDC提供程序集成需要配置所有端点。例如，在Spring Boot中需要这样做：</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>spring:
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="webflux_oauth2登录支持oidc">WebFlux OAuth2登录支持OIDC</h3>
+<div class="paragraph">
+<p>WebFlux应用程序现在可以使用OAuth2和OIDC进行身份验证。
+参见示例： <a href="https://github.com/spring-projects/spring-security/tree/master/samples/boot/oauth2login-webflux" class="external" target="_blank" rel="noopener">oauth2login-webflux</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="能够从oidc_discovery创建clientregistration">能够从OIDC Discovery创建ClientRegistration</h3>
+<div class="paragraph">
+<p>之前，用户希望与OIDC提供程序集成需要配置所有端点。例如，在Spring Boot中需要这样做：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>spring:
   security:
     oauth2:
       client:
@@ -284,15 +291,15 @@ Mono&lt;String&gt; users(@RegisteredOAuth2AuthorizedClient("client-id")
             token-uri: https://foo.oktapreview.com/oauth2/v1/token
             user-info-uri: https://foo.oktapreview.com/oauth2/v1/userinfo
             user-name-attribute: sub
-            jwk-set-uri: https://foo.oktapreview.com/oauth2/v1/keys</pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>现在，用户可以简单的配置发行者uri。例如:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>spring:
+            jwk-set-uri: https://foo.oktapreview.com/oauth2/v1/keys</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>现在，用户可以简单的配置发行者uri。例如:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>spring:
   security:
     oauth2:
       client:
@@ -302,79 +309,85 @@ Mono&lt;String&gt; users(@RegisteredOAuth2AuthorizedClient("client-id")
             client-secret: okta-client-secret
         provider:
           okta:
-            issuer-uri: https://foo.oktapreview.com/oauth2/default/</pre> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="支持自定义授权请求">支持自定义授权请求</h3> 
-   <div class="paragraph"> 
-    <p>添加了<code>OAuth2AuthorizationRequestResolver</code>用于支持自定义授权请求。 例如，如果用户想要从请求中添加/删除范围，他们现在可以轻松地执行此操作。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="单个clientregistration将会重定向到登录">单个ClientRegistration将会重定向到登录</h3> 
-   <div class="paragraph"> 
-    <p>使用单个提供程序配置OAuth2/OIDC登录时，不是仅显示一个提供程序，而是更改默认值以立即重定向到提供程序。</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="配置改进">配置改进</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="现代化默认登录页面">现代化默认登录页面</h3> 
-   <div class="paragraph"> 
-    <p>默认登录页面已经采用html5编写，看起来更具视觉吸引力。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="默认注销页面_default_log_out_page">默认注销页面(Default Log Out Page)</h3> 
-   <div class="paragraph"> 
-    <p>由于添加了CSRF注销保护，因此默认应用程序无法注销。 现在，如果正在使用默认登录页面（即没有配置登录页面），那么还有一个默认的注销页面，它显示了一个注销表单。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="简化requestcache配置">简化RequestCache配置</h3> 
-   <div class="paragraph"> 
-    <p>用户现在可以配置默认的RequestCache，将其暴露为<code>@ Bean</code>。 已经更新了<code>HttpSessionRequestCache</code>，不再要求该值为<code>DefaultRequestCache</code>。</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="强化你的应用程序_hardening_your_application">强化你的应用程序(Hardening Your Application)</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="跨站点跟踪和http动词篡改保护_cross_site_tracing_http_verb_tampering_protection">跨站点跟踪和HTTP动词篡改保护（Cross Site Tracing &amp; HTTP Verb Tampering Protection）</h3> 
-   <div class="paragraph"> 
-    <p>Spring Security 5.1 添加了 <a href="https://www.owasp.org/index.php/Cross_Site_Tracing" class="external" target="<em>blank">跨站点跟踪</a> 和 <a href="https://www.owasp.org/index.php/Testing_for_HTTP_Verb_Tampering</em>(OTG-INPVAL-003)" class="external" target="_blank" rel="noopener">HTTP动词篡改</a>保护.</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="密码编码升级_password_encoding_upgrades">密码编码升级（Password Encoding Upgrades）</h3> 
-   <div class="paragraph"> 
-    <p>用户可以实现<a href="https://docs.spring.io/spring-security/site/docs/5.1.0.M2/api/org/springframework/security/core/userdetails/UserDetailsPasswordService.html" class="external" target="_blank" rel="noopener">UserDetailsPasswordService</a> 并暴露为 <code>@Bean</code>，当认证成功后Spring Security的<code>DaoAuthenticationProvider</code>将会：</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>检查密码存储机制是否需要使用新的<a href="https://docs.spring.io/spring-security/site/docs/5.1.0.M2/api/org/springframework/security/crypto/password/PasswordEncoder.html#upgradeEncoding-java.lang.String-" class="external" target="_blank" rel="noopener">PasswordEncoder.upgradeEncoding</a>方法来更新。例如， 如果它是采用sha256中编码的，那么默认情况下，Spring Security会建议它升级到BCrypt。</p> </li> 
-     <li> <p>如果需要升级密码编码，它将使用当前的<code>PasswordEncoder</code></p> </li> 
-     <li> <p><code>UserDetails</code>和新密码将被传递给<code>UserDetailsPasswordService</code>，因此可以使用升级的密码编码保存。</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="依赖更新">依赖更新</h3> 
-   <div class="paragraph"> 
-    <p>我们已经更新了框架的依赖关系，以确保框架的传递依赖关系是最新的。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><a href="https://projects.spring.io/spring-security/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://docs.spring.io/spring-security/site/docs/5.1.0.M2/reference/htmlsingle/" class="external" target="_blank" rel="noopener">参考手册</a> | <a href="https://stackoverflow.com/questions/tagged/spring-security" class="external" target="_blank" rel="noopener">在线帮助</a></p> 
-   </div> 
-  </div> 
- </div> 
+            issuer-uri: https://foo.oktapreview.com/oauth2/default/</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="支持自定义授权请求">支持自定义授权请求</h3>
+<div class="paragraph">
+<p>添加了<code>OAuth2AuthorizationRequestResolver</code>用于支持自定义授权请求。 例如，如果用户想要从请求中添加/删除范围，他们现在可以轻松地执行此操作。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="单个clientregistration将会重定向到登录">单个ClientRegistration将会重定向到登录</h3>
+<div class="paragraph">
+<p>使用单个提供程序配置OAuth2/OIDC登录时，不是仅显示一个提供程序，而是更改默认值以立即重定向到提供程序。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="配置改进">配置改进</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="现代化默认登录页面">现代化默认登录页面</h3>
+<div class="paragraph">
+<p>默认登录页面已经采用html5编写，看起来更具视觉吸引力。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="默认注销页面default_log_out_page">默认注销页面(Default Log Out Page)</h3>
+<div class="paragraph">
+<p>由于添加了CSRF注销保护，因此默认应用程序无法注销。 现在，如果正在使用默认登录页面（即没有配置登录页面），那么还有一个默认的注销页面，它显示了一个注销表单。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="简化requestcache配置">简化RequestCache配置</h3>
+<div class="paragraph">
+<p>用户现在可以配置默认的RequestCache，将其暴露为<code>@ Bean</code>。 已经更新了<code>HttpSessionRequestCache</code>，不再要求该值为<code>DefaultRequestCache</code>。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="强化你的应用程序hardening_your_application">强化你的应用程序(Hardening Your Application)</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="跨站点跟踪和http动词篡改保护cross_site_tracing_http_verb_tampering_protection">跨站点跟踪和HTTP动词篡改保护（Cross Site Tracing &amp; HTTP Verb Tampering Protection）</h3>
+<div class="paragraph">
+<p>Spring Security 5.1 添加了 <a href="https://www.owasp.org/index.php/Cross_Site_Tracing" class="external" target="<em>blank">跨站点跟踪</a> 和 <a href="https://www.owasp.org/index.php/Testing_for_HTTP_Verb_Tampering</em>(OTG-INPVAL-003)" class="external" target="_blank" rel="noopener">HTTP动词篡改</a>保护.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="密码编码升级password_encoding_upgrades">密码编码升级（Password Encoding Upgrades）</h3>
+<div class="paragraph">
+<p>用户可以实现<a href="https://docs.spring.io/spring-security/site/docs/5.1.0.M2/api/org/springframework/security/core/userdetails/UserDetailsPasswordService.html" class="external" target="_blank" rel="noopener">UserDetailsPasswordService</a> 并暴露为 <code>@Bean</code>，当认证成功后Spring Security的<code>DaoAuthenticationProvider</code>将会：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>检查密码存储机制是否需要使用新的<a href="https://docs.spring.io/spring-security/site/docs/5.1.0.M2/api/org/springframework/security/crypto/password/PasswordEncoder.html#upgradeEncoding-java.lang.String-" class="external" target="_blank" rel="noopener">PasswordEncoder.upgradeEncoding</a>方法来更新。例如， 如果它是采用sha256中编码的，那么默认情况下，Spring Security会建议它升级到BCrypt。</p>
+</li>
+<li>
+<p>如果需要升级密码编码，它将使用当前的<code>PasswordEncoder</code></p>
+</li>
+<li>
+<p><code>UserDetails</code>和新密码将被传递给<code>UserDetailsPasswordService</code>，因此可以使用升级的密码编码保存。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="依赖更新">依赖更新</h3>
+<div class="paragraph">
+<p>我们已经更新了框架的依赖关系，以确保框架的传递依赖关系是最新的。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://projects.spring.io/spring-security/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://docs.spring.io/spring-security/site/docs/5.1.0.M2/reference/htmlsingle/" class="external" target="_blank" rel="noopener">参考手册</a> | <a href="https://stackoverflow.com/questions/tagged/spring-security" class="external" target="_blank" rel="noopener">在线帮助</a></p>
+</div>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/07/spring_data_ingalls_sr14_and_kay_sr9_released.html"> ←Spring Data Ingalls SR14和Kay SR9 发布</a></li>
@@ -411,30 +424,35 @@ Mono&lt;String&gt; users(@RegisteredOAuth2AuthorizedClient("client-id")
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

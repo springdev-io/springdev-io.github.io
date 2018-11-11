@@ -158,55 +158,55 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Boot大大简化了Spring应用程序的开发。它的自动配置和起步依赖减少了启动应用程序所需的代码和配置量。如果你之前在Spring中使用过大量的XML配置，那么你会觉得Spring Boot就是一股清新的空气。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Boot于2014年首次发布，自那以后更新了很多。就像代码质量和测试一样，安全性已成为开发人员非常关心的问题。如果你是一名开发人员却对安全并不关心，那么你应该考虑下是否应该如此。本文旨在教你如何创建更安全的Spring Boot应用程序。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>我与<a href="https://twitter.com/sjmaple" class="external" target="_blank" rel="noopener">Simon Maple</a>合作完成了这篇文章，他是一名Java冠军程序员和Snyk的开发者关系总监。我们都在安全行业的公司工作，热爱Java，并希望帮助开发人员创建更安全的应用程序。我们认为以撰写这篇文章这种方式来回馈社区是有趣的。除了下面这些我们已列出的，如果你还有其他的建议，请在评论中告诉我们！</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="在生产中使用https">1. 在生产中使用HTTPS</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>传输层安全性（TLS）是HTTPS的官方名称。你可能听说过它称为SSL（安全套接字层）。SSL是已弃用的名称，TLS是一种加密协议，可通过计算机网络提供安全通信。其主要目标是确保计算机应用程序之间的隐私和数据完整性。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>过去，TLS/SSL证书很昂贵，而且HTTPS被认为很慢。机器的运算速度极大提升解决了性能问题，而<a href="https://letsencrypt.org/" class="external" target="_blank" rel="noopener">Let’s Encrypt</a>提供免费的TLS证书。这两项发展改变了现状，并使TLS很快成为主流。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>2018年7月24日，Google Chrome已将<a href="https://www.wired.com/story/google-chrome-https-not-secure-label/" class="external" target="_blank" rel="noopener">HTTP网站标记为“不安全”</a>。虽然这在网络社区引起了相当多的争议，但它已然如此。知名安全研究员Troy Hunt创建了一个<a href="https://www.troyhunt.com/why-no-https-heres-the-worlds-largest-websites-not-redirecting-insecure-requests/" class="external" target="_blank" rel="noopener">“为什么不使用HTTPS？”</a>来记录不使用HTTPS的大型网站。你可能没有开发下一个大型网站，但为什么限制自己不使用呢？</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>生成和更新加密TLS证书可以自动化。由于它们是免费的，所以没有理由不去做！<a href="https://dzone.com/articles/spring-boot-secured-by-lets-encrypt" class="external" target="_blank" rel="noopener">Spring Boot Secured By Let’s Encrypt</a>是介绍如何做到这一点的有用指南。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>要在Spring Boot应用程序中强制使用HTTPS，你可以扩展<code>WebSecurityConfigurerAdapter</code>并要求安全连接。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Configuration
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Boot大大简化了Spring应用程序的开发。它的自动配置和起步依赖减少了启动应用程序所需的代码和配置量。如果你之前在Spring中使用过大量的XML配置，那么你会觉得Spring Boot就是一股清新的空气。</p>
+</div>
+<div class="paragraph">
+<p>Spring Boot于2014年首次发布，自那以后更新了很多。就像代码质量和测试一样，安全性已成为开发人员非常关心的问题。如果你是一名开发人员却对安全并不关心，那么你应该考虑下是否应该如此。本文旨在教你如何创建更安全的Spring Boot应用程序。</p>
+</div>
+<div class="paragraph">
+<p>我与<a href="https://twitter.com/sjmaple" class="external" target="_blank" rel="noopener">Simon Maple</a>合作完成了这篇文章，他是一名Java冠军程序员和Snyk的开发者关系总监。我们都在安全行业的公司工作，热爱Java，并希望帮助开发人员创建更安全的应用程序。我们认为以撰写这篇文章这种方式来回馈社区是有趣的。除了下面这些我们已列出的，如果你还有其他的建议，请在评论中告诉我们！</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="在生产中使用https">1. 在生产中使用HTTPS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>传输层安全性（TLS）是HTTPS的官方名称。你可能听说过它称为SSL（安全套接字层）。SSL是已弃用的名称，TLS是一种加密协议，可通过计算机网络提供安全通信。其主要目标是确保计算机应用程序之间的隐私和数据完整性。</p>
+</div>
+<div class="paragraph">
+<p>过去，TLS/SSL证书很昂贵，而且HTTPS被认为很慢。机器的运算速度极大提升解决了性能问题，而<a href="https://letsencrypt.org/" class="external" target="_blank" rel="noopener">Let&#8217;s Encrypt</a>提供免费的TLS证书。这两项发展改变了现状，并使TLS很快成为主流。</p>
+</div>
+<div class="paragraph">
+<p>2018年7月24日，Google Chrome已将<a href="https://www.wired.com/story/google-chrome-https-not-secure-label/" class="external" target="_blank" rel="noopener">HTTP网站标记为“不安全”</a>。虽然这在网络社区引起了相当多的争议，但它已然如此。知名安全研究员Troy Hunt创建了一个<a href="https://www.troyhunt.com/why-no-https-heres-the-worlds-largest-websites-not-redirecting-insecure-requests/" class="external" target="_blank" rel="noopener">“为什么不使用HTTPS？”</a>来记录不使用HTTPS的大型网站。你可能没有开发下一个大型网站，但为什么限制自己不使用呢？</p>
+</div>
+<div class="paragraph">
+<p>生成和更新加密TLS证书可以自动化。由于它们是免费的，所以没有理由不去做！<a href="https://dzone.com/articles/spring-boot-secured-by-lets-encrypt" class="external" target="_blank" rel="noopener">Spring Boot Secured By Let’s Encrypt</a>是介绍如何做到这一点的有用指南。</p>
+</div>
+<div class="paragraph">
+<p>要在Spring Boot应用程序中强制使用HTTPS，你可以扩展<code>WebSecurityConfigurerAdapter</code>并要求安全连接。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.requiresChannel().requiresSecure();
     }
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>这个配置会强制在开发时也使用HTTPS，这可能会很麻烦，因为你必须使用自签名证书。如果你正在使用Heroku，Cloud Foundry或其他云提供商，更合理的配置是寻找<code>X-Forwarded-Proto</code>请求头。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Configuration
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>这个配置会强制在开发时也使用HTTPS，这可能会很麻烦，因为你必须使用自签名证书。如果你正在使用Heroku，Cloud Foundry或其他云提供商，更合理的配置是寻找<code>X-Forwarded-Proto</code>请求头。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -215,88 +215,88 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .requestMatchers(r -&gt; r.getHeader("X-Forwarded-Proto") != null)
             .requiresSecure();
     }
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>云提供商可以大大简化TLS证书。<a href="https://aws.amazon.com/certificate-manager/" class="external" target="_blank" rel="noopener">亚马逊证书管理器</a>与Let’s Encrypt完全相同，但默认情况下它内置于所有AWS产品或服务中。它允许你提供100％免费的SSL证书并处理自动续订等，只需零配置工作。Heroku也有自动证书管理。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>另一个重要的事情是使用HTTP严格传输安全性（HSTS）。HSTS是一种Web安全策略机制，可以保护网站免受协议降级攻击和cookie劫持。服务器使用名为<code>Strict-Transport-Security</code>的响应头字段将HSTS策略传送到浏览器。Spring Security默认发送此标头，以避免在开始时出现不必要的HTTP跃点。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="借助snyk检查你的依赖_check_your_dependencies_with_snyk">2. 借助Snyk检查你的依赖（Check Your Dependencies with Snyk）</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>你很可能不知道应用程序使用了多少直接依赖项，你也很可能不知道应用程序使用了多少传递依赖项。这通常是正常的，尽管依赖性构成了整个应用程序的大部分。攻击者越来越多地针对开源依赖项，因为它们的重用为恶意黑客提供了许多受害者。确保应用程序的整个依赖关系树中没有已知的漏洞非常重要。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Snyk测试你的应用程序构建工件，标记那些已知漏洞的依赖项。它在仪表板为你提供了在应用程序中使用的软件包中存在的漏洞列表。</p> 
-  </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="https://springdev.io/images/snyk-vulnerabilities.png" alt="Snyk Vulnerabilities"> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>此外，它还将建议升级版本或提供补丁以通过针对源代码存储库的拉取请求来修复你的安全问题。Snyk还保护你的环境，在你的存储库上提交的任何拉取请求都将通过Webhooks触发自动测试，这样可以确保它们不会引入新的已知漏洞。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>每天都会在现有项目和库中发现新的漏洞，因此监控和保护生产部署也很重要。Snyk创建快照并监控你的部署，以便在发现新漏洞时，你可以通过喜欢的渠道、JIRA、Slack或电子邮件自动接收通知，并创建拉取请求以提供新漏洞的升级和补丁。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Snyk可通过Web界面和命令行界面获得，因此你可以轻松地将其与持续集成环境集成，并将其配置为当存在严重性超出设定阈值的漏洞时中断构建。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>你可以<a href="https://snyk.io/signup" class="external" target="_blank" rel="noopener">免费使用Snyk</a>用于开源项目，也可以用于私有项目，但每月只有有限次数的测试。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="升级到最新版本">3. 升级到最新版本</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>定期升级应用程序中的依赖项有多种理由，安全性是让你有升级动力的最重要原因之一。<a href="https://start.spring.io" class="external" target="_blank" rel="noopener">start.spring.io</a>启动页面尽可能使用最新版本的Spring软件包以及依赖项。</p> 
-  </div> 
-  <div class="quoteblock"> 
-   <blockquote>
-     我发现在依赖项中寻找漏洞可能有助于激励人们升级。然而，有大量证据表明并非所有CVE都被报道。一般来说，我发现理想（也许不实用）的解决方案是最新和最好的。 
-   </blockquote> 
-   <div class="attribution">
-     — Rob Winch 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>基础架构升级通常不如依赖项升级具有破坏性，因为库的作者对向后兼容性和版本之间的行为更改的敏感性各不相同。话虽如此，当你在配置中发现安全漏洞时，你有三种选择：升级、修补程序或忽略。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在对应用程序进行必要的更改以使用较新版本之后，就应用程序的整体运行状况而言，升级是最安全的。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>对易受攻击的项目的修补程序消除了程序包中的漏洞，但通常会留下一个可能未经过充分测试的配置。由于修补程序只会更改易受攻击的代码，因此对库的代码更改将会减少，同时可以降低破坏向后兼容性或引入行为更改的可能性。像Snyk这样的第三方安全公司为许多漏洞提供了补丁程序，因此如果无法升级到更新版本的库，你仍然可以使用旧版本的补丁程序。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>当然，忽略漏洞是一种选择，但不是一个好选择。也许你知道一个漏洞，但不相信它是可以直接利用的。请记住，它可能不在你的应用程序流程中，但在某些时候，开发人员可能会添加使用易受攻击路径的其他代码。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="启用csrf保护">4. 启用CSRF保护</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)" class="external" target="_blank" rel="noopener">跨站点请求伪造</a>是一种攻击，强制用户在他们当前登录的应用程序中执行不需要的操作。如果用户是普通用户，则成功攻击可能涉及状态更改请求，如转移资金或更改其电子邮件地址。如果用户具有提升的权限，则CSRF攻击可能会危及整个应用程序。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Security具有<a href="https://docs.spring.io/spring-security/site/docs/current/reference/html/csrf.html" class="external" target="_blank" rel="noopener">出色的CSRF支持</a>，默认情况下处于启用状态。如果你正在使用Spring MVC的&lt;form:form&gt;标签或Thymeleaf并且添加了注解<code>@EnableWebSecurity</code>，则CSRF标记将作为隐藏输入字段自动添加。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>如果你正在使用像Angular或React这样的JavaScript框架，则需要配置<code>CookieCsrfTokenRepository</code>，以便JavaScript可以读取cookie。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@EnableWebSecurity
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>云提供商可以大大简化TLS证书。<a href="https://aws.amazon.com/certificate-manager/" class="external" target="_blank" rel="noopener">亚马逊证书管理器</a>与Let&#8217;s Encrypt完全相同，但默认情况下它内置于所有AWS产品或服务中。它允许你提供100％免费的SSL证书并处理自动续订等，只需零配置工作。Heroku也有自动证书管理。</p>
+</div>
+<div class="paragraph">
+<p>另一个重要的事情是使用HTTP严格传输安全性（HSTS）。HSTS是一种Web安全策略机制，可以保护网站免受协议降级攻击和cookie劫持。服务器使用名为<code>Strict-Transport-Security</code>的响应头字段将HSTS策略传送到浏览器。Spring Security默认发送此标头，以避免在开始时出现不必要的HTTP跃点。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="借助snyk检查你的依赖check_your_dependencies_with_snyk">2. 借助Snyk检查你的依赖（Check Your Dependencies with Snyk）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>你很可能不知道应用程序使用了多少直接依赖项，你也很可能不知道应用程序使用了多少传递依赖项。这通常是正常的，尽管依赖性构成了整个应用程序的大部分。攻击者越来越多地针对开源依赖项，因为它们的重用为恶意黑客提供了许多受害者。确保应用程序的整个依赖关系树中没有已知的漏洞非常重要。</p>
+</div>
+<div class="paragraph">
+<p>Snyk测试你的应用程序构建工件，标记那些已知漏洞的依赖项。它在仪表板为你提供了在应用程序中使用的软件包中存在的漏洞列表。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/snyk-vulnerabilities.png" alt="Snyk Vulnerabilities">
+</div>
+</div>
+<div class="paragraph">
+<p>此外，它还将建议升级版本或提供补丁以通过针对源代码存储库的拉取请求来修复你的安全问题。Snyk还保护你的环境，在你的存储库上提交的任何拉取请求都将通过Webhooks触发自动测试，这样可以确保它们不会引入新的已知漏洞。</p>
+</div>
+<div class="paragraph">
+<p>每天都会在现有项目和库中发现新的漏洞，因此监控和保护生产部署也很重要。Snyk创建快照并监控你的部署，以便在发现新漏洞时，你可以通过喜欢的渠道、JIRA、Slack或电子邮件自动接收通知，并创建拉取请求以提供新漏洞的升级和补丁。</p>
+</div>
+<div class="paragraph">
+<p>Snyk可通过Web界面和命令行界面获得，因此你可以轻松地将其与持续集成环境集成，并将其配置为当存在严重性超出设定阈值的漏洞时中断构建。</p>
+</div>
+<div class="paragraph">
+<p>你可以<a href="https://snyk.io/signup" class="external" target="_blank" rel="noopener">免费使用Snyk</a>用于开源项目，也可以用于私有项目，但每月只有有限次数的测试。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="升级到最新版本">3. 升级到最新版本</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>定期升级应用程序中的依赖项有多种理由，安全性是让你有升级动力的最重要原因之一。<a href="https://start.spring.io" class="external" target="_blank" rel="noopener">start.spring.io</a>启动页面尽可能使用最新版本的Spring软件包以及依赖项。</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+我发现在依赖项中寻找漏洞可能有助于激励人们升级。然而，有大量证据表明并非所有CVE都被报道。一般来说，我发现理想（也许不实用）的解决方案是最新和最好的。
+</blockquote>
+<div class="attribution">
+&#8212; Rob Winch
+</div>
+</div>
+<div class="paragraph">
+<p>基础架构升级通常不如依赖项升级具有破坏性，因为库的作者对向后兼容性和版本之间的行为更改的敏感性各不相同。话虽如此，当你在配置中发现安全漏洞时，你有三种选择：升级、修补程序或忽略。</p>
+</div>
+<div class="paragraph">
+<p>在对应用程序进行必要的更改以使用较新版本之后，就应用程序的整体运行状况而言，升级是最安全的。</p>
+</div>
+<div class="paragraph">
+<p>对易受攻击的项目的修补程序消除了程序包中的漏洞，但通常会留下一个可能未经过充分测试的配置。由于修补程序只会更改易受攻击的代码，因此对库的代码更改将会减少，同时可以降低破坏向后兼容性或引入行为更改的可能性。像Snyk这样的第三方安全公司为许多漏洞提供了补丁程序，因此如果无法升级到更新版本的库，你仍然可以使用旧版本的补丁程序。</p>
+</div>
+<div class="paragraph">
+<p>当然，忽略漏洞是一种选择，但不是一个好选择。也许你知道一个漏洞，但不相信它是可以直接利用的。请记住，它可能不在你的应用程序流程中，但在某些时候，开发人员可能会添加使用易受攻击路径的其他代码。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="启用csrf保护">4. 启用CSRF保护</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)" class="external" target="_blank" rel="noopener">跨站点请求伪造</a>是一种攻击，强制用户在他们当前登录的应用程序中执行不需要的操作。如果用户是普通用户，则成功攻击可能涉及状态更改请求，如转移资金或更改其电子邮件地址。如果用户具有提升的权限，则CSRF攻击可能会危及整个应用程序。</p>
+</div>
+<div class="paragraph">
+<p>Spring Security具有<a href="https://docs.spring.io/spring-security/site/docs/current/reference/html/csrf.html" class="external" target="_blank" rel="noopener">出色的CSRF支持</a>，默认情况下处于启用状态。如果你正在使用Spring MVC的&lt;form:form&gt;标签或Thymeleaf并且添加了注解<code>@EnableWebSecurity</code>，则CSRF标记将作为隐藏输入字段自动添加。</p>
+</div>
+<div class="paragraph">
+<p>如果你正在使用像Angular或React这样的JavaScript框架，则需要配置<code>CookieCsrfTokenRepository</code>，以便JavaScript可以读取cookie。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -305,43 +305,43 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .csrf()
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
     }
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>如果你使用的是Angular，这样设置就够了。如果你使用的是React，则需要从cookie中读取<code>XSRF-TOKEN</code>的值并作为标头<code>X-XSRF-TOKEN</code>发回。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>当请求是HTTPS协议时，Spring Security会自动为<code>XSRF-TOKEN</code> cookie添加安全标志。Spring Security不对CSRF cookie使用<code>SameSite = strict</code>标志，但在使用Spring Session或WebFlux会话会这样处理。会话cookie对于识别用户是有意义，但它对CSRF cookie没有多少用处，因为CSRF令牌也需要存放在请求中。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用内容安全策略来防止xss攻击">5. 使用内容安全策略来防止XSS攻击</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>内容安全策略（Content Security Policy，简称“CSP”）是一个增加的安全层，可帮助缓解XSS（跨站点脚本）和数据注入攻击。要启用它，你需要配置应用程序以返回<code>Content-Security-Policy</code>标头。你还可以在HTML页面中使用<code>&lt;meta http-equiv ="Content-Security-Policy"&gt;</code>标记。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Security默认提供了许多安全标头：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>如果你使用的是Angular，这样设置就够了。如果你使用的是React，则需要从cookie中读取<code>XSRF-TOKEN</code>的值并作为标头<code>X-XSRF-TOKEN</code>发回。</p>
+</div>
+<div class="paragraph">
+<p>当请求是HTTPS协议时，Spring Security会自动为<code>XSRF-TOKEN</code> cookie添加安全标志。Spring Security不对CSRF cookie使用<code>SameSite = strict</code>标志，但在使用Spring Session或WebFlux会话会这样处理。会话cookie对于识别用户是有意义，但它对CSRF cookie没有多少用处，因为CSRF令牌也需要存放在请求中。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="使用内容安全策略来防止xss攻击">5. 使用内容安全策略来防止XSS攻击</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>内容安全策略（Content Security Policy，简称“CSP”）是一个增加的安全层，可帮助缓解XSS（跨站点脚本）和数据注入攻击。要启用它，你需要配置应用程序以返回<code>Content-Security-Policy</code>标头。你还可以在HTML页面中使用<code>&lt;meta http-equiv ="Content-Security-Policy"&gt;</code>标记。</p>
+</div>
+<div class="paragraph">
+<p>Spring Security默认提供了许多安全标头：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Content-Type-Options: nosniff
 Strict-Transport-Security: max-age=31536000 ; includeSubDomains
 X-Frame-Options: DENY
-X-XSS-Protection: 1; mode=block</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Security默认不添加CSP。你可以使用以下配置在Spring Boot应用程序中启用CSP标头。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@EnableWebSecurity
+X-XSS-Protection: 1; mode=block</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Spring Security默认不添加CSP。你可以使用以下配置在Spring Boot应用程序中启用CSP标头。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -349,43 +349,43 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers()
             .contentSecurityPolicy("script-src 'self' https://trustedscripts.example.com; object-src https://trustedplugins.example.com; report-uri /csp-report-endpoint/");
     }
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>CSP是防止XSS攻击的良好防御。请记住，打开CSP以允许CDN这也意味着允许访问许多非常古老且易受攻击的JavaScript库。这意味着使用CDN通常对应用程序的安全性没有多大帮助。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>你可以使用<a href="https://securityheaders.com/" class="external" target="_blank" rel="noopener">securityheaders.com</a>测试你的CSP标头是否与实际是一致的。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用openid_connect进行身份验证">6. 使用OpenID Connect进行身份验证</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>OAuth 2.0是行业标准的授权协议。它使用范围来定义授权用户可以执行的操作的权限。但是，OAuth 2.0不是身份验证协议，并且不提供有关经过身份验证的用户的信息。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>OpenID Connect（OIDC）是一个OAuth 2.0扩展，提供用户信息。除了访问令牌之外，它还添加了ID令牌，以及可以从中获取其他信息的<code>/userinfo</code>端点。它还添加了端点发现功能和动态客户端注册。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>下图显示了OIDC如何用于身份验证。</p> 
-  </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="https://springdev.io/images/oidc-for-authentication.png" alt="OIDC for authentication"> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>如果使用OIDC进行身份验证，则无需担心存储用户、密码或对用户进行身份验证。相反，你将使用身份提供商（IdP）为你执行此操作。你的IdP甚至可能提供多因素身份验证（MFA）等安全附加组件。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>要了解如何在Spring Boot应用程序中使用OIDC，请参阅<a href="https://developer.okta.com/blog/2017/12/18/spring-security-5-oidc" class="external" target="_blank" rel="noopener">Spring Security 5.0和OIDC入门</a>。要概括如何使用它，你首先需要向项目添加一些依赖项，然后在<code>application.yml</code>文件中配置一些属性。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>spring:
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>CSP是防止XSS攻击的良好防御。请记住，打开CSP以允许CDN这也意味着允许访问许多非常古老且易受攻击的JavaScript库。这意味着使用CDN通常对应用程序的安全性没有多大帮助。</p>
+</div>
+<div class="paragraph">
+<p>你可以使用<a href="https://securityheaders.com/" class="external" target="_blank" rel="noopener">securityheaders.com</a>测试你的CSP标头是否与实际是一致的。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="使用openid_connect进行身份验证">6. 使用OpenID Connect进行身份验证</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OAuth 2.0是行业标准的授权协议。它使用范围来定义授权用户可以执行的操作的权限。但是，OAuth 2.0不是身份验证协议，并且不提供有关经过身份验证的用户的信息。</p>
+</div>
+<div class="paragraph">
+<p>OpenID Connect（OIDC）是一个OAuth 2.0扩展，提供用户信息。除了访问令牌之外，它还添加了ID令牌，以及可以从中获取其他信息的<code>/userinfo</code>端点。它还添加了端点发现功能和动态客户端注册。</p>
+</div>
+<div class="paragraph">
+<p>下图显示了OIDC如何用于身份验证。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/oidc-for-authentication.png" alt="OIDC for authentication">
+</div>
+</div>
+<div class="paragraph">
+<p>如果使用OIDC进行身份验证，则无需担心存储用户、密码或对用户进行身份验证。相反，你将使用身份提供商（IdP）为你执行此操作。你的IdP甚至可能提供多因素身份验证（MFA）等安全附加组件。</p>
+</div>
+<div class="paragraph">
+<p>要了解如何在Spring Boot应用程序中使用OIDC，请参阅<a href="https://developer.okta.com/blog/2017/12/18/spring-security-5-oidc" class="external" target="_blank" rel="noopener">Spring Security 5.0和OIDC入门</a>。要概括如何使用它，你首先需要向项目添加一些依赖项，然后在<code>application.yml</code>文件中配置一些属性。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>spring:
   security:
     oauth2:
       client:
@@ -396,131 +396,135 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             scope: openid email profile
         provider:
           okta:
-            issuer-uri: https://{yourOktaDomain}/oauth2/default</pre> 
-   </div> 
-  </div> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody>
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> 使用<code>issuer-uri</code>仅在Spring Security 5.1中支持，Spring Security 5.1正在积极开发中并计划于2018年9月发布。 </td> 
-     </tr> 
-    </tbody>
-   </table> 
-  </div> 
-  <div class="paragraph"> 
-   <p>你可以使用像<a href="https://www.keycloak.org/" class="external" target="_blank" rel="noopener">Keycloak</a>这样的开源系统来设置自己的OIDC服务器。如果你不想在生产中维护自己的服务器，可以使用Okta的Developer API。立即注册免费帐户，每月在<a href="https://developer.okta.com/signup/" class="external" target="_blank" rel="noopener">developer.okta.com/signup</a>上获得1000名活跃用户！</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>如果你想使用OAuth 2.0，OIDC及其允许的不同流程，请参阅<a href="https://www.oauth.com/playground/" class="external" target="_blank" rel="noopener">https://www.oauth.com/playground</a>。此站点不需要你创建帐户，但它确实使用了Okta的开发人员API。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="管理密码_使用密码哈希">7. 管理密码？ 使用密码哈希！</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>以纯文本格式存储密码是你可以为应用程序的安全性做的最糟糕的事情之一。幸运的是，Spring Security默认情况下不允许使用纯文本密码。它还附带了一个加密模块，可用于对称加密、密钥生成和密码散列（也就是密码编码）。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><code>PasswordEncoder</code>是Spring Security中密码散列的主要接口，如下所示：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">public interface PasswordEncoder {
+            issuer-uri: https://{yourOktaDomain}/oauth2/default</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+使用<code>issuer-uri</code>仅在Spring Security 5.1中支持，Spring Security 5.1正在积极开发中并计划于2018年9月发布。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>你可以使用像<a href="https://www.keycloak.org/" class="external" target="_blank" rel="noopener">Keycloak</a>这样的开源系统来设置自己的OIDC服务器。如果你不想在生产中维护自己的服务器，可以使用Okta的Developer API。立即注册免费帐户，每月在<a href="https://developer.okta.com/signup/" class="external" target="_blank" rel="noopener">developer.okta.com/signup</a>上获得1000名活跃用户！</p>
+</div>
+<div class="paragraph">
+<p>如果你想使用OAuth 2.0，OIDC及其允许的不同流程，请参阅<a href="https://www.oauth.com/playground/" class="external" target="_blank" rel="noopener">https://www.oauth.com/playground</a>。此站点不需要你创建帐户，但它确实使用了Okta的开发人员API。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="管理密码_使用密码哈希">7. 管理密码？ 使用密码哈希！</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>以纯文本格式存储密码是你可以为应用程序的安全性做的最糟糕的事情之一。幸运的是，Spring Security默认情况下不允许使用纯文本密码。它还附带了一个加密模块，可用于对称加密、密钥生成和密码散列（也就是密码编码）。</p>
+</div>
+<div class="paragraph">
+<p><code>PasswordEncoder</code>是Spring Security中密码散列的主要接口，如下所示：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public interface PasswordEncoder {
     String encode(String rawPassword);
     boolean matches(String rawPassword, String encodedPassword);
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Security提供了几种实现，最常用的是<code>BCryptPasswordEncoder</code>和<code>Pbkdf2PasswordEncoder</code>。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>对于一般的密码管理，我们建议使用SCrypt或Argon2。SCrypt现在已经过时了（已经有一段时间了），并且有一个BCrypt没有的额外的复杂因素，这使得暴力成倍地变得更加困难或者昂贵。它由着名的密码学家/安全人员（Colin Percival）编写，并且在几乎所有编程语言中都有很好的库。SCrypt也得到Latacora的认可。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>来自Okta Developer Relations团队的密码专家Randall Degges：</p> 
-  </div> 
-  <div class="quoteblock"> 
-   <blockquote>
-     Argon2相对较新（现在已有几年历史），但已经过广泛的审核，并且是许多组织在几年内参与的加密哈希挑战的结果。毫无疑问，它们的“最强”散列算法都增加了scrypt没有的另一层复杂性，这使得与scrypt相比它被暴力破解的难度成倍地增加。Argon2非常棒，我在几种语言中使用它取得了巨大的成功，但如果你担心过于尖锐的scrypt是一个安全的赌注，而不是有争议的。 
-   </blockquote> 
-  </div> 
-  <div class="paragraph"> 
-   <p>来自Spring Security负责人Rob Winch：</p> 
-  </div> 
-  <div class="quoteblock"> 
-   <blockquote>
-     我喜欢BCrypt，但一般的建议是单向自适应哈希。某些用户出于合规性原因可能需要使用PBKDF2。有一个为Argon2支持记录的票证，但是我找不到任何Apache 2协议开源的原生Java实现（如果你知道，请告诉我们！）。相反，这些库依赖于他们委托的二进制文件，从我的角度来看，这是不理想的。我们处于到底是考虑备选还是最大化利用二进制委托实现的选择矛盾之中。(We are on the fence about waiting vs. leveraging one of the implementations that delegate to a binary.) 
-   </blockquote> 
-  </div> 
-  <div class="paragraph"> 
-   <p>对于那些想要使用SCrypt的人，可以通过<code>SCryptPasswordEncoder</code>中的Bouncy Castle在Spring Security中获得支持。Spring Security 5.1（即2018年9月下旬）将附带<a href="https://github.com/spring-projects/spring-security/issues/2778" class="external" target="_blank" rel="noopener"><code>UserDetailsPasswordService</code> API</a>，允许你升级密码存储。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="安全地存储秘密_secrets">8. 安全地存储秘密（Secrets）</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>应谨慎处理敏感信息，如密码、访问令牌等。你不能将它们随意的以纯文本形式传递，或者为了被访问而将它们保存在本地存储中。由于<a href="https://github.com/search?q=removed+password&amp;type=Commits" class="external" target="_blank" rel="noopener">GitHub的历史</a>已经一次又一次证明，开发人员并没有仔细考虑如何存储他们的秘密。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>当然，你能够也应该加密你的敏感数据，例如密码。现在你的密码是安全的，你有一个新的秘密：你的解密密钥！你对这个新秘密有什么看法？ 也许存放在本地？ 也许在另一个地方，你认为攻击者很难找到它。这不能解决问题：它只是暂时被推迟了。如果没有适当的流程，你只是让黑客稍微难以解开你的秘密而已。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>一个好的做法是将保密信息存储在保管库中，该保管库可用于存储，还提供对应用程序可能使用的服务的访问权限，甚至生成凭据。<a href="https://www.vaultproject.io/" class="external" target="_blank" rel="noopener">HashiCorp的Vault</a>使得存储机密变得轻而易举，并提供了许多额外的服务。可以配置保险柜，以便没有人可以访问所有数据，不提供单点控制。根密钥Vault定期被更改，仅存储在内存中。它有一个主开关，当被触发时会密封你的保管库，如果出现问题就阻止它共享秘密。Vault使用分配给可以限定特定用户，服务或应用程序的策略的令牌。你还可以与LDAP等常用身份验证机制集成以获取令牌。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>除了没有问题的“黄金路径视图”（golden-path view）外，Vault还可以提供应用在被黑客入侵时的备选方案。此时，撤销单个或多个秘密很重要，可能是由特定用户或特定类型。Vault提供了一种自动化的方式，可以在时机成熟时快速完成。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>如果你对此感兴趣，请务必花一些时间查看<a href="https://projects.spring.io/spring-vault/" class="external" target="_blank" rel="noopener">Spring Vault</a>，它为HashiCorp Vault添加抽象，为客户端提供基于Spring注解方式，允许访问、存储和撤销机密而不会迷失在底层架构中。以下代码段显示了使用注释从Spring Vault中提取密码的难易程度。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Value("${password}")
-String password;</code></pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用owasp的zap测试你的应用程序">9. 使用OWASP的ZAP测试你的应用程序</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project" class="external" target="_blank" rel="noopener">OWASP ZAP</a>安全工具是一个代理，可在运行时对你的实时应用程序执行渗透测试。它托管在GitHub上，是一个受欢迎的（超过4k星）免费的开源项目。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>OWASP ZAP用于查找漏洞的两种方法是Spider和Active Scan。Spider工具以URL种子开头，它将访问并解析每个响应，识别超链接并将它们添加到列表中。然后，它将这些新找到的URL并以递归方式继续遍历，为你的Web应用程序创建URL映射。Active Scan工具将根据潜在漏洞列表自动测试你选择的目标。它为你提供了一个报告，显示你的Web应用程序可被利用的地方，以及有关漏洞的详细信息。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="让你的安全团队进行代码审查">10. 让你的安全团队进行代码审查</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>代码评审对任何高效的软件开发团队都至关重要。在Okta，我们所有的生产代码和官方开源项目都需要通过我们的安全专家团队进行分析。你的公司可能没有安全专家，但如果你正在处理敏感数据，也许你应该这样做！</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="不要因为你的缺乏安全感而令人不安">不要因为你的缺乏安全感而令人不安</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Okta有一些很棒的T恤，上面写着“我发现你缺乏安全感”令人不安。我们喜欢在机场旅行时听到戴上乳胶手套的声音。不要做一名缺乏安全性的Spring Boot应用程序开发人员！</p> 
-  </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="https://springdev.io/images/i-find-your-lack-of-security-disturbing.png" alt="I find your lack of security disturbing"> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>原文：<a href="https://developer.okta.com/blog/2018/07/30/10-ways-to-secure-spring-boot" class="external" target="_blank" rel="noopener">10 Excellent Ways to Secure Your Spring Boot Application</a>。<br> 作者：<a href="http://raibledesigns.com/" class="external" target="_blank" rel="noopener">Matt Raible</a><br> 翻译：<a href="https://rainboyan.com" class="external" target="_blank" rel="noopener">Rain</a></p> 
-  </div> 
- </div> 
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Spring Security提供了几种实现，最常用的是<code>BCryptPasswordEncoder</code>和<code>Pbkdf2PasswordEncoder</code>。</p>
+</div>
+<div class="paragraph">
+<p>对于一般的密码管理，我们建议使用SCrypt或Argon2。SCrypt现在已经过时了（已经有一段时间了），并且有一个BCrypt没有的额外的复杂因素，这使得暴力成倍地变得更加困难或者昂贵。它由着名的密码学家/安全人员（Colin Percival）编写，并且在几乎所有编程语言中都有很好的库。SCrypt也得到Latacora的认可。</p>
+</div>
+<div class="paragraph">
+<p>来自Okta Developer Relations团队的密码专家Randall Degges：</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Argon2相对较新（现在已有几年历史），但已经过广泛的审核，并且是许多组织在几年内参与的加密哈希挑战的结果。毫无疑问，它们的“最强”散列算法都增加了scrypt没有的另一层复杂性，这使得与scrypt相比它被暴力破解的难度成倍地增加。Argon2非常棒，我在几种语言中使用它取得了巨大的成功，但如果你担心过于尖锐的scrypt是一个安全的赌注，而不是有争议的。
+</blockquote>
+</div>
+<div class="paragraph">
+<p>来自Spring Security负责人Rob Winch：</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+我喜欢BCrypt，但一般的建议是单向自适应哈希。某些用户出于合规性原因可能需要使用PBKDF2。有一个为Argon2支持记录的票证，但是我找不到任何Apache 2协议开源的原生Java实现（如果你知道，请告诉我们！）。相反，这些库依赖于他们委托的二进制文件，从我的角度来看，这是不理想的。我们处于到底是考虑备选还是最大化利用二进制委托实现的选择矛盾之中。(We are on the fence about waiting vs. leveraging one of the implementations that delegate to a binary.)
+</blockquote>
+</div>
+<div class="paragraph">
+<p>对于那些想要使用SCrypt的人，可以通过<code>SCryptPasswordEncoder</code>中的Bouncy Castle在Spring Security中获得支持。Spring Security 5.1（即2018年9月下旬）将附带<a href="https://github.com/spring-projects/spring-security/issues/2778" class="external" target="_blank" rel="noopener"><code>UserDetailsPasswordService</code> API</a>，允许你升级密码存储。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="安全地存储秘密secrets">8. 安全地存储秘密（Secrets）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>应谨慎处理敏感信息，如密码、访问令牌等。你不能将它们随意的以纯文本形式传递，或者为了被访问而将它们保存在本地存储中。由于<a href="https://github.com/search?q=removed+password&amp;type=Commits" class="external" target="_blank" rel="noopener">GitHub的历史</a>已经一次又一次证明，开发人员并没有仔细考虑如何存储他们的秘密。</p>
+</div>
+<div class="paragraph">
+<p>当然，你能够也应该加密你的敏感数据，例如密码。现在你的密码是安全的，你有一个新的秘密：你的解密密钥！你对这个新秘密有什么看法？ 也许存放在本地？ 也许在另一个地方，你认为攻击者很难找到它。这不能解决问题：它只是暂时被推迟了。如果没有适当的流程，你只是让黑客稍微难以解开你的秘密而已。</p>
+</div>
+<div class="paragraph">
+<p>一个好的做法是将保密信息存储在保管库中，该保管库可用于存储，还提供对应用程序可能使用的服务的访问权限，甚至生成凭据。<a href="https://www.vaultproject.io/" class="external" target="_blank" rel="noopener">HashiCorp的Vault</a>使得存储机密变得轻而易举，并提供了许多额外的服务。可以配置保险柜，以便没有人可以访问所有数据，不提供单点控制。根密钥Vault定期被更改，仅存储在内存中。它有一个主开关，当被触发时会密封你的保管库，如果出现问题就阻止它共享秘密。Vault使用分配给可以限定特定用户，服务或应用程序的策略的令牌。你还可以与LDAP等常用身份验证机制集成以获取令牌。</p>
+</div>
+<div class="paragraph">
+<p>除了没有问题的“黄金路径视图”（golden-path view）外，Vault还可以提供应用在被黑客入侵时的备选方案。此时，撤销单个或多个秘密很重要，可能是由特定用户或特定类型。Vault提供了一种自动化的方式，可以在时机成熟时快速完成。</p>
+</div>
+<div class="paragraph">
+<p>如果你对此感兴趣，请务必花一些时间查看<a href="https://projects.spring.io/spring-vault/" class="external" target="_blank" rel="noopener">Spring Vault</a>，它为HashiCorp Vault添加抽象，为客户端提供基于Spring注解方式，允许访问、存储和撤销机密而不会迷失在底层架构中。以下代码段显示了使用注释从Spring Vault中提取密码的难易程度。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Value("${password}")
+String password;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="使用owasp的zap测试你的应用程序">9. 使用OWASP的ZAP测试你的应用程序</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project" class="external" target="_blank" rel="noopener">OWASP ZAP</a>安全工具是一个代理，可在运行时对你的实时应用程序执行渗透测试。它托管在GitHub上，是一个受欢迎的（超过4k星）免费的开源项目。</p>
+</div>
+<div class="paragraph">
+<p>OWASP ZAP用于查找漏洞的两种方法是Spider和Active Scan。Spider工具以URL种子开头，它将访问并解析每个响应，识别超链接并将它们添加到列表中。然后，它将这些新找到的URL并以递归方式继续遍历，为你的Web应用程序创建URL映射。Active Scan工具将根据潜在漏洞列表自动测试你选择的目标。它为你提供了一个报告，显示你的Web应用程序可被利用的地方，以及有关漏洞的详细信息。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="让你的安全团队进行代码审查">10. 让你的安全团队进行代码审查</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>代码评审对任何高效的软件开发团队都至关重要。在Okta，我们所有的生产代码和官方开源项目都需要通过我们的安全专家团队进行分析。你的公司可能没有安全专家，但如果你正在处理敏感数据，也许你应该这样做！</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="不要因为你的缺乏安全感而令人不安">不要因为你的缺乏安全感而令人不安</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Okta有一些很棒的T恤，上面写着“我发现你缺乏安全感”令人不安。我们喜欢在机场旅行时听到戴上乳胶手套的声音。不要做一名缺乏安全性的Spring Boot应用程序开发人员！</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/i-find-your-lack-of-security-disturbing.png" alt="I find your lack of security disturbing">
+</div>
+</div>
+<div class="paragraph">
+<p>原文：<a href="https://developer.okta.com/blog/2018/07/30/10-ways-to-secure-spring-boot" class="external" target="_blank" rel="noopener">10 Excellent Ways to Secure Your Spring Boot Application</a>。<br>
+作者：<a href="http://raibledesigns.com/" class="external" target="_blank" rel="noopener">Matt Raible</a><br>
+翻译：<a href="https://rainboyan.com" class="external" target="_blank" rel="noopener">Rain</a></p>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/08/this-week-in-spring-august-10th-2018.html"> ←Spring一周回顾（2018年8月10日）</a></li>
@@ -557,30 +561,35 @@ String password;</code></pre>
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

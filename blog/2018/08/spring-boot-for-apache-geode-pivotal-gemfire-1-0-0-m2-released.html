@@ -158,91 +158,107 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Boot for Apache Geode 和 Pivotal GemFire 1.0.0.M2 发布。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>总的来说，这个版本带来了以下改进：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>支持Spring Session的自动配置，当使用Apache Geode 或者 Pivotal GemFire / Pivotal Cloud Cache (PCC)来管理Spring Boot应用程序的 (HTTP) 会话状态</p> </li> 
-    <li> <p>使用Spring Boot自动配置的Spring缓存抽象时，可识别<code>spring.cache.type</code></p> </li> 
-    <li> <p>对文档的补充和改进</p> </li> 
-    <li> <p>升级Spring Framework <code>5.0.8.RELEASE</code>，Spring Boot <code>2.0.4.RELEASE</code> 和 Spring Data <code>Kay-SR9</code></p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>此版本基于最近推出的<a href="https://springdev.io/blog/2018/08/spring-session-for-apache-geode-pivotal-gemfire-2-0-5-release-and-2-1-0-m1-released.html" class="external" target="_blank" rel="noopener">Spring Session for Apache Geode/Pivotal GemFire (SSDG) 2.0.5.RELEASE</a>构建。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>SSDG的一个关键附加功能是使用Properties和一个新的<code>SpringSessionGemFireConfigurer</code>回调接口，来启用Apache Geode / Pivotal GemFire / PCC 动态配置Spring Session。这样，即使在Spring Boot的自动配置环境中，用户也可以自定义配置以满足其应用程序要求。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用属性配置_configuration_with_properties">使用属性配置（Configuration with Properties）</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>In addition to the Properties discussed here and documented here, Spring Boot for Apache Geode &amp; Pivotal GemFire additionally recognizes the following properties:</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>除了<a href="https://docs.spring.io/autorepo/docs/spring-session-data-geode-build/2.0.5.RELEASE/reference/html5/#httpsession-gemfire-configuration-properties" class="external" target="_blank" rel="noopener">文档中配置属性</a>之外，Apache Geode和Pivotal GemFire的Spring Boot还识别以下属性：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><code>spring.session.timeout</code></p> </li> 
-    <li> <p><code>server.servlet.session.timeout</code></p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>同样，如果设置了这些属性的任何组合的话，<code>spring.session.data.gemfire.session.expiration.max-inactive-interval-seconds</code>将优先于<code>spring.session.timeout</code>，它又优先于<code>server.servlet.session.timeout</code>。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Boot for Apache Geode/Pivotal GemFire 能够识别<code>spring.session.store-type</code>。但是，遗憾的是，此属性也无法设置成<code>gemfire</code> 或者 <code>geode</code>，因为这些值不能被Spring Boot识别成为有效的<a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/session/StoreType.html" class="external" target="_blank" rel="noopener"><code>StoreType</code></a>。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用configurer配置_configuration_using_a_configurer">使用Configurer配置（Configuration using a Configurer）</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Boot for Apache Geode &amp; Pivotal GemFire 除了Spring Session for Apache Geode/Pivotal GemFire针对新的<code>SpringSessionGemFireConfigurer</code>回调接口提供之外，没有其他任何内容，正如此处所讨论和记录的那样。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="下一步">下一步</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>接下来，Spring Boot for Apache Geode &amp; Pivotal GemFire 将提供OOTB HealthIndicators，用以评估和监控Apache Geode / Pivotal GemFire驱动的Spring Boot应用程序的运行时健康状况。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>有关 Spring Boot <code>HealthIndicators</code>的更多内容可以查看<a href="https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html#production-ready-health" class="external" target="_blank" rel="noopener">这里</a>。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>这将在下一版本<code>1.0.0.M3</code>中提供。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>长远的规划将会支持Spring Boot Actuator。于此同时，也正在努力用Micrometer改进Apache Geode / Pivotal GemFire的统计架构。这将作为Spring Boot for Apache Geode和Pviotal GemFire的Actuator支持的基础。这很可能在SBDG 1.1中提供。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="如何使用">如何使用</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>您可以通过<a href="https://repo.spring.io/libs-milestone/org/springframework/geode/spring-geode-starter/1.0.0.M2/" class="external" target="_blank" rel="noopener">Spring libs-milestone 库</a>来获取新包，通过在Maven中增加以下依赖项：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><code>org.springframework.geode:spring-geode-starter</code> （Apache Geode）</p> </li> 
-    <li> <p><code>org.springframework.geode:spring-gemfire-starter</code> （Pivotal GemFire/PCC）</p> </li> 
-   </ul> 
-  </div> 
- </div> 
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Boot for Apache Geode 和 Pivotal GemFire 1.0.0.M2 发布。</p>
+</div>
+<div class="paragraph">
+<p>总的来说，这个版本带来了以下改进：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>支持Spring Session的自动配置，当使用Apache Geode 或者 Pivotal GemFire / Pivotal Cloud Cache (PCC)来管理Spring Boot应用程序的 (HTTP) 会话状态</p>
+</li>
+<li>
+<p>使用Spring Boot自动配置的Spring缓存抽象时，可识别<code>spring.cache.type</code></p>
+</li>
+<li>
+<p>对文档的补充和改进</p>
+</li>
+<li>
+<p>升级Spring Framework <code>5.0.8.RELEASE</code>，Spring Boot <code>2.0.4.RELEASE</code> 和 Spring Data <code>Kay-SR9</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>此版本基于最近推出的<a href="https://springdev.io/blog/2018/08/spring-session-for-apache-geode-pivotal-gemfire-2-0-5-release-and-2-1-0-m1-released.html" class="external" target="_blank" rel="noopener">Spring Session for Apache Geode/Pivotal GemFire (SSDG) 2.0.5.RELEASE</a>构建。</p>
+</div>
+<div class="paragraph">
+<p>SSDG的一个关键附加功能是使用Properties和一个新的<code>SpringSessionGemFireConfigurer</code>回调接口，来启用Apache Geode / Pivotal GemFire / PCC 动态配置Spring Session。这样，即使在Spring Boot的自动配置环境中，用户也可以自定义配置以满足其应用程序要求。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="使用属性配置configuration_with_properties">使用属性配置（Configuration with Properties）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In addition to the Properties discussed here and documented here, Spring Boot for Apache Geode &amp; Pivotal GemFire additionally recognizes the following properties:</p>
+</div>
+<div class="paragraph">
+<p>除了<a href="https://docs.spring.io/autorepo/docs/spring-session-data-geode-build/2.0.5.RELEASE/reference/html5/#httpsession-gemfire-configuration-properties" class="external" target="_blank" rel="noopener">文档中配置属性</a>之外，Apache Geode和Pivotal GemFire的Spring Boot还识别以下属性：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>spring.session.timeout</code></p>
+</li>
+<li>
+<p><code>server.servlet.session.timeout</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>同样，如果设置了这些属性的任何组合的话，<code>spring.session.data.gemfire.session.expiration.max-inactive-interval-seconds</code>将优先于<code>spring.session.timeout</code>，它又优先于<code>server.servlet.session.timeout</code>。</p>
+</div>
+<div class="paragraph">
+<p>Spring Boot for Apache Geode/Pivotal GemFire 能够识别<code>spring.session.store-type</code>。但是，遗憾的是，此属性也无法设置成<code>gemfire</code> 或者 <code>geode</code>，因为这些值不能被Spring Boot识别成为有效的<a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/session/StoreType.html" class="external" target="_blank" rel="noopener"><code>StoreType</code></a>。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="使用configurer配置configuration_using_a_configurer">使用Configurer配置（Configuration using a Configurer）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Boot for Apache Geode &amp; Pivotal GemFire 除了Spring Session for Apache Geode/Pivotal GemFire针对新的<code>SpringSessionGemFireConfigurer</code>回调接口提供之外，没有其他任何内容，正如此处所讨论和记录的那样。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="下一步">下一步</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>接下来，Spring Boot for Apache Geode &amp; Pivotal GemFire 将提供OOTB HealthIndicators，用以评估和监控Apache Geode / Pivotal GemFire驱动的Spring Boot应用程序的运行时健康状况。</p>
+</div>
+<div class="paragraph">
+<p>有关 Spring Boot <code>HealthIndicators</code>的更多内容可以查看<a href="https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html#production-ready-health" class="external" target="_blank" rel="noopener">这里</a>。</p>
+</div>
+<div class="paragraph">
+<p>这将在下一版本<code>1.0.0.M3</code>中提供。</p>
+</div>
+<div class="paragraph">
+<p>长远的规划将会支持Spring Boot Actuator。于此同时，也正在努力用Micrometer改进Apache Geode / Pivotal GemFire的统计架构。这将作为Spring Boot for Apache Geode和Pviotal GemFire的Actuator支持的基础。这很可能在SBDG 1.1中提供。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="如何使用">如何使用</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>您可以通过<a href="https://repo.spring.io/libs-milestone/org/springframework/geode/spring-geode-starter/1.0.0.M2/" class="external" target="_blank" rel="noopener">Spring libs-milestone 库</a>来获取新包，通过在Maven中增加以下依赖项：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>org.springframework.geode:spring-geode-starter</code> （Apache Geode）</p>
+</li>
+<li>
+<p><code>org.springframework.geode:spring-gemfire-starter</code> （Pivotal GemFire/PCC）</p>
+</li>
+</ul>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/08/spring-batch-4-1-0-m3-released.html"> ←Spring Batch 4.1.0.M3 发布</a></li>
@@ -279,30 +295,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

@@ -158,65 +158,75 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="paragraph"> 
- <p><a href="https://spring.io/projects/spring-cloud-open-service-broker" class="external" target="_blank" rel="noopener">Spring Cloud Open Service Broker</a>是一个用于构建实现Open Service Broker API的Spring Boot应用程序的框架。</p> 
-</div> 
-<div class="paragraph"> 
- <p>Open Service Broker API项目允许开发人员为云原生平台（如Cloud Foundry，Kubernetes和OpenShift）中运行的应用程序提供服务。Spring Cloud Open Service Broker提供了一个基于Spring Boot的框架，使你能够在支持Open Service Broker API的平台上为你自己的托管服务快速创建服务代理。</p> 
-</div> 
-<div class="paragraph"> 
- <p>Spring Cloud Open Service Broker，目前需要Java 8、Spring Framework 5、Spring Boot 2，支持Spring MVC或者Spring WebFlux风格的应用，提供了Spring Boot的自动配置。</p> 
-</div> 
-<div class="paragraph"> 
- <p>Spring Cloud Open Service Broker <code>3.0.0.M1</code> 已发布。3.0版本以<code>2.1.0.M1</code>为基础，并引入了完整的响应式支持，该版本将支持<a href="https://www.openservicebrokerapi.org/blog/2018/08/21/open-service-broker-v2-14-released" class="external" target="_blank" rel="noopener">Open Service Broker API v2.14</a>规范中的新增和变更内容。</p> 
-</div> 
-<div class="paragraph"> 
- <p>此版本包括以下内容：</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p>为Spring WebFlux和Project Reactor提供一流支持</p> </li> 
-  <li> <p><code>starter</code>已重命名，因为它现在支持两个Spring Web框架</p> </li> 
-  <li> <p>引入几个响应式生命周期钩子，用于执行附加操作</p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>包括以下Spring Boot 起步依赖：</p> 
-</div> 
-<div class="listingblock"> 
- <div class="content"> 
-  <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
+              <div class="blog--post"><div class="paragraph">
+<p><a href="https://spring.io/projects/spring-cloud-open-service-broker" class="external" target="_blank" rel="noopener">Spring Cloud Open Service Broker</a>是一个用于构建实现Open Service Broker API的Spring Boot应用程序的框架。</p>
+</div>
+<div class="paragraph">
+<p>Open Service Broker API项目允许开发人员为云原生平台（如Cloud Foundry，Kubernetes和OpenShift）中运行的应用程序提供服务。Spring Cloud Open Service Broker提供了一个基于Spring Boot的框架，使你能够在支持Open Service Broker API的平台上为你自己的托管服务快速创建服务代理。</p>
+</div>
+<div class="paragraph">
+<p>Spring Cloud Open Service Broker，目前需要Java 8、Spring Framework 5、Spring Boot 2，支持Spring MVC或者Spring WebFlux风格的应用，提供了Spring Boot的自动配置。</p>
+</div>
+<div class="paragraph">
+<p>Spring Cloud Open Service Broker <code>3.0.0.M1</code> 已发布。3.0版本以<code>2.1.0.M1</code>为基础，并引入了完整的响应式支持，该版本将支持<a href="https://www.openservicebrokerapi.org/blog/2018/08/21/open-service-broker-v2-14-released" class="external" target="_blank" rel="noopener">Open Service Broker API v2.14</a>规范中的新增和变更内容。</p>
+</div>
+<div class="paragraph">
+<p>此版本包括以下内容：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>为Spring WebFlux和Project Reactor提供一流支持</p>
+</li>
+<li>
+<p><code>starter</code>已重命名，因为它现在支持两个Spring Web框架</p>
+</li>
+<li>
+<p>引入几个响应式生命周期钩子，用于执行附加操作</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>包括以下Spring Boot 起步依赖：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
   &lt;artifactId&gt;spring-cloud-starter-open-service-broker&lt;/artifactId&gt;
   &lt;version&gt;3.0.0.M1&lt;/version&gt;
-&lt;/dependency&gt;</code></pre> 
- </div> 
-</div> 
-<div class="paragraph"> 
- <p>使用Spring Milestone库：</p> 
-</div> 
-<div class="listingblock"> 
- <div class="content"> 
-  <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;repository&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>使用Spring Milestone库：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;repository&gt;
   &lt;id&gt;spring-milestones&lt;/id&gt;
   &lt;url&gt;https://repo.spring.io/milestone&lt;/url&gt;
-&lt;/repository&gt;</code></pre> 
- </div> 
-</div> 
-<div class="paragraph"> 
- <p>在<a href="https://github.com/spring-cloud/spring-cloud-open-service-broker/milestone/12?closed=1" class="external" target="_blank" rel="noopener">GitHub</a>查看已关闭问题单。在GitHub上查看已关闭的问题列表。下一个版本<code>3.0.0.M2</code>将包括对异步绑定的支持。请密切关注接下来几周的进展情况。</p> 
-</div> 
-<div class="paragraph"> 
- <p><a href="https://spring.io/projects/spring-cloud-open-service-broker" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-cloud/spring-cloud-open-service-broker" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.0.0.M1/reference/html5" class="external" target="_blank" rel="noopener">文档</a> | <a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.0.0.M1/apidocs/" class="external" target="_blank" rel="noopener">API</a></p> 
-</div> 
-<div class="paragraph"> 
- <p>相关文章：</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/spring-cloud-open-service-broker-2-0-1-release-is-now-available.html" class="external" target="_blank" rel="noopener">Spring Cloud Open Service Broker 2.0.1.RELEASE 已发布</a></p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/10/spring-cloud-open-service-broker-2-1-0-m1-released.html" class="external" target="_blank" rel="noopener">Spring Cloud Open Service Broker 2.1.0.M1 已发布</a></p> </li> 
- </ul> 
+&lt;/repository&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在<a href="https://github.com/spring-cloud/spring-cloud-open-service-broker/milestone/12?closed=1" class="external" target="_blank" rel="noopener">GitHub</a>查看已关闭问题单。在GitHub上查看已关闭的问题列表。下一个版本<code>3.0.0.M2</code>将包括对异步绑定的支持。请密切关注接下来几周的进展情况。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://spring.io/projects/spring-cloud-open-service-broker" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-cloud/spring-cloud-open-service-broker" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.0.0.M1/reference/html5" class="external" target="_blank" rel="noopener">文档</a> | <a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.0.0.M1/apidocs/" class="external" target="_blank" rel="noopener">API</a></p>
+</div>
+<div class="paragraph">
+<p>相关文章：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://springdev.io/blog/2018/08/spring-cloud-open-service-broker-2-0-1-release-is-now-available.html" class="external" target="_blank" rel="noopener">Spring Cloud Open Service Broker 2.0.1.RELEASE 已发布</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/10/spring-cloud-open-service-broker-2-1-0-m1-released.html" class="external" target="_blank" rel="noopener">Spring Cloud Open Service Broker 2.1.0.M1 已发布</a></p>
+</li>
+</ul>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/10/spring-cloud-open-service-broker-2-1-0-m1-released.html"> ←Spring Cloud Open Service Broker 2.1.0.M1 已发布</a></li>
@@ -253,30 +263,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

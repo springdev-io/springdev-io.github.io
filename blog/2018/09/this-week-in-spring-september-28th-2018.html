@@ -158,67 +158,119 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="paragraph"> 
- <p>大家好，Spring 粉丝们，感谢一如既往的等待，又到了每周必读的《Spring一周回顾》时间。</p> 
-</div> 
-<div class="paragraph"> 
- <p>本周Java界最重大事件，莫过于Oracle 官方在北京时间9月26号宣布<a href="https://mail.openjdk.java.net/pipermail/announce/2018-September/000257.html" class="external" target="_blank" rel="noopener">Java 11正式发布</a>，这是Java大版本周期变化后的第一个长期支持版本，非常值得关注。Spring 5.1也于上周正式发布，支持Java 11。而Spring 4.3.x确定不会支持Java 9+，所以如果要使用Java 11，那么是时候升级到Spring 5.1了。Spring Boot 2.1也将会于下个月底发布正式版。</p> 
-</div> 
-<div class="paragraph"> 
- <p><a href="https://springoneplatform.io/" class="external" target="_blank" rel="noopener">SpringOne Platform</a>在本周的9月24-27日在Washington D.C成功举办，其中来自业界的技术大咖们分享了最新的技术，也有一些来自行业的案例分享。有关大会相关的视频和PPT，稍后会整理放出来，敬请关注。</p> 
-</div> 
-<div class="paragraph"> 
- <p>本周我为大家带来了如下内容：</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p><a href="https://spring.io/blog/2018/09/25/spring-tools-4-ga-released" class="external" target="_blank" rel="noopener">Spring Tools 4 正式发布</a>，这是一次完全的重构，专为现代化Spring技术而构建的全新工具，包括智能感知、提供运行应用的实时信息、重大性能提升等，除了支持Eclipse，还支持<a href="https://code.visualstudio.com/" class="external" target="_blank" rel="noopener">Visual Studio Code</a>和<a href="https://ide.atom.io/" class="external" target="_blank" rel="noopener">Atom IDE</a>。</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/09/spring-boot-2-1-m4-available-now.html" class="external" target="_blank" rel="noopener">Spring Boot 2.1.0 M4 发布</a>，构建在Spring Framework 5.1 GA、Spring Data Lovelace-RELEASE、Spring Security 5.1.0.RELEASE和Reactor Californium等最新的版本之上，GA版本将于10月底发布。</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/09/spring-framework-5-1-goes-ga.html" class="external" target="_blank" rel="noopener">Spring Framework 5.1 GA 发布</a>，需要JDK 8及以上版本，特别是支持JDK 11这个LTS版本。优化了启动时间和内存消耗，升级到Reactor Californium、Hibernate ORM 5.3。</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/09/spring-security-5-1-goes-ga.html" class="external" target="_blank" rel="noopener">Spring Security 5.1.0 正式发布</a></p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/09/spring-batch-4-1-0-rc1-is-now-available.html" class="external" target="_blank" rel="noopener">Spring Batch 4.1.0.RC1 发布</a></p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/09/spring-data-lovelace-ga-released.html" class="external" target="_blank" rel="noopener">Spring Data Lovelace 正式发布</a>，新增Spring Data JDBC模块，这里有篇<a href="https://springdev.io/blog/2018/09/introducing-spring-data-jdbc.html" class="external" target="_blank" rel="noopener">介绍其特性的文章</a>。</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/09/spring-web-services-3-0-4-2-4-3-released.html" class="external" target="_blank" rel="noopener">Spring Web Services 3.0.4和2.4.3 同时发布</a>，支持Java 11。</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/09/spring-boot-for-apache-geode-pivotal-gemfire-1-0-0-m3-released.html" class="external" target="_blank" rel="noopener">Spring Boot for Apache Geode和Pivotal GemFire 1.0.0.M3 发布</a>。</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/09/spring-session-bom-bean-rc1-released.html" class="external" target="_blank" rel="noopener">Spring Session BOM Bean-RC1 发布</a></p> </li> 
-  <li> <p><a href="https://lucene.apache.org/core/7_5_0/changes/Changes.html" class="external" target="_blank" rel="noopener">Apache Lucene 7.5.0</a>和<a href="http://lucene.apache.org/solr/7_5_0/changes/Changes.html" class="external" target="_blank" rel="noopener">Apache Solr 7.5.0</a> 同时发布</p> </li> 
-  <li> <p><a href="http://juneau.apache.org/#whatsnew.html" class="external" target="_blank" rel="noopener">Apache Juneau 7.2.0 已发布</a></p> </li> 
-  <li> <p><a href="https://hbase.apache.org/downloads.html" class="external" target="_blank" rel="noopener">Apache HBase 1.2.7 已发布</a></p> </li> 
-  <li> <p><a href="https://github.com/tensorflow/tensorflow/releases/tag/v1.11.0" class="external" target="_blank" rel="noopener">TensorFlow 1.11.0 已发布</a></p> </li> 
-  <li> <p><a href="http://blog.keycloak.org/2018/09/keycloak-450final-released.html" class="external" target="_blank" rel="noopener">Keycloak 4.5.0.Final 已发布</a></p> </li> 
-  <li> <p><a href="https://netty.io/news/2018/09/28/4-1-30-Final.html" class="external" target="_blank" rel="noopener">Netty 4.1.30 发布</a>，支持Java 8以上版本，包括Java 11</p> </li> 
-  <li> <p><a href="https://github.com/kubernetes/kubernetes/releases/tag/v1.12.0" class="external" target="_blank" rel="noopener">Kubernetes 1.12.0 已发布</a></p> </li> 
-  <li> <p><a href="https://github.com/alibaba/nacos/releases/tag/0.2.1" class="external" target="_blank" rel="noopener">Nacos 0.2.1 已发布</a>，这里有个支持Spring Boot的项目：<a href="https://github.com/nacos-group/nacos-spring-boot-project" class="external" target="_blank" rel="noopener">Nacos for Spring Boot</a></p> </li> 
-  <li> <p><a href="https://github.com/atom/atom/releases/tag/v1.31.0" class="external" target="_blank" rel="noopener">Atom 1.31.0</a>和<a href="https://github.com/atom/atom/releases/tag/v1.31.1" class="external" target="_blank" rel="noopener">1.31.1</a> 相继发布</p> </li> 
-  <li> <p><a href="https://objectcomputing.com/news/2018/09/30/micronaut-1-rc1" class="external" target="_blank" rel="noopener">Micronaut 1.0 RC1 发布</a>，这是一次重要的里程碑，说明所有特性已经开发完成，其新特性包括支持构建<a href="https://www.graalvm.org/">GraalVM</a>原生镜像，编译时校验和编译时生成<a href="https://swagger.io/" class="external" target="_blank" rel="noopener">Swagger</a>文档，借助最前沿的AOT（预先编译）技术，相信它未来在微服务、IoT、无服务等场景中将会发挥重大作用。</p> </li> 
-  <li> <p><a href="https://mail.openjdk.java.net/pipermail/announce/2018-September/000257.html" class="external" target="_blank" rel="noopener">Java 11正式发布</a>，这里有<a href="http://www.infoq.com/cn/news/2018/09/java11-new-feature" class="external" target="_blank" rel="noopener">新特性解读</a>，<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html" class="external" target="_blank" rel="noopener">下载地址</a></p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>接下来的相关社区活动：</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p><a href="http://www.huodongxing.com/event/9456414800100" class="external" target="_blank" rel="noopener">2018中国开源年会 COSCon'18</a>，将会在2018年10月20、21两天在深圳南山区举办，欢迎一起前往参加这个开源聚会。</p> </li> 
-  <li> <p><a href="http://springonetour.io/2018/beijing" class="external" target="_blank" rel="noopener">SpringOne Tour 2018 技术峰会</a>，2018年11月3日在北京京仪大酒店，来自Pivotal美国的Spring明星大咖和国内技术专家组成了豪华阵容，他们将与大家分享并探讨现代应用开发、DevOps、CI/CD、云计算等话题。</p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>历史好文推荐：</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p><a href="https://springdev.io/blog/2018/09/this-week-in-spring-september-21th-2018.html" class="external" target="_blank" rel="noopener">上一期的《Spring 一周回顾》</a>同样精彩，值得一读！</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/09/the-spring-book-list-2018.html" class="external" target="_blank" rel="noopener">《Spring 最全书单，送给爱学习的你》</a>，80本国内外已出版的Spring相关的书，可以根据自己需要选择阅读！</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/10-ways-to-secure-spring-boot.html" class="external" target="_blank" rel="noopener">10 种保护Spring Boot应用程序的绝佳方法</a>，来自业界安全专家和开源大咖Matt Raible和Simon Maple合作的成果。</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/spring-boot-best-practices.html" class="external" target="_blank" rel="noopener">16 条Spring Boot最佳实践</a>，来自业界Spring大咖们的精彩总结！</p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>此外，还有最重要的一个事情是，本站正式更名为：<code>Spring技术社区</code>，而LOGO也重新设计为“四叶草”图案，希望会大家带来更多技术资讯，助力每一位Spring开发者在学习和工作上走得更高更远，永远幸运相伴！</p> 
-</div> 
-<div class="paragraph"> 
- <p>周末愉快，感谢阅读，我们下周见！</p> 
+              <div class="blog--post"><div class="paragraph">
+<p>大家好，Spring 粉丝们，感谢一如既往的等待，又到了每周必读的《Spring一周回顾》时间。</p>
+</div>
+<div class="paragraph">
+<p>本周Java界最重大事件，莫过于Oracle 官方在北京时间9月26号宣布<a href="https://mail.openjdk.java.net/pipermail/announce/2018-September/000257.html" class="external" target="_blank" rel="noopener">Java 11正式发布</a>，这是Java大版本周期变化后的第一个长期支持版本，非常值得关注。Spring 5.1也于上周正式发布，支持Java 11。而Spring 4.3.x确定不会支持Java 9+，所以如果要使用Java 11，那么是时候升级到Spring 5.1了。Spring Boot 2.1也将会于下个月底发布正式版。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://springoneplatform.io/" class="external" target="_blank" rel="noopener">SpringOne Platform</a>在本周的9月24-27日在Washington D.C成功举办，其中来自业界的技术大咖们分享了最新的技术，也有一些来自行业的案例分享。有关大会相关的视频和PPT，稍后会整理放出来，敬请关注。</p>
+</div>
+<div class="paragraph">
+<p>本周我为大家带来了如下内容：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://spring.io/blog/2018/09/25/spring-tools-4-ga-released" class="external" target="_blank" rel="noopener">Spring Tools 4 正式发布</a>，这是一次完全的重构，专为现代化Spring技术而构建的全新工具，包括智能感知、提供运行应用的实时信息、重大性能提升等，除了支持Eclipse，还支持<a href="https://code.visualstudio.com/" class="external" target="_blank" rel="noopener">Visual Studio Code</a>和<a href="https://ide.atom.io/" class="external" target="_blank" rel="noopener">Atom IDE</a>。</p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/09/spring-boot-2-1-m4-available-now.html" class="external" target="_blank" rel="noopener">Spring Boot 2.1.0 M4 发布</a>，构建在Spring Framework 5.1 GA、Spring Data Lovelace-RELEASE、Spring Security 5.1.0.RELEASE和Reactor Californium等最新的版本之上，GA版本将于10月底发布。</p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/09/spring-framework-5-1-goes-ga.html" class="external" target="_blank" rel="noopener">Spring Framework 5.1 GA 发布</a>，需要JDK 8及以上版本，特别是支持JDK 11这个LTS版本。优化了启动时间和内存消耗，升级到Reactor Californium、Hibernate ORM 5.3。</p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/09/spring-security-5-1-goes-ga.html" class="external" target="_blank" rel="noopener">Spring Security 5.1.0 正式发布</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/09/spring-batch-4-1-0-rc1-is-now-available.html" class="external" target="_blank" rel="noopener">Spring Batch 4.1.0.RC1 发布</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/09/spring-data-lovelace-ga-released.html" class="external" target="_blank" rel="noopener">Spring Data Lovelace 正式发布</a>，新增Spring Data JDBC模块，这里有篇<a href="https://springdev.io/blog/2018/09/introducing-spring-data-jdbc.html" class="external" target="_blank" rel="noopener">介绍其特性的文章</a>。</p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/09/spring-web-services-3-0-4-2-4-3-released.html" class="external" target="_blank" rel="noopener">Spring Web Services 3.0.4和2.4.3 同时发布</a>，支持Java 11。</p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/09/spring-boot-for-apache-geode-pivotal-gemfire-1-0-0-m3-released.html" class="external" target="_blank" rel="noopener">Spring Boot for Apache Geode和Pivotal GemFire 1.0.0.M3 发布</a>。</p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/09/spring-session-bom-bean-rc1-released.html" class="external" target="_blank" rel="noopener">Spring Session BOM Bean-RC1 发布</a></p>
+</li>
+<li>
+<p><a href="https://lucene.apache.org/core/7_5_0/changes/Changes.html" class="external" target="_blank" rel="noopener">Apache Lucene 7.5.0</a>和<a href="http://lucene.apache.org/solr/7_5_0/changes/Changes.html" class="external" target="_blank" rel="noopener">Apache Solr 7.5.0</a> 同时发布</p>
+</li>
+<li>
+<p><a href="http://juneau.apache.org/#whatsnew.html" class="external" target="_blank" rel="noopener">Apache Juneau 7.2.0 已发布</a></p>
+</li>
+<li>
+<p><a href="https://hbase.apache.org/downloads.html" class="external" target="_blank" rel="noopener">Apache HBase 1.2.7 已发布</a></p>
+</li>
+<li>
+<p><a href="https://github.com/tensorflow/tensorflow/releases/tag/v1.11.0" class="external" target="_blank" rel="noopener">TensorFlow 1.11.0 已发布</a></p>
+</li>
+<li>
+<p><a href="http://blog.keycloak.org/2018/09/keycloak-450final-released.html" class="external" target="_blank" rel="noopener">Keycloak 4.5.0.Final 已发布</a></p>
+</li>
+<li>
+<p><a href="https://netty.io/news/2018/09/28/4-1-30-Final.html" class="external" target="_blank" rel="noopener">Netty 4.1.30 发布</a>，支持Java 8以上版本，包括Java 11</p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kubernetes/releases/tag/v1.12.0" class="external" target="_blank" rel="noopener">Kubernetes 1.12.0 已发布</a></p>
+</li>
+<li>
+<p><a href="https://github.com/alibaba/nacos/releases/tag/0.2.1" class="external" target="_blank" rel="noopener">Nacos 0.2.1 已发布</a>，这里有个支持Spring Boot的项目：<a href="https://github.com/nacos-group/nacos-spring-boot-project" class="external" target="_blank" rel="noopener">Nacos for Spring Boot</a></p>
+</li>
+<li>
+<p><a href="https://github.com/atom/atom/releases/tag/v1.31.0" class="external" target="_blank" rel="noopener">Atom 1.31.0</a>和<a href="https://github.com/atom/atom/releases/tag/v1.31.1" class="external" target="_blank" rel="noopener">1.31.1</a> 相继发布</p>
+</li>
+<li>
+<p><a href="https://objectcomputing.com/news/2018/09/30/micronaut-1-rc1" class="external" target="_blank" rel="noopener">Micronaut 1.0 RC1 发布</a>，这是一次重要的里程碑，说明所有特性已经开发完成，其新特性包括支持构建<a href="https://www.graalvm.org/">GraalVM</a>原生镜像，编译时校验和编译时生成<a href="https://swagger.io/" class="external" target="_blank" rel="noopener">Swagger</a>文档，借助最前沿的AOT（预先编译）技术，相信它未来在微服务、IoT、无服务等场景中将会发挥重大作用。</p>
+</li>
+<li>
+<p><a href="https://mail.openjdk.java.net/pipermail/announce/2018-September/000257.html" class="external" target="_blank" rel="noopener">Java 11正式发布</a>，这里有<a href="http://www.infoq.com/cn/news/2018/09/java11-new-feature" class="external" target="_blank" rel="noopener">新特性解读</a>，<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html" class="external" target="_blank" rel="noopener">下载地址</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>接下来的相关社区活动：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.huodongxing.com/event/9456414800100" class="external" target="_blank" rel="noopener">2018中国开源年会 COSCon'18</a>，将会在2018年10月20、21两天在深圳南山区举办，欢迎一起前往参加这个开源聚会。</p>
+</li>
+<li>
+<p><a href="http://springonetour.io/2018/beijing" class="external" target="_blank" rel="noopener">SpringOne Tour 2018 技术峰会</a>，2018年11月3日在北京京仪大酒店，来自Pivotal美国的Spring明星大咖和国内技术专家组成了豪华阵容，他们将与大家分享并探讨现代应用开发、DevOps、CI/CD、云计算等话题。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>历史好文推荐：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://springdev.io/blog/2018/09/this-week-in-spring-september-21th-2018.html" class="external" target="_blank" rel="noopener">上一期的《Spring 一周回顾》</a>同样精彩，值得一读！</p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/09/the-spring-book-list-2018.html" class="external" target="_blank" rel="noopener">《Spring 最全书单，送给爱学习的你》</a>，80本国内外已出版的Spring相关的书，可以根据自己需要选择阅读！</p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/08/10-ways-to-secure-spring-boot.html" class="external" target="_blank" rel="noopener">10 种保护Spring Boot应用程序的绝佳方法</a>，来自业界安全专家和开源大咖Matt Raible和Simon Maple合作的成果。</p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/08/spring-boot-best-practices.html" class="external" target="_blank" rel="noopener">16 条Spring Boot最佳实践</a>，来自业界Spring大咖们的精彩总结！</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>此外，还有最重要的一个事情是，本站正式更名为：<code>Spring技术社区</code>，而LOGO也重新设计为“四叶草”图案，希望会大家带来更多技术资讯，助力每一位Spring开发者在学习和工作上走得更高更远，永远幸运相伴！</p>
+</div>
+<div class="paragraph">
+<p>周末愉快，感谢阅读，我们下周见！</p>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/09/spring-security-5-1-goes-ga.html"> ←Spring Security 5.1.0 正式发布</a></li>
@@ -255,30 +307,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

@@ -158,37 +158,63 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="paragraph"> 
- <p>Spring Boot 1.5.15 包含了<a href="https://github.com/spring-projects/spring-boot/milestone/114?closed=1" class="external" target="_blank" rel="noopener">35个修复、改进和依赖项更新</a>。</p> 
-</div> 
-<div class="ulist"> 
- <div class="title">
-  其中修复的部分BUG
- </div> 
- <ul> 
-  <li> <p><a href="https://github.com/spring-projects/spring-boot/pull/13863" class="external" target="_blank" rel="noopener">Flyway文件系统前缀位置检查</a></p> </li> 
-  <li> <p><a href="https://github.com/spring-projects/spring-boot/issues/13803" class="external" target="_blank" rel="noopener">当Jetty的WebAppContext无法启动时，应用程序仍然启动成功</a></p> </li> 
-  <li> <p><a href="https://github.com/spring-projects/spring-boot/issues/13588" class="external" target="_blank" rel="noopener">由于BeanTypeRegistry持有过时信息，重写的bean定义会导致错误的Bean条件判断</a></p> </li> 
-  <li> <p><a href="https://github.com/spring-projects/spring-boot/issues/13450" class="external" target="_blank" rel="noopener">在springProfile的name属性中使用时，不会替换属性占位符</a></p> </li> 
-  <li> <p><a href="https://github.com/spring-projects/spring-boot/issues/7735" class="external" target="_blank" rel="noopener">自动配置的MultipartConfigElement会阻止CommonsMultipartResolver解析请求部分</a></p> </li> 
-  <li> <p><a href="https://github.com/spring-projects/spring-boot/issues/12742" class="external" target="_blank" rel="noopener">如果Undertow启用了访问日志记录，当容器停止时，线程会泄漏</a></p> </li> 
- </ul> 
-</div> 
-<div class="ulist"> 
- <div class="title">
-  依赖升级
- </div> 
- <ul> 
-  <li> <p>Spring Data Ingalls SR14</p> </li> 
-  <li> <p>Spring Amqp 1.7.9.RELEASE</p> </li> 
-  <li> <p>Dependency Management Plugin 1.0.6.RELEASE</p> </li> 
-  <li> <p>Httpclient 4.5.6</p> </li> 
-  <li> <p>Httpcore 4.4.10</p> </li> 
-  <li> <p>Tomcat 8.5.32</p> </li> 
-  <li> <p>Narayana 5.5.32.Final</p> </li> 
-  <li> <p>Maven Enforcer Plugin 1.4.1</p> </li> 
-  <li> <p>Git Commit Id Plugin 2.2.4</p> </li> 
- </ul> 
+              <div class="blog--post"><div class="paragraph">
+<p>Spring Boot 1.5.15 包含了<a href="https://github.com/spring-projects/spring-boot/milestone/114?closed=1" class="external" target="_blank" rel="noopener">35个修复、改进和依赖项更新</a>。</p>
+</div>
+<div class="ulist">
+<div class="title">其中修复的部分BUG</div>
+<ul>
+<li>
+<p><a href="https://github.com/spring-projects/spring-boot/pull/13863" class="external" target="_blank" rel="noopener">Flyway文件系统前缀位置检查</a></p>
+</li>
+<li>
+<p><a href="https://github.com/spring-projects/spring-boot/issues/13803" class="external" target="_blank" rel="noopener">当Jetty的WebAppContext无法启动时，应用程序仍然启动成功</a></p>
+</li>
+<li>
+<p><a href="https://github.com/spring-projects/spring-boot/issues/13588" class="external" target="_blank" rel="noopener">由于BeanTypeRegistry持有过时信息，重写的bean定义会导致错误的Bean条件判断</a></p>
+</li>
+<li>
+<p><a href="https://github.com/spring-projects/spring-boot/issues/13450" class="external" target="_blank" rel="noopener">在springProfile的name属性中使用时，不会替换属性占位符</a></p>
+</li>
+<li>
+<p><a href="https://github.com/spring-projects/spring-boot/issues/7735" class="external" target="_blank" rel="noopener">自动配置的MultipartConfigElement会阻止CommonsMultipartResolver解析请求部分</a></p>
+</li>
+<li>
+<p><a href="https://github.com/spring-projects/spring-boot/issues/12742" class="external" target="_blank" rel="noopener">如果Undertow启用了访问日志记录，当容器停止时，线程会泄漏</a></p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">依赖升级</div>
+<ul>
+<li>
+<p>Spring Data Ingalls SR14</p>
+</li>
+<li>
+<p>Spring Amqp 1.7.9.RELEASE</p>
+</li>
+<li>
+<p>Dependency Management Plugin 1.0.6.RELEASE</p>
+</li>
+<li>
+<p>Httpclient 4.5.6</p>
+</li>
+<li>
+<p>Httpcore 4.4.10</p>
+</li>
+<li>
+<p>Tomcat 8.5.32</p>
+</li>
+<li>
+<p>Narayana 5.5.32.Final</p>
+</li>
+<li>
+<p>Maven Enforcer Plugin 1.4.1</p>
+</li>
+<li>
+<p>Git Commit Id Plugin 2.2.4</p>
+</li>
+</ul>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/07/spring_boot_1_x_eol_aug_1st_2019.html"> ←Spring Boot 1.x 在一年后将停止更新</a></li>
@@ -225,30 +251,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

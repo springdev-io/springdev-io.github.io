@@ -158,158 +158,165 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="toc" class="toc"> 
- <div id="toctitle">
-  本文内容
- </div> 
- <ul class="sectlevel1"> 
-  <li><a href="#介绍">介绍</a> 
-   <ul class="sectlevel2"> 
-    <li><a href="#amazon_web_services_aws">Amazon Web Services（AWS）</a></li> 
-    <li><a href="#amazon_kinesis">Amazon Kinesis</a></li> 
-    <li><a href="#spring_cloud_stream">Spring Cloud Stream</a></li> 
-    <li><a href="#spring_cloud_stream_binder_for_aws_kinesis">Spring Cloud Stream Binder for AWS Kinesis</a></li> 
-    <li><a href="#配置参数">配置参数</a></li> 
-   </ul> </li> 
-  <li><a href="#如何使用">如何使用</a> 
-   <ul class="sectlevel2"> 
-    <li><a href="#在maven中添加依赖项">在Maven中添加依赖项</a></li> 
-   </ul> </li> 
-  <li><a href="#参考资料">参考资料</a></li> 
- </ul> 
-</div> 
-<div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="quoteblock abstract"> 
-   <blockquote>
-     Spring Cloud Stream Kinesis Binder 1.0 正式发布，这也意味着在生产级Spring应用中，您将可以很轻松的集成AWS Kinesis，并很容易的构建一个消息驱动的微服务应用程序。本文将带您详细了解Amazon Kinesis以及如何在项目中使用。 
-   </blockquote> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="介绍">介绍</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="amazon_web_services_aws">Amazon Web Services（AWS）</h3> 
-   <div class="paragraph"> 
-    <p><a href="http://aws.amazon.com/" class="external" target="_blank" rel="noopener">亚马逊网络服务</a>（Amazon Web Services：AWS）于2006年推出，通过其云计算平台为企业提供关键的基础设施服务。使用云计算业务可以采用新的业务模式，从而无需计划和投资采购自己的IT基础架构。他们可以使用云服务提供商提供的基础架构和服务，并在使用服务时付费。访问<a href="http://aws.amazon.com/products/" class="external" target="_blank" rel="noopener">http://aws.amazon.com/products/</a>，了解亚马逊作为其云计算服务的一部分提供的各种产品的更多详细信息。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="amazon_kinesis">Amazon Kinesis</h3> 
-   <div class="paragraph"> 
-    <p>Amazon Kinesis 可让您轻松收集、处理和分析实时流数据，以便您及时获得见解并对新信息快速做出响应。Amazon Kinesis 提供多种核心功能，可以经济高效地处理任意规模的流数据，同时具有很高的灵活性，让您可以选择最符合应用程序需求的工具。借助 Amazon Kinesis，您可以获取实时数据 (例如视频、音频、应用程序日志、网站点击流) 以及关于机器学习、分析和其他应用程序的 IoT 遥测数据。借助 Amazon Kinesis，您可以即刻对收到的数据进行处理和分析并做出响应，无需等到收集完全部数据后才开始进行处理。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="spring_cloud_stream">Spring Cloud Stream</h3> 
-   <div class="paragraph"> 
-    <p>Spring Cloud Stream是一个用于构建消息驱动的微服务应用程序的框架。Spring Cloud Stream构建于Spring Boot之上，用于创建独立的生产级Spring应用程序，并使用Spring Integration提供与消息代理的连接。它提供了来自多个供应商的中间件的固定配置，引入了持久化的发布-订阅语义，消费者分组和分区的概念。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Spring Cloud Stream的核心构建组件有：</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>目标绑定器（Destination Binders）：负责提供与外部消息传递系统集成的组件。</p> </li> 
-     <li> <p>目标绑定（Destination Bindings）：外部消息传递系统和应用程序之间的桥接消息的生产者和消费者（由目标绑定器创建）。</p> </li> 
-     <li> <p>消息（Message）：生产者和消费者用于与目标绑定器（以及通过外部消息传递系统的其他应用程序）通信的规范数据结构。</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p>目前，Spring Cloud Stream支持<a href="https://github.com/spring-cloud/spring-cloud-stream-binder-rabbit" class="external" target="_blank" rel="noopener">RabbitMQ</a>和<a href="https://github.com/spring-cloud/spring-cloud-stream-binder-kafka" class="external" target="_blank" rel="noopener">Apache Kafka</a>绑定器，也将包含更多绑定器实现（例如：<a href="https://github.com/spring-cloud/spring-cloud-gcp/tree/master/spring-cloud-gcp-pubsub-stream-binder" class="external" target="_blank" rel="noopener">Google PubSub</a>和<a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis" class="external" target="_blank" rel="noopener">AWS Kinesis</a>）。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="spring_cloud_stream_binder_for_aws_kinesis">Spring Cloud Stream Binder for AWS Kinesis</h3> 
-   <div class="paragraph"> 
-    <p>Spring Cloud Stream Binder for AWS Kinesis提供了Spring Cloud Stream的绑定实现。此实现在其基础上使用Spring Integration AWS Kinesis通道适配器。下图解释了Kinesis Binder实现如何将每个配置的目标映射到AWS Kinesis Streams：</p> 
-   </div> 
-   <div class="imageblock"> 
-    <div class="content"> 
-     <img src="https://springdev.io/images/kinesis-binder.png" alt="Kinesis binder"> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>与Apache Kafka不同，AWS Kinesis不为消费者分组提供开箱即用的支持。此功能的支持是作为<code>KinesisMessageDrivenChannelAdapter</code>中分片检查点的<code>MetadataStore</code>密钥的一部分来实现的 - <code>[CONSUMER_GROUP]：[STREAM]：[SHARD_ID]</code>。此外，<code>LockRegistry</code>用于确保对每个分片的独占访问。这样，同一个消费者分组中只有一个通道适配器将消费来自其配置的流中的单个分片的消息。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>AWS Kinesis中的分区逻辑类似于Apache Kafka支持，但逻辑略有不同。生产者端的<code>partitionKey</code>确定将数据记录分配给流中的哪个分片。分区键是Unicode字符串，每个键的最大长度限制为256个字符。AWS Kinesis使用分区键作为哈希函数的输入，该哈希函数将分区键和关联数据映射到特定分片。具体来说，MD5哈希函数用于将分区键映射到128位整数值，并将关联的数据记录映射到分片。作为此散列机制的结果，具有相同分区键的所有数据记录映射到流中的相同分片。但同时我们无法选择明确发送的目标分片。虽然手动计算哈希值（并分别对producer使用<code>explicitHashKeyExpression</code>），但我们可以通过包含在<code>HashKeyRange</code>中来跟踪目标分片。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>默认情况下，分区键是消息载体中<code>Object.hash()</code>的结果。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>在AWS Kinesis Binder的情况下，Spring Cloud Stream分区处理逻辑被排除，因为它不再使用，并且提供的<code>producer.partitionKeyExpression</code>直接传播到<code>KinesisMessageHandler</code>。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>在消费者方面，<code>instanceCount</code>和<code>instanceIndex</code>用于在组中的消费者之间均匀分配分片。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="配置参数">配置参数</h3> 
-   <div class="paragraph"> 
-    <p>有关特定于Kinesis 绑定器和绑定通道的设置，在项目<a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis/blob/master/spring-cloud-stream-binder-kinesis-docs/src/main/asciidoc/overview.adoc#configuration-options" class="external" target="_blank" rel="noopener">说明文档</a>中有详细的介绍。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>有关通用绑定配置选项和属性，请参阅<a href="https://github.com/spring-cloud/spring-cloud-stream/blob/master/spring-cloud-stream-core-docs/src/main/asciidoc/spring-cloud-stream-overview.adoc#configuration-options" class="external" target="_blank" rel="noopener">Spring Cloud Stream core文档</a>。</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="如何使用">如何使用</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="在maven中添加依赖项">在Maven中添加依赖项</h3> 
-   <div class="paragraph"> 
-    <p>如果使用Maven，可以在项目POM的依赖中添加如下，这些组件已经发布到Spring Release和Maven Central了。</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
+              <div class="blog--post"><div id="toc" class="toc">
+<div id="toctitle">本文内容</div>
+<ul class="sectlevel1">
+<li><a href="#介绍">介绍</a>
+<ul class="sectlevel2">
+<li><a href="#amazon_web_servicesaws">Amazon Web Services（AWS）</a></li>
+<li><a href="#amazon_kinesis">Amazon Kinesis</a></li>
+<li><a href="#spring_cloud_stream">Spring Cloud Stream</a></li>
+<li><a href="#spring_cloud_stream_binder_for_aws_kinesis">Spring Cloud Stream Binder for AWS Kinesis</a></li>
+<li><a href="#配置参数">配置参数</a></li>
+</ul>
+</li>
+<li><a href="#如何使用">如何使用</a>
+<ul class="sectlevel2">
+<li><a href="#在maven中添加依赖项">在Maven中添加依赖项</a></li>
+</ul>
+</li>
+<li><a href="#参考资料">参考资料</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="quoteblock abstract">
+<blockquote>
+Spring Cloud Stream Kinesis Binder 1.0 正式发布，这也意味着在生产级Spring应用中，您将可以很轻松的集成AWS Kinesis，并很容易的构建一个消息驱动的微服务应用程序。本文将带您详细了解Amazon Kinesis以及如何在项目中使用。
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="介绍">介绍</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="amazon_web_servicesaws">Amazon Web Services（AWS）</h3>
+<div class="paragraph">
+<p><a href="http://aws.amazon.com/" class="external" target="_blank" rel="noopener">亚马逊网络服务</a>（Amazon Web Services：AWS）于2006年推出，通过其云计算平台为企业提供关键的基础设施服务。使用云计算业务可以采用新的业务模式，从而无需计划和投资采购自己的IT基础架构。他们可以使用云服务提供商提供的基础架构和服务，并在使用服务时付费。访问<a href="http://aws.amazon.com/products/" class="external" target="_blank" rel="noopener">http://aws.amazon.com/products/</a>，了解亚马逊作为其云计算服务的一部分提供的各种产品的更多详细信息。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="amazon_kinesis">Amazon Kinesis</h3>
+<div class="paragraph">
+<p>Amazon Kinesis 可让您轻松收集、处理和分析实时流数据，以便您及时获得见解并对新信息快速做出响应。Amazon Kinesis 提供多种核心功能，可以经济高效地处理任意规模的流数据，同时具有很高的灵活性，让您可以选择最符合应用程序需求的工具。借助 Amazon Kinesis，您可以获取实时数据 (例如视频、音频、应用程序日志、网站点击流) 以及关于机器学习、分析和其他应用程序的 IoT 遥测数据。借助 Amazon Kinesis，您可以即刻对收到的数据进行处理和分析并做出响应，无需等到收集完全部数据后才开始进行处理。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spring_cloud_stream">Spring Cloud Stream</h3>
+<div class="paragraph">
+<p>Spring Cloud Stream是一个用于构建消息驱动的微服务应用程序的框架。Spring Cloud Stream构建于Spring Boot之上，用于创建独立的生产级Spring应用程序，并使用Spring Integration提供与消息代理的连接。它提供了来自多个供应商的中间件的固定配置，引入了持久化的发布-订阅语义，消费者分组和分区的概念。</p>
+</div>
+<div class="paragraph">
+<p>Spring Cloud Stream的核心构建组件有：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>目标绑定器（Destination Binders）：负责提供与外部消息传递系统集成的组件。</p>
+</li>
+<li>
+<p>目标绑定（Destination Bindings）：外部消息传递系统和应用程序之间的桥接消息的生产者和消费者（由目标绑定器创建）。</p>
+</li>
+<li>
+<p>消息（Message）：生产者和消费者用于与目标绑定器（以及通过外部消息传递系统的其他应用程序）通信的规范数据结构。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>目前，Spring Cloud Stream支持<a href="https://github.com/spring-cloud/spring-cloud-stream-binder-rabbit" class="external" target="_blank" rel="noopener">RabbitMQ</a>和<a href="https://github.com/spring-cloud/spring-cloud-stream-binder-kafka" class="external" target="_blank" rel="noopener">Apache Kafka</a>绑定器，也将包含更多绑定器实现（例如：<a href="https://github.com/spring-cloud/spring-cloud-gcp/tree/master/spring-cloud-gcp-pubsub-stream-binder" class="external" target="_blank" rel="noopener">Google PubSub</a>和<a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis" class="external" target="_blank" rel="noopener">AWS Kinesis</a>）。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spring_cloud_stream_binder_for_aws_kinesis">Spring Cloud Stream Binder for AWS Kinesis</h3>
+<div class="paragraph">
+<p>Spring Cloud Stream Binder for AWS Kinesis提供了Spring Cloud Stream的绑定实现。此实现在其基础上使用Spring Integration AWS Kinesis通道适配器。下图解释了Kinesis Binder实现如何将每个配置的目标映射到AWS Kinesis Streams：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/kinesis-binder.png" alt="Kinesis binder">
+</div>
+</div>
+<div class="paragraph">
+<p>与Apache Kafka不同，AWS Kinesis不为消费者分组提供开箱即用的支持。此功能的支持是作为<code>KinesisMessageDrivenChannelAdapter</code>中分片检查点的<code>MetadataStore</code>密钥的一部分来实现的 - <code>[CONSUMER_GROUP]：[STREAM]：[SHARD_ID]</code>。此外，<code>LockRegistry</code>用于确保对每个分片的独占访问。这样，同一个消费者分组中只有一个通道适配器将消费来自其配置的流中的单个分片的消息。</p>
+</div>
+<div class="paragraph">
+<p>AWS Kinesis中的分区逻辑类似于Apache Kafka支持，但逻辑略有不同。生产者端的<code>partitionKey</code>确定将数据记录分配给流中的哪个分片。分区键是Unicode字符串，每个键的最大长度限制为256个字符。AWS Kinesis使用分区键作为哈希函数的输入，该哈希函数将分区键和关联数据映射到特定分片。具体来说，MD5哈希函数用于将分区键映射到128位整数值，并将关联的数据记录映射到分片。作为此散列机制的结果，具有相同分区键的所有数据记录映射到流中的相同分片。但同时我们无法选择明确发送的目标分片。虽然手动计算哈希值（并分别对producer使用<code>explicitHashKeyExpression</code>），但我们可以通过包含在<code>HashKeyRange</code>中来跟踪目标分片。</p>
+</div>
+<div class="paragraph">
+<p>默认情况下，分区键是消息载体中<code>Object.hash()</code>的结果。</p>
+</div>
+<div class="paragraph">
+<p>在AWS Kinesis Binder的情况下，Spring Cloud Stream分区处理逻辑被排除，因为它不再使用，并且提供的<code>producer.partitionKeyExpression</code>直接传播到<code>KinesisMessageHandler</code>。</p>
+</div>
+<div class="paragraph">
+<p>在消费者方面，<code>instanceCount</code>和<code>instanceIndex</code>用于在组中的消费者之间均匀分配分片。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="配置参数">配置参数</h3>
+<div class="paragraph">
+<p>有关特定于Kinesis 绑定器和绑定通道的设置，在项目<a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis/blob/master/spring-cloud-stream-binder-kinesis-docs/src/main/asciidoc/overview.adoc#configuration-options" class="external" target="_blank" rel="noopener">说明文档</a>中有详细的介绍。</p>
+</div>
+<div class="paragraph">
+<p>有关通用绑定配置选项和属性，请参阅<a href="https://github.com/spring-cloud/spring-cloud-stream/blob/master/spring-cloud-stream-core-docs/src/main/asciidoc/spring-cloud-stream-overview.adoc#configuration-options" class="external" target="_blank" rel="noopener">Spring Cloud Stream core文档</a>。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="如何使用">如何使用</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="在maven中添加依赖项">在Maven中添加依赖项</h3>
+<div class="paragraph">
+<p>如果使用Maven，可以在项目POM的依赖中添加如下，这些组件已经发布到Spring Release和Maven Central了。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
     &lt;artifactId&gt;spring-cloud-stream-binder-kinesis&lt;/artifactId&gt;
     &lt;version&gt;1.0.0.RELEASE&lt;/version&gt;
-&lt;/dependency&gt;</code></pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p><code>spring-cloud-stream-binder-kinesis</code>本身依赖了<code>spring-integration-aws</code>组件，使用其来实现一些集成。如果引入前者依赖项，那么后者可以不用再引入。</p> 
-   </div> 
-   <div class="admonitionblock note"> 
-    <table> 
-     <tbody>
-      <tr> 
-       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> 
-        <div class="paragraph"> 
-         <p>关于<a href="https://springdev.io/blog/2018/08/spring-integration-for-aws-2-0-ga.html" class="external" target="_blank" rel="noopener">Spring Integration for AWS 2.0</a>，会有详细介绍说明。</p> 
-        </div> </td> 
-      </tr> 
-     </tbody>
-    </table> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="参考资料">参考资料</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Integration：<a href="https://github.com/spring-projects/spring-integration" class="external" target="_blank" rel="noopener">https://github.com/spring-projects/spring-integration</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Integration Extension for AWS：<a href="https://github.com/spring-projects/spring-integration-aws" class="external" target="_blank" rel="noopener">https://github.com/spring-projects/spring-integration-aws</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Cloud for Amazon Web Services：<a href="https://cloud.spring.io/spring-cloud-aws/" class="external" target="_blank" rel="noopener">https://cloud.spring.io/spring-cloud-aws/</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Cloud Stream Kinesis Binder：<a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis" class="external" target="_blank" rel="noopener">https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis</a></p> 
-  </div> 
- </div> 
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>spring-cloud-stream-binder-kinesis</code>本身依赖了<code>spring-integration-aws</code>组件，使用其来实现一些集成。如果引入前者依赖项，那么后者可以不用再引入。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>关于<a href="https://springdev.io/blog/2018/08/spring-integration-for-aws-2-0-ga.html" class="external" target="_blank" rel="noopener">Spring Integration for AWS 2.0</a>，会有详细介绍说明。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="参考资料">参考资料</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Integration：<a href="https://github.com/spring-projects/spring-integration" class="external" target="_blank" rel="noopener">https://github.com/spring-projects/spring-integration</a></p>
+</div>
+<div class="paragraph">
+<p>Spring Integration Extension for AWS：<a href="https://github.com/spring-projects/spring-integration-aws" class="external" target="_blank" rel="noopener">https://github.com/spring-projects/spring-integration-aws</a></p>
+</div>
+<div class="paragraph">
+<p>Spring Cloud for Amazon Web Services：<a href="https://cloud.spring.io/spring-cloud-aws/" class="external" target="_blank" rel="noopener">https://cloud.spring.io/spring-cloud-aws/</a></p>
+</div>
+<div class="paragraph">
+<p>Spring Cloud Stream Kinesis Binder：<a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis" class="external" target="_blank" rel="noopener">https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis</a></p>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/08/spring-integration-for-aws-2-0-ga.html"> ←Spring Integration for AWS 2.0 发布</a></li>
@@ -346,30 +353,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

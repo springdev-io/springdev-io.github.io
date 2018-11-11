@@ -158,93 +158,94 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>大家好，很高兴地告诉大家，今天 Spring Cloud Alibaba 的第一个版本发布了。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Cloud Alibaba项目由两部分组成：包含了阿里巴巴的开源组件和阿里云的产品。旨在利用众所周知的 Spring 框架的设计模式和抽象能力，以便为Java开发人员使用阿里巴巴产品带来Spring Boot和Spring Cloud的优势。</p> 
-  </div> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody>
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> 
-       <div class="paragraph"> 
-        <p>Spring Cloud Alibaba 项目是由阿里巴巴维护的社区项目。</p> 
-       </div> 
-       <div class="paragraph"> 
-        <p><strong>注意</strong>： 版本 0.2.0.RELEASE 对应的是 Spring Boot 2.x 版本，版本 0.1.0.RELEASE 对应的是 Spring Boot 1.x 版本.</p> 
-       </div> </td> 
-     </tr> 
-    </tbody>
-   </table> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="阿里巴巴开源组件">阿里巴巴开源组件</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>其中阿里巴巴开源组件的命名前缀为<code>spring-cloud-alibaba</code>，提供了如下特性：</p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="服务发现_service_discovery">服务发现（Service Discovery）</h3> 
-   <div class="paragraph"> 
-    <p><code>spring-cloud-alibaba-nacos-discovery-starter</code>实现了 spring cloud common 中定义的 registry 相关规范接口 <code>NacosAutoServiceRegistration</code> ，<code>NacosServiceRegistry</code> 和 <code>NacosDiscoveryClient</code> 等，引入依赖并添加一些简单的配置即可将你的服务注册到Nacos Server中，并且支持与Ribbon的集成。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="配置管理_configuration_management">配置管理（Configuration Management）</h3> 
-   <div class="paragraph"> 
-    <p><code>spring-cloud-alibaba-nacos-config-starter</code> 中 <code>NacosPropertySourceLocator</code>实现了 <code>PropertySoureLocator</code> 接口，引入依赖并添加一些简单的配置即可从 Nacos Server 中获取应用配置并设置在 Spring 的 Environment 中。而且无需依赖其他组件即可支持配置的实时推送和推送状态查询。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="高可用防护">高可用防护</h3> 
-   <div class="paragraph"> 
-    <p><code>spring-cloud-alibaba-sentinel-starter</code> 默认集成了 Servlet、RestTemplate、Dubbo、RocketMQ 的限流(Flow Control)降级(Circuit Breaking and Concurrency)，只需要引入依赖即可完成限流降级的集成动作。并支持在应用运行状态下通过 Sentinel 控制台来实时修改限流降级的策略和阈值。</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="阿里云产品组件">阿里云产品组件</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>阿里云的产品组件的命名前缀为 <code>spring-cloud-alicloud</code> ，提供了如下特性：</p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="服务发现服务_application_naming_service">服务发现服务（Application Naming Service）</h3> 
-   <div class="paragraph"> 
-    <p>阿里云提供的服务发现服务ANS，除了服务发现的基本功能外，提供了更低成本SaaS 化服务发现服务，同时在接口的调用中加入了加密逻辑，更好地保护你的服务。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="配置管理服务_application_configuration_management">配置管理服务（Application Configuration Management）</h3> 
-   <div class="paragraph"> 
-    <p>阿里云提供的 Nacos 配置管理服务ACM，除了服务发现的基本功能外，提供了更低成本的 SaaS 化配置管理服务，以及更加安全的配置管理，并且还包含了完整的推送轨迹查询。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="对象存储服务_object_storage_service">对象存储服务（Object Storage Service）</h3> 
-   <div class="paragraph"> 
-    <p>阿里云提供的海量、安全、低成本、高可靠的云存储服务OSS。支持在任何应用、任何时间、任何地点存储和访问任意类型的数据。 只需要自动注入一个 OSS Client，即可直接使用存储与下载功能。</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="如何使用_how_to_use">如何使用（How to Use）</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>这些组件在 <a href="https://repo.spring.io/release/" class="external" target="_blank" rel="noopener">Spring release</a> 仓库中，可以通过如下 BOM 来使用：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependencyManagement&gt;
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>大家好，很高兴地告诉大家，今天 Spring Cloud Alibaba 的第一个版本发布了。</p>
+</div>
+<div class="paragraph">
+<p>Spring Cloud Alibaba项目由两部分组成：包含了阿里巴巴的开源组件和阿里云的产品。旨在利用众所周知的 Spring 框架的设计模式和抽象能力，以便为Java开发人员使用阿里巴巴产品带来Spring Boot和Spring Cloud的优势。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Spring Cloud Alibaba 项目是由阿里巴巴维护的社区项目。</p>
+</div>
+<div class="paragraph">
+<p><strong>注意</strong>： 版本 0.2.0.RELEASE 对应的是 Spring Boot 2.x 版本，版本 0.1.0.RELEASE 对应的是 Spring Boot 1.x 版本.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="阿里巴巴开源组件">阿里巴巴开源组件</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>其中阿里巴巴开源组件的命名前缀为<code>spring-cloud-alibaba</code>，提供了如下特性：</p>
+</div>
+<div class="sect2">
+<h3 id="服务发现service_discovery">服务发现（Service Discovery）</h3>
+<div class="paragraph">
+<p><code>spring-cloud-alibaba-nacos-discovery-starter</code>实现了 spring cloud common 中定义的 registry 相关规范接口 <code>NacosAutoServiceRegistration</code> ，<code>NacosServiceRegistry</code> 和 <code>NacosDiscoveryClient</code> 等，引入依赖并添加一些简单的配置即可将你的服务注册到Nacos Server中，并且支持与Ribbon的集成。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="配置管理configuration_management">配置管理（Configuration Management）</h3>
+<div class="paragraph">
+<p><code>spring-cloud-alibaba-nacos-config-starter</code> 中 <code>NacosPropertySourceLocator</code>实现了 <code>PropertySoureLocator</code> 接口，引入依赖并添加一些简单的配置即可从 Nacos Server 中获取应用配置并设置在 Spring 的 Environment 中。而且无需依赖其他组件即可支持配置的实时推送和推送状态查询。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="高可用防护">高可用防护</h3>
+<div class="paragraph">
+<p><code>spring-cloud-alibaba-sentinel-starter</code> 默认集成了 Servlet、RestTemplate、Dubbo、RocketMQ 的限流(Flow Control)降级(Circuit Breaking and Concurrency)，只需要引入依赖即可完成限流降级的集成动作。并支持在应用运行状态下通过 Sentinel 控制台来实时修改限流降级的策略和阈值。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="阿里云产品组件">阿里云产品组件</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>阿里云的产品组件的命名前缀为 <code>spring-cloud-alicloud</code> ，提供了如下特性：</p>
+</div>
+<div class="sect2">
+<h3 id="服务发现服务application_naming_service">服务发现服务（Application Naming Service）</h3>
+<div class="paragraph">
+<p>阿里云提供的服务发现服务ANS，除了服务发现的基本功能外，提供了更低成本SaaS 化服务发现服务，同时在接口的调用中加入了加密逻辑，更好地保护你的服务。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="配置管理服务application_configuration_management">配置管理服务（Application Configuration Management）</h3>
+<div class="paragraph">
+<p>阿里云提供的 Nacos 配置管理服务ACM，除了服务发现的基本功能外，提供了更低成本的 SaaS 化配置管理服务，以及更加安全的配置管理，并且还包含了完整的推送轨迹查询。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="对象存储服务object_storage_service">对象存储服务（Object Storage Service）</h3>
+<div class="paragraph">
+<p>阿里云提供的海量、安全、低成本、高可靠的云存储服务OSS。支持在任何应用、任何时间、任何地点存储和访问任意类型的数据。 只需要自动注入一个 OSS Client，即可直接使用存储与下载功能。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="如何使用how_to_use">如何使用（How to Use）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>这些组件在 <a href="https://repo.spring.io/release/" class="external" target="_blank" rel="noopener">Spring release</a> 仓库中，可以通过如下 BOM 来使用：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependencyManagement&gt;
     &lt;dependencies&gt;
         &lt;dependency&gt;
             &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
@@ -254,44 +255,46 @@
             &lt;scope&gt;import&lt;/scope&gt;
         &lt;/dependency&gt;
     &lt;/dependencies&gt;
-&lt;/dependencyManagement&gt;</code></pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="后续计划_what_next">后续计划（What Next?）</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><strong>RocketMQ</strong> Apache RocketMQ™ 是基于Java的高性能、高吞吐量的分布式消息和流计算平台。<code>spring-cloud-stream-binder-rocket</code>&nbsp;模块基于&nbsp;<a href="https://spring.io/projects/spring-integration">Spring Integration</a>和<a href="https://cloud.spring.io/spring-cloud-stream/" class="external" target="_blank" rel="noopener">Spring Cloud Stream</a>. 使得开发者在使用 Spring Cloud Stream 和 Spring Cloud Bus 时候可以选择使用 RocketMQ 作为消息中间件。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><strong>AliCloud Schedulerx</strong> 阿里中间件团队开发的一款分布式任务调度产品，支持周期性的任务与固定时间点触发任务。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><strong>AliCloud SLS</strong> 针对日志类数据的一站式服务，在阿里巴巴集团经历大量大数据场景锤炼而成。您无需开发就能快捷完成日志数据采集、消费、投递以及查询分析等功能，提升运维、运营效率，建立数据技术（DT）时代海量日志处理能力。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/issues" class="external" target="_blank" rel="noopener">问题跟踪</a> | <a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/README-zh.md" class="external" target="_blank" rel="noopener">中文文档</a></p> 
-  </div> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody>
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> 
-       <div class="paragraph"> 
-        <p>原文：https://spring.io/blog/2018/10/30/spring-cloud-for-alibaba-0-2-0-released<br> 作者：Spencer Gibb、肖京</p> 
-       </div> </td> 
-     </tr> 
-    </tbody>
-   </table> 
-  </div> 
- </div> 
+&lt;/dependencyManagement&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="后续计划what_next">后续计划（What Next?）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>RocketMQ</strong> Apache RocketMQ™ 是基于Java的高性能、高吞吐量的分布式消息和流计算平台。<code>spring-cloud-stream-binder-rocket</code> 模块基于 <a href="https://spring.io/projects/spring-integration">Spring Integration</a>和<a href="https://cloud.spring.io/spring-cloud-stream/" class="external" target="_blank" rel="noopener">Spring Cloud Stream</a>. 使得开发者在使用 Spring Cloud Stream 和 Spring Cloud Bus 时候可以选择使用 RocketMQ 作为消息中间件。</p>
+</div>
+<div class="paragraph">
+<p><strong>AliCloud Schedulerx</strong> 阿里中间件团队开发的一款分布式任务调度产品，支持周期性的任务与固定时间点触发任务。</p>
+</div>
+<div class="paragraph">
+<p><strong>AliCloud SLS</strong> 针对日志类数据的一站式服务，在阿里巴巴集团经历大量大数据场景锤炼而成。您无需开发就能快捷完成日志数据采集、消费、投递以及查询分析等功能，提升运维、运营效率，建立数据技术（DT）时代海量日志处理能力。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/issues" class="external" target="_blank" rel="noopener">问题跟踪</a> | <a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/README-zh.md" class="external" target="_blank" rel="noopener">中文文档</a></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>原文：https://spring.io/blog/2018/10/30/spring-cloud-for-alibaba-0-2-0-released<br>
+作者：Spencer Gibb、肖京</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/10/spring-boot-2-1-0.html"> ←Spring Boot 2.1.0 正式发布</a></li>
-              <li class="next"><a href="../../../blog/2018/10/spring-session-bean-ga-released.html">Spring Session Bean GA 已发布，有什么新特性，版本如何选择？ →</a></li>
+              <li class="next"><a href="../../../blog/2018/10/spring-tools-4-0-1-released.html">Spring Tools 4.0.1 发布 →</a></li>
               </ul>
             </div>
             <section id="gitalk-container"></section>
@@ -324,30 +327,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

@@ -158,18 +158,18 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="paragraph"> 
- <p>Spring Data的项目负责人<a href="https://spring.io/team/ogierke" class="external" target="_blank" rel="noopener">Oliver Gierke</a>宣布了Spring Data Lovelace RC2 发布，该版本共关闭了<a href="https://jira.spring.io/issues/?filter=16148" class="external" target="_blank" rel="noopener">82个问题单</a>。你可以与即将发布的Spring Boot 2.1 M2一起使用，正式版需要等待9月中旬。</p> 
-</div> 
-<div class="paragraph"> 
- <p>本次发布了一个非常重要的新功能：Spring Data JPA的存储库延迟初始化，虽然来得有些晚。通过启用Spring Framework的JPA后台初始化选项，可以使你的应用启动时间显著缩短。我们创建了一个<a href="https://github.com/spring-projects/spring-data-examples/tree/master/jpa/deferred" class="external" target="_blank" rel="noopener">示例</a>应用程序，包括了2000个JPA <code>Entity</code>、<code>Repository</code>以及2000个<code>Service</code>并引用到Repository，对比测试后发现，启动时间从原来的<code>35s</code>缩短为<code>23s</code>，当设置启动模式为<code>LAZY</code>时，启动时间可以达到<code>13s</code>。</p> 
-</div> 
-<div class="paragraph"> 
- <p>由于目前已经接近GA版本，如果你想在Spring Boot 2.0应用程序中升级到Lovelace来的话，那么最简单的方法是将<code>spring-data-releasetrain.version</code>属性设置为<code>Lovelace-RC2</code>。</p> 
-</div> 
-<div class="listingblock"> 
- <div class="content"> 
-  <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependencyManagement&gt;
+              <div class="blog--post"><div class="paragraph">
+<p>Spring Data的项目负责人<a href="https://spring.io/team/ogierke" class="external" target="_blank" rel="noopener">Oliver Gierke</a>宣布了Spring Data Lovelace RC2 发布，该版本共关闭了<a href="https://jira.spring.io/issues/?filter=16148" class="external" target="_blank" rel="noopener">82个问题单</a>。你可以与即将发布的Spring Boot 2.1 M2一起使用，正式版需要等待9月中旬。</p>
+</div>
+<div class="paragraph">
+<p>本次发布了一个非常重要的新功能：Spring Data JPA的存储库延迟初始化，虽然来得有些晚。通过启用Spring Framework的JPA后台初始化选项，可以使你的应用启动时间显著缩短。我们创建了一个<a href="https://github.com/spring-projects/spring-data-examples/tree/master/jpa/deferred" class="external" target="_blank" rel="noopener">示例</a>应用程序，包括了2000个JPA <code>Entity</code>、<code>Repository</code>以及2000个<code>Service</code>并引用到Repository，对比测试后发现，启动时间从原来的<code>35s</code>缩短为<code>23s</code>，当设置启动模式为<code>LAZY</code>时，启动时间可以达到<code>13s</code>。</p>
+</div>
+<div class="paragraph">
+<p>由于目前已经接近GA版本，如果你想在Spring Boot 2.0应用程序中升级到Lovelace来的话，那么最简单的方法是将<code>spring-data-releasetrain.version</code>属性设置为<code>Lovelace-RC2</code>。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependencyManagement&gt;
   &lt;dependencies&gt;
     &lt;dependency&gt;
       &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;
@@ -179,31 +179,63 @@
       &lt;type&gt;pom&lt;/type&gt;
     &lt;/dependency&gt;
   &lt;/dependencies&gt;
-&lt;/dependencyManagement&gt;</code></pre> 
- </div> 
-</div> 
-<div class="paragraph"> 
- <p>除此之外，Lovelace还将首次纳入Spring Data JDBC，该模块集成了MyBatis，实现了<code>CrudRepository</code>，支持<code>@Query</code>、ID生成、事件机制、审计等特性。</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p>Spring Data Commons 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-commons/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/commons/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/commons/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/commons/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p> </li> 
-  <li> <p>Spring Data JPA 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-jpa/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/jpa/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/jpa/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/jpa/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p> </li> 
-  <li> <p>Spring Data KeyValue 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-keyvalue/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/keyvalue/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/keyvalue/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/keyvalue/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p> </li> 
-  <li> <p>Spring Data Gemfire 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-gemfire/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/gemfire/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/gemfire/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/gemfire/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p> </li> 
-  <li> <p>Spring Data MongoDB 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-mongodb/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/mongodb/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/mongodb/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/mongodb/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p> </li> 
-  <li> <p>Spring Data Neo4j 5.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-neo4j/5.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/neo4j/docs/5.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/neo4j/docs/5.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/neo4j/docs/5.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p> </li> 
-  <li> <p>Spring Data for Apache Cassandra 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-cassandra/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/cassandra/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/cassandra/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/cassandra/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p> </li> 
-  <li> <p>Spring Data for Apache Solr 4.0 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-solr/4.0.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/solr/docs/4.0.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/solr/docs/4.0.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/solr/docs/4.0.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p> </li> 
-  <li> <p>Spring Data for Apache Geode 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-geode/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/geode/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/geode/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/geode/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p> </li> 
-  <li> <p>Spring Data LDAP 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-ldap/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/ldap/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/ldap/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/ldap/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p> </li> 
-  <li> <p>Spring Data Envers 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-envers/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/envers/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/envers/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a></p> </li> 
-  <li> <p>Spring Data REST 3.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-rest-webmvc/3.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/rest/docs/3.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/rest/docs/3.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/rest/docs/3.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p> </li> 
-  <li> <p>Spring Data Redis 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-redis/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/redis/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/redis/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/redis/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p> </li> 
-  <li> <p>Spring Data Elasticsearch 3.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-elasticsearch/3.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p> </li> 
-  <li> <p>Spring Data Couchbase 3.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-couchbase/3.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/couchbase/docs/3.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/couchbase/docs/3.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/couchbase/docs/3.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p> </li> 
-  <li> <p>Spring Data JDBC 1.0 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-jdbc/1.0.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/jdbc/docs/1.0.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/jdbc/docs/1.0.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/jdbc/docs/1.0.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p> </li> 
- </ul> 
+&lt;/dependencyManagement&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>除此之外，Lovelace还将首次纳入Spring Data JDBC，该模块集成了MyBatis，实现了<code>CrudRepository</code>，支持<code>@Query</code>、ID生成、事件机制、审计等特性。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Spring Data Commons 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-commons/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/commons/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/commons/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/commons/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p>
+</li>
+<li>
+<p>Spring Data JPA 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-jpa/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/jpa/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/jpa/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/jpa/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p>
+</li>
+<li>
+<p>Spring Data KeyValue 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-keyvalue/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/keyvalue/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/keyvalue/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/keyvalue/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p>
+</li>
+<li>
+<p>Spring Data Gemfire 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-gemfire/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/gemfire/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/gemfire/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/gemfire/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p>
+</li>
+<li>
+<p>Spring Data MongoDB 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-mongodb/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/mongodb/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/mongodb/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/mongodb/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p>
+</li>
+<li>
+<p>Spring Data Neo4j 5.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-neo4j/5.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/neo4j/docs/5.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/neo4j/docs/5.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/neo4j/docs/5.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p>
+</li>
+<li>
+<p>Spring Data for Apache Cassandra 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-cassandra/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/cassandra/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/cassandra/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/cassandra/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p>
+</li>
+<li>
+<p>Spring Data for Apache Solr 4.0 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-solr/4.0.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/solr/docs/4.0.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/solr/docs/4.0.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/solr/docs/4.0.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p>
+</li>
+<li>
+<p>Spring Data for Apache Geode 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-geode/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/geode/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/geode/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/geode/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p>
+</li>
+<li>
+<p>Spring Data LDAP 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-ldap/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/ldap/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/ldap/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/ldap/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p>
+</li>
+<li>
+<p>Spring Data Envers 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-envers/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/envers/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/envers/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a></p>
+</li>
+<li>
+<p>Spring Data REST 3.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-rest-webmvc/3.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/rest/docs/3.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/rest/docs/3.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/rest/docs/3.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p>
+</li>
+<li>
+<p>Spring Data Redis 2.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-redis/2.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/redis/docs/2.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/redis/docs/2.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/redis/docs/2.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p>
+</li>
+<li>
+<p>Spring Data Elasticsearch 3.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-elasticsearch/3.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p>
+</li>
+<li>
+<p>Spring Data Couchbase 3.1 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-couchbase/3.1.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/couchbase/docs/3.1.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/couchbase/docs/3.1.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/couchbase/docs/3.1.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p>
+</li>
+<li>
+<p>Spring Data JDBC 1.0 RC2 - <a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-jdbc/1.0.0.RC2" class="external" target="_blank" rel="noopener">Artifacts</a> - <a href="https://docs.spring.io/spring-data/jdbc/docs/1.0.0.RC2/api" class="external" target="_blank" rel="noopener">Javadoc</a> - <a href="https://docs.spring.io/spring-data/jdbc/docs/1.0.0.RC2/reference/html" class="external" target="_blank" rel="noopener">Documentation</a> - <a href="https://docs.spring.io/spring-data/jdbc/docs/1.0.0.RC2/changelog.txt" class="external" target="_blank" rel="noopener">Changelog</a></p>
+</li>
+</ul>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/08/this-week-in-spring-august-17th-2018.html"> ←Spring一周回顾（2018年8月17日）</a></li>
@@ -240,30 +272,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

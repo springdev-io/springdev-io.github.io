@@ -158,35 +158,35 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="sect1"> 
- <h2 id="spring_session_code_bean_code_版本的新特性">Spring Session <code>Bean</code> 版本的新特性</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Session BOM <code>Bean GA</code> 现已发布，这是基于Spring Session 2.1的第一个版本，可以很容易地与新发布的Spring Boot 2.1一起使用。</p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="same_site_cookie支持与httpsession集成">Same-Site Cookie支持与HttpSession集成</h3> 
-   <div class="paragraph"> 
-    <p>Same-Site Cookie是另一种<a href="https://scotthelme.co.uk/csrf-is-dead/">帮助开发人员防止跨站点请求伪造</a>的机制。我们的<code>DefaultCookieSerializer</code>已得到增强，支持将<code>SameSite</code>属性添加到Spring Session生成的会话cookie中。 默认情况下，<code>SameSite</code>属性启用，值为<code>Lax</code>，可使用<code>DefaultCookieSerializer#setSameSite</code>自定义。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>请注意，从Spring Framework 5.1开始，Spring WebFlux本身就已有对<code>WebSession</code>的同样支持。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="code_httpsessionbindinglistener_code_的支持"><code>HttpSessionBindingListener</code>的支持</h3> 
-   <div class="paragraph"> 
-    <p>Spring Session现在支持<code>HttpSessionBindingListener</code>，并且会在此API的实现上正确调用回调。这也意味着现在可以在会话作用域上使用<code>@PreDestroy</code>，因为该功能是使用Spring Framework的<code>DestructionCallbackBindingListener</code>实现的，这是<code>HttpSessionBindingListener</code>的具体实现。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="支持与redis_websession集成可自定义序列化实现">支持与Redis WebSession集成可自定义序列化实现</h3> 
-   <div class="paragraph"> 
-    <p>我们的Redis WebSession集成现在可以轻松配置为使用自定义序列化机制。以类似于Redis <code>HttpSession</code>集成的方式，可以通过提供名为<code>springSessionDefaultRedisSerializer</code>的类型为<code>RedisSerializer&lt;Object&gt;</code>的<code>@Bean</code>来实现：</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@EnableRedisWebSession
+              <div class="blog--post"><div class="sect1">
+<h2 id="spring_session_bean_版本的新特性">Spring Session <code>Bean</code> 版本的新特性</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Session BOM <code>Bean GA</code> 现已发布，这是基于Spring Session 2.1的第一个版本，可以很容易地与新发布的Spring Boot 2.1一起使用。</p>
+</div>
+<div class="sect2">
+<h3 id="same_site_cookie支持与httpsession集成">Same-Site Cookie支持与HttpSession集成</h3>
+<div class="paragraph">
+<p>Same-Site Cookie是另一种<a href="https://scotthelme.co.uk/csrf-is-dead/">帮助开发人员防止跨站点请求伪造</a>的机制。我们的<code>DefaultCookieSerializer</code>已得到增强，支持将<code>SameSite</code>属性添加到Spring Session生成的会话cookie中。 默认情况下，<code>SameSite</code>属性启用，值为<code>Lax</code>，可使用<code>DefaultCookieSerializer#setSameSite</code>自定义。</p>
+</div>
+<div class="paragraph">
+<p>请注意，从Spring Framework 5.1开始，Spring WebFlux本身就已有对<code>WebSession</code>的同样支持。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="httpsessionbindinglistener的支持"><code>HttpSessionBindingListener</code>的支持</h3>
+<div class="paragraph">
+<p>Spring Session现在支持<code>HttpSessionBindingListener</code>，并且会在此API的实现上正确调用回调。这也意味着现在可以在会话作用域上使用<code>@PreDestroy</code>，因为该功能是使用Spring Framework的<code>DestructionCallbackBindingListener</code>实现的，这是<code>HttpSessionBindingListener</code>的具体实现。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="支持与redis_websession集成可自定义序列化实现">支持与Redis WebSession集成可自定义序列化实现</h3>
+<div class="paragraph">
+<p>我们的Redis WebSession集成现在可以轻松配置为使用自定义序列化机制。以类似于Redis <code>HttpSession</code>集成的方式，可以通过提供名为<code>springSessionDefaultRedisSerializer</code>的类型为<code>RedisSerializer&lt;Object&gt;</code>的<code>@Bean</code>来实现：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@EnableRedisWebSession
 static class SessionConfig {
 
     @Bean
@@ -194,116 +194,134 @@ static class SessionConfig {
         // configure and return a serializer of your choice
     }
 
-}</code></pre> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="jdbc_code_httpsession_code_集成的性能得到改进">JDBC <code>HttpSession</code>集成的性能得到改进</h3> 
-   <div class="paragraph"> 
-    <p>我们为JDBC <code>HttpSession</code>集成做了一些性能改进：</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>会话属性的延迟反序列化 - 会话属性现在将在第一次访问时反序列化，而不是从数据库中检索<code>HttpSession</code>，这可以为许多HTTP请求完全避免反序列化的成本</p> </li> 
-     <li> <p>禁用事务的选项 - 对于想要避免事务成本的用户，<code>JdbcOperationsSessionRepository</code>现在提供一个只接受<code>JdbcOperations</code>并在内部使用no-op <code>TransactionOperations</code>实现的构造函数</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="支持_java_11">支持 Java 11</h3> 
-   <div class="paragraph"> 
-    <p>Spring Session现在支持最近发布的Java 11，而所需的版本当然还保留在Java 8。我们的CI构建已得到增强，因此该项目现在可以针对Java 11进行持续验证。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="第三方依赖升级">第三方依赖升级</h3> 
-   <div class="paragraph"> 
-    <p>Spring Session 2.1基于以下最新和最高版本的关键依赖项：</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Spring Framework 5.1</p> </li> 
-     <li> <p>Spring Data Lovelace</p> </li> 
-     <li> <p>Spring Security 5.1</p> </li> 
-     <li> <p>Project Reactor Californium</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="版本如何选择">版本如何选择？</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Session 自从2.0 之后，版本命名开始以Apple、Bean来命名，那么每个版本对应的第三方项目依赖的版本又是什么呢？</p> 
-  </div> 
-  <table class="tableblock frame-all grid-all stretch"> 
-   <caption class="title">
-    表格 1. Spring Session Apple &amp; Bean的版本矩阵
-   </caption> 
-   <colgroup> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Spring Session</th> 
-     <th class="tableblock halign-left valign-top">Session Core</th> 
-     <th class="tableblock halign-left valign-top">Spring Framework</th> 
-     <th class="tableblock halign-left valign-top">Spring Security</th> 
-     <th class="tableblock halign-left valign-top">Spring Data</th> 
-     <th class="tableblock halign-left valign-top">Reactor</th> 
-     <th class="tableblock halign-left valign-top">Java</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Apple</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.x</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">5.0.x</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">5.0.x</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Kay</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Bismuth</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">8+</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Bean</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">2.1.x</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">5.1.x</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">5.1.x</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Lovelace</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Californium</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">8+，11</p></td> 
-    </tr> 
-   </tbody> 
-  </table> 
-  <div class="paragraph"> 
-   <p>从上图可以看出，Spring Session的Apple和Bean版本，目前至少都需要Java 8+版本，但是Bean 可以支持Java 11。最新发布的Bean版本都是以Spring Framework、Spring Security、Spring Data、Reactor的最新版本为基础构建，而且可以与Spring Boot 2.1 一起使用。所以如果选择了Spring Boot 2.1，那么自然就会相应的选择各个框架的最新版本来一起使用。如果你的选择了Spring Boot 2.0，那么还是使用Spring Session Apple的版本。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="参考资料">附录 A: 参考资料</h2> 
- <div class="sectionbody"> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><a href="https://spring.io/blog/2018/10/31/spring-session-bean-ga-released" class="bare">https://spring.io/blog/2018/10/31/spring-session-bean-ga-released</a></p> </li> 
-    <li> <p><a href="https://docs.spring.io/spring-session/docs/2.1.1.RELEASE/reference/html5/" class="bare">https://docs.spring.io/spring-session/docs/2.1.1.RELEASE/reference/html5/</a></p> </li> 
-    <li> <p><a href="https://docs.spring.io/spring-session/docs/2.0.7.RELEASE/reference/html5/" class="bare">https://docs.spring.io/spring-session/docs/2.0.7.RELEASE/reference/html5/</a></p> </li> 
-    <li> <p><a href="https://github.com/spring-projects/spring-session" class="bare">https://github.com/spring-projects/spring-session</a></p> </li> 
-   </ul> 
-  </div> 
- </div> 
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="jdbc_httpsession集成的性能得到改进">JDBC <code>HttpSession</code>集成的性能得到改进</h3>
+<div class="paragraph">
+<p>我们为JDBC <code>HttpSession</code>集成做了一些性能改进：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>会话属性的延迟反序列化 - 会话属性现在将在第一次访问时反序列化，而不是从数据库中检索<code>HttpSession</code>，这可以为许多HTTP请求完全避免反序列化的成本</p>
+</li>
+<li>
+<p>禁用事务的选项 - 对于想要避免事务成本的用户，<code>JdbcOperationsSessionRepository</code>现在提供一个只接受<code>JdbcOperations</code>并在内部使用no-op <code>TransactionOperations</code>实现的构造函数</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="支持_java_11">支持 Java 11</h3>
+<div class="paragraph">
+<p>Spring Session现在支持最近发布的Java 11，而所需的版本当然还保留在Java 8。我们的CI构建已得到增强，因此该项目现在可以针对Java 11进行持续验证。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="第三方依赖升级">第三方依赖升级</h3>
+<div class="paragraph">
+<p>Spring Session 2.1基于以下最新和最高版本的关键依赖项：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Spring Framework 5.1</p>
+</li>
+<li>
+<p>Spring Data Lovelace</p>
+</li>
+<li>
+<p>Spring Security 5.1</p>
+</li>
+<li>
+<p>Project Reactor Californium</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="版本如何选择">版本如何选择？</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Session 自从2.0 之后，版本命名开始以Apple、Bean来命名，那么每个版本对应的第三方项目依赖的版本又是什么呢？</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content stretch">
+<caption class="title">表格 1. Spring Session Apple &amp; Bean的版本矩阵</caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Spring Session</th>
+<th class="tableblock halign-left valign-top">Session Core</th>
+<th class="tableblock halign-left valign-top">Spring Framework</th>
+<th class="tableblock halign-left valign-top">Spring Security</th>
+<th class="tableblock halign-left valign-top">Spring Data</th>
+<th class="tableblock halign-left valign-top">Reactor</th>
+<th class="tableblock halign-left valign-top">Java</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Apple</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bismuth</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8+</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.1.x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.1.x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lovelace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Californium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8+，11</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>从上图可以看出，Spring Session的Apple和Bean版本，目前至少都需要Java 8+版本，但是Bean 可以支持Java 11。最新发布的Bean版本都是以Spring Framework、Spring Security、Spring Data、Reactor的最新版本为基础构建，而且可以与Spring Boot 2.1 一起使用。所以如果选择了Spring Boot 2.1，那么自然就会相应的选择各个框架的最新版本来一起使用。如果你的选择了Spring Boot 2.0，那么还是使用Spring Session Apple的版本。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="参考资料">附录 A: 参考资料</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://spring.io/blog/2018/10/31/spring-session-bean-ga-released" class="bare">https://spring.io/blog/2018/10/31/spring-session-bean-ga-released</a></p>
+</li>
+<li>
+<p><a href="https://docs.spring.io/spring-session/docs/2.1.1.RELEASE/reference/html5/" class="bare">https://docs.spring.io/spring-session/docs/2.1.1.RELEASE/reference/html5/</a></p>
+</li>
+<li>
+<p><a href="https://docs.spring.io/spring-session/docs/2.0.7.RELEASE/reference/html5/" class="bare">https://docs.spring.io/spring-session/docs/2.0.7.RELEASE/reference/html5/</a></p>
+</li>
+<li>
+<p><a href="https://github.com/spring-projects/spring-session" class="bare">https://github.com/spring-projects/spring-session</a></p>
+</li>
+</ul>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html"> ←Spring Cloud for Alibaba 0.2.0 发布</a></li>
-              <li class="next"><a href="../../../blog/2018/10/spring-tools-4-0-1-released.html">Spring Tools 4.0.1 发布 →</a></li>
+              <li class="previous"><a  href="../../../blog/2018/10/spring-tools-4-0-1-released.html"> ←Spring Tools 4.0.1 发布</a></li>
+              <li class="next"><a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html">Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布 →</a></li>
               </ul>
             </div>
             <section id="gitalk-container"></section>
@@ -336,30 +354,35 @@ static class SessionConfig {
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

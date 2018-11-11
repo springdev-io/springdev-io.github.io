@@ -158,37 +158,55 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="paragraph"> 
- <p><a href="http://projects.springdev.io/spring-vault/" class="external" target="_blank" rel="noopener">Spring Vault</a>提供熟悉的Spring抽象和客户端支持，用于访问、存储和撤销机密。它提供了与Vault交互的低级和高级抽象，使用户免于底层接口问题。</p> 
-</div> 
-<div class="paragraph"> 
- <p>通过HashiCorp的Vault，你可以在所有环境中为应用程序管理外部机密数据。Vault可以管理静态和动态机密，例如应用程序数据，远程应用程序/资源的用户名/密码，并为外部服务提供凭据，如MySQL、PostgreSQL、Apache Cassandra、Consul、AWS等。</p> 
-</div> 
-<div class="paragraph"> 
- <p>Spring Vault 2.0.2 已发布，该版本主要是解决部分缺陷、升级第三方依赖以及优化。</p> 
-</div> 
-<div class="ulist"> 
- <div class="title">
-  第三方依赖升级如下：
- </div> 
- <ul> 
-  <li> <p>Spring Framework 5.0.9</p> </li> 
-  <li> <p>Spring Security 5.0.7</p> </li> 
-  <li> <p>Spring Data Kay SR10</p> </li> 
-  <li> <p>Reactor Bismuth SR11</p> </li> 
-  <li> <p>Netty 4.1.29.Final</p> </li> 
-  <li> <p>AWS SDK 1.11.404</p> </li> 
-  <li> <p>Apache HttpClient 4.5.6</p> </li> 
-  <li> <p>HttpCore 4.4.10</p> </li> 
-  <li> <p>Jackson 2.9.6</p> </li> 
-  <li> <p>Vault 0.10.3</p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>详细的更新记录参见<a href="https://docs.spring.io/spring-vault/docs/2.0.2.RELEASE/changelog.txt" class="external" target="_blank" rel="noopener">这里</a>。</p> 
-</div> 
-<div class="paragraph"> 
- <p><a href="https://projects.spring.io/spring-vault/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-projects/spring-vault" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://github.com/spring-projects/spring-vault/issues" class="external" target="_blank" rel="noopener">问题</a> | <a href="https://docs.spring.io/spring-vault/docs/2.0.2.RELEASE/reference/html/" class="external" target="_blank" rel="noopener">文档</a> | <a href="https://stackoverflow.com/questions/tagged/spring-vault" class="external" target="_blank" rel="noopener">Stack Overflow</a></p> 
+              <div class="blog--post"><div class="paragraph">
+<p><a href="http://projects.springdev.io/spring-vault/" class="external" target="_blank" rel="noopener">Spring Vault</a>提供熟悉的Spring抽象和客户端支持，用于访问、存储和撤销机密。它提供了与Vault交互的低级和高级抽象，使用户免于底层接口问题。</p>
+</div>
+<div class="paragraph">
+<p>通过HashiCorp的Vault，你可以在所有环境中为应用程序管理外部机密数据。Vault可以管理静态和动态机密，例如应用程序数据，远程应用程序/资源的用户名/密码，并为外部服务提供凭据，如MySQL、PostgreSQL、Apache Cassandra、Consul、AWS等。</p>
+</div>
+<div class="paragraph">
+<p>Spring Vault 2.0.2 已发布，该版本主要是解决部分缺陷、升级第三方依赖以及优化。</p>
+</div>
+<div class="ulist">
+<div class="title">第三方依赖升级如下：</div>
+<ul>
+<li>
+<p>Spring Framework 5.0.9</p>
+</li>
+<li>
+<p>Spring Security 5.0.7</p>
+</li>
+<li>
+<p>Spring Data Kay SR10</p>
+</li>
+<li>
+<p>Reactor Bismuth SR11</p>
+</li>
+<li>
+<p>Netty 4.1.29.Final</p>
+</li>
+<li>
+<p>AWS SDK 1.11.404</p>
+</li>
+<li>
+<p>Apache HttpClient 4.5.6</p>
+</li>
+<li>
+<p>HttpCore 4.4.10</p>
+</li>
+<li>
+<p>Jackson 2.9.6</p>
+</li>
+<li>
+<p>Vault 0.10.3</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>详细的更新记录参见<a href="https://docs.spring.io/spring-vault/docs/2.0.2.RELEASE/changelog.txt" class="external" target="_blank" rel="noopener">这里</a>。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://projects.spring.io/spring-vault/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-projects/spring-vault" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://github.com/spring-projects/spring-vault/issues" class="external" target="_blank" rel="noopener">问题</a> | <a href="https://docs.spring.io/spring-vault/docs/2.0.2.RELEASE/reference/html/" class="external" target="_blank" rel="noopener">文档</a> | <a href="https://stackoverflow.com/questions/tagged/spring-vault" class="external" target="_blank" rel="noopener">Stack Overflow</a></p>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/09/spring-vault-2-1-goes-rc.html"> ←Spring Vault 2.1 RC1 发布</a></li>
@@ -225,30 +243,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

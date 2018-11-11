@@ -158,243 +158,286 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Boot 2.1的第一个里程碑已经发布，可以从里程碑库中获取。此版本关闭了180多个问题和拉取请求。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>第一个里程碑建立在Spring Framework 5.1.RC1、Spring Data Lovelace RC1和Spring Security 5.1 M2等最新的项目之上。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>其他亮点还包括：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>采用Undertow 2.0 and Tomcat 9.0，支持Servlet 4</p> </li> 
-    <li> <p>缓存端点</p> </li> 
-    <li> <p>支持查询单个组件的运行状况</p> </li> 
-    <li> <p>支持多配置文件YAML文档中的配置文件表达式和&lt;springProfile&gt; Logback配置</p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>我对Spring Boot 2.1.0 M1发行说明进行了详细的整理，内容如下：</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="从spring_boot_2_0升级">从Spring Boot 2.0升级</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="弃用的类">弃用的类</h3> 
-   <div class="paragraph"> 
-    <p>在此版本中已删除了Spring Boot 2.0中不推荐使用的类，方法和属性。请确保在升级之前不要调用已弃用的方法。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="bean覆盖">Bean覆盖</h3> 
-   <div class="paragraph"> 
-    <p>默认情况下禁用Bean覆盖以防止意外覆盖bean。如果依赖于覆盖，则需要将<code>spring.main.allow-bean-definition-overriding</code>设置为<code>true</code>。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="info和health默认不安全">info和health默认不安全</h3> 
-   <div class="paragraph"> 
-    <p>如果<code>spring-security</code>在没有任何安全配置的类路径上，则<code>/info</code>和<code>/health</code>将会被公开以保持一致性。如果类路径上有<code>spring-security</code>且未提供任何安全配置，则需要明确保护它们。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="json_simple">Json Simple</h3> 
-   <div class="paragraph"> 
-    <p>不再提供json-simple的依赖关系管理，并且已删除使用它的JsonParser实现。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="jersey_1">Jersey 1</h3> 
-   <div class="paragraph"> 
-    <p>不再支持Jersey 1。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="spring_provides">spring.provides</h3> 
-   <div class="paragraph"> 
-    <p>Starter可以声明<code>META-INF/spring.provides</code>，以便IDE可以找出它提供的依赖关系。扫描Starter POM以获得它声明的直接依赖性应该足以指示。如果你负责第三方启动器并声明此文件，则可以将其删除。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="servlet路径">Servlet路径</h3> 
-   <div class="paragraph"> 
-    <p><code>server.servlet.path</code>属性已改为<code>spring.mvc.servlet.path</code>。如果你以编程方式依赖该属性来获取<code>DispatcherServlet</code>的路径，请改为使用<code>DispatcherServletPath</code>。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="maven插件">Maven插件</h3> 
-   <div class="paragraph"> 
-    <p>finalName属性不再可自定义以与标准Maven插件的行为保持一致。</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="值得关注的一些新内容">值得关注的一些新内容</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="第三方库升级">第三方库升级</h3> 
-   <div class="paragraph"> 
-    <p>Spring Boot 2.1构建于Spring Framework 5.1之上并需要它。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>我们已尽可能升级到其他第三方jars的最新稳定版本。此版本中的一些值得注意的依赖项升级包括：</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Tomcat 9</p> </li> 
-     <li> <p>Undertow 2</p> </li> 
-     <li> <p>Hibernate 5.3</p> </li> 
-     <li> <p>JUnit 5.2</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="profile表达式">Profile表达式</h3> 
-   <div class="paragraph"> 
-    <p>Profile匹配已得到改进，以支持表达式格式。例如，<code>product &amp;(us-east | eu-central)</code> 表示生产配置文件处于活动状态且<code>us-east</code>或<code>eu-central</code>配置文件处于活动状态时匹配。</p> 
-   </div> 
-   <div class="ulist"> 
-    <div class="title">
-     Profile表达式可用于下列场景：
-    </div> 
-    <ul> 
-     <li> <p>使用@Profile来启用组件</p> </li> 
-     <li> <p>加载多种profile的YAML文档</p> </li> 
-     <li> <p>使用&lt;springProfile&gt;启用Logback配置</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="actuator">Actuator</h3> 
-   <div class="sect3"> 
-    <h4 id="缓存端点">缓存端点</h4> 
-    <div class="paragraph"> 
-     <p>新的<code>/actuator/caches</code>端点列出可用的CacheManager实例及其各自的缓存基本元数据。有关更多详细信息，请参阅API。</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="spring_integration图形化端点">Spring Integration图形化端点</h4> 
-    <div class="paragraph"> 
-     <p>如果你使用的是Spring Integration，则可以在<code>/actuator/integrationgraph</code>中采用图形化的方式来展示所有Spring Integration组件。有关更多详细信息，请参阅API。</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="健康端点">健康端点</h4> 
-    <div class="paragraph"> 
-     <p>现在，<code>HealthIndicatorRegistry</code>bean可用于在运行时添加和删除<code>HealthIndicator</code>。如有必要，还会改进运行状况端点以查询特定指示符。 例如<code>/actuator/health/db</code>仅执行“db”<code>HealthIndicator</code>。有关更多详细信息，请参阅API。</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>Apache Cassandra的响应式HealthIndicator已经可用。</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="micrometer">Micrometer</h4> 
-    <div class="paragraph"> 
-     <p>常用标记可以声明方式应用于所有计量表，如以下示例所示：</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre>management.metrics.tags.region=us-east-1
-management.metrics.tags.stack=prod</pre> 
-     </div> 
-    </div> 
-    <div class="paragraph"> 
-     <p>上面的示例为所有仪表添加了一个区域和堆栈标签，其值分别为<code>us-east-1</code>和<code>prod</code>。</p> 
-    </div> 
-    <div class="ulist"> 
-     <div class="title">
-      指标范围已得到改善：
-     </div> 
-     <ul> 
-      <li> <p>Hibernate指标</p> </li> 
-      <li> <p><code>WebClient</code></p> </li> 
-     </ul> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="安全">安全</h3> 
-   <div class="paragraph"> 
-    <p>添加了对WebFlux OAuth2登录的支持。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>OpenID Connect提供程序可用使用<code>issuer-uri</code>来更容易配置，<code>issuer-uri</code>是为其颁发者标识符的URI。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="elasticsearch_rest客户端">Elasticsearch REST客户端</h3> 
-   <div class="paragraph"> 
-    <p>作为Jest的替代选项，<code>RestClient</code>和<code>RestHighLevelClient</code>的自动配置提供了命名空间为<code>spring.elasticsearch.rest.*</code>的可配置选项。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="jms_code_connectionfactory_code_缓存">JMS <code>ConnectionFactory</code>缓存</h3> 
-   <div class="paragraph"> 
-    <p>默认情况下，使用<code>CachingConnectionFactory</code>缓存自动配置的<code>ConnectionFactory</code>，直到启用pool选项或将<code>spring.jms.cache.enabled</code>设置为<code>false</code>。 Pooling选项也已扩展到Artemis（请参阅<code>spring.jms.artemis.pool.*</code>）。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="quartz">Quartz</h3> 
-   <div class="paragraph"> 
-    <p><code>spring.quartz</code>命名空间增加了多个配置项。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="junit_5">JUnit 5</h3> 
-   <div class="paragraph"> 
-    <p>所有<code>@…​</code>测试注释都使用<code>@ExtendedWith(SpringExtension.class)</code>进行元注释，因此如果你使用的是JUnit，则可以删除此设置的冗余部分。Spring Boot使用的<code>maven-surefire-plugin</code>版本，不需要任何自定义设置就能使用JUnit 5。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="maven插件_2">Maven插件</h3> 
-   <div class="paragraph"> 
-    <p>通过使用<a href="http://docs.spring.io/spring-boot/docs/2.1.0.M1/maven-plugin/examples/run-system-properties.html" class="external" target="_blank" rel="noopener">系统属性</a>和<a href="http://docs.spring.io/spring-boot/docs/2.1.0.M1/maven-plugin/examples/run-env-variables.html" class="external" target="_blank" rel="noopener">环境变量</a>的专用选项，改进了指定参数。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>也可以重新打包和替换<code>classified</code>构件，请参阅<code>classified</code>属性的更新文档。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="其他">其他</h3> 
-   <div class="paragraph"> 
-    <p>除了上面列出的变化之外，还有许多小的调整和改进，包括：</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><code>@ConditionalOnEnabledEndpoint</code>可用于任何组件（例如，端点仅需要的东西，如果端点被禁用则不应创建）。</p> </li> 
-     <li> <p><code>@WebMvcTest</code>也自动配置Spring Data REST（例如支持Sort和Pageable请求参数）。</p> </li> 
-     <li> <p>不再需要导出虚假的<code>ResourceConfig</code>以启用Jersey支持。</p> </li> 
-     <li> <p>使用自动配置的<code>WebServiceTemplateBuilder</code>创建<code>WebServiceTemplate</code>更容易。</p> </li> 
-     <li> <p>Jackson可见性可以使用<code>spring.jackson.visibility.*</code>来配置。</p> </li> 
-     <li> <p>在使用Devtools的情况下，错误页面会显示出堆栈跟踪。</p> </li> 
-     <li> <p>JNDI查找已得到改进，默认情况下启用<code>resourceRef</code>。</p> </li> 
-     <li> <p>可以通过<code>RabbitRetryTemplateCustomizer</code>来自定义Rabbit使用的<code>RetryTemplate</code>。</p> </li> 
-     <li> <p>自动配置排除现在保证应用一致。</p> </li> 
-     <li> <p>使用Reactor Netty支持HTTP/2。</p> </li> 
-    </ul> 
-   </div> 
-   <div class="admonitionblock note"> 
-    <table> 
-     <tbody>
-      <tr> 
-       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> 
-        <div class="paragraph"> 
-         <p>由于本次发布的版本包含特性比较多，因此这篇文章确实有点长，可用先收藏后慢慢看，后续版本版发布我会继续详细报道，敬请关注。</p> 
-        </div> </td> 
-      </tr> 
-     </tbody>
-    </table> 
-   </div> 
-  </div> 
- </div> 
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Boot 2.1的第一个里程碑已经发布，可以从里程碑库中获取。此版本关闭了180多个问题和拉取请求。</p>
+</div>
+<div class="paragraph">
+<p>第一个里程碑建立在Spring Framework 5.1.RC1、Spring Data Lovelace RC1和Spring Security 5.1 M2等最新的项目之上。</p>
+</div>
+<div class="paragraph">
+<p>其他亮点还包括：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>采用Undertow 2.0 and Tomcat 9.0，支持Servlet 4</p>
+</li>
+<li>
+<p>缓存端点</p>
+</li>
+<li>
+<p>支持查询单个组件的运行状况</p>
+</li>
+<li>
+<p>支持多配置文件YAML文档中的配置文件表达式和&lt;springProfile&gt; Logback配置</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>我对Spring Boot 2.1.0 M1发行说明进行了详细的整理，内容如下：</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="从spring_boot_2_0升级">从Spring Boot 2.0升级</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="弃用的类">弃用的类</h3>
+<div class="paragraph">
+<p>在此版本中已删除了Spring Boot 2.0中不推荐使用的类，方法和属性。请确保在升级之前不要调用已弃用的方法。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="bean覆盖">Bean覆盖</h3>
+<div class="paragraph">
+<p>默认情况下禁用Bean覆盖以防止意外覆盖bean。如果依赖于覆盖，则需要将<code>spring.main.allow-bean-definition-overriding</code>设置为<code>true</code>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="info和health默认不安全">info和health默认不安全</h3>
+<div class="paragraph">
+<p>如果<code>spring-security</code>在没有任何安全配置的类路径上，则<code>/info</code>和<code>/health</code>将会被公开以保持一致性。如果类路径上有<code>spring-security</code>且未提供任何安全配置，则需要明确保护它们。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="json_simple">Json Simple</h3>
+<div class="paragraph">
+<p>不再提供json-simple的依赖关系管理，并且已删除使用它的JsonParser实现。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="jersey_1">Jersey 1</h3>
+<div class="paragraph">
+<p>不再支持Jersey 1。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spring_provides">spring.provides</h3>
+<div class="paragraph">
+<p>Starter可以声明<code>META-INF/spring.provides</code>，以便IDE可以找出它提供的依赖关系。扫描Starter POM以获得它声明的直接依赖性应该足以指示。如果你负责第三方启动器并声明此文件，则可以将其删除。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="servlet路径">Servlet路径</h3>
+<div class="paragraph">
+<p><code>server.servlet.path</code>属性已改为<code>spring.mvc.servlet.path</code>。如果你以编程方式依赖该属性来获取<code>DispatcherServlet</code>的路径，请改为使用<code>DispatcherServletPath</code>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="maven插件">Maven插件</h3>
+<div class="paragraph">
+<p>finalName属性不再可自定义以与标准Maven插件的行为保持一致。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="值得关注的一些新内容">值得关注的一些新内容</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="第三方库升级">第三方库升级</h3>
+<div class="paragraph">
+<p>Spring Boot 2.1构建于Spring Framework 5.1之上并需要它。</p>
+</div>
+<div class="paragraph">
+<p>我们已尽可能升级到其他第三方jars的最新稳定版本。此版本中的一些值得注意的依赖项升级包括：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Tomcat 9</p>
+</li>
+<li>
+<p>Undertow 2</p>
+</li>
+<li>
+<p>Hibernate 5.3</p>
+</li>
+<li>
+<p>JUnit 5.2</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="profile表达式">Profile表达式</h3>
+<div class="paragraph">
+<p>Profile匹配已得到改进，以支持表达式格式。例如，<code>product &amp;(us-east | eu-central)</code> 表示生产配置文件处于活动状态且<code>us-east</code>或<code>eu-central</code>配置文件处于活动状态时匹配。</p>
+</div>
+<div class="ulist">
+<div class="title">Profile表达式可用于下列场景：</div>
+<ul>
+<li>
+<p>使用@Profile来启用组件</p>
+</li>
+<li>
+<p>加载多种profile的YAML文档</p>
+</li>
+<li>
+<p>使用&lt;springProfile&gt;启用Logback配置</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator">Actuator</h3>
+<div class="sect3">
+<h4 id="缓存端点">缓存端点</h4>
+<div class="paragraph">
+<p>新的<code>/actuator/caches</code>端点列出可用的CacheManager实例及其各自的缓存基本元数据。有关更多详细信息，请参阅API。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="spring_integration图形化端点">Spring Integration图形化端点</h4>
+<div class="paragraph">
+<p>如果你使用的是Spring Integration，则可以在<code>/actuator/integrationgraph</code>中采用图形化的方式来展示所有Spring Integration组件。有关更多详细信息，请参阅API。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="健康端点">健康端点</h4>
+<div class="paragraph">
+<p>现在，<code>HealthIndicatorRegistry</code>bean可用于在运行时添加和删除<code>HealthIndicator</code>。如有必要，还会改进运行状况端点以查询特定指示符。 例如<code>/actuator/health/db</code>仅执行“db”<code>HealthIndicator</code>。有关更多详细信息，请参阅API。</p>
+</div>
+<div class="paragraph">
+<p>Apache Cassandra的响应式HealthIndicator已经可用。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="micrometer">Micrometer</h4>
+<div class="paragraph">
+<p>常用标记可以声明方式应用于所有计量表，如以下示例所示：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>management.metrics.tags.region=us-east-1
+management.metrics.tags.stack=prod</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>上面的示例为所有仪表添加了一个区域和堆栈标签，其值分别为<code>us-east-1</code>和<code>prod</code>。</p>
+</div>
+<div class="ulist">
+<div class="title">指标范围已得到改善：</div>
+<ul>
+<li>
+<p>Hibernate指标</p>
+</li>
+<li>
+<p><code>WebClient</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="安全">安全</h3>
+<div class="paragraph">
+<p>添加了对WebFlux OAuth2登录的支持。</p>
+</div>
+<div class="paragraph">
+<p>OpenID Connect提供程序可用使用<code>issuer-uri</code>来更容易配置，<code>issuer-uri</code>是为其颁发者标识符的URI。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="elasticsearch_rest客户端">Elasticsearch REST客户端</h3>
+<div class="paragraph">
+<p>作为Jest的替代选项，<code>RestClient</code>和<code>RestHighLevelClient</code>的自动配置提供了命名空间为<code>spring.elasticsearch.rest.*</code>的可配置选项。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="jms_connectionfactory缓存">JMS <code>ConnectionFactory</code>缓存</h3>
+<div class="paragraph">
+<p>默认情况下，使用<code>CachingConnectionFactory</code>缓存自动配置的<code>ConnectionFactory</code>，直到启用pool选项或将<code>spring.jms.cache.enabled</code>设置为<code>false</code>。 Pooling选项也已扩展到Artemis（请参阅<code>spring.jms.artemis.pool.*</code>）。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="quartz">Quartz</h3>
+<div class="paragraph">
+<p><code>spring.quartz</code>命名空间增加了多个配置项。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="junit_5">JUnit 5</h3>
+<div class="paragraph">
+<p>所有<code>@&#8230;&#8203;</code>测试注释都使用<code>@ExtendedWith(SpringExtension.class)</code>进行元注释，因此如果你使用的是JUnit，则可以删除此设置的冗余部分。Spring Boot使用的<code>maven-surefire-plugin</code>版本，不需要任何自定义设置就能使用JUnit 5。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="maven插件_2">Maven插件</h3>
+<div class="paragraph">
+<p>通过使用<a href="http://docs.spring.io/spring-boot/docs/2.1.0.M1/maven-plugin/examples/run-system-properties.html" class="external" target="_blank" rel="noopener">系统属性</a>和<a href="http://docs.spring.io/spring-boot/docs/2.1.0.M1/maven-plugin/examples/run-env-variables.html" class="external" target="_blank" rel="noopener">环境变量</a>的专用选项，改进了指定参数。</p>
+</div>
+<div class="paragraph">
+<p>也可以重新打包和替换<code>classified</code>构件，请参阅<code>classified</code>属性的更新文档。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="其他">其他</h3>
+<div class="paragraph">
+<p>除了上面列出的变化之外，还有许多小的调整和改进，包括：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>@ConditionalOnEnabledEndpoint</code>可用于任何组件（例如，端点仅需要的东西，如果端点被禁用则不应创建）。</p>
+</li>
+<li>
+<p><code>@WebMvcTest</code>也自动配置Spring Data REST（例如支持Sort和Pageable请求参数）。</p>
+</li>
+<li>
+<p>不再需要导出虚假的<code>ResourceConfig</code>以启用Jersey支持。</p>
+</li>
+<li>
+<p>使用自动配置的<code>WebServiceTemplateBuilder</code>创建<code>WebServiceTemplate</code>更容易。</p>
+</li>
+<li>
+<p>Jackson可见性可以使用<code>spring.jackson.visibility.*</code>来配置。</p>
+</li>
+<li>
+<p>在使用Devtools的情况下，错误页面会显示出堆栈跟踪。</p>
+</li>
+<li>
+<p>JNDI查找已得到改进，默认情况下启用<code>resourceRef</code>。</p>
+</li>
+<li>
+<p>可以通过<code>RabbitRetryTemplateCustomizer</code>来自定义Rabbit使用的<code>RetryTemplate</code>。</p>
+</li>
+<li>
+<p>自动配置排除现在保证应用一致。</p>
+</li>
+<li>
+<p>使用Reactor Netty支持HTTP/2。</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>由于本次发布的版本包含特性比较多，因此这篇文章确实有点长，可用先收藏后慢慢看，后续版本版发布我会继续详细报道，敬请关注。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/07/spring_boot_2_0_4_available_now.html"> ←Spring Boot 2.0.4 现已可用</a></li>
@@ -431,30 +474,35 @@ management.metrics.tags.stack=prod</pre>
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

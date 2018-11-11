@@ -158,97 +158,94 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="toc" class="toc"> 
- <div id="toctitle">
-  目录
- </div> 
- <ul class="sectlevel1"> 
-  <li><a href="#下载离线安装包手动安装">1. 下载离线安装包手动安装</a></li> 
-  <li><a href="#使用sdkman安装">2. 使用SDKMAN安装</a></li> 
-  <li><a href="#使用osx_homebrew安装">3. 使用OSX Homebrew安装</a></li> 
-  <li><a href="#使用scoop安装">4. 使用Scoop安装</a></li> 
- </ul> 
-</div> 
-<div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="quoteblock abstract"> 
-   <div class="title">
-    概要
-   </div> 
-   <blockquote>
-     本文主要介绍Spring Boot的多种安装方式。 
-   </blockquote> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Boot CLI 是一个快速创建原型项目的命令行工具。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="下载离线安装包手动安装">1. 下载离线安装包手动安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>下载 <a href="https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/1.5.13.RELEASE/spring-boot-cli-1.5.13.RELEASE-bin.zip" class="external" target="_blank" rel="noopener">Spring Boot CLI安装包</a>，然后解压到本地目录并设置好<code>Path</code>环境变量即可。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用sdkman安装">2. 使用SDKMAN安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="http://sdkman.io" class="external" target="_blank" rel="noopener">SDKMAN</a>是一个JVM上各种语言SDK和工具包的安装管理工具，它的前身是GVM。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ sdk install springboot
+              <div class="blog--post"><div id="toc" class="toc">
+<div id="toctitle">目录</div>
+<ul class="sectlevel1">
+<li><a href="#下载离线安装包手动安装">1. 下载离线安装包手动安装</a></li>
+<li><a href="#使用sdkman安装">2. 使用SDKMAN安装</a></li>
+<li><a href="#使用osx_homebrew安装">3. 使用OSX Homebrew安装</a></li>
+<li><a href="#使用scoop安装">4. 使用Scoop安装</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="quoteblock abstract">
+<div class="title">概要</div>
+<blockquote>
+本文主要介绍Spring Boot的多种安装方式。
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Spring Boot CLI 是一个快速创建原型项目的命令行工具。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="下载离线安装包手动安装">1. 下载离线安装包手动安装</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>下载 <a href="https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/1.5.13.RELEASE/spring-boot-cli-1.5.13.RELEASE-bin.zip" class="external" target="_blank" rel="noopener">Spring Boot CLI安装包</a>，然后解压到本地目录并设置好<code>Path</code>环境变量即可。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="使用sdkman安装">2. 使用SDKMAN安装</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="http://sdkman.io" class="external" target="_blank" rel="noopener">SDKMAN</a>是一个JVM上各种语言SDK和工具包的安装管理工具，它的前身是GVM。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ sdk install springboot
 $ spring --version
-Spring Boot v1.5.13.RELEASE</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用osx_homebrew安装">3. 使用OSX Homebrew安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://brew.sh" class="external" target="_blank" rel="noopener">Homebrew</a>是专为macOS系统设计的软件包安装管理工具。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在终端控制台上执行下面的命令来安装Spring Boot：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ brew tap pivotal/tap
-$ brew install springboot</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用scoop安装">4. 使用Scoop安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://scoop.sh" class="external" target="_blank" rel="noopener">Scoop</a>是使用PowerShell语言为Windows系统开发的一个命令行的安装管理工具，功能与OSX Homebrew类似。 Scoop的详细安装请参考 <a href="https://github.com/lukesampson/scoop/wiki/Quick-Start" class="external" target="_blank" rel="noopener">官方安装说明</a>。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在命令行窗口执行下面的命令来安装Spring Boot如下：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>&gt; scoop bucket add extras
-&gt; scoop install springboot</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>安装之后，检查下安装是否正确：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ spring --version
-Spring Boot v1.5.13.RELEASE</pre> 
-   </div> 
-  </div> 
- </div> 
+Spring Boot v1.5.13.RELEASE</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="使用osx_homebrew安装">3. 使用OSX Homebrew安装</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://brew.sh" class="external" target="_blank" rel="noopener">Homebrew</a>是专为macOS系统设计的软件包安装管理工具。</p>
+</div>
+<div class="paragraph">
+<p>在终端控制台上执行下面的命令来安装Spring Boot：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ brew tap pivotal/tap
+$ brew install springboot</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="使用scoop安装">4. 使用Scoop安装</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://scoop.sh" class="external" target="_blank" rel="noopener">Scoop</a>是使用PowerShell语言为Windows系统开发的一个命令行的安装管理工具，功能与OSX Homebrew类似。
+Scoop的详细安装请参考 <a href="https://github.com/lukesampson/scoop/wiki/Quick-Start" class="external" target="_blank" rel="noopener">官方安装说明</a>。</p>
+</div>
+<div class="paragraph">
+<p>在命令行窗口执行下面的命令来安装Spring Boot如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; scoop bucket add extras
+&gt; scoop install springboot</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>安装之后，检查下安装是否正确：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring --version
+Spring Boot v1.5.13.RELEASE</pre>
+</div>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/06/maven.html"> ←安装 Maven</a></li>
@@ -285,30 +282,35 @@ Spring Boot v1.5.13.RELEASE</pre>
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

@@ -158,108 +158,137 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Web Services团队同时发布了两个版本：<code>3.0.4.RELEASE</code>作为开发的主要分支，以及<code>2.4.3.RELEASE</code>作为维护分支。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>3.0.4.RELEASE附带了下面列出的一些功能。它还为Java 11提供了新的支持，Java 11是下一个长期支持的Java版本。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="java_11及更高版本">Java 11及更高版本</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>从Java 9开始，几个关键的Java EE包的可见性降低了，这些包括核心XML和基于SOAP的包。在Java 11中，这些包已被完全删除。由于Java 11是自Java 8以来的第一个长期版本，因此它是Spring Web Services与之相对应的长期支持版本。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>这对你意味着什么？要在Java 9+上使用Spring Web Services，你不能再依赖JDK提供关键的XML和基于SOAP的库。永远不要担心，解决方案就在这里！</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>如果你访问项目的构建文件，你将发现一个新的Java 11配置文件。此配置文件包含必须添加到你自己的构建文件中的额外依赖项，以便使用Spring Web Services（或任何基于XML/SOAP的库）。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Web Services不提供这些依赖项，因此你必须将它们添加到您自己的构建文件中。但是一旦你这样做，你就不必再担心了（除了这些API的新版本发布时）。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>还在使用Spring Web Services 2.x维护分支吗？ 我们已经为你提供保障。在不破坏向后兼容性的情况下，2.4.3.RELEASE也支持Java 11。它只使用较旧版本的SOAP API（1.3.8而不是1.4.0）。没有什么是强加给你的，所以你可以继续使用相同版本的其他所有东西。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>当然，Java 11是否会破坏Spring Web Services之外的应用程序的任何部分取决于你自己。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>有关更多详细信息，请阅读以下每个版本的发行说明：</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="release_notes_spring_web_services_version_3_0_4_release">Release Notes - Spring Web Services - Version 3.0.4.RELEASE</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="bug">Bug</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><a href="https://jira.spring.io/browse/SWS-1018" class="external" target="_blank" rel="noopener">SWS-1018</a> - SaajSoapMessage created with default (empty) SoapEnvelope</p> </li> 
-     <li> <p><a href="https://jira.spring.io/browse/SWS-1036" class="external" target="_blank" rel="noopener">SWS-1036</a> - SimpleXsdSchema not initialized property produces NullPointerException</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="improvement">Improvement</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><a href="https://jira.spring.io/browse/SWS-1030" class="external" target="_blank" rel="noopener">SWS-1030</a> - Resolve version conflicts</p> </li> 
-     <li> <p><a href="https://jira.spring.io/browse/SWS-1033" class="external" target="_blank" rel="noopener">SWS-1033</a> - Ehcache - OWASP Dependency Check issues</p> </li> 
-     <li> <p><a href="https://jira.spring.io/browse/SWS-1034" class="external" target="_blank" rel="noopener">SWS-1034</a> - Switch to Java 11 for future JDK support</p> </li> 
-     <li> <p><a href="https://jira.spring.io/browse/SWS-1037" class="external" target="_blank" rel="noopener">SWS-1037</a> - Make SimpleXsdSchema give a more productive error message</p> </li> 
-     <li> <p><a href="https://jira.spring.io/browse/SWS-1038" class="external" target="_blank" rel="noopener">SWS-1038</a> - Polish documentation</p> </li> 
-     <li> <p><a href="https://jira.spring.io/browse/SWS-1039" class="external" target="_blank" rel="noopener">SWS-1039</a> - Upgrade to latest version of Spring</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="release_notes_spring_web_services_version_2_4_3">Release Notes - Spring Web Services - Version 2.4.3</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="bug_2">Bug</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><a href="https://jira.spring.io/browse/SWS-1018" class="external" target="_blank" rel="noopener">SWS-1018</a> - SaajSoapMessage created with default (empty) SoapEnvelope</p> </li> 
-     <li> <p><a href="https://jira.spring.io/browse/SWS-1036" class="external" target="_blank" rel="noopener">SWS-1036</a> - SimpleXsdSchema not initialized property produces NullPointerException</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="improvement_2">Improvement</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><a href="https://jira.spring.io/browse/SWS-1012" class="external" target="_blank" rel="noopener">SWS-1012</a> - Upgrade to latest Spring Framework and Spring Security versions</p> </li> 
-     <li> <p><a href="https://jira.spring.io/browse/SWS-1033" class="external" target="_blank" rel="noopener">SWS-1033</a> - Ehcache - OWASP Dependency Check issues</p> </li> 
-     <li> <p><a href="https://jira.spring.io/browse/SWS-1034" class="external" target="_blank" rel="noopener">SWS-1034</a> - Switch to Java 11 for future JDK support</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p><a href="https://projects.spring.io/spring-ws/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-projects/spring-ws" class="external" target="_blank" rel="noopener">Github</a> | <a href="https://jira.spring.io/browse/SWS" class="external" target="_blank" rel="noopener">问题跟踪</a></p> 
-   </div> 
-   <div class="admonitionblock note"> 
-    <table> 
-     <tbody>
-      <tr> 
-       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> 
-        <div class="paragraph"> 
-         <p>原文：<a href="https://spring.io/blog/2018/09/19/spring-web-services-3-0-4-2-4-3-released" class="external" target="_blank" rel="noopener">Spring Web Services 3.0.4 / 2.4.3 released</a><br> 编译：春之雨<br> 说明：版权归原文作者，翻译仅供学习参考。欢迎反馈和讨论，感谢阅读。</p> 
-        </div> </td> 
-      </tr> 
-     </tbody>
-    </table> 
-   </div> 
-  </div> 
- </div> 
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Web Services团队同时发布了两个版本：<code>3.0.4.RELEASE</code>作为开发的主要分支，以及<code>2.4.3.RELEASE</code>作为维护分支。</p>
+</div>
+<div class="paragraph">
+<p>3.0.4.RELEASE附带了下面列出的一些功能。它还为Java 11提供了新的支持，Java 11是下一个长期支持的Java版本。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="java_11及更高版本">Java 11及更高版本</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>从Java 9开始，几个关键的Java EE包的可见性降低了，这些包括核心XML和基于SOAP的包。在Java 11中，这些包已被完全删除。由于Java 11是自Java 8以来的第一个长期版本，因此它是Spring Web Services与之相对应的长期支持版本。</p>
+</div>
+<div class="paragraph">
+<p>这对你意味着什么？要在Java 9+上使用Spring Web Services，你不能再依赖JDK提供关键的XML和基于SOAP的库。永远不要担心，解决方案就在这里！</p>
+</div>
+<div class="paragraph">
+<p>如果你访问项目的构建文件，你将发现一个新的Java 11配置文件。此配置文件包含必须添加到你自己的构建文件中的额外依赖项，以便使用Spring Web Services（或任何基于XML/SOAP的库）。</p>
+</div>
+<div class="paragraph">
+<p>Spring Web Services不提供这些依赖项，因此你必须将它们添加到您自己的构建文件中。但是一旦你这样做，你就不必再担心了（除了这些API的新版本发布时）。</p>
+</div>
+<div class="paragraph">
+<p>还在使用Spring Web Services 2.x维护分支吗？ 我们已经为你提供保障。在不破坏向后兼容性的情况下，2.4.3.RELEASE也支持Java 11。它只使用较旧版本的SOAP API（1.3.8而不是1.4.0）。没有什么是强加给你的，所以你可以继续使用相同版本的其他所有东西。</p>
+</div>
+<div class="paragraph">
+<p>当然，Java 11是否会破坏Spring Web Services之外的应用程序的任何部分取决于你自己。</p>
+</div>
+<div class="paragraph">
+<p>有关更多详细信息，请阅读以下每个版本的发行说明：</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="release_notes_spring_web_services_version_3_0_4_release">Release Notes - Spring Web Services - Version 3.0.4.RELEASE</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="bug">Bug</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.spring.io/browse/SWS-1018" class="external" target="_blank" rel="noopener">SWS-1018</a> - SaajSoapMessage created with default (empty) SoapEnvelope</p>
+</li>
+<li>
+<p><a href="https://jira.spring.io/browse/SWS-1036" class="external" target="_blank" rel="noopener">SWS-1036</a> - SimpleXsdSchema not initialized property produces NullPointerException</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="improvement">Improvement</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.spring.io/browse/SWS-1030" class="external" target="_blank" rel="noopener">SWS-1030</a> - Resolve version conflicts</p>
+</li>
+<li>
+<p><a href="https://jira.spring.io/browse/SWS-1033" class="external" target="_blank" rel="noopener">SWS-1033</a> - Ehcache - OWASP Dependency Check issues</p>
+</li>
+<li>
+<p><a href="https://jira.spring.io/browse/SWS-1034" class="external" target="_blank" rel="noopener">SWS-1034</a> - Switch to Java 11 for future JDK support</p>
+</li>
+<li>
+<p><a href="https://jira.spring.io/browse/SWS-1037" class="external" target="_blank" rel="noopener">SWS-1037</a> - Make SimpleXsdSchema give a more productive error message</p>
+</li>
+<li>
+<p><a href="https://jira.spring.io/browse/SWS-1038" class="external" target="_blank" rel="noopener">SWS-1038</a> - Polish documentation</p>
+</li>
+<li>
+<p><a href="https://jira.spring.io/browse/SWS-1039" class="external" target="_blank" rel="noopener">SWS-1039</a> - Upgrade to latest version of Spring</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="release_notes_spring_web_services_version_2_4_3">Release Notes - Spring Web Services - Version 2.4.3</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="bug_2">Bug</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.spring.io/browse/SWS-1018" class="external" target="_blank" rel="noopener">SWS-1018</a> - SaajSoapMessage created with default (empty) SoapEnvelope</p>
+</li>
+<li>
+<p><a href="https://jira.spring.io/browse/SWS-1036" class="external" target="_blank" rel="noopener">SWS-1036</a> - SimpleXsdSchema not initialized property produces NullPointerException</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="improvement_2">Improvement</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.spring.io/browse/SWS-1012" class="external" target="_blank" rel="noopener">SWS-1012</a> - Upgrade to latest Spring Framework and Spring Security versions</p>
+</li>
+<li>
+<p><a href="https://jira.spring.io/browse/SWS-1033" class="external" target="_blank" rel="noopener">SWS-1033</a> - Ehcache - OWASP Dependency Check issues</p>
+</li>
+<li>
+<p><a href="https://jira.spring.io/browse/SWS-1034" class="external" target="_blank" rel="noopener">SWS-1034</a> - Switch to Java 11 for future JDK support</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://projects.spring.io/spring-ws/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-projects/spring-ws" class="external" target="_blank" rel="noopener">Github</a> | <a href="https://jira.spring.io/browse/SWS" class="external" target="_blank" rel="noopener">问题跟踪</a></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>原文：<a href="https://spring.io/blog/2018/09/19/spring-web-services-3-0-4-2-4-3-released" class="external" target="_blank" rel="noopener">Spring Web Services 3.0.4 / 2.4.3 released</a><br>
+编译：春之雨<br>
+说明：版权归原文作者，翻译仅供学习参考。欢迎反馈和讨论，感谢阅读。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/09/announcing-spring-cloud-function-2-0-0-m2.html"> ←Spring Cloud Function 2.0.0.M2 发布</a></li>
@@ -296,30 +325,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

@@ -158,65 +158,119 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="paragraph"> 
- <p>大家好，Spring 粉丝们，感谢一如既往的等待，又到了每周必读的《Spring一周回顾》时间。</p> 
-</div> 
-<div class="paragraph"> 
- <p>在Java领域，开源的框架一直都非常多，从WebWork、<a href="http://struts.apache.org/" class="external" target="_blank" rel="noopener">Struts</a>、<a href="http://tapestry.apache.org" class="external" target="_blank" rel="noopener">Tapestry</a>、<a href="https://grails.org" class="external" target="_blank" rel="noopener">Grails</a>、<a href="https://www.dropwizard.io/" class="external" target="_blank" rel="noopener">Dropwizard</a>、<a href="https://ratpack.io/versions" class="external" target="_blank" rel="noopener">Ratpack</a>、<a href="http://www.sparkjava.com" class="external" target="_blank" rel="noopener">Spark</a>，包括<a href="http://projects.spring.io/spring-boot/" class="external" target="_blank" rel="noopener">Spring Boot</a>，这些都是非常优秀的开源框架。<a href="http://micronaut.io" class="external" target="_blank" rel="noopener">Micronaut</a>被大多数Spring&amp;Grails的开发者寄予厚望，今年5月23日来自OCI的Graeme Rocher宣布了<a href="https://objectcomputing.com/news/2018/05/23/micronaut-open-sourced" class="external" target="_blank" rel="noopener">Micronaut正式开源</a>之后，开发团队一直非常努力投入开发之中，在接连发布了<a href="https://github.com/micronaut-projects/micronaut-core/releases" class="external" target="_blank" rel="noopener">M1、M2、M3、M4以及RC1、RC2等版本</a>之后，终于离最终正式版越来越近了，官方计划在10月16号发布第三个候选版本，不出意外将在10月23日迎来最终的GA版发布。欢迎关注本网站，后续会继续报道最新资讯和推出相应的学习教程。</p> 
-</div> 
-<div class="paragraph"> 
- <p>接下来，本周的《Spring一周回顾》我为大家带来了如下内容：</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p>今年的5月，OCI宣布<a href="https://springdev.io/blog/2018/05/micronaut-open-sourced.html" class="external" target="_blank" rel="noopener">Micronaut在GitHub开源了</a>，我为你翻译了其中的<a href="https://springdev.io/blog/2018/09/micronaut-1-0-rc1-released.html" class="external" target="_blank" rel="noopener">RC1的发布说明</a>，介绍了其独特的四个特性；<a href="https://springdev.io/blog/2018/10/micronaut-1-0-rc2-released.html" class="external" target="_blank" rel="noopener">RC2的发布说明</a>，详细介绍其实现技术及原理揭秘。</p> </li> 
-  <li> <p><a href="https://www.thymeleaf.org/download.html" class="external" target="_blank" rel="noopener">Thymeleaf 3.0.10.RELEASE 已发布</a>，已在JDK 11测试通过；<a href="http://forum.thymeleaf.org/Thymeleaf-Spring-Security-integration-3-0-3-with-Spring-Security-5-WebFlux-support-JUST-PUBLISHED-td4031349.html">Thymeleaf Spring Security 3.0.3 也同时发布</a>，支持Spring Security 5</p> </li> 
-  <li> <p><a href="http://infinispan.org/download/" class="external" target="_blank" rel="noopener">Infinispan 9.4.0.Final 已发布</a></p> </li> 
-  <li> <p><a href="https://www.hashicorp.com/blog/consul-1-3-envoy" class="external" target="_blank" rel="noopener">HashiCorp Consul 1.3 已发布</a>，支持Envoy作为Connect的代理，并在Kubernetes中启用自动Sidebar注入以实现安全的pod通信</p> </li> 
-  <li> <p><a href="https://www.jhipster.tech/2018/10/07/jhipster-release-5.4.2.html" class="external" target="_blank" rel="noopener">JHipster 5.4.2 已发布</a>，升级依赖JHipster Core v3.4.0，支持Azure Pipelines</p> </li> 
-  <li> <p><a href="https://github.com/lettuce-io/lettuce-core/releases" class="external" target="_blank" rel="noopener">Redis客户端Lettuce 5.1.1 已发布</a></p> </li> 
-  <li> <p><a href="https://arrow.apache.org/blog/2018/10/09/0.11.0-release/" class="external" target="_blank" rel="noopener">Apache Arrow 0.11.0 已发布</a></p> </li> 
-  <li> <p><a href="http://www.groovy-lang.org/changelogs/changelog-2.5.3.html" class="external" target="_blank" rel="noopener">Apache Groovy 2.5.3 已发布</a>，修复20+BUG，多个依赖项升级</p> </li> 
-  <li> <p><a href="https://ofbiz.apache.org/release-notes-16.11.05.html" class="external" target="_blank" rel="noopener">Apache OFBiz® 16.11.05 已发布</a></p> </li> 
-  <li> <p><a href="https://subversion.apache.org/download.cgi" class="external" target="_blank" rel="noopener">Apache Subversion 1.10.3 已发布</a></p> </li> 
-  <li> <p><a href="https://tika.apache.org/download.html" class="external" target="_blank" rel="noopener">Apache Tika 1.19.1 已发布</a></p> </li> 
-  <li> <p><a href="http://www.apache.org/dist/velocity/tools/3.0/release-notes.html" class="external" target="_blank" rel="noopener">Apache Velocity Tools 3.0 已发布</a>，依赖Velocity Engine 2.0</p> </li> 
-  <li> <p><a href="https://code.visualstudio.com/updates/v1_28" class="external" target="_blank" rel="noopener">Visual Studio Code 1.28.1 已发布</a></p> </li> 
-  <li> <p><a href="https://blogs.msdn.microsoft.com/typescript/announcing-typescript-3-1/" class="external" target="_blank" rel="noopener">TypeScript 3.1.2 已发布</a></p> </li> 
-  <li> <p><a href="https://nodejs.org/en/blog/release/v10.12.0/" class="external" target="_blank" rel="noopener">Node v10.12.0 已发布</a></p> </li> 
-  <li> <p><a href="https://github.com/angular/angular/releases" class="external" target="_blank" rel="noopener">Angular 6.1.10 和 7.0.0 rc1 同时发布</a></p> </li> 
-  <li> <p><a href="https://www.ansible.com/" class="external" target="_blank" rel="noopener">Ansible 2.7.0 已发布</a></p> </li> 
-  <li> <p><a href="https://github.com/ctripcorp/apollo/releases/tag/v1.1.0" class="external" target="_blank" rel="noopener">Apollo v1.1.0 已发布</a></p> </li> 
-  <li> <p><a href="https://grafana.com/grafana/download/5.3.0" class="external" target="_blank" rel="noopener">Grafana 5.3 已发布</a></p> </li> 
-  <li> <p><a href="https://github.com/alipay/sofa-boot/releases/tag/v2.5.0" class="external" target="_blank" rel="noopener">SOFABoot v2.5.0 已发布</a></p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>接下来的相关社区活动：</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p><a href="http://www.huodongxing.com/event/9456414800100" class="external" target="_blank" rel="noopener">2018中国开源年会 COSCon'18</a>，将会在2018年10月20、21两天在深圳南山区举办，欢迎一起前往参加这个开源聚会。</p> </li> 
-  <li> <p><a href="http://www.huodongxing.com/event/2460034772400" class="external" target="_blank" rel="noopener">阿里云APM城市技术行·深圳站——应用全链路性能和诊断最佳实践</a>，时间：10月27日 13:30-17:30，地点：南山区高新南七道16空体新媒体实验室</p> </li> 
-  <li> <p><a href="http://springonetour.io/2018/beijing" class="external" target="_blank" rel="noopener">SpringOne Tour 2018 技术峰会</a>，2018年11月3日在北京京仪大酒店，来自Pivotal美国的Spring明星大咖和国内技术专家组成了豪华阵容，他们将与大家分享并探讨现代应用开发、DevOps、CI/CD、云计算等话题。</p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>历史好文推荐：</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p><a href="https://springdev.io/blog/2018/10/this-week-in-spring-october-5th-2018.html" class="external" target="_blank" rel="noopener">上一期的《Spring 一周回顾》</a>同样精彩，值得一读！</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/09/the-spring-book-list-2018.html" class="external" target="_blank" rel="noopener">《Spring 最全书单，送给爱学习的你》</a>，80本国内外已出版的Spring相关的书，可以根据自己需要选择阅读！</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/10-ways-to-secure-spring-boot.html" class="external" target="_blank" rel="noopener">10 种保护Spring Boot应用程序的绝佳方法</a>，来自业界安全专家和开源大咖Matt Raible和Simon Maple合作的成果。</p> </li> 
-  <li> <p><a href="https://springdev.io/blog/2018/08/spring-boot-best-practices.html" class="external" target="_blank" rel="noopener">16 条Spring Boot最佳实践</a>，来自业界Spring大咖们的精彩总结！</p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>最后，欢迎来深圳参加技术活动，因为我也会参加，如有机会请你一聚，把酒言欢，聊聊技术，谈谈人生。</p> 
-</div> 
-<div class="paragraph"> 
- <p>周末愉快，感谢阅读，我们下周见！</p> 
+              <div class="blog--post"><div class="paragraph">
+<p>大家好，Spring 粉丝们，感谢一如既往的等待，又到了每周必读的《Spring一周回顾》时间。</p>
+</div>
+<div class="paragraph">
+<p>在Java领域，开源的框架一直都非常多，从WebWork、<a href="http://struts.apache.org/" class="external" target="_blank" rel="noopener">Struts</a>、<a href="http://tapestry.apache.org" class="external" target="_blank" rel="noopener">Tapestry</a>、<a href="https://grails.org" class="external" target="_blank" rel="noopener">Grails</a>、<a href="https://www.dropwizard.io/" class="external" target="_blank" rel="noopener">Dropwizard</a>、<a href="https://ratpack.io/versions" class="external" target="_blank" rel="noopener">Ratpack</a>、<a href="http://www.sparkjava.com" class="external" target="_blank" rel="noopener">Spark</a>，包括<a href="http://projects.spring.io/spring-boot/" class="external" target="_blank" rel="noopener">Spring Boot</a>，这些都是非常优秀的开源框架。<a href="http://micronaut.io" class="external" target="_blank" rel="noopener">Micronaut</a>被大多数Spring&amp;Grails的开发者寄予厚望，今年5月23日来自OCI的Graeme Rocher宣布了<a href="https://objectcomputing.com/news/2018/05/23/micronaut-open-sourced" class="external" target="_blank" rel="noopener">Micronaut正式开源</a>之后，开发团队一直非常努力投入开发之中，在接连发布了<a href="https://github.com/micronaut-projects/micronaut-core/releases" class="external" target="_blank" rel="noopener">M1、M2、M3、M4以及RC1、RC2等版本</a>之后，终于离最终正式版越来越近了，官方计划在10月16号发布第三个候选版本，不出意外将在10月23日迎来最终的GA版发布。欢迎关注本网站，后续会继续报道最新资讯和推出相应的学习教程。</p>
+</div>
+<div class="paragraph">
+<p>接下来，本周的《Spring一周回顾》我为大家带来了如下内容：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>今年的5月，OCI宣布<a href="https://springdev.io/blog/2018/05/micronaut-open-sourced.html" class="external" target="_blank" rel="noopener">Micronaut在GitHub开源了</a>，我为你翻译了其中的<a href="https://springdev.io/blog/2018/09/micronaut-1-0-rc1-released.html" class="external" target="_blank" rel="noopener">RC1的发布说明</a>，介绍了其独特的四个特性；<a href="https://springdev.io/blog/2018/10/micronaut-1-0-rc2-released.html" class="external" target="_blank" rel="noopener">RC2的发布说明</a>，详细介绍其实现技术及原理揭秘。</p>
+</li>
+<li>
+<p><a href="https://www.thymeleaf.org/download.html" class="external" target="_blank" rel="noopener">Thymeleaf 3.0.10.RELEASE 已发布</a>，已在JDK 11测试通过；<a href="http://forum.thymeleaf.org/Thymeleaf-Spring-Security-integration-3-0-3-with-Spring-Security-5-WebFlux-support-JUST-PUBLISHED-td4031349.html">Thymeleaf Spring Security 3.0.3 也同时发布</a>，支持Spring Security 5</p>
+</li>
+<li>
+<p><a href="http://infinispan.org/download/" class="external" target="_blank" rel="noopener">Infinispan 9.4.0.Final 已发布</a></p>
+</li>
+<li>
+<p><a href="https://www.hashicorp.com/blog/consul-1-3-envoy" class="external" target="_blank" rel="noopener">HashiCorp Consul 1.3 已发布</a>，支持Envoy作为Connect的代理，并在Kubernetes中启用自动Sidebar注入以实现安全的pod通信</p>
+</li>
+<li>
+<p><a href="https://www.jhipster.tech/2018/10/07/jhipster-release-5.4.2.html" class="external" target="_blank" rel="noopener">JHipster 5.4.2 已发布</a>，升级依赖JHipster Core v3.4.0，支持Azure Pipelines</p>
+</li>
+<li>
+<p><a href="https://github.com/lettuce-io/lettuce-core/releases" class="external" target="_blank" rel="noopener">Redis客户端Lettuce 5.1.1 已发布</a></p>
+</li>
+<li>
+<p><a href="https://arrow.apache.org/blog/2018/10/09/0.11.0-release/" class="external" target="_blank" rel="noopener">Apache Arrow 0.11.0 已发布</a></p>
+</li>
+<li>
+<p><a href="http://www.groovy-lang.org/changelogs/changelog-2.5.3.html" class="external" target="_blank" rel="noopener">Apache Groovy 2.5.3 已发布</a>，修复20+BUG，多个依赖项升级</p>
+</li>
+<li>
+<p><a href="https://ofbiz.apache.org/release-notes-16.11.05.html" class="external" target="_blank" rel="noopener">Apache OFBiz® 16.11.05 已发布</a></p>
+</li>
+<li>
+<p><a href="https://subversion.apache.org/download.cgi" class="external" target="_blank" rel="noopener">Apache Subversion 1.10.3 已发布</a></p>
+</li>
+<li>
+<p><a href="https://tika.apache.org/download.html" class="external" target="_blank" rel="noopener">Apache Tika 1.19.1 已发布</a></p>
+</li>
+<li>
+<p><a href="http://www.apache.org/dist/velocity/tools/3.0/release-notes.html" class="external" target="_blank" rel="noopener">Apache Velocity Tools 3.0 已发布</a>，依赖Velocity Engine 2.0</p>
+</li>
+<li>
+<p><a href="https://code.visualstudio.com/updates/v1_28" class="external" target="_blank" rel="noopener">Visual Studio Code 1.28.1 已发布</a></p>
+</li>
+<li>
+<p><a href="https://blogs.msdn.microsoft.com/typescript/announcing-typescript-3-1/" class="external" target="_blank" rel="noopener">TypeScript 3.1.2 已发布</a></p>
+</li>
+<li>
+<p><a href="https://nodejs.org/en/blog/release/v10.12.0/" class="external" target="_blank" rel="noopener">Node v10.12.0 已发布</a></p>
+</li>
+<li>
+<p><a href="https://github.com/angular/angular/releases" class="external" target="_blank" rel="noopener">Angular 6.1.10 和 7.0.0 rc1 同时发布</a></p>
+</li>
+<li>
+<p><a href="https://www.ansible.com/" class="external" target="_blank" rel="noopener">Ansible 2.7.0 已发布</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ctripcorp/apollo/releases/tag/v1.1.0" class="external" target="_blank" rel="noopener">Apollo v1.1.0 已发布</a></p>
+</li>
+<li>
+<p><a href="https://grafana.com/grafana/download/5.3.0" class="external" target="_blank" rel="noopener">Grafana 5.3 已发布</a></p>
+</li>
+<li>
+<p><a href="https://github.com/alipay/sofa-boot/releases/tag/v2.5.0" class="external" target="_blank" rel="noopener">SOFABoot v2.5.0 已发布</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>接下来的相关社区活动：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.huodongxing.com/event/9456414800100" class="external" target="_blank" rel="noopener">2018中国开源年会 COSCon'18</a>，将会在2018年10月20、21两天在深圳南山区举办，欢迎一起前往参加这个开源聚会。</p>
+</li>
+<li>
+<p><a href="http://www.huodongxing.com/event/2460034772400" class="external" target="_blank" rel="noopener">阿里云APM城市技术行·深圳站——应用全链路性能和诊断最佳实践</a>，时间：10月27日 13:30-17:30，地点：南山区高新南七道16空体新媒体实验室</p>
+</li>
+<li>
+<p><a href="http://springonetour.io/2018/beijing" class="external" target="_blank" rel="noopener">SpringOne Tour 2018 技术峰会</a>，2018年11月3日在北京京仪大酒店，来自Pivotal美国的Spring明星大咖和国内技术专家组成了豪华阵容，他们将与大家分享并探讨现代应用开发、DevOps、CI/CD、云计算等话题。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>历史好文推荐：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://springdev.io/blog/2018/10/this-week-in-spring-october-5th-2018.html" class="external" target="_blank" rel="noopener">上一期的《Spring 一周回顾》</a>同样精彩，值得一读！</p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/09/the-spring-book-list-2018.html" class="external" target="_blank" rel="noopener">《Spring 最全书单，送给爱学习的你》</a>，80本国内外已出版的Spring相关的书，可以根据自己需要选择阅读！</p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/08/10-ways-to-secure-spring-boot.html" class="external" target="_blank" rel="noopener">10 种保护Spring Boot应用程序的绝佳方法</a>，来自业界安全专家和开源大咖Matt Raible和Simon Maple合作的成果。</p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/08/spring-boot-best-practices.html" class="external" target="_blank" rel="noopener">16 条Spring Boot最佳实践</a>，来自业界Spring大咖们的精彩总结！</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>最后，欢迎来深圳参加技术活动，因为我也会参加，如有机会请你一聚，把酒言欢，聊聊技术，谈谈人生。</p>
+</div>
+<div class="paragraph">
+<p>周末愉快，感谢阅读，我们下周见！</p>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/10/micronaut-1-0-rc2-released.html"> ←Micronaut 1.0 RC2 发布，详细介绍了其实现技术及原理</a></li>
@@ -253,30 +307,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

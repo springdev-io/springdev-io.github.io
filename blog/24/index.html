@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html data-mobile-support data-goto-top data-nav-menu>
+
+  <head>
+  <meta charset="utf-8"/>
+  <title>Blog - Spring技术社区</title>
+  <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="description" content="Spring Dev Site"/>
+  <meta name="author" content="rainboyan.com"/>
+  <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
+  <meta property="og:title" content="SpringDev.io" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:description" content="Let's build a better Enterprise. Spring helps development teams everywhere
+    build simple, portable, fast and flexible JVM-based systems and applications." />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/css/blog.css" />
+  <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+  
+  <script src="/jspm_packages/system.js"></script>
+  <script>
+    System.config({baseURL: "/"});
+  </script>
+  <script src="/config.js"></script>
+  <script>
+      System.import('app/main.js')
+  </script>
+</head>
+  <body>
+  <div class="viewport">
+    <header class="navbar header--navbar desktop-only">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <div class="spring-logo--container">
+            <a class="spring-logo" href="/"><span></span></a>
+          </div>
+          <ul class="nav pull-right">
+            <li class="navbar-link">
+              <a href="/projects/" >项目</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/guides/" >指南</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/blog/" >博客</a>
+            </li>
+            <li class="navbar-link nav-search js-nav-search">
+              <a>
+                <i class="icon-search navbar-search--icon js-search-input-open"></i>
+                <span class="search-input-close js-search-input-close">
+                  <i class="icon-remove"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-dropdown--container js-search-dropdown">
+        <div class="container-fluid">
+          <div class="search-form--container">
+            <form class="form-inline form-search" action="../search" method="get">
+              <input type="text" class="search-query search-form--form js-search-input" placeholder="Search for documentation, guides, and posts..." name="q" value="" />
+              <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div>
+    <div class="mobile-navigation--wrapper mobile-only">
+      <div class="navigation-drawer--container">
+        <div class="mobile-search--container">
+          <form class="form-inline form-search" action="../search" method="get">
+            <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            <input type="text" class="search-query search-form--form js-search-input" placeholder="Search..." name="q" value="" />
+          </form>
+        </div>
+        <div class="navigation-item-list">
+          <div class="navbar-link">
+            <a href="/">
+              首页
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/projects/">
+              项目
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/guides/">
+              指南
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/blog/">
+              博客
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <div class="nav-icon js-open-nav-drawer">
+          <i class="icon-reorder"></i>
+        </div>
+        <div class="header-center-icon">
+          <a href="../">
+            <div class="icon icon-spring-logo-mobile"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid"></div>
+    <div></div>
+    <main class="body--container container-fluid">
+      <div class="main-body--wrapper">
+        <div class="desktop-only">
+          <h1 class="blog-category active content--title">
+          开发者博客
+          </h1>
+          <div class="blog-category content--title">
+            <div>Engineering</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>Releases</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>News and Events</div>
+          </div>
+        </div>
+        <div class="row-fluid blog--wrapper">
+          <div class="span8 mobile-left-pane">
+            <div class="blog-preview--wrapper">
+              <style type="text/css">
+                #toc { display: none; }
+              </style>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
+                    <a href="../../../blog/2017/07/introducing-spring-cloud-function.html">介绍Spring Cloud Function 项目</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon article"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/article.html">article</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Wed Jul 05 15:17:00 CST 2017">2017-07-05</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2017/07/introducing-spring-cloud-function.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">介绍Spring Cloud Function 项目</div>
+                    <div class="desktop-only"><div class="paragraph"> 
+ <p>Spring Cloud Function是一个新项目，具有以下高阶目标：</p> 
+</div>
+<div class="ulist"> 
+ <ul> 
+  <li> <p>通过函数促进业务逻辑的实现</p> </li> 
+  <li> <p>将业务逻辑的开发生命周期与任何特定运行时目标分离，以便相同的代码可以作为Web端点，流处理器或任务运行</p> </li> 
+  <li> <p>支持无服务器提供商之间的统一编程模型，以及独立运行（本地或PaaS）的能力</p> </li> 
+  <li> <p>在无服务器提供商上启用Spring Boot功能（自动配置，依赖注入，指标）</p> </li> 
+ </ul> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2017/07/introducing-spring-cloud-function.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
+                    <a href="../../../blog/2006/08/seven-simple-reasons-to-use-appfuse.html">使用 AppFuse 的七个理由</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon release"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Tue Aug 08 10:00:00 CST 2006">2006-08-08</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2006/08/seven-simple-reasons-to-use-appfuse.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">使用 AppFuse 的七个理由，学习 Java 开放源码工具 —— 并使用这些工具提高生产效率</div>
+                    <div class="desktop-only"><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>AppFuse 是一个开放源码的项目和应用程序，它使用了在 Java 平台上构建的开放源码工具来帮助我们快速而高效地开发 Web 应用程序。我最初开发它是为了减少在为客户构建新 Web 应用程序时所花费的那些不必要的时间。从核心上来说，AppFuse 是一个项目骨架，类似于通过向导创建新 Web 项目时 IDE 所创建的东西。当我们使用 AppFuse 创建一个项目时，它会提示我们将使用开放源码框架，然后才创建项目。它使用 Ant 来驱动测试、代码生成、编译和部署。它提供了目录和包结构，以及开发基于 Java 语言的 Web 应用程序所需要的库。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>与大部分 “new project” 向导不同，AppFuse 创建的项目从最开始就包含很多类和文件。这些文件用来实现特性，不过它们同时也会在您开发应用程序时被用作示例。通过使用 AppFuse 启动新项目，我们通常可以减少一到两周的开发时间。我们不用担心如何将开放源码框架配置在一起，因为这都已经完成了。我们的项目都已提前配置来与数据库进行交互，它会部署到应用服务器上，并对用户进行认证。我们不必实现安全特性，因为这都早已集成了。 当我最初开发 AppFuse 时，它只支持 Struts 和 Hibernate。经过几年的努力，我发现了比 Struts 更好的 Web 框架，因此我还添加了为这些 Web 框架使用的选项。现在，AppFuse 可以支持 Hibernate 或 iBATIS 作为持久性框架。对于 Web 框架来说，我们可以使用 JavaServer Faces（JSF）、Spring MVC、Struts、Tapestry 或 WebWork。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>AppFuse 提供了很多应用程序需要的一些特性，包括：</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>认证和授权</p> </li> 
+    <li> <p>用户管理</p> </li> 
+    <li> <p>Remember Me（这会保存您的登录信息，这样就不用每次都再进行登录了）</p> </li> 
+    <li> <p>密码提醒</p> </li> 
+    <li> <p>登记和注册</p> </li> 
+    <li> <p>SSL 转换</p> </li> 
+    <li> <p>E-mail</p> </li> 
+    <li> <p>URL 重写</p> </li> 
+    <li> <p>皮肤</p> </li> 
+    <li> <p>页面修饰</p> </li> 
+    <li> <p>模板化布局</p> </li> 
+    <li> <p>文件上载</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>这种 “开箱即用” 的功能是 AppFuse 与其他 CRUD 代 框架的区别之一（CRUD 取自创建、检索、更新 和删除 几个操作的英文首字母），包括 Ruby on Rails、Trails 和 Grails。上面提到的这些框架，以及 AppFuse，都让我们可以从数据库表或现有的模型对象中生成主页/细节页。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>图 1 阐述了一个典型 AppFuse 应用程序的概念设计：</p> 
+  </div> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="/images/appfuse_app_architecture.jpg" alt="appfuse app architecture"> 
+   </div> 
+   <div class="title">
+    图 1. 典型的 AppFuse 应用程序
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>清单 1 给出了我们在创建 devworks 项目时所使用的命令行交互操作，同时还给出了所生成的结果。这个项目使用了 WebWork 作为自己的 Web 框架（请参考下面 参考资料 一节给出的链接）。</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    清单 1. 使用 AppFuse 创建新项目
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">alotta:~/dev/appfuse mraible$ ant new
+Buildfile: build.xml
+
+clean:
+     [echo] Cleaning build and distribution directories
+
+init:
+
+new:
+     [echo]
+     [echo] +-------------------------------------------------------------+
+     [echo] |    -- Welcome to the AppFuse New Application Wizard! --     |
+     [echo] |                                                             |
+     [echo] | To create a new application, please answer the following    |
+     [echo] | questions.                                                  |
+     [echo] +-------------------------------------------------------------+
+
+    [input] What would you like to name your application [myapp]?
+devworks
+    [input] What would you like to name your database [mydb]?
+devworks
+    [input] What package name would you like to use [org.appfuse]?
+com.ibm
+    [input] What web framework would you like to use [webwork,tapestry,spring,js
+f,struts]?
+webwork
+     [echo] Creating new application named 'devworks'...
+     [copy] Copying 359 files to /Users/mraible/Work/devworks
+     [copy] Copying 181 files to /Users/mraible/Work/devworks/extras
+     [copy] Copying 1 file to /Users/mraible/Work/devworks
+     [copy] Copying 1 file to /Users/mraible/Work/devworks
+
+install:
+     [echo] Copying WebWork JARs to ../../lib
+     [copy] Copying 6 files to /Users/mraible/Work/devworks/lib
+     [echo] Adding WebWork entries to ../../lib.properties
+     [echo] Adding WebWork classpath entries
+     [echo] Removing Struts-specific JARs
+   [delete] Deleting directory /Users/mraible/Work/devworks/lib/struts-1.2.9
+   [delete] Deleting directory /Users/mraible/Work/devworks/lib/strutstest-2.1.3
+     [echo] Deleting struts_form.xdt for XDoclet
+   [delete] Deleting directory /Users/mraible/Work/devworks/metadata/templates
+     [echo] Deleting Struts merge-files in metadata/web
+   [delete] Deleting 7 files from /Users/mraible/Work/devworks/metadata/web
+     [echo] Deleting unused Tag Libraries and Utilities
+   [delete] Deleting 2 files from /Users/mraible/Work/devworks/src/web/org/appfu
+se/webapp
+     [echo] Modifying appgen for WebWork
+     [copy] Copying 12 files to /Users/mraible/Work/devworks/extras/appgen
+     [echo] Replacing source and test files
+   [delete] Deleting directory /Users/mraible/Work/devworks/src/web/org/appfuse/
+webapp/form
+   [delete] Deleting directory /Users/mraible/Work/devworks/src/web/org/appfuse/
+webapp/action
+     [copy] Copying 13 files to /Users/mraible/Work/devworks/src
+   [delete] Deleting directory /Users/mraible/Work/devworks/test/web/org/appfuse
+/webapp/form
+   [delete] Deleting directory /Users/mraible/Work/devworks/test/web/org/appfuse
+/webapp/action
+     [copy] Copying 5 files to /Users/mraible/Work/devworks/test
+     [echo] Replacing web files (images, scripts, JSPs, etc.)
+   [delete] Deleting 1 files from /Users/mraible/Work/devworks/web/scripts
+     [copy] Copying 34 files to /Users/mraible/Work/devworks/web
+   [delete] Deleting: /Users/mraible/Work/devworks/web/WEB-INF/validator-rules-c
+ustom.xml
+     [echo] Modifying Eclipse .classpath file
+     [echo] Refactoring build.xml
+     [echo] ----------------------------------------------
+     [echo] NOTE: It's recommended you delete extras/webwork as you shouldn't ne
+ed it anymore.
+     [echo] ----------------------------------------------
+     [echo] Repackaging info written to rename.log
+     [echo]
+     [echo] +-------------------------------------------------------------+
+     [echo] |           -- Application created successfully! --           |
+     [echo] |                                                             |
+     [echo] | Now you should be able to cd to your application and run:   |
+     [echo] | &gt; ant setup test-all                                        |
+     [echo] +-------------------------------------------------------------+
+
+BUILD SUCCESSFUL
+Total time: 15 seconds</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>在创建一个新项目之后，我们就得到了一个类似于图 2 所示的目录结构。Eclipse 和 Intellij IDEA 项目文件都是作为这个过程的一部分创建的。</p> 
+  </div> 
+  <div class="sidebarblock"> 
+   <div class="content"> 
+    <div class="paragraph"> 
+     <p>为什么使用 WebWork？ Struts 社区最近在热情地拥抱 WebWork，这种结合导致为 Java 平台提供了一个非常优秀的新 Web 框架：Struts 2。当然，Spring MVC 是一个非常优秀的基于请求的框架，但是它不能像 Struts 2 一样支持 JSF。基于内容的框架（例如 JSF 和 Tapestry）也都很好，但是我发现 WebWork 更为直观，更容易使用（更多有关 Structs 2 和 JSF 的内容请参看 参考资料）。</p> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="/images/project_directory_structure.jpg" alt="project directory structure"> 
+   </div> 
+   <div class="title">
+    图 2. 项目的目录结构
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>这个目录结构与 Sun 为 Java 2 Platform Enterprise Edition（J2EE）Web 应用程序推荐的目录结构非常类似。在 2.0 版本的 AppFuse 中，这个结构会变化成适合 Apache Maven 项目的标准目录结构（有关这两个目录介绍的内容，请参看 参考资料 中的链接）。AppFuse 还会从 Ant 迁移到 Maven 2 上，从而获得相关下载的能力和对生成 IDE 项目文件的支持。目前基于 Ant 的系统要求提交者维护项目文件，而 Maven 2 可以通过简单地使用项目的 pom.xml 文件生成 IDEA、Eclipse 和 NetBeans 项目文件。（这个文件位于您项目的根目录中，是使用 Maven 构建应用程序所需要的主要组件）。它与利用 Ant 所使用的 <code>build.xml</code> 文件非常类似。） 现在我们对 AppFuse 是什么已经有一点概念了，在本文剩下的部分中，我们将介绍使用 AppFuse 的 7 点理由。即使您选择不使用 AppFuse 来开始自己的项目，也会看到 AppFuse 可以为您提供很多样板代码，这些代码可以在基于 Java 语言的 Web 应用程序中使用。由于它是基于 Apache 许可证的，因此非常欢迎您在自己的应用程序中重用这些代码。</p> 
+  </div> 
+ </div> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2006/08/seven-simple-reasons-to-use-appfuse.html">
+                    查看...
+                </a>
+              </article>
+            </div>
+            <ul id="pagination_control" class="pagination blog-pagination pager">
+              <li class="previous"><a  href="../23/">&larr; 前一页</a></li>
+              <li class="next disabled"><a href="../">后一页 &rarr;</a></li>
+            </ul>
+          </div>
+          <aside class="span4 mobile-right-pane">
+      <div><h2>文章分类</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category active">
+            <div class="icon blog-icon all-posts"></div>
+            <a href="/blog/">全部内容</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon engineering"></div>
+            <a href="/blog/category/article.html">书籍文章</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon releases"></div>
+            <a href="/blog/category/release.html">版本发布</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news-and-events"></div>
+            <a href="/blog/category/news.html">新闻资讯</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div><h2>最新文章</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news"></div>
+            <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
+            <span class="pull-right">2018-11-02</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
+            <span class="pull-right">2018-10-31</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
+            <span class="pull-right">2018-10-31</span>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </aside>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="navbar">
+              <div class="container">
+                <ul class="nav">
+                  <li><a href="../team.html">Team</a></li>
+                  <li><a href="../services.html">Services</a></li>
+                  <li><a href="../tools.html">Tools</a></li>
+                </ul>
+              </div>
+            </div>
+            &copy; <span>2018</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
+            <a href="../terms-of-use.html">Terms of Use</a>,
+            <a href="../privacy-policy.html">Privacy</a>,
+            <a href="../trademarks.html">Trademark Guidelines</a> and
+            <span id="teconsent"></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="scrim"></div>
+  </div>
+  </body>
+</html>

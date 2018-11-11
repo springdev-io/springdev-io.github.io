@@ -158,213 +158,241 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="http://projects.springdev.io/spring-security/" class="external" target="_blank" rel="noopener">Spring Security</a>是一个功能强大且可高度自定义的身份验证和访问控制框架。它是保护基于Spring的应用程序的事实上的标准。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>其特性如下：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>对身份验证和授权的全面和可扩展的支持</p> </li> 
-    <li> <p>防止会话固定，点击劫持，跨站点请求伪造等攻击</p> </li> 
-    <li> <p>Servlet API集成</p> </li> 
-    <li> <p>支持与Spring Web MVC集成</p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Security 5.1.0.RC2 发布，共解决了50多个问题单，其中不少是针对OAuth2的配置和自定义能力增强，继续改进WebFlux风格的相关安全配置，此外也升级了依赖：Spring 5.1.0.RC3、Spring Boot 2.1.0.M2和Reactor Californium-M2。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="简化oauth2_dsl">简化OAuth2 DSL</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>在之前，Spring Security DSL有两种OAuth写法：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">http
-    .oauth2Login()...</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>和</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">http
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="http://projects.springdev.io/spring-security/" class="external" target="_blank" rel="noopener">Spring Security</a>是一个功能强大且可高度自定义的身份验证和访问控制框架。它是保护基于Spring的应用程序的事实上的标准。</p>
+</div>
+<div class="paragraph">
+<p>其特性如下：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>对身份验证和授权的全面和可扩展的支持</p>
+</li>
+<li>
+<p>防止会话固定，点击劫持，跨站点请求伪造等攻击</p>
+</li>
+<li>
+<p>Servlet API集成</p>
+</li>
+<li>
+<p>支持与Spring Web MVC集成</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Spring Security 5.1.0.RC2 发布，共解决了50多个问题单，其中不少是针对OAuth2的配置和自定义能力增强，继续改进WebFlux风格的相关安全配置，此外也升级了依赖：Spring 5.1.0.RC3、Spring Boot 2.1.0.M2和Reactor Californium-M2。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="简化oauth2_dsl">简化OAuth2 DSL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在之前，Spring Security DSL有两种OAuth写法：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">http
+    .oauth2Login()...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>和</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">http
     .oauth2()
-        .client()...</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>这是有道理的，因为一个是身份验证机制，如<code>formLogin</code>和<code>openidLogin</code>，其他 - 客户端，<code>resourceServer</code>和<code>authorizationServer</code>--更像OAuth 2.0特有的。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>但最后，这种分离感觉就像不必要的额外打字一样，所以我们决定将层次结构对齐，这意味着，从本版本开始，我们现在拥有：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">http
+        .client()...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>这是有道理的，因为一个是身份验证机制，如<code>formLogin</code>和<code>openidLogin</code>，其他 - 客户端，<code>resourceServer</code>和<code>authorizationServer</code>--更像OAuth 2.0特有的。</p>
+</div>
+<div class="paragraph">
+<p>但最后，这种分离感觉就像不必要的额外打字一样，所以我们决定将层次结构对齐，这意味着，从本版本开始，我们现在拥有：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">http
     .oauth2Login()...
     .oauth2Client()...
-    .oauth2ResourceServer()</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>DSL的重构不会涉及任何功能或特性变更，只需更少的键入。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="webclient扩展">WebClient扩展</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>开发团队一直在努力使用WebClient，我们很高兴地宣布一些针对Servlet和WebFlux应用程序的新OAuth 2.0 WebClient扩展。通过这些扩展，可以轻松地在机器之间无缝地传输OAuth 2.0权限。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在<a href="https://github.com/spring-projects/spring-security/issues/4921">OAuth 2.0 Web Client 相关需求单</a>中可以看到所有详细信息。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="servlet改进">Servlet改进</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="oauth2">OAuth2</h3> 
-   <div class="sect3"> 
-    <h4 id="token请求配置_token_request_configuration">Token请求配置（Token Request Configuration）</h4> 
-    <div class="paragraph"> 
-     <p>OAuth 2.0的第一部分是规范合规性。下一个版本引入了更多支持，可以将Spring Security配置为与扩展或偏离规范的提供程序一起使用。</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>例如，现在可以<a href="https://github.com/spring-projects/spring-security/issues/5466" class="external" target="_blank" rel="noopener">自定义从客户端到授权服务器的令牌请求</a>。</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="资源服务器声明映射_resource_server_claims_mapping">资源服务器声明映射（Resource Server Claims Mapping）</h4> 
-    <div class="paragraph"> 
-     <p>除此之外，Resource Server还支持<a href="https://github.com/spring-projects/spring-security/issues/5223" class="external" target="_blank" rel="noopener">自定义从传入JWT解析的声明集</a>。当应用程序需要添加或删除声明或需要以自定义方式解析声明时，这很方便：</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="prettyprint highlight"><code class="language-java" data-lang="java">NimbusJwtDecoderJwkSupport decoder = // ...
+    .oauth2ResourceServer()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>DSL的重构不会涉及任何功能或特性变更，只需更少的键入。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="webclient扩展">WebClient扩展</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>开发团队一直在努力使用WebClient，我们很高兴地宣布一些针对Servlet和WebFlux应用程序的新OAuth 2.0 WebClient扩展。通过这些扩展，可以轻松地在机器之间无缝地传输OAuth 2.0权限。</p>
+</div>
+<div class="paragraph">
+<p>在<a href="https://github.com/spring-projects/spring-security/issues/4921">OAuth 2.0 Web Client 相关需求单</a>中可以看到所有详细信息。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="servlet改进">Servlet改进</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="oauth2">OAuth2</h3>
+<div class="sect3">
+<h4 id="token请求配置token_request_configuration">Token请求配置（Token Request Configuration）</h4>
+<div class="paragraph">
+<p>OAuth 2.0的第一部分是规范合规性。下一个版本引入了更多支持，可以将Spring Security配置为与扩展或偏离规范的提供程序一起使用。</p>
+</div>
+<div class="paragraph">
+<p>例如，现在可以<a href="https://github.com/spring-projects/spring-security/issues/5466" class="external" target="_blank" rel="noopener">自定义从客户端到授权服务器的令牌请求</a>。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="资源服务器声明映射resource_server_claims_mapping">资源服务器声明映射（Resource Server Claims Mapping）</h4>
+<div class="paragraph">
+<p>除此之外，Resource Server还支持<a href="https://github.com/spring-projects/spring-security/issues/5223" class="external" target="_blank" rel="noopener">自定义从传入JWT解析的声明集</a>。当应用程序需要添加或删除声明或需要以自定义方式解析声明时，这很方便：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">NimbusJwtDecoderJwkSupport decoder = // ...
 decoder.setClaimSetConverter(
     MappedJwtClaimSetConverter
-        .withDefaults("custom-date", this::convertToInstant));</code></pre> 
-     </div> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="提供更多提供商配置元数据_more_provider_configuration_metadata_available">提供更多提供商配置元数据（More Provider Configuration Metadata Available）</h4> 
-    <div class="paragraph"> 
-     <p>规范合规的过程也在继续。在此版本中，添加了对<a href="https://github.com/spring-projects/spring-security/pull/5729" class="external" target="_blank" rel="noopener">从OIDC Provider Configuration端点返回的任何元数据</a>的收集和提供的支持。</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>现在，<code>ClientRegistration</code>增加了方法<code>getConfigurationMetadata</code>，它与针对特定属性的方法一起，并返回整个提供的属性的映射。</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="restoperations支持">RestOperations支持</h4> 
-    <div class="paragraph"> 
-     <p>此版本还支持<a href="https://github.com/spring-projects/spring-security/issues/5602" class="external" target="_blank" rel="noopener">对各种端点的HTTP请求的完全自定义</a>。</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>这对于配置超时、发现、缓存以及在与授权服务器通信时充分利用<code>RestTemplate</code>的复杂性非常方便。</p> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="其他优化">其他优化</h3> 
-   <div class="sect3"> 
-    <h4 id="x_509_principal提取">X.509 Principal提取</h4> 
-    <div class="paragraph"> 
-     <p>还增加了对<a href="https://github.com/spring-projects/spring-security/issues/5771" class="external" target="_blank" rel="noopener">通过策略派生X.509主体</a>的支持。</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="ldap自定义环境变量">LDAP自定义环境变量</h4> 
-    <div class="paragraph"> 
-     <p>添加了配置自定义环境变量的支持，以通知创建<code>LdapContext</code>。</p> 
-    </div> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="webflux改进">WebFlux改进</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="oauth2资源服务器_resource_server">OAuth2资源服务器（Resource Server）</h3> 
-   <div class="paragraph"> 
-    <p>最初为基于Servlet的资源服务器发布的几个功能在WebFlux端的RC2版本中也添加进来了。对响应式特性的支持类似，但有一个很小却很重要的不同点。</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>In Spring Security WebFlux, it is more typical to have an authentication manager per request type. In this release, then, WebFlux ships with authentication manager configuration for Resource Server:</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>在Spring Security WebFlux中，每个请求类型具有一个身份验证管理器更为常见。在此版本中，WebFlux中资源服务器的身份验证管理器配置：</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">http
+        .withDefaults("custom-date", this::convertToInstant));</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="提供更多提供商配置元数据more_provider_configuration_metadata_available">提供更多提供商配置元数据（More Provider Configuration Metadata Available）</h4>
+<div class="paragraph">
+<p>规范合规的过程也在继续。在此版本中，添加了对<a href="https://github.com/spring-projects/spring-security/pull/5729" class="external" target="_blank" rel="noopener">从OIDC Provider Configuration端点返回的任何元数据</a>的收集和提供的支持。</p>
+</div>
+<div class="paragraph">
+<p>现在，<code>ClientRegistration</code>增加了方法<code>getConfigurationMetadata</code>，它与针对特定属性的方法一起，并返回整个提供的属性的映射。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="restoperations支持">RestOperations支持</h4>
+<div class="paragraph">
+<p>此版本还支持<a href="https://github.com/spring-projects/spring-security/issues/5602" class="external" target="_blank" rel="noopener">对各种端点的HTTP请求的完全自定义</a>。</p>
+</div>
+<div class="paragraph">
+<p>这对于配置超时、发现、缓存以及在与授权服务器通信时充分利用<code>RestTemplate</code>的复杂性非常方便。</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="其他优化">其他优化</h3>
+<div class="sect3">
+<h4 id="x_509_principal提取">X.509 Principal提取</h4>
+<div class="paragraph">
+<p>还增加了对<a href="https://github.com/spring-projects/spring-security/issues/5771" class="external" target="_blank" rel="noopener">通过策略派生X.509主体</a>的支持。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ldap自定义环境变量">LDAP自定义环境变量</h4>
+<div class="paragraph">
+<p>添加了配置自定义环境变量的支持，以通知创建<code>LdapContext</code>。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="webflux改进">WebFlux改进</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="oauth2资源服务器resource_server">OAuth2资源服务器（Resource Server）</h3>
+<div class="paragraph">
+<p>最初为基于Servlet的资源服务器发布的几个功能在WebFlux端的RC2版本中也添加进来了。对响应式特性的支持类似，但有一个很小却很重要的不同点。</p>
+</div>
+<div class="paragraph">
+<p>In Spring Security WebFlux, it is more typical to have an authentication manager per request type. In this release, then, WebFlux ships with authentication manager configuration for Resource Server:</p>
+</div>
+<div class="paragraph">
+<p>在Spring Security WebFlux中，每个请求类型具有一个身份验证管理器更为常见。在此版本中，WebFlux中资源服务器的身份验证管理器配置：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">http
     .oauth2ResourceServer()
-        .authenticationManager(customAuthenticationManager())</code></pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>这在应用程序需要将<code>Jwt</code>自定义转换为一组授权权限的情况下很有用。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="oauth2_client">OAuth2 Client</h3> 
-   <div class="paragraph"> 
-    <p>现在，<code>@RegisteredOAuth2AuthorizedClient</code>注解在WebFlux中也支持client_credentials授权模式。</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="重定向跳转https">重定向跳转Https</h3> 
-   <div class="paragraph"> 
-    <p>最后但同样重要的是，<a href="https://github.com/spring-projects/spring-security/issues/5749" class="external" target="_blank" rel="noopener">https重定向支持</a>已添加到WebFlux，可通过<code>http.redirectToHttps()</code>或直接通过<code>HttpsRedirectWebFilter</code>访问。</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="依赖升级">依赖升级</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>一些依赖升级到最新版本：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Spring 5.1.0.RC3</p> </li> 
-    <li> <p>Spring Boot 2.1.0.M2</p> </li> 
-    <li> <p>hibernate-entitymanager 5.3.6.Final</p> </li> 
-    <li> <p>nimbus-jose-jwt 6.0.2</p> </li> 
-    <li> <p>oauth2-oidc-sdk 6.0</p> </li> 
-    <li> <p>HtmlUnit 2.32.1</p> </li> 
-    <li> <p>assertj 3.11.1</p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p><a href="https://projects.spring.io/spring-security/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://docs.spring.io/spring-security/site/docs/5.1.0.RC1/reference/htmlsingle/" class="external" target="_blank" rel="noopener">参考文档</a> | <a href="https://stackoverflow.com/questions/tagged/spring-security" class="external" target="_blank" rel="noopener">问答社区</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>其它相关文章：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><a href="https://springdev.io/blog/2018/08/spring-security-5-1-0-rc1-released.html" class="external" target="_blank" rel="noopener">Spring Security 5.1.0.RC1 发布</a></p> </li> 
-    <li> <p><a href="https://springdev.io/blog/2018/09/spring-framework-5-1-rc3-5-0-9-and-4-3-19-available-now.html" class="external" target="_blank" rel="noopener">Spring Framework 5.1.0.RC3 发布</a></p> </li> 
-    <li> <p><a href="https://springdev.io/blog/2018/08/spring-boot-2-1-m2-available-now.html" class="external" target="_blank" rel="noopener">Spring Boot 2.1.0.M2 发布</a></p> </li> 
-   </ul> 
-  </div> 
- </div> 
+        .authenticationManager(customAuthenticationManager())</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>这在应用程序需要将<code>Jwt</code>自定义转换为一组授权权限的情况下很有用。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oauth2_client">OAuth2 Client</h3>
+<div class="paragraph">
+<p>现在，<code>@RegisteredOAuth2AuthorizedClient</code>注解在WebFlux中也支持client_credentials授权模式。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="重定向跳转https">重定向跳转Https</h3>
+<div class="paragraph">
+<p>最后但同样重要的是，<a href="https://github.com/spring-projects/spring-security/issues/5749" class="external" target="_blank" rel="noopener">https重定向支持</a>已添加到WebFlux，可通过<code>http.redirectToHttps()</code>或直接通过<code>HttpsRedirectWebFilter</code>访问。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="依赖升级">依赖升级</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>一些依赖升级到最新版本：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Spring 5.1.0.RC3</p>
+</li>
+<li>
+<p>Spring Boot 2.1.0.M2</p>
+</li>
+<li>
+<p>hibernate-entitymanager 5.3.6.Final</p>
+</li>
+<li>
+<p>nimbus-jose-jwt 6.0.2</p>
+</li>
+<li>
+<p>oauth2-oidc-sdk 6.0</p>
+</li>
+<li>
+<p>HtmlUnit 2.32.1</p>
+</li>
+<li>
+<p>assertj 3.11.1</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://projects.spring.io/spring-security/" class="external" target="_blank" rel="noopener">项目主页</a> |  <a href="https://docs.spring.io/spring-security/site/docs/5.1.0.RC1/reference/htmlsingle/" class="external" target="_blank" rel="noopener">参考文档</a> | <a href="https://stackoverflow.com/questions/tagged/spring-security" class="external" target="_blank" rel="noopener">问答社区</a></p>
+</div>
+<div class="paragraph">
+<p>其它相关文章：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://springdev.io/blog/2018/08/spring-security-5-1-0-rc1-released.html" class="external" target="_blank" rel="noopener">Spring Security 5.1.0.RC1 发布</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/09/spring-framework-5-1-rc3-5-0-9-and-4-3-19-available-now.html" class="external" target="_blank" rel="noopener">Spring Framework 5.1.0.RC3 发布</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/08/spring-boot-2-1-m2-available-now.html" class="external" target="_blank" rel="noopener">Spring Boot 2.1.0.M2 发布</a></p>
+</li>
+</ul>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/09/spring-data-ingalls-sr15-and-kay-sr10-released.html"> ←Spring Data Ingalls SR15 和 Kay SR10 同时发布</a></li>
@@ -401,30 +429,35 @@ decoder.setClaimSetConverter(
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

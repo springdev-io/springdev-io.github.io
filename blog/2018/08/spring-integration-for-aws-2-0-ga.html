@@ -158,79 +158,90 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="toc" class="toc"> 
- <div id="toctitle">
-  本文内容
- </div> 
- <ul class="sectlevel1"> 
-  <li><a href="#介绍">介绍</a></li> 
-  <li><a href="#如何使用">如何使用</a> 
-   <ul class="sectlevel2"> 
-    <li><a href="#在maven中添加依赖项">在Maven中添加依赖项</a></li> 
-    <li><a href="#集成amazon_s3_服务">集成Amazon S3 服务</a></li> 
-   </ul> </li> 
-  <li><a href="#这样做的好处">这样做的好处</a></li> 
-  <li><a href="#参考资料">参考资料</a></li> 
- </ul> 
-</div> 
-<div class="sect1"> 
- <h2 id="介绍">介绍</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="http://aws.amazon.com/" class="external" target="_blank" rel="noopener">亚马逊网络服务</a>（Amazon Web Services：AWS）于2006年推出，通过其云计算平台为企业提供关键的基础设施服务。使用云计算业务可以采用新的业务模式，从而无需计划和投资采购自己的IT基础架构。他们可以使用云服务提供商提供的基础架构和服务，并在使用服务时付费。访问<a href="http://aws.amazon.com/products/" class="external" target="_blank" rel="noopener">http://aws.amazon.com/products/</a>，了解亚马逊作为其云计算服务的一部分提供的各种产品的更多详细信息。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Integration AWS 扩展，通过<a href="http://aws.amazon.com/sdkforjava/" class="external" target="_blank" rel="noopener">AWS Java SDK</a>为Spring Integration提供了集成各种AWS服务的适配器。请注意，Spring Integration AWS Extension基于Spring Cloud AWS项目。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Integration AWS 扩展已支持集成的服务有：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Amazon Simple Email Service (SES)</p> </li> 
-    <li> <p>Amazon Simple Storage Service (S3)</p> </li> 
-    <li> <p>Amazon Simple Queue Service (SQS)</p> </li> 
-    <li> <p>Amazon Simple Notification Service (SNS)</p> </li> 
-    <li> <p>Amazon DynamoDB</p> </li> 
-    <li> <p>Amazon SimpleDB</p> </li> 
-   </ul> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="如何使用">如何使用</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="在maven中添加依赖项">在Maven中添加依赖项</h3> 
-   <div class="paragraph"> 
-    <p>如果使用Maven，可以在项目POM的依赖中添加如下，这些组件已经发布到Spring Release和Maven Central了。</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
+              <div class="blog--post"><div id="toc" class="toc">
+<div id="toctitle">本文内容</div>
+<ul class="sectlevel1">
+<li><a href="#介绍">介绍</a></li>
+<li><a href="#如何使用">如何使用</a>
+<ul class="sectlevel2">
+<li><a href="#在maven中添加依赖项">在Maven中添加依赖项</a></li>
+<li><a href="#集成amazon_s3_服务">集成Amazon S3 服务</a></li>
+</ul>
+</li>
+<li><a href="#这样做的好处">这样做的好处</a></li>
+<li><a href="#参考资料">参考资料</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="介绍">介绍</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="http://aws.amazon.com/" class="external" target="_blank" rel="noopener">亚马逊网络服务</a>（Amazon Web Services：AWS）于2006年推出，通过其云计算平台为企业提供关键的基础设施服务。使用云计算业务可以采用新的业务模式，从而无需计划和投资采购自己的IT基础架构。他们可以使用云服务提供商提供的基础架构和服务，并在使用服务时付费。访问<a href="http://aws.amazon.com/products/" class="external" target="_blank" rel="noopener">http://aws.amazon.com/products/</a>，了解亚马逊作为其云计算服务的一部分提供的各种产品的更多详细信息。</p>
+</div>
+<div class="paragraph">
+<p>Spring Integration AWS 扩展，通过<a href="http://aws.amazon.com/sdkforjava/" class="external" target="_blank" rel="noopener">AWS Java SDK</a>为Spring Integration提供了集成各种AWS服务的适配器。请注意，Spring Integration AWS Extension基于Spring Cloud AWS项目。</p>
+</div>
+<div class="paragraph">
+<p>Spring Integration AWS 扩展已支持集成的服务有：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Amazon Simple Email Service (SES)</p>
+</li>
+<li>
+<p>Amazon Simple Storage Service (S3)</p>
+</li>
+<li>
+<p>Amazon Simple Queue Service (SQS)</p>
+</li>
+<li>
+<p>Amazon Simple Notification Service (SNS)</p>
+</li>
+<li>
+<p>Amazon DynamoDB</p>
+</li>
+<li>
+<p>Amazon SimpleDB</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="如何使用">如何使用</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="在maven中添加依赖项">在Maven中添加依赖项</h3>
+<div class="paragraph">
+<p>如果使用Maven，可以在项目POM的依赖中添加如下，这些组件已经发布到Spring Release和Maven Central了。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;org.springframework.integration&lt;/groupId&gt;
     &lt;artifactId&gt;spring-integration-aws&lt;/artifactId&gt;
     &lt;version&gt;2.0.0.RELEASE&lt;/version&gt;
-&lt;/dependency&gt;</code></pre> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="集成amazon_s3_服务">集成Amazon S3 服务</h3> 
-   <div class="sect3"> 
-    <h4 id="入站通道适配器">入站通道适配器</h4> 
-    <div class="paragraph"> 
-     <p>S3 通道适配器（Channel Adapters）基于<code>AmazonS3</code>模板和<code>TransferManager</code>。</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>S3 入站通道适配器（Inbound Channel Adapter），由<code>S3InboundFileSynchronizingMessageSource</code>（<code>&lt;int-aws:s3-inbound-channel-adapter&gt;</code>）来表示，允许将S3对象作为文件从S3存储桶拉到本地目录以进行同步。这个适配器与Spring Integration的模块FTP和SFTP中的入站通道适配器完全类似。</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>Java 配置方式如下：</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@SpringBootApplication
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="集成amazon_s3_服务">集成Amazon S3 服务</h3>
+<div class="sect3">
+<h4 id="入站通道适配器">入站通道适配器</h4>
+<div class="paragraph">
+<p>S3 通道适配器（Channel Adapters）基于<code>AmazonS3</code>模板和<code>TransferManager</code>。</p>
+</div>
+<div class="paragraph">
+<p>S3 入站通道适配器（Inbound Channel Adapter），由<code>S3InboundFileSynchronizingMessageSource</code>（<code>&lt;int-aws:s3-inbound-channel-adapter&gt;</code>）来表示，允许将S3对象作为文件从S3存储桶拉到本地目录以进行同步。这个适配器与Spring Integration的模块FTP和SFTP中的入站通道适配器完全类似。</p>
+</div>
+<div class="paragraph">
+<p>Java 配置方式如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@SpringBootApplication
 public static class MyConfiguration {
 
     @Autowired
@@ -263,18 +274,18 @@ public static class MyConfiguration {
     public PollableChannel s3FilesChannel() {
       return new QueueChannel();
     }
-}</code></pre> 
-     </div> 
-    </div> 
-    <div class="paragraph"> 
-     <p>使用此配置，你将从<code>s3FilesChannel</code>接收带有<code>java.io.File</code> <code>payload</code>的消息，可以定期将Amazon S3存储桶中的内容同步到本地目录。</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>如果使用XML的配置，类似这样：</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;bean id="s3SessionFactory" class="org.springframework.integration.aws.support.S3SessionFactory"/&gt;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>使用此配置，你将从<code>s3FilesChannel</code>接收带有<code>java.io.File</code> <code>payload</code>的消息，可以定期将Amazon S3存储桶中的内容同步到本地目录。</p>
+</div>
+<div class="paragraph">
+<p>如果使用XML的配置，类似这样：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;bean id="s3SessionFactory" class="org.springframework.integration.aws.support.S3SessionFactory"/&gt;
 
 &lt;int-aws:s3-inbound-channel-adapter channel="s3Channel"
                    session-factory="s3SessionFactory"
@@ -288,21 +299,21 @@ public static class MyConfiguration {
                    local-filter="acceptAllFilter"
                    remote-directory-expression="'my_bucket'"&gt;
     &lt;int:poller fixed-rate="1000"/&gt;
-&lt;/int-aws:s3-inbound-channel-adapter&gt;</code></pre> 
-     </div> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="出站通道适配器">出站通道适配器</h4> 
-    <div class="paragraph"> 
-     <p>S3 出站通道适配器，由<code>S3MessageHandler</code>（<code>&lt;int-aws:s3-outbound-channel-adapter&gt; 和 &lt;int-aws:s3-outbound-gateway&gt;</code>）表示，允许上传、下载、拷贝等S3存储桶提供的操作（参见：<code>S3MessageHandler.Command</code>枚举）。</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>使用Java配置：</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@SpringBootApplication
+&lt;/int-aws:s3-inbound-channel-adapter&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="出站通道适配器">出站通道适配器</h4>
+<div class="paragraph">
+<p>S3 出站通道适配器，由<code>S3MessageHandler</code>（<code>&lt;int-aws:s3-outbound-channel-adapter&gt; 和 &lt;int-aws:s3-outbound-gateway&gt;</code>）表示，允许上传、下载、拷贝等S3存储桶提供的操作（参见：<code>S3MessageHandler.Command</code>枚举）。</p>
+</div>
+<div class="paragraph">
+<p>使用Java配置：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@SpringBootApplication
 public static class MyConfiguration {
 
     @Autowired
@@ -314,69 +325,69 @@ public static class MyConfiguration {
       return new S3MessageHandler(amazonS3, "myBuck");
     }
 
-}</code></pre> 
-     </div> 
-    </div> 
-    <div class="paragraph"> 
-     <p>使用此配置，你可以执行<code>transferManager.upload()</code>操作，使用<code>java.io.File</code> 作为<code>payload</code>发送消息，其中文件名用作S3对象键。</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>使用XML配置：</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;bean id="transferManager" class="com.amazonaws.services.s3.transfer.TransferManager"/&gt;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>使用此配置，你可以执行<code>transferManager.upload()</code>操作，使用<code>java.io.File</code> 作为<code>payload</code>发送消息，其中文件名用作S3对象键。</p>
+</div>
+<div class="paragraph">
+<p>使用XML配置：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;bean id="transferManager" class="com.amazonaws.services.s3.transfer.TransferManager"/&gt;
 
 &lt;int-aws:s3-outbound-channel-adapter transfer-manager="transferManager"
                    channel="s3SendChannel"
                    bucket="foo"
                    command="DOWNLOAD"
-                   key="myDirectory"/&gt;</code></pre> 
-     </div> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="出站网关">出站网关</h4> 
-    <div class="paragraph"> 
-     <p>S3 出站网关（Outbound Gateway），Java配置使用<code>S3MessageHandler</code>带构造函数参数<code>produceReply = true</code>定义，XML配置通过<code>&lt;int-aws:s3-outbound-gateway&gt;</code>来声明。</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>此网关的“请求-回复”是异步的，并且<code>TransferManager</code>操作的传输结果将发送到<code>outputChannel</code>，假设传输进度跟踪在下游传输流中。</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>你可以用<code>S3ProgressListener</code>来跟踪传输进度，也可以在下游传输流中将其填充到返回的<code>Transfer</code>中。</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>如需了解更多信息，请查看<code>S3MessageHandler</code>的Java文档，以及<code>&lt;int-aws:s3-outbound-channel-adapter&gt;</code> 和 <code>&lt;int-aws:s3-outbound-gateway&gt;</code>的描述。</p> 
-    </div> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="这样做的好处">这样做的好处</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Integration提供了Spring编程模型的扩展，以支持众所周知的企业集成模式（EIP）。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Integration for AWS <code>2.0</code>的主要目的是遵循设计良好的Spring Integration抽象，在其基础上扩展支持AWS服务的能力，提供编程一致的系统集成模式。当你的应用程序部署到Amazon云环境中或依赖AWS服务时，这些新组件也可用于任何其他分布式任务。例如，AWS S3入站通道适配器可以将<code>DynamoDbMetadataStore</code>用于<code>S3PersistentAcceptOnceFileListFilter</code>，以防止在多个分布式应用程序实例中访问相同的已处理资源。<code>DynamoDbLockRegistry</code>可用于应用程序集群中的Leader Election（领导者选举）。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="参考资料">参考资料</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Integration：<a href="https://github.com/spring-projects/spring-integration" class="external" target="_blank" rel="noopener">https://github.com/spring-projects/spring-integration</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Integration Extension for AWS：<a href="https://github.com/spring-projects/spring-integration-aws" class="external" target="_blank" rel="noopener">https://github.com/spring-projects/spring-integration-aws</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Cloud for Amazon Web Services：<a href="https://cloud.spring.io/spring-cloud-aws/" class="external" target="_blank" rel="noopener">https://cloud.spring.io/spring-cloud-aws/</a></p> 
-  </div> 
- </div> 
+                   key="myDirectory"/&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="出站网关">出站网关</h4>
+<div class="paragraph">
+<p>S3 出站网关（Outbound Gateway），Java配置使用<code>S3MessageHandler</code>带构造函数参数<code>produceReply = true</code>定义，XML配置通过<code>&lt;int-aws:s3-outbound-gateway&gt;</code>来声明。</p>
+</div>
+<div class="paragraph">
+<p>此网关的“请求-回复”是异步的，并且<code>TransferManager</code>操作的传输结果将发送到<code>outputChannel</code>，假设传输进度跟踪在下游传输流中。</p>
+</div>
+<div class="paragraph">
+<p>你可以用<code>S3ProgressListener</code>来跟踪传输进度，也可以在下游传输流中将其填充到返回的<code>Transfer</code>中。</p>
+</div>
+<div class="paragraph">
+<p>如需了解更多信息，请查看<code>S3MessageHandler</code>的Java文档，以及<code>&lt;int-aws:s3-outbound-channel-adapter&gt;</code> 和 <code>&lt;int-aws:s3-outbound-gateway&gt;</code>的描述。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="这样做的好处">这样做的好处</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Integration提供了Spring编程模型的扩展，以支持众所周知的企业集成模式（EIP）。</p>
+</div>
+<div class="paragraph">
+<p>Spring Integration for AWS <code>2.0</code>的主要目的是遵循设计良好的Spring Integration抽象，在其基础上扩展支持AWS服务的能力，提供编程一致的系统集成模式。当你的应用程序部署到Amazon云环境中或依赖AWS服务时，这些新组件也可用于任何其他分布式任务。例如，AWS S3入站通道适配器可以将<code>DynamoDbMetadataStore</code>用于<code>S3PersistentAcceptOnceFileListFilter</code>，以防止在多个分布式应用程序实例中访问相同的已处理资源。<code>DynamoDbLockRegistry</code>可用于应用程序集群中的Leader Election（领导者选举）。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="参考资料">参考资料</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Integration：<a href="https://github.com/spring-projects/spring-integration" class="external" target="_blank" rel="noopener">https://github.com/spring-projects/spring-integration</a></p>
+</div>
+<div class="paragraph">
+<p>Spring Integration Extension for AWS：<a href="https://github.com/spring-projects/spring-integration-aws" class="external" target="_blank" rel="noopener">https://github.com/spring-projects/spring-integration-aws</a></p>
+</div>
+<div class="paragraph">
+<p>Spring Cloud for Amazon Web Services：<a href="https://cloud.spring.io/spring-cloud-aws/" class="external" target="_blank" rel="noopener">https://cloud.spring.io/spring-cloud-aws/</a></p>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/08/spring-security-5-1-0-rc1-released.html"> ←Spring Security 5.1.0.RC1 发布</a></li>
@@ -413,30 +424,35 @@ public static class MyConfiguration {
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

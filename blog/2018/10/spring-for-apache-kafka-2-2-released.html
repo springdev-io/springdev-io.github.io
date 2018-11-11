@@ -158,49 +158,69 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="paragraph"> 
- <p>Spring for Apache Kafka 2.2 已经发布，该版本修复了一些问题。</p> 
-</div> 
-<div class="paragraph"> 
- <p>目前，2.1.x版本与2.0.0 <code>kafka-clients</code> jar兼容（从2.1.9开始），但此版本需要2.0.0（并提供2.0.0内置的broker用于测试）。</p> 
-</div> 
-<div class="paragraph"> 
- <p>这个版本有以下亮点：</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p><code>SeekToCurrentErrorHandler</code>现在可以“跳过”（skip）重复失败的记录</p> </li> 
-  <li> <p>这些“跳过”的记录可以发布到一个死信（dead-letter）主题（或由应用程序代码处理）</p> </li> 
-  <li> <p>标头添加了有关故障的诊断信息</p> </li> 
-  <li> <p>使用事务时，可以使用默认的<code>AfterRollbackProcessor</code>实现相同的功能</p> </li> 
-  <li> <p>您现在可以使用侦听器容器工厂来创建任意侦听器容器，而不仅仅是<code>@KafkaListener</code>的容器</p> </li> 
-  <li> <p>这样可以更方便地为任何容器使用Spring Boot的自动配置属性</p> </li> 
-  <li> <p><code>@KafkaListener</code>注解现在可以覆盖容器工厂的<code>concurrency</code>和<code>autoStartup</code>属性</p> </li> 
-  <li> <p>新的<code>ErrorhandlingDeserializer</code>可以捕获反序列化异常，然后将其路由到<code>ErrorHandler</code></p> </li> 
-  <li> <p>内置Kafka Broker现在可以与JUnit 5测试一起使用</p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>更多信息，请参阅<a href="https://docs.spring.io/spring-kafka/docs/2.2.0.RELEASE/reference/html/whats-new-part.html#spring-kafka-intro-new" class="external" target="_blank" rel="noopener">文档中的“新增内容”章节</a>和<a href="https://github.com/spring-projects/spring-kafka/releases" class="external" target="_blank" rel="noopener">更改日志</a>。</p> 
-</div> 
-<div class="paragraph"> 
- <p>另外，Spring Integration for Apache Kafka（<code>spring-integration-kafka</code>）3.1.0.RELEASE 也已发布，它基于Spring for Apache Kafka 2.2和Spring Integration 5.1构建。</p> 
-</div> 
-<div class="paragraph"> 
- <p><a href="https://projects.spring.io/spring-kafka/" class="external" target="_blank" rel="noopener">Project Page</a> | <a href="https://github.com/spring-projects/spring-kafka" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://github.com/spring-projects/spring-kafka/issues" class="external" target="_blank" rel="noopener">Issues</a> | <a href="https://docs.spring.io/spring-kafka/docs/2.2.0.RELEASE/reference/html/" class="external" target="_blank" rel="noopener">Documentation</a> | <a href="https://stackoverflow.com/questions/tagged/spring-kafka" class="external" target="_blank" rel="noopener">Stack Overflow</a> | <a href="https://gitter.im/spring-projects/spring-kafka" class="external" target="_blank" rel="noopener">Gitter</a></p> 
-</div> 
-<div class="admonitionblock note"> 
- <table> 
-  <tbody>
-   <tr> 
-    <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-    <td class="content"> 
-     <div class="paragraph"> 
-      <p>原文：https://spring.io/blog/2018/10/29/spring-for-apache-kafka-2-2-released<br> 作者：Gary Russell</p> 
-     </div> </td> 
-   </tr> 
-  </tbody>
- </table> 
+              <div class="blog--post"><div class="paragraph">
+<p>Spring for Apache Kafka 2.2 已经发布，该版本修复了一些问题。</p>
+</div>
+<div class="paragraph">
+<p>目前，2.1.x版本与2.0.0 <code>kafka-clients</code> jar兼容（从2.1.9开始），但此版本需要2.0.0（并提供2.0.0内置的broker用于测试）。</p>
+</div>
+<div class="paragraph">
+<p>这个版本有以下亮点：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SeekToCurrentErrorHandler</code>现在可以“跳过”（skip）重复失败的记录</p>
+</li>
+<li>
+<p>这些“跳过”的记录可以发布到一个死信（dead-letter）主题（或由应用程序代码处理）</p>
+</li>
+<li>
+<p>标头添加了有关故障的诊断信息</p>
+</li>
+<li>
+<p>使用事务时，可以使用默认的<code>AfterRollbackProcessor</code>实现相同的功能</p>
+</li>
+<li>
+<p>您现在可以使用侦听器容器工厂来创建任意侦听器容器，而不仅仅是<code>@KafkaListener</code>的容器</p>
+</li>
+<li>
+<p>这样可以更方便地为任何容器使用Spring Boot的自动配置属性</p>
+</li>
+<li>
+<p><code>@KafkaListener</code>注解现在可以覆盖容器工厂的<code>concurrency</code>和<code>autoStartup</code>属性</p>
+</li>
+<li>
+<p>新的<code>ErrorhandlingDeserializer</code>可以捕获反序列化异常，然后将其路由到<code>ErrorHandler</code></p>
+</li>
+<li>
+<p>内置Kafka Broker现在可以与JUnit 5测试一起使用</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>更多信息，请参阅<a href="https://docs.spring.io/spring-kafka/docs/2.2.0.RELEASE/reference/html/whats-new-part.html#spring-kafka-intro-new" class="external" target="_blank" rel="noopener">文档中的“新增内容”章节</a>和<a href="https://github.com/spring-projects/spring-kafka/releases" class="external" target="_blank" rel="noopener">更改日志</a>。</p>
+</div>
+<div class="paragraph">
+<p>另外，Spring Integration for Apache Kafka（<code>spring-integration-kafka</code>）3.1.0.RELEASE 也已发布，它基于Spring for Apache Kafka 2.2和Spring Integration 5.1构建。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://projects.spring.io/spring-kafka/" class="external" target="_blank" rel="noopener">Project Page</a> | <a href="https://github.com/spring-projects/spring-kafka" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://github.com/spring-projects/spring-kafka/issues" class="external" target="_blank" rel="noopener">Issues</a> | <a href="https://docs.spring.io/spring-kafka/docs/2.2.0.RELEASE/reference/html/" class="external" target="_blank" rel="noopener">Documentation</a> | <a href="https://stackoverflow.com/questions/tagged/spring-kafka" class="external" target="_blank" rel="noopener">Stack Overflow</a> | <a href="https://gitter.im/spring-projects/spring-kafka" class="external" target="_blank" rel="noopener">Gitter</a></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>原文：https://spring.io/blog/2018/10/29/spring-for-apache-kafka-2-2-released<br>
+作者：Gary Russell</p>
+</div>
+</td>
+</tr>
+</table>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/10/spring-data-lovelace-sr2-released.html"> ←Spring Data Lovelace SR2 发布</a></li>
@@ -237,30 +257,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

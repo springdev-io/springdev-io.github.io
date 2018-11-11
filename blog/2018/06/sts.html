@@ -158,106 +158,115 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="toc" class="toc"> 
- <div id="toctitle">
-  目录
- </div> 
- <ul class="sectlevel1"> 
-  <li><a href="#通过下载安装包来安装">通过下载安装包来安装</a></li> 
-  <li><a href="#使用osx_homebrew安装">使用OSX Homebrew安装</a></li> 
-  <li><a href="#使用scoop安装sts">使用Scoop安装STS</a></li> 
- </ul> 
-</div> 
-<div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="quoteblock abstract"> 
-   <div class="title">
-    概要
-   </div> 
-   <blockquote>
-     本文主要介绍有关STS的工具特性和如何安装。 
-   </blockquote> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Tool Suite（简称：STS）是Spring Source开发团队在基于Eclipse基础上为Spring应用的开发专门定制的一款集成开发环境，对于Spring应用的编码实现、调试、部署等各个流程，集成了包括Pivotal tc Server、Pivotal Cloud Foundry、Git、Maven、AspectJ等工具，极大提供了开发效率。</p> 
-  </div> 
-  <div class="ulist"> 
-   <div class="title">
-    主要特性如下：
-   </div> 
-   <ul> 
-    <li> <p>支持Java 8/9/10</p> </li> 
-    <li> <p>集成Git、Gradle、Maven等工具</p> </li> 
-    <li> <p>更好的识别Spring项目，能够识别Spring配置文件，诸如命名空间、控制器、Bean的定义</p> </li> 
-    <li> <p>Spring配置文件的校验检查，更早发现错误</p> </li> 
-    <li> <p>重构增强，除了对于Java代码的重构功能，还支持Spring配置文件中的重构，比如Bean的重命名</p> </li> 
-    <li> <p>代码快速提示，无论是Java代码和配置文件都能根据内容快速提示</p> </li> 
-    <li> <p>图形化展示项目中Bean的依赖关系，支持Spring Integration、Spring Batch、Spring Webflow</p> </li> 
-    <li> <p>AOP最佳支持</p> </li> 
-    <li> <p>集成Cloud Foundry和Pivotal tc Server，云部署开发更加简单</p> </li> 
-   </ul> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="通过下载安装包来安装">通过下载安装包来安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>浏览器打开STS官方网站<a href="https://spring.io/tools/sts" class="external" target="_blank" rel="noopener">STS</a>，当前最新版本是：3.9.4，基于Eclipse 4.7.3a构建。除了使用完整安装包，如果本地已经安装了Eclipse，那么还可以通过插件的方式来安装。STS官方提供了Eclipse 4.6、4.7、4.8等几个主流版本的插件可下载本地安装，也可以通过在线安装插件。</p> 
-  </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="https://springdev.io/images/sts_homepage.png" alt="sts homepage"> 
-   </div> 
-   <div class="title">
-    图表 1. STS官方主页
-   </div> 
-  </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="https://springdev.io/images/sts_download_page.png" alt="sts download page"> 
-   </div> 
-   <div class="title">
-    图表 2. STS下载页面
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用osx_homebrew安装">使用OSX Homebrew安装</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://brew.sh" class="external" target="_blank" rel="noopener">Homebrew</a>是专为macOS系统设计的软件包安装管理工具。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在终端控制台上执行下面的命令来安装STS：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ brew cask install sts</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在Linux系统上，有<a href="//http://linuxbrew.sh" class="external" target="_blank" rel="noopener">Homebrew的Fork版本：Linuxbrew</a>，可以尝试一下。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="使用scoop安装sts">使用Scoop安装STS</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://scoop.sh" class="external" target="_blank" rel="noopener">Scoop</a>是使用PowerShell语言为Windows系统开发的一个命令行的安装管理工具，功能与OSX Homebrew类似。 Scoop的详细安装请参考<a href="https://github.com/lukesampson/scoop/wiki/Quick-Start" class="external" target="_blank" rel="noopener">官方安装说明</a>。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在命令行窗口执行下面的命令来安装STS如下：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>&gt; scoop bucket add extras
-&gt; scoop install sts</pre> 
-   </div> 
-  </div> 
- </div> 
+              <div class="blog--post"><div id="toc" class="toc">
+<div id="toctitle">目录</div>
+<ul class="sectlevel1">
+<li><a href="#通过下载安装包来安装">通过下载安装包来安装</a></li>
+<li><a href="#使用osx_homebrew安装">使用OSX Homebrew安装</a></li>
+<li><a href="#使用scoop安装sts">使用Scoop安装STS</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="quoteblock abstract">
+<div class="title">概要</div>
+<blockquote>
+本文主要介绍有关STS的工具特性和如何安装。
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Spring Tool Suite（简称：STS）是Spring Source开发团队在基于Eclipse基础上为Spring应用的开发专门定制的一款集成开发环境，对于Spring应用的编码实现、调试、部署等各个流程，集成了包括Pivotal tc Server、Pivotal Cloud Foundry、Git、Maven、AspectJ等工具，极大提供了开发效率。</p>
+</div>
+<div class="ulist">
+<div class="title">主要特性如下：</div>
+<ul>
+<li>
+<p>支持Java 8/9/10</p>
+</li>
+<li>
+<p>集成Git、Gradle、Maven等工具</p>
+</li>
+<li>
+<p>更好的识别Spring项目，能够识别Spring配置文件，诸如命名空间、控制器、Bean的定义</p>
+</li>
+<li>
+<p>Spring配置文件的校验检查，更早发现错误</p>
+</li>
+<li>
+<p>重构增强，除了对于Java代码的重构功能，还支持Spring配置文件中的重构，比如Bean的重命名</p>
+</li>
+<li>
+<p>代码快速提示，无论是Java代码和配置文件都能根据内容快速提示</p>
+</li>
+<li>
+<p>图形化展示项目中Bean的依赖关系，支持Spring Integration、Spring Batch、Spring Webflow</p>
+</li>
+<li>
+<p>AOP最佳支持</p>
+</li>
+<li>
+<p>集成Cloud Foundry和Pivotal tc Server，云部署开发更加简单</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="通过下载安装包来安装">通过下载安装包来安装</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>浏览器打开STS官方网站<a href="https://spring.io/tools/sts" class="external" target="_blank" rel="noopener">STS</a>，当前最新版本是：3.9.4，基于Eclipse 4.7.3a构建。除了使用完整安装包，如果本地已经安装了Eclipse，那么还可以通过插件的方式来安装。STS官方提供了Eclipse 4.6、4.7、4.8等几个主流版本的插件可下载本地安装，也可以通过在线安装插件。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/sts_homepage.png" alt="sts homepage">
+</div>
+<div class="title">图表 1. STS官方主页</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/sts_download_page.png" alt="sts download page">
+</div>
+<div class="title">图表 2. STS下载页面</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="使用osx_homebrew安装">使用OSX Homebrew安装</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://brew.sh" class="external" target="_blank" rel="noopener">Homebrew</a>是专为macOS系统设计的软件包安装管理工具。</p>
+</div>
+<div class="paragraph">
+<p>在终端控制台上执行下面的命令来安装STS：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ brew cask install sts</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在Linux系统上，有<a href="//http://linuxbrew.sh" class="external" target="_blank" rel="noopener">Homebrew的Fork版本：Linuxbrew</a>，可以尝试一下。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="使用scoop安装sts">使用Scoop安装STS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://scoop.sh" class="external" target="_blank" rel="noopener">Scoop</a>是使用PowerShell语言为Windows系统开发的一个命令行的安装管理工具，功能与OSX Homebrew类似。
+Scoop的详细安装请参考<a href="https://github.com/lukesampson/scoop/wiki/Quick-Start" class="external" target="_blank" rel="noopener">官方安装说明</a>。</p>
+</div>
+<div class="paragraph">
+<p>在命令行窗口执行下面的命令来安装STS如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; scoop bucket add extras
+&gt; scoop install sts</pre>
+</div>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/06/springbootcli.html"> ←Spring Boot CLI使用详解</a></li>
@@ -294,30 +303,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

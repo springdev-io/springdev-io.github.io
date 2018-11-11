@@ -158,18 +158,18 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="paragraph"> 
- <p>我们很少发表关于单个功能的博客，但考虑到这个功能是Spring Cloud Function（相对年轻的项目）中最受欢迎的功能之一，我们认为它可能是合适的，所以才写了这篇文章。</p> 
-</div> 
-<div class="paragraph"> 
- <p>Spring Cloud Function已经添加了对<a href="https://kotlinlang.org/" class="external" target="_blank" rel="noopener">Kotlin</a> lambdas的初始支持。这意味着Spring Cloud Function现在可以识别出与Java的<code>Provider</code>，<code>Function</code>或<code>Consumer</code>之一有效匹配的Kotlin lambdas，并将其视为这样。</p> 
-</div> 
-<div class="paragraph"> 
- <p>这样，</p> 
-</div> 
-<div class="listingblock"> 
- <div class="content"> 
-  <pre class="prettyprint highlight"><code class="language-kotlin" data-lang="kotlin">@Bean
+              <div class="blog--post"><div class="paragraph">
+<p>我们很少发表关于单个功能的博客，但考虑到这个功能是Spring Cloud Function（相对年轻的项目）中最受欢迎的功能之一，我们认为它可能是合适的，所以才写了这篇文章。</p>
+</div>
+<div class="paragraph">
+<p>Spring Cloud Function已经添加了对<a href="https://kotlinlang.org/" class="external" target="_blank" rel="noopener">Kotlin</a> lambdas的初始支持。这意味着Spring Cloud Function现在可以识别出与Java的<code>Provider</code>，<code>Function</code>或<code>Consumer</code>之一有效匹配的Kotlin lambdas，并将其视为这样。</p>
+</div>
+<div class="paragraph">
+<p>这样，</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-kotlin" data-lang="kotlin">@Bean
 open fun kotlinFunction(): (String) -&gt; String {
     return  { it.toUpperCase() }
 }
@@ -182,23 +182,23 @@ open fun kotlinConsumer(): (String) -&gt; Unit {
 @Bean
 open fun kotlinSupplier(): () -&gt; String {
     return  { "Hello Kotlin" }
-}</code></pre> 
- </div> 
-</div> 
-<div class="paragraph"> 
- <p>在<a href="https://github.com/olegz/demos/tree/master/demo-function-kotlin" class="external" target="_blank" rel="noopener">这里</a>查看示例项目。</p> 
-</div> 
-<div class="paragraph"> 
- <p>就是这样。该功能在当前快照中可用，并将成为Spring Cloud Function 2.0.0.RELEASE的一部分。这意味着增强和修改仍在进行中，因此您的反馈非常重要。</p> 
-</div> 
-<div class="paragraph"> 
- <p>有关Spring Cloud Function的更多信息，请参阅以下内容：</p> 
-</div> 
-<div class="paragraph"> 
- <p><a href="https://springdev.io/blog/2017/07/introducing-spring-cloud-function.html" class="external" target="_blank" rel="noopener">介绍 Spring Cloud Function 项目</a></p> 
-</div> 
-<div class="paragraph"> 
- <p><a href="https://www.nurkiewicz.com/2018/04/sneak-peek-at-spring-cloud-function.html" class="bare">https://www.nurkiewicz.com/2018/04/sneak-peek-at-spring-cloud-function.html</a></p> 
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在<a href="https://github.com/olegz/demos/tree/master/demo-function-kotlin" class="external" target="_blank" rel="noopener">这里</a>查看示例项目。</p>
+</div>
+<div class="paragraph">
+<p>就是这样。该功能在当前快照中可用，并将成为Spring Cloud Function 2.0.0.RELEASE的一部分。这意味着增强和修改仍在进行中，因此您的反馈非常重要。</p>
+</div>
+<div class="paragraph">
+<p>有关Spring Cloud Function的更多信息，请参阅以下内容：</p>
+</div>
+<div class="paragraph">
+<p><a href="https://springdev.io/blog/2017/07/introducing-spring-cloud-function.html" class="external" target="_blank" rel="noopener">介绍 Spring Cloud Function 项目</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.nurkiewicz.com/2018/04/sneak-peek-at-spring-cloud-function.html" class="bare">https://www.nurkiewicz.com/2018/04/sneak-peek-at-spring-cloud-function.html</a></p>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/09/spring-security-5-0-8-and-4-2-8-released.html"> ←Spring Security 5.0.8和4.2.8 同时发布</a></li>
@@ -235,30 +235,35 @@ open fun kotlinSupplier(): () -&gt; String {
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

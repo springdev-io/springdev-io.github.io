@@ -158,89 +158,85 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="toc" class="toc"> 
- <div id="toctitle">
-  目录
- </div> 
- <ul class="sectlevel1"> 
-  <li><a href="#常用命令及参数说明">1. 常用命令及参数说明</a></li> 
-  <li><a href="#运行groovy脚本程序">2. 运行Groovy脚本程序</a></li> 
-  <li><a href="#快速创建一个新工程">3. 快速创建一个新工程</a></li> 
- </ul> 
-</div> 
-<div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="quoteblock abstract"> 
-   <div class="title">
-    概要
-   </div> 
-   <blockquote>
-     本文详细介绍了Spring Boot CLI的命令以及在实际开发中如何使用。 
-   </blockquote> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在之前的文章中<a href="/blog/2018/06/springboot.html">安装Spring Boot CLI</a>，我们介绍了几种常见的快速安装方式。接下来这个章节，我们会详细介绍它的命令和在实际开发中的使用。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Boot CLI是一个快速创建原型项目的命令行工具。对大多数开发人员来说，相比IDE的菜单选择和向导界面，会更倾向使用命令行来处理一些基础工作，比如创建项目、运行测试、编译打包等等，Spring Boot CLI就是为这些人准备的。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="常用命令及参数说明">1. 常用命令及参数说明</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>打开一个终端控制台窗口，我们键入<code>spring</code>命令，就会看到控制台打印出了该命令的帮助说明。</p> 
-  </div> 
-  <table class="tableblock frame-all grid-all stretch"> 
-   <colgroup> 
-    <col> 
-    <col> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">命令</th> 
-     <th class="tableblock halign-left valign-top">功能说明</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">run</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">运行一个Groovy脚本程序</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">test</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">测试一个Groovy脚本程序</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">grab</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">从远程仓库下载Groovy脚本程序需要的依赖包</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">jar</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">将一个Groovy脚本程序打包成可执行的JAR文件</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">war</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">将一个Groovy脚本程序打包成可执行的WAR文件</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">install</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">安装依赖包并下载到lib/ext目录</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">uninstall</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">卸载依赖包并从lib/ext目录删除</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">init</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">初始创建一个新工程，和start.spring.io提供的页面功能一样</p></td> 
-    </tr> 
-   </tbody> 
-  </table> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ spring
+              <div class="blog--post"><div id="toc" class="toc">
+<div id="toctitle">目录</div>
+<ul class="sectlevel1">
+<li><a href="#常用命令及参数说明">1. 常用命令及参数说明</a></li>
+<li><a href="#运行groovy脚本程序">2. 运行Groovy脚本程序</a></li>
+<li><a href="#快速创建一个新工程">3. 快速创建一个新工程</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="quoteblock abstract">
+<div class="title">概要</div>
+<blockquote>
+本文详细介绍了Spring Boot CLI的命令以及在实际开发中如何使用。
+</blockquote>
+</div>
+<div class="paragraph">
+<p>在之前的文章中<a href="/blog/2018/06/springboot.html">安装Spring Boot CLI</a>，我们介绍了几种常见的快速安装方式。接下来这个章节，我们会详细介绍它的命令和在实际开发中的使用。</p>
+</div>
+<div class="paragraph">
+<p>Spring Boot CLI是一个快速创建原型项目的命令行工具。对大多数开发人员来说，相比IDE的菜单选择和向导界面，会更倾向使用命令行来处理一些基础工作，比如创建项目、运行测试、编译打包等等，Spring Boot CLI就是为这些人准备的。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="常用命令及参数说明">1. 常用命令及参数说明</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>打开一个终端控制台窗口，我们键入<code>spring</code>命令，就会看到控制台打印出了该命令的帮助说明。</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content stretch">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">命令</th>
+<th class="tableblock halign-left valign-top">功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">run</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">运行一个Groovy脚本程序</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">test</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">测试一个Groovy脚本程序</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">grab</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">从远程仓库下载Groovy脚本程序需要的依赖包</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">jar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">将一个Groovy脚本程序打包成可执行的JAR文件</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">war</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">将一个Groovy脚本程序打包成可执行的WAR文件</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">install</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">安装依赖包并下载到lib/ext目录</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uninstall</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">卸载依赖包并从lib/ext目录删除</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">init</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">初始创建一个新工程，和start.spring.io提供的页面功能一样</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring
 
 usage: spring [--help] [--version]
        &lt;command&gt; [&lt;args&gt;]
@@ -280,23 +276,23 @@ Common options:
     Print additional status information for the command you are running
 
 
-See 'spring help &lt;command&gt;' for more information on a specific command.</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="运行groovy脚本程序">2. 运行Groovy脚本程序</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>接下来我们重点讲解<code>run</code>和<code>init</code>这两个命令的用法。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在终端控制台上执行下面的命令来查看下帮助：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ spring help run
+See 'spring help &lt;command&gt;' for more information on a specific command.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="运行groovy脚本程序">2. 运行Groovy脚本程序</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>接下来我们重点讲解<code>run</code>和<code>init</code>这两个命令的用法。</p>
+</div>
+<div class="paragraph">
+<p>在终端控制台上执行下面的命令来查看下帮助：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring help run
 spring run - Run a spring groovy script
 
 usage: spring run [options] &lt;files&gt; [--] [args]
@@ -311,15 +307,15 @@ Option                     Description
 -q, --quiet                Quiet logging
 -v, --verbose              Verbose logging of dependency
                              resolution
---watch                    Watch the specified file for changes</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>接着，我们简单编写一段Groovy脚本程序：<code>hello.groovy</code>，代码如下</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@RestController
+--watch                    Watch the specified file for changes</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>接着，我们简单编写一段Groovy脚本程序：<code>hello.groovy</code>，代码如下</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@RestController
 class WebApplication {
 
 	@RequestMapping("/")
@@ -327,15 +323,15 @@ class WebApplication {
 		"Hello World!"
 	}
 
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>然后试着执行命令：<code>spring run hello.groovy</code>，是的，没错，它的确可以跑起来，这真是太棒了！</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>Resolving dependencies.....................
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>然后试着执行命令：<code>spring run hello.groovy</code>，是的，没错，它的确可以跑起来，这真是太棒了！</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Resolving dependencies.....................
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -368,222 +364,220 @@ class WebApplication {
 2018-06-03 11:25:28.531  INFO 10692 --- [       runner-0] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 2018-06-03 11:25:29.935  INFO 10692 --- [       runner-0] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
 2018-06-03 11:25:30.026  INFO 10692 --- [       runner-0] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
-2018-06-03 11:25:30.036  INFO 10692 --- [       runner-0] o.s.boot.SpringApplication               : Started application in 7.352 seconds (JVM running for 39.869)</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="快速创建一个新工程">3. 快速创建一个新工程</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>如果在IDE中创建一个Spring新工程，大概至少需要四步，首先打开新建向导<code>Spring Starter Project</code>，接着输入项目名称、包名，选择语言、类型等，然后选择工程依赖，如Web、Thymeleaf、DevTools等，最后检查并确定。这的确太繁琐了，如果还得做好几遍的话。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>但是这些使用Spring Boot CLI就能轻轻松松完成，打开控制台，输入下面这段命令即可：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ spring init --name hello-world --artifactId hello-world --groupId org.springbooks --language java --boot-version 1.5.13.RELEASE --type maven-project --dependencies web,thymeleaf,devtools --extract</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>这的确是很简单，对于我们只要记住一些常用的命令参数而已：</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>对于<code>spring init</code>的参数，有以下几个：</p> 
-  </div> 
-  <table class="tableblock frame-all grid-all stretch"> 
-   <colgroup> 
-    <col> 
-    <col> 
-    <col> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">参数</th> 
-     <th class="tableblock halign-left valign-top">说明</th> 
-     <th class="tableblock halign-left valign-top">默认值</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">项目的名称</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">demo</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">package-name</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">项目的包名</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">com.example.demo</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">项目的描述</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Demo project for Spring Boot</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">artifactId</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">项目的构件名称</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">demo</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">groupId</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">项目的组织名称</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">com.example</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">javaVersion</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Java语言的版本</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">1.8</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">language</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">可以选择语言，java、groovy、kotlin</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">java</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">packaging</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">项目打包类型，可选择：jar、war</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">jar</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">项目类型，可选择：maven-project，maven-build，gradle-project，gradle-build</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">maven-project</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">项目的版本号</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">0.0.1-SNAPSHOT</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">bootVersion</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Boot的版本</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">默认是安装的版本，如：2.0.3.RELEASE</p></td> 
-    </tr> 
-   </tbody> 
-  </table> 
-  <div class="paragraph"> 
-   <p>其中大部分参数都有默认值，可以省略暂时不填写。对于<code>dependencies</code>，可以通过以下命令来获取：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>$ spring init --list</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>对于常用的一些依赖模块，详见下面的表格：</p> 
-  </div> 
-  <table class="tableblock frame-all grid-all stretch"> 
-   <colgroup> 
-    <col> 
-    <col> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">名称</th> 
-     <th class="tableblock halign-left valign-top">说明</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">actuator</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Production ready features to help you monitor and manage your application</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">aop</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Create your own Aspects using Spring AOP and AspectJ</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">cache</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring’s Cache abstraction</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">data-jpa</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Java Persistence API including spring-data-jpa, spring-orm and Hibernate</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">data-mongodb</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">MongoDB NoSQL Database, including spring-data-mongodb</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">data-redis</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Redis key-value data store, including spring-data-redis</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">devtools</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Spring Boot Development Tools</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">flyway</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Flyway Database Migrations library</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">freemarker</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">FreeMarker templating engine</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">mybatis</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Persistence support using MyBatis</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">mysql</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">MySQL JDBC driver</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">security</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Secure your application via spring-security</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">thymeleaf</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Thymeleaf templating engine</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">web</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Full-stack web development with Tomcat and Spring MVC</p></td> 
-    </tr> 
-   </tbody> 
-  </table> 
-  <div class="listingblock"> 
-   <div class="title">
-    举个例子：通过CLI创建新项目
-   </div> 
-   <div class="content"> 
-    <pre>$ spring init --name hello-world --artifactId hello-world --groupId org.springbooks --language java --boot-version 1.5.13.RELEASE --type maven-project --dependencies web,thymeleaf,devtools --extract</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>我们继续来看，创建的项目目录如下：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>├── mvnw
+2018-06-03 11:25:30.036  INFO 10692 --- [       runner-0] o.s.boot.SpringApplication               : Started application in 7.352 seconds (JVM running for 39.869)</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="快速创建一个新工程">3. 快速创建一个新工程</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>如果在IDE中创建一个Spring新工程，大概至少需要四步，首先打开新建向导<code>Spring Starter Project</code>，接着输入项目名称、包名，选择语言、类型等，然后选择工程依赖，如Web、Thymeleaf、DevTools等，最后检查并确定。这的确太繁琐了，如果还得做好几遍的话。</p>
+</div>
+<div class="paragraph">
+<p>但是这些使用Spring Boot CLI就能轻轻松松完成，打开控制台，输入下面这段命令即可：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring init --name hello-world --artifactId hello-world --groupId org.springbooks --language java --boot-version 1.5.13.RELEASE --type maven-project --dependencies web,thymeleaf,devtools --extract</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>这的确是很简单，对于我们只要记住一些常用的命令参数而已：</p>
+</div>
+<div class="paragraph">
+<p>对于<code>spring init</code>的参数，有以下几个：</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content stretch">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">参数</th>
+<th class="tableblock halign-left valign-top">说明</th>
+<th class="tableblock halign-left valign-top">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">项目的名称</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">demo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">package-name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">项目的包名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">com.example.demo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">项目的描述</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demo project for Spring Boot</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">artifactId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">项目的构件名称</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">demo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groupId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">项目的组织名称</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">com.example</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">javaVersion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Java语言的版本</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.8</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">可以选择语言，java、groovy、kotlin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">java</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">packaging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">项目打包类型，可选择：jar、war</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">jar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">项目类型，可选择：maven-project，maven-build，gradle-project，gradle-build</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">maven-project</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">项目的版本号</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.0.1-SNAPSHOT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bootVersion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Boot的版本</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">默认是安装的版本，如：2.0.3.RELEASE</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>其中大部分参数都有默认值，可以省略暂时不填写。对于<code>dependencies</code>，可以通过以下命令来获取：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ spring init --list</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>对于常用的一些依赖模块，详见下面的表格：</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content stretch">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">actuator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Production ready features to help you monitor and manage your application</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aop</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create your own Aspects using Spring AOP and AspectJ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cache</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring&#8217;s Cache abstraction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data-jpa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Java Persistence API including spring-data-jpa, spring-orm and Hibernate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data-mongodb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MongoDB NoSQL Database, including spring-data-mongodb</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data-redis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redis key-value data store, including spring-data-redis</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">devtools</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Boot Development Tools</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">flyway</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flyway Database Migrations library</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">freemarker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FreeMarker templating engine</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mybatis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Persistence support using MyBatis</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mysql</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MySQL JDBC driver</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">security</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secure your application via spring-security</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">thymeleaf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Thymeleaf templating engine</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">web</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Full-stack web development with Tomcat and Spring MVC</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="title">举个例子：通过CLI创建新项目</div>
+<div class="content">
+<pre>$ spring init --name hello-world --artifactId hello-world --groupId org.springbooks --language java --boot-version 1.5.13.RELEASE --type maven-project --dependencies web,thymeleaf,devtools --extract</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>我们继续来看，创建的项目目录如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>├── mvnw
 ├── mvnw.cmd
 ├── pom.xml
 └── src
     ├── main
-    │&nbsp;&nbsp; ├── java
-    │&nbsp;&nbsp; │&nbsp;&nbsp; └── org
-    │&nbsp;&nbsp; │&nbsp;&nbsp;     └── springbooks
-    │&nbsp;&nbsp; │&nbsp;&nbsp;         └── helloworld
-    │&nbsp;&nbsp; │&nbsp;&nbsp;             └── HelloWorldApplication.java
-    │&nbsp;&nbsp; └── resources
-    │&nbsp;&nbsp;     ├── application.properties
-    │&nbsp;&nbsp;     ├── static
-    │&nbsp;&nbsp;     └── templates
+    │   ├── java
+    │   │   └── org
+    │   │       └── springbooks
+    │   │           └── helloworld
+    │   │               └── HelloWorldApplication.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       └── templates
     └── test
         └── java
             └── org
                 └── springbooks
                     └── helloworld
-                        └── HelloWorldApplicationTests.java</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>一切就这么容易搞定，接下来看你的了。</p> 
-  </div> 
- </div> 
+                        └── HelloWorldApplicationTests.java</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>一切就这么容易搞定，接下来看你的了。</p>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/06/springboot.html"> ←安装 Spring Boot CLI</a></li>
@@ -620,30 +614,35 @@ class WebApplication {
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           

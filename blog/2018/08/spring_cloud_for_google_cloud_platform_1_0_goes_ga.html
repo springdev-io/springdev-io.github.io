@@ -158,38 +158,50 @@
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>今天，Artem Bilan在博客中宣布，<a href="https://spring.io/blog/2018/08/09/spring-cloud-for-google-cloud-platform-1-0-goes-ga" class="external" target="_blank" rel="noopener">Spring Cloud for Google Cloud Platform 项目的1.0 版本终于可用了！</a>Google Cloud团队也在官方博客上发表了<a href="https://cloud.google.com/blog/products/gcp/calling-java-developers-spring-cloud-gcp-1-0-is-now-generally-available" class="external" target="_blank" rel="noopener">文章</a>做了相应的介绍。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>这个项目在Spring 团队和Google Cloud 团队历时一年多的时间，共同合作完成。旨在利用众所周知的Spring 框架的设计模式和抽象能力，以便为Java开发人员使用GCP服务带来Spring和Spring Boot的优势。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>具体来讲，Spring Cloud GCP可以让你利用Spring框架的强大功能和简单性：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>发布和订阅Google Cloud Pub/Sub主题</p> </li> 
-    <li> <p>通过属性配置Spring JDBC以使用Google Cloud SQL</p> </li> 
-    <li> <p>从Google Cloud Storage备份的Spring Resources写入和读取</p> </li> 
-    <li> <p>使用Google Cloud Pub/Sub在后台与Spring Integration交换消息</p> </li> 
-    <li> <p>使用Spring Cloud Sleuth和Google Stackdriver Trace跟踪应用程序的执行情况</p> </li> 
-    <li> <p>通过Spring Integration GCS渠道适配器消费和生成Google云端存储数据</p> </li> 
-   </ul> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="如何使用">如何使用？</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>可以通过引入Maven BOM的依赖来使用：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>&lt;dependencyManagement&gt;
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>今天，Artem Bilan在博客中宣布，<a href="https://spring.io/blog/2018/08/09/spring-cloud-for-google-cloud-platform-1-0-goes-ga" class="external" target="_blank" rel="noopener">Spring Cloud for Google Cloud Platform 项目的1.0 版本终于可用了！</a>Google Cloud团队也在官方博客上发表了<a href="https://cloud.google.com/blog/products/gcp/calling-java-developers-spring-cloud-gcp-1-0-is-now-generally-available" class="external" target="_blank" rel="noopener">文章</a>做了相应的介绍。</p>
+</div>
+<div class="paragraph">
+<p>这个项目在Spring 团队和Google Cloud 团队历时一年多的时间，共同合作完成。旨在利用众所周知的Spring 框架的设计模式和抽象能力，以便为Java开发人员使用GCP服务带来Spring和Spring Boot的优势。</p>
+</div>
+<div class="paragraph">
+<p>具体来讲，Spring Cloud GCP可以让你利用Spring框架的强大功能和简单性：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>发布和订阅Google Cloud Pub/Sub主题</p>
+</li>
+<li>
+<p>通过属性配置Spring JDBC以使用Google Cloud SQL</p>
+</li>
+<li>
+<p>从Google Cloud Storage备份的Spring Resources写入和读取</p>
+</li>
+<li>
+<p>使用Google Cloud Pub/Sub在后台与Spring Integration交换消息</p>
+</li>
+<li>
+<p>使用Spring Cloud Sleuth和Google Stackdriver Trace跟踪应用程序的执行情况</p>
+</li>
+<li>
+<p>通过Spring Integration GCS渠道适配器消费和生成Google云端存储数据</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="如何使用">如何使用？</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>可以通过引入Maven BOM的依赖来使用：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;dependencyManagement&gt;
     &lt;dependencies&gt;
         &lt;dependency&gt;
             &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
@@ -199,21 +211,21 @@
             &lt;scope&gt;import&lt;/scope&gt;
         &lt;/dependency&gt;
     &lt;/dependencies&gt;
-&lt;/dependencyManagement&gt;</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="后续工作">后续工作</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>现在团队正在忙于更多的集成，最近发布了一个1.1.0.M1版本，它支持了Spring Data Cloud Spanner和Spring Cloud Config。正在进行的重点工作是针对Spring Data抽象的Google Cloud Datastore。未来将会提供更多Google Cloud功能，并为他们展示基于Spring的API和配置的便利性。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><a href="https://cloud.spring.io/spring-cloud-gcp" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-cloud/spring-cloud-gcp/issues" class="external" target="_blank" rel="noopener">问题管理</a> | <a href="https://docs.spring.io/spring-cloud-gcp/docs/1.0.0.RELEASE/reference/htmlsingle" class="external" target="_blank" rel="noopener">使用手册</a></p> 
-  </div> 
- </div> 
+&lt;/dependencyManagement&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="后续工作">后续工作</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>现在团队正在忙于更多的集成，最近发布了一个1.1.0.M1版本，它支持了Spring Data Cloud Spanner和Spring Cloud Config。正在进行的重点工作是针对Spring Data抽象的Google Cloud Datastore。未来将会提供更多Google Cloud功能，并为他们展示基于Spring的API和配置的便利性。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.spring.io/spring-cloud-gcp" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-cloud/spring-cloud-gcp/issues" class="external" target="_blank" rel="noopener">问题管理</a> | <a href="https://docs.spring.io/spring-cloud-gcp/docs/1.0.0.RELEASE/reference/htmlsingle" class="external" target="_blank" rel="noopener">使用手册</a></p>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../../../blog/2018/08/reactor_californium_m1_this_summers_milestone_release_train.html"> ←Reactor Californium-M1 在这个夏天发布</a></li>
@@ -250,30 +262,35 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-credhub-2-0-0-m1-released.html" title="Spring CredHub 2.0.0.M1 发布">Spring CredHub ...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html" title="Spring Cloud Task 2.1.0.M1 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2018-11-05</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html" title="Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-02</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html" title="Spring Tools 4.0.1 发布">Spring Tools 4....</a>
+            <a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html" title="Reactor Bismuth-SR13 和 Californium-SR2 发布">Reactor Bismuth...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-session-bean-ga-released.html" title="Spring Session Bean GA 已发布，有什么新特性，版本如何选择？">Spring Session ...</a>
+            <a href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html" title="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布">Spring Security...</a>
             <span class="pull-right">2018-10-31</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-cloud-for-alibaba-0-2-0-released.html" title="Spring Cloud for Alibaba 0.2.0 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/10/spring-boot-2-1-0.html" title="Spring Boot 2.1.0 正式发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2018-10-30</span>
-          </li>
+          
+          
+          
+          
+          
           
           
           
