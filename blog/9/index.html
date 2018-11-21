@@ -141,6 +141,101 @@
               </style>
               <article class="blog--container blog-preview">
                 <h2 class="blog--title">
+                    <a href="../../../blog/2018/10/this-week-in-spring-october-12th-2018.html">Spring一周回顾（2018年10月12日）</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon news"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/news.html">news</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Fri Oct 12 22:00:00 CST 2018">2018-10-12</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/10/this-week-in-spring-october-12th-2018.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Spring 开发者们每周必读的《Spring一周回顾》，本期为您介绍Micronaut框架，构建微服务应用新选择。</div>
+                    <div class="desktop-only"><div class="paragraph"> 
+ <p>大家好，Spring 粉丝们，感谢一如既往的等待，又到了每周必读的《Spring一周回顾》时间。</p> 
+</div>
+<div class="paragraph"> 
+ <p>在Java领域，开源的框架一直都非常多，从WebWork、<a href="http://struts.apache.org/" class="external" target="_blank" rel="noopener">Struts</a>、<a href="http://tapestry.apache.org" class="external" target="_blank" rel="noopener">Tapestry</a>、<a href="https://grails.org" class="external" target="_blank" rel="noopener">Grails</a>、<a href="https://www.dropwizard.io/" class="external" target="_blank" rel="noopener">Dropwizard</a>、<a href="https://ratpack.io/versions" class="external" target="_blank" rel="noopener">Ratpack</a>、<a href="http://www.sparkjava.com" class="external" target="_blank" rel="noopener">Spark</a>，包括<a href="http://projects.spring.io/spring-boot/" class="external" target="_blank" rel="noopener">Spring Boot</a>，这些都是非常优秀的开源框架。<a href="http://micronaut.io" class="external" target="_blank" rel="noopener">Micronaut</a>被大多数Spring&amp;Grails的开发者寄予厚望，今年5月23日来自OCI的Graeme Rocher宣布了<a href="https://objectcomputing.com/news/2018/05/23/micronaut-open-sourced" class="external" target="_blank" rel="noopener">Micronaut正式开源</a>之后，开发团队一直非常努力投入开发之中，在接连发布了<a href="https://github.com/micronaut-projects/micronaut-core/releases" class="external" target="_blank" rel="noopener">M1、M2、M3、M4以及RC1、RC2等版本</a>之后，终于离最终正式版越来越近了，官方计划在10月16号发布第三个候选版本，不出意外将在10月23日迎来最终的GA版发布。欢迎关注本网站，后续会继续报道最新资讯和推出相应的学习教程。</p> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/10/this-week-in-spring-october-12th-2018.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
+                    <a href="../../../blog/2018/10/micronaut-1-0-rc2-released.html">Micronaut 1.0 RC2 发布，详细介绍了其实现技术及原理</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon release"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Mon Oct 08 09:00:00 CST 2018">2018-10-08</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/10/micronaut-1-0-rc2-released.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Micronaut 1.0 RC2 发布了，本文接着上一次发布说明详细介绍了其实现技术及原理。</div>
+                    <div class="desktop-only"><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="quoteblock abstract"> 
+   <blockquote>
+     本文的作者是Graeme Rocher，他是Grails和Micronaut框架的项目负责人，主导Grails开发10多年，有着丰富的Grails和Spring架构经验。由于Grails和Micronaut的开发团队和社区与Spring项目之间都很有渊源，而我也是其中最早的用户和参与者，所以本文将Micronaut介绍给Spring技术社区，后续也会发布更多相关的技术文章，欢迎大家积极参与讨论和分享。 
+   </blockquote> 
+  </div> 
+  <div class="paragraph"> 
+   <p>以下内容来自OCI官方博客，由Graeme Rocher发表：</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>继上周的<a href="https://springdev.io/blog/2018/09/micronaut-1.0-rc1-released.html" class="external" target="_blank" rel="noopener">Micronaut 1.0.0 RC1发布</a>之后，我们很高兴地宣布推出<a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0.RC2" class="external" target="_blank" rel="noopener">Micronaut 1.0.0 RC2</a>，其中包括社区反馈后的改进（感谢所有报告问题的人！）。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>第二个RC提供了另一个机会来测试Micronaut并提供反馈，因为我们建立了GA版本计划，将于10月23日发布 - 正好赶上旧金山的<a href="https://objectcomputing.com/resources/events/conferences/oracle-code-one-2018" class="external" target="_blank" rel="noopener">Oracle Code One 2018</a>，我将在大会上<a href="https://oracle.rainfocus.com/widget/oracle/oow18/catalogcodeone18?search=Micronaut" class="external" target="_blank" rel="noopener">展示Micronaut</a>！</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>此外，如果您在欧洲，旧金山不远，请考虑参加<a href="https://objectcomputing.com/resources/events/conferences/voxxed-days-microservices-paris-2018" class="external" target="_blank" rel="noopener">Voxxed Days Paris</a>，我将<a href="https://voxxeddays.com/microservices/2018/10/05/graeme-rocher-on-micronaut/" class="external" target="_blank" rel="noopener">于10月30日在那里展示Micronaut</a>。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>在我之前的文章中，我详细阐述了我们使用Micronaut进行的一些设计选择，尽可能避免使用反射，以及这对开发人员和应用程序的性能有何益处。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>在这篇文章中，我将详细阐述传统Java框架面临的挑战以及Micronaut如何解决这些挑战。</p> 
+  </div> 
+ </div> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/10/micronaut-1-0-rc2-released.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
                     <a href="../../../blog/2018/10/this-week-in-spring-october-5th-2018.html">Spring一周回顾（2018年10月5日）</a>
                 </h2>
                 <header class="meta-data--container">
@@ -250,79 +345,6 @@
                     查看...
                 </a>
               </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2018/10/spring-vault-2-1-ga-released.html">Spring Vault 2.1 正式发布</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon release"></div>
-                        <span>
-                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Tue Oct 02 09:10:28 CST 2018">2018-10-02</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/10/spring-vault-2-1-ga-released.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">Spring Vault 2.1 正式发布</div>
-                    <div class="desktop-only"><div class="paragraph"> 
- <p><a href="http://projects.spring.io/spring-vault/" class="external" target="_blank" rel="noopener">Spring Vault</a>提供熟悉的Spring抽象和客户端支持，用于访问、存储和撤销机密。它提供了与Vault交互的低级和高级抽象，使用户免于底层接口问题。</p> 
-</div>
-<div class="paragraph"> 
- <p>通过HashiCorp的Vault，你可以在所有环境中为应用程序管理外部机密数据。Vault可以管理静态和动态机密，例如应用程序数据，远程应用程序/资源的用户名/密码，并为外部服务提供凭据，如MySQL、PostgreSQL、Apache Cassandra、Consul、AWS等。</p> 
-</div>
-</div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/10/spring-vault-2-1-ga-released.html">
-                    查看...
-                </a>
-              </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2018/10/graeme-rocher-on-micronaut.html">Graeme Rocher访谈：介绍Micronaut</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon article"></div>
-                        <span>
-                        <a class="category" href="../../../blog/category/article.html">article</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Tue Oct 02 09:10:28 CST 2018">2018-10-02</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/10/graeme-rocher-on-micronaut.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">Voxxed Days Microservices 2018将于这个月底在巴黎举办，在这之前Antonio Goncalves先与Graeme Rocher聊聊有关这次大会上介绍Micronaut的内容。</div>
-                    <div class="desktop-only"><div class="quoteblock abstract"> 
- <blockquote>
-   导读：Voxxed Days Microservices 2018 将于10月28-30日在法国巴黎举办，是一个为期三天的新活动，包括两个会议日和一个专注于微服务的研讨会。Graeme Rocher将会介绍该框架并演示如何使用Micronaut的预先编译（AOT）和Oracle的GraalVM将您的微服务提升到新的水平，以实现即时启动和低内存占用！ 
- </blockquote> 
-</div>
-</div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/10/graeme-rocher-on-micronaut.html">
-                    查看...
-                </a>
-              </article>
             </div>
             <ul id="pagination_control" class="pagination blog-pagination pager">
               <li class="previous"><a  href="../8/">&larr; 前一页</a></li>
@@ -357,6 +379,16 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-cloud-stream-fishtown-rc2-2-1-0-rc2-release-announcement.html" title="Spring Cloud Stream Fishtown.RC2 /2.1.0.RC2 发布">Spring Cloud St...</a>
+            <span class="pull-right">2018-11-19</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/announcing-spring-cloud-function-2-0-0-rc2.html" title="Spring Cloud Function 2.0.0.RC2 发布">Spring Cloud Fu...</a>
+            <span class="pull-right">2018-11-19</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/11/this-week-in-spring-november-16th-2018.html" title="Spring一周回顾（2018年11月16日）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-16</span>
@@ -371,16 +403,8 @@
             <a href="../../../blog/2018/11/spring-vault-2-1-1-2-0-3-and-1-1-3-released.html" title="Spring Vault 2.1.1、2.0.3 和 1.1.3 发布">Spring Vault 2....</a>
             <span class="pull-right">2018-11-14</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/11/micronaut-1-0-1-released.html" title="Micronaut 1.0.1 发布，利用预编译技术为 Spring 和 Grails 开发者带来福音！">Micronaut 1.0.1...</a>
-            <span class="pull-right">2018-11-13</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/11/jhipster-5-7-0-released.html" title="JHipster v5.7.0 发布">JHipster v5.7.0 发布</a>
-            <span class="pull-right">2018-11-13</span>
-          </li>
+          
+          
           
           
           
