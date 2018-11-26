@@ -141,6 +141,111 @@
               </style>
               <article class="blog--container blog-preview">
                 <h2 class="blog--title">
+                    <a href="../../../blog/2018/10/spring-session-bean-ga-released.html">Spring Session Bean GA 已发布，有什么新特性，版本如何选择？</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon release"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Wed Oct 31 13:59:32 CST 2018">2018-10-31</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/10/spring-session-bean-ga-released.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Spring Session 新发布的Bean有什么新特性？项目中如何选择合适的版本？</div>
+                    <div class="desktop-only"><div class="sect1"> 
+ <h2 id="spring_session_bean_版本的新特性">Spring Session <code>Bean</code> 版本的新特性</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Spring Session BOM <code>Bean GA</code> 现已发布，这是基于Spring Session 2.1的第一个版本，可以很容易地与新发布的Spring Boot 2.1一起使用。</p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="same_site_cookie支持与httpsession集成">Same-Site Cookie支持与HttpSession集成</h3> 
+   <div class="paragraph"> 
+    <p>Same-Site Cookie是另一种<a href="https://scotthelme.co.uk/csrf-is-dead/">帮助开发人员防止跨站点请求伪造</a>的机制。我们的<code>DefaultCookieSerializer</code>已得到增强，支持将<code>SameSite</code>属性添加到Spring Session生成的会话cookie中。 默认情况下，<code>SameSite</code>属性启用，值为<code>Lax</code>，可使用<code>DefaultCookieSerializer#setSameSite</code>自定义。</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>请注意，从Spring Framework 5.1开始，Spring WebFlux本身就已有对<code>WebSession</code>的同样支持。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="httpsessionbindinglistener的支持"><code>HttpSessionBindingListener</code>的支持</h3> 
+   <div class="paragraph"> 
+    <p>Spring Session现在支持<code>HttpSessionBindingListener</code>，并且会在此API的实现上正确调用回调。这也意味着现在可以在会话作用域上使用<code>@PreDestroy</code>，因为该功能是使用Spring Framework的<code>DestructionCallbackBindingListener</code>实现的，这是<code>HttpSessionBindingListener</code>的具体实现。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="支持与redis_websession集成可自定义序列化实现">支持与Redis WebSession集成可自定义序列化实现</h3> 
+   <div class="paragraph"> 
+    <p>我们的Redis WebSession集成现在可以轻松配置为使用自定义序列化机制。以类似于Redis <code>HttpSession</code>集成的方式，可以通过提供名为<code>springSessionDefaultRedisSerializer</code>的类型为<code>RedisSerializer&lt;Object&gt;</code>的<code>@Bean</code>来实现：</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@EnableRedisWebSession
+static class SessionConfig {
+
+    @Bean
+    public RedisSerializer&lt;Object&gt; springSessionDefaultRedisSerializer() {
+        // configure and return a serializer of your choice
+    }
+
+}</code></pre> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="jdbc_httpsession集成的性能得到改进">JDBC <code>HttpSession</code>集成的性能得到改进</h3> 
+   <div class="paragraph"> 
+    <p>我们为JDBC <code>HttpSession</code>集成做了一些性能改进：</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>会话属性的延迟反序列化 - 会话属性现在将在第一次访问时反序列化，而不是从数据库中检索<code>HttpSession</code>，这可以为许多HTTP请求完全避免反序列化的成本</p> </li> 
+     <li> <p>禁用事务的选项 - 对于想要避免事务成本的用户，<code>JdbcOperationsSessionRepository</code>现在提供一个只接受<code>JdbcOperations</code>并在内部使用no-op <code>TransactionOperations</code>实现的构造函数</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="支持_java_11">支持 Java 11</h3> 
+   <div class="paragraph"> 
+    <p>Spring Session现在支持最近发布的Java 11，而所需的版本当然还保留在Java 8。我们的CI构建已得到增强，因此该项目现在可以针对Java 11进行持续验证。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="第三方依赖升级">第三方依赖升级</h3> 
+   <div class="paragraph"> 
+    <p>Spring Session 2.1基于以下最新和最高版本的关键依赖项：</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Spring Framework 5.1</p> </li> 
+     <li> <p>Spring Data Lovelace</p> </li> 
+     <li> <p>Spring Security 5.1</p> </li> 
+     <li> <p>Project Reactor Californium</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+ </div> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/10/spring-session-bean-ga-released.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
                     <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html">Spring Tools 4.0.1 发布</a>
                 </h2>
                 <header class="meta-data--container">
@@ -648,58 +753,6 @@ public FlatFileItemWriter&lt;Item&gt; itemWriter(Resource resource) {
                     查看...
                 </a>
               </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2018/10/spring-integration-5-1-goes-ga.html">Spring Integration 5.1 正式发布</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon release"></div>
-                        <span>
-                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Mon Oct 29 19:56:00 CST 2018">2018-10-29</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/10/spring-integration-5-1-goes-ga.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">Spring Integration 5.1 正式发布。</div>
-                    <div class="desktop-only"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://spring.io/team/artembilan" class="external" target="_blank" rel="noopener">Artem Bilan</a>在博客上宣布了，<a href="https://spring.io/blog/2018/10/29/spring-integration-5-1-goes-ga" class="external" target="_blank" rel="noopener">Spring Integration 5.1.0 GA 已发布！</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>现在已经可以从Maven Central，JCenter，和<a href="https://repo.spring.io/release" class="external" target="_blank" rel="noopener">Spring release</a>仓库下载到。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">compile "org.springframework.integration:spring-integration-core:5.1.0.RELEASE"</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>首先，我要感谢所有社区成员对框架的持续积极贡献！</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>除了常规依赖项升级，错误修复和内部性能改进之外，这个版本中还引入了一些值得注意的新功能：</p> 
-  </div> 
- </div> 
-</div>
-</div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/10/spring-integration-5-1-goes-ga.html">
-                    查看...
-                </a>
-              </article>
             </div>
             <div id='pagination_control' class="pagination blog-pagination">
                 <a href="../3/"><i class="icon-chevron-left"></i></a>
@@ -823,8 +876,13 @@ public FlatFileItemWriter&lt;Item&gt; itemWriter(Resource resource) {
                     
                     
                 
+                
+                    
+                    
+                    
+                
                 <div>
-                    <a href="../25/">25</a>
+                    <a href="../26/">26</a>
                     
                     
                 </div>
@@ -859,6 +917,11 @@ public FlatFileItemWriter&lt;Item&gt; itemWriter(Resource resource) {
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon news"></div>
+            <a href="../../../blog/2018/11/this-week-in-spring-november-23th-2018.html" title="Spring一周回顾（2018年11月23日）">Spring一周回顾（2018...</a>
+            <span class="pull-right">2018-11-23</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon release"></div>
             <a href="../../../blog/2018/11/spring-cloud-greenwich-m3-is-available.html" title="Spring Cloud Greenwich.M3 发布">Spring Cloud Gr...</a>
             <span class="pull-right">2018-11-21</span>
@@ -878,11 +941,7 @@ public FlatFileItemWriter&lt;Item&gt; itemWriter(Resource resource) {
             <a href="../../../blog/2018/11/this-week-in-spring-november-16th-2018.html" title="Spring一周回顾（2018年11月16日）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-11-16</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/11/spring-session-1-3-4-released.html" title="Spring Session 1.3.4 发布">Spring Session ...</a>
-            <span class="pull-right">2018-11-15</span>
-          </li>
+          
           
           
           
