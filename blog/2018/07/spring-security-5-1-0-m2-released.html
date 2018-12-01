@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html data-code-prettify data-clipboard-buttons data-goto-top data-nav-menu data-switch-sidebar data-mobile-support>
+
+  <head>
+  <meta charset="utf-8"/>
+  <title>Spring Security 5.1.0 M2 发布 - Spring技术社区</title>
+  <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="description" content="Spring Dev Site"/>
+  <meta name="author" content="rainboyan.com"/>
+  <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
+  <meta property="og:title" content="Spring Security 5.1.0 M2 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-07-30'><meta property="og:description" content="Spring Security 5.1.0.M2发布，该版本提供了很多新特性。" />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/css/blog.css" />
+  <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="/jspm_packages/system.js"></script>
+  <script>
+    System.config({baseURL: "/"});
+  </script>
+  <script src="/config.js"></script>
+  <script>
+      System.import('app/main.js')
+  </script>
+</head>
+  <body>
+  <div class="viewport">
+    <header class="navbar header--navbar desktop-only">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <div class="spring-logo--container">
+            <a class="spring-logo" href="/"><span></span></a>
+          </div>
+          <ul class="nav pull-right">
+            <li class="navbar-link">
+              <a href="/projects/" >项目</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/guides/" >指南</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/blog/" >博客</a>
+            </li>
+            <li class="navbar-link nav-search js-nav-search">
+              <a>
+                <i class="icon-search navbar-search--icon js-search-input-open"></i>
+                <span class="search-input-close js-search-input-close">
+                  <i class="icon-remove"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-dropdown--container js-search-dropdown">
+        <div class="container-fluid">
+          <div class="search-form--container">
+            <form class="form-inline form-search" action="../../../search" method="get">
+              <input type="text" class="search-query search-form--form js-search-input" placeholder="Search for documentation, guides, and posts..." name="q" value="" />
+              <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div>
+    <div class="mobile-navigation--wrapper mobile-only">
+      <div class="navigation-drawer--container">
+        <div class="mobile-search--container">
+          <form class="form-inline form-search" action="../../../search" method="get">
+            <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            <input type="text" class="search-query search-form--form js-search-input" placeholder="Search..." name="q" value="" />
+          </form>
+        </div>
+        <div class="navigation-item-list">
+          <div class="navbar-link">
+            <a href="/">
+              首页
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/projects/">
+              项目
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/guides/">
+              指南
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/blog/">
+              博客
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <div class="nav-icon js-open-nav-drawer">
+          <i class="icon-reorder"></i>
+        </div>
+        <div class="header-center-icon">
+          <a href="../../../">
+            <div class="icon icon-spring-logo-mobile"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid"></div>
+    <div></div>
+    <main class="body--container container-fluid">
+      <div class="main-body--wrapper">
+        <div class="desktop-only">
+          <h1 class="blog-category active content--title">版本发布</h1>
+          <div class="blog-category content--title">
+            <div>Engineering</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>Releases</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>News and Events</div>
+          </div>
+          <div class="switch-sidebar pull-right"><input type="checkbox" class="js-switch"/></div>
+        </div>
+        <div class="row-fluid blog--wrapper">
+          <article class="span8 mobile-left-pane" id="content">
+            <div class="blog--container">
+              <header>
+                <h1 class="blog--title">Spring Security 5.1.0 M2 发布</h1>
+                <div class="meta-data--container">
+                  <div class="meta-data--item desktop-only">
+                    <div class="meta-data--icon icon blog-icon release"></div>
+                    <span>
+                      <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                    </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon calendar"></div>
+                      <time class="date" pubdate="" datetime=''>2018-07-30</time>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon comments"></div>
+                      <a class="comments" href="../../../blog/2018/07/spring-security-5-1-0-m2-released.html#gitalk-container">评论
+                      </a>
+                    </div>
+                </div>
+              </header>
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Security的项目负责人<a href="https://spring.io/team/rwinch" class="external" target="_blank" rel="noopener">Rob Winch</a>在官方博客宣布了<a href="https://spring.io/blog/2018/07/30/spring-security-5-1-0-m2-released" class="external" target="_blank" rel="noopener">5.1.0.M2版本发布</a>的消息，这个版本总共关闭了<a href="https://github.com/spring-projects/spring-security/milestone/106?closed=1" class="external" target="_blank" rel="noopener">100多个任务单</a>，其中有不少新特性。</p>
+</div>
+<div class="paragraph">
+<p>下面我们将一起来看看有哪些亮点。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="oauth2">OAuth2</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="oauth2资源服务器oauth2_resource_server">OAuth2资源服务器（OAuth2 Resource Server）</h3>
+<div class="paragraph">
+<p>添加了对OAuth2资源服务器的基本支持。 参见示例：<a href="https://github.com/spring-projects/spring-security/tree/5.1.0.M2/samples/boot/oauth2resourceserver" class="external" target="_blank" rel="noopener">oauth2resourceserver</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="authorization_code_flow">Authorization Code Flow</h3>
+<div class="paragraph">
+<p>用户现在可以使用OAuth 2.0授权代码授予获取访问令牌。参见示例： <a href="https://github.com/spring-projects/spring-security/tree/5.1.0.M2/samples/boot/authcodegrant" class="external" target="_blank" rel="noopener">authcodegrant</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="支持oauth2和webclient">支持OAuth2和WebClient</h3>
+<div class="paragraph">
+<p>现在内置了对OAuth2和WebClient的支持。具体如下：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>添加访问令牌到请求中</p>
+</li>
+<li>
+<p>访问令牌过期时自动刷新</p>
+</li>
+<li>
+<p>解析要使用的访问令牌</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>例如，在Servlet环境中，你可以像这样配置Bean：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Bean
+WebClient webClient(OAuth2AuthorizedClientRepository repository) {
+    ServletOAuth2AuthorizedClientExchangeFilterFunction filter =
+        new ServletOAuth2AuthorizedClientExchangeFilterFunction(repository);
+    return WebClient.builder()
+        .filter(new OAuth2AuthorizedClientExchangeFilterFunction())
+        .apply(filter.oauth2Configuration())
+        .build();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>现在，你可以通过多种不同方式添加OAuth令牌。 如果需要，可以使用Spring MVC支持解析<code>OAuth2AuthorizedClient</code>。如果授权服务器返回刷新令牌，而访问令牌也即将过期时，Spring Security则将透明地更新访问令牌并提交更新后的访问令牌。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@GetMapping("/users")
+Mono&lt;String&gt; users(@RegisteredOAuth2AuthorizedClient("client-id")
+        OAuth2AuthorizedClient authorizedClient) {
+    return this.webClient.get()
+        .uri("https://api.example.com/user")
+        .attributes(oauth2AuthorizedClient(authorizedClient))
+        .retrieve()
+        .bodyToMono(String.class);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>你还可以通过“WebClient”解析访问令牌。 例如：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Mono&lt;String&gt; users() {
+    return this.webClient.get()
+        .uri("https://api.example.com/user")
+        .attributes(clientRegistrationId("client-id"))
+        .retrieve()
+        .bodyToMono(String.class);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>如果使用OAuth2登录或OIDC进行身份验证，则可以获取默认访问令牌而无需用户交互。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Mono&lt;String&gt; users() {
+    // if Authenticated with OIDC
+    // OAuth2 Log In use the access token associated to log in
+    return this.webClient.get()
+        .uri("https://api.example.com/user")
+        .retrieve()
+        .bodyToMono(String.class);
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="webflux_oauth2登录支持oidc">WebFlux OAuth2登录支持OIDC</h3>
+<div class="paragraph">
+<p>WebFlux应用程序现在可以使用OAuth2和OIDC进行身份验证。
+参见示例： <a href="https://github.com/spring-projects/spring-security/tree/master/samples/boot/oauth2login-webflux" class="external" target="_blank" rel="noopener">oauth2login-webflux</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="能够从oidc_discovery创建clientregistration">能够从OIDC Discovery创建ClientRegistration</h3>
+<div class="paragraph">
+<p>之前，用户希望与OIDC提供程序集成需要配置所有端点。例如，在Spring Boot中需要这样做：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          okta:
+            client-id: okta-client-id
+            client-secret: okta-client-secret
+        provider:
+          okta:
+            authorization-uri: https://foo.oktapreview.com/oauth2/v1/authorize
+            token-uri: https://foo.oktapreview.com/oauth2/v1/token
+            user-info-uri: https://foo.oktapreview.com/oauth2/v1/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: https://foo.oktapreview.com/oauth2/v1/keys</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>现在，用户可以简单的配置发行者uri。例如:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          okta:
+            client-id: okta-client-id
+            client-secret: okta-client-secret
+        provider:
+          okta:
+            issuer-uri: https://foo.oktapreview.com/oauth2/default/</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="支持自定义授权请求">支持自定义授权请求</h3>
+<div class="paragraph">
+<p>添加了<code>OAuth2AuthorizationRequestResolver</code>用于支持自定义授权请求。 例如，如果用户想要从请求中添加/删除范围，他们现在可以轻松地执行此操作。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="单个clientregistration将会重定向到登录">单个ClientRegistration将会重定向到登录</h3>
+<div class="paragraph">
+<p>使用单个提供程序配置OAuth2/OIDC登录时，不是仅显示一个提供程序，而是更改默认值以立即重定向到提供程序。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="配置改进">配置改进</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="现代化默认登录页面">现代化默认登录页面</h3>
+<div class="paragraph">
+<p>默认登录页面已经采用html5编写，看起来更具视觉吸引力。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="默认注销页面default_log_out_page">默认注销页面(Default Log Out Page)</h3>
+<div class="paragraph">
+<p>由于添加了CSRF注销保护，因此默认应用程序无法注销。 现在，如果正在使用默认登录页面（即没有配置登录页面），那么还有一个默认的注销页面，它显示了一个注销表单。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="简化requestcache配置">简化RequestCache配置</h3>
+<div class="paragraph">
+<p>用户现在可以配置默认的RequestCache，将其暴露为<code>@ Bean</code>。 已经更新了<code>HttpSessionRequestCache</code>，不再要求该值为<code>DefaultRequestCache</code>。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="强化你的应用程序hardening_your_application">强化你的应用程序(Hardening Your Application)</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="跨站点跟踪和http动词篡改保护cross_site_tracing_http_verb_tampering_protection">跨站点跟踪和HTTP动词篡改保护（Cross Site Tracing &amp; HTTP Verb Tampering Protection）</h3>
+<div class="paragraph">
+<p>Spring Security 5.1 添加了 <a href="https://www.owasp.org/index.php/Cross_Site_Tracing" class="external" target="<em>blank">跨站点跟踪</a> 和 <a href="https://www.owasp.org/index.php/Testing_for_HTTP_Verb_Tampering</em>(OTG-INPVAL-003)" class="external" target="_blank" rel="noopener">HTTP动词篡改</a>保护.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="密码编码升级password_encoding_upgrades">密码编码升级（Password Encoding Upgrades）</h3>
+<div class="paragraph">
+<p>用户可以实现<a href="https://docs.spring.io/spring-security/site/docs/5.1.0.M2/api/org/springframework/security/core/userdetails/UserDetailsPasswordService.html" class="external" target="_blank" rel="noopener">UserDetailsPasswordService</a> 并暴露为 <code>@Bean</code>，当认证成功后Spring Security的<code>DaoAuthenticationProvider</code>将会：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>检查密码存储机制是否需要使用新的<a href="https://docs.spring.io/spring-security/site/docs/5.1.0.M2/api/org/springframework/security/crypto/password/PasswordEncoder.html#upgradeEncoding-java.lang.String-" class="external" target="_blank" rel="noopener">PasswordEncoder.upgradeEncoding</a>方法来更新。例如， 如果它是采用sha256中编码的，那么默认情况下，Spring Security会建议它升级到BCrypt。</p>
+</li>
+<li>
+<p>如果需要升级密码编码，它将使用当前的<code>PasswordEncoder</code></p>
+</li>
+<li>
+<p><code>UserDetails</code>和新密码将被传递给<code>UserDetailsPasswordService</code>，因此可以使用升级的密码编码保存。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="依赖更新">依赖更新</h3>
+<div class="paragraph">
+<p>我们已经更新了框架的依赖关系，以确保框架的传递依赖关系是最新的。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://projects.spring.io/spring-security/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://docs.spring.io/spring-security/site/docs/5.1.0.M2/reference/htmlsingle/" class="external" target="_blank" rel="noopener">参考手册</a> | <a href="https://stackoverflow.com/questions/tagged/spring-security" class="external" target="_blank" rel="noopener">在线帮助</a></p>
+</div>
+</div>
+</div>
+</div></div>
+              <ul id="direction" class="pagination blog-pagination pager">
+              <li class="previous"><a  href="../../../blog/2018/07/spring-data-ingalls-sr14-and-kay-sr9-released.html"> ←Spring Data Ingalls SR14和Kay SR9 发布</a></li>
+              <li class="next"><a href="../../../blog/2018/07/spring-boot-1-x-eol-aug-1st-2019.html">Spring Boot 1.x 在一年后将停止更新 →</a></li>
+              </ul>
+            </div>
+            <section id="gitalk-container"></section>
+          </article>
+          <aside class="span4 mobile-right-pane">
+      <div><h2>文章分类</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category active">
+            <div class="icon blog-icon all-posts"></div>
+            <a href="/blog/">全部内容</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon engineering"></div>
+            <a href="/blog/category/article.html">书籍文章</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon releases"></div>
+            <a href="/blog/category/release.html">版本发布</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news-and-events"></div>
+            <a href="/blog/category/news.html">新闻资讯</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div><h2>最新文章</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-session-bean-sr1-and-apple-sr7-released.html" title="Spring Session Bean-SR1 和 Apple-SR7 发布">Spring Session ...</a>
+            <span class="pull-right">2018-11-30</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-boot-2-1-1-available-now.html" title="Spring Boot 2.1.1 发布">Spring Boot 2.1...</a>
+            <span class="pull-right">2018-11-30</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-boot-2-0-7-available-now.html" title="Spring Boot 2.0.7 发布">Spring Boot 2.0...</a>
+            <span class="pull-right">2018-11-30</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-io-platform-brussels-sr15.html" title="Spring IO Platform Brussels-SR15 发布">Spring IO Platf...</a>
+            <span class="pull-right">2018-11-29</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-security-5-1-2-5-0-10-4-2-10-released.html" title="Spring Security 5.1.2、5.0.10和4.2.10 同时发布">Spring Security...</a>
+            <span class="pull-right">2018-11-29</span>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </aside>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="navbar">
+              <div class="container">
+                <ul class="nav">
+                  <li><a href="../../../team.html">Team</a></li>
+                  <li><a href="../../../services.html">Services</a></li>
+                  <li><a href="../../../tools.html">Tools</a></li>
+                </ul>
+              </div>
+            </div>
+            &copy; <span>2018</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
+            <a href="../../../terms-of-use.html">Terms of Use</a>,
+            <a href="../../../privacy-policy.html">Privacy</a>,
+            <a href="../../../trademarks.html">Trademark Guidelines</a> and
+            <span id="teconsent"></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="scrim"></div>
+  </div>
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: 'e0ad4e23b37963590faf',
+        clientSecret: '1bbf06b574f0e6623211f8cc029f874db67c7dfe',
+        repo: 'springdev-issues',
+        owner: 'springdev-io',
+        admin: ['rainboyan'],
+        id: 'Comments',
+        distractionFreeMode: true
+      });
+      gitalk.render('gitalk-container');
+  </script>
+  </body>
+</html>

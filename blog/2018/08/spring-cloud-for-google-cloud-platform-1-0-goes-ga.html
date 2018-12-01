@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html data-code-prettify data-clipboard-buttons data-goto-top data-nav-menu data-switch-sidebar data-mobile-support>
+
+  <head>
+  <meta charset="utf-8"/>
+  <title>Spring Cloud for Google Cloud Platform 1.0 正式版发布 - Spring技术社区</title>
+  <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="description" content="Spring Dev Site"/>
+  <meta name="author" content="rainboyan.com"/>
+  <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
+  <meta property="og:title" content="Spring Cloud for Google Cloud Platform 1.0 正式版发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-08-09'><meta property="og:description" content="Spring Cloud for Google Cloud Platform 1.0 正式版发布" />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/css/blog.css" />
+  <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="/jspm_packages/system.js"></script>
+  <script>
+    System.config({baseURL: "/"});
+  </script>
+  <script src="/config.js"></script>
+  <script>
+      System.import('app/main.js')
+  </script>
+</head>
+  <body>
+  <div class="viewport">
+    <header class="navbar header--navbar desktop-only">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <div class="spring-logo--container">
+            <a class="spring-logo" href="/"><span></span></a>
+          </div>
+          <ul class="nav pull-right">
+            <li class="navbar-link">
+              <a href="/projects/" >项目</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/guides/" >指南</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/blog/" >博客</a>
+            </li>
+            <li class="navbar-link nav-search js-nav-search">
+              <a>
+                <i class="icon-search navbar-search--icon js-search-input-open"></i>
+                <span class="search-input-close js-search-input-close">
+                  <i class="icon-remove"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-dropdown--container js-search-dropdown">
+        <div class="container-fluid">
+          <div class="search-form--container">
+            <form class="form-inline form-search" action="../../../search" method="get">
+              <input type="text" class="search-query search-form--form js-search-input" placeholder="Search for documentation, guides, and posts..." name="q" value="" />
+              <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div>
+    <div class="mobile-navigation--wrapper mobile-only">
+      <div class="navigation-drawer--container">
+        <div class="mobile-search--container">
+          <form class="form-inline form-search" action="../../../search" method="get">
+            <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            <input type="text" class="search-query search-form--form js-search-input" placeholder="Search..." name="q" value="" />
+          </form>
+        </div>
+        <div class="navigation-item-list">
+          <div class="navbar-link">
+            <a href="/">
+              首页
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/projects/">
+              项目
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/guides/">
+              指南
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/blog/">
+              博客
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <div class="nav-icon js-open-nav-drawer">
+          <i class="icon-reorder"></i>
+        </div>
+        <div class="header-center-icon">
+          <a href="../../../">
+            <div class="icon icon-spring-logo-mobile"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid"></div>
+    <div></div>
+    <main class="body--container container-fluid">
+      <div class="main-body--wrapper">
+        <div class="desktop-only">
+          <h1 class="blog-category active content--title">版本发布</h1>
+          <div class="blog-category content--title">
+            <div>Engineering</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>Releases</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>News and Events</div>
+          </div>
+          <div class="switch-sidebar pull-right"><input type="checkbox" class="js-switch"/></div>
+        </div>
+        <div class="row-fluid blog--wrapper">
+          <article class="span8 mobile-left-pane" id="content">
+            <div class="blog--container">
+              <header>
+                <h1 class="blog--title">Spring Cloud for Google Cloud Platform 1.0 正式版发布</h1>
+                <div class="meta-data--container">
+                  <div class="meta-data--item desktop-only">
+                    <div class="meta-data--icon icon blog-icon release"></div>
+                    <span>
+                      <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                    </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon calendar"></div>
+                      <time class="date" pubdate="" datetime=''>2018-08-09</time>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon comments"></div>
+                      <a class="comments" href="../../../blog/2018/08/spring-cloud-for-google-cloud-platform-1-0-goes-ga.html#gitalk-container">评论
+                      </a>
+                    </div>
+                </div>
+              </header>
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>今天，Artem Bilan在博客中宣布，<a href="https://spring.io/blog/2018/08/09/spring-cloud-for-google-cloud-platform-1-0-goes-ga" class="external" target="_blank" rel="noopener">Spring Cloud for Google Cloud Platform 项目的1.0 版本终于可用了！</a>Google Cloud团队也在官方博客上发表了<a href="https://cloud.google.com/blog/products/gcp/calling-java-developers-spring-cloud-gcp-1-0-is-now-generally-available" class="external" target="_blank" rel="noopener">文章</a>做了相应的介绍。</p>
+</div>
+<div class="paragraph">
+<p>这个项目在Spring 团队和Google Cloud 团队历时一年多的时间，共同合作完成。旨在利用众所周知的Spring 框架的设计模式和抽象能力，以便为Java开发人员使用GCP服务带来Spring和Spring Boot的优势。</p>
+</div>
+<div class="paragraph">
+<p>具体来讲，Spring Cloud GCP可以让你利用Spring框架的强大功能和简单性：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>发布和订阅Google Cloud Pub/Sub主题</p>
+</li>
+<li>
+<p>通过属性配置Spring JDBC以使用Google Cloud SQL</p>
+</li>
+<li>
+<p>从Google Cloud Storage备份的Spring Resources写入和读取</p>
+</li>
+<li>
+<p>使用Google Cloud Pub/Sub在后台与Spring Integration交换消息</p>
+</li>
+<li>
+<p>使用Spring Cloud Sleuth和Google Stackdriver Trace跟踪应用程序的执行情况</p>
+</li>
+<li>
+<p>通过Spring Integration GCS渠道适配器消费和生成Google云端存储数据</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="如何使用">如何使用？</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>可以通过引入Maven BOM的依赖来使用：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-gcp-dependencies&lt;/artifactId&gt;
+            &lt;version&gt;1.0.0.RELEASE&lt;/version&gt;
+            &lt;type&gt;pom&lt;/type&gt;
+            &lt;scope&gt;import&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="后续工作">后续工作</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>现在团队正在忙于更多的集成，最近发布了一个1.1.0.M1版本，它支持了Spring Data Cloud Spanner和Spring Cloud Config。正在进行的重点工作是针对Spring Data抽象的Google Cloud Datastore。未来将会提供更多Google Cloud功能，并为他们展示基于Spring的API和配置的便利性。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.spring.io/spring-cloud-gcp" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-cloud/spring-cloud-gcp/issues" class="external" target="_blank" rel="noopener">问题管理</a> | <a href="https://docs.spring.io/spring-cloud-gcp/docs/1.0.0.RELEASE/reference/htmlsingle" class="external" target="_blank" rel="noopener">使用手册</a></p>
+</div>
+</div>
+</div></div>
+              <ul id="direction" class="pagination blog-pagination pager">
+              <li class="previous"><a  href="../../../blog/2018/08/reactor-californium-m1-this-summers-milestone-release-train.html"> ←Reactor Californium-M1 在这个夏天发布</a></li>
+              <li class="next"><a href="../../../blog/2018/08/spring-cloud-skipper-1-1-0-m1.html">Spring Cloud Skipper 1.1.0.M1 发布 →</a></li>
+              </ul>
+            </div>
+            <section id="gitalk-container"></section>
+          </article>
+          <aside class="span4 mobile-right-pane">
+      <div><h2>文章分类</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category active">
+            <div class="icon blog-icon all-posts"></div>
+            <a href="/blog/">全部内容</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon engineering"></div>
+            <a href="/blog/category/article.html">书籍文章</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon releases"></div>
+            <a href="/blog/category/release.html">版本发布</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news-and-events"></div>
+            <a href="/blog/category/news.html">新闻资讯</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div><h2>最新文章</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-session-bean-sr1-and-apple-sr7-released.html" title="Spring Session Bean-SR1 和 Apple-SR7 发布">Spring Session ...</a>
+            <span class="pull-right">2018-11-30</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-boot-2-1-1-available-now.html" title="Spring Boot 2.1.1 发布">Spring Boot 2.1...</a>
+            <span class="pull-right">2018-11-30</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-boot-2-0-7-available-now.html" title="Spring Boot 2.0.7 发布">Spring Boot 2.0...</a>
+            <span class="pull-right">2018-11-30</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-io-platform-brussels-sr15.html" title="Spring IO Platform Brussels-SR15 发布">Spring IO Platf...</a>
+            <span class="pull-right">2018-11-29</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/11/spring-security-5-1-2-5-0-10-4-2-10-released.html" title="Spring Security 5.1.2、5.0.10和4.2.10 同时发布">Spring Security...</a>
+            <span class="pull-right">2018-11-29</span>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </aside>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="navbar">
+              <div class="container">
+                <ul class="nav">
+                  <li><a href="../../../team.html">Team</a></li>
+                  <li><a href="../../../services.html">Services</a></li>
+                  <li><a href="../../../tools.html">Tools</a></li>
+                </ul>
+              </div>
+            </div>
+            &copy; <span>2018</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
+            <a href="../../../terms-of-use.html">Terms of Use</a>,
+            <a href="../../../privacy-policy.html">Privacy</a>,
+            <a href="../../../trademarks.html">Trademark Guidelines</a> and
+            <span id="teconsent"></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="scrim"></div>
+  </div>
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: 'e0ad4e23b37963590faf',
+        clientSecret: '1bbf06b574f0e6623211f8cc029f874db67c7dfe',
+        repo: 'springdev-issues',
+        owner: 'springdev-io',
+        admin: ['rainboyan'],
+        id: 'Comments',
+        distractionFreeMode: true
+      });
+      gitalk.render('gitalk-container');
+  </script>
+  </body>
+</html>
