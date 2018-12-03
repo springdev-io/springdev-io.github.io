@@ -141,6 +141,87 @@
               </style>
               <article class="blog--container blog-preview">
                 <h2 class="blog--title">
+                    <a href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html">Spring Cloud Task 2.1.0.M1 发布</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon release"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Mon Nov 05 15:43:34 CST 2018">2018-11-05</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Spring Cloud Task 2.1.0.M1 发布，支持Spring Boot 2.1.0。</div>
+                    <div class="desktop-only"><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Spring Cloud Task 2.1.0M1 现已发布，可以在 Github 和 Pivotal 下载库中找到。</p> 
+  </div> 
+ </div> 
+</div>
+<div class="sect1"> 
+ <h2 id="更新了什么">更新了什么？</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>什么是新的？</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Spring Cloud Task 2.1.0.M1 旨在成为与Spring Boot 2.1.0一致的框架版本。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>相比较2.0.x，此版本的更新包括：</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>更新所有依赖项</p> </li> 
+    <li> <p>Spring Cloud Task 现在通过自动配置启用</p> </li> 
+    <li> <p>执行任务时，<code>TaskExecution</code>的<code>exitCode</code>为<code>null</code></p> </li> 
+    <li> <p>Spring Cloud Task 在Java 8、9、10、11上编译和运行</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>让我们更详细地介绍这些更新。</p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="更新所有依赖项">更新所有依赖项</h3> 
+   <div class="paragraph"> 
+    <p>如前所述，此版本使Spring Cloud Task与Spring Boot 2.1保持一致。这包括更新所有依赖项。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="spring_cloud_task_现在通过自动配置启用">Spring Cloud Task 现在通过自动配置启用</h3> 
+   <div class="paragraph"> 
+    <p>再见<code>@EnableTask</code>，你好<strong>自动配置</strong>！Spring Cloud Task现在通过自动配置启用。要使用它，请将<code>spring-cloud-starter-task</code>依赖项添加到Maven pom或Gradle构建文件中。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="执行任务时taskexecution的exitcode为null">执行任务时，<code>TaskExecution</code>的<code>exitCode</code>为<code>null</code></h3> 
+   <div class="paragraph"> 
+    <p>在Spring Cloud Task的早期版本中，从Spring Cloud Task方法返回的<code>TaskExecution</code>总是显示正在运行的任务的<code>exitCode</code>为<code>0</code>。现在，如果任务仍在执行，则从Spring Cloud Task返回的<code>TaskExecutions</code>的<code>exitCode</code>为<code>null</code>。</p> 
+   </div> 
+  </div> 
+ </div> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/11/spring-cloud-task-2-1-0-m1-is-now-available.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
                     <a href="../../../blog/2018/11/this-week-in-spring-november-2th-2018.html">Spring一周回顾（2018年11月2日，SpringOne Tour 2018北京）</a>
                 </h2>
                 <header class="meta-data--container">
@@ -366,40 +447,6 @@ static class SessionConfig {
                     查看...
                 </a>
               </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2018/10/spring-tools-4-0-1-released.html">Spring Tools 4.0.1 发布</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon release"></div>
-                        <span>
-                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Wed Oct 31 13:59:32 CST 2018">2018-10-31</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/10/spring-tools-4-0-1-released.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">Spring Session Bean GA 发布，现已支持Java 11。</div>
-                    <div class="desktop-only"><div class="paragraph"> 
- <p>Spring Tools 4是您喜爱的编码环境的下一代Spring工具。已经完全从头开始重写，为开发基于Spring的企业应用程序提供世界级的支持，无论您喜欢Eclipse、Visual Studio Code还是Atom IDE。</p> 
-</div>
-</div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/10/spring-tools-4-0-1-released.html">
-                    查看...
-                </a>
-              </article>
             </div>
             <div id='pagination_control' class="pagination blog-pagination">
                 <a href="../4/"><i class="icon-chevron-left"></i></a>
@@ -569,6 +616,11 @@ static class SessionConfig {
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon news"></div>
+            <a href="../../../blog/2018/11/this-week-in-spring-november-30th-2018.html" title="Spring一周回顾（2018年11月30日）">Spring一周回顾（2018...</a>
+            <span class="pull-right">2018-11-30</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon release"></div>
             <a href="../../../blog/2018/11/spring-session-bean-sr1-and-apple-sr7-released.html" title="Spring Session Bean-SR1 和 Apple-SR7 发布">Spring Session ...</a>
             <span class="pull-right">2018-11-30</span>
@@ -588,11 +640,7 @@ static class SessionConfig {
             <a href="../../../blog/2018/11/spring-io-platform-brussels-sr15.html" title="Spring IO Platform Brussels-SR15 发布">Spring IO Platf...</a>
             <span class="pull-right">2018-11-29</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/11/spring-security-5-1-2-5-0-10-4-2-10-released.html" title="Spring Security 5.1.2、5.0.10和4.2.10 同时发布">Spring Security...</a>
-            <span class="pull-right">2018-11-29</span>
-          </li>
+          
           
           
           
