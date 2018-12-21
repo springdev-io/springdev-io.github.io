@@ -176,10 +176,10 @@
 <h2 id="介绍">介绍</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="http://aws.amazon.com/" class="external" target="_blank" rel="noopener">亚马逊网络服务</a>（Amazon Web Services：AWS）于2006年推出，通过其云计算平台为企业提供关键的基础设施服务。使用云计算业务可以采用新的业务模式，从而无需计划和投资采购自己的IT基础架构。他们可以使用云服务提供商提供的基础架构和服务，并在使用服务时付费。访问<a href="http://aws.amazon.com/products/" class="external" target="_blank" rel="noopener">http://aws.amazon.com/products/</a>，了解亚马逊作为其云计算服务的一部分提供的各种产品的更多详细信息。</p>
+<p><a href="http://aws.amazon.com/" class="external" target="_blank" rel="noopener">亚马逊网络服务</a>（Amazon Web Services：AWS）于2006年推出，通过其云计算平台为企业提供关键的基础设施服务。使用云计算业务可以采用新的业务模式，从而无需计划和投资采购自己的IT基础架构。他们可以使用云服务提供商提供的基础架构和服务，并在使用服务时付费。访问 <a href="http://aws.amazon.com/products/" class="external" target="_blank" rel="noopener">http://aws.amazon.com/products/</a>，了解亚马逊作为其云计算服务的一部分提供的各种产品的更多详细信息。</p>
 </div>
 <div class="paragraph">
-<p>Spring Integration AWS 扩展，通过<a href="http://aws.amazon.com/sdkforjava/" class="external" target="_blank" rel="noopener">AWS Java SDK</a>为Spring Integration提供了集成各种AWS服务的适配器。请注意，Spring Integration AWS Extension基于Spring Cloud AWS项目。</p>
+<p>Spring Integration AWS 扩展，通过 <a href="http://aws.amazon.com/sdkforjava/" class="external" target="_blank" rel="noopener">AWS Java SDK</a>为Spring Integration提供了集成各种AWS服务的适配器。请注意，Spring Integration AWS Extension基于Spring Cloud AWS项目。</p>
 </div>
 <div class="paragraph">
 <p>Spring Integration AWS 扩展已支持集成的服务有：</p>
@@ -231,10 +231,10 @@
 <div class="sect3">
 <h4 id="入站通道适配器">入站通道适配器</h4>
 <div class="paragraph">
-<p>S3 通道适配器（Channel Adapters）基于<code>AmazonS3</code>模板和<code>TransferManager</code>。</p>
+<p>S3 通道适配器（Channel Adapters）基于 <code>AmazonS3</code> 模板和 <code>TransferManager</code>。</p>
 </div>
 <div class="paragraph">
-<p>S3 入站通道适配器（Inbound Channel Adapter），由<code>S3InboundFileSynchronizingMessageSource</code>（<code>&lt;int-aws:s3-inbound-channel-adapter&gt;</code>）来表示，允许将S3对象作为文件从S3存储桶拉到本地目录以进行同步。这个适配器与Spring Integration的模块FTP和SFTP中的入站通道适配器完全类似。</p>
+<p>S3 入站通道适配器（Inbound Channel Adapter），由 <code>S3InboundFileSynchronizingMessageSource</code>（<code>&lt;int-aws:s3-inbound-channel-adapter&gt;</code>）来表示，允许将 S3 对象作为文件从 S3 存储桶拉到本地目录以进行同步。这个适配器与 Spring Integration 的模块 FTP 和 SFTP 中的入站通道适配器完全类似。</p>
 </div>
 <div class="paragraph">
 <p>Java 配置方式如下：</p>
@@ -278,10 +278,10 @@ public static class MyConfiguration {
 </div>
 </div>
 <div class="paragraph">
-<p>使用此配置，你将从<code>s3FilesChannel</code>接收带有<code>java.io.File</code> <code>payload</code>的消息，可以定期将Amazon S3存储桶中的内容同步到本地目录。</p>
+<p>使用此配置，你将从 <code>s3FilesChannel</code> 接收带有 <code>java.io.File</code> <code>payload</code> 的消息，可以定期将 Amazon S3 存储桶中的内容同步到本地目录。</p>
 </div>
 <div class="paragraph">
-<p>如果使用XML的配置，类似这样：</p>
+<p>如果使用 XML 的配置，类似这样：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -306,7 +306,7 @@ public static class MyConfiguration {
 <div class="sect3">
 <h4 id="出站通道适配器">出站通道适配器</h4>
 <div class="paragraph">
-<p>S3 出站通道适配器，由<code>S3MessageHandler</code>（<code>&lt;int-aws:s3-outbound-channel-adapter&gt; 和 &lt;int-aws:s3-outbound-gateway&gt;</code>）表示，允许上传、下载、拷贝等S3存储桶提供的操作（参见：<code>S3MessageHandler.Command</code>枚举）。</p>
+<p>S3 出站通道适配器，由 <code>S3MessageHandler</code>（<code>&lt;int-aws:s3-outbound-channel-adapter&gt;</code> 和 <code>&lt;int-aws:s3-outbound-gateway&gt;</code>）表示，允许上传、下载、拷贝等S3存储桶提供的操作（参见： <code>S3MessageHandler.Command</code> 枚举）。</p>
 </div>
 <div class="paragraph">
 <p>使用Java配置：</p>
@@ -329,7 +329,7 @@ public static class MyConfiguration {
 </div>
 </div>
 <div class="paragraph">
-<p>使用此配置，你可以执行<code>transferManager.upload()</code>操作，使用<code>java.io.File</code> 作为<code>payload</code>发送消息，其中文件名用作S3对象键。</p>
+<p>使用此配置，你可以执行 <code>transferManager.upload()</code> 操作，使用 <code>java.io.File</code> 作为 <code>payload</code> 发送消息，其中文件名用作 S3 对象键。</p>
 </div>
 <div class="paragraph">
 <p>使用XML配置：</p>
@@ -349,16 +349,16 @@ public static class MyConfiguration {
 <div class="sect3">
 <h4 id="出站网关">出站网关</h4>
 <div class="paragraph">
-<p>S3 出站网关（Outbound Gateway），Java配置使用<code>S3MessageHandler</code>带构造函数参数<code>produceReply = true</code>定义，XML配置通过<code>&lt;int-aws:s3-outbound-gateway&gt;</code>来声明。</p>
+<p>S3 出站网关（Outbound Gateway），Java配置使用 <code>S3MessageHandler</code> 带构造函数参数 <code>produceReply = true</code> 定义，XML配置通过 <code>&lt;int-aws:s3-outbound-gateway&gt;</code> 来声明。</p>
 </div>
 <div class="paragraph">
-<p>此网关的“请求-回复”是异步的，并且<code>TransferManager</code>操作的传输结果将发送到<code>outputChannel</code>，假设传输进度跟踪在下游传输流中。</p>
+<p>此网关的“请求-回复”是异步的，并且 <code>TransferManager</code> 操作的传输结果将发送到 <code>outputChannel</code>，假设传输进度跟踪在下游传输流中。</p>
 </div>
 <div class="paragraph">
-<p>你可以用<code>S3ProgressListener</code>来跟踪传输进度，也可以在下游传输流中将其填充到返回的<code>Transfer</code>中。</p>
+<p>你可以用 <code>S3ProgressListener</code> 来跟踪传输进度，也可以在下游传输流中将其填充到返回的 <code>Transfer</code> 中。</p>
 </div>
 <div class="paragraph">
-<p>如需了解更多信息，请查看<code>S3MessageHandler</code>的Java文档，以及<code>&lt;int-aws:s3-outbound-channel-adapter&gt;</code> 和 <code>&lt;int-aws:s3-outbound-gateway&gt;</code>的描述。</p>
+<p>如需了解更多信息，请查看 <code>S3MessageHandler</code> 的Java文档，以及 <code>&lt;int-aws:s3-outbound-channel-adapter&gt;</code> 和  <code>&lt;int-aws:s3-outbound-gateway&gt;</code> 的描述。</p>
 </div>
 </div>
 </div>
@@ -368,10 +368,10 @@ public static class MyConfiguration {
 <h2 id="这样做的好处">这样做的好处</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Spring Integration提供了Spring编程模型的扩展，以支持众所周知的企业集成模式（EIP）。</p>
+<p>Spring Integration 提供了 Spring 编程模型的扩展，以支持众所周知的企业集成模式（EIP）。</p>
 </div>
 <div class="paragraph">
-<p>Spring Integration for AWS <code>2.0</code>的主要目的是遵循设计良好的Spring Integration抽象，在其基础上扩展支持AWS服务的能力，提供编程一致的系统集成模式。当你的应用程序部署到Amazon云环境中或依赖AWS服务时，这些新组件也可用于任何其他分布式任务。例如，AWS S3入站通道适配器可以将<code>DynamoDbMetadataStore</code>用于<code>S3PersistentAcceptOnceFileListFilter</code>，以防止在多个分布式应用程序实例中访问相同的已处理资源。<code>DynamoDbLockRegistry</code>可用于应用程序集群中的Leader Election（领导者选举）。</p>
+<p>Spring Integration for AWS  <code>2.0</code> 的主要目的是遵循设计良好的 Spring Integration 抽象，在其基础上扩展支持 AWS 服务的能力，提供编程一致的系统集成模式。当你的应用程序部署到 Amazon 云环境中或依赖AWS服务时，这些新组件也可用于任何其他分布式任务。例如，AWS S3 入站通道适配器可以将 <code>DynamoDbMetadataStore</code> 用于 <code>S3PersistentAcceptOnceFileListFilter</code>，以防止在多个分布式应用程序实例中访问相同的已处理资源。 <code>DynamoDbLockRegistry</code> 可用于应用程序集群中的 Leader Election（领导者选举）。</p>
 </div>
 </div>
 </div>
@@ -424,6 +424,11 @@ public static class MyConfiguration {
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2018/12/ratpack-1-6-0-released.html" title="Ratpack 1.6.0 发布">Ratpack 1.6.0 发布</a>
+            <span class="pull-right">2018-12-20</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2018/12/this-week-in-spring-december-14th-2018.html" title="Spring一周回顾（2018年12月14日）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-12-14</span>
@@ -443,11 +448,7 @@ public static class MyConfiguration {
             <a href="../../../blog/2018/12/this-week-in-spring-december-7th-2018.html" title="Spring一周回顾（2018年12月7日）">Spring一周回顾（2018...</a>
             <span class="pull-right">2018-12-07</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/12/spring-io-platform-cairo-sr6.html" title="Spring IO Platform Cairo-SR6 发布">Spring IO Platf...</a>
-            <span class="pull-right">2018-12-06</span>
-          </li>
+          
           
           
           
