@@ -141,6 +141,70 @@
               </style>
               <article class="blog--container blog-preview">
                 <h2 class="blog--title">
+                    <a href="../../../blog/2018/08/spring-batch-4-1-0-m3-released.html">Spring Batch 4.1.0.M3 发布</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon release"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Fri Aug 31 14:58:00 CST 2018">2018-08-31</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/08/spring-batch-4-1-0-m3-released.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Spring Batch 4.1.0.M3 发布，可以从里程碑库中获取。</div>
+                    <div class="desktop-only"><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Spring Batch 4.1.0.M3 发布，本次发布带来了如下特性：</p> 
+  </div> 
+ </div> 
+</div>
+<div class="sect1"> 
+ <h2 id="支持_jsr_305">支持 JSR-305</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>这个里程碑的主题是添加对JSR-305注解的支持。利用Spring Framework的<a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#null-safety" class="external" target="_blank" rel="noopener">Null-safety</a>注解，并在Spring Batch的所有公共API中添加它们。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>这些注解不仅在使用Spring Batch API时强制执行null安全性，而且还可以由IDE用于提供与可空性相关的有用信息。例如，如果用户想要实现<code>ItemReader</code>接口，那么任何支持JSR-305注解的IDE都将生成如下内容：</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class MyItemReader implements ItemReader&lt;String&gt; {
+
+    @Nullable
+    public String read() throws Exception {
+        return null;
+    }
+
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>在<code>read</code>方法添加<code>@Nullable</code> 注解，明确表示此方法可能返回<code>null</code>。这正如在Javadoc中说明的那样，即当数据源处理完成时，read方法应返回null。</p> 
+  </div> 
+ </div> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/08/spring-batch-4-1-0-m3-released.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
                     <a href="../../../blog/2018/08/spring-session-for-apache-geode-pivotal-gemfire-2-0-5-release-and-2-1-0-m1-released.html">Spring Session for Apache Geode/Pivotal GemFire 2.0.5.RELEASE 和 2.1.0.M1 同时发布</a>
                 </h2>
                 <header class="meta-data--container">
@@ -278,61 +342,6 @@
 </div>
                 </section>
                 <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/08/spring-cloud-stream-kinesis-binder-1-0-ga.html">
-                    查看...
-                </a>
-              </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2018/08/spring-integration-for-aws-2-0-ga.html">Spring Integration for AWS 2.0 发布</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon release"></div>
-                        <span>
-                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Tue Aug 21 20:56:19 CST 2018">2018-08-21</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/08/spring-integration-for-aws-2-0-ga.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">Spring Integration for AWS 2.0 发布</div>
-                    <div class="desktop-only"><div class="sect1"> 
- <h2 id="介绍">介绍</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="http://aws.amazon.com/" class="external" target="_blank" rel="noopener">亚马逊网络服务</a>（Amazon Web Services：AWS）于2006年推出，通过其云计算平台为企业提供关键的基础设施服务。使用云计算业务可以采用新的业务模式，从而无需计划和投资采购自己的IT基础架构。他们可以使用云服务提供商提供的基础架构和服务，并在使用服务时付费。访问 <a href="http://aws.amazon.com/products/" class="external" target="_blank" rel="noopener">http://aws.amazon.com/products/</a>，了解亚马逊作为其云计算服务的一部分提供的各种产品的更多详细信息。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Integration AWS 扩展，通过 <a href="http://aws.amazon.com/sdkforjava/" class="external" target="_blank" rel="noopener">AWS Java SDK</a>为Spring Integration提供了集成各种AWS服务的适配器。请注意，Spring Integration AWS Extension基于Spring Cloud AWS项目。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Integration AWS 扩展已支持集成的服务有：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Amazon Simple Email Service (SES)</p> </li> 
-    <li> <p>Amazon Simple Storage Service (S3)</p> </li> 
-    <li> <p>Amazon Simple Queue Service (SQS)</p> </li> 
-    <li> <p>Amazon Simple Notification Service (SNS)</p> </li> 
-    <li> <p>Amazon DynamoDB</p> </li> 
-    <li> <p>Amazon SimpleDB</p> </li> 
-   </ul> 
-  </div> 
- </div> 
-</div>
-</div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/08/spring-integration-for-aws-2-0-ga.html">
                     查看...
                 </a>
               </article>
@@ -484,8 +493,13 @@
                     
                     
                 
+                
+                    
+                    
+                    
+                
                 <div>
-                    <a href="../30/">30</a>
+                    <a href="../31/">31</a>
                     
                     
                 </div>
@@ -521,6 +535,11 @@
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
             <div class="icon blog-icon news"></div>
+            <a href="../../../blog/2019/01/this-week-in-spring-january-4th-2019.html" title="Spring一周回顾（2019年1月4日）">Spring一周回顾（2019...</a>
+            <span class="pull-right">2019-01-04</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news"></div>
             <a href="../../../blog/2019/01/spring-community-hello-2019.html" title="Spring 技术社区，2019 新年快乐！">Spring 技术社区，201...</a>
             <span class="pull-right">2019-01-01</span>
           </li>
@@ -539,11 +558,7 @@
             <a href="../../../blog/2018/12/spring-cloud-open-service-broker-2-1-0-released.html" title="Spring Cloud Open Service Broker 2.1.0 发布">Spring Cloud Op...</a>
             <span class="pull-right">2018-12-21</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2018/12/spring-cloud-for-alibaba-0-2-1-released.html" title="Spring Cloud for Alibaba 0.2.1 发布">Spring Cloud fo...</a>
-            <span class="pull-right">2018-12-21</span>
-          </li>
+          
           
           
           
