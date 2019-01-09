@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring Boot 2.0.7 发布 - Spring技术社区</title>
+  <title>Spring Cloud Function 2.0.0.RELEASE 发布 - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring Boot 2.0.7 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-11-30'><meta property="og:description" content="Spring Boot 2.0.7 发布，修复了大量缺陷，也升级了第三方依赖。" />
+  <meta property="og:title" content="Spring Cloud Function 2.0.0.RELEASE 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2019-01-08'><meta property="og:description" content="Spring Cloud Function 2.0.0.RELEASE 发布" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -135,7 +135,7 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Spring Boot 2.0.7 发布</h1>
+                <h1 class="blog--title">Spring Cloud Function 2.0.0.RELEASE 发布</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
                     <div class="meta-data--icon icon blog-icon release"></div>
@@ -149,109 +149,48 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-11-30</time>
+                      <time class="date" pubdate="" datetime=''>2019-01-08</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/11/spring-boot-2-0-7-available-now.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2019/01/announcing-general-availability-of-spring-cloud-function-2-0-0-release.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
               <div class="blog--post"><div class="paragraph">
-<p>Spring Boot 2.0.7 已经发布，共解决了<a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.0.7.RELEASE" class="external" target="_blank" rel="noopener"><code>81</code>项问题修复、改进和依赖项更新</a>，建议使用<code>2.0.x</code>的用户升级到此版本。</p>
+<p><a href="https://spring.io/team/olegz" class="external" target="_blank" rel="noopener">Oleg Zhurakousky</a> 在博客宣布了 <a href="https://spring.io/blog/2019/01/08/announcing-general-availability-of-spring-cloud-function-2-0-0-release" class="external" target="_blank" rel="noopener">Spring Cloud Function 2.0.0.RELEASE 发布</a>。</p>
 </div>
 <div class="paragraph">
-<p>其中依赖升级到最新版本：</p>
+<p>Spring Cloud Function <code>2.0.0.RELEASE</code> 作为独立的模块可以在 <a href="https://repo.spring.io/libs-release/org/springframework/cloud/" class="external" target="_blank" rel="noopener">Spring Release</a> 和 <a href="https://repo.maven.apache.org/maven2/org/springframework/cloud/">Maven Central</a> 仓库获取到。</p>
+</div>
+<div class="paragraph">
+<p>此版本包含以下内容：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Spring AMQP 2.0.10.RELEASE</p>
+<p><a href="https://springdev.io/blog/2018/09/kotlin-support-in-spring-cloud-function" class="external" target="_blank" rel="noopener">支持 Kotlin</a></p>
 </li>
 <li>
-<p>Spring Cloud Connectors 2.0.4.RELEASE</p>
+<p>为 <a href="https://spring.io/blog/2018/09/25/spring-cloud-function-2-0-and-azure-functions">Azure 函数</a>提供的新编程模型</p>
 </li>
 <li>
-<p>Spring Data Kay SR12</p>
+<p>在 Web 适配器启动时自动（可选）导出Supplier</p>
 </li>
 <li>
-<p>Spring Framework 5.0.11</p>
+<p><a href="https://spring.io/blog/2018/10/22/functional-bean-registrations-in-spring-cloud-function">函数式 Bean 的注册</a></p>
 </li>
 <li>
-<p>Spring Integration 5.0.10</p>
+<p>支持输入类型为 Collection 的函数的透明类型转换</p>
 </li>
 <li>
-<p>Spring Kafka 2.1.11.RELEASE</p>
-</li>
-<li>
-<p>Spring Security 5.0.10</p>
-</li>
-<li>
-<p>Spring Session Apple-SR7</p>
-</li>
-<li>
-<p>Activemq 5.15.8</p>
-</li>
-<li>
-<p>Ehcache 2.10.6</p>
-</li>
-<li>
-<p>Elasticsearch 5.6.13</p>
-</li>
-<li>
-<p>Janino 3.0.11</p>
-</li>
-<li>
-<p>Javax Json 1.1.4</p>
-</li>
-<li>
-<p>Jetty El 8.5.33.1</p>
-</li>
-<li>
-<p>Kotlin 1.2.71</p>
-</li>
-<li>
-<p>Micrometer 1.0.8</p>
-</li>
-<li>
-<p>Neo4j Ogm 3.1.5</p>
-</li>
-<li>
-<p>Netty 4.1.31.Final</p>
-</li>
-<li>
-<p>Reactor Bom Bismuth-SR14</p>
-</li>
-<li>
-<p>Thymeleaf 3.0.11.RELEASE</p>
-</li>
-<li>
-<p>Thymeleaf Extras Java8time 3.0.2.RELEASE</p>
-</li>
-<li>
-<p>Thymeleaf Extras Springsecurity4 3.0.4.RELEASE</p>
-</li>
-<li>
-<p>Unboundid Ldapsdk 4.0.9</p>
+<p>基于 Spring Boot 2.1</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>相关文章：</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://springdev.io/blog/2018/10/spring-boot-2-0-6.html" class="external" target="_blank" rel="noopener">Spring Boot 2.0.6 发布</a></p>
-</li>
-<li>
-<p><a href="https://springdev.io/blog/2018/09/spring-boot-2-0-5.html" class="external" target="_blank" rel="noopener">Spring Boot 2.0.5 发布</a></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="https://spring.io/projects/spring-boot/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-projects/spring-boot" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://github.com/spring-projects/spring-boot/issues" class="external" target="_blank" rel="noopener">Issues</a> | <a href="https://docs.spring.io/spring-boot/docs/2.0.7.RELEASE/reference/htmlsingle" class="external" target="_blank" rel="noopener">参考文档</a> | <a href="https://stackoverflow.com/questions/tagged/spring-boot" class="external" target="_blank" rel="noopener">Stack Overflow</a> | <a href="https://gitter.im/spring-projects/spring-boot" class="external" target="_blank" rel="noopener">Gitter</a></p>
+<p><a href="https://cloud.spring.io/spring-cloud-function/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-cloud/spring-cloud-function" class="external" target="_blank" rel="noopener">Github</a> | <a href="https://github.com/spring-cloud/spring-cloud-function/issues" class="external" target="_blank" rel="noopener">问题</a> | <a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-function/2.0.0.RELEASE/" class="external" target="_blank" rel="noopener">文档</a></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -261,8 +200,8 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>原文：https://spring.io/blog/2018/11/30/spring-boot-2-0-7-available-now<br>
-作者：Stéphane Nicoll<br>
+<p>原文：https://spring.io/blog/2019/01/08/announcing-general-availability-of-spring-cloud-function-2-0-0-release<br>
+作者：Oleg Zhurakousky<br>
 编译：春之雨</p>
 </div>
 </td>
@@ -270,8 +209,8 @@
 </table>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/11/spring-io-platform-brussels-sr15.html"> ←Spring IO Platform Brussels-SR15 发布</a></li>
-              <li class="next"><a href="../../../blog/2018/11/spring-boot-2-1-1-available-now.html">Spring Boot 2.1.1 发布 →</a></li>
+              <li class="previous"><a  href="../../../blog/2019/01/this-week-in-spring-january-4th-2019.html"> ←Spring一周回顾（2019年1月4日）</a></li>
+              <li class="next"><a href="../../../blog/2019/01/spring-framework-5-1-4-5-0-12-and-4-3-22-available-now.html">Spring Framework 5.1.4、5.0.12和4.3.22 同时发布 →</a></li>
               </ul>
             </div>
             <section id="gitalk-container"></section>

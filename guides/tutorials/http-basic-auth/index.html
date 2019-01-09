@@ -129,96 +129,88 @@
             </style>
             <article class="content--container">
               <h1 class="title">使用Spring Security实现HTTP Basic认证</h1>
-              <div class="article-body"><div id="toc" class="toc"> 
- <div id="toctitle">
-  目录
- </div> 
- <ul class="sectlevel1"> 
-  <li><a href="#创建新工程">1. 创建新工程</a></li> 
-  <li><a href="#导入刚才创建的工程">2. 导入刚才创建的工程</a></li> 
-  <li><a href="#编写欢迎页面">3. 编写欢迎页面</a></li> 
-  <li><a href="#添加maven依赖">4. 添加Maven依赖</a></li> 
-  <li><a href="#运行应用">5. 运行应用</a></li> 
-  <li><a href="#登录认证">6. 登录认证</a></li> 
-  <li><a href="#禁用basic认证">7. 禁用Basic认证</a></li> 
-  <li><a href="#修改默认用户名和密码">8. 修改默认用户名和密码</a></li> 
-  <li><a href="#设置安全拦截路径">9. 设置安全拦截路径</a></li> 
-  <li><a href="#编写测试代码">10. 编写测试代码</a></li> 
-  <li><a href="#小结">11. 小结</a></li> 
- </ul> 
-</div> 
-<div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="quoteblock abstract"> 
-   <div class="title">
-    概要
-   </div> 
-   <blockquote>
-     本文通过一个示例来讲解如何启用HTTP Basic认证来保护Web应用。 
-   </blockquote> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="创建新工程">1. 创建新工程</h2> 
- <div class="sectionbody"> 
-  <div class="listingblock"> 
-   <div class="title">
-    使用Spring CLI创建一个新工程
-   </div> 
-   <div class="content"> 
-    <pre>$ spring init --name basic-auth --artifactId tut-http-basic-auth \
+              <div class="article-body"><div id="toc" class="toc">
+<div id="toctitle">目录</div>
+<ul class="sectlevel1">
+<li><a href="#创建新工程">1. 创建新工程</a></li>
+<li><a href="#导入刚才创建的工程">2. 导入刚才创建的工程</a></li>
+<li><a href="#编写欢迎页面">3. 编写欢迎页面</a></li>
+<li><a href="#添加maven依赖">4. 添加Maven依赖</a></li>
+<li><a href="#运行应用">5. 运行应用</a></li>
+<li><a href="#登录认证">6. 登录认证</a></li>
+<li><a href="#禁用basic认证">7. 禁用Basic认证</a></li>
+<li><a href="#修改默认用户名和密码">8. 修改默认用户名和密码</a></li>
+<li><a href="#设置安全拦截路径">9. 设置安全拦截路径</a></li>
+<li><a href="#编写测试代码">10. 编写测试代码</a></li>
+<li><a href="#小结">11. 小结</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="quoteblock abstract">
+<div class="title">概要</div>
+<blockquote>
+本文通过一个示例来讲解如何启用HTTP Basic认证来保护Web应用。
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="创建新工程">1. 创建新工程</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">使用Spring CLI创建一个新工程</div>
+<div class="content">
+<pre>$ spring init --name basic-auth --artifactId tut-http-basic-auth \
 --groupId org.springdev.guides --package-name org.springdev.guides.basicauth \
 --language java --boot-version 1.5.13.RELEASE --type maven-project \
---dependencies web,thymeleaf,devtools --extract</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="导入刚才创建的工程">2. 导入刚才创建的工程</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>打开STS，点击菜单<span class="menuseq"><b class="menu">File</b>&nbsp;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Import</b></span>，选择导入向导Maven下的<code>Existing Maven Projects</code>，在下一步中选择刚刚创建的工程目录，确定后导入到STS中。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>此时创建的新工程basic-auth目录结构如下:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>├── mvnw
+--dependencies web,thymeleaf,devtools --extract</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="导入刚才创建的工程">2. 导入刚才创建的工程</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>打开STS，点击菜单<span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Import</b></span>，选择导入向导Maven下的<code>Existing Maven Projects</code>，在下一步中选择刚刚创建的工程目录，确定后导入到STS中。</p>
+</div>
+<div class="paragraph">
+<p>此时创建的新工程basic-auth目录结构如下:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>├── mvnw
 ├── mvnw.cmd
 ├── pom.xml
 └── src
     ├── main
-    │&nbsp;&nbsp; ├── java
-    │&nbsp;&nbsp; │&nbsp;&nbsp; └── org
-    │&nbsp;&nbsp; │&nbsp;&nbsp;     └── springdev
-    │&nbsp;&nbsp; │&nbsp;&nbsp;         └── guides
-    │&nbsp;&nbsp; │&nbsp;&nbsp;             └── basicauth
-    │&nbsp;&nbsp; │&nbsp;&nbsp;                 └── BasicAuthApplication.java
-    │&nbsp;&nbsp; └── resources
-    │&nbsp;&nbsp;     ├── application.properties
-    │&nbsp;&nbsp;     ├── static
-    │&nbsp;&nbsp;     └── templates
+    │   ├── java
+    │   │   └── org
+    │   │       └── springdev
+    │   │           └── guides
+    │   │               └── basicauth
+    │   │                   └── BasicAuthApplication.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       └── templates
     └── test
         └── java
             └── org
                 └── springdev
                     └── guides
                         └── basicauth
-                            └── BasicAuthApplicationTests.java</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在工程根目录打开<code>pom.xml</code>，其内容如下：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    pom.xml
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                            └── BasicAuthApplicationTests.java</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在工程根目录打开<code>pom.xml</code>，其内容如下：</p>
+</div>
+<div class="listingblock">
+<div class="title">pom.xml</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
     &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
@@ -276,18 +268,16 @@
     &lt;/build&gt;
 
 
-&lt;/project&gt;</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在Package Explorer中打开应用主程序文件：BasicAuthApplication.java，可以看到这个文件代码非常简单。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    src/main/java/org/springdev/guides/basicauth/BasicAuthApplication.java
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.basicauth;
+&lt;/project&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在Package Explorer中打开应用主程序文件：BasicAuthApplication.java，可以看到这个文件代码非常简单。</p>
+</div>
+<div class="listingblock">
+<div class="title">src/main/java/org/springdev/guides/basicauth/BasicAuthApplication.java</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.basicauth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -298,23 +288,21 @@ public class BasicAuthApplication {
     public static void main(String[] args) {
         SpringApplication.run(HttpBasicAuthApplication.class, args);
     }
-}</code></pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="编写欢迎页面">3. 编写欢迎页面</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>接下来我们开始编写欢迎页面。在src/main/resources/templates中新增一个index.html，内容如下：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    src/main/resources/templates/index.html
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-html" data-lang="html">&lt;!DOCTYPE html&gt;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="编写欢迎页面">3. 编写欢迎页面</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>接下来我们开始编写欢迎页面。在src/main/resources/templates中新增一个index.html，内容如下：</p>
+</div>
+<div class="listingblock">
+<div class="title">src/main/resources/templates/index.html</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-html" data-lang="html">&lt;!DOCTYPE html&gt;
 &lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"&gt;
     &lt;head&gt;
         &lt;title&gt;Basic Authentication Example&lt;/title&gt;
@@ -323,18 +311,16 @@ public class BasicAuthApplication {
         &lt;h1&gt;Welcome!&lt;/h1&gt;
 
     &lt;/body&gt;
-&lt;/html&gt;</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>接下来编写<code>MvcConfig.java</code>类，设置首页视图。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    src/main/java/org/springdev/guides/basicauth/MvcConfig.java
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.basicauth;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>接下来编写<code>MvcConfig.java</code>类，设置首页视图。</p>
+</div>
+<div class="listingblock">
+<div class="title">src/main/java/org/springdev/guides/basicauth/MvcConfig.java</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.basicauth;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -347,45 +333,43 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/").setViewName("index");
     }
 
-}</code></pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="添加maven依赖">4. 添加Maven依赖</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Boot提供了针对集成Spring Security 的<code>spring-boot-starter-security</code>，在项目依赖中引入即可。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>具体如下在pom.xml 中增加下列依赖：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    pom.xml
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="添加maven依赖">4. 添加Maven依赖</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Boot提供了针对集成Spring Security 的<code>spring-boot-starter-security</code>，在项目依赖中引入即可。</p>
+</div>
+<div class="paragraph">
+<p>具体如下在pom.xml 中增加下列依赖：</p>
+</div>
+<div class="listingblock">
+<div class="title">pom.xml</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
     &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;
-&lt;/dependency&gt;</code></pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="运行应用">5. 运行应用</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>通过菜单 <span class="menuseq"><b class="menu">Run</b>&nbsp;<i class="fa fa-angle-right caret"></i> <b class="submenu">Run as</b>&nbsp;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Spring Boot App</b></span>，或者使用Maven命令都可以启动。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在启动过程中会出现下面日志：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>...
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="运行应用">5. 运行应用</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>通过菜单 <span class="menuseq"><b class="menu">Run</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Run as</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Spring Boot App</b></span>，或者使用Maven命令都可以启动。</p>
+</div>
+<div class="paragraph">
+<p>在启动过程中会出现下面日志：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>...
 2018-06-07 12:34:08.181  INFO 11502 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 2018-06-07 12:34:08.222  INFO 11502 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 2018-06-07 12:34:08.608  INFO 11502 --- [  restartedMain] b.a.s.AuthenticationManagerConfiguration :
@@ -395,104 +379,107 @@ Using default security password: 9f72d51f-c42c-45bb-a041-b3bbd33b44ab
 2018-06-07 12:34:08.654  INFO 11502 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
 2018-06-07 12:34:08.711  INFO 11502 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8f04b60, org.springframework.security.web.context.SecurityContextPersistenceFilter@7df59e44, org.springframework.security.web.header.HeaderWriterFilter@75dafe9a, org.springframework.security.web.authentication.logout.LogoutFilter@4feeceaa, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5a756f31, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6a07fe58, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78f4726c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e3beab6, org.springframework.security.web.session.SessionManagementFilter@2d5cdd40, org.springframework.security.web.access.ExceptionTranslationFilter@735da450, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7491c80b]
 
-...</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="登录认证">6. 登录认证</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>通过启动日志可以发现，Spring Security的DefaultSecurityFilterChain已经起作用了，注意这里Spring Boot自动配置默认为<code>user</code>用户生成一个随机密码：<code>9f72d51f-c42c-45bb-a041-b3bbd33b44ab</code>。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>我们打开浏览器，输入地址：<a href="http://localhost:8080/" class="bare">http://localhost:8080/</a>，会出现弹框要求输入用户名和密码，然后输入Username：user和Passowrd：9f72d51f-c42c-45bb-a041-b3bbd33b44ab，点击 <b class="button">Sign In</b>，最后则会看到熟悉的欢迎界面，这说明认证通过了。</p> 
-  </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="https://springdev.io/images/basic_auth_login_dialog.png" alt="basic auth login dialog"> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="禁用basic认证">7. 禁用Basic认证</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>当Spring Security的依赖加上后，Spring Boot 会默认启用Basic 认证拦截所有浏览器请求，你可以设置为<code class="red">false</code>来禁用。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>security.basic.enabled=false</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="修改默认用户名和密码">8. 修改默认用户名和密码</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Boot 默认配置了Basic认证相关的参数：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>security.user.name=manager     # 设置用户的用户名
+...</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="登录认证">6. 登录认证</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>通过启动日志可以发现，Spring Security的DefaultSecurityFilterChain已经起作用了，注意这里Spring Boot自动配置默认为<code>user</code>用户生成一个随机密码：<code>9f72d51f-c42c-45bb-a041-b3bbd33b44ab</code>。</p>
+</div>
+<div class="paragraph">
+<p>我们打开浏览器，输入地址：<a href="http://localhost:8080/" class="bare">http://localhost:8080/</a>，会出现弹框要求输入用户名和密码，然后输入Username：user和Passowrd：9f72d51f-c42c-45bb-a041-b3bbd33b44ab，点击 <b class="button">Sign In</b>，最后则会看到熟悉的欢迎界面，这说明认证通过了。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/basic_auth_login_dialog.png" alt="basic auth login dialog">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="禁用basic认证">7. 禁用Basic认证</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>当Spring Security的依赖加上后，Spring Boot 会默认启用Basic 认证拦截所有浏览器请求，你可以设置为<code class="red">false</code>来禁用。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>security.basic.enabled=false</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="修改默认用户名和密码">8. 修改默认用户名和密码</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Boot 默认配置了Basic认证相关的参数：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>security.user.name=manager     # 设置用户的用户名
 security.user.password=passwd  # 设置用户的密码，如果没有设置会采用随机数
-security.user.role=USER        # 设置用户的角色</pre> 
-   </div> 
-  </div> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody>
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> 除了在配置文件中设置用户信息外，还可以通过编码方式来设置提供用户数据源。 </td> 
-     </tr> 
-    </tbody>
-   </table> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="设置安全拦截路径">9. 设置安全拦截路径</h2> 
- <div class="sectionbody"> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>security.basic.path=/api/*,/admin/*</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="编写测试代码">10. 编写测试代码</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>添加<code>spring-security-test</code>依赖：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
+security.user.role=USER        # 设置用户的角色</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+除了在配置文件中设置用户信息外，还可以通过编码方式来设置提供用户数据源。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="设置安全拦截路径">9. 设置安全拦截路径</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>security.basic.path=/api/*,/admin/*</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="编写测试代码">10. 编写测试代码</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>添加<code>spring-security-test</code>依赖：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
   &lt;artifactId&gt;spring-security-test&lt;/artifactId&gt;
   &lt;scope&gt;test&lt;/scope&gt;
-&lt;/dependency&gt;</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>为了测试Basic认证，首先要设置默认密码而不是采用随机密码。 修改<code>application.properties</code>，添加如下配置:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>security.user.password=password</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>接着编写测试用例代码：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.basicauth;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>为了测试Basic认证，首先要设置默认密码而不是采用随机密码。
+修改<code>application.properties</code>，添加如下配置:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>security.user.password=password</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>接着编写测试用例代码：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.basicauth;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
@@ -532,51 +519,47 @@ public class BasicAuthApplicationTests {
                 get("/").with(httpBasic("user", "password"))) <i class="conum" data-value="5"></i><b>(5)</b>
                         .andExpect(status().isOk());  <i class="conum" data-value="6"></i><b>(6)</b>
     }
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="colist arabic"> 
-   <div class="title">
-    代码说明如下：
-   </div> 
-   <table> 
-    <tbody>
-     <tr> 
-      <td><i class="conum" data-value="1"></i><b>1</b></td> 
-      <td>SpringRunner是在Spring 4.3版本新增的注解，是SpringJUnit4ClassRunner的别名。SpringJUnit4ClassRunner.class提供了集成JUnit 4.4的能力。</td> 
-     </tr> 
-     <tr> 
-      <td><i class="conum" data-value="2"></i><b>2</b></td> 
-      <td>Spring Boot提供了@SpringBootTest注解，该注解简化了Spring Boot应用的测试，提供了对应spring-test中@ContextConfiguration的功能，用于创建ApplicationContext。</td> 
-     </tr> 
-     <tr> 
-      <td><i class="conum" data-value="3"></i><b>3</b></td> 
-      <td>测试准备工作</td> 
-     </tr> 
-     <tr> 
-      <td><i class="conum" data-value="4"></i><b>4</b></td> 
-      <td>添加Spring Security的一些功能特性</td> 
-     </tr> 
-     <tr> 
-      <td><i class="conum" data-value="5"></i><b>5</b></td> 
-      <td>设置Basic认证需要的用户名和密码</td> 
-     </tr> 
-     <tr> 
-      <td><i class="conum" data-value="6"></i><b>6</b></td> 
-      <td>测试验证结果是符合预期，这里是响应状态码为200，表示请求成功</td> 
-     </tr> 
-    </tbody>
-   </table> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="小结">11. 小结</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Basic认证由于比较简单，在项目早期可以很快实施，但是由于在每次请求都会输入用户名和密码所以安全性并不高。</p> 
-  </div> 
- </div> 
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<div class="title">代码说明如下：</div>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>SpringRunner是在Spring 4.3版本新增的注解，是SpringJUnit4ClassRunner的别名。SpringJUnit4ClassRunner.class提供了集成JUnit 4.4的能力。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Spring Boot提供了@SpringBootTest注解，该注解简化了Spring Boot应用的测试，提供了对应spring-test中@ContextConfiguration的功能，用于创建ApplicationContext。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>测试准备工作</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>添加Spring Security的一些功能特性</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>设置Basic认证需要的用户名和密码</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>测试验证结果是符合预期，这里是响应状态码为200，表示请求成功</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="小结">11. 小结</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Basic认证由于比较简单，在项目早期可以很快实施，但是由于在每次请求都会输入用户名和密码所以安全性并不高。</p>
+</div>
+</div>
 </div></div>
             </article>
           </div>
@@ -642,7 +625,7 @@ public class BasicAuthApplicationTests {
                 </ul>
               </div>
             </div>
-            &copy; <span>2018</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
+            &copy; <span>2019</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
             <a href="../../../terms-of-use.html">Terms of Use</a>,
             <a href="../../../privacy-policy.html">Privacy</a>,
             <a href="../../../trademarks.html">Trademark Guidelines</a> and

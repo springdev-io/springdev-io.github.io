@@ -129,92 +129,84 @@
             </style>
             <article class="content--container">
               <h1 class="title">使用Spring Security实现HTTP Digest认证</h1>
-              <div class="article-body"><div id="toc" class="toc"> 
- <div id="toctitle">
-  目录
- </div> 
- <ul class="sectlevel1"> 
-  <li><a href="#创建新工程">1. 创建新工程</a></li> 
-  <li><a href="#导入刚才创建的工程">2. 导入刚才创建的工程</a></li> 
-  <li><a href="#编写欢迎页面">3. 编写欢迎页面</a></li> 
-  <li><a href="#添加maven依赖">4. 添加Maven依赖</a></li> 
-  <li><a href="#编写测试用例">5. 编写测试用例</a></li> 
-  <li><a href="#编写securityconfig类">6. 编写SecurityConfig类</a></li> 
-  <li><a href="#小结">7. 小结</a></li> 
- </ul> 
-</div> 
-<div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="quoteblock abstract"> 
-   <div class="title">
-    本章包括内容
-   </div> 
-   <blockquote>
-     这是关于Digest认证的原理说明。 
-   </blockquote> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="创建新工程">1. 创建新工程</h2> 
- <div class="sectionbody"> 
-  <div class="listingblock"> 
-   <div class="title">
-    使用Spring CLI创建一个新工程
-   </div> 
-   <div class="content"> 
-    <pre>$ spring init --name digest-auth --artifactId tut-http-digest-auth \
+              <div class="article-body"><div id="toc" class="toc">
+<div id="toctitle">目录</div>
+<ul class="sectlevel1">
+<li><a href="#创建新工程">1. 创建新工程</a></li>
+<li><a href="#导入刚才创建的工程">2. 导入刚才创建的工程</a></li>
+<li><a href="#编写欢迎页面">3. 编写欢迎页面</a></li>
+<li><a href="#添加maven依赖">4. 添加Maven依赖</a></li>
+<li><a href="#编写测试用例">5. 编写测试用例</a></li>
+<li><a href="#编写securityconfig类">6. 编写SecurityConfig类</a></li>
+<li><a href="#小结">7. 小结</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="quoteblock abstract">
+<div class="title">本章包括内容</div>
+<blockquote>
+这是关于Digest认证的原理说明。
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="创建新工程">1. 创建新工程</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">使用Spring CLI创建一个新工程</div>
+<div class="content">
+<pre>$ spring init --name digest-auth --artifactId tut-http-digest-auth \
 --groupId org.springdev.guides --package-name org.springdev.guides.digestauth \
 --language java --boot-version 1.5.13.RELEASE --type maven-project \
---dependencies web,thymeleaf,devtools --extract</pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="导入刚才创建的工程">2. 导入刚才创建的工程</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>打开STS，点击菜单<span class="menuseq"><b class="menu">File</b>&nbsp;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Import</b></span>，选择导入向导Maven下的<code>Existing Maven Projects</code>，在下一步中选择刚刚创建的工程目录，确定后导入到STS中。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>此时创建的新工程digest-auth目录结构如下:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>├── mvnw
+--dependencies web,thymeleaf,devtools --extract</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="导入刚才创建的工程">2. 导入刚才创建的工程</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>打开STS，点击菜单<span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Import</b></span>，选择导入向导Maven下的<code>Existing Maven Projects</code>，在下一步中选择刚刚创建的工程目录，确定后导入到STS中。</p>
+</div>
+<div class="paragraph">
+<p>此时创建的新工程digest-auth目录结构如下:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>├── mvnw
 ├── mvnw.cmd
 ├── pom.xml
 └── src
     ├── main
-    │&nbsp;&nbsp; ├── java
-    │&nbsp;&nbsp; │&nbsp;&nbsp; └── org
-    │&nbsp;&nbsp; │&nbsp;&nbsp;     └── springdev
-    │&nbsp;&nbsp; │&nbsp;&nbsp;         └── guides
-    │&nbsp;&nbsp; │&nbsp;&nbsp;             └── digestauth
-    │&nbsp;&nbsp; │&nbsp;&nbsp;                 └── DigestAuthApplication.java
-    │&nbsp;&nbsp; └── resources
-    │&nbsp;&nbsp;     ├── application.properties
-    │&nbsp;&nbsp;     ├── static
-    │&nbsp;&nbsp;     └── templates
+    │   ├── java
+    │   │   └── org
+    │   │       └── springdev
+    │   │           └── guides
+    │   │               └── digestauth
+    │   │                   └── DigestAuthApplication.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       └── templates
     └── test
         └── java
             └── org
                 └── springdev
                     └── guides
                         └── digestauth
-                            └── DigestAuthApplicationTests.java</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在工程根目录打开<code>pom.xml</code>，其内容如下：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    pom.xml
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                            └── DigestAuthApplicationTests.java</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在工程根目录打开<code>pom.xml</code>，其内容如下：</p>
+</div>
+<div class="listingblock">
+<div class="title">pom.xml</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
     &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
@@ -272,18 +264,16 @@
     &lt;/build&gt;
 
 
-&lt;/project&gt;</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>在Package Explorer中打开应用主程序文件：DigestAuthApplication.java，可以看到这个文件代码非常简单。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    src/main/java/org/springdev/guides/digestauth/DigestAuthApplication.java
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.digestauth;
+&lt;/project&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在Package Explorer中打开应用主程序文件：DigestAuthApplication.java，可以看到这个文件代码非常简单。</p>
+</div>
+<div class="listingblock">
+<div class="title">src/main/java/org/springdev/guides/digestauth/DigestAuthApplication.java</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.digestauth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -294,23 +284,21 @@ public class DigestAuthApplication {
     public static void main(String[] args) {
         SpringApplication.run(DigestAuthApplication.class, args);
     }
-}</code></pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="编写欢迎页面">3. 编写欢迎页面</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>接下来我们开始编写欢迎页面。在src/main/resources/templates中新增一个index.html，内容如下：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    src/main/resources/templates/index.html
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-html" data-lang="html">&lt;!DOCTYPE html&gt;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="编写欢迎页面">3. 编写欢迎页面</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>接下来我们开始编写欢迎页面。在src/main/resources/templates中新增一个index.html，内容如下：</p>
+</div>
+<div class="listingblock">
+<div class="title">src/main/resources/templates/index.html</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-html" data-lang="html">&lt;!DOCTYPE html&gt;
 &lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"&gt;
     &lt;head&gt;
         &lt;title&gt;Digest Authentication Example&lt;/title&gt;
@@ -319,18 +307,16 @@ public class DigestAuthApplication {
         &lt;h1&gt;Welcome!&lt;/h1&gt;
 
     &lt;/body&gt;
-&lt;/html&gt;</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>接下来编写<code>MvcConfig.java</code>类，设置首页视图。</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    src/main/java/org/springdev/guides/digestauth/MvcConfig.java
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.digestauth;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>接下来编写<code>MvcConfig.java</code>类，设置首页视图。</p>
+</div>
+<div class="listingblock">
+<div class="title">src/main/java/org/springdev/guides/digestauth/MvcConfig.java</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.digestauth;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -343,26 +329,24 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/").setViewName("index");
     }
 
-}</code></pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="添加maven依赖">4. 添加Maven依赖</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Boot提供了针对集成Spring Security 的<code>spring-boot-starter-security</code>和<code>spring-security-test</code>，在项目依赖增加中。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>具体如下在pom.xml 中增加下列依赖：</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    pom.xml
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="添加maven依赖">4. 添加Maven依赖</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Boot提供了针对集成Spring Security 的<code>spring-boot-starter-security</code>和<code>spring-security-test</code>，在项目依赖增加中。</p>
+</div>
+<div class="paragraph">
+<p>具体如下在pom.xml 中增加下列依赖：</p>
+</div>
+<div class="listingblock">
+<div class="title">pom.xml</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
     &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;  <i class="conum" data-value="1"></i><b>(1)</b>
 &lt;/dependency&gt;
@@ -370,20 +354,18 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
   &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
   &lt;artifactId&gt;spring-security-test&lt;/artifactId&gt;  <i class="conum" data-value="2"></i><b>(2)</b>
   &lt;scope&gt;test&lt;/scope&gt;
-&lt;/dependency&gt;</code></pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="编写测试用例">5. 编写测试用例</h2> 
- <div class="sectionbody"> 
-  <div class="listingblock"> 
-   <div class="title">
-    src/main/java/org/springdev/guides/digest/MvcConfig.java
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.digestauth;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="编写测试用例">5. 编写测试用例</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">src/main/java/org/springdev/guides/digest/MvcConfig.java</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.digestauth;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.digest;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
@@ -428,37 +410,33 @@ public class DigestAuthApplicationTests {
 			.andExpect(status().isOk());  <i class="conum" data-value="6"></i><b>(6)</b>
 	}
 
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="colist arabic"> 
-   <table> 
-    <tbody>
-     <tr> 
-      <td><i class="conum" data-value="1"></i><b>1</b></td> 
-      <td>代码说明</td> 
-     </tr> 
-     <tr> 
-      <td><i class="conum" data-value="2"></i><b>2</b></td> 
-      <td>代码说明</td> 
-     </tr> 
-    </tbody>
-   </table> 
-  </div> 
-  <div class="paragraph"> 
-   <p>运行测试，查看测试是否通过。</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="编写securityconfig类">6. 编写SecurityConfig类</h2> 
- <div class="sectionbody"> 
-  <div class="listingblock"> 
-   <div class="title">
-    src/main/java/org/springdev/guides/digest/SecurityConfig.java
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.digestauth;
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>代码说明</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>代码说明</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>运行测试，查看测试是否通过。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="编写securityconfig类">6. 编写SecurityConfig类</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">src/main/java/org/springdev/guides/digest/SecurityConfig.java</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.digestauth;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -506,32 +484,30 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {  <i class="co
     public void configure(HttpSecurity http) throws Exception {
     	http.addFilterBefore(digestAuthenticationFilter(), BasicAuthenticationFilter.class);  <i class="conum" data-value="8"></i><b>(8)</b>
     }
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="colist arabic"> 
-   <table> 
-    <tbody>
-     <tr> 
-      <td><i class="conum" data-value="1"></i><b>1</b></td> 
-      <td>代码说明</td> 
-     </tr> 
-     <tr> 
-      <td><i class="conum" data-value="2"></i><b>2</b></td> 
-      <td>代码说明</td> 
-     </tr> 
-    </tbody>
-   </table> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="小结">7. 小结</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Digest认证作为Basic认证的替代方案。</p> 
-  </div> 
- </div> 
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>代码说明</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>代码说明</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="小结">7. 小结</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Digest认证作为Basic认证的替代方案。</p>
+</div>
+</div>
 </div></div>
             </article>
           </div>
@@ -597,7 +573,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {  <i class="co
                 </ul>
               </div>
             </div>
-            &copy; <span>2018</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
+            &copy; <span>2019</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
             <a href="../../../terms-of-use.html">Terms of Use</a>,
             <a href="../../../privacy-policy.html">Privacy</a>,
             <a href="../../../trademarks.html">Trademark Guidelines</a> and
