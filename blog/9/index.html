@@ -321,13 +321,13 @@
                 <section class='blog--post'>
                     <div class="mobile-only">Spring Session 新发布的Bean有什么新特性？项目中如何选择合适的版本？</div>
                     <div class="desktop-only"><div class="sect1"> 
- <h2 id="spring_session_bean_版本的新特性">Spring Session <code>Bean</code> 版本的新特性</h2> 
+ <h2 id="_spring_session_bean_版本的新特性">Spring Session <code>Bean</code> 版本的新特性</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Spring Session BOM <code>Bean GA</code> 现已发布，这是基于Spring Session 2.1的第一个版本，可以很容易地与新发布的Spring Boot 2.1一起使用。</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="same_site_cookie支持与httpsession集成">Same-Site Cookie支持与HttpSession集成</h3> 
+   <h3 id="_same_site_cookie支持与httpsession集成">Same-Site Cookie支持与HttpSession集成</h3> 
    <div class="paragraph"> 
     <p>Same-Site Cookie是另一种<a href="https://scotthelme.co.uk/csrf-is-dead/">帮助开发人员防止跨站点请求伪造</a>的机制。我们的<code>DefaultCookieSerializer</code>已得到增强，支持将<code>SameSite</code>属性添加到Spring Session生成的会话cookie中。 默认情况下，<code>SameSite</code>属性启用，值为<code>Lax</code>，可使用<code>DefaultCookieSerializer#setSameSite</code>自定义。</p> 
    </div> 
@@ -336,13 +336,13 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="httpsessionbindinglistener的支持"><code>HttpSessionBindingListener</code>的支持</h3> 
+   <h3 id="_httpsessionbindinglistener的支持"><code>HttpSessionBindingListener</code>的支持</h3> 
    <div class="paragraph"> 
     <p>Spring Session现在支持<code>HttpSessionBindingListener</code>，并且会在此API的实现上正确调用回调。这也意味着现在可以在会话作用域上使用<code>@PreDestroy</code>，因为该功能是使用Spring Framework的<code>DestructionCallbackBindingListener</code>实现的，这是<code>HttpSessionBindingListener</code>的具体实现。</p> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="支持与redis_websession集成可自定义序列化实现">支持与Redis WebSession集成可自定义序列化实现</h3> 
+   <h3 id="_支持与redis_websession集成可自定义序列化实现">支持与Redis WebSession集成可自定义序列化实现</h3> 
    <div class="paragraph"> 
     <p>我们的Redis WebSession集成现在可以轻松配置为使用自定义序列化机制。以类似于Redis <code>HttpSession</code>集成的方式，可以通过提供名为<code>springSessionDefaultRedisSerializer</code>的类型为<code>RedisSerializer&lt;Object&gt;</code>的<code>@Bean</code>来实现：</p> 
    </div> 
@@ -361,7 +361,7 @@ static class SessionConfig {
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="jdbc_httpsession集成的性能得到改进">JDBC <code>HttpSession</code>集成的性能得到改进</h3> 
+   <h3 id="_jdbc_httpsession集成的性能得到改进">JDBC <code>HttpSession</code>集成的性能得到改进</h3> 
    <div class="paragraph"> 
     <p>我们为JDBC <code>HttpSession</code>集成做了一些性能改进：</p> 
    </div> 
@@ -373,13 +373,13 @@ static class SessionConfig {
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="支持_java_11">支持 Java 11</h3> 
+   <h3 id="_支持_java_11">支持 Java 11</h3> 
    <div class="paragraph"> 
     <p>Spring Session现在支持最近发布的Java 11，而所需的版本当然还保留在Java 8。我们的CI构建已得到增强，因此该项目现在可以针对Java 11进行持续验证。</p> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="第三方依赖升级">第三方依赖升级</h3> 
+   <h3 id="_第三方依赖升级">第三方依赖升级</h3> 
    <div class="paragraph"> 
     <p>Spring Session 2.1基于以下最新和最高版本的关键依赖项：</p> 
    </div> 

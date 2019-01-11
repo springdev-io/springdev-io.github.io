@@ -132,17 +132,17 @@
               <div class="article-body"><div id="toc" class="toc">
 <div id="toctitle">目录</div>
 <ul class="sectlevel1">
-<li><a href="#创建新工程">1. 创建新工程</a></li>
-<li><a href="#导入刚才创建的工程">2. 导入刚才创建的工程</a></li>
-<li><a href="#编写欢迎页面">3. 编写欢迎页面</a></li>
-<li><a href="#添加maven依赖">4. 添加Maven依赖</a></li>
-<li><a href="#运行应用">5. 运行应用</a></li>
-<li><a href="#登录认证">6. 登录认证</a></li>
-<li><a href="#禁用basic认证">7. 禁用Basic认证</a></li>
-<li><a href="#修改默认用户名和密码">8. 修改默认用户名和密码</a></li>
-<li><a href="#设置安全拦截路径">9. 设置安全拦截路径</a></li>
-<li><a href="#编写测试代码">10. 编写测试代码</a></li>
-<li><a href="#小结">11. 小结</a></li>
+<li><a href="#_创建新工程">1. 创建新工程</a></li>
+<li><a href="#_导入刚才创建的工程">2. 导入刚才创建的工程</a></li>
+<li><a href="#_编写欢迎页面">3. 编写欢迎页面</a></li>
+<li><a href="#_添加maven依赖">4. 添加Maven依赖</a></li>
+<li><a href="#_运行应用">5. 运行应用</a></li>
+<li><a href="#_登录认证">6. 登录认证</a></li>
+<li><a href="#_禁用basic认证">7. 禁用Basic认证</a></li>
+<li><a href="#_修改默认用户名和密码">8. 修改默认用户名和密码</a></li>
+<li><a href="#_设置安全拦截路径">9. 设置安全拦截路径</a></li>
+<li><a href="#_编写测试代码">10. 编写测试代码</a></li>
+<li><a href="#_小结">11. 小结</a></li>
 </ul>
 </div>
 <div id="preamble">
@@ -156,7 +156,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="创建新工程">1. 创建新工程</h2>
+<h2 id="_创建新工程">1. 创建新工程</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="title">使用Spring CLI创建一个新工程</div>
@@ -170,7 +170,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="导入刚才创建的工程">2. 导入刚才创建的工程</h2>
+<h2 id="_导入刚才创建的工程">2. 导入刚才创建的工程</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>打开STS，点击菜单<span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Import</b></span>，选择导入向导Maven下的<code>Existing Maven Projects</code>，在下一步中选择刚刚创建的工程目录，确定后导入到STS中。</p>
@@ -294,7 +294,7 @@ public class BasicAuthApplication {
 </div>
 </div>
 <div class="sect1">
-<h2 id="编写欢迎页面">3. 编写欢迎页面</h2>
+<h2 id="_编写欢迎页面">3. 编写欢迎页面</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>接下来我们开始编写欢迎页面。在src/main/resources/templates中新增一个index.html，内容如下：</p>
@@ -339,7 +339,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 </div>
 </div>
 <div class="sect1">
-<h2 id="添加maven依赖">4. 添加Maven依赖</h2>
+<h2 id="_添加maven依赖">4. 添加Maven依赖</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Spring Boot提供了针对集成Spring Security 的<code>spring-boot-starter-security</code>，在项目依赖中引入即可。</p>
@@ -359,7 +359,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 </div>
 </div>
 <div class="sect1">
-<h2 id="运行应用">5. 运行应用</h2>
+<h2 id="_运行应用">5. 运行应用</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>通过菜单 <span class="menuseq"><b class="menu">Run</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Run as</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Spring Boot App</b></span>，或者使用Maven命令都可以启动。</p>
@@ -385,7 +385,7 @@ Using default security password: 9f72d51f-c42c-45bb-a041-b3bbd33b44ab
 </div>
 </div>
 <div class="sect1">
-<h2 id="登录认证">6. 登录认证</h2>
+<h2 id="_登录认证">6. 登录认证</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>通过启动日志可以发现，Spring Security的DefaultSecurityFilterChain已经起作用了，注意这里Spring Boot自动配置默认为<code>user</code>用户生成一个随机密码：<code>9f72d51f-c42c-45bb-a041-b3bbd33b44ab</code>。</p>
@@ -401,7 +401,7 @@ Using default security password: 9f72d51f-c42c-45bb-a041-b3bbd33b44ab
 </div>
 </div>
 <div class="sect1">
-<h2 id="禁用basic认证">7. 禁用Basic认证</h2>
+<h2 id="_禁用basic认证">7. 禁用Basic认证</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>当Spring Security的依赖加上后，Spring Boot 会默认启用Basic 认证拦截所有浏览器请求，你可以设置为<code class="red">false</code>来禁用。</p>
@@ -414,7 +414,7 @@ Using default security password: 9f72d51f-c42c-45bb-a041-b3bbd33b44ab
 </div>
 </div>
 <div class="sect1">
-<h2 id="修改默认用户名和密码">8. 修改默认用户名和密码</h2>
+<h2 id="_修改默认用户名和密码">8. 修改默认用户名和密码</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Spring Boot 默认配置了Basic认证相关的参数：</p>
@@ -441,7 +441,7 @@ security.user.role=USER        # 设置用户的角色</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="设置安全拦截路径">9. 设置安全拦截路径</h2>
+<h2 id="_设置安全拦截路径">9. 设置安全拦截路径</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
@@ -451,7 +451,7 @@ security.user.role=USER        # 设置用户的角色</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="编写测试代码">10. 编写测试代码</h2>
+<h2 id="_编写测试代码">10. 编写测试代码</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>添加<code>spring-security-test</code>依赖：</p>
@@ -554,7 +554,7 @@ public class BasicAuthApplicationTests {
 </div>
 </div>
 <div class="sect1">
-<h2 id="小结">11. 小结</h2>
+<h2 id="_小结">11. 小结</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Basic认证由于比较简单，在项目早期可以很快实施，但是由于在每次请求都会输入用户名和密码所以安全性并不高。</p>

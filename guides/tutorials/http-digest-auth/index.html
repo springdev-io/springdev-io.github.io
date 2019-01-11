@@ -132,13 +132,13 @@
               <div class="article-body"><div id="toc" class="toc">
 <div id="toctitle">目录</div>
 <ul class="sectlevel1">
-<li><a href="#创建新工程">1. 创建新工程</a></li>
-<li><a href="#导入刚才创建的工程">2. 导入刚才创建的工程</a></li>
-<li><a href="#编写欢迎页面">3. 编写欢迎页面</a></li>
-<li><a href="#添加maven依赖">4. 添加Maven依赖</a></li>
-<li><a href="#编写测试用例">5. 编写测试用例</a></li>
-<li><a href="#编写securityconfig类">6. 编写SecurityConfig类</a></li>
-<li><a href="#小结">7. 小结</a></li>
+<li><a href="#_创建新工程">1. 创建新工程</a></li>
+<li><a href="#_导入刚才创建的工程">2. 导入刚才创建的工程</a></li>
+<li><a href="#_编写欢迎页面">3. 编写欢迎页面</a></li>
+<li><a href="#_添加maven依赖">4. 添加Maven依赖</a></li>
+<li><a href="#_编写测试用例">5. 编写测试用例</a></li>
+<li><a href="#_编写securityconfig类">6. 编写SecurityConfig类</a></li>
+<li><a href="#_小结">7. 小结</a></li>
 </ul>
 </div>
 <div id="preamble">
@@ -152,7 +152,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="创建新工程">1. 创建新工程</h2>
+<h2 id="_创建新工程">1. 创建新工程</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="title">使用Spring CLI创建一个新工程</div>
@@ -166,7 +166,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="导入刚才创建的工程">2. 导入刚才创建的工程</h2>
+<h2 id="_导入刚才创建的工程">2. 导入刚才创建的工程</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>打开STS，点击菜单<span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Import</b></span>，选择导入向导Maven下的<code>Existing Maven Projects</code>，在下一步中选择刚刚创建的工程目录，确定后导入到STS中。</p>
@@ -290,7 +290,7 @@ public class DigestAuthApplication {
 </div>
 </div>
 <div class="sect1">
-<h2 id="编写欢迎页面">3. 编写欢迎页面</h2>
+<h2 id="_编写欢迎页面">3. 编写欢迎页面</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>接下来我们开始编写欢迎页面。在src/main/resources/templates中新增一个index.html，内容如下：</p>
@@ -335,7 +335,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 </div>
 </div>
 <div class="sect1">
-<h2 id="添加maven依赖">4. 添加Maven依赖</h2>
+<h2 id="_添加maven依赖">4. 添加Maven依赖</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Spring Boot提供了针对集成Spring Security 的<code>spring-boot-starter-security</code>和<code>spring-security-test</code>，在项目依赖增加中。</p>
@@ -360,7 +360,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 </div>
 </div>
 <div class="sect1">
-<h2 id="编写测试用例">5. 编写测试用例</h2>
+<h2 id="_编写测试用例">5. 编写测试用例</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="title">src/main/java/org/springdev/guides/digest/MvcConfig.java</div>
@@ -431,7 +431,7 @@ public class DigestAuthApplicationTests {
 </div>
 </div>
 <div class="sect1">
-<h2 id="编写securityconfig类">6. 编写SecurityConfig类</h2>
+<h2 id="_编写securityconfig类">6. 编写SecurityConfig类</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="title">src/main/java/org/springdev/guides/digest/SecurityConfig.java</div>
@@ -502,7 +502,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {  <i class="co
 </div>
 </div>
 <div class="sect1">
-<h2 id="小结">7. 小结</h2>
+<h2 id="_小结">7. 小结</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Digest认证作为Basic认证的替代方案。</p>
