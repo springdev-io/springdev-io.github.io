@@ -166,12 +166,12 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="servlet">Servlet</h2>
+<h2 id="_servlet">Servlet</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="oauth2_资源服务器resource_server">OAuth2 资源服务器（Resource Server）</h3>
+<h3 id="_oauth2_资源服务器resource_server">OAuth2 资源服务器（Resource Server）</h3>
 <div class="sect3">
-<h4 id="open_id_provider_配置">Open ID Provider 配置</h4>
+<h4 id="_open_id_provider_配置">Open ID Provider 配置</h4>
 <div class="paragraph">
 <p>现在可以通过支持Open Id Provider Configuration的任何发行方端点配置Resource Server：</p>
 </div>
@@ -185,7 +185,7 @@ JwtDecoder jwtDecoder() {
 </div>
 </div>
 <div class="sect3">
-<h4 id="声明验证claim_validation">声明验证（Claim Validation）</h4>
+<h4 id="_声明验证claim_validation">声明验证（Claim Validation）</h4>
 <div class="paragraph">
 <p>用户可以通过声明JwtDecoder bean来添加自己的验证规则以应用于Jwt：</p>
 </div>
@@ -207,7 +207,7 @@ JwtDecoder jwtDecoder() {
 </div>
 </div>
 <div class="sect3">
-<h4 id="grantedauthority_获取extraction">GrantedAuthority 获取（Extraction）</h4>
+<h4 id="_grantedauthority_获取extraction">GrantedAuthority 获取（Extraction）</h4>
 <div class="paragraph">
 <p>用户可以自定义从Jwt获取<code>GrantedAuthority</code>的方式：</p>
 </div>
@@ -232,13 +232,13 @@ JwtDecoder jwtDecoder() {
 </div>
 </div>
 <div class="sect2">
-<h3 id="oauth2客户端凭证授予oauth2_client_credentials_grant">OAuth2客户端凭证授予（OAuth2 Client Credentials Grant）</h3>
+<h3 id="_oauth2客户端凭证授予oauth2_client_credentials_grant">OAuth2客户端凭证授予（OAuth2 Client Credentials Grant）</h3>
 <div class="paragraph">
 <p>已添加<a href="https://github.com/spring-projects/spring-security/issues/4982" class="external" target="_blank" rel="noopener">对客户端凭证授予类型</a>的基本支持。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="feature_policy_安全头">Feature-Policy 安全头</h3>
+<h3 id="_feature_policy_安全头">Feature-Policy 安全头</h3>
 <div class="paragraph">
 <p>基本支持<a href="https://developers.google.com/web/updates/2018/06/feature-policy" class="external" target="_blank" rel="noopener">Feature-Policy</a>：</p>
 </div>
@@ -253,30 +253,30 @@ JwtDecoder jwtDecoder() {
 </div>
 </div>
 <div class="sect1">
-<h2 id="webflux">WebFlux</h2>
+<h2 id="_webflux">WebFlux</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="oauth2_资源服务器">OAuth2 资源服务器</h3>
+<h3 id="_oauth2_资源服务器">OAuth2 资源服务器</h3>
 <div class="paragraph">
 <p>基本支持基于响应式实现的OAuth2 资源服务器（OAuth2 Resource Servers）。查看示例：<a href="https://github.com/spring-projects/spring-security/tree/5.1.0.RC1/samples/boot/oauth2resourceserver-webflux" class="external" target="_blank" rel="noopener">oauth2resourceserver-webflux</a>。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="oauth2_loginclient">OAuth2 Login/Client</h3>
+<h3 id="_oauth2_loginclient">OAuth2 Login/Client</h3>
 <div class="sect3">
-<h4 id="授权码模式authorization_code_grant">授权码模式（Authorization Code Grant）</h4>
+<h4 id="_授权码模式authorization_code_grant">授权码模式（Authorization Code Grant）</h4>
 <div class="paragraph">
 <p>基本支持基于响应式实现的授权码模式。查看示例：<a href="https://github.com/spring-projects/spring-security/tree/5.1.0.RC1/samples/boot/authcodegrant-webflux" class="external" target="_blank" rel="noopener">authcodegrant-webflux</a>。</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="授权请求解析器authorization_request_resolver">授权请求解析器（Authorization Request Resolver）</h4>
+<h4 id="_授权请求解析器authorization_request_resolver">授权请求解析器（Authorization Request Resolver）</h4>
 <div class="paragraph">
 <p>支持对授权服务器进行身份验证请求的自定义。例如，如果授权服务器需要发送自定义参数，那么使用<a href="https://github.com/spring-projects/spring-security/blob/master/oauth2/oauth2-client/src/main/java/org/springframework/security/oauth2/client/web/server/ServerOAuth2AuthorizationRequestResolver.java" class="external" target="_blank" rel="noopener"><code>ServerOAuth2AuthorizationRequestResolver</code></a>可以很方便处理。它在多租户场景中也很有用，其中请求的元素（如主机名）可能会更改对授权服务器的请求的方式。</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="授权客户端存储库authorized_client_repository">授权客户端存储库（Authorized Client Repository）</h4>
+<h4 id="_授权客户端存储库authorized_client_repository">授权客户端存储库（Authorized Client Repository）</h4>
 <div class="paragraph">
 <p>已添加支持在请求之间自定义授权客户端的持久化实现：</p>
 </div>
@@ -291,9 +291,9 @@ JwtDecoder jwtDecoder() {
 </div>
 </div>
 <div class="sect2">
-<h3 id="应用程序安全加固hardening_your_application">应用程序安全加固（Hardening Your Application）</h3>
+<h3 id="_应用程序安全加固hardening_your_application">应用程序安全加固（Hardening Your Application）</h3>
 <div class="sect3">
-<h4 id="安全头secure_headers">安全头（Secure Headers）</h4>
+<h4 id="_安全头secure_headers">安全头（Secure Headers）</h4>
 <div class="paragraph">
 <p>WebFlux已添加对以下安全标头的支持：</p>
 </div>
@@ -312,7 +312,7 @@ JwtDecoder jwtDecoder() {
 </div>
 </div>
 <div class="sect3">
-<h4 id="跨域资源共享cors">跨域资源共享（CORS）</h4>
+<h4 id="_跨域资源共享cors">跨域资源共享（CORS）</h4>
 <div class="paragraph">
 <p>Webflux已添加对CORS的支持。</p>
 </div>
@@ -321,7 +321,7 @@ JwtDecoder jwtDecoder() {
 </div>
 </div>
 <div class="sect1">
-<h2 id="依赖升级dependency_updates">依赖升级（Dependency Updates）</h2>
+<h2 id="_依赖升级dependency_updates">依赖升级（Dependency Updates）</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>一些依赖升级到最新版本：</p>
@@ -398,6 +398,11 @@ JwtDecoder jwtDecoder() {
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-credhub-2-0-0-released.html" title="Spring CredHub 2.0.0.RELEASE 发布">Spring CredHub ...</a>
+            <span class="pull-right">2019-01-10</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
             <a href="../../../blog/2019/01/spring-data-lovelace-sr4-kay-sr13-and-ingalls-sr18-released.html" title="Spring Data Lovelace SR4、Kay SR13和Ingalls SR18 同时发布">Spring Data Lov...</a>
             <span class="pull-right">2019-01-10</span>
           </li>
@@ -416,11 +421,7 @@ JwtDecoder jwtDecoder() {
             <a href="../../../blog/2019/01/this-week-in-spring-january-4th-2019.html" title="Spring一周回顾（2019年1月4日）">Spring一周回顾（2019...</a>
             <span class="pull-right">2019-01-04</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news"></div>
-            <a href="../../../blog/2019/01/spring-community-hello-2019.html" title="Spring 技术社区，2019 新年快乐！">Spring 技术社区，201...</a>
-            <span class="pull-right">2019-01-01</span>
-          </li>
+          
           
           
           

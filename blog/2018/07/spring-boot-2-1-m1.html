@@ -191,52 +191,52 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="从spring_boot_2_0升级">从Spring Boot 2.0升级</h2>
+<h2 id="_从spring_boot_2_0升级">从Spring Boot 2.0升级</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="弃用的类">弃用的类</h3>
+<h3 id="_弃用的类">弃用的类</h3>
 <div class="paragraph">
 <p>在此版本中已删除了Spring Boot 2.0中不推荐使用的类，方法和属性。请确保在升级之前不要调用已弃用的方法。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="bean覆盖">Bean覆盖</h3>
+<h3 id="_bean覆盖">Bean覆盖</h3>
 <div class="paragraph">
 <p>默认情况下禁用Bean覆盖以防止意外覆盖bean。如果依赖于覆盖，则需要将<code>spring.main.allow-bean-definition-overriding</code>设置为<code>true</code>。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="info和health默认不安全">info和health默认不安全</h3>
+<h3 id="_info和health默认不安全">info和health默认不安全</h3>
 <div class="paragraph">
 <p>如果<code>spring-security</code>在没有任何安全配置的类路径上，则<code>/info</code>和<code>/health</code>将会被公开以保持一致性。如果类路径上有<code>spring-security</code>且未提供任何安全配置，则需要明确保护它们。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="json_simple">Json Simple</h3>
+<h3 id="_json_simple">Json Simple</h3>
 <div class="paragraph">
 <p>不再提供json-simple的依赖关系管理，并且已删除使用它的JsonParser实现。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="jersey_1">Jersey 1</h3>
+<h3 id="_jersey_1">Jersey 1</h3>
 <div class="paragraph">
 <p>不再支持Jersey 1。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="spring_provides">spring.provides</h3>
+<h3 id="_spring_provides">spring.provides</h3>
 <div class="paragraph">
 <p>Starter可以声明<code>META-INF/spring.provides</code>，以便IDE可以找出它提供的依赖关系。扫描Starter POM以获得它声明的直接依赖性应该足以指示。如果你负责第三方启动器并声明此文件，则可以将其删除。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="servlet路径">Servlet路径</h3>
+<h3 id="_servlet路径">Servlet路径</h3>
 <div class="paragraph">
 <p><code>server.servlet.path</code>属性已改为<code>spring.mvc.servlet.path</code>。如果你以编程方式依赖该属性来获取<code>DispatcherServlet</code>的路径，请改为使用<code>DispatcherServletPath</code>。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="maven插件">Maven插件</h3>
+<h3 id="_maven插件">Maven插件</h3>
 <div class="paragraph">
 <p>finalName属性不再可自定义以与标准Maven插件的行为保持一致。</p>
 </div>
@@ -244,10 +244,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="值得关注的一些新内容">值得关注的一些新内容</h2>
+<h2 id="_值得关注的一些新内容">值得关注的一些新内容</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="第三方库升级">第三方库升级</h3>
+<h3 id="_第三方库升级">第三方库升级</h3>
 <div class="paragraph">
 <p>Spring Boot 2.1构建于Spring Framework 5.1之上并需要它。</p>
 </div>
@@ -272,7 +272,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="profile表达式">Profile表达式</h3>
+<h3 id="_profile表达式">Profile表达式</h3>
 <div class="paragraph">
 <p>Profile匹配已得到改进，以支持表达式格式。例如，<code>product &amp;(us-east | eu-central)</code> 表示生产配置文件处于活动状态且<code>us-east</code>或<code>eu-central</code>配置文件处于活动状态时匹配。</p>
 </div>
@@ -292,21 +292,21 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="actuator">Actuator</h3>
+<h3 id="_actuator">Actuator</h3>
 <div class="sect3">
-<h4 id="缓存端点">缓存端点</h4>
+<h4 id="_缓存端点">缓存端点</h4>
 <div class="paragraph">
 <p>新的<code>/actuator/caches</code>端点列出可用的CacheManager实例及其各自的缓存基本元数据。有关更多详细信息，请参阅API。</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="spring_integration图形化端点">Spring Integration图形化端点</h4>
+<h4 id="_spring_integration图形化端点">Spring Integration图形化端点</h4>
 <div class="paragraph">
 <p>如果你使用的是Spring Integration，则可以在<code>/actuator/integrationgraph</code>中采用图形化的方式来展示所有Spring Integration组件。有关更多详细信息，请参阅API。</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="健康端点">健康端点</h4>
+<h4 id="_健康端点">健康端点</h4>
 <div class="paragraph">
 <p>现在，<code>HealthIndicatorRegistry</code>bean可用于在运行时添加和删除<code>HealthIndicator</code>。如有必要，还会改进运行状况端点以查询特定指示符。 例如<code>/actuator/health/db</code>仅执行“db”<code>HealthIndicator</code>。有关更多详细信息，请参阅API。</p>
 </div>
@@ -315,7 +315,7 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="micrometer">Micrometer</h4>
+<h4 id="_micrometer">Micrometer</h4>
 <div class="paragraph">
 <p>常用标记可以声明方式应用于所有计量表，如以下示例所示：</p>
 </div>
@@ -342,7 +342,7 @@ management.metrics.tags.stack=prod</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="安全">安全</h3>
+<h3 id="_安全">安全</h3>
 <div class="paragraph">
 <p>添加了对WebFlux OAuth2登录的支持。</p>
 </div>
@@ -351,31 +351,31 @@ management.metrics.tags.stack=prod</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="elasticsearch_rest客户端">Elasticsearch REST客户端</h3>
+<h3 id="_elasticsearch_rest客户端">Elasticsearch REST客户端</h3>
 <div class="paragraph">
 <p>作为Jest的替代选项，<code>RestClient</code>和<code>RestHighLevelClient</code>的自动配置提供了命名空间为<code>spring.elasticsearch.rest.*</code>的可配置选项。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="jms_connectionfactory缓存">JMS <code>ConnectionFactory</code>缓存</h3>
+<h3 id="_jms_connectionfactory缓存">JMS <code>ConnectionFactory</code>缓存</h3>
 <div class="paragraph">
 <p>默认情况下，使用<code>CachingConnectionFactory</code>缓存自动配置的<code>ConnectionFactory</code>，直到启用pool选项或将<code>spring.jms.cache.enabled</code>设置为<code>false</code>。 Pooling选项也已扩展到Artemis（请参阅<code>spring.jms.artemis.pool.*</code>）。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="quartz">Quartz</h3>
+<h3 id="_quartz">Quartz</h3>
 <div class="paragraph">
 <p><code>spring.quartz</code>命名空间增加了多个配置项。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="junit_5">JUnit 5</h3>
+<h3 id="_junit_5">JUnit 5</h3>
 <div class="paragraph">
 <p>所有<code>@&#8230;&#8203;</code>测试注释都使用<code>@ExtendedWith(SpringExtension.class)</code>进行元注释，因此如果你使用的是JUnit，则可以删除此设置的冗余部分。Spring Boot使用的<code>maven-surefire-plugin</code>版本，不需要任何自定义设置就能使用JUnit 5。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="maven插件_2">Maven插件</h3>
+<h3 id="_maven插件_2">Maven插件</h3>
 <div class="paragraph">
 <p>通过使用<a href="http://docs.spring.io/spring-boot/docs/2.1.0.M1/maven-plugin/examples/run-system-properties.html" class="external" target="_blank" rel="noopener">系统属性</a>和<a href="http://docs.spring.io/spring-boot/docs/2.1.0.M1/maven-plugin/examples/run-env-variables.html" class="external" target="_blank" rel="noopener">环境变量</a>的专用选项，改进了指定参数。</p>
 </div>
@@ -384,7 +384,7 @@ management.metrics.tags.stack=prod</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="其他">其他</h3>
+<h3 id="_其他">其他</h3>
 <div class="paragraph">
 <p>除了上面列出的变化之外，还有许多小的调整和改进，包括：</p>
 </div>
@@ -475,6 +475,11 @@ management.metrics.tags.stack=prod</pre>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-credhub-2-0-0-released.html" title="Spring CredHub 2.0.0.RELEASE 发布">Spring CredHub ...</a>
+            <span class="pull-right">2019-01-10</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
             <a href="../../../blog/2019/01/spring-data-lovelace-sr4-kay-sr13-and-ingalls-sr18-released.html" title="Spring Data Lovelace SR4、Kay SR13和Ingalls SR18 同时发布">Spring Data Lov...</a>
             <span class="pull-right">2019-01-10</span>
           </li>
@@ -493,11 +498,7 @@ management.metrics.tags.stack=prod</pre>
             <a href="../../../blog/2019/01/this-week-in-spring-january-4th-2019.html" title="Spring一周回顾（2019年1月4日）">Spring一周回顾（2019...</a>
             <span class="pull-right">2019-01-04</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news"></div>
-            <a href="../../../blog/2019/01/spring-community-hello-2019.html" title="Spring 技术社区，2019 新年快乐！">Spring 技术社区，201...</a>
-            <span class="pull-right">2019-01-01</span>
-          </li>
+          
           
           
           

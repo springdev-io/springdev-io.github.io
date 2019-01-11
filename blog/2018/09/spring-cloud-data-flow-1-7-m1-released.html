@@ -191,7 +191,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="改进_ui">改进 UI</h2>
+<h2 id="_改进_ui">改进 UI</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>UI具有全新的外观。导航已从标签换成了左侧导航系统。这为使用Flo设计师创建流提供了更多的屏幕空间，通过最小化左侧导航可以获得更多的屏幕空间。有一种快速搜索功能，可以搜索所有不同的数据流（Data Flow）类别。添加了其他颜色和整体主题更改，使UI看起来更生动。更深入的核心，路由管理得到了改进，我们使用BrowserStack / SauceLabs增加了端到端的测试覆盖率。</p>
@@ -204,7 +204,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="流应用程序dsl">流应用程序DSL</h2>
+<h2 id="_流应用程序dsl">流应用程序DSL</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>并非所有用例都可以通过线性管道（pipeline）来解决，其中数据从源到处理器流到接收器，并且每个应用程序连接一个目的地。某些用例需要一组具有多个输入和输出的应用程序。Spring Cloud Stream通过使用用户定义的绑定接口支持此拓扑，但数据流不支持此拓扑。在Kafka Streams应用程序中有多个输入和输出也很常见。</p>
@@ -240,7 +240,7 @@ app.coldDrinkDeliveryApp.spring.cloud.stream.bindings.input.destination=coldDrin
 </div>
 </div>
 <div class="sect1">
-<h2 id="审计跟踪audit_trail">审计跟踪（Audit trail）</h2>
+<h2 id="_审计跟踪audit_trail">审计跟踪（Audit trail）</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>为了帮助回答“谁做了什么，何时做什么？”的问题。引入了审计跟踪来存储涉及应用程序注册、计划、流和任务的操作。对于应用程序和计划，将审核创建和删除操作。对于流，将审核创建、删除、部署、取消部署、更新和回滚。对于任务，审计创建，启动和破坏。审计信息在UI中可用于查询。访问shell中的审计信息也将提供。</p>
@@ -253,7 +253,7 @@ app.coldDrinkDeliveryApp.spring.cloud.stream.bindings.input.destination=coldDrin
 </div>
 </div>
 <div class="sect1">
-<h2 id="并发任务启动限制">并发任务启动限制</h2>
+<h2 id="_并发任务启动限制">并发任务启动限制</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Spring Cloud Data Flow允许您强制执行最大数量的并发运行任务，以防止计算资源饱和。可以通过设置<code>spring.cloud.dataflow.task.maximum-concurrent-tasks</code>属性来配置此限制。默认值为<code>20</code>。您还可以通过REST端点<code>/tasks/executions/current</code>检索当前正在执行的任务数。新的<code>tasklauncher-dataflow</code>应用程序利用此功能仅在并发任务数低于最大值时才启动任务。该功能也是正在开发的新FTP摄取示例应用程序的核心。</p>
@@ -261,7 +261,7 @@ app.coldDrinkDeliveryApp.spring.cloud.stream.bindings.input.destination=coldDrin
 </div>
 </div>
 <div class="sect1">
-<h2 id="流和任务校验">流和任务校验</h2>
+<h2 id="_流和任务校验">流和任务校验</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>新的shell命令<code>stream validate</code>和<code>task validate</code>将验证流或任务应用程序资源是否有效且可访问。这可以避免在部署时获得异常。使用UI进行验证即将发布。</p>
@@ -269,7 +269,7 @@ app.coldDrinkDeliveryApp.spring.cloud.stream.bindings.input.destination=coldDrin
 </div>
 </div>
 <div class="sect1">
-<h2 id="强制升级流应用">强制升级流应用</h2>
+<h2 id="_强制升级流应用">强制升级流应用</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>强制升级！升级流应用时，您现在可以使用选项<code>--force</code>来部署当前部署的应用程序的新实例，即使没有更改应用程序或部署属性也是如此。在启动时由应用程序本身获取配置信息（例如从Spring Cloud Config Server获取）时，需要此行为。您可以使用选项<code>--app-names</code>指定要强制升级的应用程序。如果未指定任何应用程序名称，则将强制升级所有应用程序。您还可以将<code>--force</code>和<code>--app-names</code>选项与<code>--properties</code>或<code>--propertiesFile</code>选项一起指定。</p>
@@ -277,7 +277,7 @@ app.coldDrinkDeliveryApp.spring.cloud.stream.bindings.input.destination=coldDrin
 </div>
 </div>
 <div class="sect1">
-<h2 id="保持联系">保持联系</h2>
+<h2 id="_保持联系">保持联系</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>与往常一样，我们欢迎反馈和贡献，请通过<a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow" class="external" target="_blank" rel="noopener">Stackoverflow</a>或<a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues" class="external" target="_blank" rel="noopener">GitHub</a>或通过<a href="https://gitter.im/spring-cloud/spring-cloud-dataflow" class="external" target="_blank" rel="noopener">Gitter</a>与我们联系。</p>
@@ -342,6 +342,11 @@ app.coldDrinkDeliveryApp.spring.cloud.stream.bindings.input.destination=coldDrin
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-credhub-2-0-0-released.html" title="Spring CredHub 2.0.0.RELEASE 发布">Spring CredHub ...</a>
+            <span class="pull-right">2019-01-10</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
             <a href="../../../blog/2019/01/spring-data-lovelace-sr4-kay-sr13-and-ingalls-sr18-released.html" title="Spring Data Lovelace SR4、Kay SR13和Ingalls SR18 同时发布">Spring Data Lov...</a>
             <span class="pull-right">2019-01-10</span>
           </li>
@@ -360,11 +365,7 @@ app.coldDrinkDeliveryApp.spring.cloud.stream.bindings.input.destination=coldDrin
             <a href="../../../blog/2019/01/this-week-in-spring-january-4th-2019.html" title="Spring一周回顾（2019年1月4日）">Spring一周回顾（2019...</a>
             <span class="pull-right">2019-01-04</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news"></div>
-            <a href="../../../blog/2019/01/spring-community-hello-2019.html" title="Spring 技术社区，2019 新年快乐！">Spring 技术社区，201...</a>
-            <span class="pull-right">2019-01-01</span>
-          </li>
+          
           
           
           

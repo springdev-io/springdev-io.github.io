@@ -186,7 +186,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="java_优势与不足">Java 优势与不足</h2>
+<h2 id="_java_优势与不足">Java 优势与不足</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Java和JVM提供了一个强大的平台，可以在其上构建可提高开发人员工作效率的框架。诸如注解、反射、创建运行时代理的能力等功能是大多数Java框架工作的主要内容。</p>
@@ -266,7 +266,7 @@ class HelloController implements HelloOperations&lt;String&gt; {
 </div>
 </div>
 <div class="sect1">
-<h2 id="micronaut的解决方式">Micronaut的解决方式</h2>
+<h2 id="_micronaut的解决方式">Micronaut的解决方式</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>那么Micronaut如何处理这种情况呢？</p>
@@ -275,7 +275,7 @@ class HelloController implements HelloOperations&lt;String&gt; {
 <p>Micronaut不是在运行时对您的类执行所有这些分析，而是使用预先编译（AOT）在编译时计算所有内容。</p>
 </div>
 <div class="sect2">
-<h3 id="通用类型信息">通用类型信息</h3>
+<h3 id="_通用类型信息">通用类型信息</h3>
 <div class="paragraph">
 <p>Bean和方法参数的所有泛型类型信息都是提前计算的。例如，要在AOP拦截器内的<code>helloMany</code>方法中检索List的类型参数，您只需执行以下操作：</p>
 </div>
@@ -311,7 +311,7 @@ List&lt;Argument&lt;?&gt;&gt; typeArguments =
 </div>
 </div>
 <div class="sect2">
-<h3 id="注解元数据annotation_metadata">注解元数据（ANNOTATION METADATA）</h3>
+<h3 id="_注解元数据annotation_metadata">注解元数据（ANNOTATION METADATA）</h3>
 <div class="paragraph">
 <p>常规Java API使您可以跳过箍来检索前一个示例中的注解元数据。您必须遍历类和接口层次结构，反射性地加载每个方法并可能处理可见性问题以检索包含在层次结构中的所有<code>java.lang.reflect.Method</code>实例。</p>
 </div>
@@ -334,7 +334,7 @@ if (namesArgument.getAnnotationMetadata().hasStereotype(NotEmpty.class)) {
 </div>
 </div>
 <div class="sect2">
-<h3 id="无反射的代理">无反射的代理</h3>
+<h3 id="_无反射的代理">无反射的代理</h3>
 <div class="paragraph">
 <p>最后，Micronaut还将在编译时生成一个常规类的代理，而不是通过Java的本机代理机制创建的代理，从而消除了在代理级别进行反射的需要。</p>
 </div>
@@ -420,7 +420,7 @@ public interface StubExample {
 </div>
 </div>
 <div class="sect1">
-<h2 id="总结">总结</h2>
+<h2 id="_总结">总结</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>除了非常适合微服务之外，Micronaut还是一个通用的应用程序框架，具有巨大的潜力，可以彻底改变现代Java应用程序的效率。</p>
@@ -486,6 +486,11 @@ public interface StubExample {
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-credhub-2-0-0-released.html" title="Spring CredHub 2.0.0.RELEASE 发布">Spring CredHub ...</a>
+            <span class="pull-right">2019-01-10</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
             <a href="../../../blog/2019/01/spring-data-lovelace-sr4-kay-sr13-and-ingalls-sr18-released.html" title="Spring Data Lovelace SR4、Kay SR13和Ingalls SR18 同时发布">Spring Data Lov...</a>
             <span class="pull-right">2019-01-10</span>
           </li>
@@ -504,11 +509,7 @@ public interface StubExample {
             <a href="../../../blog/2019/01/this-week-in-spring-january-4th-2019.html" title="Spring一周回顾（2019年1月4日）">Spring一周回顾（2019...</a>
             <span class="pull-right">2019-01-04</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news"></div>
-            <a href="../../../blog/2019/01/spring-community-hello-2019.html" title="Spring 技术社区，2019 新年快乐！">Spring 技术社区，201...</a>
-            <span class="pull-right">2019-01-01</span>
-          </li>
+          
           
           
           

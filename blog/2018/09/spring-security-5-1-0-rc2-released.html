@@ -188,7 +188,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="简化oauth2_dsl">简化OAuth2 DSL</h2>
+<h2 id="_简化oauth2_dsl">简化OAuth2 DSL</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>在之前，Spring Security DSL有两种OAuth写法：</p>
@@ -229,7 +229,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="webclient扩展">WebClient扩展</h2>
+<h2 id="_webclient扩展">WebClient扩展</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>开发团队一直在努力使用WebClient，我们很高兴地宣布一些针对Servlet和WebFlux应用程序的新OAuth 2.0 WebClient扩展。通过这些扩展，可以轻松地在机器之间无缝地传输OAuth 2.0权限。</p>
@@ -240,12 +240,12 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="servlet改进">Servlet改进</h2>
+<h2 id="_servlet改进">Servlet改进</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="oauth2">OAuth2</h3>
+<h3 id="_oauth2">OAuth2</h3>
 <div class="sect3">
-<h4 id="token请求配置token_request_configuration">Token请求配置（Token Request Configuration）</h4>
+<h4 id="_token请求配置token_request_configuration">Token请求配置（Token Request Configuration）</h4>
 <div class="paragraph">
 <p>OAuth 2.0的第一部分是规范合规性。下一个版本引入了更多支持，可以将Spring Security配置为与扩展或偏离规范的提供程序一起使用。</p>
 </div>
@@ -254,7 +254,7 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="资源服务器声明映射resource_server_claims_mapping">资源服务器声明映射（Resource Server Claims Mapping）</h4>
+<h4 id="_资源服务器声明映射resource_server_claims_mapping">资源服务器声明映射（Resource Server Claims Mapping）</h4>
 <div class="paragraph">
 <p>除此之外，Resource Server还支持<a href="https://github.com/spring-projects/spring-security/issues/5223" class="external" target="_blank" rel="noopener">自定义从传入JWT解析的声明集</a>。当应用程序需要添加或删除声明或需要以自定义方式解析声明时，这很方便：</p>
 </div>
@@ -268,7 +268,7 @@ decoder.setClaimSetConverter(
 </div>
 </div>
 <div class="sect3">
-<h4 id="提供更多提供商配置元数据more_provider_configuration_metadata_available">提供更多提供商配置元数据（More Provider Configuration Metadata Available）</h4>
+<h4 id="_提供更多提供商配置元数据more_provider_configuration_metadata_available">提供更多提供商配置元数据（More Provider Configuration Metadata Available）</h4>
 <div class="paragraph">
 <p>规范合规的过程也在继续。在此版本中，添加了对<a href="https://github.com/spring-projects/spring-security/pull/5729" class="external" target="_blank" rel="noopener">从OIDC Provider Configuration端点返回的任何元数据</a>的收集和提供的支持。</p>
 </div>
@@ -277,7 +277,7 @@ decoder.setClaimSetConverter(
 </div>
 </div>
 <div class="sect3">
-<h4 id="restoperations支持">RestOperations支持</h4>
+<h4 id="_restoperations支持">RestOperations支持</h4>
 <div class="paragraph">
 <p>此版本还支持<a href="https://github.com/spring-projects/spring-security/issues/5602" class="external" target="_blank" rel="noopener">对各种端点的HTTP请求的完全自定义</a>。</p>
 </div>
@@ -287,15 +287,15 @@ decoder.setClaimSetConverter(
 </div>
 </div>
 <div class="sect2">
-<h3 id="其他优化">其他优化</h3>
+<h3 id="_其他优化">其他优化</h3>
 <div class="sect3">
-<h4 id="x_509_principal提取">X.509 Principal提取</h4>
+<h4 id="_x_509_principal提取">X.509 Principal提取</h4>
 <div class="paragraph">
 <p>还增加了对<a href="https://github.com/spring-projects/spring-security/issues/5771" class="external" target="_blank" rel="noopener">通过策略派生X.509主体</a>的支持。</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="ldap自定义环境变量">LDAP自定义环境变量</h4>
+<h4 id="_ldap自定义环境变量">LDAP自定义环境变量</h4>
 <div class="paragraph">
 <p>添加了配置自定义环境变量的支持，以通知创建<code>LdapContext</code>。</p>
 </div>
@@ -304,10 +304,10 @@ decoder.setClaimSetConverter(
 </div>
 </div>
 <div class="sect1">
-<h2 id="webflux改进">WebFlux改进</h2>
+<h2 id="_webflux改进">WebFlux改进</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="oauth2资源服务器resource_server">OAuth2资源服务器（Resource Server）</h3>
+<h3 id="_oauth2资源服务器resource_server">OAuth2资源服务器（Resource Server）</h3>
 <div class="paragraph">
 <p>最初为基于Servlet的资源服务器发布的几个功能在WebFlux端的RC2版本中也添加进来了。对响应式特性的支持类似，但有一个很小却很重要的不同点。</p>
 </div>
@@ -329,13 +329,13 @@ decoder.setClaimSetConverter(
 </div>
 </div>
 <div class="sect2">
-<h3 id="oauth2_client">OAuth2 Client</h3>
+<h3 id="_oauth2_client">OAuth2 Client</h3>
 <div class="paragraph">
 <p>现在，<code>@RegisteredOAuth2AuthorizedClient</code>注解在WebFlux中也支持client_credentials授权模式。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="重定向跳转https">重定向跳转Https</h3>
+<h3 id="_重定向跳转https">重定向跳转Https</h3>
 <div class="paragraph">
 <p>最后但同样重要的是，<a href="https://github.com/spring-projects/spring-security/issues/5749" class="external" target="_blank" rel="noopener">https重定向支持</a>已添加到WebFlux，可通过<code>http.redirectToHttps()</code>或直接通过<code>HttpsRedirectWebFilter</code>访问。</p>
 </div>
@@ -343,7 +343,7 @@ decoder.setClaimSetConverter(
 </div>
 </div>
 <div class="sect1">
-<h2 id="依赖升级">依赖升级</h2>
+<h2 id="_依赖升级">依赖升级</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>一些依赖升级到最新版本：</p>
@@ -430,6 +430,11 @@ decoder.setClaimSetConverter(
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-credhub-2-0-0-released.html" title="Spring CredHub 2.0.0.RELEASE 发布">Spring CredHub ...</a>
+            <span class="pull-right">2019-01-10</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
             <a href="../../../blog/2019/01/spring-data-lovelace-sr4-kay-sr13-and-ingalls-sr18-released.html" title="Spring Data Lovelace SR4、Kay SR13和Ingalls SR18 同时发布">Spring Data Lov...</a>
             <span class="pull-right">2019-01-10</span>
           </li>
@@ -448,11 +453,7 @@ decoder.setClaimSetConverter(
             <a href="../../../blog/2019/01/this-week-in-spring-january-4th-2019.html" title="Spring一周回顾（2019年1月4日）">Spring一周回顾（2019...</a>
             <span class="pull-right">2019-01-04</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news"></div>
-            <a href="../../../blog/2019/01/spring-community-hello-2019.html" title="Spring 技术社区，2019 新年快乐！">Spring 技术社区，201...</a>
-            <span class="pull-right">2019-01-01</span>
-          </li>
+          
           
           
           

@@ -172,7 +172,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="使用自定义bom来维护第三方依赖">使用自定义BOM来维护第三方依赖</h2>
+<h2 id="_使用自定义bom来维护第三方依赖">使用自定义BOM来维护第三方依赖</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>这条实践是我根据实际项目中的经历总结出的。</p>
@@ -201,7 +201,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="使用自动配置">使用自动配置</h2>
+<h2 id="_使用自动配置">使用自动配置</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Spring Boot的一个主要特性是使用自动配置。这是Spring Boot的一部分，它可以简化你的代码并使之工作。当在类路径上检测到特定的<strong>jar</strong>文件时，自动配置就会被激活。</p>
@@ -240,7 +240,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="使用spring_initializr来开始一个新的spring_boot项目">使用Spring Initializr来开始一个新的Spring Boot项目</h2>
+<h2 id="_使用spring_initializr来开始一个新的spring_boot项目">使用Spring Initializr来开始一个新的Spring Boot项目</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>这一条最佳实践来自Josh Long (Spring Advocate，@starbuxman).</p>
@@ -254,7 +254,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="考虑为常见的组织问题创建自己的自动配置">考虑为常见的组织问题创建自己的自动配置</h2>
+<h2 id="_考虑为常见的组织问题创建自己的自动配置">考虑为常见的组织问题创建自己的自动配置</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>这一条也来自Josh Long（Spring Advocate，@starbuxman） - 这个实践是针对高级用户的。</p>
@@ -271,7 +271,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="正确设计代码目录结构">正确设计代码目录结构</h2>
+<h2 id="_正确设计代码目录结构">正确设计代码目录结构</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>尽管允许你有很大的自由，但是有一些基本规则值得遵守来设计你的源代码结构。</p>
@@ -292,7 +292,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="保持controller的简洁和专注">保持@Controller的简洁和专注</h2>
+<h2 id="_保持controller的简洁和专注">保持@Controller的简洁和专注</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>Controller</code>应该非常简单。你可以在此处阅读<a href="https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)#Controller" class="external" target="_blank" rel="noopener">有关GRASP中有关控制器模式部分的说明</a>。你希望控制器作为协调和委派的角色，而不是执行实际的业务逻辑。以下是主要做法：</p>
@@ -319,7 +319,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="围绕业务功能构建service">围绕业务功能构建@Service</h2>
+<h2 id="_围绕业务功能构建service">围绕业务功能构建@Service</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>Service</code>是Spring Boot的另一个核心概念。我发现最好围绕业务功能/领域/用例（无论你怎么称呼都行）来构建服务。</p>
@@ -333,7 +333,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="使数据库独立于核心业务逻辑之外">使数据库独立于核心业务逻辑之外</h2>
+<h2 id="_使数据库独立于核心业务逻辑之外">使数据库独立于核心业务逻辑之外</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>我之前还不确定如何在Spring Boot中最好地处理数据库交互。在阅读了罗伯特·C·马丁的“Clear Architecture”之后，对我来说就清晰多了。</p>
@@ -347,7 +347,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="保持业务逻辑不受spring_boot代码的影响">保持业务逻辑不受Spring Boot代码的影响</h2>
+<h2 id="_保持业务逻辑不受spring_boot代码的影响">保持业务逻辑不受Spring Boot代码的影响</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>考虑到“Clear Architecture”的教训，你还应该保护你的业务逻辑。将各种Spring Boot代码混合在一起是非常诱人的……不要这样做。如果你能抵制诱惑，你将保持你的业务逻辑可重用。</p>
@@ -358,7 +358,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="推荐使用构造函数注入">推荐使用构造函数注入</h2>
+<h2 id="_推荐使用构造函数注入">推荐使用构造函数注入</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>这一条实践来自Phil Webb（Spring Boot的项目负责人, <a href="https://twitter.com/phillip_webb" class="external" target="_blank" rel="noopener">@phillip_webb</a>）。</p>
@@ -369,7 +369,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="熟悉并发模型">熟悉并发模型</h2>
+<h2 id="_熟悉并发模型">熟悉并发模型</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>我写过的最受欢迎的文章之一是<a href="https://www.e4developer.com/2018/03/30/introduction-to-concurrency-in-spring-boot/" class="external" target="_blank" rel="noopener">“介绍Spring Boot中的并发”</a>。我认为这样做的原因是这个领域经常被误解和忽视。如果使用不当，就会出现问题。</p>
@@ -383,7 +383,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="加强配置管理的外部化">加强配置管理的外部化</h2>
+<h2 id="_加强配置管理的外部化">加强配置管理的外部化</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>这一点超出了Spring Boot，虽然这是人们开始创建多个类似服务时常见的问题……</p>
@@ -410,7 +410,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="提供全局异常处理">提供全局异常处理</h2>
+<h2 id="_提供全局异常处理">提供全局异常处理</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>你真的需要一种处理异常的一致方法。Spring Boot提供了两种主要方法：</p>
@@ -431,7 +431,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="使用日志框架">使用日志框架</h2>
+<h2 id="_使用日志框架">使用日志框架</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>你可能已经意识到这一点，但你应该使用<code>Logger</code>进行日志记录，而不是使用<code>System.out.println()</code>手动执行。这很容易在Spring Boot中完成，几乎没有配置。只需获取该类的记录器实例：</p>
@@ -447,7 +447,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="测试你的代码">测试你的代码</h2>
+<h2 id="_测试你的代码">测试你的代码</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>这不是Spring Boot特有的，但它需要提醒——测试你的代码！如果你没有编写测试，那么你将从一开始就编写遗留代码。</p>
@@ -461,7 +461,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="使用测试切片让测试更容易并且更专注">使用测试切片让测试更容易，并且更专注</h2>
+<h2 id="_使用测试切片让测试更容易并且更专注">使用测试切片让测试更容易，并且更专注</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>这一条实践来自Madhura Bhave（Spring 开发者, <a href="https://twitter.com/madhurabhave23" class="external" target="_blank" rel="noopener">@madhurabhave23</a>）。</p>
@@ -475,7 +475,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="总结">总结</h2>
+<h2 id="_总结">总结</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>感谢Spring Boot，编写基于Spring的微服务变得前所未有的简单。我希望通过这些最佳实践，你的实施过程不仅会很快，而且从长远来看也会更加强大和成功。祝你好运！</p>
@@ -483,7 +483,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="感谢">感谢！</h2>
+<h2 id="_感谢">感谢！</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>我要感谢以下人员帮助我改进这篇文章：</p>
@@ -559,6 +559,11 @@
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-credhub-2-0-0-released.html" title="Spring CredHub 2.0.0.RELEASE 发布">Spring CredHub ...</a>
+            <span class="pull-right">2019-01-10</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
             <a href="../../../blog/2019/01/spring-data-lovelace-sr4-kay-sr13-and-ingalls-sr18-released.html" title="Spring Data Lovelace SR4、Kay SR13和Ingalls SR18 同时发布">Spring Data Lov...</a>
             <span class="pull-right">2019-01-10</span>
           </li>
@@ -577,11 +582,7 @@
             <a href="../../../blog/2019/01/this-week-in-spring-january-4th-2019.html" title="Spring一周回顾（2019年1月4日）">Spring一周回顾（2019...</a>
             <span class="pull-right">2019-01-04</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news"></div>
-            <a href="../../../blog/2019/01/spring-community-hello-2019.html" title="Spring 技术社区，2019 新年快乐！">Spring 技术社区，201...</a>
-            <span class="pull-right">2019-01-01</span>
-          </li>
+          
           
           
           

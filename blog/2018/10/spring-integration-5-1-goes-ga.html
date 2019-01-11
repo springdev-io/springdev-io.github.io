@@ -180,7 +180,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="boundrabbitchanneladvice">BoundRabbitChannelAdvice</h3>
+<h3 id="_boundrabbitchanneladvice">BoundRabbitChannelAdvice</h3>
 <div class="paragraph">
 <p>对于严格排序的消息，可在发布时使用<code>BoundRabbitChannelAdvice</code>作为<code>MessageHandler</code>的建议，以允许在同一个线程绑定的<code>Channel</code>中执行所有下游AMQP操作。通常与分离器（splitter）或其他能够发送多条消息的机制一起使用：</p>
 </div>
@@ -199,13 +199,13 @@ public IntegrationFlow flow(RabbitTemplate template) {
 </div>
 </div>
 <div class="sect2">
-<h3 id="响应式轮询reactive_polling">响应式轮询（Reactive Polling）</h3>
+<h3 id="_响应式轮询reactive_polling">响应式轮询（Reactive Polling）</h3>
 <div class="paragraph">
 <p>如果将<code>SourcePollingChannelAdapter</code>或<code>PollingConsumer</code>配置为<code>FluxMessageChannel</code>类型的输出通道<code>outputChannel</code>，则调度程序不会执行轮询任务，而是基于时间<code>trigger.nextExecutionTime()</code>作为后续<code>Mono.delay()</code>被<code>Flux.generate()</code>调用。因此，真正的轮询源按需执行，以满足<code>FluxMessageChannel</code>传播的下游背压（downstream back-pressure）。对于最终配置，<code>PollerMetadata</code>选项保持不变且透明。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="java_dsl_fluxtransform">Java DSL <code>fluxTransform()</code></h3>
+<h3 id="_java_dsl_fluxtransform">Java DSL <code>fluxTransform()</code></h3>
 <div class="paragraph">
 <p><code>IntegrationFlowDefinition</code>现在提供了新的<code>fluxTransform()</code>运算符，该运算符接受一个<code>Function</code>，用于响应式的转换输入消息的<code>Flux</code>。<code>fluxTransform()</code>的实现完全基于Reactor的<code>Flux.transform()</code>运算符，如果函数不处理已经存在的消息，则将请求标头复制到回复消息。调用内部包含输入和输出<code>FluxMessageChannel</code>实例：</p>
 </div>
@@ -231,7 +231,7 @@ public IntegrationFlow flow(RabbitTemplate template) {
 </div>
 </div>
 <div class="sect2">
-<h3 id="java_function_改进">Java Function 改进</h3>
+<h3 id="_java_function_改进">Java Function 改进</h3>
 <div class="paragraph">
 <p><code>java.util.function</code>接口现在充当消息传递端点的一等公民。<code>Function&lt;?, ?&gt;</code> 和 <code>Consumer&lt;?&gt;</code>可以在<code>@ServiceActivator</code>或<code>@Transformer</code>定义中直接使用，例如：</p>
 </div>
@@ -283,31 +283,31 @@ fun kotlinSupplier(): () -&gt; String {
 </div>
 </div>
 <div class="sect2">
-<h3 id="micrometer">Micrometer</h3>
+<h3 id="_micrometer">Micrometer</h3>
 <div class="paragraph">
 <p>随着升级到Micrometer 1.1版本，框架现在可以自动从<code>MeterRegistry</code>中删除已注册的meters。当我们开发动态<code>IntegrationFlow</code>并在运行时注册和删除它们时，这变得非常方便。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="jmx_mbeans可删除">JMX MBeans可删除</h3>
+<h3 id="_jmx_mbeans可删除">JMX MBeans可删除</h3>
 <div class="paragraph">
 <p>现在MBean可在运行时（例如通过动态<code>IntegrationFlow</code>）被注册，而当它们的bean在运行时被销毁时，也会自动从JMX服务器注册中被删除。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="http动态映射dynamic_mapping">HTTP动态映射（Dynamic Mapping）</h3>
+<h3 id="_http动态映射dynamic_mapping">HTTP动态映射（Dynamic Mapping）</h3>
 <div class="paragraph">
 <p>HTTP（和WebFlux）入站端点如果是在运行时声明（例如通过动态<code>IntegrationFlow</code>），那么在<code>HandlerMapping</code>中将会自动注册它们的请求映射，同时在它们的bean被销毁时也会自动被删除。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="支持spring_social_twitter">支持Spring Social Twitter</h3>
+<h3 id="_支持spring_social_twitter">支持Spring Social Twitter</h3>
 <div class="paragraph">
 <p>由于Spring Social项目即将<a href="https://spring.io/blog/2018/07/03/spring-social-end-of-life-announcement" class="external" target="_blank" rel="noopener">End of Life</a>，我们已经将<code>spring-integration-twitter</code>模块移动到<a href="https://github.com/spring-projects/spring-integration-extensions" class="external" target="_blank" rel="noopener">Spring Integration Extensions</a>下的独立项目，并刚刚发布了一个<code>org.springframework.integration:spring-integration-social-twitter:1.0.0.RELEASE</code>，它也是完全基于Spring Integration <code>5.1</code>。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="小结">小结</h3>
+<h3 id="_小结">小结</h3>
 <div class="paragraph">
 <p>有关更多变更的内容，请参阅参考手册的<a href="https://docs.spring.io/spring-integration/docs/5.1.0.RELEASE/reference/html/whats-new.html" class="external" target="_blank" rel="noopener">“新增内容”</a>一章。另请参阅<a href="https://github.com/spring-projects/spring-integration/wiki/Spring-Integration-5.0-to-5.1-Migration-Guide" class="external" target="_blank" rel="noopener">迁移指南</a>以了解此版本中的更改以及如何处理它们。</p>
 </div>
@@ -375,6 +375,11 @@ fun kotlinSupplier(): () -&gt; String {
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-credhub-2-0-0-released.html" title="Spring CredHub 2.0.0.RELEASE 发布">Spring CredHub ...</a>
+            <span class="pull-right">2019-01-10</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
             <a href="../../../blog/2019/01/spring-data-lovelace-sr4-kay-sr13-and-ingalls-sr18-released.html" title="Spring Data Lovelace SR4、Kay SR13和Ingalls SR18 同时发布">Spring Data Lov...</a>
             <span class="pull-right">2019-01-10</span>
           </li>
@@ -393,11 +398,7 @@ fun kotlinSupplier(): () -&gt; String {
             <a href="../../../blog/2019/01/this-week-in-spring-january-4th-2019.html" title="Spring一周回顾（2019年1月4日）">Spring一周回顾（2019...</a>
             <span class="pull-right">2019-01-04</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news"></div>
-            <a href="../../../blog/2019/01/spring-community-hello-2019.html" title="Spring 技术社区，2019 新年快乐！">Spring 技术社区，201...</a>
-            <span class="pull-right">2019-01-01</span>
-          </li>
+          
           
           
           

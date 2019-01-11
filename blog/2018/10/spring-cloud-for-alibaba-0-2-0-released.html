@@ -186,25 +186,25 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="阿里巴巴开源组件">阿里巴巴开源组件</h2>
+<h2 id="_阿里巴巴开源组件">阿里巴巴开源组件</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>其中阿里巴巴开源组件的命名前缀为 <code>spring-cloud-alibaba</code>，提供了如下特性：</p>
 </div>
 <div class="sect2">
-<h3 id="服务发现service_discovery">服务发现（Service Discovery）</h3>
+<h3 id="_服务发现service_discovery">服务发现（Service Discovery）</h3>
 <div class="paragraph">
 <p><code>spring-cloud-alibaba-nacos-discovery-starter</code> 实现了 spring cloud common 中定义的 registry 相关规范接口 <code>NacosAutoServiceRegistration</code> ，<code>NacosServiceRegistry</code> 和 <code>NacosDiscoveryClient</code> 等，引入依赖并添加一些简单的配置即可将你的服务注册到 Nacos Server 中，并且支持与 Ribbon 的集成。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="配置管理configuration_management">配置管理（Configuration Management）</h3>
+<h3 id="_配置管理configuration_management">配置管理（Configuration Management）</h3>
 <div class="paragraph">
 <p><code>spring-cloud-alibaba-nacos-config-starter</code> 中 <code>NacosPropertySourceLocator`实现了 `PropertySoureLocator</code> 接口，引入依赖并添加一些简单的配置即可从 Nacos Server 中获取应用配置并设置在 Spring 的 Environment 中。而且无需依赖其他组件即可支持配置的实时推送和推送状态查询。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="高可用防护">高可用防护</h3>
+<h3 id="_高可用防护">高可用防护</h3>
 <div class="paragraph">
 <p><code>spring-cloud-alibaba-sentinel-starter</code> 默认集成了 Servlet、RestTemplate、Dubbo、RocketMQ 的限流(Flow Control)降级(Circuit Breaking and Concurrency)，只需要引入依赖即可完成限流降级的集成动作。并支持在应用运行状态下通过 Sentinel 控制台来实时修改限流降级的策略和阈值。</p>
 </div>
@@ -212,25 +212,25 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="阿里云产品组件">阿里云产品组件</h2>
+<h2 id="_阿里云产品组件">阿里云产品组件</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>阿里云的产品组件的命名前缀为 <code>spring-cloud-alicloud</code> ，提供了如下特性：</p>
 </div>
 <div class="sect2">
-<h3 id="服务发现服务application_naming_service">服务发现服务（Application Naming Service）</h3>
+<h3 id="_服务发现服务application_naming_service">服务发现服务（Application Naming Service）</h3>
 <div class="paragraph">
 <p>阿里云提供的服务发现服务 ANS，除了服务发现的基本功能外，提供了更低成本SaaS 化服务发现服务，同时在接口的调用中加入了加密逻辑，更好地保护你的服务。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="配置管理服务application_configuration_management">配置管理服务（Application Configuration Management）</h3>
+<h3 id="_配置管理服务application_configuration_management">配置管理服务（Application Configuration Management）</h3>
 <div class="paragraph">
 <p>阿里云提供的 Nacos 配置管理服务 ACM，除了服务发现的基本功能外，提供了更低成本的 SaaS 化配置管理服务，以及更加安全的配置管理，并且还包含了完整的推送轨迹查询。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="对象存储服务object_storage_service">对象存储服务（Object Storage Service）</h3>
+<h3 id="_对象存储服务object_storage_service">对象存储服务（Object Storage Service）</h3>
 <div class="paragraph">
 <p>阿里云提供的海量、安全、低成本、高可靠的云存储服务 OSS。支持在任何应用、任何时间、任何地点存储和访问任意类型的数据。 只需要自动注入一个 OSS Client，即可直接使用存储与下载功能。</p>
 </div>
@@ -238,7 +238,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="如何使用how_to_use">如何使用（How to Use）</h2>
+<h2 id="_如何使用how_to_use">如何使用（How to Use）</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>这些组件在 <a href="https://repo.spring.io/release/" class="external" target="_blank" rel="noopener">Spring release</a> 仓库中，可以通过如下 BOM 来使用：</p>
@@ -261,7 +261,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="后续计划what_next">后续计划（What Next?）</h2>
+<h2 id="_后续计划what_next">后续计划（What Next?）</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>RocketMQ</strong> Apache RocketMQ™ 是基于Java的高性能、高吞吐量的分布式消息和流计算平台。<code>spring-cloud-stream-binder-rocket</code> 模块基于 <a href="https://spring.io/projects/spring-integration">Spring Integration</a>和<a href="https://cloud.spring.io/spring-cloud-stream/" class="external" target="_blank" rel="noopener">Spring Cloud Stream</a>. 使得开发者在使用 Spring Cloud Stream 和 Spring Cloud Bus 时候可以选择使用 RocketMQ 作为消息中间件。</p>
@@ -328,6 +328,11 @@
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-credhub-2-0-0-released.html" title="Spring CredHub 2.0.0.RELEASE 发布">Spring CredHub ...</a>
+            <span class="pull-right">2019-01-10</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
             <a href="../../../blog/2019/01/spring-data-lovelace-sr4-kay-sr13-and-ingalls-sr18-released.html" title="Spring Data Lovelace SR4、Kay SR13和Ingalls SR18 同时发布">Spring Data Lov...</a>
             <span class="pull-right">2019-01-10</span>
           </li>
@@ -346,11 +351,7 @@
             <a href="../../../blog/2019/01/this-week-in-spring-january-4th-2019.html" title="Spring一周回顾（2019年1月4日）">Spring一周回顾（2019...</a>
             <span class="pull-right">2019-01-04</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news"></div>
-            <a href="../../../blog/2019/01/spring-community-hello-2019.html" title="Spring 技术社区，2019 新年快乐！">Spring 技术社区，201...</a>
-            <span class="pull-right">2019-01-01</span>
-          </li>
+          
           
           
           

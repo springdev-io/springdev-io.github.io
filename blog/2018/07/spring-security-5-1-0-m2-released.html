@@ -169,22 +169,22 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="oauth2">OAuth2</h2>
+<h2 id="_oauth2">OAuth2</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="oauth2资源服务器oauth2_resource_server">OAuth2资源服务器（OAuth2 Resource Server）</h3>
+<h3 id="_oauth2资源服务器oauth2_resource_server">OAuth2资源服务器（OAuth2 Resource Server）</h3>
 <div class="paragraph">
 <p>添加了对OAuth2资源服务器的基本支持。 参见示例：<a href="https://github.com/spring-projects/spring-security/tree/5.1.0.M2/samples/boot/oauth2resourceserver" class="external" target="_blank" rel="noopener">oauth2resourceserver</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="authorization_code_flow">Authorization Code Flow</h3>
+<h3 id="_authorization_code_flow">Authorization Code Flow</h3>
 <div class="paragraph">
 <p>用户现在可以使用OAuth 2.0授权代码授予获取访问令牌。参见示例： <a href="https://github.com/spring-projects/spring-security/tree/5.1.0.M2/samples/boot/authcodegrant" class="external" target="_blank" rel="noopener">authcodegrant</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="支持oauth2和webclient">支持OAuth2和WebClient</h3>
+<h3 id="_支持oauth2和webclient">支持OAuth2和WebClient</h3>
 <div class="paragraph">
 <p>现在内置了对OAuth2和WebClient的支持。具体如下：</p>
 </div>
@@ -264,14 +264,14 @@ Mono&lt;String&gt; users(@RegisteredOAuth2AuthorizedClient("client-id")
 </div>
 </div>
 <div class="sect2">
-<h3 id="webflux_oauth2登录支持oidc">WebFlux OAuth2登录支持OIDC</h3>
+<h3 id="_webflux_oauth2登录支持oidc">WebFlux OAuth2登录支持OIDC</h3>
 <div class="paragraph">
 <p>WebFlux应用程序现在可以使用OAuth2和OIDC进行身份验证。
 参见示例： <a href="https://github.com/spring-projects/spring-security/tree/master/samples/boot/oauth2login-webflux" class="external" target="_blank" rel="noopener">oauth2login-webflux</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="能够从oidc_discovery创建clientregistration">能够从OIDC Discovery创建ClientRegistration</h3>
+<h3 id="_能够从oidc_discovery创建clientregistration">能够从OIDC Discovery创建ClientRegistration</h3>
 <div class="paragraph">
 <p>之前，用户希望与OIDC提供程序集成需要配置所有端点。例如，在Spring Boot中需要这样做：</p>
 </div>
@@ -314,13 +314,13 @@ Mono&lt;String&gt; users(@RegisteredOAuth2AuthorizedClient("client-id")
 </div>
 </div>
 <div class="sect2">
-<h3 id="支持自定义授权请求">支持自定义授权请求</h3>
+<h3 id="_支持自定义授权请求">支持自定义授权请求</h3>
 <div class="paragraph">
 <p>添加了<code>OAuth2AuthorizationRequestResolver</code>用于支持自定义授权请求。 例如，如果用户想要从请求中添加/删除范围，他们现在可以轻松地执行此操作。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="单个clientregistration将会重定向到登录">单个ClientRegistration将会重定向到登录</h3>
+<h3 id="_单个clientregistration将会重定向到登录">单个ClientRegistration将会重定向到登录</h3>
 <div class="paragraph">
 <p>使用单个提供程序配置OAuth2/OIDC登录时，不是仅显示一个提供程序，而是更改默认值以立即重定向到提供程序。</p>
 </div>
@@ -328,22 +328,22 @@ Mono&lt;String&gt; users(@RegisteredOAuth2AuthorizedClient("client-id")
 </div>
 </div>
 <div class="sect1">
-<h2 id="配置改进">配置改进</h2>
+<h2 id="_配置改进">配置改进</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="现代化默认登录页面">现代化默认登录页面</h3>
+<h3 id="_现代化默认登录页面">现代化默认登录页面</h3>
 <div class="paragraph">
 <p>默认登录页面已经采用html5编写，看起来更具视觉吸引力。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="默认注销页面default_log_out_page">默认注销页面(Default Log Out Page)</h3>
+<h3 id="_默认注销页面default_log_out_page">默认注销页面(Default Log Out Page)</h3>
 <div class="paragraph">
 <p>由于添加了CSRF注销保护，因此默认应用程序无法注销。 现在，如果正在使用默认登录页面（即没有配置登录页面），那么还有一个默认的注销页面，它显示了一个注销表单。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="简化requestcache配置">简化RequestCache配置</h3>
+<h3 id="_简化requestcache配置">简化RequestCache配置</h3>
 <div class="paragraph">
 <p>用户现在可以配置默认的RequestCache，将其暴露为<code>@ Bean</code>。 已经更新了<code>HttpSessionRequestCache</code>，不再要求该值为<code>DefaultRequestCache</code>。</p>
 </div>
@@ -351,16 +351,16 @@ Mono&lt;String&gt; users(@RegisteredOAuth2AuthorizedClient("client-id")
 </div>
 </div>
 <div class="sect1">
-<h2 id="强化你的应用程序hardening_your_application">强化你的应用程序(Hardening Your Application)</h2>
+<h2 id="_强化你的应用程序hardening_your_application">强化你的应用程序(Hardening Your Application)</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="跨站点跟踪和http动词篡改保护cross_site_tracing_http_verb_tampering_protection">跨站点跟踪和HTTP动词篡改保护（Cross Site Tracing &amp; HTTP Verb Tampering Protection）</h3>
+<h3 id="_跨站点跟踪和http动词篡改保护cross_site_tracing_http_verb_tampering_protection">跨站点跟踪和HTTP动词篡改保护（Cross Site Tracing &amp; HTTP Verb Tampering Protection）</h3>
 <div class="paragraph">
 <p>Spring Security 5.1 添加了 <a href="https://www.owasp.org/index.php/Cross_Site_Tracing" class="external" target="<em>blank">跨站点跟踪</a> 和 <a href="https://www.owasp.org/index.php/Testing_for_HTTP_Verb_Tampering</em>(OTG-INPVAL-003)" class="external" target="_blank" rel="noopener">HTTP动词篡改</a>保护.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="密码编码升级password_encoding_upgrades">密码编码升级（Password Encoding Upgrades）</h3>
+<h3 id="_密码编码升级password_encoding_upgrades">密码编码升级（Password Encoding Upgrades）</h3>
 <div class="paragraph">
 <p>用户可以实现<a href="https://docs.spring.io/spring-security/site/docs/5.1.0.M2/api/org/springframework/security/core/userdetails/UserDetailsPasswordService.html" class="external" target="_blank" rel="noopener">UserDetailsPasswordService</a> 并暴露为 <code>@Bean</code>，当认证成功后Spring Security的<code>DaoAuthenticationProvider</code>将会：</p>
 </div>
@@ -379,7 +379,7 @@ Mono&lt;String&gt; users(@RegisteredOAuth2AuthorizedClient("client-id")
 </div>
 </div>
 <div class="sect2">
-<h3 id="依赖更新">依赖更新</h3>
+<h3 id="_依赖更新">依赖更新</h3>
 <div class="paragraph">
 <p>我们已经更新了框架的依赖关系，以确保框架的传递依赖关系是最新的。</p>
 </div>
@@ -425,6 +425,11 @@ Mono&lt;String&gt; users(@RegisteredOAuth2AuthorizedClient("client-id")
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-credhub-2-0-0-released.html" title="Spring CredHub 2.0.0.RELEASE 发布">Spring CredHub ...</a>
+            <span class="pull-right">2019-01-10</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
             <a href="../../../blog/2019/01/spring-data-lovelace-sr4-kay-sr13-and-ingalls-sr18-released.html" title="Spring Data Lovelace SR4、Kay SR13和Ingalls SR18 同时发布">Spring Data Lov...</a>
             <span class="pull-right">2019-01-10</span>
           </li>
@@ -443,11 +448,7 @@ Mono&lt;String&gt; users(@RegisteredOAuth2AuthorizedClient("client-id")
             <a href="../../../blog/2019/01/this-week-in-spring-january-4th-2019.html" title="Spring一周回顾（2019年1月4日）">Spring一周回顾（2019...</a>
             <span class="pull-right">2019-01-04</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news"></div>
-            <a href="../../../blog/2019/01/spring-community-hello-2019.html" title="Spring 技术社区，2019 新年快乐！">Spring 技术社区，201...</a>
-            <span class="pull-right">2019-01-01</span>
-          </li>
+          
           
           
           
