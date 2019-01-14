@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html data-goto-top data-nav-menu data-mobile-support data-clipboard-buttons data-code-sidebar data-switch-sidebar data-code-prettify data-hide-show-guide data-sts-import>
+
+  <head>
+  <meta charset="utf-8"/>
+  <title>教程 &middot; Spring Boot: 编写一个 Hello World 应用（Kotlin &amp;amp; Gradle） - Spring技术社区</title>
+  <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="description" content="Spring Dev Site"/>
+  <meta name="author" content="rainboyan.com"/>
+  <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
+  <meta property="og:title" content="Spring Guides" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:description" content="these guides are designed to get you productive as quickly as
+    possible and using the latest Spring project releases and techniques as recommended by the Spring team" />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/css/blog.css" />
+  <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+  <link rel="stylesheet" type="text/css" href="/css/gsguide.css">
+  <script src="/jspm_packages/system.js"></script>
+  <script>
+    System.config({baseURL: "/"});
+  </script>
+  <script src="/config.js"></script>
+  <script>
+      System.import('app/main.js')
+  </script>
+</head><body>
+  <div class="viewport">
+    <header class="navbar header--navbar desktop-only">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <div class="spring-logo--container">
+            <a class="spring-logo" href="/"><span></span></a>
+          </div>
+          <ul class="nav pull-right">
+            <li class="navbar-link">
+              <a href="/projects/" >项目</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/guides/" >指南</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/blog/" >博客</a>
+            </li>
+            <li class="navbar-link nav-search js-nav-search">
+              <a>
+                <i class="icon-search navbar-search--icon js-search-input-open"></i>
+                <span class="search-input-close js-search-input-close">
+                  <i class="icon-remove"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-dropdown--container js-search-dropdown">
+        <div class="container-fluid">
+          <div class="search-form--container">
+            <form class="form-inline form-search" action="../../../search" method="get">
+              <input type="text" class="search-query search-form--form js-search-input" placeholder="Search for documentation, guides, and posts..." name="q" value="" />
+              <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div>
+    <div class="mobile-navigation--wrapper mobile-only">
+      <div class="navigation-drawer--container">
+        <div class="mobile-search--container">
+          <form class="form-inline form-search" action="../../../search" method="get">
+            <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            <input type="text" class="search-query search-form--form js-search-input" placeholder="Search..." name="q" value="" />
+          </form>
+        </div>
+        <div class="navigation-item-list">
+          <div class="navbar-link">
+            <a href="/">
+              首页
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/projects/">
+              项目
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/guides/">
+              指南
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/blog/">
+              博客
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <div class="nav-icon js-open-nav-drawer">
+          <i class="icon-reorder"></i>
+        </div>
+        <div class="header-center-icon">
+          <a href="../../../">
+            <div class="icon icon-spring-logo-mobile"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid"></div>
+    <div></div>
+    <div class="container-fluid">
+      <main class="main-body--wrapper">
+        <div class="desktop-only">
+				  <div class="switch-sidebar pull-right"><input type="checkbox" class="js-switch"/></div>
+        </div>
+        <div class="row-fluid">
+          <div class="span8 mobile-left-pane">
+            <div class="content--title desktop-only">快速上手</div>
+            <style type="text/css">
+              #toc { display: none; }
+            </style>
+            <article class="content--container">
+              <h1 class="title">Spring Boot: 编写一个 Hello World 应用（Kotlin &amp;amp; Gradle）</h1>
+              <div class="article-body"><div id="toc" class="toc">
+<div id="toctitle">目录</div>
+<ul class="sectlevel1">
+<li><a href="#introduce">1. 介绍</a></li>
+<li><a href="#tools">2. 工具准备</a></li>
+<li><a href="#implement">3. 实现步骤</a>
+<ul class="sectlevel2">
+<li><a href="#create-project">3.1. 创建项目</a></li>
+<li><a href="#import-project">3.2. 打开项目</a></li>
+<li><a href="#inside-project">3.3. 项目结构</a></li>
+<li><a href="#coding">3.4. 编写代码</a></li>
+<li><a href="#testing">3.5. 单元测试</a></li>
+</ul>
+</li>
+<li><a href="#build-and-run">4. 构建运行</a></li>
+<li><a href="#tet-and-verify">5. 测试验证</a></li>
+<li><a href="#summary">6. 小结</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>本文介绍如何使用 Spring Boot CLI 快速创建一个 Web 应用，使用 Kotlin 语言编写一个简单的 “Hello World”，使用 Gradle 构建并运行起来。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduce">1. 介绍</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>内容简介： 一个简单的 Spring Boot Web 应用示例<br>
+语言框架： Kotlin、Spring Boot、Spring MVC<br>
+难度级别： L1<br>
+阅读时间： 10 分钟</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tools">2. 工具准备</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Java SDK : 8.0+</p>
+</li>
+<li>
+<p>Kotlin : 1.2.71</p>
+</li>
+<li>
+<p>Spring Boot CLI : 2.1.2</p>
+</li>
+<li>
+<p>Gradle : 4.10.2</p>
+</li>
+<li>
+<p>IntelliJ IDEA : 2018.3.3</p>
+</li>
+<li>
+<p>Curl / HTTPPie</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="implement">3. 实现步骤</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="create-project">3.1. 创建项目</h3>
+<div class="paragraph">
+<p>首先，通过 Spring CLI 创建一个空白工程： <code>Hello World</code> 应用。</p>
+</div>
+<div class="listingblock">
+<div class="title">使用 Spring CLI 创建一个新工程</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ spring init --name hello-world --artifactId spring-boot-hello-world-kotlin \
+--groupId org.springdev.guides --package-name org.springdev.guides.helloworld \
+--language kotlin --build gradle \
+--dependencies web --extract</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="import-project">3.2. 打开项目</h3>
+<div class="paragraph">
+<p>打开 IDEA，点击菜单 <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open</b></span>，选择项目所在目录 <code>spring-boot-hello-world-kotlin</code> 下的 build.gradle，打开。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="inside-project">3.3. 项目结构</h3>
+<div class="paragraph">
+<p>此时创建的新工程的目录结构如下:</p>
+</div>
+<div class="listingblock">
+<div class="title">项目目录结构</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── settings.gradle
+└── src
+    ├── main
+    │   ├── kotlin
+    │   │   └── org
+    │   │       └── springdev
+    │   │           └── guides
+    │   │               └── helloworld
+    │   │                   └── HelloWorldApplication.kt
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       └── templates
+    └── test
+        └── kotlin
+            └── org
+                └── springdev
+                    └── guides
+                        └── helloworld
+                            └── HelloWorldApplicationTests.kt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在工程根目录打开 <code>build.gradle</code>，其内容如下：</p>
+</div>
+<div class="listingblock">
+<div class="title">build.gradle</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">buildscript {
+  ext {
+    kotlinVersion = '1.2.71'  <i class="conum" data-value="1"></i><b>(1)</b>
+    springBootVersion = '2.1.2.RELEASE'  <i class="conum" data-value="2"></i><b>(2)</b>
+  }
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+    classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+  }
+}
+
+apply plugin: 'kotlin'  <i class="conum" data-value="3"></i><b>(3)</b>
+apply plugin: 'kotlin-spring'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'org.springdev.guides'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {  <i class="conum" data-value="4"></i><b>(4)</b>
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+  implementation "org.jetbrains.kotlin:kotlin-reflect"
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+compileKotlin {  <i class="conum" data-value="5"></i><b>(5)</b>
+  kotlinOptions {
+    freeCompilerArgs = ['-Xjsr305=strict']
+    jvmTarget = '1.8'
+  }
+}
+
+compileTestKotlin {
+  kotlinOptions {
+    freeCompilerArgs = ['-Xjsr305=strict']
+    jvmTarget = '1.8'
+  }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<div class="title">代码说明如下：</div>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Kotlin 版本使用 <code>1.2.71</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Spring Boot 版本使用 <code>2.1.2.RELEASE</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>使用 Gradle 插件： <code>kotlin</code>、<code>kotlin-spring</code>、<code>org.springframework.boot</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>项目的起步依赖：<code>web</code>、<code>test</code> 以及 <code>kotlin</code> 相关的依赖包；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>编译 Kotlin 代码的设置。</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>在 Package Explorer 中打开应用主程序文件： <code>HelloWorldApplication.kt</code>，可以看到这个文件代码非常简单。</p>
+</div>
+<div class="listingblock">
+<div class="title">src/main/kotlin/org/springdev/guides/helloworld/HelloWorldApplication.kt</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-kotlin" data-lang="kotlin">package org.springdev.guides.helloworld
+
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
+
+@SpringBootApplication
+class HelloWorldApplication
+
+fun main(args: Array&lt;String&gt;) {
+  runApplication&lt;HelloWorldApplication&gt;(*args)
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="coding">3.4. 编写代码</h3>
+<div class="sect3">
+<h4 id="_编写_controller">3.4.1. 编写 Controller</h4>
+<div class="paragraph">
+<p>接下来我们开始编写 Controller。在 <code>src/main/kotlin/org/springdev/guides/helloworld/</code> 目录中新增一个 <code>HelloController.kt</code>，内容如下：</p>
+</div>
+<div class="listingblock">
+<div class="title">src/main/kotlin/org/springdev/guides/helloworld/HelloController.kt</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-kotlin" data-lang="kotlin">package org.springdev.guides.helloworld
+
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RestController
+
+@RestController  <i class="conum" data-value="1"></i><b>(1)</b>
+class HelloController {
+    @GetMapping("/hello")  <i class="conum" data-value="2"></i><b>(2)</b>
+    fun hello(): String {
+        return "Hello, World!"  <i class="conum" data-value="3"></i><b>(3)</b>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<div class="title">代码说明如下：</div>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Spring MVC 提供了 <code>@RestController</code> 注解，这是一个 REST 接口类；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>设置 Get 请求，请求地址为 <code>/hello</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>响应成功，并返回内容为：<code>Hello, World!</code>。</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="testing">3.5. 单元测试</h3>
+<div class="sect3">
+<h4 id="_编写测试用例">3.5.1. 编写测试用例</h4>
+<div class="listingblock">
+<div class="title">src/test/kotlin/org/springdev/guides/helloworld/HelloControllerTests.kt</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-kotlin" data-lang="kotlin">package org.springdev.guides.helloworld
+
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.test.context.junit4.SpringRunner
+import org.springframework.test.web.servlet.MockMvc
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers.print
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers.content
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
+
+@RunWith(SpringRunner::class)
+@WebMvcTest  <i class="conum" data-value="1"></i><b>(1)</b>
+class HelloControllerTests {
+  @Autowired
+  lateinit private var mockMvc: MockMvc
+
+  @Test
+  fun hello() {
+    this.mockMvc.perform(get("/hello"))  <i class="conum" data-value="2"></i><b>(2)</b>
+        .andDo(print())
+        .andExpect(status().isOk())  <i class="conum" data-value="3"></i><b>(3)</b>
+        .andExpect(content().string("Hello, World!"))  <i class="conum" data-value="4"></i><b>(4)</b>
+  }
+
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<div class="title">代码说明如下：</div>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Spring Boot 提供了 <code>@WebMvcTest</code> 注解，该注解自动会注入 <code>MockMvc</code>，它提供了强大的测试 MVC controller，而不需要启动 HTTP 服务器；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>调用 <code>MockMvc</code> 实例模拟执行请求 <code>/hello</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>验证响应状态码为 <code>200</code>，表示成功；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>验证返回内容为：<code>Hello, World!</code>。</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_执行单元测试">3.5.2. 执行单元测试</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ ./gradlew test
+$ open build/reports/tests/test/index.html</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="build-and-run">4. 构建运行</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在控制台下执行命令:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ ./gradlew bootRun</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">控制台运行日志</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">&gt; Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.2.RELEASE)
+
+2019-01-14 21:02:17.296  INFO 73302 --- [           main] o.s.g.h.HelloWorldApplicationKt          : Starting HelloWorldApplicationKt on Michaels-MBP.lan with PID 73302 (/Users/rain/Development/springdev/guides/spring/spring-boot-hello-world-kotlin/complete/build/classes/kotlin/main started by rain in /Users/rain/Development/springdev/guides/spring/spring-boot-hello-world-kotlin/complete)
+2019-01-14 21:02:17.299  INFO 73302 --- [           main] o.s.g.h.HelloWorldApplicationKt          : No active profile set, falling back to default profiles: default
+2019-01-14 21:02:18.511  INFO 73302 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-14 21:02:18.547  INFO 73302 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-14 21:02:18.548  INFO 73302 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2019-01-14 21:02:18.557  INFO 73302 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/rain/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-14 21:02:18.646  INFO 73302 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-14 21:02:18.647  INFO 73302 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1289 ms
+2019-01-14 21:02:18.934  INFO 73302 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-14 21:02:19.129  INFO 73302 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-14 21:02:19.133  INFO 73302 --- [           main] o.s.g.h.HelloWorldApplicationKt          : Started HelloWorldApplicationKt in 2.237 seconds (JVM running for 2.619)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tet-and-verify">5. 测试验证</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>打开浏览器，访问地址： <a href="http://localhost:8080/hello" class="external" target="_blank" rel="noopener">http://localhost:8080/hello</a> 会看到下图所示的界面：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/hello_world_page.png" alt="hello world page">
+</div>
+</div>
+<div class="paragraph">
+<p>或者，通过 curl 来验证：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ curl -v http://localhost:8080/hello
+*   Trying ::1...
+* TCP_NODELAY set
+* Connected to localhost (::1) port 8080 (#0)
+&gt; GET /hello HTTP/1.1
+&gt; Host: localhost:8080
+&gt; User-Agent: curl/7.54.0
+&gt; Accept: */*
+&gt;
+&lt; HTTP/1.1 200
+&lt; Content-Type: text/plain;charset=UTF-8
+&lt; Content-Length: 13
+&lt; Date: Mon, 14 Jan 2019 13:03:50 GMT
+&lt;
+* Connection #0 to host localhost left intact
+Hello, World!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>或者，通过 HTTPie 验证：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ http :8080/hello
+HTTP/1.1 200
+Content-Length: 13
+Content-Type: text/plain;charset=UTF-8
+Date: Mon, 14 Jan 2019 13:03:55 GMT
+
+Hello, World!</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary">6. 小结</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>好的，你已经学会了使用 Spring Boot CLI 创建一个 Web 应用，用 Kotlin 语言编写一个 Hello World 程序。</p>
+</div>
+</div>
+</div></div>
+            </article>
+          </div>
+          <aside id='sidebar' class="span4 content-right-pane--container mobile-right-pane">
+            <div class="right-pane-widget--container desktop-only">
+              <div class="github-actions https">
+                <h2>Get the Code</h2>
+                <div class="btn-group">
+                  <button class="btn" data-protocol="https">HTTPS</button>
+                  <button class="btn" data-protocol="ssh">SSH</button>
+                  <button class="btn" data-protocol="subversion">Subversion</button>
+                </div>
+                <div class="clone-url https">
+                  <input type="text" id="clone-url-https" value="https://github.com/springdev-guides/spring-boot-hello-world-kotlin.git" readonly="readonly"/>
+                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="https://github.com/springdev-guides/spring-boot-hello-world-kotlin.git"></button>
+                </div>
+                <div class="clone-url ssh">
+                  <input type="text" id="clone-url-ssh" value="git@github.com:springdev-guides/spring-boot-hello-world-kotlin.git" readonly="readonly"/>
+                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="git@github.com:springdev-guides/spring-boot-hello-world-kotlin.git"></button>
+                </div>
+                <div class="clone-url subversion">
+                  <input type="text" id="clone-url-subversion" value="https://github.com/springdev-guides/spring-boot-hello-world-kotlin" readonly="readonly"/>
+                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="https://github.com/springdev-guides/spring-boot-hello-world-kotlin"></button>
+                </div>
+                <a class="github_download btn btn-black uppercase" href='https://github.com/springdev-guides/spring-boot-hello-world-kotlin/archive/master.zip'>代码下载</a>
+                <div class="go-to-repo--container">
+                  <a href="https://github.com/springdev-guides/spring-boot-hello-world-kotlin" target="_blank">
+                    <i class="icon-github"></i>
+                    GO TO REPO
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="right-pane-widget--container">
+              <div class="related_resources">
+                <h3><a name="projects" class="anchor" href="#projects"></a>Projects</h3>
+                  <ul>
+                    <li><a href="https://projects.springdev.io/spring-boot/" target="_blank">Spring Boot</a></li>
+                  </ul>
+              </div>
+            </div>
+              <div class="right-pane-widget--container">
+                  <div>
+                      <h3><a name='table-of-contents' class='anchor' href='#table-of-contents'></a>Table of contents</h3>
+                      <div id="guideTableOfContents">TOC Content</div>
+                  </div>
+              </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="navbar">
+              <div class="container">
+                <ul class="nav">
+                  <li><a href="../../../team.html">Team</a></li>
+                  <li><a href="../../../services.html">Services</a></li>
+                  <li><a href="../../../tools.html">Tools</a></li>
+                </ul>
+              </div>
+            </div>
+            &copy; <span>2019</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
+            <a href="../../../terms-of-use.html">Terms of Use</a>,
+            <a href="../../../privacy-policy.html">Privacy</a>,
+            <a href="../../../trademarks.html">Trademark Guidelines</a> and
+            <span id="teconsent"></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="scrim"></div>
+  </div>
+  </body>
+</html>
