@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html data-goto-top data-nav-menu data-mobile-support data-clipboard-buttons data-code-sidebar data-switch-sidebar data-code-prettify data-hide-show-guide data-sts-import>
+
+  <head>
+  <meta charset="utf-8"/>
+  <title>教程 &middot; Grails: 编写一个 Hello World 应用 - Spring技术社区</title>
+  <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="description" content="Spring Dev Site"/>
+  <meta name="author" content="rainboyan.com"/>
+  <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
+  <meta property="og:title" content="Spring Guides" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:description" content="these guides are designed to get you productive as quickly as
+    possible and using the latest Spring project releases and techniques as recommended by the Spring team" />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/css/blog.css" />
+  <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+  <link rel="stylesheet" type="text/css" href="/css/gsguide.css">
+  <script src="/jspm_packages/system.js"></script>
+  <script>
+    System.config({baseURL: "/"});
+  </script>
+  <script src="/config.js"></script>
+  <script>
+      System.import('app/main.js')
+  </script>
+</head><body>
+  <div class="viewport">
+    <header class="navbar header--navbar desktop-only">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <div class="spring-logo--container">
+            <a class="spring-logo" href="/"><span></span></a>
+          </div>
+          <ul class="nav pull-right">
+            <li class="navbar-link">
+              <a href="/projects/" >项目</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/guides/" >指南</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/blog/" >博客</a>
+            </li>
+            <li class="navbar-link nav-search js-nav-search">
+              <a>
+                <i class="icon-search navbar-search--icon js-search-input-open"></i>
+                <span class="search-input-close js-search-input-close">
+                  <i class="icon-remove"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-dropdown--container js-search-dropdown">
+        <div class="container-fluid">
+          <div class="search-form--container">
+            <form class="form-inline form-search" action="../../../search" method="get">
+              <input type="text" class="search-query search-form--form js-search-input" placeholder="Search for documentation, guides, and posts..." name="q" value="" />
+              <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div>
+    <div class="mobile-navigation--wrapper mobile-only">
+      <div class="navigation-drawer--container">
+        <div class="mobile-search--container">
+          <form class="form-inline form-search" action="../../../search" method="get">
+            <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            <input type="text" class="search-query search-form--form js-search-input" placeholder="Search..." name="q" value="" />
+          </form>
+        </div>
+        <div class="navigation-item-list">
+          <div class="navbar-link">
+            <a href="/">
+              首页
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/projects/">
+              项目
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/guides/">
+              指南
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/blog/">
+              博客
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <div class="nav-icon js-open-nav-drawer">
+          <i class="icon-reorder"></i>
+        </div>
+        <div class="header-center-icon">
+          <a href="../../../">
+            <div class="icon icon-spring-logo-mobile"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid"></div>
+    <div></div>
+    <div class="container-fluid">
+      <main class="main-body--wrapper">
+        <div class="desktop-only">
+				  <div class="switch-sidebar pull-right"><input type="checkbox" class="js-switch"/></div>
+        </div>
+        <div class="row-fluid">
+          <div class="span8 mobile-left-pane">
+            <div class="content--title desktop-only">快速上手</div>
+            <style type="text/css">
+              #toc { display: none; }
+            </style>
+            <article class="content--container">
+              <h1 class="title">Grails: 编写一个 Hello World 应用</h1>
+              <div class="article-body"><div id="toc" class="toc">
+<div id="toctitle">目录</div>
+<ul class="sectlevel1">
+<li><a href="#introduce">1. 介绍</a></li>
+<li><a href="#tools">2. 工具准备</a></li>
+<li><a href="#implement">3. 实现步骤</a>
+<ul class="sectlevel2">
+<li><a href="#create-project">3.1. 创建项目</a></li>
+<li><a href="#import-project">3.2. 打开项目</a></li>
+<li><a href="#inside-project">3.3. 项目结构</a></li>
+<li><a href="#coding">3.4. 编写代码</a></li>
+<li><a href="#testing">3.5. 单元测试</a></li>
+</ul>
+</li>
+<li><a href="#build-and-run">4. 构建运行</a></li>
+<li><a href="#tet-and-verify">5. 测试验证</a></li>
+<li><a href="#summary">6. 小结</a></li>
+<li><a href="#related-articles">7. 相关文章</a></li>
+<li><a href="#reference">8. 参考资料</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>本文介绍如何使用 Grails 快速创建一个 Web 应用，使用 Groovy 语言编写一个简单的 “Hello World”，使用 Gradle 构建并运行起来。</p>
+</div>
+<div class="paragraph">
+<p>Grails 是一个全栈式框架，基于 Spring / Spring Boot 和 Hibernate 技术之上构建，通过其核心技术如 GORM、GSP、JSON 视图、插件，借助 Groovy 动态语言和强大的 DSL 使得构建现代 Web 应用更加容易。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Grails 从 3.0 开始基于 Spring Boot 构建，因此完全可以看做是一个 Spring Boot 框架，在其基础上借助 Groovy 语言的动态语言特性和强大的 DSL 表达能力，学习起来非常容易。目前 Grails 最新版本是 3.3.9，基于 Spring Boot 版本是 1.5.18，4.0 将会升级 Spring Boot 到 2.1，而底层使用 Micronaut for Spring 重写，与 Micronaut 优势完美结合在一起。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduce">1. 介绍</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>内容简介： 一个简单的 Grails Web 应用示例<br>
+语言框架： Groovy、Grails<br>
+难度级别： L1<br>
+阅读时间： 10 分钟</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tools">2. 工具准备</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Java SDK : 8.0</p>
+</li>
+<li>
+<p>Grails : 3.3.9</p>
+</li>
+<li>
+<p>Gradle : 4.10.2</p>
+</li>
+<li>
+<p>IntelliJ IDEA : 2018.3</p>
+</li>
+<li>
+<p>Curl / HTTPie</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="implement">3. 实现步骤</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="create-project">3.1. 创建项目</h3>
+<div class="paragraph">
+<p>首先，通过 Grails CLI 创建一个空白工程： <code>Hello World</code> 应用。</p>
+</div>
+<div class="listingblock">
+<div class="title">使用 Spring CLI 创建一个新工程</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ grails create-app org.springdev.guides.helloworld \
+--profile rest-api --inplace</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="import-project">3.2. 打开项目</h3>
+<div class="paragraph">
+<p>打开 IDEA，点击菜单 <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open</b></span>，选择项目所在目录 <code>grails-hello-world</code> 下的 build.gradle，打开。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="inside-project">3.3. 项目结构</h3>
+<div class="paragraph">
+<p>此时创建的新工程的目录结构如下:</p>
+</div>
+<div class="listingblock">
+<div class="title">项目目录结构</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+├── grails-app
+│   ├── conf
+│   │   ├── application.yml
+│   │   ├── logback.groovy
+│   │   └── spring
+│   │       └── resources.groovy
+│   ├── controllers
+│   │   └── org
+│   │       └── springdev
+│   │           └── guides
+│   │               ├── ApplicationController.groovy
+│   │               └── UrlMappings.groovy
+│   ├── domain
+│   ├── i18n
+│   │   ├── messages.properties
+│   │   ├── messages_cs.properties
+│   │   ├── messages_da.properties
+│   │   ├── messages_de.properties
+│   │   ├── messages_es.properties
+│   │   ├── messages_fr.properties
+│   │   ├── messages_it.properties
+│   │   ├── messages_ja.properties
+│   │   ├── messages_nb.properties
+│   │   ├── messages_nl.properties
+│   │   ├── messages_pl.properties
+│   │   ├── messages_pt_BR.properties
+│   │   ├── messages_pt_PT.properties
+│   │   ├── messages_ru.properties
+│   │   ├── messages_sk.properties
+│   │   ├── messages_sv.properties
+│   │   ├── messages_th.properties
+│   │   └── messages_zh_CN.properties
+│   ├── init
+│   │   └── org
+│   │       └── springdev
+│   │           └── guides
+│   │               ├── Application.groovy
+│   │               └── BootStrap.groovy
+│   ├── services
+│   ├── utils
+│   └── views
+│       ├── application
+│       │   └── index.gson
+│       ├── error.gson
+│       ├── errors
+│       │   └── _errors.gson
+│       ├── notFound.gson
+│       └── object
+│           └── _object.gson
+├── grails-wrapper.jar
+├── grailsw
+├── grailsw.bat
+└── src
+    ├── integration-test
+    │   ├── groovy
+    │   └── resources
+    │       └── GebConfig.groovy
+    ├── main
+    │   ├── groovy
+    │   └── webapp
+    └── test
+        └── groovy
+
+30 directories, 40 files</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在工程根目录打开 <code>build.gradle</code>，其内容如下：</p>
+</div>
+<div class="listingblock">
+<div class="title">build.gradle</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "https://repo.grails.org/grails/core" }
+    }
+    dependencies {  <i class="conum" data-value="1"></i><b>(1)</b>
+        classpath "org.grails:grails-gradle-plugin:$grailsVersion"
+        classpath "org.grails.plugins:hibernate5:${gormVersion-".RELEASE"}"
+        classpath "org.grails.plugins:views-gradle:1.2.9"
+    }
+}
+
+version "0.1"
+group "org.springdev.guides"
+
+apply plugin:"eclipse"
+apply plugin:"idea"
+apply plugin:"war"
+apply plugin:"org.grails.grails-web"  <i class="conum" data-value="2"></i><b>(2)</b>
+apply plugin:"org.grails.plugins.views-json"
+
+repositories {
+    mavenLocal()
+    maven { url "https://repo.grails.org/grails/core" }
+}
+
+dependencies {  <i class="conum" data-value="3"></i><b>(3)</b>
+    compile "org.springframework.boot:spring-boot-starter-logging"
+    compile "org.springframework.boot:spring-boot-autoconfigure"
+    compile "org.grails:grails-core"
+    compile "org.springframework.boot:spring-boot-starter-actuator"
+    compile "org.springframework.boot:spring-boot-starter-tomcat"
+    compile "org.grails:grails-plugin-url-mappings"
+    compile "org.grails:grails-plugin-rest"
+    compile "org.grails:grails-plugin-codecs"
+    compile "org.grails:grails-plugin-interceptors"
+    compile "org.grails:grails-plugin-services"
+    compile "org.grails:grails-plugin-datasource"
+    compile "org.grails:grails-plugin-databinding"
+    compile "org.grails:grails-web-boot"
+    compile "org.grails:grails-logging"
+    compile "org.grails.plugins:cache"
+    compile "org.grails.plugins:async"
+    compile "org.grails.plugins:events"
+    compile "org.grails.plugins:hibernate5"
+    compile "org.hibernate:hibernate-core:5.1.16.Final"
+    compile "org.grails.plugins:views-json"
+    compile "org.grails.plugins:views-json-templates"
+    console "org.grails:grails-console"
+    profile "org.grails.profiles:rest-api"
+    runtime "org.glassfish.web:el-impl:2.1.2-b03"
+    runtime "com.h2database:h2"
+    runtime "org.apache.tomcat:tomcat-jdbc"
+    testCompile "org.grails:grails-gorm-testing-support"
+    testCompile "org.grails:grails-datastore-rest-client"
+    testCompile "org.grails:grails-web-testing-support"
+    testCompile "org.grails.plugins:geb:1.1.2"
+    testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:2.47.1"
+    testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
+    testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+}
+
+bootRun {  <i class="conum" data-value="4"></i><b>(4)</b>
+    jvmArgs('-Dspring.output.ansi.enabled=always')
+    addResources = true
+    String springProfilesActive = 'spring.profiles.active'
+    systemProperty springProfilesActive, System.getProperty(springProfilesActive)
+}
+
+tasks.withType(Test) {
+    systemProperty "geb.env", System.getProperty('geb.env')
+    systemProperty "geb.build.reportsDir", reporting.file("geb/integrationTest")
+    systemProperty "webdriver.chrome.driver", System.getProperty('webdriver.chrome.driver')
+    systemProperty "webdriver.gecko.driver", System.getProperty('webdriver.gecko.driver')
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<div class="title">代码说明如下：</div>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Grails 版本使用 <code>3.3.9</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Grails 构建 rest-api 需要使用的插件： <code>grails-web</code>、<code>views-json</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Grails 项目的依赖，除了 Spring Boot 的一些 <code>starts</code>，还有 Grails 特有的一些依赖包： <code>grails-core</code> 和 内置的很多插件；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Grails 的启动任务设置： <code>bootRun</code>。</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>打开 Grails 应用的主程序文件： <code>Application.groovy</code>，可以看到这个代码和 Spring Boot 的非常类似。</p>
+</div>
+<div class="listingblock">
+<div class="title">grails-app/init/org/springdev/guides/Application.groovy</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">package org.springdev.guides
+
+import grails.boot.GrailsApp
+import grails.boot.config.GrailsAutoConfiguration
+
+class Application extends GrailsAutoConfiguration {
+    static void main(String[] args) {
+        GrailsApp.run(Application, args)
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="coding">3.4. 编写代码</h3>
+<div class="sect3">
+<h4 id="_编写_controller">3.4.1. 编写 Controller</h4>
+<div class="paragraph">
+<p>接下来我们开始创建一个 Controller。</p>
+</div>
+<div class="paragraph">
+<p>使用命令： <code>grails create-controller</code>，如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ grails create-controller HelloController</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>默认生成的</p>
+</div>
+<div class="listingblock">
+<div class="title">src/main/groovy/org/springdev/guides/helloworld/HelloController.groovy</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">package org.springdev.guides
+
+
+import grails.rest.*
+import grails.converters.*
+
+class HelloController {  <i class="conum" data-value="1"></i><b>(1)</b>
+  static responseFormats = ['json', 'xml']  <i class="conum" data-value="2"></i><b>(2)</b>
+
+    def index() {  <i class="conum" data-value="3"></i><b>(3)</b>
+        render "Hello, World!"
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<div class="title">代码说明如下：</div>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Grails 约定后缀包含 <code>Controller</code> 就可以，这是一个 Grails 的 REST 接口类；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>设置响应的内容格式，默认支持 <code>json</code> 和 <code>xml</code>，在这个例子中可以不需要，因为我们返回的是 <code>text/html</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>响应成功，并返回文本内容为：<code>Hello, World!</code>。</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="testing">3.5. 单元测试</h3>
+<div class="sect3">
+<h4 id="_编写测试用例">3.5.1. 编写测试用例</h4>
+<div class="paragraph">
+<p>默认在创建 Controller 的同时，脚手架已经也创建了单元测试类 <code>HelloControllerSpec.groovy</code>，这是一个 Spock 测试类。</p>
+</div>
+<div class="listingblock">
+<div class="title">src/test/groovy/org/springdev/guides/HelloControllerSpec.groovy</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">package org.springdev.guides
+
+import grails.testing.web.controllers.ControllerUnitTest
+import spock.lang.Specification
+
+class HelloControllerSpec extends Specification
+  implements ControllerUnitTest&lt;HelloController&gt; {  <i class="conum" data-value="1"></i><b>(1)</b>
+
+    def setup() {
+    }
+
+    def cleanup() {
+    }
+
+    void "Testing Hello Web API"() {  <i class="conum" data-value="2"></i><b>(2)</b>
+        when:"The default index action is invoked"
+        controller.index()  <i class="conum" data-value="3"></i><b>(3)</b>
+
+        then:"Hello World"
+        response.text == "Hello, World!"  <i class="conum" data-value="4"></i><b>(4)</b>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<div class="title">代码说明如下：</div>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>HelloControllerSpec</code> 实现了 <code>ControllerUnitTest</code>，通过利用 <code>grails-test</code> 提供的能力，编写单元测试非常简单；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>编写一个单元测试用例；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>调用 <code>HelloController.index()</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>验证返回内容为文本：<code>Hello, World!</code>。</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_执行单元测试">3.5.2. 执行单元测试</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ grails test-app -unit
+$ open build/reports/tests/test/index.html</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>报告显示测试执行成功，说明功能实现正确。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="build-and-run">4. 构建运行</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>你可以先打包成可执行的 <code>JAR</code>：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ grails package</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>或者，</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ gradle build</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>接着在控制台运行：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ java -jar build/libs/grails-hello-world-0.1.war</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>或者，直接执行命令 <code>grails run-app</code> 或者 <code>gradle bootRun</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ grails run-app</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">控制台运行日志</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">| Running application...
+Grails application running at http://localhost:8080 in environment: development</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tet-and-verify">5. 测试验证</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>打开浏览器，访问地址： <a href="http://localhost:8080/hello" class="external" target="_blank" rel="noopener">http://localhost:8080/hello</a> 会看到下图所示的界面：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/hello_world_page.png" alt="hello world page">
+</div>
+</div>
+<div class="paragraph">
+<p>或者，通过 curl 来验证：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ curl -v http://localhost:8080/hello
+*   Trying ::1...
+* TCP_NODELAY set
+* Connected to localhost (::1) port 8080 (#0)
+&gt; GET /hello HTTP/1.1
+&gt; Host: localhost:8080
+&gt; User-Agent: curl/7.54.0
+&gt; Accept: */*
+&gt;
+&lt; HTTP/1.1 200
+&lt; X-Application-Context: application:development
+&lt; Content-Type: text/html;charset=utf-8
+&lt; Transfer-Encoding: chunked
+&lt; Date: Tue, 15 Jan 2019 12:35:01 GMT
+&lt;
+* Connection #0 to host localhost left intact
+Hello, World!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>或者，通过 HTTPie 验证：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ http :8080/hello
+HTTP/1.1 200
+Content-Type: text/html;charset=utf-8
+Date: Tue, 15 Jan 2019 12:33:52 GMT
+Transfer-Encoding: chunked
+X-Application-Context: application:development
+
+Hello, World!</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary">6. 小结</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>恭喜，你已经学会了使用 Grails 创建一个 Web 应用，用 Groovy 语言编写一个 Hello World 程序，并且使用 Gradle 构建运行成功。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="related-articles">7. 相关文章</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Java &amp; Maven）</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world-groovy/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Groovy &amp; Gradle）</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world-kotlin/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Kotlin &amp; Gradle）</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world-scala/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Scala &amp; Gradle）</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reference">8. 参考资料</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://docs.grails.org/3.3.9/guide/introduction.html" class="external" target="_blank" rel="noopener">Grails Guide</a></p>
+</li>
+<li>
+<p><a href="http://groovy-lang.org/documentation.html" class="external" target="_blank" rel="noopener">Groovy Documentation</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div></div>
+            </article>
+          </div>
+          <aside id='sidebar' class="span4 content-right-pane--container mobile-right-pane">
+            <div class="right-pane-widget--container desktop-only">
+              <div class="github-actions https">
+                <h2>Get the Code</h2>
+                <div class="btn-group">
+                  <button class="btn" data-protocol="https">HTTPS</button>
+                  <button class="btn" data-protocol="ssh">SSH</button>
+                  <button class="btn" data-protocol="subversion">Subversion</button>
+                </div>
+                <div class="clone-url https">
+                  <input type="text" id="clone-url-https" value="https://github.com/springdev-guides/grails-hello-world.git" readonly="readonly"/>
+                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="https://github.com/springdev-guides/grails-hello-world.git"></button>
+                </div>
+                <div class="clone-url ssh">
+                  <input type="text" id="clone-url-ssh" value="git@github.com:springdev-guides/grails-hello-world.git" readonly="readonly"/>
+                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="git@github.com:springdev-guides/grails-hello-world.git"></button>
+                </div>
+                <div class="clone-url subversion">
+                  <input type="text" id="clone-url-subversion" value="https://github.com/springdev-guides/grails-hello-world" readonly="readonly"/>
+                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="https://github.com/springdev-guides/grails-hello-world"></button>
+                </div>
+                <a class="github_download btn btn-black uppercase" href='https://github.com/springdev-guides/grails-hello-world/archive/master.zip'>代码下载</a>
+                <div class="go-to-repo--container">
+                  <a href="https://github.com/springdev-guides/grails-hello-world" target="_blank">
+                    <i class="icon-github"></i>
+                    GO TO REPO
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="right-pane-widget--container">
+              <div class="related_resources">
+                <h3><a name="projects" class="anchor" href="#projects"></a>Projects</h3>
+                  <ul>
+                    <li><a href="https://projects.springdev.io/grails/" target="_blank">Grails</a></li>
+                  </ul>
+              </div>
+            </div>
+              <div class="right-pane-widget--container">
+                  <div>
+                      <h3><a name='table-of-contents' class='anchor' href='#table-of-contents'></a>Table of contents</h3>
+                      <div id="guideTableOfContents">TOC Content</div>
+                  </div>
+              </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="navbar">
+              <div class="container">
+                <ul class="nav">
+                  <li><a href="../../../team.html">Team</a></li>
+                  <li><a href="../../../services.html">Services</a></li>
+                  <li><a href="../../../tools.html">Tools</a></li>
+                </ul>
+              </div>
+            </div>
+            &copy; <span>2019</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
+            <a href="../../../terms-of-use.html">Terms of Use</a>,
+            <a href="../../../privacy-policy.html">Privacy</a>,
+            <a href="../../../trademarks.html">Trademark Guidelines</a> and
+            <span id="teconsent"></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="scrim"></div>
+  </div>
+  </body>
+</html>
