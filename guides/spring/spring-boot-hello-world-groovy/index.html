@@ -146,6 +146,7 @@
 <li><a href="#build-and-run">4. 构建运行</a></li>
 <li><a href="#tet-and-verify">5. 测试验证</a></li>
 <li><a href="#summary">6. 小结</a></li>
+<li><a href="#related-articles">7. 相关文章</a></li>
 </ul>
 </div>
 <div id="preamble">
@@ -184,7 +185,7 @@
 <p>IntelliJ IDEA : 2018.3</p>
 </li>
 <li>
-<p>Curl / HTTPPie</p>
+<p>Curl / HTTPie</p>
 </li>
 </ul>
 </div>
@@ -211,7 +212,7 @@
 <div class="sect2">
 <h3 id="import-project">3.2. 打开项目</h3>
 <div class="paragraph">
-<p>打开 IDEA，点击菜单 <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open</b></span>，选择项目所在目录 <code>spring-boot-hello-world-kotlin</code> 下的 build.gradle，打开。</p>
+<p>打开 IDEA，点击菜单 <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open</b></span>，选择项目所在目录 <code>spring-boot-hello-world-groovy</code> 下的 build.gradle，打开。</p>
 </div>
 </div>
 <div class="sect2">
@@ -306,7 +307,7 @@ dependencies {  <i class="conum" data-value="3"></i><b>(3)</b>
 </table>
 </div>
 <div class="paragraph">
-<p>在 Package Explorer 中打开应用主程序文件： <code>HelloWorldApplication.groovy</code>，可以看到这个文件代码非常简单。</p>
+<p>打开应用的主程序文件： <code>HelloWorldApplication.groovy</code>，可以看到这个文件代码非常简单。</p>
 </div>
 <div class="listingblock">
 <div class="title">src/main/groovy/org/springdev/guides/helloworld/HelloWorldApplication.groovy</div>
@@ -438,9 +439,12 @@ class HelloControllerTests {
 <h4 id="_执行单元测试">3.5.2. 执行单元测试</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ ./gradlew test
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ gradle test
 $ open build/reports/tests/test/index.html</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>报告显示测试执行成功，说明功能实现正确。</p>
 </div>
 </div>
 </div>
@@ -450,11 +454,27 @@ $ open build/reports/tests/test/index.html</code></pre>
 <h2 id="build-and-run">4. 构建运行</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>在控制台下执行命令:</p>
+<p>你可以先打包成可执行的 <code>JAR</code>：</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ ./gradlew bootRun</code></pre>
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ gradle build</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>接着在控制台运行：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ java -jar build/libs/spring-boot-hello-world-groovy-0.0.1-SNAPSHOT.jar</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>或者，直接执行命令 <code>gradle bootRun</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ gradle bootRun</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -539,7 +559,25 @@ Hello, World!</code></pre>
 <h2 id="summary">6. 小结</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>好的，你已经学会了使用 Spring Boot CLI 创建一个 Web 应用，用 Groovy 语言 编写一个 Hello World 程序。</p>
+<p>恭喜，你已经学会了使用 Spring Boot CLI 创建一个 Web 应用，用 Groovy 语言编写一个 Hello World 程序，并且使用 Gradle 构建运行成功。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="related-articles">7. 相关文章</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Java &amp; Maven）</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world-kotlin/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Kotlin &amp; Gradle）</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world-scala/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Scala &amp; Gradle）</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div></div>

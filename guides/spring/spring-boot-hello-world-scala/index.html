@@ -3,7 +3,7 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>教程 &middot; Spring Boot: 编写一个 Hello World 应用（Kotlin &amp;amp; Gradle） - Spring技术社区</title>
+  <title>教程 &middot; Spring Boot: 编写一个 Hello World 应用（Scala &amp;amp; Gradle） - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
@@ -128,7 +128,7 @@
               #toc { display: none; }
             </style>
             <article class="content--container">
-              <h1 class="title">Spring Boot: 编写一个 Hello World 应用（Kotlin &amp;amp; Gradle）</h1>
+              <h1 class="title">Spring Boot: 编写一个 Hello World 应用（Scala &amp;amp; Gradle）</h1>
               <div class="article-body"><div id="toc" class="toc">
 <div id="toctitle">目录</div>
 <ul class="sectlevel1">
@@ -152,7 +152,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>本文介绍如何使用 Spring Boot CLI 快速创建一个 Web 应用，使用 Kotlin 语言编写一个简单的 “Hello World”，使用 Gradle 构建并运行起来。</p>
+<p>本文介绍如何使用 Spring Boot CLI 快速创建一个 Web 应用，使用 Scala 语言编写一个简单的 “Hello World”，使用 Gradle 构建并运行起来。</p>
 </div>
 </div>
 </div>
@@ -161,7 +161,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>内容简介： 一个简单的 Spring Boot Web 应用示例<br>
-语言框架： Kotlin、Spring Boot、Spring MVC<br>
+语言框架： Scala、Spring Boot、Spring MVC<br>
 难度级别： L1<br>
 阅读时间： 10 分钟</p>
 </div>
@@ -173,10 +173,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Java SDK : 8.0+</p>
+<p>Java SDK : 8.0</p>
 </li>
 <li>
-<p>Kotlin : 1.2.71</p>
+<p>Scala SDK : 2.12.8</p>
 </li>
 <li>
 <p>Spring Boot CLI : 2.1.2</p>
@@ -185,7 +185,7 @@
 <p>Gradle : 4.10.2</p>
 </li>
 <li>
-<p>IntelliJ IDEA : 2018.3.3</p>
+<p>IntelliJ IDEA : 2018.3</p>
 </li>
 <li>
 <p>Curl / HTTPie</p>
@@ -200,28 +200,40 @@
 <div class="sect2">
 <h3 id="create-project">3.1. 创建项目</h3>
 <div class="paragraph">
+<p>由于 <a href="https://start.spring.io">Spring Initializr</a> 目前还没有支持 Scala 语言，但是我们可以先创建一个 Groovy 语言的项目然后再修改代码。</p>
+</div>
+<div class="paragraph">
 <p>首先，通过 Spring CLI 创建一个空白工程： <code>Hello World</code> 应用。</p>
 </div>
 <div class="listingblock">
 <div class="title">使用 Spring CLI 创建一个新工程</div>
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ spring init --name hello-world --artifactId spring-boot-hello-world-kotlin \
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ spring init --name hello-world --artifactId spring-boot-hello-world-scala \
 --groupId org.springdev.guides --package-name org.springdev.guides.helloworld \
---language kotlin --build gradle \
+--language groovy --build gradle \
 --dependencies web --extract</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>接着，删除无关的 Groovy 目录和文件，再创建 Scala 对应的目录和文件。</p>
+</div>
+<div class="paragraph">
+<p>默认情况下，Scala 的源文件目录是在 <code>src/main/scala/</code>，测试的源文件是在 <code>src/test/scala/</code>。</p>
+</div>
+<div class="paragraph">
+<p>相关的类也需要一并修改下，接下来一一介绍。</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="import-project">3.2. 打开项目</h3>
 <div class="paragraph">
-<p>打开 IDEA，点击菜单 <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open</b></span>，选择项目所在目录 <code>spring-boot-hello-world-kotlin</code> 下的 build.gradle，打开。</p>
+<p>打开 IDEA，点击菜单 <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open</b></span>，选择项目所在目录 <code>spring-boot-hello-world-scala</code> 下的 build.gradle，打开。</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="inside-project">3.3. 项目结构</h3>
 <div class="paragraph">
-<p>此时创建的新工程的目录结构如下:</p>
+<p>此时已经创建好的新工程的目录结构如下:</p>
 </div>
 <div class="listingblock">
 <div class="title">项目目录结构</div>
@@ -236,34 +248,34 @@
 ├── settings.gradle
 └── src
     ├── main
-    │   ├── kotlin
+    │   ├── scala
     │   │   └── org
     │   │       └── springdev
     │   │           └── guides
     │   │               └── helloworld
-    │   │                   └── HelloWorldApplication.kt
+    │   │                   └── HelloWorldApplication.scala
     │   └── resources
     │       ├── application.properties
     │       ├── static
     │       └── templates
     └── test
-        └── kotlin
+        └── scala
             └── org
                 └── springdev
                     └── guides
                         └── helloworld
-                            └── HelloWorldApplicationTests.kt</code></pre>
+                            └── HelloWorldApplicationTests.scala</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>在工程根目录打开 <code>build.gradle</code>，其内容如下：</p>
+<p>在工程根目录打开 <code>build.gradle</code>，修改其内容如下：</p>
 </div>
 <div class="listingblock">
 <div class="title">build.gradle</div>
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">buildscript {
   ext {
-    kotlinVersion = '1.2.71'  <i class="conum" data-value="1"></i><b>(1)</b>
+    scalaVersion = '2.12.8'  <i class="conum" data-value="1"></i><b>(1)</b>
     springBootVersion = '2.1.2.RELEASE'  <i class="conum" data-value="2"></i><b>(2)</b>
   }
   repositories {
@@ -271,13 +283,10 @@
   }
   dependencies {
     classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
-    classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
   }
 }
 
-apply plugin: 'kotlin'  <i class="conum" data-value="3"></i><b>(3)</b>
-apply plugin: 'kotlin-spring'
+apply plugin: 'scala'  <i class="conum" data-value="3"></i><b>(3)</b>
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
@@ -291,24 +300,9 @@ repositories {
 
 dependencies {  <i class="conum" data-value="4"></i><b>(4)</b>
   implementation 'org.springframework.boot:spring-boot-starter-web'
-  implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-  implementation "org.jetbrains.kotlin:kotlin-reflect"
+  implementation "org.scala-lang:scala-library:$scalaVersion"
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-compileKotlin {  <i class="conum" data-value="5"></i><b>(5)</b>
-  kotlinOptions {
-    freeCompilerArgs = ['-Xjsr305=strict']
-    jvmTarget = '1.8'
-  }
-}
-
-compileTestKotlin {
-  kotlinOptions {
-    freeCompilerArgs = ['-Xjsr305=strict']
-    jvmTarget = '1.8'
-  }
+  testImplementation "org.scala-lang:scala-library:$scalaVersion"
 }</code></pre>
 </div>
 </div>
@@ -317,7 +311,7 @@ compileTestKotlin {
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Kotlin 版本使用 <code>1.2.71</code>；</td>
+<td>Scala 版本使用 <code>2.12.8</code>；</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -325,34 +319,33 @@ compileTestKotlin {
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>使用 Gradle 插件： <code>kotlin</code>、<code>kotlin-spring</code>、<code>org.springframework.boot</code>；</td>
+<td>使用 Gradle 插件： <code>scala</code>、<code>org.springframework.boot</code>；</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>项目的起步依赖：<code>web</code>、<code>test</code> 以及 <code>kotlin</code> 相关的依赖包；</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>编译 Kotlin 代码的设置。</td>
+<td>项目的起步依赖：<code>web</code>、<code>test</code> 以及 <code>scala</code> 相关的依赖包；</td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>打开应用主程序文件： <code>HelloWorldApplication.kt</code>，可以看到这个文件代码非常简单。</p>
+<p>打开应用的主程序文件： <code>HelloWorldApplication.scala</code>，编写如下代码。</p>
 </div>
 <div class="listingblock">
-<div class="title">src/main/kotlin/org/springdev/guides/helloworld/HelloWorldApplication.kt</div>
+<div class="title">src/main/scala/org/springdev/guides/helloworld/HelloWorldApplication.scala</div>
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-kotlin" data-lang="kotlin">package org.springdev.guides.helloworld
+<pre class="prettyprint highlight"><code class="language-scala" data-lang="scala">package org.springdev.guides.helloworld
 
+import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class HelloWorldApplication
+class Application {
+}
 
-fun main(args: Array&lt;String&gt;) {
-  runApplication&lt;HelloWorldApplication&gt;(*args)
+object Application {
+  def main(args: Array[String]) : Unit = {
+    SpringApplication.run(classOf[Application], args:_*)
+  }
 }</code></pre>
 </div>
 </div>
@@ -362,22 +355,23 @@ fun main(args: Array&lt;String&gt;) {
 <div class="sect3">
 <h4 id="_编写_controller">3.4.1. 编写 Controller</h4>
 <div class="paragraph">
-<p>接下来我们开始编写 Controller。在 <code>src/main/kotlin/org/springdev/guides/helloworld/</code> 目录中新增一个 <code>HelloController.kt</code>，内容如下：</p>
+<p>接下来我们开始编写 Controller。在 <code>src/main/scala/org/springdev/guides/helloworld/</code> 目录中新增一个 <code>HelloController.scala</code>，内容如下：</p>
 </div>
 <div class="listingblock">
-<div class="title">src/main/kotlin/org/springdev/guides/helloworld/HelloController.kt</div>
+<div class="title">src/main/scala/org/springdev/guides/helloworld/HelloController.scala</div>
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-kotlin" data-lang="kotlin">package org.springdev.guides.helloworld
+<pre class="prettyprint highlight"><code class="language-scala" data-lang="scala">package org.springdev.guides.helloworld
 
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.{GetMapping, RestController}
 
 @RestController  <i class="conum" data-value="1"></i><b>(1)</b>
 class HelloController {
-    @GetMapping("/hello")  <i class="conum" data-value="2"></i><b>(2)</b>
-    fun hello(): String {
-        return "Hello, World!"  <i class="conum" data-value="3"></i><b>(3)</b>
-    }
+
+  @GetMapping(Array("/hello"))  <i class="conum" data-value="2"></i><b>(2)</b>
+  def hello() : String = {
+    "Hello, World!"  <i class="conum" data-value="3"></i><b>(3)</b>
+  }
+
 }</code></pre>
 </div>
 </div>
@@ -405,9 +399,9 @@ class HelloController {
 <div class="sect3">
 <h4 id="_编写测试用例">3.5.1. 编写测试用例</h4>
 <div class="listingblock">
-<div class="title">src/test/kotlin/org/springdev/guides/helloworld/HelloControllerTests.kt</div>
+<div class="title">src/test/scala/org/springdev/guides/helloworld/HelloControllerTests.scala</div>
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-kotlin" data-lang="kotlin">package org.springdev.guides.helloworld
+<pre class="prettyprint highlight"><code class="language-scala" data-lang="scala">package org.springdev.guides.helloworld
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -420,18 +414,18 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers.print
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.content
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
-@RunWith(SpringRunner::class)
+@RunWith(classOf[SpringRunner])
 @WebMvcTest  <i class="conum" data-value="1"></i><b>(1)</b>
 class HelloControllerTests {
   @Autowired
-  lateinit private var mockMvc: MockMvc
+  var mockMvc : MockMvc = _
 
   @Test
-  fun hello() {
+  def hello() : Unit = {
     this.mockMvc.perform(get("/hello"))  <i class="conum" data-value="2"></i><b>(2)</b>
-        .andDo(print())
-        .andExpect(status().isOk())  <i class="conum" data-value="3"></i><b>(3)</b>
-        .andExpect(content().string("Hello, World!"))  <i class="conum" data-value="4"></i><b>(4)</b>
+      .andDo(print())
+      .andExpect(status().isOk())  <i class="conum" data-value="3"></i><b>(3)</b>
+      .andExpect(content().string("Hello, World!"))  <i class="conum" data-value="4"></i><b>(4)</b>
   }
 
 }</code></pre>
@@ -442,11 +436,11 @@ class HelloControllerTests {
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Spring Boot 提供了 <code>@WebMvcTest</code> 注解，该注解自动会注入 <code>MockMvc</code>，它提供了强大的测试 MVC controller，而不需要启动 HTTP 服务器；</td>
+<td>Spring Boot 提供了 <code>@SpringBootTest</code> 注解，该注解简化了 Spring Boot 应用的测试，提供了对应 spring-test 中 <code>@ContextConfiguration</code> 的功能，用于创建 <code>ApplicationContext</code>。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>调用 <code>MockMvc</code> 实例模拟执行请求 <code>/hello</code>；</td>
+<td>自动配置 <code>MockMvc</code> 实例，用于模拟执行请求 <code>/hello</code>；</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
@@ -490,7 +484,7 @@ $ open build/reports/tests/test/index.html</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ java -jar build/libs/spring-boot-hello-world-groovy-0.0.1-SNAPSHOT.jar</code></pre>
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ java -jar build/libs/spring-boot-hello-world-scala-0.0.1-SNAPSHOT.jar</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -512,17 +506,17 @@ $ open build/reports/tests/test/index.html</code></pre>
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.1.2.RELEASE)
 
-2019-01-14 21:02:17.296  INFO 73302 --- [           main] o.s.g.h.HelloWorldApplicationKt          : Starting HelloWorldApplicationKt on Michaels-MBP.lan with PID 73302 (/Users/rain/Development/springdev/guides/spring/spring-boot-hello-world-kotlin/complete/build/classes/kotlin/main started by rain in /Users/rain/Development/springdev/guides/spring/spring-boot-hello-world-kotlin/complete)
-2019-01-14 21:02:17.299  INFO 73302 --- [           main] o.s.g.h.HelloWorldApplicationKt          : No active profile set, falling back to default profiles: default
-2019-01-14 21:02:18.511  INFO 73302 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-01-14 21:02:18.547  INFO 73302 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-01-14 21:02:18.548  INFO 73302 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
-2019-01-14 21:02:18.557  INFO 73302 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/rain/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-2019-01-14 21:02:18.646  INFO 73302 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-01-14 21:02:18.647  INFO 73302 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1289 ms
-2019-01-14 21:02:18.934  INFO 73302 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-01-14 21:02:19.129  INFO 73302 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-01-14 21:02:19.133  INFO 73302 --- [           main] o.s.g.h.HelloWorldApplicationKt          : Started HelloWorldApplicationKt in 2.237 seconds (JVM running for 2.619)</code></pre>
+2019-01-15 19:47:48.198  INFO 1631 --- [           main] o.s.guides.helloworld.Application$       : Starting Application. on Michaels-MacBook-Pro.local with PID 1631 (/Users/rain/Development/springdev/guides/spring/spring-boot-hello-world-scala/complete/build/classes/scala/main started by rain in /Users/rain/Development/springdev/guides/spring/spring-boot-hello-world-scala/complete)
+2019-01-15 19:47:48.202  INFO 1631 --- [           main] o.s.guides.helloworld.Application$       : No active profile set, falling back to default profiles: default
+2019-01-15 19:47:49.332  INFO 1631 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-15 19:47:49.367  INFO 1631 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-15 19:47:49.368  INFO 1631 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2019-01-15 19:47:49.380  INFO 1631 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/rain/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-15 19:47:49.482  INFO 1631 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-15 19:47:49.482  INFO 1631 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1230 ms
+2019-01-15 19:47:49.699  INFO 1631 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-15 19:47:49.909  INFO 1631 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-15 19:47:49.913  INFO 1631 --- [           main] o.s.guides.helloworld.Application$       : Started Application. in 2.073 seconds (JVM running for 2.412)</code></pre>
 </div>
 </div>
 </div>
@@ -555,7 +549,7 @@ $ open build/reports/tests/test/index.html</code></pre>
 &lt; HTTP/1.1 200
 &lt; Content-Type: text/plain;charset=UTF-8
 &lt; Content-Length: 13
-&lt; Date: Mon, 14 Jan 2019 13:03:50 GMT
+&lt; Date: Tue, 15 Jan 2019 11:48:22 GMT
 &lt;
 * Connection #0 to host localhost left intact
 Hello, World!</code></pre>
@@ -570,7 +564,7 @@ Hello, World!</code></pre>
 HTTP/1.1 200
 Content-Length: 13
 Content-Type: text/plain;charset=UTF-8
-Date: Mon, 14 Jan 2019 13:03:40 GMT
+Date: Tue, 15 Jan 2019 11:48:12 GMT
 
 Hello, World!</code></pre>
 </div>
@@ -581,7 +575,7 @@ Hello, World!</code></pre>
 <h2 id="summary">6. 小结</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>恭喜，你已经学会了使用 Spring Boot CLI 创建一个 Web 应用，用 Kotlin 语言编写一个 Hello World 程序，并且使用 Gradle 构建运行成功。</p>
+<p>恭喜，你已经学会了使用 Spring Boot CLI 创建一个 Web 应用，用 Scala 语言 编写一个 Hello World 程序，并且使用 Gradle 构建运行成功。</p>
 </div>
 </div>
 </div>
@@ -597,7 +591,7 @@ Hello, World!</code></pre>
 <p><a href="https://springdev.io/guides/spring/spring-boot-hello-world-groovy/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Groovy &amp; Gradle）</a></p>
 </li>
 <li>
-<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world-scala/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Scala &amp; Gradle）</a></p>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world-kotlin/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Kotlin &amp; Gradle）</a></p>
 </li>
 </ul>
 </div>
@@ -615,20 +609,20 @@ Hello, World!</code></pre>
                   <button class="btn" data-protocol="subversion">Subversion</button>
                 </div>
                 <div class="clone-url https">
-                  <input type="text" id="clone-url-https" value="https://github.com/springdev-guides/spring-boot-hello-world-kotlin.git" readonly="readonly"/>
-                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="https://github.com/springdev-guides/spring-boot-hello-world-kotlin.git"></button>
+                  <input type="text" id="clone-url-https" value="https://github.com/springdev-guides/spring-boot-hello-world-scala.git" readonly="readonly"/>
+                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="https://github.com/springdev-guides/spring-boot-hello-world-scala.git"></button>
                 </div>
                 <div class="clone-url ssh">
-                  <input type="text" id="clone-url-ssh" value="git@github.com:springdev-guides/spring-boot-hello-world-kotlin.git" readonly="readonly"/>
-                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="git@github.com:springdev-guides/spring-boot-hello-world-kotlin.git"></button>
+                  <input type="text" id="clone-url-ssh" value="git@github.com:springdev-guides/spring-boot-hello-world-scala.git" readonly="readonly"/>
+                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="git@github.com:springdev-guides/spring-boot-hello-world-scala.git"></button>
                 </div>
                 <div class="clone-url subversion">
-                  <input type="text" id="clone-url-subversion" value="https://github.com/springdev-guides/spring-boot-hello-world-kotlin" readonly="readonly"/>
-                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="https://github.com/springdev-guides/spring-boot-hello-world-kotlin"></button>
+                  <input type="text" id="clone-url-subversion" value="https://github.com/springdev-guides/spring-boot-hello-world-scala" readonly="readonly"/>
+                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="https://github.com/springdev-guides/spring-boot-hello-world-scala"></button>
                 </div>
-                <a class="github_download btn btn-black uppercase" href='https://github.com/springdev-guides/spring-boot-hello-world-kotlin/archive/master.zip'>代码下载</a>
+                <a class="github_download btn btn-black uppercase" href='https://github.com/springdev-guides/spring-boot-hello-world-scala/archive/master.zip'>代码下载</a>
                 <div class="go-to-repo--container">
-                  <a href="https://github.com/springdev-guides/spring-boot-hello-world-kotlin" target="_blank">
+                  <a href="https://github.com/springdev-guides/spring-boot-hello-world-scala" target="_blank">
                     <i class="icon-github"></i>
                     GO TO REPO
                   </a>

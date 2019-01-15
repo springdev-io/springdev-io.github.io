@@ -146,6 +146,7 @@
 <li><a href="#build-and-run">4. 构建运行</a></li>
 <li><a href="#tet-and-verify">5. 测试验证</a></li>
 <li><a href="#summary">6. 小结</a></li>
+<li><a href="#related-articles">7. 相关文章</a></li>
 </ul>
 </div>
 <div id="preamble">
@@ -184,7 +185,7 @@
 <p>STS : 4.0</p>
 </li>
 <li>
-<p>Curl / HTTPPie</p>
+<p>Curl / HTTPie</p>
 </li>
 </ul>
 </div>
@@ -521,11 +522,19 @@ MockHttpServletResponse:
 <p>选中工程，然后打开菜单 <span class="menuseq"><b class="menu">Run</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Run as</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Spring Boot App</b></span>，应用就开始启动了，可以在控制台看到启动应用的日志。</p>
 </div>
 <div class="paragraph">
+<p>也可以，先打包成 <code>JAR</code>：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ mvn package</code></pre>
+</div>
+</div>
+<div class="paragraph">
 <p>或者，在控制台下执行命令:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-console" data-lang="console">mvn spring-boot:run</code></pre>
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ mvn spring-boot:run</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -611,7 +620,25 @@ Hello, World!</code></pre>
 <h2 id="summary">6. 小结</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>你已经学会使用 Spring Boot CLI 创建一个 Spring Boot Web 简单应用，并且运行起来。</p>
+<p>恭喜，你已经学会使用 Spring Boot CLI 创建一个 Spring Boot Web 简单应用，并且使用 Maven 构建运行起来。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="related-articles">7. 相关文章</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world-groovy/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Groovy &amp; Gradle）</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world-kotlin/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Kotlin &amp; Gradle）</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world-scala/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Scala &amp; Gradle）</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div></div>
