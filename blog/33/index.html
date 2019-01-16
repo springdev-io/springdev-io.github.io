@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html data-code-prettify data-clipboard-buttons data-goto-top data-nav-menu data-switch-sidebar data-mobile-support>
+<html data-mobile-support data-goto-top data-nav-menu>
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring Boot for Apache Geode 和 Pivotal GemFire 1.0.0.M2 发布 - Spring技术社区</title>
+  <title>Blog - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring Boot for Apache Geode 和 Pivotal GemFire 1.0.0.M2 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-08-31'><meta property="og:description" content="Spring Boot for Apache Geode 和 Pivotal GemFire 1.0.0.M2 发布，可以从里程碑库中获取。" />
+  <meta property="og:title" content="SpringDev.io" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:description" content="Let's build a better Enterprise. Spring helps development teams everywhere
+    build simple, portable, fast and flexible JVM-based systems and applications." />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
   <link rel="stylesheet" type="text/css" href="/css/blog.css" />
   <link rel="stylesheet" type="text/css" href="/css/custom.css" />
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  
   <script src="/jspm_packages/system.js"></script>
   <script>
     System.config({baseURL: "/"});
@@ -57,7 +58,7 @@
       <div class="search-dropdown--container js-search-dropdown">
         <div class="container-fluid">
           <div class="search-form--container">
-            <form class="form-inline form-search" action="../../../search" method="get">
+            <form class="form-inline form-search" action="../search" method="get">
               <input type="text" class="search-query search-form--form js-search-input" placeholder="Search for documentation, guides, and posts..." name="q" value="" />
               <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
             </form>
@@ -69,7 +70,7 @@
     <div class="mobile-navigation--wrapper mobile-only">
       <div class="navigation-drawer--container">
         <div class="mobile-search--container">
-          <form class="form-inline form-search" action="../../../search" method="get">
+          <form class="form-inline form-search" action="../search" method="get">
             <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
             <input type="text" class="search-query search-form--form js-search-input" placeholder="Search..." name="q" value="" />
           </form>
@@ -106,7 +107,7 @@
           <i class="icon-reorder"></i>
         </div>
         <div class="header-center-icon">
-          <a href="../../../">
+          <a href="../">
             <div class="icon icon-spring-logo-mobile"></div>
           </a>
         </div>
@@ -119,7 +120,9 @@
     <main class="body--container container-fluid">
       <div class="main-body--wrapper">
         <div class="desktop-only">
-          <h1 class="blog-category active content--title">版本发布</h1>
+          <h1 class="blog-category active content--title">
+          开发者博客
+          </h1>
           <div class="blog-category content--title">
             <div>Engineering</div>
           </div>
@@ -129,144 +132,226 @@
           <div class="blog-category content--title">
             <div>News and Events</div>
           </div>
-          <div class="switch-sidebar pull-right"><input type="checkbox" class="js-switch"/></div>
         </div>
         <div class="row-fluid blog--wrapper">
-          <article class="span8 mobile-left-pane" id="content">
-            <div class="blog--container">
-              <header>
-                <h1 class="blog--title">Spring Boot for Apache Geode 和 Pivotal GemFire 1.0.0.M2 发布</h1>
-                <div class="meta-data--container">
-                  <div class="meta-data--item desktop-only">
-                    <div class="meta-data--icon icon blog-icon release"></div>
-                    <span>
-                      <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
-                    </span>
+          <div class="span8 mobile-left-pane">
+            <div class="blog-preview--wrapper">
+              <style type="text/css">
+                #toc { display: none; }
+              </style>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
+                    <a href="../../../blog/2017/07/introducing-spring-cloud-function.html">介绍Spring Cloud Function 项目</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon article"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/article.html">article</a>&nbsp;
+                        </span>
                     </div>
                     <div class="meta-data--item">
                       <img class="meta-data--icon" src="/img/avatars/rain.png">
                       <a class="author" rel="author" href="http://rainboyan.com">rain</a>
                     </div>
                     <div class="meta-data--item">
-                      <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-08-31</time>
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Wed Jul 05 15:17:00 CST 2017">2017-07-05</time>
                     </div>
-                    <div class="meta-data--item">
-                      <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/08/spring-boot-for-apache-geode-pivotal-gemfire-1-0-0-m2-released.html#gitalk-container">评论
-                      </a>
-                    </div>
-                </div>
-              </header>
-              <div class="blog--post"><div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Spring Boot for Apache Geode 和 Pivotal GemFire 1.0.0.M2 发布。</p>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2017/07/introducing-spring-cloud-function.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">介绍Spring Cloud Function 项目</div>
+                    <div class="desktop-only"><div class="paragraph"> 
+ <p>Spring Cloud Function是一个新项目，具有以下高阶目标：</p> 
 </div>
-<div class="paragraph">
-<p>总的来说，这个版本带来了以下改进：</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>支持Spring Session的自动配置，当使用Apache Geode 或者 Pivotal GemFire / Pivotal Cloud Cache (PCC)来管理Spring Boot应用程序的 (HTTP) 会话状态</p>
-</li>
-<li>
-<p>使用Spring Boot自动配置的Spring缓存抽象时，可识别<code>spring.cache.type</code></p>
-</li>
-<li>
-<p>对文档的补充和改进</p>
-</li>
-<li>
-<p>升级Spring Framework <code>5.0.8.RELEASE</code>，Spring Boot <code>2.0.4.RELEASE</code> 和 Spring Data <code>Kay-SR9</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>此版本基于最近推出的<a href="https://springdev.io/blog/2018/08/spring-session-for-apache-geode-pivotal-gemfire-2-0-5-release-and-2-1-0-m1-released.html" class="external" target="_blank" rel="noopener">Spring Session for Apache Geode/Pivotal GemFire (SSDG) 2.0.5.RELEASE</a>构建。</p>
-</div>
-<div class="paragraph">
-<p>SSDG的一个关键附加功能是使用Properties和一个新的<code>SpringSessionGemFireConfigurer</code>回调接口，来启用Apache Geode / Pivotal GemFire / PCC 动态配置Spring Session。这样，即使在Spring Boot的自动配置环境中，用户也可以自定义配置以满足其应用程序要求。</p>
+<div class="ulist"> 
+ <ul> 
+  <li> <p>通过函数促进业务逻辑的实现</p> </li> 
+  <li> <p>将业务逻辑的开发生命周期与任何特定运行时目标分离，以便相同的代码可以作为Web端点，流处理器或任务运行</p> </li> 
+  <li> <p>支持无服务器提供商之间的统一编程模型，以及独立运行（本地或PaaS）的能力</p> </li> 
+  <li> <p>在无服务器提供商上启用Spring Boot功能（自动配置，依赖注入，指标）</p> </li> 
+ </ul> 
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_使用属性配置configuration_with_properties">使用属性配置（Configuration with Properties）</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In addition to the Properties discussed here and documented here, Spring Boot for Apache Geode &amp; Pivotal GemFire additionally recognizes the following properties:</p>
-</div>
-<div class="paragraph">
-<p>除了<a href="https://docs.spring.io/autorepo/docs/spring-session-data-geode-build/2.0.5.RELEASE/reference/html5/#httpsession-gemfire-configuration-properties" class="external" target="_blank" rel="noopener">文档中配置属性</a>之外，Apache Geode和Pivotal GemFire的Spring Boot还识别以下属性：</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>spring.session.timeout</code></p>
-</li>
-<li>
-<p><code>server.servlet.session.timeout</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>同样，如果设置了这些属性的任何组合的话，<code>spring.session.data.gemfire.session.expiration.max-inactive-interval-seconds</code>将优先于<code>spring.session.timeout</code>，它又优先于<code>server.servlet.session.timeout</code>。</p>
-</div>
-<div class="paragraph">
-<p>Spring Boot for Apache Geode/Pivotal GemFire 能够识别<code>spring.session.store-type</code>。但是，遗憾的是，此属性也无法设置成<code>gemfire</code> 或者 <code>geode</code>，因为这些值不能被Spring Boot识别成为有效的<a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/session/StoreType.html" class="external" target="_blank" rel="noopener"><code>StoreType</code></a>。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_使用configurer配置configuration_using_a_configurer">使用Configurer配置（Configuration using a Configurer）</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Spring Boot for Apache Geode &amp; Pivotal GemFire 除了Spring Session for Apache Geode/Pivotal GemFire针对新的<code>SpringSessionGemFireConfigurer</code>回调接口提供之外，没有其他任何内容，正如此处所讨论和记录的那样。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_下一步">下一步</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>接下来，Spring Boot for Apache Geode &amp; Pivotal GemFire 将提供OOTB HealthIndicators，用以评估和监控Apache Geode / Pivotal GemFire驱动的Spring Boot应用程序的运行时健康状况。</p>
-</div>
-<div class="paragraph">
-<p>有关 Spring Boot <code>HealthIndicators</code>的更多内容可以查看<a href="https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html#production-ready-health" class="external" target="_blank" rel="noopener">这里</a>。</p>
-</div>
-<div class="paragraph">
-<p>这将在下一版本<code>1.0.0.M3</code>中提供。</p>
-</div>
-<div class="paragraph">
-<p>长远的规划将会支持Spring Boot Actuator。于此同时，也正在努力用Micrometer改进Apache Geode / Pivotal GemFire的统计架构。这将作为Spring Boot for Apache Geode和Pviotal GemFire的Actuator支持的基础。这很可能在SBDG 1.1中提供。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_如何使用">如何使用</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>您可以通过<a href="https://repo.spring.io/libs-milestone/org/springframework/geode/spring-geode-starter/1.0.0.M2/" class="external" target="_blank" rel="noopener">Spring libs-milestone 库</a>来获取新包，通过在Maven中增加以下依赖项：</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>org.springframework.geode:spring-geode-starter</code> （Apache Geode）</p>
-</li>
-<li>
-<p><code>org.springframework.geode:spring-gemfire-starter</code> （Pivotal GemFire/PCC）</p>
-</li>
-</ul>
-</div>
-</div>
-</div></div>
-              <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/08/spring-batch-4-1-0-m3-released.html"> ←Spring Batch 4.1.0.M3 发布</a></li>
-              <li class="next"><a href="../../../blog/2018/08/this-week-in-spring-august-31th-2018.html">Spring一周回顾（2018年8月31日） →</a></li>
-              </ul>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2017/07/introducing-spring-cloud-function.html">
+                    查看...
+                </a>
+              </article>
             </div>
-            <section id="gitalk-container"></section>
-          </article>
+            <div id='pagination_control' class="pagination blog-pagination">
+                <a href="../32/"><i class="icon-chevron-left"></i></a>
+                <div>
+                    <a href="../">1</a>
+                    
+                    
+                </div>
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                <div>
+                    
+                    
+                    <div >...</div>
+                </div>
+                <div>
+                    <a href="../31/">31</a>
+                    
+                    
+                </div>
+                <div>
+                    <a href="../32/">32</a>
+                    
+                    
+                </div>
+                <div>
+                    
+                    <div class="active" >33</div>
+                    
+                </div>
+                
+            </div>
+          </div>
           <aside class="span4 mobile-right-pane">
       <div><h2>文章分类</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
@@ -488,16 +573,16 @@
             <div class="navbar">
               <div class="container">
                 <ul class="nav">
-                  <li><a href="../../../team.html">Team</a></li>
-                  <li><a href="../../../services.html">Services</a></li>
-                  <li><a href="../../../tools.html">Tools</a></li>
+                  <li><a href="../team.html">Team</a></li>
+                  <li><a href="../services.html">Services</a></li>
+                  <li><a href="../tools.html">Tools</a></li>
                 </ul>
               </div>
             </div>
             &copy; <span>2019</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
-            <a href="../../../terms-of-use.html">Terms of Use</a>,
-            <a href="../../../privacy-policy.html">Privacy</a>,
-            <a href="../../../trademarks.html">Trademark Guidelines</a> and
+            <a href="../terms-of-use.html">Terms of Use</a>,
+            <a href="../privacy-policy.html">Privacy</a>,
+            <a href="../trademarks.html">Trademark Guidelines</a> and
             <span id="teconsent"></span>
           </div>
         </div>
@@ -505,18 +590,5 @@
     </footer>
     <div id="scrim"></div>
   </div>
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <script type="text/javascript">
-      var gitalk = new Gitalk({
-        clientID: 'e0ad4e23b37963590faf',
-        clientSecret: '1bbf06b574f0e6623211f8cc029f874db67c7dfe',
-        repo: 'springdev-issues',
-        owner: 'springdev-io',
-        admin: ['rainboyan'],
-        id: 'Comments',
-        distractionFreeMode: true
-      });
-      gitalk.render('gitalk-container');
-  </script>
   </body>
 </html>
