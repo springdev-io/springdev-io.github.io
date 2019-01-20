@@ -3,7 +3,7 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>教程 &middot; Spring Security 实现 HTTP Digest 认证 - Spring技术社区</title>
+  <title>教程 &middot; Spring Security: 实现 HTTP Digest 认证 - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
@@ -123,60 +123,132 @@
         </div>
         <div class="row-fluid">
           <div class="span8 mobile-left-pane">
-            <div class="content--title desktop-only">教程</div>
+            <div class="content--title desktop-only">快速上手</div>
             <style type="text/css">
               #toc { display: none; }
             </style>
             <article class="content--container">
-              <h1 class="title">Spring Security 实现 HTTP Digest 认证</h1>
+              <h1 class="title">Spring Security: 实现 HTTP Digest 认证</h1>
               <div class="article-body"><div id="toc" class="toc">
 <div id="toctitle">目录</div>
 <ul class="sectlevel1">
-<li><a href="#_创建新工程">1. 创建新工程</a></li>
-<li><a href="#_导入刚才创建的工程">2. 导入刚才创建的工程</a></li>
-<li><a href="#_编写欢迎页面">3. 编写欢迎页面</a></li>
-<li><a href="#_添加maven依赖">4. 添加Maven依赖</a></li>
-<li><a href="#_编写测试用例">5. 编写测试用例</a></li>
-<li><a href="#_编写securityconfig类">6. 编写SecurityConfig类</a></li>
-<li><a href="#_小结">7. 小结</a></li>
+<li><a href="#introduce">1. 介绍</a></li>
+<li><a href="#tools">2. 工具准备</a></li>
+<li><a href="#implement">3. 实现步骤</a>
+<ul class="sectlevel2">
+<li><a href="#create-project">3.1. 创建项目</a></li>
+<li><a href="#import-project">3.2. 打开项目</a></li>
+<li><a href="#inside-project">3.3. 项目结构</a></li>
+<li><a href="#coding">3.4. 编写代码</a></li>
+<li><a href="#testing">3.5. 单元测试</a></li>
+</ul>
+</li>
+<li><a href="#build-and-run">4. 构建运行</a></li>
+<li><a href="#test-and-verify">5. 测试验证</a></li>
+<li><a href="#_实现原理">6. 实现原理</a>
+<ul class="sectlevel2">
+<li><a href="#_http_请求过程分析">6.1. HTTP 请求过程分析</a></li>
+<li><a href="#_代码解读basicauthenticationfilter">6.2. 代码解读：BasicAuthenticationFilter</a></li>
+</ul>
+</li>
+<li><a href="#summary">7. 小结</a></li>
+<li><a href="#related-articles">8. 相关文章</a></li>
 </ul>
 </div>
 <div id="preamble">
 <div class="sectionbody">
-<div class="quoteblock abstract">
-<div class="title">本章包括内容</div>
-<blockquote>
-这是关于Digest认证的原理说明。
-</blockquote>
+<div class="paragraph">
+<p>本文介绍如何使用 Spring Boot CLI 快速创建一个 Web 应用，编写一个非常简单的 “Hello World”，使用 Spring Security 启用 Digest Auth 来保护 Web 应用，并使用 Maven 构建并运行起来。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_创建新工程">1. 创建新工程</h2>
+<h2 id="introduce">1. 介绍</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>内容简介： 一个简单的 Spring Boot Web 应用示例<br>
+语言框架： Java、Spring Boot、Spring MVC、Spring Security<br>
+难度级别： L1<br>
+阅读时间： 10 分钟</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tools">2. 工具准备</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Java SDK : 8.0+</p>
+</li>
+<li>
+<p>Spring Boot CLI : 2.1.2</p>
+</li>
+<li>
+<p>Maven : 3.6.0</p>
+</li>
+<li>
+<p>STS : 4.0</p>
+</li>
+<li>
+<p>Curl / HTTPie</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="implement">3. 实现步骤</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="create-project">3.1. 创建项目</h3>
+<div class="paragraph">
+<p>首先，通过 Spring CLI 创建一个空白工程： <code>Hello World</code> 应用。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Group: org.springdev.guides</p>
+</li>
+<li>
+<p>Artifact: spring-security-digest-auth</p>
+</li>
+<li>
+<p>Name: digest-auth</p>
+</li>
+<li>
+<p>Package Name: org.springdev.guides.digestauth</p>
+</li>
+<li>
+<p>Dependencies: web, security, devtools</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
-<div class="title">使用Spring CLI创建一个新工程</div>
+<div class="title">使用 Spring CLI 创建一个新工程</div>
 <div class="content">
-<pre>$ spring init --name digest-auth --artifactId tut-http-digest-auth \
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ spring init --name digest-auth --artifactId spring-security-digest-auth \
 --groupId org.springdev.guides --package-name org.springdev.guides.digestauth \
---language java --boot-version 1.5.13.RELEASE --type maven-project \
---dependencies web,thymeleaf,devtools --extract</pre>
+--language java --build maven \
+--dependencies web,security,devtools --extract</code></pre>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_导入刚才创建的工程">2. 导入刚才创建的工程</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="import-project">3.2. 打开项目</h3>
 <div class="paragraph">
-<p>打开STS，点击菜单<span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Import</b></span>，选择导入向导Maven下的<code>Existing Maven Projects</code>，在下一步中选择刚刚创建的工程目录，确定后导入到STS中。</p>
+<p>打开 STS，点击菜单 <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Import</b></span>，选择导入向导 Maven 下的 <code>Existing Maven Projects</code>，在下一步中选择刚刚创建的工程目录，确定后导入到 STS 中。</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="inside-project">3.3. 项目结构</h3>
 <div class="paragraph">
-<p>此时创建的新工程digest-auth目录结构如下:</p>
+<p>此时创建的新工程目录结构如下:</p>
 </div>
 <div class="listingblock">
+<div class="title">项目目录结构</div>
 <div class="content">
-<pre>├── mvnw
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">├── mvnw
 ├── mvnw.cmd
 ├── pom.xml
 └── src
@@ -197,78 +269,93 @@
                 └── springdev
                     └── guides
                         └── digestauth
-                            └── DigestAuthApplicationTests.java</pre>
+                            └── DigestAuthApplicationTests.java</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>在工程根目录打开<code>pom.xml</code>，其内容如下：</p>
+<p>在工程根目录打开 <code>pom.xml</code>，其内容如下：</p>
 </div>
 <div class="listingblock">
 <div class="title">pom.xml</div>
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
-    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;parent&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+    &lt;version&gt;2.1.2.RELEASE&lt;/version&gt;  <i class="conum" data-value="1"></i><b>(1)</b>
+    &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+  &lt;/parent&gt;
+  &lt;groupId&gt;org.springdev.guides&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-security-digest-auth&lt;/artifactId&gt;
+  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+  &lt;name&gt;digest-auth&lt;/name&gt;
+  &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;
 
-    &lt;groupId&gt;org.springdev.guides&lt;/groupId&gt;
-    &lt;artifactId&gt;tut-http-digest-auth&lt;/artifactId&gt;
-    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
-    &lt;packaging&gt;jar&lt;/packaging&gt;
+  &lt;properties&gt;
+    &lt;java.version&gt;1.8&lt;/java.version&gt;
+  &lt;/properties&gt;
 
-    &lt;name&gt;digest-auth&lt;/name&gt;
-    &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  <i class="conum" data-value="2"></i><b>(2)</b>
+      &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+    &lt;/dependency&gt;
 
-    &lt;parent&gt;
-        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
-        &lt;version&gt;1.5.13.RELEASE&lt;/version&gt;
-        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
-    &lt;/parent&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+      &lt;scope&gt;runtime&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-security-test&lt;/artifactId&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
 
-    &lt;properties&gt;
-        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-        &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
-        &lt;java.version&gt;1.8&lt;/java.version&gt;
-    &lt;/properties&gt;
-
-    &lt;dependencies&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
-        &lt;/dependency&gt;
-
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
-            &lt;scope&gt;runtime&lt;/scope&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
-            &lt;scope&gt;test&lt;/scope&gt;
-        &lt;/dependency&gt;
-    &lt;/dependencies&gt;
-
-    &lt;build&gt;
-        &lt;plugins&gt;
-            &lt;plugin&gt;
-                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
-            &lt;/plugin&gt;
-        &lt;/plugins&gt;
-    &lt;/build&gt;
-
+  &lt;build&gt;
+    &lt;plugins&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  <i class="conum" data-value="3"></i><b>(3)</b>
+        &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/build&gt;
 
 &lt;/project&gt;</code></pre>
 </div>
 </div>
+<div class="colist arabic">
+<div class="title">代码说明如下：</div>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Spring Boot 版本使用 <code>2.1.2.RELEASE</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>项目的起步依赖：<code>web</code>、<code>security</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Spring Boot 插件，用于打包和运行应用。</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>在Package Explorer中打开应用主程序文件：DigestAuthApplication.java，可以看到这个文件代码非常简单。</p>
+<p>在 Package Explorer 中打开应用主程序文件： <code>DigestAuthApplication.java</code>，可以看到这个文件代码非常简单。</p>
 </div>
 <div class="listingblock">
 <div class="title">src/main/java/org/springdev/guides/digestauth/DigestAuthApplication.java</div>
@@ -281,95 +368,279 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DigestAuthApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(DigestAuthApplication.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(DigestAuthApplication.class, args);
+  }
+
 }</code></pre>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_编写欢迎页面">3. 编写欢迎页面</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="coding">3.4. 编写代码</h3>
+<div class="sect3">
+<h4 id="_编写_controller">3.4.1. 编写 Controller</h4>
 <div class="paragraph">
-<p>接下来我们开始编写欢迎页面。在src/main/resources/templates中新增一个index.html，内容如下：</p>
+<p>接下来我们开始编写 Controller。在 <code>src/main/java/org/springdev/guides/digestauth/</code> 目录中新增一个 <code>HelloController.java</code>，内容如下：</p>
 </div>
 <div class="listingblock">
-<div class="title">src/main/resources/templates/index.html</div>
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-html" data-lang="html">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"&gt;
-    &lt;head&gt;
-        &lt;title&gt;Digest Authentication Example&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;h1&gt;Welcome!&lt;/h1&gt;
-
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>接下来编写<code>MvcConfig.java</code>类，设置首页视图。</p>
-</div>
-<div class="listingblock">
-<div class="title">src/main/java/org/springdev/guides/digestauth/MvcConfig.java</div>
+<div class="title">src/main/java/org/springdev/guides/digestauth/HelloController.java</div>
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.digestauth;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController  <i class="conum" data-value="1"></i><b>(1)</b>
+public class HelloController {
+
+    @GetMapping("/hello")  <i class="conum" data-value="2"></i><b>(2)</b>
+    public String hello() {
+        return "Hello, World!";  <i class="conum" data-value="3"></i><b>(3)</b>
+    }
+
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<div class="title">代码说明如下：</div>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Spring MVC 提供了 <code>@RestController</code> 注解，这是一个 REST 接口类；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>设置 Get 请求，请求地址为 <code>/hello</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>响应成功，并返回内容为：<code>Hello, World!</code>。</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>到这里，我们先运行启动一下应用看下效果。</p>
+</div>
+<div class="paragraph">
+<p>在控制台下执行命令:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ mvn spring-boot:run</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">控制台运行日志</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.2.RELEASE)
+
+2019-01-18 20:24:32.480  INFO 11128 --- [  restartedMain] o.s.g.basicauth.BasicAuthApplication     : Starting BasicAuthApplication on Michaels-MacBook-Pro.local with PID 11128 (/Users/rain/Development/springdev/guides/spring/spring-security-basic-auth/complete/target/classes started by rain in /Users/rain/Development/springdev/guides/spring/spring-security-basic-auth/complete)
+2019-01-18 20:24:32.483  INFO 11128 --- [  restartedMain] o.s.g.basicauth.BasicAuthApplication     : No active profile set, falling back to default profiles: default
+2019-01-18 20:24:32.527  INFO 11128 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-01-18 20:24:32.527  INFO 11128 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-01-18 20:24:33.670  INFO 11128 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-18 20:24:33.701  INFO 11128 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-18 20:24:33.702  INFO 11128 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2019-01-18 20:24:33.714  INFO 11128 --- [  restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/rain/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-18 20:24:33.783  INFO 11128 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-18 20:24:33.784  INFO 11128 --- [  restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1257 ms
+2019-01-18 20:24:34.000  INFO 11128 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 20:24:34.302  INFO 11128 --- [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration :
+
+Using generated security password: 0d116f14-6045-4d8d-ba70-369825c353c8
+
+2019-01-18 20:24:34.390  INFO 11128 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@460b5963, org.springframework.security.web.context.SecurityContextPersistenceFilter@73a7bdb2, org.springframework.security.web.header.HeaderWriterFilter@5fdd3098, org.springframework.security.web.csrf.CsrfFilter@3267e364, org.springframework.security.web.authentication.logout.LogoutFilter@2a2ed82a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@63037dff, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5c1dbf65, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4959889, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5cc4ecfd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54aee885, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a525db9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@781bf9f1, org.springframework.security.web.session.SessionManagementFilter@29b1d310, org.springframework.security.web.access.ExceptionTranslationFilter@4f7d0549, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3fc328c4]
+2019-01-18 20:24:34.442  INFO 11128 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-01-18 20:24:34.499  INFO 11128 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-18 20:24:34.502  INFO 11128 --- [  restartedMain] o.s.g.basicauth.BasicAuthApplication     : Started BasicAuthApplication in 2.497 seconds (JVM running for 2.888)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>通过启动日志可以发现，Spring Security 的 DefaultSecurityFilterChain 已经起作用了，注意这里 Spring Boot 自动配置默认为 <code>user</code> 用户生成一个随机密码： <code>0d116f14-6045-4d8d-ba70-369825c353c8</code>。</p>
+</div>
+<div class="paragraph">
+<p>打开浏览器，访问地址： <a href="http://localhost:8080/hello" class="external" target="_blank" rel="noopener">http://localhost:8080/hello</a> 会看到下图所示的界面：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/spring_security_default_login_page.png" alt="spring security default login page">
+</div>
+</div>
+<div class="paragraph">
+<p>Spring Security 5.1 提供了默认登录页面，我们输入下面的用户名和密码，点击 <b class="button">Sign in</b>：</p>
+</div>
+<div class="paragraph">
+<p>username : <code>user</code></p>
+</div>
+<div class="paragraph">
+<p>password : <code>0d116f14-6045-4d8d-ba70-369825c353c8</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/hello_world_page.png" alt="hello world page">
+</div>
+</div>
+<div class="paragraph">
+<p>NOTE:
+如果使用的是 Spring Security 5.1 之前的版本，会出现弹框要求输入用户名和密码，而不是登录表单。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_配置用户名和密码">3.4.2. 配置用户名和密码</h4>
+<div class="paragraph">
+<p>Spring Boot 提供了安全相关的配置参数，修改 <code>application.properties</code>，添加下面的内容：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>spring.security.user.name=rain
+spring.security.user.password=passwd123
+spring.security.user.roles=USER</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>保存后，重启应用，再次登录验证下，需要输入我们配置的用户名和密码才能登录成功。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_编码_securityconfig">3.4.3. 编码 <code>SecurityConfig</code></h4>
+<div class="paragraph">
+<p>除了上面通过配置文件来设置用户，还可以通过 Java Config 的方式来编码设置用户账号。</p>
+</div>
+<div class="listingblock">
+<div class="title">src/main/java/org/springdev/guides/helloworld/SecurityConfig.java</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.basicauth;
+
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-public class MvcConfig extends WebMvcConfigurerAdapter {
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {  <i class="conum" data-value="1"></i><b>(1)</b>
 
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("index");
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication()
+                .passwordEncoder(passwordEncoder())  <i class="conum" data-value="2"></i><b>(2)</b>
+                .withUser("rain")  <i class="conum" data-value="3"></i><b>(3)</b>
+                .password(passwordEncoder().encode("passwd123"))  <i class="conum" data-value="4"></i><b>(4)</b>
+                .roles("USER");   <i class="conum" data-value="5"></i><b>(5)</b>
     }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<div class="title">代码说明如下：</div>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>新建 <code>SecurityConfig</code> 扩展 <code>WebSecurityConfigurerAdapter</code>，并重新 <code>configure(AuthenticationManagerBuilder auth)</code> 方法，这里为了测试使用了 <code>InMemoryUserDetailsManager</code>，除此之外还有 <code>JdbcUserDetailsManager</code> 等数据库持久化方式；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>设置密码编码器，这里使用了 <code>BCryptPasswordEncoder</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>设置用户名 <code>rain</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>设置用户密码 <code>passwd123</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>设置用户角色 <code>USER</code>。</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_获取当前用户_authenticationprincipal">3.4.4. 获取当前用户 <code>@AuthenticationPrincipal</code></h4>
+<div class="paragraph">
+<p>Spring Security 4.0 提供了注解 <code>@AuthenticationPrincipal</code>，用于获取当前用户对象。</p>
+</div>
+<div class="listingblock">
+<div class="title">src/main/java/org/springdev/guides/helloworld/HelloController.java</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@RestController
+public class HelloController {
+
+  @GetMapping("/hello")
+  public String hello(@AuthenticationPrincipal User user) {
+    return String.format("Hello, %s!", user.getUsername());
+  }
 
 }</code></pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_添加maven依赖">4. 添加Maven依赖</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Spring Boot提供了针对集成Spring Security 的<code>spring-boot-starter-security</code>和<code>spring-security-test</code>，在项目依赖增加中。</p>
-</div>
-<div class="paragraph">
-<p>具体如下在pom.xml 中增加下列依赖：</p>
+<p>接下来，测试验证一下：</p>
 </div>
 <div class="listingblock">
-<div class="title">pom.xml</div>
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
-    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;  <i class="conum" data-value="1"></i><b>(1)</b>
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-security-test&lt;/artifactId&gt;  <i class="conum" data-value="2"></i><b>(2)</b>
-  &lt;scope&gt;test&lt;/scope&gt;
-&lt;/dependency&gt;</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_编写测试用例">5. 编写测试用例</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="title">src/main/java/org/springdev/guides/digest/MvcConfig.java</div>
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.digestauth;
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ http -v -a rain:passwd123 :8080/hello
+GET /hello HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Authorization: Basic cmFpbjpwYXNzd2QxMjM=
+Connection: keep-alive
+Host: localhost:8080
+User-Agent: HTTPie/1.0.2
 
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.digest;
+
+
+HTTP/1.1 200
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 12
+Content-Type: text/plain;charset=UTF-8
+Date: Fri, 18 Jan 2019 12:30:25 GMT
+Expires: 0
+Pragma: no-cache
+Set-Cookie: JSESSIONID=B1F58CEA486F572F7DDFEEA71B60093A; Path=/; HttpOnly
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 1; mode=block
+
+Hello, rain!</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="testing">3.5. 单元测试</h3>
+<div class="sect3">
+<h4 id="_编写测试用例">3.5.1. 编写测试用例</h4>
+<div class="listingblock">
+<div class="title">src/test/java/org/springdev/guides/basicauth/HelloControllerTests.java</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.basicauth;
+
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.Before;
@@ -382,131 +653,522 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-@RunWith(SpringRunner.class)  <i class="conum" data-value="1"></i><b>(1)</b>
-@SpringBootTest  <i class="conum" data-value="2"></i><b>(2)</b>
-public class DigestAuthApplicationTests {
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class HelloControllerTests {
 
-	@Autowired
-	private WebApplicationContext context;
+  @Autowired
+  private WebApplicationContext context;
 
-	private MockMvc mvc;
+  private MockMvc mvc;
 
-	@Before
-	public void setup() {  <i class="conum" data-value="3"></i><b>(3)</b>
-		mvc = MockMvcBuilders
-				.webAppContextSetup(context)
-				.apply(springSecurity())  <i class="conum" data-value="4"></i><b>(4)</b>
-				.build();
-	}
+  @Before
+  public void setup() {  <i class="conum" data-value="3"></i><b>(3)</b>
+    mvc = MockMvcBuilders
+        .webAppContextSetup(context)
+        .apply(springSecurity())  <i class="conum" data-value="4"></i><b>(4)</b>
+        .build();
+  }
 
-	@Test
-	public void digestAuth() throws Exception {
-		mvc
-			.perform(
-				get("/").with(
-						digest("user")   <i class="conum" data-value="5"></i><b>(5)</b>
-						.password("password")
-						.realm("Spring Dev")))
-			.andExpect(status().isOk());  <i class="conum" data-value="6"></i><b>(6)</b>
-	}
-
+  @Test
+  public void helloBasicAuth() throws Exception {
+    mvc.perform(
+        get("/hello")
+            .with(httpBasic("user", "password")))  <i class="conum" data-value="5"></i><b>(5)</b>
+            .andExpect(status().isOk())  <i class="conum" data-value="6"></i><b>(6)</b>
+            .andExpect(content().string("Hello, World!"));
+  }
 }</code></pre>
 </div>
 </div>
 <div class="colist arabic">
+<div class="title">代码说明如下：</div>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>代码说明</td>
+<td>SpringRunner 是在 Spring 4.3 版本新增的注解，是 SpringJUnit4ClassRunner 的别名。SpringJUnit4ClassRunner.class 提供了集成 JUnit 4.4 的能力。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>代码说明</td>
+<td>Spring Boot 提供了 <code>@SpringBootTest</code> 注解，该注解简化了 Spring Boot 应用的测试，提供了对应 spring-test 中 <code>@ContextConfiguration</code> 的功能，用于创建 <code>ApplicationContext</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>测试初始化准备工作；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>添加 Spring Security 的一些功能特性；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>设置 Basic 认证需要的用户名和密码，这里是在配置文件设置的 <code>user</code> 和 <code>password</code>；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>测试验证结果是符合预期，这里是响应状态码为200，表示请求成功；返回内容为：<code>Hello, World!</code>。</td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>运行测试，查看测试是否通过。</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_编写securityconfig类">6. 编写SecurityConfig类</h2>
-<div class="sectionbody">
+<div class="sect3">
+<h4 id="_执行单元测试">3.5.2. 执行单元测试</h4>
 <div class="listingblock">
-<div class="title">src/main/java/org/springdev/guides/digest/SecurityConfig.java</div>
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.springdev.guides.digestauth;
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">mvn test</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">运行结果</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.springdev.guides.basicauth.BasicAuthApplicationTests
+20:20:52.835 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class org.springdev.guides.basicauth.BasicAuthApplicationTests]
+20:20:52.841 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+20:20:52.849 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+20:20:52.870 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.springdev.guides.basicauth.BasicAuthApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+20:20:52.883 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.springdev.guides.basicauth.BasicAuthApplicationTests], using SpringBootContextLoader
+20:20:52.886 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.springdev.guides.basicauth.BasicAuthApplicationTests]: class path resource [org/springdev/guides/basicauth/BasicAuthApplicationTests-context.xml] does not exist
+20:20:52.887 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.springdev.guides.basicauth.BasicAuthApplicationTests]: class path resource [org/springdev/guides/basicauth/BasicAuthApplicationTestsContext.groovy] does not exist
+20:20:52.887 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.springdev.guides.basicauth.BasicAuthApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+20:20:52.888 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.springdev.guides.basicauth.BasicAuthApplicationTests]: BasicAuthApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:20:52.938 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.springdev.guides.basicauth.BasicAuthApplicationTests]
+20:20:53.028 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/rain/Development/springdev/guides/spring/spring-security-basic-auth/complete/target/classes/org/springdev/guides/basicauth/BasicAuthApplication.class]
+20:20:53.040 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.springdev.guides.basicauth.BasicAuthApplication for test class org.springdev.guides.basicauth.BasicAuthApplicationTests
+20:20:53.130 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [org.springdev.guides.basicauth.BasicAuthApplicationTests]: using defaults.
+20:20:53.130 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+20:20:53.144 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+20:20:53.144 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+20:20:53.146 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6a192cfe, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5119fb47, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7193666c, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@20deea7f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3835c46, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@1dde4cb2, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@7714e963, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@20ce78ec, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@393671df, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@56620197, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6eda5c9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@55b7a4e0]
+20:20:53.148 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.springdev.guides.basicauth.BasicAuthApplicationTests]
+20:20:53.149 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.springdev.guides.basicauth.BasicAuthApplicationTests]
+20:20:53.150 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.springdev.guides.basicauth.BasicAuthApplicationTests]
+20:20:53.150 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.springdev.guides.basicauth.BasicAuthApplicationTests]
+20:20:53.151 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.springdev.guides.basicauth.BasicAuthApplicationTests]
+20:20:53.151 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.springdev.guides.basicauth.BasicAuthApplicationTests]
+20:20:53.156 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@6e20b53a testClass = BasicAuthApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@71809907 testClass = BasicAuthApplicationTests, locations = '{}', classes = '{class org.springdev.guides.basicauth.BasicAuthApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@71bbf57e, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@d44fc21, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@2d8f65a4, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@52feb982], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+20:20:53.156 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.springdev.guides.basicauth.BasicAuthApplicationTests]
+20:20:53.157 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.springdev.guides.basicauth.BasicAuthApplicationTests]
+20:20:53.182 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
-import org.springframework.security.web.authentication.www.DigestAuthenticationEntryPoint;
-import org.springframework.security.web.authentication.www.DigestAuthenticationFilter;
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.2.RELEASE)
 
-@Configuration  <i class="conum" data-value="1"></i><b>(1)</b>
-@EnableWebSecurity  <i class="conum" data-value="2"></i><b>(2)</b>
-public class SecurityConfig extends WebSecurityConfigurerAdapter {  <i class="conum" data-value="3"></i><b>(3)</b>
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication()
-			.withUser("user").password("password").roles("USER");  <i class="conum" data-value="4"></i><b>(4)</b>
-	}
+2019-01-18 20:20:53.400  INFO 11392 --- [           main] o.s.g.b.BasicAuthApplicationTests        : Starting BasicAuthApplicationTests on Michaels-MacBook-Pro.local with PID 11392 (started by rain in /Users/rain/Development/springdev/guides/spring/spring-security-basic-auth/complete)
+2019-01-18 20:20:53.401  INFO 11392 --- [           main] o.s.g.b.BasicAuthApplicationTests        : No active profile set, falling back to default profiles: default
+2019-01-18 20:20:54.657  INFO 11392 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 20:20:55.115  INFO 11392 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b4786dd, org.springframework.security.web.context.SecurityContextPersistenceFilter@9d200de, org.springframework.security.web.header.HeaderWriterFilter@55f8669d, org.springframework.security.web.csrf.CsrfFilter@2bac9ba, org.springframework.security.web.authentication.logout.LogoutFilter@257cc1fc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@562457e1, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@109d724c, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@f202d6d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3721177d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@646811d6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@795fd838, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60e21209, org.springframework.security.web.session.SessionManagementFilter@42435b98, org.springframework.security.web.access.ExceptionTranslationFilter@588cd519, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4567e53d]
+2019-01-18 20:20:55.192  INFO 11392 --- [           main] o.s.g.b.BasicAuthApplicationTests        : Started BasicAuthApplicationTests in 2.002 seconds (JVM running for 2.716)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.694 s - in org.springdev.guides.basicauth.BasicAuthApplicationTests
+[INFO] Running org.springdev.guides.basicauth.HelloControllerTests
+2019-01-18 20:20:55.406  INFO 11392 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.springdev.guides.basicauth.HelloControllerTests], using SpringBootContextLoader
+2019-01-18 20:20:55.407  INFO 11392 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [org.springdev.guides.basicauth.HelloControllerTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-01-18 20:20:55.407  INFO 11392 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [org.springdev.guides.basicauth.HelloControllerTests]: HelloControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-01-18 20:20:55.409  INFO 11392 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration org.springdev.guides.basicauth.BasicAuthApplication for test class org.springdev.guides.basicauth.HelloControllerTests
+2019-01-18 20:20:55.410  INFO 11392 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+2019-01-18 20:20:55.411  INFO 11392 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@327ed9f5, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@67594471, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@756b58a7, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2cc04358, org.springframework.test.context.support.DirtiesContextTestExecutionListener@68b58644, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@45e22def, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@6ae3fb94, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4417af13, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@d48673, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@548d5ed3, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@21c7208d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@58516c91]
+2019-01-18 20:20:55.439  INFO 11392 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-01-18 20:20:55.439  INFO 11392 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-01-18 20:20:55.450  INFO 11392 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 11 ms
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.276 s - in org.springdev.guides.basicauth.HelloControllerTests
+2019-01-18 20:20:55.715  INFO 11392 --- [       Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.621 s
+[INFO] Finished at: 2019-01-18T20:20:56+08:00
+[INFO] ------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="build-and-run">4. 构建运行</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>选中工程，然后打开菜单 <span class="menuseq"><b class="menu">Run</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Run as</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Spring Boot App</b></span>，应用就开始启动了，可以在控制台看到启动应用的日志。</p>
+</div>
+<div class="paragraph">
+<p>也可以，先打包成 <code>JAR</code>：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ mvn package</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>或者，在控制台下执行命令:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ mvn spring-boot:run</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">控制台运行日志</div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.2.RELEASE)
 
-	@Bean("authenticationManager")  <i class="conum" data-value="5"></i><b>(5)</b>
-	@Override
-	public AuthenticationManager authenticationManagerBean() throws Exception {
-		return super.authenticationManagerBean();
-	}
+2019-01-18 20:24:32.480  INFO 11128 --- [  restartedMain] o.s.g.basicauth.BasicAuthApplication     : Starting BasicAuthApplication on Michaels-MacBook-Pro.local with PID 11128 (/Users/rain/Development/springdev/guides/spring/spring-security-basic-auth/complete/target/classes started by rain in /Users/rain/Development/springdev/guides/spring/spring-security-basic-auth/complete)
+2019-01-18 20:24:32.483  INFO 11128 --- [  restartedMain] o.s.g.basicauth.BasicAuthApplication     : No active profile set, falling back to default profiles: default
+2019-01-18 20:24:32.527  INFO 11128 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-01-18 20:24:32.527  INFO 11128 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-01-18 20:24:33.670  INFO 11128 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-18 20:24:33.701  INFO 11128 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-18 20:24:33.702  INFO 11128 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2019-01-18 20:24:33.714  INFO 11128 --- [  restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/rain/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-18 20:24:33.783  INFO 11128 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-18 20:24:33.784  INFO 11128 --- [  restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1257 ms
+2019-01-18 20:24:34.000  INFO 11128 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 20:24:34.302  INFO 11128 --- [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration :
 
-	public DigestAuthenticationEntryPoint authenticationEntryPoint() {  <i class="conum" data-value="6"></i><b>(6)</b>
-		DigestAuthenticationEntryPoint authenticationEntryPoint = new DigestAuthenticationEntryPoint();
-		authenticationEntryPoint.setRealmName("Spring Dev");
-		authenticationEntryPoint.setKey("spring");
+Using generated security password: 0d116f14-6045-4d8d-ba70-369825c353c8
 
-		return authenticationEntryPoint;
-	}
+2019-01-18 16:24:34.390  INFO 11128 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@460b5963, org.springframework.security.web.context.SecurityContextPersistenceFilter@73a7bdb2, org.springframework.security.web.header.HeaderWriterFilter@5fdd3098, org.springframework.security.web.csrf.CsrfFilter@3267e364, org.springframework.security.web.authentication.logout.LogoutFilter@2a2ed82a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@63037dff, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5c1dbf65, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4959889, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5cc4ecfd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54aee885, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a525db9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@781bf9f1, org.springframework.security.web.session.SessionManagementFilter@29b1d310, org.springframework.security.web.access.ExceptionTranslationFilter@4f7d0549, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3fc328c4]
+2019-01-18 16:24:34.442  INFO 11128 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-01-18 16:24:34.499  INFO 11128 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-18 16:24:34.502  INFO 11128 --- [  restartedMain] o.s.g.basicauth.BasicAuthApplication     : Started BasicAuthApplication in 2.497 seconds (JVM running for 2.888)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="test-and-verify">5. 测试验证</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>打开浏览器，访问地址： <a href="http://localhost:8080/hello" class="external" target="_blank" rel="noopener">http://localhost:8080/hello</a> 会看到下图所示的界面：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/spring_security_default_login_page.png" alt="spring security default login page">
+</div>
+</div>
+<div class="paragraph">
+<p>Spring Security 5.1 提供了默认登录页面，我们输入下面的用户名和密码，点击 <strong>Sign in</strong>：</p>
+</div>
+<div class="paragraph">
+<p>username : <code>user</code></p>
+</div>
+<div class="paragraph">
+<p>password : <code>0d116f14-6045-4d8d-ba70-369825c353c8</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/hello_world_page.png" alt="hello world page">
+</div>
+</div>
+<div class="paragraph">
+<p>或者，通过 curl 来验证：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ curl -i http://localhost:8080/hello
+HTTP/1.1 401
+Set-Cookie: JSESSIONID=D7DF2737B6A15470533499CD176D82C9; Path=/; HttpOnly
+WWW-Authenticate: Basic realm="Realm"
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 18 Jan 2019 08:26:02 GMT
 
-	public DigestAuthenticationFilter digestAuthenticationFilter() throws Exception {  <i class="conum" data-value="7"></i><b>(7)</b>
-		DigestAuthenticationFilter digestAuthenticationFilter = new DigestAuthenticationFilter();
-    	digestAuthenticationFilter.setAuthenticationEntryPoint(authenticationEntryPoint());
-    	digestAuthenticationFilter.setUserDetailsService(this.userDetailsServiceBean());
+{"timestamp":"2019-01-18T08:26:02.772+0000","status":401,"error":"Unauthorized","message":"Unauthorized","path":"/hello"}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ curl -i -u user:0d116f14-6045-4d8d-ba70-369825c353c8 http://localhost:8080/hello
+HTTP/1.1 200
+Set-Cookie: JSESSIONID=EA45465022A14A0A9F8005C549B791C0; Path=/; HttpOnly
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 13
+Date: Fri, 18 Jan 2019 12:26:26 GMT
 
-    	return digestAuthenticationFilter;
-	}
+Hello, World!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>或者，通过 HTTPie 验证：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ http -a user:0d116f14-6045-4d8d-ba70-369825c353c8 :8080/hello
+HTTP/1.1 200
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 13
+Content-Type: text/plain;charset=UTF-8
+Date: Fri, 18 Jan 2019 12:24:53 GMT
+Expires: 0
+Pragma: no-cache
+Set-Cookie: JSESSIONID=0834DDF3110752550433913A53EB5035; Path=/; HttpOnly
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 1; mode=block
 
-    @Override
-    public void configure(HttpSecurity http) throws Exception {
-    	http.addFilterBefore(digestAuthenticationFilter(), BasicAuthenticationFilter.class);  <i class="conum" data-value="8"></i><b>(8)</b>
+Hello, World!</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_实现原理">6. 实现原理</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_http_请求过程分析">6.1. HTTP 请求过程分析</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ http -v -a rain:passwd123 :8080/hello
+GET /hello HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Authorization: Basic cmFpbjpwYXNzd2QxMjM=</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>从上面的 HTTP 请求记录，可以看出请求头中带有 <code>Authorization: Basic cmFpbjpwYXNzd2QxMjM=</code>，这个就是提交认证的用户名和密码，使用了 Base64 加密。</p>
+</div>
+<div class="paragraph">
+<p>如果你使用的是 MacOSX 或者 Linux 系统，那么可以使用下面的命令行工具来解码上面的加密字符串串 <code>cmFpbjpwYXNzd2QxMjM=</code>。当然也可以使用一些提供 Base64 加解密的在线网站，比如 <a href="https://www.base64encode.org">https://www.base64encode.org</a>。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ base64 -D &lt;&lt;&lt; cmFpbjpwYXNzd2QxMjM=
+rain:passwd123</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ openssl base64 -d &lt;&lt;&lt; cmFpbjpwYXNzd2QxMjM=
+rain:passwd123</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>也可以来使用下面的命令加密来看看是否一致：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ echo -n "rain:passwd123" | base64
+cmFpbjpwYXNzd2QxMjM=</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-console" data-lang="console">$ echo -n "rain:passwd123" | openssl base64
+cmFpbjpwYXNzd2QxMjM=</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_代码解读basicauthenticationfilter">6.2. 代码解读：BasicAuthenticationFilter</h3>
+<div class="paragraph">
+<p>下面一段代码是选取框架中 <code>BasicAuthenticationFilter</code> 源码的 L118 - L236 行，这一段代码是其实现原理的核心逻辑。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class DigestAuthenticationFilter extends GenericFilterBean
+    implements MessageSourceAware {
+
+  // ...
+
+  public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
+      throws IOException, ServletException {
+    HttpServletRequest request = (HttpServletRequest) req;
+    HttpServletResponse response = (HttpServletResponse) res;
+
+    String header = request.getHeader("Authorization");
+
+    if (header == null || !header.startsWith("Digest ")) {
+      chain.doFilter(request, response);
+
+      return;
     }
+
+    if (logger.isDebugEnabled()) {
+      logger.debug(
+          "Digest Authorization header received from user agent: " + header);
+    }
+
+    DigestData digestAuth = new DigestData(header);
+
+    try {
+      digestAuth.validateAndDecode(this.authenticationEntryPoint.getKey(),
+          this.authenticationEntryPoint.getRealmName());
+    }
+    catch (BadCredentialsException e) {
+      fail(request, response, e);
+
+      return;
+    }
+
+    // Lookup password for presented username
+    // NB: DAO-provided password MUST be clear text - not encoded/salted
+    // (unless this instance's passwordAlreadyEncoded property is 'false')
+    boolean cacheWasUsed = true;
+    UserDetails user = this.userCache.getUserFromCache(digestAuth.getUsername());
+    String serverDigestMd5;
+
+    try {
+      if (user == null) {
+        cacheWasUsed = false;
+        user = this.userDetailsService
+            .loadUserByUsername(digestAuth.getUsername());
+
+        if (user == null) {
+          throw new AuthenticationServiceException(
+              "AuthenticationDao returned null, which is an interface contract violation");
+        }
+
+        this.userCache.putUserInCache(user);
+      }
+
+      serverDigestMd5 = digestAuth.calculateServerDigest(user.getPassword(),
+          request.getMethod());
+
+      // If digest is incorrect, try refreshing from backend and recomputing
+      if (!serverDigestMd5.equals(digestAuth.getResponse()) &amp;&amp; cacheWasUsed) {
+        if (logger.isDebugEnabled()) {
+          logger.debug(
+              "Digest comparison failure; trying to refresh user from DAO in case password had changed");
+        }
+
+        user = this.userDetailsService
+            .loadUserByUsername(digestAuth.getUsername());
+        this.userCache.putUserInCache(user);
+        serverDigestMd5 = digestAuth.calculateServerDigest(user.getPassword(),
+            request.getMethod());
+      }
+
+    }
+    catch (UsernameNotFoundException notFound) {
+      fail(request, response,
+          new BadCredentialsException(this.messages.getMessage(
+              "DigestAuthenticationFilter.usernameNotFound",
+              new Object[] { digestAuth.getUsername() },
+              "Username {0} not found")));
+
+      return;
+    }
+
+    // If digest is still incorrect, definitely reject authentication attempt
+    if (!serverDigestMd5.equals(digestAuth.getResponse())) {
+      if (logger.isDebugEnabled()) {
+        logger.debug("Expected response: '" + serverDigestMd5
+            + "' but received: '" + digestAuth.getResponse()
+            + "'; is AuthenticationDao returning clear text passwords?");
+      }
+
+      fail(request, response,
+          new BadCredentialsException(this.messages.getMessage(
+              "DigestAuthenticationFilter.incorrectResponse",
+              "Incorrect response")));
+      return;
+    }
+
+    // To get this far, the digest must have been valid
+    // Check the nonce has not expired
+    // We do this last so we can direct the user agent its nonce is stale
+    // but the request was otherwise appearing to be valid
+    if (digestAuth.isNonceExpired()) {
+      fail(request, response,
+          new NonceExpiredException(this.messages.getMessage(
+              "DigestAuthenticationFilter.nonceExpired",
+              "Nonce has expired/timed out")));
+
+      return;
+    }
+
+    if (logger.isDebugEnabled()) {
+      logger.debug("Authentication success for user: '" + digestAuth.getUsername()
+          + "' with response: '" + digestAuth.getResponse() + "'");
+    }
+
+    Authentication authentication = createSuccessfulAuthentication(request, user);
+    SecurityContext context = SecurityContextHolder.createEmptyContext();
+    context.setAuthentication(authentication);
+    SecurityContextHolder.setContext(context);
+
+    chain.doFilter(request, response);
+  }
+
+  // ...
 }</code></pre>
 </div>
 </div>
 <div class="colist arabic">
+<div class="title">代码说明如下：</div>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>代码说明</td>
+<td>获取请求头，检查是否存在 <code>Authorization</code>，如果存在而且其字符串内容是以 Basic 或者 basic 开头，那么就需要做 Basic 认证处理；</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>代码说明</td>
+<td>解码获取 username 和 password，具体实现算法参考 <code>extractAndDecodeHeader</code> 方法；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>由 authenticationManager 负责检查用户名和密码是否是有限账号；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>认证成功后，<code>SecurityContextHolder</code> 保存用户认证信息；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>认证失败的处理，比如清理用户信息，或者返回给用户提示信息等等；</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>请求头解码获取 username 和 password 的实现算法。</td>
 </tr>
 </table>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="_小结">7. 小结</h2>
+<h2 id="summary">7. 小结</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Digest认证作为Basic认证的替代方案。</p>
+<p>恭喜，你已经学会使用 Spring Boot CLI 创建一个 Spring Boot Web 简单应用，并且使用 Maven 构建运行起来。</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="related-articles">8. 相关文章</h2>
+<div class="sectionbody">
+
 </div>
 </div></div>
             </article>
@@ -521,20 +1183,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {  <i class="co
                   <button class="btn" data-protocol="subversion">Subversion</button>
                 </div>
                 <div class="clone-url https">
-                  <input type="text" id="clone-url-https" value="https://github.com/springdev-guides/tut-http-digest-auth.git" readonly="readonly"/>
-                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="https://github.com/springdev-guides/tut-http-digest-auth.git"></button>
+                  <input type="text" id="clone-url-https" value="https://github.com/springdev-guides/spring-security-digest-auth.git" readonly="readonly"/>
+                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="https://github.com/springdev-guides/spring-security-digest-auth.git"></button>
                 </div>
                 <div class="clone-url ssh">
-                  <input type="text" id="clone-url-ssh" value="git@github.com:springdev-guides/tut-http-digest-auth.git" readonly="readonly"/>
-                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="git@github.com:springdev-guides/tut-http-digest-auth.git"></button>
+                  <input type="text" id="clone-url-ssh" value="git@github.com:springdev-guides/spring-security-digest-auth.git" readonly="readonly"/>
+                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="git@github.com:springdev-guides/spring-security-digest-auth.git"></button>
                 </div>
                 <div class="clone-url subversion">
-                  <input type="text" id="clone-url-subversion" value="https://github.com/springdev-guides/tut-http-digest-auth" readonly="readonly"/>
-                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="https://github.com/springdev-guides/tut-http-digest-auth"></button>
+                  <input type="text" id="clone-url-subversion" value="https://github.com/springdev-guides/spring-security-digest-auth" readonly="readonly"/>
+                  <button class="copy-button github" data-toggle="tooltip" data-clipboard-text="https://github.com/springdev-guides/spring-security-digest-auth"></button>
                 </div>
-                <a class="github_download btn btn-black uppercase" href='https://github.com/springdev-guides/tut-http-digest-auth/archive/master.zip'>代码下载</a>
+                <a class="github_download btn btn-black uppercase" href='https://github.com/springdev-guides/spring-security-digest-auth/archive/master.zip'>代码下载</a>
                 <div class="go-to-repo--container">
-                  <a href="https://github.com/springdev-guides/tut-http-digest-auth" target="_blank">
+                  <a href="https://github.com/springdev-guides/spring-security-digest-auth" target="_blank">
                     <i class="icon-github"></i>
                     GO TO REPO
                   </a>

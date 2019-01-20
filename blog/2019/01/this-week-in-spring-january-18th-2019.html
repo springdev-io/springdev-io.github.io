@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布 - Spring技术社区</title>
+  <title>Spring一周回顾（2019年1月18日） - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-10-31'><meta property="og:description" content="Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布。" />
+  <meta property="og:title" content="Spring一周回顾（2019年1月18日）" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2019-01-18'><meta property="og:description" content="Spring 开发者们每周必读的《Spring一周回顾》。" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -119,7 +119,7 @@
     <main class="body--container container-fluid">
       <div class="main-body--wrapper">
         <div class="desktop-only">
-          <h1 class="blog-category active content--title">版本发布</h1>
+          <h1 class="blog-category active content--title">新闻资讯</h1>
           <div class="blog-category content--title">
             <div>Engineering</div>
           </div>
@@ -135,12 +135,12 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Spring Security OAuth2 Auto-config 2.0.6 和 2.1.0 发布</h1>
+                <h1 class="blog--title">Spring一周回顾（2019年1月18日）</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
-                    <div class="meta-data--icon icon blog-icon release"></div>
+                    <div class="meta-data--icon icon blog-icon news"></div>
                     <span>
-                      <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                      <a class="category" href="../../../blog/category/news.html">news</a>&nbsp;
                     </span>
                     </div>
                     <div class="meta-data--item">
@@ -149,62 +149,174 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-10-31</time>
+                      <time class="date" pubdate="" datetime=''>2019-01-18</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/10/spring-security-oauth2-auto-config-2-0-6-2-1-0-released.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2019/01/this-week-in-spring-january-18th-2019.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
               <div class="blog--post"><div class="paragraph">
-<p><a href="https://spring.io/team/jzheaux" class="external" target="_blank" rel="noopener">Josh Cummings</a>在博客上宣布了<a href="https://github.com/spring-projects/spring-security-oauth2-boot" class="external" target="_blank" rel="noopener">Spring Security OAuth2 Auto-config</a> 2.0.6 &amp; 2.1.0 已发布。</p>
+<p>大家好，Spring 粉丝们，感谢一如既往的等待，又到了每周必读的《Spring一周回顾》时间。</p>
 </div>
 <div class="paragraph">
-<p>这两个版本主要提供错误修复和依赖版本更新以及一些小的改进。特别值得注意的是，这些分别与Spring Boot <a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.0.6.RELEASE" class="external" target="_blank" rel="noopener">2.0.6</a>和最新的<a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.1.0.RELEASE" class="external" target="_blank" rel="noopener">2.1.0</a>版本一致。</p>
-</div>
-<div class="paragraph">
-<p>请注意，对于2.1.0，资源服务器和授权服务器之间的密钥配置存在差异。现在，在Authorization Server端可以配置单个密钥：</p>
+<p><a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program" class="external" target="_blank" rel="noopener">“Hello World”</a> 是学习新编程语言时通常编写的第一个程序。在<a href="https://en.wikipedia.org/wiki/Brian_Kernighan" class="external" target="_blank" rel="noopener">布莱恩·柯尼汉（Brian Kernighan）</a>的 B 编程语言教程中首次提到它后，它通过 Kernighan ＆ Ritchie 1978年出版的 “The C Programming Language” 一书而广为人知，它的内容如下：</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>security:
-  oauth2:
-    authorization:
-      jwt:
-        key-value: ${PRIVATE_KEY}</pre>
+<pre>main() {
+    printf("hello, world\n");
+}</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>类似于资源服务器配置。</p>
+<div class="imageblock">
+<div class="content">
+<img src="/images/Hello_World_Brian_Kernighan_1978.jpg" alt="Hello World Brian Kernighan 1978">
 </div>
-<div class="paragraph">
-<p>此外，资源服务器和授权服务器都添加了一些<a href="https://github.com/spring-projects/spring-security-oauth2-boot/issues/18" class="external" target="_blank" rel="noopener">配置密钥库的基本支持</a>。</p>
+<div class="title">图 1. "Hello, world" program by Brian Kernighan (1978)</div>
 </div>
 <div class="paragraph">
-<p>有关变更的完整列表，请参阅修改记录：<a href="https://github.com/spring-projects/spring-security-oauth2-boot/milestone/14" class="external" target="_blank" rel="noopener">2.0.6</a>，<a href="https://github.com/spring-projects/spring-security-oauth2-boot/milestone/12?closed=1" class="external" target="_blank" rel="noopener">2.1.0.RC1</a>和<a href="https://github.com/spring-projects/spring-security-oauth2-boot/milestone/5?closed=1" class="external" target="_blank" rel="noopener">2.1.0</a>。</p>
+<p>从那时起，Hello World 已经在地球上的几乎所有编程语言中实现。 在 <a href="http://helloworldcollection.de/" class="external" target="_blank" rel="noopener">The Hello World Collection</a> 上有 <code>585</code> 个 Hello World 程序，包括许多知名或者不知名的编程语言，以及 <code>78</code> 种人类语言。除了“发明”了 “hello, world” 之外，他被网友和媒体戴上了各种头衔—— “历史上最伟大的十大程序员”、“十五位计算先驱” 等等，他与丹尼斯·里奇（Dennis Ritchie）共同写作了C语言的第一本著作《C程序设计语言》，当今的程序员们逃不开他的影响力。与高高在上的“大神”形象形成反差的是，在普林斯顿大学任教的布莱恩·柯尼汉教授，每年秋天的开学季，都会给非计算机专业的学生，讲授一门名叫“我们世界中的计算机”的课程（COS 109: Computers in our World）。这门课的目的其实非常纯粹，就是科普有关计算机的最基本常识，让每一个人都能在工作和生活中更好地使用电脑。</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
 <div class="paragraph">
-<p>原文：https://spring.io/blog/2018/10/31/spring-security-oauth2-auto-config-2-0-6-2-1-0-released<br>
-作者：Josh Cummings<br>
-翻译：春之雨<br>
-说明：版权归原文作者，翻译仅供学习参考。时间仓促，翻译不免出错，欢迎反馈和讨论，感谢阅读。</p>
+<p>在本月的主题内容里，我编写了这个 Spring Boot、Grails、Ratpack 等多个框架的多语言入门版本《Hello World》应用系列，目前已经完成了 Spring Boot 的 Java、Groovy、Kotlin、Scala、Clojure 等版本，后续还会陆续发布其他框架的版本，敬请期待。同时，这个也是初学者非常好的入门学习教程，内容涉及开发工具、创建项目、编写代码、代码讲解、单元测试、集成测试等，看似简单但同样认真对待，力争做到全面、细致，也同时欢迎 Spring 开发者投稿参与，从简单的一行代码开始，在 2019 年有一个美好的、崭新的起点。</p>
 </div>
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>之所以要做这个事情，一方面是 Spring Framework 从 2.0 版本开始就支持 Groovy、Ruby 等动态语言，此外还开始了 Spring.NET、Spring Scala、Spring Python 等支持多语言的项目。虽然这些项目后面由于多种原因停止了，但是 JVM 上多语言也一直在持续不断发展，从目前发展的多个语言来看，Kotlin 在 2018 年发展迅速，Spring Framework 从 5.0 <a href="https://docs.spring.io/spring/docs/5.0.x/spring-framework-reference/languages.html#languages" class="external" target="_blank" rel="noopener">对 Kotlin 提供了一流的支持</a>，而 Scala 和 Clojure 语言在大数据处理方面也发展不错。</p>
+</div>
+<div class="paragraph">
+<p>另一方面，Spring Boot 和 Spring Cloud 在微服务架构中越来越流行，而多语言编程（Polyglot Programming）也是微服务架构中的一个优势，除了利用多语言和多语言平台的优势外，还可以支持技术团队自由选择“合适的工具做正确的事”，这也是非常吸引开发者的地方。</p>
+</div>
+<div class="ulist">
+<div class="title">以下是已完成的 Spring Boot 版本多语言的 Hello World 应用</div>
+<ul>
+<li>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Java &amp; Maven）</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world-groovy/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Groovy &amp; Gradle）</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world-kotlin/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Kotlin &amp; Gradle）</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world-scala/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Scala &amp; Gradle）</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/guides/spring/spring-boot-hello-world-clojure/" class="external" target="_blank" rel="noopener">Spring Boot: 编写一个 Hello World 应用（Clojure &amp; Gradle）</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/guides/grails/grails-hello-world/" class="external" target="_blank" rel="noopener">Grails: 编写一个 Hello World 应用</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>本周我为大家带来了如下内容：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://springdev.io/blog/2019/01/spring-boot-2-1-2-released.html" class="external" target="_blank" rel="noopener">Spring Boot 2.1.2 发布</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2019/01/spring-session-bean-sr2-apple-sr8-and-1-3-5-released.html" class="external" target="_blank" rel="noopener">Spring Session Bean-SR2、Apple-SR8 和 1.3.5 同时发布</a></p>
+</li>
+<li>
+<p><a href="https://kylin.apache.org/" class="external" target="_blank" rel="noopener">Apache Kylin 2.6.0 已发布</a></p>
+</li>
+<li>
+<p><a href="http://jackrabbit.apache.org/downloads.html" class="external" target="_blank" rel="noopener">Apache Oak 1.6.16</a></p>
+</li>
+<li>
+<p><a href="http://fineract.apache.org/" class="external" target="_blank" rel="noopener">Apache Fineract 1.2.0 已发布</a></p>
+</li>
+<li>
+<p><a href="http://commons.apache.org/" class="external" target="_blank" rel="noopener">Apache Commons FileUpload 1.4 已发布</a></p>
+</li>
+<li>
+<p><a href="https://struts.apache.org/" class="external" target="_blank" rel="noopener">Apache Struts 2.5.20 GA</a></p>
+</li>
+<li>
+<p><a href="https://github.com/angular/angular/releases/tag/7.2.1" class="external" target="_blank" rel="noopener">Angular 7.2.1 已发布</a></p>
+</li>
+<li>
+<p><a href="https://github.com/serverless/serverless/releases/tag/v1.36.1" class="external" target="_blank" rel="noopener">Serverless 1.36.1 已发布</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kubernetes/releases/tag/v1.12.5" class="external" target="_blank" rel="noopener">Kubernetes 1.12.5 已发布</a></p>
+</li>
+<li>
+<p><a href="https://blog.playframework.com/play-2-7-0-rc9-released/" class="external" target="_blank" rel="noopener">Play Framework 2.7.0 RC9 已发布</a></p>
+</li>
+<li>
+<p><a href="https://nodejs.org/en/blog/release/v11.7.0/" class="external" target="_blank" rel="noopener">Node 11.7.0 已发布</a></p>
+</li>
+<li>
+<p><a href="https://github.com/Kong/kong/releases/tag/1.0.2" class="external" target="_blank" rel="noopener">Kong 1.0.2 已发布</a></p>
+</li>
+<li>
+<p><a href="https://github.com/grpc/grpc/" class="external" target="_blank" rel="noopener">gRPC 1.18.0 已发布</a>，可以使用 <a href="https://github.com/LogNet/grpc-spring-boot-starter" class="external" target="_blank" rel="noopener">开源的 Spring Boot starter</a> 在 Spring Boot 项目中集成 gRPC，目前最新版本是 3.0.0</p>
+</li>
+<li>
+<p><a href="https://github.com/apache/incubator-dubbo/releases/tag/dubbo-2.7.0" class="external" target="_blank" rel="noopener">Dubbo 2.7.0 已发布</a></p>
+</li>
+<li>
+<p><a href="https://github.com/xetorthio/jedis/releases" class="external" target="_blank" rel="noopener">Jedis 2.10.2 已发布</a></p>
+</li>
+<li>
+<p><a href="https://www.graalvm.org/" class="external" target="_blank" rel="noopener">GraalVM</a> 的<a href="https://github.com/oracle/graal/releases/tag/vm-1.0.0-rc11" class="external" target="_blank" rel="noopener">Community Edition 1.0 RC11 发布</a></p>
+</li>
+<li>
+<p><a href="https://github.com/greenplum-db/gpdb/releases/tag/5.16.0" class="external" target="_blank" rel="noopener">Pivotal Greenplum 5.16.0 已发布</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>历史好文推荐</strong>：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://springdev.io/blog/2019/01/this-week-in-spring-january-11th-2019.html" class="external" target="_blank" rel="noopener">上一期的《Spring 一周回顾》</a>同样精彩，值得一读！</p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2019/01/spring-community-hello-2019.html" class="external" target="_blank" rel="noopener">Spring 技术社区的新年展望</a>，《Spring in 2018 年终报告》和《Spring in 2018 文章精选合集》电子版免费下载！</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>周末愉快，感谢阅读，我们下周见！</p>
+</div>
+<div class="paragraph">
+<p>参考网站：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://blog.csdn.net/zw0Pi8G5C1x/article/details/82598835" class="bare">https://blog.csdn.net/zw0Pi8G5C1x/article/details/82598835</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Brian_Kernighan" class="bare">https://en.wikipedia.org/wiki/Brian_Kernighan</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program" class="bare">https://en.wikipedia.org/wiki/%22Hello,_World!%22_program</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Polyglot_(computing" class="bare">https://en.wikipedia.org/wiki/Polyglot_(computing</a>)</p>
+</li>
+<li>
+<p><a href="http://helloworldcollection.de/" class="bare">http://helloworldcollection.de/</a></p>
+</li>
+<li>
+<p><a href="https://docs.spring.io/spring/docs/5.0.x/spring-framework-reference/languages.html#languages" class="bare">https://docs.spring.io/spring/docs/5.0.x/spring-framework-reference/languages.html#languages</a></p>
+</li>
+</ul>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/10/spring-session-bean-ga-released.html"> ←Spring Session Bean GA 已发布，有什么新特性，版本如何选择？</a></li>
-              <li class="next"><a href="../../../blog/2018/10/reactor-bismuth-sr13-and-californium-sr2-available-now.html">Reactor Bismuth-SR13 和 Californium-SR2 发布 →</a></li>
+              <li class="previous"><a  href="../../../blog/2019/01/spring-session-bean-sr2-apple-sr8-and-1-3-5-released.html"> ←Spring Session Bean-SR2、Apple-SR8 和 1.3.5 同时发布</a></li>
+              
               </ul>
             </div>
             <section id="gitalk-container"></section>
