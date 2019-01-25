@@ -141,6 +141,331 @@
               </style>
               <article class="blog--container blog-preview">
                 <h2 class="blog--title">
+                    <a href="../../../blog/2018/07/spring-boot-1-x-eol-aug-1st-2019.html">Spring Boot 1.x 在一年后将停止更新</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon release"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Mon Jul 30 15:19:00 CST 2018">2018-07-30</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/07/spring-boot-1-x-eol-aug-1st-2019.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Spring Boot 1.x 在一年后将停止更新</div>
+                    <div class="desktop-only"><div class="quoteblock abstract"> 
+ <div class="title">
+  概要
+ </div> 
+ <blockquote>
+   今天，Spring Boot的合伙创始人
+  <a href="https://spring.io/team/pwebb" class="external" target="_blank" rel="noopener">Phil Webb</a>在官方博客正式宣布了Spring Boot 1.x将在2018年8月1号后的一年后停止维护。Spring Boot 1.5分支从
+  <a href="https://spring.io/blog/2017/01/30/spring-boot-1-5-1-released" class="external" target="_blank" rel="noopener">1.5.1发布</a>到现在总共发布了15次， 正好经历了18个月。 
+ </blockquote> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/07/spring-boot-1-x-eol-aug-1st-2019.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
+                    <a href="../../../blog/2018/07/spring-security-5-1-0-m2-released.html">Spring Security 5.1.0 M2 发布</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon release"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Mon Jul 30 12:44:00 CST 2018">2018-07-30</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/07/spring-security-5-1-0-m2-released.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Spring Security 5.1.0.M2发布，该版本提供了很多新特性。</div>
+                    <div class="desktop-only"><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Spring Security的项目负责人<a href="https://spring.io/team/rwinch" class="external" target="_blank" rel="noopener">Rob Winch</a>在官方博客宣布了<a href="https://spring.io/blog/2018/07/30/spring-security-5-1-0-m2-released" class="external" target="_blank" rel="noopener">5.1.0.M2版本发布</a>的消息，这个版本总共关闭了<a href="https://github.com/spring-projects/spring-security/milestone/106?closed=1" class="external" target="_blank" rel="noopener">100多个任务单</a>，其中有不少新特性。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>下面我们将一起来看看有哪些亮点。</p> 
+  </div> 
+ </div> 
+</div>
+<div class="sect1"> 
+ <h2 id="_oauth2">OAuth2</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="_oauth2资源服务器oauth2_resource_server">OAuth2资源服务器（OAuth2 Resource Server）</h3> 
+   <div class="paragraph"> 
+    <p>添加了对OAuth2资源服务器的基本支持。 参见示例：<a href="https://github.com/spring-projects/spring-security/tree/5.1.0.M2/samples/boot/oauth2resourceserver" class="external" target="_blank" rel="noopener">oauth2resourceserver</a></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_authorization_code_flow">Authorization Code Flow</h3> 
+   <div class="paragraph"> 
+    <p>用户现在可以使用OAuth 2.0授权代码授予获取访问令牌。参见示例： <a href="https://github.com/spring-projects/spring-security/tree/5.1.0.M2/samples/boot/authcodegrant" class="external" target="_blank" rel="noopener">authcodegrant</a></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_支持oauth2和webclient">支持OAuth2和WebClient</h3> 
+   <div class="paragraph"> 
+    <p>现在内置了对OAuth2和WebClient的支持。具体如下：</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>添加访问令牌到请求中</p> </li> 
+     <li> <p>访问令牌过期时自动刷新</p> </li> 
+     <li> <p>解析要使用的访问令牌</p> </li> 
+    </ul> 
+   </div> 
+   <div class="paragraph"> 
+    <p>例如，在Servlet环境中，你可以像这样配置Bean：</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Bean
+WebClient webClient(OAuth2AuthorizedClientRepository repository) {
+    ServletOAuth2AuthorizedClientExchangeFilterFunction filter =
+        new ServletOAuth2AuthorizedClientExchangeFilterFunction(repository);
+    return WebClient.builder()
+        .filter(new OAuth2AuthorizedClientExchangeFilterFunction())
+        .apply(filter.oauth2Configuration())
+        .build();
+}</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>现在，你可以通过多种不同方式添加OAuth令牌。 如果需要，可以使用Spring MVC支持解析<code>OAuth2AuthorizedClient</code>。如果授权服务器返回刷新令牌，而访问令牌也即将过期时，Spring Security则将透明地更新访问令牌并提交更新后的访问令牌。</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">@GetMapping("/users")
+Mono&lt;String&gt; users(@RegisteredOAuth2AuthorizedClient("client-id")
+        OAuth2AuthorizedClient authorizedClient) {
+    return this.webClient.get()
+        .uri("https://api.example.com/user")
+        .attributes(oauth2AuthorizedClient(authorizedClient))
+        .retrieve()
+        .bodyToMono(String.class);
+}</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>你还可以通过“WebClient”解析访问令牌。 例如：</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">Mono&lt;String&gt; users() {
+    return this.webClient.get()
+        .uri("https://api.example.com/user")
+        .attributes(clientRegistrationId("client-id"))
+        .retrieve()
+        .bodyToMono(String.class);
+}</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>如果使用OAuth2登录或OIDC进行身份验证，则可以获取默认访问令牌而无需用户交互。</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-java" data-lang="java">Mono&lt;String&gt; users() {
+    // if Authenticated with OIDC
+    // OAuth2 Log In use the access token associated to log in
+    return this.webClient.get()
+        .uri("https://api.example.com/user")
+        .retrieve()
+        .bodyToMono(String.class);
+}</code></pre> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_webflux_oauth2登录支持oidc">WebFlux OAuth2登录支持OIDC</h3> 
+   <div class="paragraph"> 
+    <p>WebFlux应用程序现在可以使用OAuth2和OIDC进行身份验证。 参见示例： <a href="https://github.com/spring-projects/spring-security/tree/master/samples/boot/oauth2login-webflux" class="external" target="_blank" rel="noopener">oauth2login-webflux</a></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_能够从oidc_discovery创建clientregistration">能够从OIDC Discovery创建ClientRegistration</h3> 
+   <div class="paragraph"> 
+    <p>之前，用户希望与OIDC提供程序集成需要配置所有端点。例如，在Spring Boot中需要这样做：</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre>spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          okta:
+            client-id: okta-client-id
+            client-secret: okta-client-secret
+        provider:
+          okta:
+            authorization-uri: https://foo.oktapreview.com/oauth2/v1/authorize
+            token-uri: https://foo.oktapreview.com/oauth2/v1/token
+            user-info-uri: https://foo.oktapreview.com/oauth2/v1/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: https://foo.oktapreview.com/oauth2/v1/keys</pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>现在，用户可以简单的配置发行者uri。例如:</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre>spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          okta:
+            client-id: okta-client-id
+            client-secret: okta-client-secret
+        provider:
+          okta:
+            issuer-uri: https://foo.oktapreview.com/oauth2/default/</pre> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_支持自定义授权请求">支持自定义授权请求</h3> 
+   <div class="paragraph"> 
+    <p>添加了<code>OAuth2AuthorizationRequestResolver</code>用于支持自定义授权请求。 例如，如果用户想要从请求中添加/删除范围，他们现在可以轻松地执行此操作。</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_单个clientregistration将会重定向到登录">单个ClientRegistration将会重定向到登录</h3> 
+   <div class="paragraph"> 
+    <p>使用单个提供程序配置OAuth2/OIDC登录时，不是仅显示一个提供程序，而是更改默认值以立即重定向到提供程序。</p> 
+   </div> 
+  </div> 
+ </div> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/07/spring-security-5-1-0-m2-released.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
+                    <a href="../../../blog/2018/07/spring-data-ingalls-sr14-and-kay-sr9-released.html">Spring Data Ingalls SR14和Kay SR9 发布</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon release"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Fri Jul 27 08:00:00 CST 2018">2018-07-27</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/07/spring-data-ingalls-sr14-and-kay-sr9-released.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Spring Data Ingalls SR14和Kay SR9发布，属于修复BUG版本。</div>
+                    <div class="desktop-only"><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="quoteblock abstract"> 
+   <div class="title">
+    概要
+   </div> 
+   <blockquote>
+     Spring Data Ingalls SR14和Kay SR9 发布，属于修复BUG版本。 
+   </blockquote> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Kay SR9在刚发布的Spring Framework 5.0.8之上发布，Spring Boot 2.0.4将会更新到此版本，而Ingalls SR14将会被选人Spring Boot 1.5.15中。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>两个版本都是修复了一些Bug和升级一些第三方依赖，具体来说，Ingalls SR14关闭了28问题单，而Kay SR9关闭了59问题单。</p> 
+  </div> 
+ </div> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/07/spring-data-ingalls-sr14-and-kay-sr9-released.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
+                    <a href="../../../blog/2018/07/this-week-in-spring-july-27th-2018.html">Spring一周回顾（2018年7月27日）</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon news"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/news.html">news</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Fri Jul 27 08:00:00 CST 2018">2018-07-27</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/07/this-week-in-spring-july-27th-2018.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">本文带你回顾最近一周有关Spring社区的一些有趣的事情。</div>
+                    <div class="desktop-only"><div class="quoteblock abstract"> 
+ <div class="title">
+  概要
+ </div> 
+ <blockquote>
+   本文带你回顾最近一周有关Spring社区的一些有趣的事情。 
+ </blockquote> 
+</div>
+<div class="paragraph"> 
+ <p>首先，在此恭喜<a href="https://github.com/joshlong" class="external" target="_blank" rel="noopener">龙大神</a>被评选进入<a href="https://jaxlondon.com/blog/java-core-languages/top-20-java-influencers-of-2018/" class="external" target="_blank" rel="noopener">2018最具影响力的Java技术专家</a>，排行榜上面公布了这些专家们的twitter账号，由于众所周知的原因，Twitter在中国大陆不能访问，所以你要是想关注的话就只能搭梯子上去了。</p> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/07/this-week-in-spring-july-27th-2018.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
                     <a href="../../../blog/2018/07/spring-framework-5-1-goes-rc1.html">Spring Framework 5.1 RC1发布了</a>
                 </h2>
                 <header class="meta-data--container">
@@ -178,192 +503,6 @@
 </div>
                 </section>
                 <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/07/spring-framework-5-1-goes-rc1.html">
-                    查看...
-                </a>
-              </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2018/07/this-week-in-spring-july-20th-2018.html">Spring一周回顾（2018年7月20日）</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon news"></div>
-                        <span>
-                        <a class="category" href="../../../blog/category/news.html">news</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Fri Jul 20 08:00:00 CST 2018">2018-07-20</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/07/this-week-in-spring-july-20th-2018.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">本文带你回顾最近一周有关Spring社区的一些有趣的事情。</div>
-                    <div class="desktop-only"><div class="quoteblock abstract"> 
- <div class="title">
-  概要
- </div> 
- <blockquote>
-   本文带你回顾最近一周有关Spring社区的一些有趣的事情。 
- </blockquote> 
-</div>
-<div class="paragraph"> 
- <p>七月是毕业季令人有些感伤的日子，也是小朋友开始暑假放飞快乐的日子，同时也是一年之中下半场的开始。是的，不知不觉2018已经过去了一半，一定有些事没有做好而感到失望，也一定有很多事规划着要做而欣喜。如果你感到我有点情绪低落，那一定是患上了“世界杯后遗症”，据说写文章和跑步可以有效治疗。</p> 
-</div>
-</div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/07/this-week-in-spring-july-20th-2018.html">
-                    查看...
-                </a>
-              </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2018/07/spring-guides-intro.html">Spring开发指南，带你进入Spring的世界</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon article"></div>
-                        <span>
-                        <a class="category" href="../../../blog/category/article.html">article</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Thu Jul 19 08:00:00 CST 2018">2018-07-19</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/07/spring-guides-intro.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">本文主要介绍如何学习使用官方的Spring开发指南。</div>
-                    <div class="desktop-only"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="quoteblock abstract"> 
-   <div class="title">
-    概要
-   </div> 
-   <blockquote>
-     本文主要介绍如何学习使用官方的Spring开发指南。 
-   </blockquote> 
-  </div> 
-  <div class="paragraph"> 
-   <p><a href="https://springdev.io/guides/" class="external" target="_blank" rel="noopener">Spring开发指南</a>是 Spring 官方提供的 Spring 技术的入门级学习指南，内容主题全面覆盖了 Spring 技术栈，每篇指南都遵循一套标准化的学习流程，从新手入门到专题介绍，从基础概念介绍到编码实战，即使你什么都不会，也可以从零开始跟着文档一步步完成编码，最终完成学习这并不是一件难事，在每个指南中同时提供了多种主流构建方式（Maven、Gradle、IDE），项目完整的源代码放在Github上可下载，内容与最新版本同步更新，有很好的学习借鉴和指导性，作为初学者的技术入门和了解新技术都是不错的必备之选。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>如果有人问我推荐什么资料，我一定首先推荐官方的开发指南，再配合各个框架参考文档，作为入门学习已经足够了。但是让很多人望而却步的是“看着一大篇英文就头疼”，这的确是个问题，这需要一边写着代码还得一边在线翻译资料。作为一个专业的软件开发人，这似乎是必经之路，无论你走过多少路都得回到开始的地方，源代码和参考文档就是那个“最初的地方”。当然，我也能理解，学习一门英语也非“一朝一夕之事”。</p> 
-  </div> 
- </div> 
-</div>
-</div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/07/spring-guides-intro.html">
-                    查看...
-                </a>
-              </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2018/07/this-week-in-spring-july-13th-2018.html">Spring一周回顾（2018年7月13日）</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon news"></div>
-                        <span>
-                        <a class="category" href="../../../blog/category/news.html">news</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Fri Jul 13 08:00:00 CST 2018">2018-07-13</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/07/this-week-in-spring-july-13th-2018.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">本文带你回顾最近一周有关Spring社区的一些有趣的事情。</div>
-                    <div class="desktop-only"><div class="quoteblock abstract"> 
- <div class="title">
-  概要
- </div> 
- <blockquote>
-   本文带你回顾最近一周有关Spring社区的一些有趣的事情。 
- </blockquote> 
-</div>
-<div class="paragraph"> 
- <p><a href="https://github.com/joshlong" class="external" target="_blank" rel="noopener">“龙之春”龙大神</a>每周一期必写的<a href="https://spring.io/blog/2018/07/10/this-week-in-spring-july-10th-2018" class="external" target="_blank" rel="noopener">This Week in Spring</a>，相信国内外的Spring开发者都一定是必读的文章，而我就是其中一个忠实的粉丝。这篇文章不是原文对照翻译，而是摘取一部分再加上国内的热门文章，同时有我的理解和分析，毕竟这是一篇针对中国开发者而写的文章。</p> 
-</div>
-</div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/07/this-week-in-spring-july-13th-2018.html">
-                    查看...
-                </a>
-              </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2018/07/this-week-in-spring-july-6th-2018.html">Spring一周回顾（2018年7月6日）</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon news"></div>
-                        <span>
-                        <a class="category" href="../../../blog/category/news.html">news</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Fri Jul 06 23:59:59 CST 2018">2018-07-06</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/07/this-week-in-spring-july-6th-2018.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">本文带你回顾最近一周有关Spring社区的一些有趣的事情。</div>
-                    <div class="desktop-only"><div class="quoteblock abstract"> 
- <div class="title">
-  概要
- </div> 
- <blockquote>
-   本文带你回顾最近一周有关Spring社区的一些有趣的事情。 
- </blockquote> 
-</div>
-<div class="ulist"> 
- <div class="title">
-  Spring 官方团队给我们带来了
- </div> 
- <ul> 
-  <li> <p><a href="https://spring.io/blog/2018/07/05/spring-cloud-data-flow-1-6-m1-and-1-5-2-released" class="external" target="_blank" rel="noopener">Spring Cloud Data Flow 1.6 M1 和 1.5.2 发布</a></p> </li> 
-  <li> <p><a href="https://spring.io/blog/2018/07/05/spring-tool-suite-3-9-5-released" class="external" target="_blank" rel="noopener">Spring Tool Suite 3.9.5 发布</a></p> </li> 
-  <li> <p><a href="https://spring.io/blog/2018/07/13/spring-batch-4-1-0-m2-released" class="external" target="_blank" rel="noopener">Spring Social 宣布 EOL</a></p> </li> 
-  <li> <p><a href="https://spring.io/blog/2018/07/03/spring-social-end-of-life-announcement" class="external" target="_blank" rel="noopener">Spring Social 宣布 EOL</a></p> </li> 
-  <li> <p><a href="https://spring.io/blog/2018/07/02/spring-cloud-edgware-sr4-has-been-released" class="external" target="_blank" rel="noopener">Spring Cloud Edgware.SR4 发布</a></p> </li> 
-  <li> <p><a href="https://spring.io/blog/2018/07/02/spring-cloud-open-service-broker-2-0-0-release-is-now-available" class="external" target="_blank" rel="noopener">Spring Cloud Open Service Broker 2.0.0.RELEASE 发布</a></p> </li> 
-  <li> <p><a href="https://spring.io/blog/2018/07/02/spring-cloud-task-1-2-3-release-is-now-available" class="external" target="_blank" rel="noopener">Spring Cloud Task 1.2.3.RELEASE 发布</a></p> </li> 
- </ul> 
-</div>
-</div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/07/this-week-in-spring-july-6th-2018.html">
                     查看...
                 </a>
               </article>
@@ -535,6 +674,11 @@
                     
                     
                 </div>
+                <div>
+                    <a href="../34/">34</a>
+                    
+                    
+                </div>
                 <a href="../32/"><i class="icon-chevron-right"></i></a>
             </div>
           </div>
@@ -566,30 +710,34 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-io-platform-cairo-sr7.html" title="Spring IO Platform Cairo-SR7 发布">Spring IO Platf...</a>
+            <span class="pull-right">2019-01-24</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-io-platform-brussels-sr16.html" title="Spring IO Platform Brussels-SR16 发布">Spring IO Platf...</a>
+            <span class="pull-right">2019-01-24</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-cloud-greenwich-release-is-now-available.html" title="Spring Cloud Greenwich.RELEASE 发布">Spring Cloud Gr...</a>
+            <span class="pull-right">2019-01-23</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-cloud-task-2-1-0-ga-is-now-available.html" title="Spring Cloud Task 2.1.0 GA 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2019-01-22</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2019/01/this-week-in-spring-january-18th-2019.html" title="Spring一周回顾（2019年1月18日）">Spring一周回顾（2019...</a>
             <span class="pull-right">2019-01-18</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2019/01/spring-session-bean-sr2-apple-sr8-and-1-3-5-released.html" title="Spring Session Bean-SR2、Apple-SR8 和 1.3.5 同时发布">Spring Session ...</a>
-            <span class="pull-right">2019-01-15</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2019/01/spring-boot-2-1-2-released.html" title="Spring Boot 2.1.2 发布">Spring Boot 2.1...</a>
-            <span class="pull-right">2019-01-12</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news"></div>
-            <a href="../../../blog/2019/01/this-week-in-spring-january-11th-2019.html" title="Spring一周回顾（2019年1月11日）">Spring一周回顾（2019...</a>
-            <span class="pull-right">2019-01-11</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2019/01/spring-boot-2-0-8-released.html" title="Spring Boot 2.0.8 发布">Spring Boot 2.0...</a>
-            <span class="pull-right">2019-01-11</span>
-          </li>
+          
+          
+          
+          
           
           
           

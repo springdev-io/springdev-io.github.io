@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html data-code-prettify data-clipboard-buttons data-goto-top data-nav-menu data-switch-sidebar data-mobile-support>
+
+  <head>
+  <meta charset="utf-8"/>
+  <title>Spring Cloud Greenwich.RELEASE 发布 - Spring技术社区</title>
+  <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="description" content="Spring Dev Site"/>
+  <meta name="author" content="rainboyan.com"/>
+  <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
+  <meta property="og:title" content="Spring Cloud Greenwich.RELEASE 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2019-01-23'><meta property="og:description" content="Spring Cloud Greenwich.RELEASE 发布" />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/css/blog.css" />
+  <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="/jspm_packages/system.js"></script>
+  <script>
+    System.config({baseURL: "/"});
+  </script>
+  <script src="/config.js"></script>
+  <script>
+      System.import('app/main.js')
+  </script>
+</head>
+  <body>
+  <div class="viewport">
+    <header class="navbar header--navbar desktop-only">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <div class="spring-logo--container">
+            <a class="spring-logo" href="/"><span></span></a>
+          </div>
+          <ul class="nav pull-right">
+            <li class="navbar-link">
+              <a href="/projects/" >项目</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/guides/" >指南</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/blog/" >博客</a>
+            </li>
+            <li class="navbar-link nav-search js-nav-search">
+              <a>
+                <i class="icon-search navbar-search--icon js-search-input-open"></i>
+                <span class="search-input-close js-search-input-close">
+                  <i class="icon-remove"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-dropdown--container js-search-dropdown">
+        <div class="container-fluid">
+          <div class="search-form--container">
+            <form class="form-inline form-search" action="../../../search" method="get">
+              <input type="text" class="search-query search-form--form js-search-input" placeholder="Search for documentation, guides, and posts..." name="q" value="" />
+              <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div>
+    <div class="mobile-navigation--wrapper mobile-only">
+      <div class="navigation-drawer--container">
+        <div class="mobile-search--container">
+          <form class="form-inline form-search" action="../../../search" method="get">
+            <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            <input type="text" class="search-query search-form--form js-search-input" placeholder="Search..." name="q" value="" />
+          </form>
+        </div>
+        <div class="navigation-item-list">
+          <div class="navbar-link">
+            <a href="/">
+              首页
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/projects/">
+              项目
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/guides/">
+              指南
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/blog/">
+              博客
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <div class="nav-icon js-open-nav-drawer">
+          <i class="icon-reorder"></i>
+        </div>
+        <div class="header-center-icon">
+          <a href="../../../">
+            <div class="icon icon-spring-logo-mobile"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid"></div>
+    <div></div>
+    <main class="body--container container-fluid">
+      <div class="main-body--wrapper">
+        <div class="desktop-only">
+          <h1 class="blog-category active content--title">版本发布</h1>
+          <div class="blog-category content--title">
+            <div>Engineering</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>Releases</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>News and Events</div>
+          </div>
+          <div class="switch-sidebar pull-right"><input type="checkbox" class="js-switch"/></div>
+        </div>
+        <div class="row-fluid blog--wrapper">
+          <article class="span8 mobile-left-pane" id="content">
+            <div class="blog--container">
+              <header>
+                <h1 class="blog--title">Spring Cloud Greenwich.RELEASE 发布</h1>
+                <div class="meta-data--container">
+                  <div class="meta-data--item desktop-only">
+                    <div class="meta-data--icon icon blog-icon release"></div>
+                    <span>
+                      <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                    </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon calendar"></div>
+                      <time class="date" pubdate="" datetime=''>2019-01-23</time>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon comments"></div>
+                      <a class="comments" href="../../../blog/2019/01/spring-cloud-greenwich-release-is-now-available.html#gitalk-container">评论
+                      </a>
+                    </div>
+                </div>
+              </header>
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://spring.io/team/spencergibb" class="external" target="_blank" rel="noopener">Spencer Gibb</a> 在博客宣布了 <a href="https://spring.io/blog/2019/01/23/spring-cloud-greenwich-release-is-now-available" class="external" target="_blank" rel="noopener">Spring Cloud Greenwich.RELEASE 已发布</a>。</p>
+</div>
+<div class="paragraph">
+<p>Spring Cloud <code>Greenwich.RELEASE</code> 可以在 <a href="https://repo.spring.io/release/" class="external" target="_blank" rel="noopener">Spring Milestone</a> 和 <a href="https://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-dependencies/Greenwich.RELEASE/" class="external" target="_blank" rel="noopener">Maven Central</a> 库获取到。也可以查看 <a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Greenwich-Release-Notes" class="external" target="_blank" rel="noopener">Greenwich 发布说明</a>了解更多信息。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_寿命终止eol提醒">寿命终止（EOL）提醒</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Edgware 版本将于 2019 年 8 月 1日进入 EOL 状态。详细说明参见 <a href="https://springdev.io/blog/2018/07/spring-cloud-edgware-eol-aug-1st-2019.html">Spring Cloud Edgware 将在2019年8月1号 EOL</a>。</p>
+</div>
+<div class="paragraph">
+<p>Spring Cloud Finchley 发布版本是目前的主要版本，与 Spring Boot 2.0.x 版本保持一致。因此，Spring Cloud Finchley 的版本发布将随着 Spring Boot 2.0.x 版本分钟进入 EOL 而相应终止维护。当明确的时间确定之后，具体的宣布声明届时将会以博客文章的形式发布出来。</p>
+</div>
+<div class="paragraph">
+<p>Spring Cloud Greenwich 发布版本是一个小版本，将会持续提供支持一直到 Spring Boot 2.x 分支结束。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_greenwich_版本值得注意的更新">Greenwich 版本值得注意的更新</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>所有相关的项目也都已经兼容 Java 11。</p>
+</div>
+<div class="sect2">
+<h3 id="_新项目">新项目</h3>
+<div class="paragraph">
+<p>Greenwich 包括了两个新项目： <code>Spring Cloud GCP</code> 和 <code>Spring Cloud Kubernetes</code>. 前者为 Google Cloud Platform（GCP）的服务提供了集成支持，后者提供了 Kubernetes 的集成。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_netflix_项目进入维护模式">Spring Cloud Netflix 项目进入维护模式</h3>
+<div class="paragraph">
+<p>最近，Netflix <a href="https://github.com/Netflix/Hystrix#hystrix-status" class="external" target="_blank" rel="noopener">宣布</a> Hystrix 正在进入维护模式。自 2016 年以来，Ribbon 也已处于<a href="https://github.com/Netflix/ribbon#project-status-on-maintenance" class="external" target="_blank" rel="noopener">类似状态</a>。虽然 Hystrix 和 Ribbon 现在处于维护模式，但它们仍然在 Netflix 上大规模部署。</p>
+</div>
+<div class="paragraph">
+<p>Hystrix Dashboard 和 Turbine 已被 Atlas 取代。这些项目的最后提交分别是 2 年和 4 年前。Zuul 1 和 Archaius 1 都被后来不兼容的版本所取代。</p>
+</div>
+<div class="paragraph">
+<p>以下 Spring Cloud Netflix 模块和相应的起步依赖将进入维护模式：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>spring-cloud-netflix-archaius</p>
+</li>
+<li>
+<p>spring-cloud-netflix-hystrix-contract</p>
+</li>
+<li>
+<p>spring-cloud-netflix-hystrix-dashboard</p>
+</li>
+<li>
+<p>spring-cloud-netflix-hystrix-stream</p>
+</li>
+<li>
+<p>spring-cloud-netflix-hystrix</p>
+</li>
+<li>
+<p>spring-cloud-netflix-ribbon</p>
+</li>
+<li>
+<p>spring-cloud-netflix-turbine-stream</p>
+</li>
+<li>
+<p>spring-cloud-netflix-turbine</p>
+</li>
+<li>
+<p>spring-cloud-netflix-zuul</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>这不包括 Eureka 或并发限制模块。</p>
+</div>
+<div class="sect3">
+<h4 id="_什么是维护模式">什么是维护模式？</h4>
+<div class="paragraph">
+<p>将模块置于维护模式意味着 Spring Cloud 团队将不再向模块添加新功能。我们将修复重大程序错误和安全问题，我们还将考虑并审查社区的小的拉取请求（PR）。</p>
+</div>
+<div class="paragraph">
+<p>我们打算继续支持这些模块，从 Greenwich 正式发布可用之后算起至少一年的时间。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_替代项目">替代项目</h4>
+<div class="paragraph">
+<p>我们建议将以下内容替换为这些模块提供的功能。</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content stretch">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">当前</th>
+<th class="tableblock halign-left valign-top">替换</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hystrix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/resilience4j/resilience4j" class="external" target="_blank" rel="noopener">Resilience4j</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hystrix Dashboard / Turbine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Micrometer + Monitoring System</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ribbon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Loadbalancer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zuul 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Gateway</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Archaius 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Boot external config + Spring Cloud Config</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>查看有关 Spring Cloud Loadbalancer 的后续博客文章，并与新的 Netflix 项目 Concurrency Limits 集成。</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_sleuth">Spring Cloud Sleuth</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>升级到最新的 Brave 库</p>
+</li>
+<li>
+<p>WebFlux 和 Reactor 集成的性能得到提升</p>
+</li>
+<li>
+<p>支持 gRPC 插桩检测</p>
+</li>
+<li>
+<p>增加了对多个跨度报告的支持</p>
+</li>
+<li>
+<p>增加了限速采样器支持</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_gcp">Spring Cloud GCP</h3>
+<div class="paragraph">
+<p>详见 <a href="https://cloud.google.com/blog/products/application-development/announcing-spring-cloud-gcp-1-1-deepening-ties-pivotals-spring-framework">Google 产品和服务介绍</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_netflix">Spring Cloud Netflix</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>升级 Ribbon 和 Eureka 的版本</p>
+</li>
+<li>
+<p>增加了新的字段 <code>ServiceInstance.instanceId</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_consul">Spring Cloud Consul</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>增加了新的字段 <code>ServiceInstance.instanceId</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_gateway">Spring Cloud Gateway</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>增加可重写响应头的过滤器</p>
+</li>
+<li>
+<p>在各自的路由谓词中为多个路径和主机添加了支持，并且可以自定义在某些情况下返回的 HTTP 状态码</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_function">Spring Cloud Function</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>支持 Kotlin</p>
+</li>
+<li>
+<p>为 Azure 函数提供的新编程模型</p>
+</li>
+<li>
+<p>在 Web 适配器启动时自动（可选）导出Supplier</p>
+</li>
+<li>
+<p>函数式 Bean 的注册</p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2019/01/announcing-general-availability-of-spring-cloud-function-2-0-0-release.html">更多介绍</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_stream">Spring Cloud Stream</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>详见 <a href="https://spring.io/blog/2019/01/08/announcing-general-availability-of-spring-cloud-stream-fishtown-release-2-1-0-release">发布说明</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_zookeeper">Spring Cloud Zookeeper</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>增加新的字段 <code>ServiceInstance.instanceId</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_task">Spring Cloud Task</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>详见 <a href="https://springdev.io/blog/2019/01/spring-cloud-task-2-1-0-ga-is-now-available.html">发布说明</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_kubernetes">Spring Cloud Kubernetes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>现在可以将 ServiceInstance 元数据配置为来自 Kubernetes Labels、Annotations 和 Ports</p>
+</li>
+<li>
+<p>在引导期间使用 KubernetesDiscoveryClient 进行了增强</p>
+</li>
+<li>
+<p>添加了一个模块来检测 Istio 的存在</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_contract">Spring Cloud Contract</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>新增支持 XML payloads</p>
+</li>
+<li>
+<p>允许将合同转储为通用表示</p>
+</li>
+<li>
+<p>添加了 WebTestClient 支持，用于测试与 WebFlux 的合约</p>
+</li>
+<li>
+<p>改进了 Pact 集成</p>
+</li>
+<li>
+<p>添加了 Camel 支持</p>
+</li>
+<li>
+<p>添加了 JUnit5 支持</p>
+</li>
+<li>
+<p>升级 WireMock 到最新版本</p>
+</li>
+<li>
+<p>添加了二进制负载的支持</p>
+</li>
+<li>
+<p>添加了对 Git 存储中最新版本的支持</p>
+</li>
+<li>
+<p>允许为正则表达式生成提供显式类型</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_security">Spring Cloud Security</h3>
+<div class="paragraph">
+<p>Spring Cloud Gateway 过滤器新增支持 OAuth2。这里有一个简单 <a href="https://github.com/spring-cloud-samples/sample-gateway-oauth2login">演示程序</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_config">Spring Cloud Config</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>新增 <code>EnvironmentRepository</code> 以支持 CredHub 后端服务</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_vault">Spring Cloud Vault</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>新增支持 Google Cloud 和 Azure 认证</p>
+</li>
+<li>
+<p>升级到 Spring Vault 2.1.1</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_openfeign">Spring Cloud Openfeign</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>支持增加注解 <code>@QueryMap</code></p>
+</li>
+<li>
+<p>升级到 OpenFeign 10.1.0</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_commons">Spring Cloud Commons</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>ServiceInstance 接口新增了 instanceId</p>
+</li>
+<li>
+<p>新增 <code>ReactiveLoadBalancer</code> 接口，通过 Reactor 实现</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>以下模块作为 <code>Greenwich.RELEASE</code> 的一部分进行了更新：</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content stretch">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">模块</th>
+<th class="tableblock halign-left valign-top">版本</th>
+<th class="tableblock halign-left valign-top">问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Sleuth</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">（<a href="https://github.com/spring-cloud/spring-cloud-sleuth/milestone/58?closed=1" class="external" target="_blank" rel="noopener">问题</a>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Gcp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">（<a href="https://github.com/spring-cloud/spring-cloud-gcp/milestone/9?closed=1" class="external" target="_blank" rel="noopener">问题</a>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Build</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.2.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Netflix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">（<a href="https://github.com/spring-cloud/spring-cloud-netflix/milestone/74?closed=1" class="external" target="_blank" rel="noopener">问题</a>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Consul</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Gateway</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">（<a href="https://github.com/spring-cloud/spring-cloud-gateway/milestone/21?closed=1" class="external" target="_blank" rel="noopener">问题</a>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Greenwich.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Function</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">（<a href="https://github.com/spring-cloud/spring-cloud-function/milestone/14?closed=1" class="external" target="_blank" rel="noopener">问题</a>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Stream</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fishtown.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Zookeeper</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Cloudfoundry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Aws</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Kubernetes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">（<a href="https://github.com/spring-cloud/spring-cloud-kubernetes/milestone/9?closed=1" class="external" target="_blank" rel="noopener">问题</a>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Contract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/spring-cloud/spring-cloud-contract/milestone/48?closed=1" class="external" target="_blank" rel="noopener">问题</a>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Release</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Greenwich.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Security</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Starter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Greenwich.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Bus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">（<a href="https://github.com/spring-cloud/spring-cloud-bus/milestone/35?closed=1" class="external" target="_blank" rel="noopener">问题</a>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Config</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">（<a href="https://github.com/spring-cloud/spring-cloud-config/milestone/60?closed=1" class="external" target="_blank" rel="noopener">问题</a>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Vault</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">（<a href="https://github.com/spring-cloud/spring-cloud-vault/milestone/29?closed=1" class="external" target="_blank" rel="noopener">问题</a>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Openfeign</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">（<a href="https://github.com/spring-cloud/spring-cloud-openfeign/milestone/10?closed=1" class="external" target="_blank" rel="noopener">问题</a>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Commons</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Dependencies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.2.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>要使用BOM开始使用Maven（仅限依赖关系管理）：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+            &lt;version&gt;Greenwich.RELEASE&lt;/version&gt;
+            &lt;type&gt;pom&lt;/type&gt;
+            &lt;scope&gt;import&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-starter-config&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    ...
+&lt;/dependencies&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>如果使用 Gradle：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">buildscript {
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.2.RELEASE"
+    }
+}
+
+
+
+apply plugin: "io.spring.dependency-management"
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Greenwich.RELEASE'
+    }
+}
+
+dependencies {
+    compile 'org.springframework.cloud:spring-cloud-starter-config'
+    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.spring.io/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-cloud/" class="external" target="_blank" rel="noopener">Github</a> | <a href="https://gitter.im/spring-cloud/spring-cloud" class="external" target="_blank" rel="noopener">Gitter</a> | <a href="https://stackoverflow.com/questions/tagged/spring-cloud" class="external" target="_blank" rel="noopener">Stackoverflow</a> | <a href="https://twitter.com/SpringCloud" class="external" target="_blank" rel="noopener">Twitter</a></p>
+</div>
+<div class="paragraph">
+<p>相关文章：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://springdev.io/blog/2018/12/spring-cloud-greenwich-rc2-is-available-now.html" class="external" target="_blank" rel="noopener">Spring Cloud Greenwich.RC2 发布</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/12/spring-cloud-greenwich-rc1-available-now.html" class="external" target="_blank" rel="noopener">Spring Cloud Greenwich.RC1 发布</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/11/spring-cloud-greenwich-m3-is-available.html" class="external" target="_blank" rel="noopener">Spring Cloud Greenwich.M3 发布</a></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>原文： <a href="https://spring.io/blog/2019/01/23/spring-cloud-greenwich-release-is-now-available" class="bare">https://spring.io/blog/2019/01/23/spring-cloud-greenwich-release-is-now-available</a><br>
+作者： Ryan Baxter<br>
+编译： 春之雨</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div></div>
+              <ul id="direction" class="pagination blog-pagination pager">
+              <li class="previous"><a  href="../../../blog/2019/01/spring-cloud-task-2-1-0-ga-is-now-available.html"> ←Spring Cloud Task 2.1.0 GA 发布</a></li>
+              <li class="next"><a href="../../../blog/2019/01/spring-io-platform-brussels-sr16.html">Spring IO Platform Brussels-SR16 发布 →</a></li>
+              </ul>
+            </div>
+            <section id="gitalk-container"></section>
+          </article>
+          <aside class="span4 mobile-right-pane">
+      <div><h2>文章分类</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category active">
+            <div class="icon blog-icon all-posts"></div>
+            <a href="/blog/">全部内容</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon engineering"></div>
+            <a href="/blog/category/article.html">书籍文章</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon releases"></div>
+            <a href="/blog/category/release.html">版本发布</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news-and-events"></div>
+            <a href="/blog/category/news.html">新闻资讯</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div><h2>最新文章</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-io-platform-cairo-sr7.html" title="Spring IO Platform Cairo-SR7 发布">Spring IO Platf...</a>
+            <span class="pull-right">2019-01-24</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-io-platform-brussels-sr16.html" title="Spring IO Platform Brussels-SR16 发布">Spring IO Platf...</a>
+            <span class="pull-right">2019-01-24</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-cloud-greenwich-release-is-now-available.html" title="Spring Cloud Greenwich.RELEASE 发布">Spring Cloud Gr...</a>
+            <span class="pull-right">2019-01-23</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/01/spring-cloud-task-2-1-0-ga-is-now-available.html" title="Spring Cloud Task 2.1.0 GA 发布">Spring Cloud Ta...</a>
+            <span class="pull-right">2019-01-22</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news"></div>
+            <a href="../../../blog/2019/01/this-week-in-spring-january-18th-2019.html" title="Spring一周回顾（2019年1月18日）">Spring一周回顾（2019...</a>
+            <span class="pull-right">2019-01-18</span>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </aside>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="navbar">
+              <div class="container">
+                <ul class="nav">
+                  <li><a href="../../../team.html">Team</a></li>
+                  <li><a href="../../../services.html">Services</a></li>
+                  <li><a href="../../../tools.html">Tools</a></li>
+                </ul>
+              </div>
+            </div>
+            &copy; <span>2019</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
+            <a href="../../../terms-of-use.html">Terms of Use</a>,
+            <a href="../../../privacy-policy.html">Privacy</a>,
+            <a href="../../../trademarks.html">Trademark Guidelines</a> and
+            <span id="teconsent"></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="scrim"></div>
+  </div>
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: 'e0ad4e23b37963590faf',
+        clientSecret: '1bbf06b574f0e6623211f8cc029f874db67c7dfe',
+        repo: 'springdev-issues',
+        owner: 'springdev-io',
+        admin: ['rainboyan'],
+        id: 'Comments',
+        distractionFreeMode: true
+      });
+      gitalk.render('gitalk-container');
+  </script>
+  </body>
+</html>
