@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Micronaut 1.0.1 发布，利用预编译技术为 Spring 和 Grails 开发者带来福音！ - Spring技术社区</title>
+  <title>JHipster v5.8.0 发布 - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Micronaut 1.0.1 发布，利用预编译技术为 Spring 和 Grails 开发者带来福音！" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-11-13'><meta property="og:description" content="Micronaut 1.0.1 发布，同时 Micronaut for Spring 1.0 M1 也发布，利用预编译技术为 Spring 和 Grails 开发者带来福音！" />
+  <meta property="og:title" content="JHipster v5.8.0 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2019-01-25'><meta property="og:description" content="JHipster v5.8.0 发布，关闭 133 个任务单和 PR。" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -135,7 +135,7 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Micronaut 1.0.1 发布，利用预编译技术为 Spring 和 Grails 开发者带来福音！</h1>
+                <h1 class="blog--title">JHipster v5.8.0 发布</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
                     <div class="meta-data--icon icon blog-icon release"></div>
@@ -149,157 +149,71 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-11-13</time>
+                      <time class="date" pubdate="" datetime=''>2019-01-25</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/11/micronaut-1-0-1-released.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2019/01/jhipster-5-8-0-released.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div id="preamble">
-<div class="sectionbody">
-<div class="quoteblock abstract">
-<blockquote>
-本文的作者是 Graeme Rocher，他是 Grails 和 Micronaut 框架的项目负责人，主导 Grails 开发10多年，有着丰富的 Grails 和 Spring 架构经验。由于 Grails 和 Micronaut 的开发团队和社区与 Spring 项目之间都很有渊源，而我也是其中最早的用户和参与者，所以本文将 Micronaut 介绍给 Spring 技术社区，后续也会发布更多相关的技术文章，欢迎大家积极参与讨论和分享。
-</blockquote>
+              <div class="blog--post"><div class="paragraph">
+<p>JHipster 是一个开发平台，用于生成、开发和部署 Spring Boot + Angular/React Web 应用程序和 Spring 微服务。</p>
 </div>
 <div class="paragraph">
-<p>以下内容来自 OCI 官方博客，由 Graeme Rocher 发表：</p>
-</div>
-<div class="paragraph">
-<p>随着 Micronaut <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.1" class="external" target="_blank" rel="noopener">1.0.1</a> 的发布，OCI 的 Micronaut 团队很高兴地宣布推出 <a href="https://github.com/micronaut-projects/micronaut-spring" class="external" target="_blank" rel="noopener">Micronaut for Spring 1.0 M1</a>。</p>
-</div>
-<div class="paragraph">
-<p>Micronaut for Spring 增加了使用长期建立的基于 Spring 注解的编程模型来构建与 Micronaut 和 Spring 一起使用的 Micronaut 应用程序和库的能力。</p>
-</div>
-<div class="paragraph">
-<p>提供的<a href="https://github.com/micronaut-projects/micronaut-spring/tree/master/examples/greeting-service" class="external" target="_blank" rel="noopener">示例应用程序</a>在源代码级别是 Spring Boot 应用程序。使用预先编译 Ahead of Time（AOT）Micronaut 能够计算和解释 Spring 注解编程模型，并生成有效的 Micronaut 应用程序，而不会增加任何运行时开销。然后，可以在 GraalVM 上执行 Micronaut 应用程序：</p>
-</div>
-<div class="paragraph">
-<p>这种方式非常简单。Micronaut 有一组注解，在运行时用于实现框架。Spring 有另一套可以简单地映射到 Micronaut 的注解上。您可以将这些注解视为源代码级域特定语言（DSL）。在编译时，注解元数据被解析，并将 Spring 注解映射到等效的 Micronaut 注解元数据，就像 Micronaut 可以运行 Spring 应用程序一样。</p>
-</div>
-<div class="paragraph">
-<p>请注意，目前只支持 Spring 的一个子集，但足以构建真正的应用程序和库，无论它们是否包含在 Spring Boot 应用程序或 Micronaut 应用程序中。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_这对_micronaut_开发者有什么用">这对 Micronaut 开发者有什么用？</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>尽管在应用程序依赖项中包含 Spring 对于 Micronaut 开发人员来说有一些缺点（值得注意的是 JAR 大小从 13MB 到 29MB），使用 Spring 注解编程模型也有一些有趣的好处，包括：</p>
+<p>该框架的目标是为开发者生成一个完整并统一的现代 Web 应用程序或微服务架构：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>工具支持。如果将应用程序导入到 Spring 感知的IDE（例如 IntelliJ IDEA 或 STS 4.0）中，则 Spring 的功能可以“正常工作”。这是有道理的，因为 IDE 在源代码上运行，因此就 IDE 而言，应用程序是 Spring 应用程序，即使在运行时应用程序实际上是 Micronaut 应用程序。Spring 生态系统中的任何源代码级工具都是如此。</p>
+<p>使用 Spring Boot 在服务器端实现高性能和强大的 Java 技术栈</p>
 </li>
 <li>
-<p>Spring 和 Grails 的兼容性。通过使用 Spring 注解编程模型，可以构建与 Spring Boot、Grails 和 Micronaut 一起使用的自动配置、端点、控制器和库。</p>
+<p>这是一款时尚、现代、移动优先的前端框架，支持 Angular、React 和 Bootstrap</p>
 </li>
 <li>
-<p>更容易迁移到 Micronaut。虽然不是 Spring 的每个功能都得到支持，但绝大多数重要方面都是。这样可以更轻松地培训新开发人员，迁移现有代码并使用 Micronaut。</p>
+<p>一个强大的微服务架构，包括 JHipster Registry、Netflix OSS、ELK 和 Docker</p>
+</li>
+<li>
+<p>使用 Yeoman、Webpack 和 Maven/Gradle 构建应用程序的强大工作流程</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>请注意，如果您的源代码仅引用 Spring 注解而不是 Spring 接口，则 Spring 实际上可以是“compile-only”依赖项，这会将 JAR 大小缩减回 13MB 并带来上述所有好处。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_这对_spring_开发者有什么用">这对 Spring 开发者有什么用？</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>对于Spring开发人员来说，好处也很多。</p>
-</div>
-<div class="paragraph">
-<p>Micronaut 能够使之前采用 Spring 编程模型由于性能或内存消耗限制从未能够实现的领域：</p>
+<p>这个新的发布版本 <code>5.8.0</code> 共完成 <a href="https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A5.8.0+is%3Aclosed" class="external" target="_blank" rel="noopener">133 个关闭的任务单和拉取请求</a>。</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>物联网（IoT）。Micronaut 在物联网场景中运行良好，包括 Raspberry Pi。这是因为 Micronaut 应用程序的内存配置文件与 Spring 或 Jakarta EE 应用程序无关，可以节省大量成本。</p>
+<p>切换到 Micrometer，替换掉 Dropwizard Metrics</p>
 </li>
 <li>
-<p>GraalVM。Micronaut 是第一个以切实可行的方式将原有的 Spring 编程模型引入 GraalVM 的框架。您可以在 GraalVM 上的源代码级别运行本质上是 Spring Boot 的应用程序，并实现闪电般快速的功能和低内存占用的微服务。</p>
+<p>Angular: 实体懒加载</p>
 </li>
 <li>
-<p>Android 系统。我记得在 SpringSource 的早期阶段，有着将 Spring 编程模型引入 Android 的野心。但它从未真正发生过，只有像 RestTemplate 这样的小型 Spring 组件才能进入 Android。Micronaut 核心容器<a href="https://docs.micronaut.io/latest/guide/index.html#android" class="external" target="_blank" rel="noopener">已经在 Android 上运行</a>，并且有可能将整个 Spring 编程模型带到 Android。我们对 Android 上的 Micronaut 抱有很大的志向。</p>
+<p>支持 JPA 派生类标识符一对一关系</p>
 </li>
 <li>
-<p>AOT 编译。Micronaut 可以被认为是 AOT 的框架，具有完整的 API，可以跨语言实现执行许多 AOT 任务。例如，<a href="https://github.com/micronaut-projects/micronaut-spring/tree/master/examples/greeting-service" class="external" target="_blank" rel="noopener">参考示例应用程序</a>能够在编译时通过 Micronaut 计算 Swagger API 元数据，即使实际上没有引用 Micronaut API。</p>
+<p>OIDC 认证增加全局的退出功能</p>
 </li>
 <li>
-<p>无服务器。借助 Micronaut 更快的冷启动和更低的内存成本，构建使用 Spring 编程模型的高效应用程序变得更加容易。</p>
-</li>
-<li>
-<p>库兼容性。JHipster 和 Spring Boot Admin 等项目现在可以将 Micronaut for Spring 作为编译时注解处理器，并与 Spring Boot 和 Micronaut 一起使用。这对库生态系统来说绝对是个好消息。</p>
-</li>
-<li>
-<p>Spring 的 Micronaut 功能。由于注解映射适用于任何类，因此您可以获得<a href="https://github.com/micronaut-projects/micronaut-spring/blob/master/examples/greeting-service/src/test/java/greeting/example/GreetingClient.java" class="external" target="_blank" rel="noopener">基于 Spring 注解的编译时声明性 HTTP 客户端</a>，并且可以使用任何其他 Micronaut 功能。</p>
+<p>众多第三方库升级，包括更新到 Spring Boot 2.0.8.RELEASE</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>如上所述，使用 Micronaut for Spring，现在技术上也可以编写 Spring Boot、Micronaut 和 Grails 的 Spring Boot 自动配置。Pivotal 的 Spring 团队甚至可以使用这个库，并使用 Spring Boot 或 Micronaut 进行大量的 <code>spring-boot-autoconfigure</code>。</p>
+<p>在这个版本之后，开发团队将专注于 JHipster 6，因此 JHipster 5 将进入维护模式。不久之后，就会发布 JHipster 6 的测试版。</p>
 </div>
 <div class="paragraph">
-<p>这样做的方式是 Spring Boot 在运行时计算自动配置，而如果编译时元数据在那里，Micronaut 会自动加载它而不需要额外的运行时计算。</p>
+<p>相关文章：</p>
 </div>
-<div class="paragraph">
-<p>由于 Micronaut 也可以用作 Spring Boot 的父应用程序上下文，因此 Spring Boot 的核心甚至可以更新为使用 Micronaut 进行内部连接并将 GraalVM 与 Spring Boot 兼容。如果 Pivotal 开发人员感兴趣，我们<a href="https://gitter.im/micronautfw" class="external" target="_blank" rel="noopener">很欢迎来聊聊</a>。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_这对_grails_开发者有什么用">这对 Grails 开发者有什么用？</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>我们开发 Spring for Micronaut 的主要原因实际上是 Grails 4.0。</p>
-</div>
-<div class="paragraph">
-<p>我已经开始研究 Grails 4.0，作为规划的一部分，我们希望 Grails 开发人员能够从我们在过去一年中对 Micronaut 的投资中获益。</p>
-</div>
-<div class="paragraph">
-<p>在 Grails 4.0 中，Micronaut 将接替 Grails 应用程序的父上下文，Grails 的大部分内部连接将基于 Micronaut 而不是 Spring，这样我们就可以减少内存消耗并缩短启动时间。结合 Spring 团队在 Spring Boot 2.1 中所做的改进，将在内存消耗和启动时间方面对 Grails 4.x 应用程序进行重大改进。</p>
-</div>
-<div class="paragraph">
-<p>由于 Micronaut 将成为 Grails 4.0 应用程序的父上下文，这也意味着我们为 Micronaut 开发的每个功能都可以在 Grails 4.0 应用程序中使用，从编译时客户端（如HTTP客户端和Kafka客户端）到服务发现和客户端负载平衡等功能。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_microprofile_怎么样">MicroProfile 怎么样？</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>我很高兴与参与 MicroProfile 的一些人交谈，虽然项目的目标很有趣，但任何基于通过反射注解的运行时分析的模型都会遭遇内存消耗问题，因此我对目前的实现方式表示怀疑。</p>
-</div>
-<div class="paragraph">
-<p>说到这一点，我已经阅读了规范，Micronaut 能够使用 AOT 在编译时支持任何注解集，这意味着 Micronaut 可以使用与 Micronaut for Spring 相同的方法在技术上支持 MicroProfile。</p>
-</div>
-<div class="paragraph">
-<p>换句话说，没有理由通过映射注解和提供一些接口桥来实现基于 JAX-RS/CDI 的 MicroProfile 实现。如果 MicroProfile 人员有兴趣与我们聊聊，我们<a href="https://gitter.im/micronautfw" class="external" target="_blank" rel="noopener">在这里随时恭候</a>。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_总结">总结</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>当我今年早些时候在 Greach 首次推出 Micronaut 时，我提到 Micronaut 不仅仅是另一个HTTP服务器实现（用Java编写的新HTTP服务器似乎每周都会出现在Github上！）。Micronaut 有可能彻底改变典型 Spring 和 Jakarta EE应用程序的运行时特性，同时保留开发人员熟悉和喜爱的大部分功能集，从而彻底改变 JVM 应用程序的构建方式。</p>
-</div>
-<div class="paragraph">
-<p>通过使 JVM 用户可以访问 AOT 并跨语言（目前是Java、Kotlin和Groovy）实现 AOT 的兼容性，Micronaut 能够将源代码与运行时环境分离，就像之前没有其它框架那样。女士们和先生们，这就是<a href="https://objectcomputing.com/news/2018/09/30/micronaut-1-rc1" class="external" target="_blank" rel="noopener">预先编译的力量</a>。</p>
-</div>
-<div class="paragraph">
-<p>如果您想了解更多信息，我将于2018年11月14日星期三发布 <a href="https://objectcomputing.com/resources/events/webinars/introduction-to-micronaut" class="external" target="_blank" rel="noopener">介绍 Micronaut 的免费网络研讨会</a>，我还将于2018年11月15日星期四在<a href="https://dvbe18.confinabox.com/talk/BZV-3566/Introduction_to_Micronaut:_Lightweight_Microservices_with_Ahead_of_Time_Compilation" class="external" target="_blank" rel="noopener">比利时Devoxx</a>上发表有关 Micronaut 的演讲。期待见到您！</p>
-</div>
-<div class="paragraph">
-<p>说明：北京时间11月15日00:00 - 01:00 ，也就是今天晚上，开始在线直播《介绍 Micronaut》，不要错过。
-地址：https://zoom.us/j/917504420</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://springdev.io/blog/2018/11/jhipster-5-7-0-released.html" class="external" target="_blank" rel="noopener">JHipster v5.7.0 发布</a></p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -309,20 +223,17 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>原文：https://objectcomputing.com/news/2018/11/13/spring-boot-micronaut-ahead-time-compilation<br>
-作者：Graeme Rocher<br>
-翻译：春之雨<br>
-说明：版权归原文作者，翻译仅供学习参考。时间仓促，翻译不免出错，欢迎反馈和讨论，感谢阅读。</p>
+<p>原文： <a href="https://www.jhipster.tech/2019/01/25/jhipster-release-5.8.0.html" class="bare">https://www.jhipster.tech/2019/01/25/jhipster-release-5.8.0.html</a><br>
+翻译： 春之雨<br>
+说明： 版权归原文作者，翻译仅供学习参考。时间仓促，翻译不免出错，欢迎反馈和讨论，感谢阅读。</p>
 </div>
 </td>
 </tr>
 </table>
-</div>
-</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/11/jhipster-5-7-0-released.html"> ←JHipster v5.7.0 发布</a></li>
-              <li class="next"><a href="../../../blog/2018/11/spring-vault-2-1-1-2-0-3-and-1-1-3-released.html">Spring Vault 2.1.1、2.0.3 和 1.1.3 发布 →</a></li>
+              <li class="previous"><a  href="../../../blog/2019/01/spring-io-platform-cairo-sr7.html"> ←Spring IO Platform Cairo-SR7 发布</a></li>
+              <li class="next"><a href="../../../blog/2019/01/spring-tools-4-1-1-released.html">Spring Tools 4.1.1 发布 →</a></li>
               </ul>
             </div>
             <section id="gitalk-container"></section>
