@@ -141,6 +141,110 @@
               </style>
               <article class="blog--container blog-preview">
                 <h2 class="blog--title">
+                    <a href="../../../blog/2019/02/spring-framework-5-1-5-available-now.html">Spring Framework 5.1.5 发布</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon release"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Wed Feb 13 08:06:54 CST 2019">2019-02-13</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2019/02/spring-framework-5-1-5-available-now.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Spring Framework 5.1.5 发布，解决 40 多个缺陷和改进。</div>
+                    <div class="desktop-only"><div class="paragraph"> 
+ <p>Spring Framework 5.1.5 已发布，解决 <a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.1.5.RELEASE" class="external" target="_blank" rel="noopener">40</a> 多个缺陷和改进。</p> 
+</div>
+<div class="ulist"> 
+ <ul> 
+  <li> <p>修复了在与 '*/' 在同一行的多行注释中出现 '-' 时 ScriptUtils 失败的问题</p> </li> 
+  <li> <p>InjectionPoint 自动装配会由于通过名称方式来自动装配的 @resource bean 而引发异常</p> </li> 
+  <li> <p>PathMatchingResourcePatternResolver 可以双重包装 jar：URL</p> </li> 
+  <li> <p>mariadb-java-client 2.4.0 productName 已更改导致不兼容 Spring Batch</p> </li> 
+  <li> <p>SpringEL 不应该为无效赋值抛出 IllegalAccessError</p> </li> 
+  <li> <p>避免在 DefaultListableBeanFactory.findAnnotationOnBean 中重复调用 findAnnotations</p> </li> 
+  <li> <p>支持 WildFly 13+ 的加载时织入</p> </li> 
+  <li> <p>org.springframework.web.client.HttpMessageConverterExtractor＃extractData 在缺少内容长度标头时无法检测到空体</p> </li> 
+  <li> <p>弃用 JibxMarshaller</p> </li> 
+  <li> <p>无法禁用 DefaultExceptionHandler 日志警告</p> </li> 
+  <li> <p>在 Jackson2JsonDecoder 中支持 null 文字</p> </li> 
+ </ul> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2019/02/spring-framework-5-1-5-available-now.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
+                    <a href="../../../blog/2019/02/micronaut-1-1-0-m1-released.html">Micronaut 1.1.0 M1 发布</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon release"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Tue Feb 12 11:44:07 CST 2019">2019-02-12</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2019/02/micronaut-1-1-0-m1-released.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Micronaut 1.1.0 M1 发布，模块化、支持 gRPC。</div>
+                    <div class="desktop-only"><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>来自 Object Computing 的 Micronaut 开发团队宣布了 <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.1.0.M1" class="external" target="_blank" rel="noopener">Micronaut 1.1.0 M1</a> 已经发布。</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Micronaut 自开创性的 1.0 版本以来，1.1 包含了许多重要的改进，包括有以下几个主要内容：</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>支持 <a href="https://grpc.io/" class="external" target="_blank" rel="noopener">GRPC</a></p> </li> 
+    <li> <p>支持 AWS API Gateway 和 GraalVM 自定义运行时</p> </li> 
+    <li> <p>支持 AWS Alexa Lambda</p> </li> 
+    <li> <p>本机文件监视和快速服务器重启</p> </li> 
+    <li> <p>Micronaut Test 的新测试模板</p> </li> 
+    <li> <p>更快的冷启动时间和性能优化</p> </li> 
+    <li> <p><a href="https://docs.micronaut.io/1.1.x/guide/index.html#whatsNew" class="external" target="_blank" rel="noopener">更多新特性和改进…​</a></p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Micronaut 1.1 的下一个也是最后一个里程碑将在发布候选版开始之前包括支持 RabbitMQ 和 OpenID Connect。</p> 
+  </div> 
+ </div> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2019/02/micronaut-1-1-0-m1-released.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
                     <a href="../../../blog/2019/02/this-week-in-spring-february-8th-2019.html">Spring一周回顾（2019年2月8日）</a>
                 </h2>
                 <header class="meta-data--container">
@@ -217,7 +321,7 @@
                 <section class='blog--post'>
                     <div class="mobile-only">Spring Cloud Data Flow 1.7.4 和 Skipper 1.1.4 发布</div>
                     <div class="desktop-only"><div class="paragraph"> 
- <p><a href="https://cloud.spring.io/spring-cloud-dataflow/" class="external" target="_blank" rel="noopener">Spring Cloud Data Flow</a> 宣布 Data Flow for Local 和 Cloud Foundry 1.7.4 已发布，Kubernetes 版本为 1.7.3。</p> 
+ <p><a href="https://cloud.spring.io/spring-cloud-dataflow/" class="external" target="_blank" rel="noopener">Spring Cloud Data Flow</a> 开发团队宣布 Data Flow for Local 和 Cloud Foundry 1.7.4 已发布，Kubernetes 版本为 1.7.3。</p> 
 </div>
 <div class="paragraph"> 
  <p>按照入门指南在 <a href="https://docs.spring.io/spring-cloud-dataflow/docs/1.7.4.RELEASE/reference/htmlsingle/#getting-started" class="external" target="_blank" rel="noopener">本地</a>、<a href="https://docs.spring.io/spring-cloud-dataflow-server-cloudfoundry/docs/1.7.4.RELEASE/reference/htmlsingle/#getting-started" class="external" target="_blank" rel="noopener">Cloud Foundry</a> 和 <a href="https://docs.spring.io/spring-cloud-dataflow-server-kubernetes/docs/1.7.3.RELEASE/reference/htmlsingle/#kubernetes-getting-started" class="external" target="_blank" rel="noopener">Kubernetes</a> 上运行。</p> 
@@ -277,112 +381,6 @@
 </div>
                 </section>
                 <a class="blog-preview--readmore desktop-only" href="../../../blog/2019/02/spring-session-for-apache-geode-pivotal-gemfire-2-0-8-release-available.html">
-                    查看...
-                </a>
-              </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2019/02/this-week-in-spring-february-1st-2019.html">Spring一周回顾（2019年2月1日，新春快乐！）</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon news"></div>
-                        <span>
-                        <a class="category" href="../../../blog/category/news.html">news</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Fri Feb 01 23:59:59 CST 2019">2019-02-01</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2019/02/this-week-in-spring-february-1st-2019.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">Spring 开发者们每周必读的《Spring一周回顾》。</div>
-                    <div class="desktop-only"><div class="paragraph"> 
- <p>大家好，Spring 粉丝们，感谢一如既往的等待，又到了每周必读的《Spring一周回顾》时间。</p> 
-</div>
-<div class="paragraph"> 
- <p>此时，正值中国传统佳节——春节，也在这里祝大家新春快乐，万事如意，阖家欢乐，团团圆圆，生活幸福美满，工作步步高升！</p> 
-</div>
-</div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2019/02/this-week-in-spring-february-1st-2019.html">
-                    查看...
-                </a>
-              </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2019/01/micronaut-1-0-4-released.html">Micronaut 1.0.4 发布</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon release"></div>
-                        <span>
-                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Tue Jan 29 11:43:24 CST 2019">2019-01-29</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2019/01/micronaut-1-0-4-released.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">Micronaut 1.0.4 发布，模块化和升级第三方依赖。</div>
-                    <div class="desktop-only"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Micronaut 1.0.4 带来了以下新内容：</p> 
-  </div> 
- </div> 
-</div>
-<div class="sect1"> 
- <h2 id="_修复缺陷和功能改进">修复缺陷和功能改进</h2> 
- <div class="sectionbody"> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><a href="https://github.com/micronaut-projects/micronaut-core/issues?q=is%3Aissue+milestone%3A1.0.4+is%3Aclosed+label%3A%22type%3A+bug%22">修复若干缺陷</a></p> </li> 
-    <li> <p><a href="https://github.com/micronaut-projects/micronaut-core/issues?utf8=✓&amp;q=is%3Aissue+milestone%3A1.0.4+is%3Aclosed+label%3A%22type%3A+improvement%22+">功能改进</a></p> </li> 
-   </ul> 
-  </div> 
- </div> 
-</div>
-<div class="sect1"> 
- <h2 id="_模块化">模块化</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Micronaut 现在是模块化的，部分 Micronaut 被转移到子项目中。 请参阅以下链接，了解现在在 Micronaut Core 之外具有独立发布周期的新子项目：</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><a href="https://micronaut-projects.github.io/micronaut-kafka/latest/guide/index.html">Micronaut Kafka</a></p> </li> 
-    <li> <p><a href="https://micronaut-projects.github.io/micronaut-micrometer/latest/guide/index.html">Micronaut Micrometer</a></p> </li> 
-    <li> <p><a href="https://micronaut-projects.github.io/micronaut-groovy/latest/guide/index.html">Micronaut Groovy</a></p> </li> 
-    <li> <p><a href="https://micronaut-projects.github.io/micronaut-sql/latest/guide/index.html">Micronaut SQL</a></p> </li> 
-    <li> <p><a href="https://micronaut-projects.github.io/micronaut-mongodb/latest/guide/index.html">Micronaut MongoDB</a></p> </li> 
-    <li> <p><a href="https://micronaut-projects.github.io/micronaut-redis/latest/guide/index.html">Micronaut Redis</a></p> </li> 
-    <li> <p><a href="https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html">Micronaut Test</a></p> </li> 
-    <li> <p><a href="https://micronaut-projects.github.io/micronaut-netflix/latest/guide/index.html">Micronaut Netflix</a></p> </li> 
-   </ul> 
-  </div> 
- </div> 
-</div>
-</div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2019/01/micronaut-1-0-4-released.html">
                     查看...
                 </a>
               </article>
@@ -564,8 +562,13 @@
                     
                     
                 
+                
+                    
+                    
+                    
+                
                 <div>
-                    <a href="../36/">36</a>
+                    <a href="../37/">37</a>
                     
                     
                 </div>
@@ -600,6 +603,11 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/02/grails-4-0-m1-released.html" title="Grails 4.0 M1 发布">Grails 4.0 M1 发布</a>
+            <span class="pull-right">2019-02-19</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2019/02/this-week-in-spring-february-15th-2019.html" title="Spring一周回顾（2019年2月15日）">Spring一周回顾（2019...</a>
             <span class="pull-right">2019-02-15</span>
@@ -619,11 +627,8 @@
             <a href="../../../blog/2019/02/spring-data-lovelace-sr5-released.html" title="Spring Data Lovelace SR5 发布">Spring Data Lov...</a>
             <span class="pull-right">2019-02-13</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2019/02/spring-framework-5-1-5-available-now.html" title="Spring Framework 5.1.5 发布">Spring Framewor...</a>
-            <span class="pull-right">2019-02-13</span>
-          </li>
+          
+          
           
           
           

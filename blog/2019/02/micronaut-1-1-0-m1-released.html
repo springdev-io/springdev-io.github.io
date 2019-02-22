@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring Framework 5.1 RC1发布了 - Spring技术社区</title>
+  <title>Micronaut 1.1.0 M1 发布 - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring Framework 5.1 RC1发布了" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-07-26'><meta property="og:description" content="Spring Framework 5.1发布第一个RC，带来了诸多新特性。" />
+  <meta property="og:title" content="Micronaut 1.1.0 M1 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2019-02-12'><meta property="og:description" content="Micronaut 1.1.0 M1 发布，模块化、支持 gRPC。" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -135,7 +135,7 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Spring Framework 5.1 RC1发布了</h1>
+                <h1 class="blog--title">Micronaut 1.1.0 M1 发布</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
                     <div class="meta-data--icon icon blog-icon release"></div>
@@ -149,39 +149,221 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-07-26</time>
+                      <time class="date" pubdate="" datetime=''>2019-02-12</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/07/spring-framework-5-1-goes-rc1.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2019/02/micronaut-1-1-0-m1-released.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
-              <div class="blog--post"><div class="quoteblock abstract">
-<div class="title">概要</div>
-<blockquote>
-Spring Framework 5.1发布第一个RC，带来了诸多新特性。
-</blockquote>
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>来自 Object Computing 的 Micronaut 开发团队宣布了 <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.1.0.M1" class="external" target="_blank" rel="noopener">Micronaut 1.1.0 M1</a> 已经发布。</p>
 </div>
 <div class="paragraph">
-<p>Spring Framework 5.1 需要JDK 8及以上版本，特别是支持JDK 11这个LTS版本。官方推荐升级到5.1版本，以便使用到JDK 11的新特性，但是鉴于国内项目仍然在大量使用JDK 8，所以这仍然需要一个过程。除此之外，该版本还支持<a href="https://www.graalvm.org/" class="external" target="_blank" rel="noopener">GraalVM</a>，这是Oracle四月份宣布开源的一个支持多语言的高性能虚拟机，目前在开源社区已经大量测试使用。</p>
+<p>Micronaut 自开创性的 1.0 版本以来，1.1 包含了许多重要的改进，包括有以下几个主要内容：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>支持 <a href="https://grpc.io/" class="external" target="_blank" rel="noopener">GRPC</a></p>
+</li>
+<li>
+<p>支持 AWS API Gateway 和 GraalVM 自定义运行时</p>
+</li>
+<li>
+<p>支持 AWS Alexa Lambda</p>
+</li>
+<li>
+<p>本机文件监视和快速服务器重启</p>
+</li>
+<li>
+<p>Micronaut Test 的新测试模板</p>
+</li>
+<li>
+<p>更快的冷启动时间和性能优化</p>
+</li>
+<li>
+<p><a href="https://docs.micronaut.io/1.1.x/guide/index.html#whatsNew" class="external" target="_blank" rel="noopener">更多新特性和改进&#8230;&#8203;</a></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>5.1版本中<a href="https://github.com/spring-projects/spring-framework/blob/master/spring-beans/src/main/java/org/springframework/beans/factory/ObjectProvider.java">ObjectProvider</a>被重新设计后，实现了<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html" class="external" target="_blank" rel="noopener">Iterable接口</a>，提供对<a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html" class="external" target="_blank" rel="noopener">Stream</a>支持。</p>
+<p>Micronaut 1.1 的下一个也是最后一个里程碑将在发布候选版开始之前包括支持 RabbitMQ 和 OpenID Connect。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_模块化">模块化</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Micronaut 现在是模块化的，部分 Micronaut 被转移到子项目中。 请参阅以下链接，了解现在在 Micronaut Core 之外具有独立发布周期的新子项目：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://micronaut-projects.github.io/micronaut-kafka/1.1.x/guide/index.html" class="external" target="_blank" rel="noopener">Micronaut Kafka</a></p>
+</li>
+<li>
+<p><a href="https://micronaut-projects.github.io/micronaut-micrometer/1.1.x/guide/index.html" class="external" target="_blank" rel="noopener">Micronaut Micrometer</a></p>
+</li>
+<li>
+<p><a href="https://micronaut-projects.github.io/micronaut-groovy/1.1.x/guide/index.html" class="external" target="_blank" rel="noopener">Micronaut Groovy</a></p>
+</li>
+<li>
+<p><a href="https://micronaut-projects.github.io/micronaut-sql/1.1.x/guide/index.html" class="external" target="_blank" rel="noopener">Micronaut SQL</a></p>
+</li>
+<li>
+<p><a href="https://micronaut-projects.github.io/micronaut-mongodb/1.1.x/guide/index.html" class="external" target="_blank" rel="noopener">Micronaut MongoDB</a></p>
+</li>
+<li>
+<p><a href="https://micronaut-projects.github.io/micronaut-neo4j/1.1.x/guide/index.html" class="external" target="_blank" rel="noopener">Micronaut Neo4j</a></p>
+</li>
+<li>
+<p><a href="https://micronaut-projects.github.io/micronaut-redis/1.1.x/guide/index.html" class="external" target="_blank" rel="noopener">Micronaut Redis</a></p>
+</li>
+<li>
+<p><a href="https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html" class="external" target="_blank" rel="noopener">Micronaut Test</a></p>
+</li>
+<li>
+<p><a href="https://micronaut-projects.github.io/micronaut-netflix/latest/guide/index.html" class="external" target="_blank" rel="noopener">Micronaut Netflix</a></p>
+</li>
+<li>
+<p><a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide/index.html" class="external" target="_blank" rel="noopener">Micronaut AWS</a></p>
+</li>
+<li>
+<p><a href="https://micronaut-projects.github.io/micronaut-grpc/latest/guide/index.html" class="external" target="_blank" rel="noopener">Micronaut GRPC</a></p>
+</li>
+<li>
+<p><a href="https://micronaut-projects.github.io/micronaut-flyway/latest/guide/index.html" class="external" target="_blank" rel="noopener">Micronaut Flyway</a></p>
+</li>
+<li>
+<p><a href="https://micronaut-projects.github.io/micronaut-liquibase/latest/guide/index.html" class="external" target="_blank" rel="noopener">Micronaut Liquibase</a></p>
+</li>
+<li>
+<p><a href="https://micronaut-projects.github.io/micronaut-elasticsearch/latest/guide/index.html" class="external" target="_blank" rel="noopener">Micronaut Elasticsearch</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_第三方依赖升级">第三方依赖升级</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Groovy <code>2.5.4</code> &#8594; <code>2.5.6</code></p>
+</li>
+<li>
+<p>Gradle <code>4.10.2</code> &#8594; <code>5.1.1</code> (CLI Only)</p>
+</li>
+<li>
+<p>Kafka <code>2.0.1</code> &#8594; <code>2.1.0</code></p>
+</li>
+<li>
+<p>Micrometer <code>1.0.6</code> &#8594; <code>1.1.2</code></p>
+</li>
+<li>
+<p>Reactive Streams <code>1.0.1</code> &#8594; <code>1.0.2</code></p>
+</li>
+<li>
+<p>Jackson <code>2.9.7</code> &#8594; <code>2.9.8</code></p>
+</li>
+<li>
+<p>Nimbus JOSE+JWT  <code>6.0.2</code> &#8594; <code>6.8</code></p>
+</li>
+<li>
+<p>Spring <code>5.0.10.RELEASE</code> &#8594; <code>5.1.4.RELEASE</code></p>
+</li>
+<li>
+<p>Reactor <code>3.2.0.RELEASE</code> &#8594; <code>3.2.5.RELEASE</code></p>
+</li>
+<li>
+<p>RxJava 2 <code>2.2.2</code> &#8594; <code>2.2.6</code></p>
+</li>
+<li>
+<p>Reactive Postgres <code>0.10.5</code> &#8594; <code>0.11.2</code></p>
+</li>
+<li>
+<p>GORM <code>6.1.8.RELEASE</code> &#8594; <code>7.0.0.RC1</code></p>
+</li>
+<li>
+<p>Hibernate <code>5.3.7.Final</code> &#8594; <code>5.4.0.Final</code></p>
+</li>
+<li>
+<p>Hikari <code>2.7.9</code> &#8594; <code>3.3.0</code></p>
+</li>
+<li>
+<p>Commons DBCP 2 <code>2.1.1</code> &#8594; <code>2.5.0</code></p>
+</li>
+<li>
+<p>Tomcat Pool <code>9.0.1</code> &#8594; <code>9.0.14</code></p>
+</li>
+<li>
+<p>Neo4j Java Driver <code>1.6.4</code> &#8594; <code>1.7.2</code></p>
+</li>
+<li>
+<p>Mongo Java Driver <code>3.8.0</code> &#8594; <code>3.10.0</code></p>
+</li>
+<li>
+<p>Mongo Reactive Driver <code>1.8.0</code> &#8594; <code>1.10.0</code></p>
+</li>
+<li>
+<p>Redis Lettuce Driver <code>5.0.4.RELEASE</code> &#8594; <code>5.1.3.RELEASE</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Spring Framework 5.1升级到<a href="http://projectreactor.io/" class="external" target="_blank" rel="noopener">Reactor Californium</a>，支持HTTP2，升级Hibernate ORM到5.3，将使用Hibernate的新SPI，其最新版本5.3.3已经在前天发布。在Web MVC方面主要是优化了日志和异常处理，这对于开发来讲绝对是个好事。</p>
+<p>相关文章：</p>
 </div>
-<div class="paragraph">
-<p>开发团队计划在八月份发布5.1 RC2，主要是一些完善和性能优化工作，GA版本定在9月中旬发布。好消息是Spring Boot 2.1 M1将会在下周发布，这样就可以在<a href="http://start.spring.io/" class="external" target="_blank" rel="noopener">Spring Initializr</a>使用到Spring Framework 5.1 RC1！</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://springdev.io/blog/2018/05/micronaut-open-sourced.html" class="external" target="_blank" rel="noopener">Micronaut 正式开源，构建微服务应用新选择！</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/09/micronaut-1-0-rc1-released.html" class="external" target="_blank" rel="noopener">Micronaut 1.0 RC1 发布，了解其独特的四个关键特性</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/10/micronaut-1-0-rc2-released.html" class="external" target="_blank" rel="noopener">Micronaut 1.0 RC2 发布，详细介绍了其实现技术及原理</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/10/micronaut-1-0-rc3-released.html" class="external" target="_blank" rel="noopener">Micronaut 1.0 RC3 和 Micronaut Test 1.0 RC1 发布</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/10/graeme-rocher-on-micronaut.html" class="external" target="_blank" rel="noopener">Graeme Rocher 访谈：介绍 Micronaut</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2018/10/micronaut-1-0-ga-released.html" class="external" target="_blank" rel="noopener">Micronaut 1.0 正式发布</a></p>
+</li>
+<li>
+<p><a href="https://springdev.io/blog/2019/01/micronaut-1-0-4-released.html" class="external" target="_blank" rel="noopener">Micronaut 1.0.4 发布</a></p>
+</li>
+</ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>更多地新特性，请看这里<a href="https://github.com/spring-projects/spring-framework/wiki/What&#8217;s-New-in-Spring-Framework-5.x" class="external" target="_blank" rel="noopener">What&#8217;s New in Spring Framework 5.x</a></p>
+<p>原文： <a href="https://objectcomputing.com/news/2019/02/12/micronaut-11-milestone-1-released" class="bare">https://objectcomputing.com/news/2019/02/12/micronaut-11-milestone-1-released</a><br>
+作者： Graeme Rocher<br>
+编译： 春之雨</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/07/this-week-in-spring-july-20th-2018.html"> ←Spring一周回顾（2018年7月20日）</a></li>
-              <li class="next"><a href="../../../blog/2018/07/this-week-in-spring-july-27th-2018.html">Spring一周回顾（2018年7月27日） →</a></li>
+              <li class="previous"><a  href="../../../blog/2019/02/this-week-in-spring-february-8th-2019.html"> ←Spring一周回顾（2019年2月8日）</a></li>
+              <li class="next"><a href="../../../blog/2019/02/spring-framework-5-1-5-available-now.html">Spring Framework 5.1.5 发布 →</a></li>
               </ul>
             </div>
             <section id="gitalk-container"></section>
