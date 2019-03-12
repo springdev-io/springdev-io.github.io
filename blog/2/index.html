@@ -141,6 +141,230 @@
               </style>
               <article class="blog--container blog-preview">
                 <h2 class="blog--title">
+                    <a href="../../../blog/2019/02/spring-cloud-finchley-sr3-now-available.html">Spring Cloud Finchley.SR3 发布</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon release"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Tue Feb 26 15:42:20 CST 2019">2019-02-26</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2019/02/spring-cloud-finchley-sr3-now-available.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Spring Cloud Finchley.SR3 发布</div>
+                    <div class="desktop-only"><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p><a href="https://cloud.spring.io/" class="external" target="_blank" rel="noopener">Spring Cloud Finchley</a> SR3（Service Release）已经发布，可以在 <a href="https://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-dependencies/Finchley.SR3/" class="external" target="_blank" rel="noopener">Maven Central</a> 上获取到。您可以查看Finchley <a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Finchley-Release-Notes" class="external" target="_blank" rel="noopener">发布说明</a>以获取更多信息。</p> 
+  </div> 
+ </div> 
+</div>
+<div class="sect1"> 
+ <h2 id="_模块更新说明">模块更新说明</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>具体而言，下面是每个更新模块的详细介绍。</p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_spring_cloud_config">Spring Cloud Config</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Spring Cloud Config 服务器现在在检索数据之前遵循请求中的 <code>if-modified-since</code> 标头，并在响应中返回 <code>last-modified</code> 标头</p> </li> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-config/issues?q=is%3Aclosed+milestone%3A2.0.2.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_spring_cloud_stream">Spring Cloud Stream</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-stream-starters/releases/tag/vElmhurst.SR2" class="external" target="_blank" rel="noopener">Elmhurst.SR2 发布说明</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_spring_cloud_sleuth">Spring Cloud Sleuth</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-sleuth/milestone/60?closed=1" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_spring_cloud_zookeeper">Spring Cloud Zookeeper</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-zookeeper/milestone/25?closed=1" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_spring_cloud_aws">Spring Cloud AWS</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-aws/milestone/25?closed=1" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_spring_cloud_task">Spring Cloud Task</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>依赖升级</p> </li> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-task/issues?q=is%3Aissue+label%3A2.0.1.RELEASE+is%3Aclosed" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_spring_cloud_commons">Spring Cloud Commons</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/55?closed=1" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_spring_cloud_openfeign">Spring Cloud Openfeign</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-openfeign/milestone/8?closed=1" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_spring_cloud_vault">Spring Cloud Vault</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>依赖升级</p> </li> 
+     <li> <p>文档更新</p> </li> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-vault/milestone/26?closed=1" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_spring_cloud_bus">Spring Cloud Bus</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-bus/milestone/33?closed=1" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_spring_cloud_contract">Spring Cloud Contract</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-contract/milestone/44?closed=1" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_spring_cloud_consul">Spring Cloud Consul</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><code>spring.cloud.discovery.enabled=false</code> 现在等同于 <code>spring.cloud.consul.discovery.enabled=false</code></p> </li> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-consul/milestone/36?closed=1" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_spring_cloud_gateway">Spring Cloud Gateway</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>当 Ribbon 不在类路径上时，提供更好的错误处理</p> </li> 
+     <li> <p>HTTP 和 Websocket 请求路由的性能改进</p> </li> 
+     <li> <p>使用修改请求正文过滤器时的性能改进</p> </li> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-gateway/milestone/19?closed=1" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_spring_cloud_netflix">Spring Cloud Netflix</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><code>HystrixConcurrencyStrategy</code> 可通过 <code>HystrixPlugins#getConcurrencyStrategy</code> 设置</p> </li> 
+     <li> <p><code>spring.cloud.discovery.enabled=false</code> 现在等同于 <code>eureka.client.enabled=false</code></p> </li> 
+     <li> <p><a href="https://github.com/spring-cloud/spring-cloud-netflix/milestone/72?closed=1" class="external" target="_blank" rel="noopener">缺陷修复</a></p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+ </div> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2019/02/spring-cloud-finchley-sr3-now-available.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
+                    <a href="../../../blog/2019/02/this-week-in-spring-february-22th-2019.html">Spring一周回顾（2019年2月22日）</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon news"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/news.html">news</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Fri Feb 22 23:59:59 CST 2019">2019-02-22</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2019/02/this-week-in-spring-february-22th-2019.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Spring 开发者们每周必读的《Spring一周回顾》。</div>
+                    <div class="desktop-only"><div class="paragraph"> 
+ <p>大家好，Spring 粉丝们，感谢一如既往的等待，又到了每周必读的《Spring一周回顾》时间。</p> 
+</div>
+<div class="paragraph"> 
+ <p>本周我为大家带来了如下内容：</p> 
+</div>
+<div class="ulist"> 
+ <ul> 
+  <li> <p><a href="https://springdev.io/blog/2019/02/spring-tools-4-1-2-released.html" class="external" target="_blank" rel="noopener">Spring Tools 4.1.2 发布</a>，增加多项新特性以及带来性能改进。</p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2019/02/grails-4-0-m1-released.html" class="external" target="_blank" rel="noopener">Grails 4.0 M1 发布</a>，升级基础的第三方依赖项，并且集成 Micronaut。</p> </li> 
+  <li> <p><a href="https://springdev.io/blog/2019/02/micronaut-1-1-0-m1-released.html" class="external" target="_blank" rel="noopener">Micronaut 1.1.0.M1 发布</a>，模块化、升级第三方依赖，以及 <a href="https://docs.micronaut.io/1.1.x/guide/index.html#whatsNew" class="external" target="_blank" rel="noopener">众多新特性发布</a>。</p> </li> 
+  <li> <p><a href="https://github.com/alipay/sofa-boot/releases/tag/v3.1.2" class="external" target="_blank" rel="noopener">SOFABoot 3.1.2 已发布</a>，支持扩展点，并行初始化 bean，可自定义组件生命周期的启用/关闭规则。</p> </li> 
+  <li> <p><a href="http://in.relation.to/2019/02/19/hibernate-orm-538-final-out/" class="external" target="_blank" rel="noopener">Hibernate ORM 5.3.8.Final 已发布</a></p> </li> 
+  <li> <p><a href="http://in.relation.to/2019/02/18/hibernate-validator-6015-final-out/" class="external" target="_blank" rel="noopener">Hibernate Validator 6.0.15.Final 已发布</a></p> </li> 
+  <li> <p><a href="https://www.eclipse.org/jetty/download.html" class="external" target="_blank" rel="noopener">Eclipse Jetty 9.4.15 已发布</a></p> </li> 
+  <li> <p><a href="https://github.com/alibaba/Sentinel/releases/tag/1.4.2" class="external" target="_blank" rel="noopener">Sentinel 1.4.2 已发布</a></p> </li> 
+  <li> <p><a href="https://github.com/ReactiveX/RxJava/releases/tag/v2.2.7" class="external" target="_blank" rel="noopener">RxJava 2.2.7 已发布</a></p> </li> 
+  <li> <p><a href="https://mariadb.com/kb/en/library/mariadb-10313-release-notes/" class="external" target="_blank" rel="noopener">MariaDB 10.3.13 已发布</a></p> </li> 
+  <li> <p><a href="https://github.com/angular/angular/releases/tag/7.2.6" class="external" target="_blank" rel="noopener">Angular 7.2.6 已发布</a></p> </li> 
+  <li> <p><a href="https://github.com/webpack/webpack/releases/tag/v4.29.5" class="external" target="_blank" rel="noopener">Webpack v4.29.5 已发布</a></p> </li> 
+  <li> <p><a href="https://github.com/serverless/serverless/releases/tag/v1.38.0" class="external" target="_blank" rel="noopener">Serverless 1.38.0 已发布</a></p> </li> 
+  <li> <p><a href="https://github.com/Kong/kong/releases/tag/1.1.0rc1" class="external" target="_blank" rel="noopener">Kong 1.1.0rc1 已发布</a></p> </li> 
+  <li> <p><a href="https://www.elastic.co/guide/en/kibana/current/release-notes-6.6.1.html" class="external" target="_blank" rel="noopener">Kibana 6.6.1</a>、<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/release-notes-6.6.1.html" class="external" target="_blank" rel="noopener">Elasticsearch 6.6.1</a>、<a href="https://www.elastic.co/guide/en/logstash/current/logstash-6-6-0.html" class="external" target="_blank" rel="noopener">Logstash 6.6.1</a> 已发布</p> </li> 
+ </ul> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2019/02/this-week-in-spring-february-22th-2019.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
                     <a href="../../../blog/2019/02/spring-tools-4-1-2-released.html">Spring Tools 4.1.2 发布</a>
                 </h2>
                 <header class="meta-data--container">
@@ -256,85 +480,6 @@
 </div>
                 </section>
                 <a class="blog-preview--readmore desktop-only" href="../../../blog/2019/02/this-week-in-spring-february-15th-2019.html">
-                    查看...
-                </a>
-              </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2019/02/spring-boot-2-1-3-available-now.html">Spring Boot 2.1.3 发布</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon release"></div>
-                        <span>
-                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Fri Feb 15 13:38:59 CST 2019">2019-02-15</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2019/02/spring-boot-2-1-3-available-now.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">Spring Boot 2.1.3 发布，70 多项问题修复、改进和依赖项更新。</div>
-                    <div class="desktop-only"><div class="paragraph"> 
- <p>Spring Boot 2.1.3 已经发布，共解决了 <a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.1.3.RELEASE" class="external" target="_blank" rel="noopener"><code>70</code> 多项问题修复、改进和依赖项更新</a>，建议使用 <code>2.1.x</code> 的用户升级到此版本。您可以从 <a href="https://repo.spring.io/release" class="external" target="_blank" rel="noopener">Spring Release</a> 和 <a href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework.boot%22" class="external" target="_blank" rel="noopener">Maven Central</a> 下载获取。</p> 
-</div>
-</div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2019/02/spring-boot-2-1-3-available-now.html">
-                    查看...
-                </a>
-              </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2019/02/spring-security-5-1-4-released.html">Spring Security 5.1.4 发布</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon release"></div>
-                        <span>
-                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Thu Feb 14 14:41:06 CST 2019">2019-02-14</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2019/02/spring-security-5-1-4-released.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">Spring Security 5.1.4 发布</div>
-                    <div class="desktop-only"><div class="paragraph"> 
- <p><a href="http://projects.springdev.io/spring-security/" class="external" target="_blank" rel="noopener">Spring Security</a> 是一个功能强大且可高度自定义的身份验证和访问控制框架。它是保护基于 Spring 的应用程序的事实上的标准。</p> 
-</div>
-<div class="paragraph"> 
- <p>其特性如下：</p> 
-</div>
-<div class="ulist"> 
- <ul> 
-  <li> <p>对身份验证和授权的全面和可扩展的支持</p> </li> 
-  <li> <p>防止会话固定，点击劫持，跨站点请求伪造等攻击</p> </li> 
-  <li> <p>Servlet API集成</p> </li> 
-  <li> <p>支持与Spring Web MVC集成</p> </li> 
- </ul> 
-</div>
-</div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2019/02/spring-security-5-1-4-released.html">
                     查看...
                 </a>
               </article>
@@ -562,6 +707,16 @@
       <div><h2>最新文章</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/03/spring-cloud-greenwich-sr1-is-now-available.html" title="Spring Cloud Greenwich.SR1 发布">Spring Cloud Gr...</a>
+            <span class="pull-right">2019-03-07</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/03/spring-data-moore-m2-released.html" title="Spring Data Moore M2 发布">Spring Data Moo...</a>
+            <span class="pull-right">2019-03-07</span>
+          </li>
+          <li class="blog-category">
             <div class="icon blog-icon news"></div>
             <a href="../../../blog/2019/03/this-week-in-spring-march-1st-2019.html" title="Spring一周回顾（2019年3月1日）">Spring一周回顾（2019...</a>
             <span class="pull-right">2019-03-01</span>
@@ -576,16 +731,8 @@
             <a href="../../../blog/2019/02/micronaut-1-1-0-m2-released.html" title="Micronaut 1.1.0 M2 发布">Micronaut 1.1.0...</a>
             <span class="pull-right">2019-02-27</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2019/02/spring-cloud-finchley-sr3-now-available.html" title="Spring Cloud Finchley.SR3 发布">Spring Cloud Fi...</a>
-            <span class="pull-right">2019-02-26</span>
-          </li>
-          <li class="blog-category">
-            <div class="icon blog-icon news"></div>
-            <a href="../../../blog/2019/02/this-week-in-spring-february-22th-2019.html" title="Spring一周回顾（2019年2月22日）">Spring一周回顾（2019...</a>
-            <span class="pull-right">2019-02-22</span>
-          </li>
+          
+          
           
           
           
