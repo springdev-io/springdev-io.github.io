@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html data-code-prettify data-clipboard-buttons data-goto-top data-nav-menu data-switch-sidebar data-mobile-support>
+<html data-mobile-support data-goto-top data-nav-menu>
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring Cloud Function 2.0.0.RELEASE 发布 - Spring技术社区</title>
+  <title>Blog - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring Cloud Function 2.0.0.RELEASE 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2019-01-08'><meta property="og:description" content="Spring Cloud Function 2.0.0.RELEASE 发布" />
+  <meta property="og:title" content="SpringDev.io" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:description" content="Let's build a better Enterprise. Spring helps development teams everywhere
+    build simple, portable, fast and flexible JVM-based systems and applications." />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
   <link rel="stylesheet" type="text/css" href="/css/blog.css" />
   <link rel="stylesheet" type="text/css" href="/css/custom.css" />
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  
   <script src="/jspm_packages/system.js"></script>
   <script>
     System.config({baseURL: "/"});
@@ -57,7 +58,7 @@
       <div class="search-dropdown--container js-search-dropdown">
         <div class="container-fluid">
           <div class="search-form--container">
-            <form class="form-inline form-search" action="../../../search" method="get">
+            <form class="form-inline form-search" action="../search" method="get">
               <input type="text" class="search-query search-form--form js-search-input" placeholder="Search for documentation, guides, and posts..." name="q" value="" />
               <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
             </form>
@@ -69,7 +70,7 @@
     <div class="mobile-navigation--wrapper mobile-only">
       <div class="navigation-drawer--container">
         <div class="mobile-search--container">
-          <form class="form-inline form-search" action="../../../search" method="get">
+          <form class="form-inline form-search" action="../search" method="get">
             <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
             <input type="text" class="search-query search-form--form js-search-input" placeholder="Search..." name="q" value="" />
           </form>
@@ -106,7 +107,7 @@
           <i class="icon-reorder"></i>
         </div>
         <div class="header-center-icon">
-          <a href="../../../">
+          <a href="../">
             <div class="icon icon-spring-logo-mobile"></div>
           </a>
         </div>
@@ -119,7 +120,9 @@
     <main class="body--container container-fluid">
       <div class="main-body--wrapper">
         <div class="desktop-only">
-          <h1 class="blog-category active content--title">版本发布</h1>
+          <h1 class="blog-category active content--title">
+          开发者博客
+          </h1>
           <div class="blog-category content--title">
             <div>Engineering</div>
           </div>
@@ -129,92 +132,292 @@
           <div class="blog-category content--title">
             <div>News and Events</div>
           </div>
-          <div class="switch-sidebar pull-right"><input type="checkbox" class="js-switch"/></div>
         </div>
         <div class="row-fluid blog--wrapper">
-          <article class="span8 mobile-left-pane" id="content">
-            <div class="blog--container">
-              <header>
-                <h1 class="blog--title">Spring Cloud Function 2.0.0.RELEASE 发布</h1>
-                <div class="meta-data--container">
-                  <div class="meta-data--item desktop-only">
-                    <div class="meta-data--icon icon blog-icon release"></div>
-                    <span>
-                      <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
-                    </span>
+          <div class="span8 mobile-left-pane">
+            <div class="blog-preview--wrapper">
+              <style type="text/css">
+                #toc { display: none; }
+              </style>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
+                    <a href="../../../blog/2018/05/micronaut-open-sourced.html">Micronaut 正式开源，构建微服务应用新选择！</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon release"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                        </span>
                     </div>
                     <div class="meta-data--item">
                       <img class="meta-data--icon" src="/img/avatars/rain.png">
                       <a class="author" rel="author" href="http://rainboyan.com">rain</a>
                     </div>
                     <div class="meta-data--item">
-                      <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2019-01-08</time>
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Wed May 23 09:00:00 CST 2018">2018-05-23</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/05/micronaut-open-sourced.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Graeme Rocher在OCI的博客上正式宣布：Micronaut 开源了！</div>
+                    <div class="desktop-only"><div class="quoteblock abstract"> 
+ <blockquote>
+   本文的作者是Graeme Rocher，他是Grails框架的项目创始人，主导Grails开发10多年，有着丰富的Grails和Spring架构经验。由于Grails和Micronaut的团队和社区与Spring之间都很有渊源，而我也是其中最早的用户和参与者，所以本文将Micronaut介绍给Spring技术社区，后续也会发布更多相关的技术文章，欢迎大家积极参与讨论和分享。 
+ </blockquote> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/05/micronaut-open-sourced.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
+                    <a href="../../../blog/2017/07/introducing-spring-cloud-function.html">介绍Spring Cloud Function 项目</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon article"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/article.html">article</a>&nbsp;
+                        </span>
                     </div>
                     <div class="meta-data--item">
-                      <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2019/01/announcing-general-availability-of-spring-cloud-function-2-0-0-release.html#gitalk-container">评论
-                      </a>
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
                     </div>
-                </div>
-              </header>
-              <div class="blog--post"><div class="paragraph">
-<p><a href="https://spring.io/team/olegz" class="external" target="_blank" rel="noopener">Oleg Zhurakousky</a> 在博客宣布了 <a href="https://spring.io/blog/2019/01/08/announcing-general-availability-of-spring-cloud-function-2-0-0-release" class="external" target="_blank" rel="noopener">Spring Cloud Function 2.0.0.RELEASE 发布</a>。</p>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Wed Jul 05 15:17:00 CST 2017">2017-07-05</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2017/07/introducing-spring-cloud-function.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">介绍Spring Cloud Function 项目</div>
+                    <div class="desktop-only"><div class="paragraph"> 
+ <p>Spring Cloud Function是一个新项目，具有以下高阶目标：</p> 
 </div>
-<div class="paragraph">
-<p>Spring Cloud Function <code>2.0.0.RELEASE</code> 作为独立的模块可以在 <a href="https://repo.spring.io/libs-release/org/springframework/cloud/" class="external" target="_blank" rel="noopener">Spring Release</a> 和 <a href="https://repo.maven.apache.org/maven2/org/springframework/cloud/">Maven Central</a> 仓库获取到。</p>
+<div class="ulist"> 
+ <ul> 
+  <li> <p>通过函数促进业务逻辑的实现</p> </li> 
+  <li> <p>将业务逻辑的开发生命周期与任何特定运行时目标分离，以便相同的代码可以作为Web端点，流处理器或任务运行</p> </li> 
+  <li> <p>支持无服务器提供商之间的统一编程模型，以及独立运行（本地或PaaS）的能力</p> </li> 
+  <li> <p>在无服务器提供商上启用Spring Boot功能（自动配置，依赖注入，指标）</p> </li> 
+ </ul> 
 </div>
-<div class="paragraph">
-<p>此版本包含以下内容：</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://springdev.io/blog/2018/09/kotlin-support-in-spring-cloud-function" class="external" target="_blank" rel="noopener">支持 Kotlin</a></p>
-</li>
-<li>
-<p>为 <a href="https://spring.io/blog/2018/09/25/spring-cloud-function-2-0-and-azure-functions">Azure 函数</a>提供的新编程模型</p>
-</li>
-<li>
-<p>在 Web 适配器启动时自动（可选）导出Supplier</p>
-</li>
-<li>
-<p><a href="https://spring.io/blog/2018/10/22/functional-bean-registrations-in-spring-cloud-function">函数式 Bean 的注册</a></p>
-</li>
-<li>
-<p>支持输入类型为 Collection 的函数的透明类型转换</p>
-</li>
-<li>
-<p>基于 Spring Boot 2.1</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="https://cloud.spring.io/spring-cloud-function/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-cloud/spring-cloud-function" class="external" target="_blank" rel="noopener">Github</a> | <a href="https://github.com/spring-cloud/spring-cloud-function/issues" class="external" target="_blank" rel="noopener">问题</a> | <a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-function/2.0.0.RELEASE/" class="external" target="_blank" rel="noopener">文档</a></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>原文：https://spring.io/blog/2019/01/08/announcing-general-availability-of-spring-cloud-function-2-0-0-release<br>
-作者：Oleg Zhurakousky<br>
-编译：春之雨</p>
-</div>
-</td>
-</tr>
-</table>
-</div></div>
-              <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2019/01/this-week-in-spring-january-4th-2019.html"> ←Spring一周回顾（2019年1月4日）</a></li>
-              <li class="next"><a href="../../../blog/2019/01/spring-framework-5-1-4-5-0-12-and-4-3-22-available-now.html">Spring Framework 5.1.4、5.0.12和4.3.22 同时发布 →</a></li>
-              </ul>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2017/07/introducing-spring-cloud-function.html">
+                    查看...
+                </a>
+              </article>
             </div>
-            <section id="gitalk-container"></section>
-          </article>
+            <div id='pagination_control' class="pagination blog-pagination">
+                <a href="../38/"><i class="icon-chevron-left"></i></a>
+                <div>
+                    <a href="../">1</a>
+                    
+                    
+                </div>
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                <div>
+                    
+                    
+                    <div >...</div>
+                </div>
+                <div>
+                    <a href="../37/">37</a>
+                    
+                    
+                </div>
+                <div>
+                    <a href="../38/">38</a>
+                    
+                    
+                </div>
+                <div>
+                    
+                    <div class="active" >39</div>
+                    
+                </div>
+                
+            </div>
+          </div>
           <aside class="span4 mobile-right-pane">
       <div><h2>文章分类</h2>
         <ul class="right-pane-widget--container secondary-nav with-icon">
@@ -467,16 +670,16 @@
             <div class="navbar">
               <div class="container">
                 <ul class="nav">
-                  <li><a href="../../../team.html">Team</a></li>
-                  <li><a href="../../../services.html">Services</a></li>
-                  <li><a href="../../../tools.html">Tools</a></li>
+                  <li><a href="../team.html">Team</a></li>
+                  <li><a href="../services.html">Services</a></li>
+                  <li><a href="../tools.html">Tools</a></li>
                 </ul>
               </div>
             </div>
             &copy; <span>2019</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
-            <a href="../../../terms-of-use.html">Terms of Use</a>,
-            <a href="../../../privacy-policy.html">Privacy</a>,
-            <a href="../../../trademarks.html">Trademark Guidelines</a> and
+            <a href="../terms-of-use.html">Terms of Use</a>,
+            <a href="../privacy-policy.html">Privacy</a>,
+            <a href="../trademarks.html">Trademark Guidelines</a> and
             <span id="teconsent"></span>
           </div>
         </div>
@@ -484,18 +687,5 @@
     </footer>
     <div id="scrim"></div>
   </div>
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <script type="text/javascript">
-      var gitalk = new Gitalk({
-        clientID: 'e0ad4e23b37963590faf',
-        clientSecret: '1bbf06b574f0e6623211f8cc029f874db67c7dfe',
-        repo: 'springdev-issues',
-        owner: 'springdev-io',
-        admin: ['rainboyan'],
-        id: 'Comments',
-        distractionFreeMode: true
-      });
-      gitalk.render('gitalk-container');
-  </script>
   </body>
 </html>
