@@ -141,6 +141,43 @@
               </style>
               <article class="blog--container blog-preview">
                 <h2 class="blog--title">
+                    <a href="../../../blog/2018/09/spring-framework-5-1-goes-ga.html">Spring Framework 5.1 正式发布</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon release"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Fri Sep 21 09:00:00 CST 2018">2018-09-21</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/09/spring-framework-5-1-goes-ga.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Spring Framework 5.1 正式发布，需要JDK 8及以上版本，特别是支持JDK 11这个LTS版本。</div>
+                    <div class="desktop-only"><div class="paragraph"> 
+ <p><a href="https://spring.io/team/jhoeller" class="external" target="_blank" rel="noopener">Juergen Hoeller</a>宣布了，<a href="https://spring.io/blog/2018/09/21/spring-framework-5-1-goes-ga" class="external" target="_blank" rel="noopener">Spring Framework 5.1 正式发布</a>，可以从repo.spring.io以及Maven Central获取到。</p> 
+</div>
+<div class="paragraph"> 
+ <p>Spring Framework 5.1 需要JDK 8及以上版本，特别是支持JDK 11这个LTS版本。因此推荐升级到5.1版本，以便能够使用JDK 11的新特性。除此之外，该版本还支持<a href="https://www.graalvm.org/" class="external" target="_blank" rel="noopener">GraalVM</a>，这是Oracle四月份宣布开源的一个支持多语言的高性能虚拟机，目前在开源社区已经大量测试使用。</p> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/09/spring-framework-5-1-goes-ga.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
                     <a href="../../../blog/2018/09/spring-tool-suite-3-9-6-released.html">Spring Tool Suite 3.9.6 发布</a>
                 </h2>
                 <header class="meta-data--container">
@@ -299,56 +336,6 @@
 </div>
                 </section>
                 <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/09/spring-cloud-data-flow-1-7-m1-released.html">
-                    查看...
-                </a>
-              </article>
-              <article class="blog--container blog-preview">
-                <h2 class="blog--title">
-                    <a href="../../../blog/2018/09/introducing-spring-data-jdbc.html">介绍 Spring Data JDBC</a>
-                </h2>
-                <header class="meta-data--container">
-                    <div class="meta-data--item desktop-only">
-                        <div class="meta-data--icon icon blog-icon article"></div>
-                        <span>
-                        <a class="category" href="../../../blog/category/article.html">article</a>&nbsp;
-                        </span>
-                    </div>
-                    <div class="meta-data--item">
-                      <img class="meta-data--icon" src="/img/avatars/rain.png">
-                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
-                    </div>
-                    <div class="meta-data--item">
-                        <div class="meta-data--icon icon blog-icon calendar"></div>
-                        <time class='date' pubdate datetime="Mon Sep 17 07:34:00 CST 2018">2018-09-17</time>
-                    </div>
-                  <div class="meta-data--item">
-                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/09/introducing-spring-data-jdbc.html#gitalk-container">评论</a>
-                  </div>
-                </header>
-                <section class='blog--post'>
-                    <div class="mobile-only">本文介绍了Spring Data JDBC的新特性。</div>
-                    <div class="desktop-only"><div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Spring Data Lovelace版本即将发布，本文将介绍其中的Spring Data新模块：<a href="https://projects.spring.io/spring-data-jdbc/" class="external" target="_blank" rel="noopener">Spring Data JDBC</a>。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Data JDBC背后的思想是提供对关系数据库的访问，而无需服从JPA的复杂性。JPA提供延迟加载，缓存和脏跟踪等功能。这些特性当然都很棒，如果你需要这些它们，可以考虑JPA，但是实际使用起来比以想象的要难。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>延迟加载可能会在你不期望它时触发昂贵的操作，或者它可能会因异常而失败。当你真正想要比较一个被修改过的实体的两个版本时，缓存可能会妨碍你很难顺利处理所有持久性操作。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Spring Data JDBC旨在实现更简单的模型。不会有缓存，脏跟踪或延迟加载。相反，只有在调用存储库方法时才会发出SQL语句。作为该方法返回的对象在方法返回之前完全加载。实体没有“会话”和代理。所有这些都应该使Spring Data JDBC更易于理解。</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>当然，这种更简单的方法会导致约束，这些约束将在未来的帖子中介绍。此外，它是第一个版本，尽管我们想要并计划实施许多功能，但我们不得不推迟以便你尽早使用到这些内容。</p> 
-  </div> 
- </div> 
-</div>
-</div>
-                </section>
-                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/09/introducing-spring-data-jdbc.html">
                     查看...
                 </a>
               </article>
@@ -582,6 +569,11 @@
         <ul class="right-pane-widget--container secondary-nav with-icon">
           <li class="blog-category">
             <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/03/micronaut-1-1-0-rc1-released.html" title="Micronaut 1.1.0 RC1 发布">Micronaut 1.1.0...</a>
+            <span class="pull-right">2019-03-20</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
             <a href="../../../blog/2019/03/spring-cloud-data-flow-2-0-1-ga-released.html" title="Spring Cloud Data Flow 2.0.1 GA 发布">Spring Cloud Da...</a>
             <span class="pull-right">2019-03-18</span>
           </li>
@@ -600,11 +592,7 @@
             <a href="../../../blog/2019/03/spring-boot-2-2-m1.html" title="Spring Boot 2.2 M1 发布">Spring Boot 2.2...</a>
             <span class="pull-right">2019-03-08</span>
           </li>
-          <li class="blog-category">
-            <div class="icon blog-icon release"></div>
-            <a href="../../../blog/2019/03/spring-cloud-greenwich-sr1-is-now-available.html" title="Spring Cloud Greenwich.SR1 发布">Spring Cloud Gr...</a>
-            <span class="pull-right">2019-03-07</span>
-          </li>
+          
           
           
           
