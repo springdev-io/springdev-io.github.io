@@ -3,12 +3,12 @@
 
   <head>
   <meta charset="utf-8"/>
-  <title>Spring Boot 2.0.7 发布 - Spring技术社区</title>
+  <title>Spring Tool Suite 3.9.8 发布 - Spring技术社区</title>
   <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="description" content="Spring Dev Site"/>
   <meta name="author" content="rainboyan.com"/>
   <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
-  <meta property="og:title" content="Spring Boot 2.0.7 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2018-11-30'><meta property="og:description" content="Spring Boot 2.0.7 发布，修复了大量缺陷，也升级了第三方依赖。" />
+  <meta property="og:title" content="Spring Tool Suite 3.9.8 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2019-03-27'><meta property="og:description" content="Spring Tool Suite 3.9.8 发布，更新到 Eclipse 2019-03 版本。" />
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -135,7 +135,7 @@
           <article class="span8 mobile-left-pane" id="content">
             <div class="blog--container">
               <header>
-                <h1 class="blog--title">Spring Boot 2.0.7 发布</h1>
+                <h1 class="blog--title">Spring Tool Suite 3.9.8 发布</h1>
                 <div class="meta-data--container">
                   <div class="meta-data--item desktop-only">
                     <div class="meta-data--icon icon blog-icon release"></div>
@@ -149,109 +149,54 @@
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon calendar"></div>
-                      <time class="date" pubdate="" datetime=''>2018-11-30</time>
+                      <time class="date" pubdate="" datetime=''>2019-03-27</time>
                     </div>
                     <div class="meta-data--item">
                       <div class="meta-data--icon icon blog-icon comments"></div>
-                      <a class="comments" href="../../../blog/2018/11/spring-boot-2-0-7-available-now.html#gitalk-container">评论
+                      <a class="comments" href="../../../blog/2019/03/spring-tool-suite-3-9-8-released.html#gitalk-container">评论
                       </a>
                     </div>
                 </div>
               </header>
               <div class="blog--post"><div class="paragraph">
-<p>Spring Boot 2.0.7 已经发布，共解决了<a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.0.7.RELEASE" class="external" target="_blank" rel="noopener"><code>81</code>项问题修复、改进和依赖项更新</a>，建议使用<code>2.0.x</code>的用户升级到此版本。</p>
+<p>Spring Tool Suite（简称：STS）是 Spring Source 开发团队在基于 Eclipse 基础上为 Spring 应用的开发专门定制的一款集成开发环境，对于 Spring 应用的编码实现、调试、部署等各个流程，集成了包括 Pivotal tc Server、Pivotal Cloud Foundry、Git、Maven、AspectJ 等工具，极大提供了开发效率。</p>
 </div>
 <div class="paragraph">
-<p>其中依赖升级到最新版本：</p>
+<p>Spring Tool Suite 3 (STS3) 的维护性版本 3.9.8，主要有以下两点：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Spring AMQP 2.0.10.RELEASE</p>
+<p>升级到 Eclipse 2019-03 版本</p>
 </li>
 <li>
-<p>Spring Cloud Connectors 2.0.4.RELEASE</p>
+<p>快速文本搜索，允许在模态和非模态模式之间切换</p>
 </li>
 <li>
-<p>Spring Data Kay SR12</p>
+<p>快速测试搜索，允许将搜索范围限制为特定文件</p>
 </li>
 <li>
-<p>Spring Framework 5.0.11</p>
+<p>新增选项卡，用于运行启动应用程序在应用程序环境显示实时数据</p>
 </li>
 <li>
-<p>Spring Integration 5.0.10</p>
-</li>
-<li>
-<p>Spring Kafka 2.1.11.RELEASE</p>
-</li>
-<li>
-<p>Spring Security 5.0.10</p>
-</li>
-<li>
-<p>Spring Session Apple-SR7</p>
-</li>
-<li>
-<p>Activemq 5.15.8</p>
-</li>
-<li>
-<p>Ehcache 2.10.6</p>
-</li>
-<li>
-<p>Elasticsearch 5.6.13</p>
-</li>
-<li>
-<p>Janino 3.0.11</p>
-</li>
-<li>
-<p>Javax Json 1.1.4</p>
-</li>
-<li>
-<p>Jetty El 8.5.33.1</p>
-</li>
-<li>
-<p>Kotlin 1.2.71</p>
-</li>
-<li>
-<p>Micrometer 1.0.8</p>
-</li>
-<li>
-<p>Neo4j Ogm 3.1.5</p>
-</li>
-<li>
-<p>Netty 4.1.31.Final</p>
-</li>
-<li>
-<p>Reactor Bom Bismuth-SR14</p>
-</li>
-<li>
-<p>Thymeleaf 3.0.11.RELEASE</p>
-</li>
-<li>
-<p>Thymeleaf Extras Java8time 3.0.2.RELEASE</p>
-</li>
-<li>
-<p>Thymeleaf Extras Springsecurity4 3.0.4.RELEASE</p>
-</li>
-<li>
-<p>Unboundid Ldapsdk 4.0.9</p>
+<p>各种错误修复</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>相关文章：</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://springdev.io/blog/2018/10/spring-boot-2-0-6.html" class="external" target="_blank" rel="noopener">Spring Boot 2.0.6 发布</a></p>
-</li>
-<li>
-<p><a href="https://springdev.io/blog/2018/09/spring-boot-2-0-5.html" class="external" target="_blank" rel="noopener">Spring Boot 2.0.5 发布</a></p>
-</li>
-</ul>
+<p>要下载发行版，请访问：</p>
 </div>
 <div class="paragraph">
-<p><a href="https://spring.io/projects/spring-boot/" class="external" target="_blank" rel="noopener">项目主页</a> | <a href="https://github.com/spring-projects/spring-boot" class="external" target="_blank" rel="noopener">GitHub</a> | <a href="https://github.com/spring-projects/spring-boot/issues" class="external" target="_blank" rel="noopener">Issues</a> | <a href="https://docs.spring.io/spring-boot/docs/2.0.7.RELEASE/reference/htmlsingle" class="external" target="_blank" rel="noopener">参考文档</a> | <a href="https://stackoverflow.com/questions/tagged/spring-boot" class="external" target="_blank" rel="noopener">Stack Overflow</a> | <a href="https://gitter.im/spring-projects/spring-boot" class="external" target="_blank" rel="noopener">Gitter</a></p>
+<p>Spring Tool Suite: <a href="https://spring.io/tools/sts/all" class="bare">https://spring.io/tools/sts/all</a></p>
+</div>
+<div class="paragraph">
+<p>如何安装参考这篇文章：<a href="https://springdev.io/blog/2018/06/sts.html" class="external" target="_blank" rel="noopener">安装 STS</a></p>
+</div>
+<div class="paragraph">
+<p>可以在 <a href="https://docs.spring.io/sts/nan/v398/NewAndNoteworthy.html" class="external" target="_blank" rel="noopener">这里</a>找到详细的新特性介绍和值得注意的内容。</p>
+</div>
+<div class="paragraph">
+<p>STS 3.9.9 基于 Eclipse 2019-06，计划在 2019 年 6 月发布该版本。</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -261,17 +206,17 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>原文：https://spring.io/blog/2018/11/30/spring-boot-2-0-7-available-now<br>
-作者：Stéphane Nicoll<br>
-编译：春之雨</p>
+<p>原文： <a href="https://spring.io/blog/2019/03/27/spring-tool-suite-3-9-8-released" class="bare">https://spring.io/blog/2019/03/27/spring-tool-suite-3-9-8-released</a><br>
+作者： MARTIN LIPPERT<br>
+编译： 春之雨</p>
 </div>
 </td>
 </tr>
 </table>
 </div></div>
               <ul id="direction" class="pagination blog-pagination pager">
-              <li class="previous"><a  href="../../../blog/2018/11/spring-io-platform-brussels-sr15.html"> ←Spring IO Platform Brussels-SR15 发布</a></li>
-              <li class="next"><a href="../../../blog/2018/11/spring-boot-2-1-1-available-now.html">Spring Boot 2.1.1 发布 →</a></li>
+              <li class="previous"><a  href="../../../blog/2019/03/this-week-in-spring-march-22th-2019.html"> ←Spring一周回顾（2019年3月22日）</a></li>
+              
               </ul>
             </div>
             <section id="gitalk-container"></section>
