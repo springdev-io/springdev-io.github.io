@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html data-mobile-support data-goto-top data-nav-menu>
+
+  <head>
+  <meta charset="utf-8"/>
+  <title>Blog - Spring技术社区</title>
+  <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="description" content="Spring Dev Site"/>
+  <meta name="author" content="rainboyan.com"/>
+  <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
+  <meta property="og:title" content="SpringDev.io" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:description" content="Let's build a better Enterprise. Spring helps development teams everywhere
+    build simple, portable, fast and flexible JVM-based systems and applications." />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/css/blog.css" />
+  <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+  
+  <script src="/jspm_packages/system.js"></script>
+  <script>
+    System.config({baseURL: "/"});
+  </script>
+  <script src="/config.js"></script>
+  <script>
+      System.import('app/main.js')
+  </script>
+</head>
+  <body>
+  <div class="viewport">
+    <header class="navbar header--navbar desktop-only">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <div class="spring-logo--container">
+            <a class="spring-logo" href="/"><span></span></a>
+          </div>
+          <ul class="nav pull-right">
+            <li class="navbar-link">
+              <a href="/projects/" >项目</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/guides/" >指南</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/blog/" >博客</a>
+            </li>
+            <li class="navbar-link nav-search js-nav-search">
+              <a>
+                <i class="icon-search navbar-search--icon js-search-input-open"></i>
+                <span class="search-input-close js-search-input-close">
+                  <i class="icon-remove"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-dropdown--container js-search-dropdown">
+        <div class="container-fluid">
+          <div class="search-form--container">
+            <form class="form-inline form-search" action="../search" method="get">
+              <input type="text" class="search-query search-form--form js-search-input" placeholder="Search for documentation, guides, and posts..." name="q" value="" />
+              <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div>
+    <div class="mobile-navigation--wrapper mobile-only">
+      <div class="navigation-drawer--container">
+        <div class="mobile-search--container">
+          <form class="form-inline form-search" action="../search" method="get">
+            <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            <input type="text" class="search-query search-form--form js-search-input" placeholder="Search..." name="q" value="" />
+          </form>
+        </div>
+        <div class="navigation-item-list">
+          <div class="navbar-link">
+            <a href="/">
+              首页
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/projects/">
+              项目
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/guides/">
+              指南
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/blog/">
+              博客
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <div class="nav-icon js-open-nav-drawer">
+          <i class="icon-reorder"></i>
+        </div>
+        <div class="header-center-icon">
+          <a href="../">
+            <div class="icon icon-spring-logo-mobile"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid"></div>
+    <div></div>
+    <main class="body--container container-fluid">
+      <div class="main-body--wrapper">
+        <div class="desktop-only">
+          <h1 class="blog-category active content--title">
+          开发者博客
+          </h1>
+          <div class="blog-category content--title">
+            <div>Engineering</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>Releases</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>News and Events</div>
+          </div>
+        </div>
+        <div class="row-fluid blog--wrapper">
+          <div class="span8 mobile-left-pane">
+            <div class="blog-preview--wrapper">
+              <style type="text/css">
+                #toc { display: none; }
+              </style>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
+                    <a href="../../../blog/2018/06/jdk.html">安装 Java SDK 8</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon article"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/article.html">article</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Fri Jun 01 08:00:00 CST 2018">2018-06-01</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/06/jdk.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">本文主要讲述如何安装JDK 8。</div>
+                    <div class="desktop-only"><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="quoteblock abstract"> 
+   <div class="title">
+    概要
+   </div> 
+   <blockquote>
+     本文主要讲述如何安装JDK 8。 
+   </blockquote> 
+  </div> 
+ </div> 
+</div>
+<div class="sect1"> 
+ <h2 id="_在oracle官方下载安装程序">1. 在Oracle官方下载安装程序</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>打开浏览器，在Oracle网站，通过<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" class="external" target="_blank" rel="noopener">Java 8 下载页面</a>来下载使用操作系统对应的安装程序。</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>在Windows系统上安装</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>运行安装程序jdk-8u172-windows-x64.exe，根据向导设置并下一步，记得将安装路径修改为 C:\\Java\jdk1.8.0，因为在Windows系统下，Java的安装路径最好不要包括空格。</p> 
+  </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> 
+       <div class="paragraph"> 
+        <p>JAVA_HOME 环境变量必须正确配置。 可以通过右键单击我的电脑，选择属性菜单，然后在高级页签中选择环境变量。添加环境变量 JAVA_HOME即可。</p> 
+       </div> </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+ </div> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/06/jdk.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
+                    <a href="../../../blog/2018/05/micronaut-open-sourced.html">Micronaut 正式开源，构建微服务应用新选择！</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon release"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Wed May 23 09:00:00 CST 2018">2018-05-23</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2018/05/micronaut-open-sourced.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">Graeme Rocher在OCI的博客上正式宣布：Micronaut 开源了！</div>
+                    <div class="desktop-only"><div class="quoteblock abstract"> 
+ <blockquote>
+   本文的作者是Graeme Rocher，他是Grails框架的项目创始人，主导Grails开发10多年，有着丰富的Grails和Spring架构经验。由于Grails和Micronaut的团队和社区与Spring之间都很有渊源，而我也是其中最早的用户和参与者，所以本文将Micronaut介绍给Spring技术社区，后续也会发布更多相关的技术文章，欢迎大家积极参与讨论和分享。 
+ </blockquote> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2018/05/micronaut-open-sourced.html">
+                    查看...
+                </a>
+              </article>
+              <article class="blog--container blog-preview">
+                <h2 class="blog--title">
+                    <a href="../../../blog/2017/07/introducing-spring-cloud-function.html">介绍Spring Cloud Function 项目</a>
+                </h2>
+                <header class="meta-data--container">
+                    <div class="meta-data--item desktop-only">
+                        <div class="meta-data--icon icon blog-icon article"></div>
+                        <span>
+                        <a class="category" href="../../../blog/category/article.html">article</a>&nbsp;
+                        </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                        <div class="meta-data--icon icon blog-icon calendar"></div>
+                        <time class='date' pubdate datetime="Wed Jul 05 15:17:00 CST 2017">2017-07-05</time>
+                    </div>
+                  <div class="meta-data--item">
+                    <div class="meta-data--icon icon blog-icon comments"></div><a class="comments" href="../../../blog/2017/07/introducing-spring-cloud-function.html#gitalk-container">评论</a>
+                  </div>
+                </header>
+                <section class='blog--post'>
+                    <div class="mobile-only">介绍Spring Cloud Function 项目</div>
+                    <div class="desktop-only"><div class="paragraph"> 
+ <p>Spring Cloud Function是一个新项目，具有以下高阶目标：</p> 
+</div>
+<div class="ulist"> 
+ <ul> 
+  <li> <p>通过函数促进业务逻辑的实现</p> </li> 
+  <li> <p>将业务逻辑的开发生命周期与任何特定运行时目标分离，以便相同的代码可以作为Web端点，流处理器或任务运行</p> </li> 
+  <li> <p>支持无服务器提供商之间的统一编程模型，以及独立运行（本地或PaaS）的能力</p> </li> 
+  <li> <p>在无服务器提供商上启用Spring Boot功能（自动配置，依赖注入，指标）</p> </li> 
+ </ul> 
+</div>
+</div>
+                </section>
+                <a class="blog-preview--readmore desktop-only" href="../../../blog/2017/07/introducing-spring-cloud-function.html">
+                    查看...
+                </a>
+              </article>
+            </div>
+            <div id='pagination_control' class="pagination blog-pagination">
+                <a href="../41/"><i class="icon-chevron-left"></i></a>
+                <div>
+                    <a href="../">1</a>
+                    
+                    
+                </div>
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                <div>
+                    
+                    
+                    <div >...</div>
+                </div>
+                <div>
+                    <a href="../40/">40</a>
+                    
+                    
+                </div>
+                <div>
+                    <a href="../41/">41</a>
+                    
+                    
+                </div>
+                <div>
+                    
+                    <div class="active" >42</div>
+                    
+                </div>
+                
+            </div>
+          </div>
+          <aside class="span4 mobile-right-pane">
+      <div><h2>文章分类</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category active">
+            <div class="icon blog-icon all-posts"></div>
+            <a href="/blog/">全部内容</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon engineering"></div>
+            <a href="/blog/category/article.html">书籍文章</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon releases"></div>
+            <a href="/blog/category/release.html">版本发布</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news-and-events"></div>
+            <a href="/blog/category/news.html">新闻资讯</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div><h2>最新文章</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/04/spring-boot-2-2-m2.html" title="Spring Boot 2.2 M2 发布">Spring Boot 2.2...</a>
+            <span class="pull-right">2019-04-16</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/04/spring-data-moore-m3-released.html" title="Spring Data Moore M3 发布">Spring Data Moo...</a>
+            <span class="pull-right">2019-04-11</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/04/spring-framework-5-2-0-m1-available-now.html" title="Spring Framework 5.2.0.M1 发布">Spring Framewor...</a>
+            <span class="pull-right">2019-04-10</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/04/spring-data-lovelace-sr6-kay-sr14-ingalls-sr20-released.html" title="Spring Data Lovelace SR6、Kay SR14和Ingalls SR20 同时发布">Spring Data Lov...</a>
+            <span class="pull-right">2019-04-10</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/04/spring-io-platform-cairo-sr8.html" title="Spring IO Platform Cairo-SR8 发布">Spring IO Platf...</a>
+            <span class="pull-right">2019-04-04</span>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </aside>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="navbar">
+              <div class="container">
+                <ul class="nav">
+                  <li><a href="../team.html">Team</a></li>
+                  <li><a href="../services.html">Services</a></li>
+                  <li><a href="../tools.html">Tools</a></li>
+                </ul>
+              </div>
+            </div>
+            &copy; <span>2019</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
+            <a href="../terms-of-use.html">Terms of Use</a>,
+            <a href="../privacy-policy.html">Privacy</a>,
+            <a href="../trademarks.html">Trademark Guidelines</a> and
+            <span id="teconsent"></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="scrim"></div>
+  </div>
+  </body>
+</html>
