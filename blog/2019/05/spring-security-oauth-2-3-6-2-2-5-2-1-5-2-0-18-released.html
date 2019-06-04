@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html data-code-prettify data-clipboard-buttons data-goto-top data-nav-menu data-switch-sidebar data-mobile-support>
+
+  <head>
+  <meta charset="utf-8"/>
+  <title>Spring Security OAuth 2.3.6, 2.2.5, 2.1.5, 2.0.18 发布 - Spring技术社区</title>
+  <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="description" content="Spring Dev Site"/>
+  <meta name="author" content="rainboyan.com"/>
+  <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
+  <meta property="og:title" content="Spring Security OAuth 2.3.6, 2.2.5, 2.1.5, 2.0.18 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2019-05-30'><meta property="og:description" content="Spring Security OAuth 2.3.6, 2.2.5, 2.1.5, 2.0.18 一并发布，修复安全问题。" />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/css/blog.css" />
+  <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="/jspm_packages/system.js"></script>
+  <script>
+    System.config({baseURL: "/"});
+  </script>
+  <script src="/config.js"></script>
+  <script>
+      System.import('app/main.js')
+  </script>
+</head>
+  <body>
+  <div class="viewport">
+    <header class="navbar header--navbar desktop-only">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <div class="spring-logo--container">
+            <a class="spring-logo" href="/"><span></span></a>
+          </div>
+          <ul class="nav pull-right">
+            <li class="navbar-link">
+              <a href="/projects/" >项目</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/guides/" >指南</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/blog/" >博客</a>
+            </li>
+            <li class="navbar-link nav-search js-nav-search">
+              <a>
+                <i class="icon-search navbar-search--icon js-search-input-open"></i>
+                <span class="search-input-close js-search-input-close">
+                  <i class="icon-remove"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-dropdown--container js-search-dropdown">
+        <div class="container-fluid">
+          <div class="search-form--container">
+            <form class="form-inline form-search" action="../../../search" method="get">
+              <input type="text" class="search-query search-form--form js-search-input" placeholder="Search for documentation, guides, and posts..." name="q" value="" />
+              <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div>
+    <div class="mobile-navigation--wrapper mobile-only">
+      <div class="navigation-drawer--container">
+        <div class="mobile-search--container">
+          <form class="form-inline form-search" action="../../../search" method="get">
+            <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            <input type="text" class="search-query search-form--form js-search-input" placeholder="Search..." name="q" value="" />
+          </form>
+        </div>
+        <div class="navigation-item-list">
+          <div class="navbar-link">
+            <a href="/">
+              首页
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/projects/">
+              项目
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/guides/">
+              指南
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/blog/">
+              博客
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <div class="nav-icon js-open-nav-drawer">
+          <i class="icon-reorder"></i>
+        </div>
+        <div class="header-center-icon">
+          <a href="../../../">
+            <div class="icon icon-spring-logo-mobile"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid"></div>
+    <div></div>
+    <main class="body--container container-fluid">
+      <div class="main-body--wrapper">
+        <div class="desktop-only">
+          <h1 class="blog-category active content--title">版本发布</h1>
+          <div class="blog-category content--title">
+            <div>Engineering</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>Releases</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>News and Events</div>
+          </div>
+          <div class="switch-sidebar pull-right"><input type="checkbox" class="js-switch"/></div>
+        </div>
+        <div class="row-fluid blog--wrapper">
+          <article class="span8 mobile-left-pane" id="content">
+            <div class="blog--container">
+              <header>
+                <h1 class="blog--title">Spring Security OAuth 2.3.6, 2.2.5, 2.1.5, 2.0.18 发布</h1>
+                <div class="meta-data--container">
+                  <div class="meta-data--item desktop-only">
+                    <div class="meta-data--icon icon blog-icon release"></div>
+                    <span>
+                      <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                    </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon calendar"></div>
+                      <time class="date" pubdate="" datetime=''>2019-05-30</time>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon comments"></div>
+                      <a class="comments" href="../../../blog/2019/05/spring-security-oauth-2-3-6-2-2-5-2-1-5-2-0-18-released.html#gitalk-container">评论
+                      </a>
+                    </div>
+                </div>
+              </header>
+              <div class="blog--post"><div class="paragraph">
+<p>Spring Security OAuth 2.3.6, 2.2.5, 2.1.5 和 2.0.18 一并发布，主要修复安全问题： <a href="https://pivotal.io/security/cve-2019-11269" class="external" target="_blank" rel="noopener">CVE-2019-11269: Open Redirector in spring-security-oauth2</a>，建议受此影响的用户尽快升级。</p>
+</div>
+<div class="paragraph">
+<p>Spring Security OAuth 版本在 2.3 之前的 2.3.6，2.2 之前的 2.2.5，2.1 之前的 2.1.5 和 2.0 之前的 2.0.18 ，以及较旧的不受支持的版本可能容易受到可能泄漏的开放重定向器攻击授权码。恶意用户或攻击者可以使用授权代码授予类型向授权端点发出请求，并通过 redirect_uri 参数指定操纵的重定向 URI。这可能导致授权服务器使用泄漏的授权代码将资源所有者用户代理重定向到受攻击者控制的 URI。</p>
+</div>
+<div class="paragraph">
+<p>满足以下所有要求的应用程序将导致引发此漏洞：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>作为 Authorization Server (例如 <code>@EnableAuthorizationServer</code>)</p>
+</li>
+<li>
+<p>在 <code>AuthorizationEndpoint</code> 中使用了默认的 <code>DefaultRedirectResolver</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>下列情况将不会导致漏洞公开：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>作为 Authorization Server，但是使用了其他 <code>RedirectResolver</code> 实现，而不是默认的 <code>DefaultRedirectResolver</code></p>
+</li>
+<li>
+<p>只是作为 Resource Server (例如 <code>@EnableResourceServer</code>)</p>
+</li>
+<li>
+<p>只是作为 Client 使用 (例如 <code>@EnableOAuthClient</code>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>详细的安全更新说明在这里：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://pivotal.io/security/cve-2019-11269" class="bare">https://pivotal.io/security/cve-2019-11269</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>有关每个版本中包含的其他更改，请参阅：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/spring-projects/spring-security-oauth/milestone/46?closed=1" class="external" target="_blank" rel="noopener">2.3.6</a></p>
+</li>
+<li>
+<p><a href="https://github.com/spring-projects/spring-security-oauth/milestone/47?closed=1" class="external" target="_blank" rel="noopener">2.2.5</a></p>
+</li>
+<li>
+<p><a href="https://github.com/spring-projects/spring-security-oauth/milestone/48?closed=1" class="external" target="_blank" rel="noopener">2.1.5</a></p>
+</li>
+<li>
+<p><a href="https://github.com/spring-projects/spring-security-oauth/milestone/49?closed=1" class="external" target="_blank" rel="noopener">2.0.18</a></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>原文： <a href="https://spring.io/blog/2019/05/30/cve-2019-11269-spring-security-oauth-2-3-6-2-2-5-2-1-5-2-0-18-released" class="bare">https://spring.io/blog/2019/05/30/cve-2019-11269-spring-security-oauth-2-3-6-2-2-5-2-1-5-2-0-18-released</a><br>
+作者： JOSH CUMMINGS<br>
+编译： 春之雨</p>
+</div>
+</td>
+</tr>
+</table>
+</div></div>
+              <ul id="direction" class="pagination blog-pagination pager">
+              <li class="previous"><a  href="../../../blog/2019/05/spring-cloud-edgware-sr6-released.html"> ←Spring Cloud Edgware.SR6 发布</a></li>
+              
+              </ul>
+            </div>
+            <section id="gitalk-container"></section>
+          </article>
+          <aside class="span4 mobile-right-pane">
+      <div><h2>文章分类</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category active">
+            <div class="icon blog-icon all-posts"></div>
+            <a href="/blog/">全部内容</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon engineering"></div>
+            <a href="/blog/category/article.html">书籍文章</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon releases"></div>
+            <a href="/blog/category/release.html">版本发布</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news-and-events"></div>
+            <a href="/blog/category/news.html">新闻资讯</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div><h2>最新文章</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/05/spring-security-oauth-2-3-6-2-2-5-2-1-5-2-0-18-released.html" title="Spring Security OAuth 2.3.6, 2.2.5, 2.1.5, 2.0.18 发布">Spring Security...</a>
+            <span class="pull-right">2019-05-30</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/05/spring-cloud-edgware-sr6-released.html" title="Spring Cloud Edgware.SR6 发布">Spring Cloud Ed...</a>
+            <span class="pull-right">2019-05-29</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/05/spring-tools-4-2-2-released.html" title="Spring Tools 4.2.2 发布">Spring Tools 4....</a>
+            <span class="pull-right">2019-05-24</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/05/grails-3-3-10-released.html" title="Grails 3.3.10 发布">Grails 3.3.10 发布</a>
+            <span class="pull-right">2019-05-20</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/05/spring-boot-2-1-5-released.html" title="Spring Boot 2.1.5 发布">Spring Boot 2.1...</a>
+            <span class="pull-right">2019-05-15</span>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </aside>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="navbar">
+              <div class="container">
+                <ul class="nav">
+                  <li><a href="../../../team.html">Team</a></li>
+                  <li><a href="../../../services.html">Services</a></li>
+                  <li><a href="../../../tools.html">Tools</a></li>
+                </ul>
+              </div>
+            </div>
+            &copy; <span>2019</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
+            <a href="../../../terms-of-use.html">Terms of Use</a>,
+            <a href="../../../privacy-policy.html">Privacy</a>,
+            <a href="../../../trademarks.html">Trademark Guidelines</a> and
+            <span id="teconsent"></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="scrim"></div>
+  </div>
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: 'e0ad4e23b37963590faf',
+        clientSecret: '1bbf06b574f0e6623211f8cc029f874db67c7dfe',
+        repo: 'springdev-issues',
+        owner: 'springdev-io',
+        admin: ['rainboyan'],
+        id: 'Comments',
+        distractionFreeMode: true
+      });
+      gitalk.render('gitalk-container');
+  </script>
+  </body>
+</html>

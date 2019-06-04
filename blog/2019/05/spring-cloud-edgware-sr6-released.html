@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html data-code-prettify data-clipboard-buttons data-goto-top data-nav-menu data-switch-sidebar data-mobile-support>
+
+  <head>
+  <meta charset="utf-8"/>
+  <title>Spring Cloud Edgware.SR6 发布 - Spring技术社区</title>
+  <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="description" content="Spring Dev Site"/>
+  <meta name="author" content="rainboyan.com"/>
+  <meta name="keywords" content="Spring,Spring Boot,Spring Security,Spring Dev"/>
+  <meta property="og:title" content="Spring Cloud Edgware.SR6 发布" /><meta property="og:image" content="/img/springdev-logo-large.png" /><meta property="og:type" content="article"><meta property="og:article:published_time" content='2019-05-29'><meta property="og:description" content="Spring Cloud Edgware.SR6 发布，修复了已知缺陷。" />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/css/blog.css" />
+  <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="/jspm_packages/system.js"></script>
+  <script>
+    System.config({baseURL: "/"});
+  </script>
+  <script src="/config.js"></script>
+  <script>
+      System.import('app/main.js')
+  </script>
+</head>
+  <body>
+  <div class="viewport">
+    <header class="navbar header--navbar desktop-only">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <div class="spring-logo--container">
+            <a class="spring-logo" href="/"><span></span></a>
+          </div>
+          <ul class="nav pull-right">
+            <li class="navbar-link">
+              <a href="/projects/" >项目</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/guides/" >指南</a>
+            </li>
+            <li class="navbar-link">
+              <a href="/blog/" >博客</a>
+            </li>
+            <li class="navbar-link nav-search js-nav-search">
+              <a>
+                <i class="icon-search navbar-search--icon js-search-input-open"></i>
+                <span class="search-input-close js-search-input-close">
+                  <i class="icon-remove"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-dropdown--container js-search-dropdown">
+        <div class="container-fluid">
+          <div class="search-form--container">
+            <form class="form-inline form-search" action="../../../search" method="get">
+              <input type="text" class="search-query search-form--form js-search-input" placeholder="Search for documentation, guides, and posts..." name="q" value="" />
+              <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div>
+    <div class="mobile-navigation--wrapper mobile-only">
+      <div class="navigation-drawer--container">
+        <div class="mobile-search--container">
+          <form class="form-inline form-search" action="../../../search" method="get">
+            <button type="submit" class="search-form--submit"><i class="icon-search"></i></button>
+            <input type="text" class="search-query search-form--form js-search-input" placeholder="Search..." name="q" value="" />
+          </form>
+        </div>
+        <div class="navigation-item-list">
+          <div class="navbar-link">
+            <a href="/">
+              首页
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/projects/">
+              项目
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/guides/">
+              指南
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="/blog/">
+              博客
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <div class="nav-icon js-open-nav-drawer">
+          <i class="icon-reorder"></i>
+        </div>
+        <div class="header-center-icon">
+          <a href="../../../">
+            <div class="icon icon-spring-logo-mobile"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid"></div>
+    <div></div>
+    <main class="body--container container-fluid">
+      <div class="main-body--wrapper">
+        <div class="desktop-only">
+          <h1 class="blog-category active content--title">版本发布</h1>
+          <div class="blog-category content--title">
+            <div>Engineering</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>Releases</div>
+          </div>
+          <div class="blog-category content--title">
+            <div>News and Events</div>
+          </div>
+          <div class="switch-sidebar pull-right"><input type="checkbox" class="js-switch"/></div>
+        </div>
+        <div class="row-fluid blog--wrapper">
+          <article class="span8 mobile-left-pane" id="content">
+            <div class="blog--container">
+              <header>
+                <h1 class="blog--title">Spring Cloud Edgware.SR6 发布</h1>
+                <div class="meta-data--container">
+                  <div class="meta-data--item desktop-only">
+                    <div class="meta-data--icon icon blog-icon release"></div>
+                    <span>
+                      <a class="category" href="../../../blog/category/release.html">release</a>&nbsp;
+                    </span>
+                    </div>
+                    <div class="meta-data--item">
+                      <img class="meta-data--icon" src="/img/avatars/rain.png">
+                      <a class="author" rel="author" href="http://rainboyan.com">rain</a>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon calendar"></div>
+                      <time class="date" pubdate="" datetime=''>2019-05-29</time>
+                    </div>
+                    <div class="meta-data--item">
+                      <div class="meta-data--icon icon blog-icon comments"></div>
+                      <a class="comments" href="../../../blog/2019/05/spring-cloud-edgware-sr6-released.html#gitalk-container">评论
+                      </a>
+                    </div>
+                </div>
+              </header>
+              <div class="blog--post"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://cloud.spring.io/" class="external" target="_blank" rel="noopener">Spring Cloud Edgware</a> Service Release 6 (SR6) 现已发布，可以从 <a href="https://repo.spring.io/release" class="external" target="_blank" rel="noopener">repo.spring.io</a> 和 Maven Central获取到。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_edgware_eol_提醒">Edgware EOL 提醒</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>有必要再提醒一下，<a href="https://spring.io/blog/2018/07/30/spring-cloud-edgware-eol-aug-1st-2019" class="external" target="_blank" rel="noopener">Spring Cloud Edgware 将在8月1号停止更新</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_值得注意的更新">值得注意的更新</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_spring_cloud_commons">Spring Cloud Commons</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/spring-cloud/spring-cloud-commons/issues?q=is%3Aclosed+milestone%3A1.3.6.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_config">Spring Cloud Config</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/spring-cloud/spring-cloud-config/milestone/56?closed=1" class="external" target="_blank" rel="noopener">缺陷修复</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_contract">Spring Cloud Contract</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/spring-cloud/spring-cloud-contract/issues?q=is%3Aclosed+milestone%3A1.2.7.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_sleuth">Spring Cloud Sleuth</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues?q=is%3Aclosed+milestone%3A1.3.6.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_netflix">Spring Cloud Netflix</h3>
+<div class="paragraph">
+<p><a href="https://github.com/spring-cloud/spring-cloud-netflix/issues?q=is%3Aclosed+milestone%3A1.4.7.RELEASE" class="external" target="_blank" rel="noopener">缺陷修复</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_cloud_vault">Spring Cloud Vault</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>升级 Vault 1.1.3</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>以下模块作为 <code>Edgware.SR6</code> 的一部分进行了更新：</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content stretch">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">模块</th>
+<th class="tableblock halign-left valign-top">版本</th>
+<th class="tableblock halign-left valign-top">问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Starter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edgware.SR6</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Release</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edgware.SR6</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Security</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.4.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Bus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.3.5.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Stream</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ditmars.SR5</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.4.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Netflix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.4.7.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(<a href="https://github.com/spring-cloud/spring-cloud-netflix/issues?q=is%3Aclosed+milestone%3A1.4.7.RELEASE" class="external" target="_blank" rel="noopener">问题列表</a>)&lt;/td&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Sleuth</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.3.6.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(<a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues?q=is%3Aclosed+milestone%3A1.3.6.RELEASE" class="external" target="_blank" rel="noopener">问题列表</a>)&lt;/td&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Config</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.4.7.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(<a href="https://github.com/spring-cloud/spring-cloud-config/milestone/56?closed=1" class="external" target="_blank" rel="noopener">问题列表</a>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edgware.SR6</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Dependencies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edgware.SR6</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Commons</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.3.6.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(<a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/56?closed=1" class="external" target="_blank" rel="noopener">问题列表</a>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Build</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.3.13.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Vault</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.3.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Zookeeper</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.3.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Contract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.7.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(<a href="https://github.com/spring-cloud/spring-cloud-contract/issues?q=is%3Aclosed+milestone%3A1.2.7.RELEASE" class="external" target="_blank" rel="noopener">问题列表</a>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Aws</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.4.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Consul</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.3.6.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Cloudfoundry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.3.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Function</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.2.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Cloud Gateway</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.3.RELEASE</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>要使用BOM开始使用Maven（仅限依赖关系管理）：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+            &lt;version&gt;Edgware.SR6&lt;/version&gt;
+            &lt;type&gt;pom&lt;/type&gt;
+            &lt;scope&gt;import&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-starter-config&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    ...
+&lt;/dependencies&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>或者，Gradle：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">buildscript {
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.2.RELEASE"
+    }
+}
+
+
+
+apply plugin: "io.spring.dependency-management"
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Edgware.SR6'
+    }
+}
+
+dependencies {
+    compile 'org.springframework.cloud:spring-cloud-starter-config'
+    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    ...
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>原文： <a href="https://spring.io/blog/2019/05/29/spring-cloud-edgware-sr6-released" class="bare">https://spring.io/blog/2019/05/29/spring-cloud-edgware-sr6-released</a><br>
+作者： Ryan Baxter<br>
+翻译： 春之雨</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div></div>
+              <ul id="direction" class="pagination blog-pagination pager">
+              <li class="previous"><a  href="../../../blog/2019/05/spring-tools-4-2-2-released.html"> ←Spring Tools 4.2.2 发布</a></li>
+              <li class="next"><a href="../../../blog/2019/05/spring-security-oauth-2-3-6-2-2-5-2-1-5-2-0-18-released.html">Spring Security OAuth 2.3.6, 2.2.5, 2.1.5, 2.0.18 发布 →</a></li>
+              </ul>
+            </div>
+            <section id="gitalk-container"></section>
+          </article>
+          <aside class="span4 mobile-right-pane">
+      <div><h2>文章分类</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category active">
+            <div class="icon blog-icon all-posts"></div>
+            <a href="/blog/">全部内容</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon engineering"></div>
+            <a href="/blog/category/article.html">书籍文章</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon releases"></div>
+            <a href="/blog/category/release.html">版本发布</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon news-and-events"></div>
+            <a href="/blog/category/news.html">新闻资讯</a>
+            <a class="pull-right" href="/feed.xml"><i class="icon-rss"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div><h2>最新文章</h2>
+        <ul class="right-pane-widget--container secondary-nav with-icon">
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/05/spring-security-oauth-2-3-6-2-2-5-2-1-5-2-0-18-released.html" title="Spring Security OAuth 2.3.6, 2.2.5, 2.1.5, 2.0.18 发布">Spring Security...</a>
+            <span class="pull-right">2019-05-30</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/05/spring-cloud-edgware-sr6-released.html" title="Spring Cloud Edgware.SR6 发布">Spring Cloud Ed...</a>
+            <span class="pull-right">2019-05-29</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/05/spring-tools-4-2-2-released.html" title="Spring Tools 4.2.2 发布">Spring Tools 4....</a>
+            <span class="pull-right">2019-05-24</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/05/grails-3-3-10-released.html" title="Grails 3.3.10 发布">Grails 3.3.10 发布</a>
+            <span class="pull-right">2019-05-20</span>
+          </li>
+          <li class="blog-category">
+            <div class="icon blog-icon release"></div>
+            <a href="../../../blog/2019/05/spring-boot-2-1-5-released.html" title="Spring Boot 2.1.5 发布">Spring Boot 2.1...</a>
+            <span class="pull-right">2019-05-15</span>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </aside>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="navbar">
+              <div class="container">
+                <ul class="nav">
+                  <li><a href="../../../team.html">Team</a></li>
+                  <li><a href="../../../services.html">Services</a></li>
+                  <li><a href="../../../tools.html">Tools</a></li>
+                </ul>
+              </div>
+            </div>
+            &copy; <span>2019</span> <a href="http://springdev.io/">SpringDev.IO</a>. All Rights Reserved.
+            <a href="../../../terms-of-use.html">Terms of Use</a>,
+            <a href="../../../privacy-policy.html">Privacy</a>,
+            <a href="../../../trademarks.html">Trademark Guidelines</a> and
+            <span id="teconsent"></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="scrim"></div>
+  </div>
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: 'e0ad4e23b37963590faf',
+        clientSecret: '1bbf06b574f0e6623211f8cc029f874db67c7dfe',
+        repo: 'springdev-issues',
+        owner: 'springdev-io',
+        admin: ['rainboyan'],
+        id: 'Comments',
+        distractionFreeMode: true
+      });
+      gitalk.render('gitalk-container');
+  </script>
+  </body>
+</html>
